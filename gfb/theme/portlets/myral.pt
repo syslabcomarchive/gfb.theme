@@ -1,0 +1,45 @@
+<dl class="portlet portletSEPAbout"
+    i18n:domain="osha"
+    tal:define="myrals view/myrals">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span class="tile"
+              i18n:translate="box_myral">
+            My Links
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+
+    <tal:about tal:repeat="obj myrals">
+    <dd class="portletItem"
+        tal:define="oddrow repeat/obj/odd;
+                    plone_view context/@@plone;
+                    getIcon nocall:plone_view/getIcon;
+                    item_icon python:getIcon(obj);"
+        tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
+        <a href="#"
+           class="tile"
+           tal:attributes="href obj/getURL;
+                           title obj/Description">
+            <img tal:replace="structure item_icon/html_tag" />
+            <span tal:replace="obj/pretty_title_or_id">
+             Some Document
+            </span>
+        </a>
+    </dd>
+    </tal:about>
+
+    <dd class="portletItem"
+        tal:condition="not: myrals"
+        i18n:translate="description_no_items_in_folder">
+        There are currently no items in this folder.
+    </dd>
+
+    <dd class="portletFooter">
+        <!--a href="" i18n:domain="plone" i18n:translate="box_morelink"
+              >More...</a-->
+    </dd>
+
+</dl>

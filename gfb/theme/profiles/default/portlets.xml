@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<portlets>
+
+  <portlet
+      addview="gfb.MyRAL"
+      title="My RiskAssessmentLinks"
+      description="Provides an overview over my risk assessment links." />
+
+  <portlet
+      addview="gfb.MyProvider"
+      title="My Provider"
+      description="My Provider information." />
+
+
+</portlets>

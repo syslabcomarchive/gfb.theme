@@ -1,0 +1,26 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:plone="http://namespaces.plone.org/plone">
+
+ <include package="plone.app.portlets" />
+
+ <!-- My Provider portlet -->
+ <plone:portlet
+     name="gfb.MyProvider"
+     interface=".myprovider.IMyProviderPortlet"
+     assignment=".myprovider.Assignment"
+     renderer=".myprovider.Renderer"
+     addview=".myprovider.AddForm"
+     />
+
+ <!-- My RAL portlet -->
+ <plone:portlet
+     name="gfb.MyRAL"
+     interface=".myral.IMyRALPortlet"
+     assignment=".myral.Assignment"
+     renderer=".myral.Renderer"
+     addview=".myral.AddForm"
+     />
+
+     
+</configure>

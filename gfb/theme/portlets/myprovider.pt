@@ -1,0 +1,41 @@
+<dl class="portlet portletMyProvider"
+    i18n:domain="osha"
+    tal:define="provider view/provider">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span class="tile"
+              i18n:translate="box_myprovider">
+            My Provider
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+
+    <dd class="portletItem"
+        tal:condition="python:provider is not None"
+        tal:define="plone_view context/@@plone;">
+
+        My Provider <span tal:replace="provider/pretty_title_or_id"/>
+
+        <a href="#"
+           class="tile"
+           tal:attributes="href provider/getURL;
+                           title provider/Description">
+            <span i18n:translate="">
+            Edit
+            </span>
+        </a>
+    </dd>
+
+    <dd class="portletItem"
+        tal:condition="python: provider is None">
+        There is no information about your provider. Please click <a tal:attributes="href view/create_url">here</a> to add it.
+    </dd>
+
+    <dd class="portletFooter" tal:content="python:provider is not None">
+        <a tal:attributes="href provider/absolute_url" i18n:domain="plone" i18n:translate="box_morelink"
+              >More...</a>
+    </dd>
+
+</dl>
