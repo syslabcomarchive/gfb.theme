@@ -1,12 +1,12 @@
 <dl class="portlet portletMyProvider"
-    i18n:domain="osha"
+    i18n:domain="gfb"
     tal:define="provider view/provider">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <span class="tile"
               i18n:translate="box_myprovider">
-            My Provider
+            Account information
         </span>
         <span class="portletTopRight"></span>
     </dt>
@@ -16,16 +16,21 @@
         tal:condition="python:provider is not None"
         tal:define="plone_view context/@@plone;">
 
-        My Provider <span tal:replace="provider/pretty_title_or_id"/>
-
         <a href="#"
            class="tile"
-           tal:attributes="href provider/getURL;
+           tal:attributes="href provider/getUrl;
                            title provider/Description">
-            <span i18n:translate="">
-            Edit
+            <span i18n:translate="label_edit_information">
+            Edit this information
             </span>
         </a>
+        <hr>
+        <strong tal:content="provider/pretty_title_or_id" /><br/>
+        <a tal:attributes="href provider/getUrl" tal:content="provider/getUrl" /><br/>
+        <span tal:replace="provider/getContact_name" /><br/>
+        <span tal:replace="structure python:'<br>'.join(provider.getAddress())" /><br/>
+        <span i18n:translate="label_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
+        <span i18n:translate="label_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
     </dd>
 
     <dd class="portletItem"
@@ -33,7 +38,7 @@
         There is no information about your provider. Please click <a tal:attributes="href view/create_url">here</a> to add it.
     </dd>
 
-    <dd class="portletFooter" tal:content="python:provider is not None">
+    <dd class="portletFooter" tal:condition="python:provider is not None">
         <a tal:attributes="href provider/absolute_url" i18n:domain="plone" i18n:translate="box_morelink"
               >More...</a>
     </dd>

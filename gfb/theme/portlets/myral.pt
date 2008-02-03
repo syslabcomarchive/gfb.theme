@@ -1,6 +1,6 @@
 <dl class="portlet portletSEPAbout"
-    i18n:domain="osha"
-    tal:define="myrals view/myrals">
+    i18n:domain="gfb"
+    tal:define="myrals view/myrals; home_url view/home_url;">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
@@ -11,6 +11,13 @@
         <span class="portletTopRight"></span>
     </dt>
 
+    <dd class="portletItem">
+        <a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink">
+            Add a new Risk Assessment Link
+        </a>
+        <hr tal:condition="myrals">
+        <span tal:condition="myrals" i18n:translate="label_your_links">Your existing links:</span>
+    </dd>
 
     <tal:about tal:repeat="obj myrals">
     <dd class="portletItem"
@@ -33,8 +40,8 @@
 
     <dd class="portletItem"
         tal:condition="not: myrals"
-        i18n:translate="description_no_items_in_folder">
-        There are currently no items in this folder.
+        i18n:translate="description_no_riskassessmentlinks_in_folder">
+        There are currently no Risk Assessment Links in this folder.
     </dd>
 
     <dd class="portletFooter">

@@ -33,16 +33,22 @@ class Renderer(base.Renderer):
 
         self.portal = portal_state.portal()
 
+        pm = getToolByName(self.portal, 'portal_membership')
+        hf = pm.getHomeFolder()
+        self.home_folder = hf
+        self.home_folder_url = hf.absolute_url()
+
     @property
     def available(self):
         return self._data()
 
+    def home_url(self):
+        return self.home_folder_url
+
     def myrals(self):
-        pm = getToolByName(self, 'portal_membership')
-        hf = pm.getHomeFolder()
-        if not hf:
+        if not self.home_folder:
             return None
-        P = hf.getFolderContents({'portal_type': 'RiskAssessmentLink'})
+        P = self.home_folder.getFolderContents({'portal_type': 'RiskAssessmentLink'})
         return P
 
     @memoize

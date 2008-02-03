@@ -42,7 +42,7 @@ class Renderer(base.Renderer):
         if not hf:
             return None
         P = hf.getFolderContents({'portal_type': 'Provider'})
-        return len(P)>0 and P[0] or None
+        return len(P)>0 and P[0].getObject() or None
 
     def create_url(self):
         pm = getToolByName(self, 'portal_membership')
