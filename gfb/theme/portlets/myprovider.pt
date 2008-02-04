@@ -18,7 +18,7 @@
 
         <a href="#"
            class="tile"
-           tal:attributes="href provider/getUrl;
+           tal:attributes="href string:${provider/absolute_url}/edit;
                            title provider/Description">
             <span i18n:translate="label_edit_information">
             Edit this information
