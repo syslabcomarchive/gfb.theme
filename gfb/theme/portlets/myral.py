@@ -50,6 +50,10 @@ class Renderer(base.Renderer):
             return None
         P = self.home_folder.getFolderContents({'portal_type': 'RiskAssessmentLink'})
         return P
+        
+    def provider_ok(self):
+        P = self.home_folder.getFolderContents({'portal_type': 'Provider'})
+        return not not len(P)        
 
     @memoize
     def _data(self):
