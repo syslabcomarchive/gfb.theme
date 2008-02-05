@@ -12,5 +12,10 @@
       title="My Provider"
       description="My Provider information." />
 
+  <portlet
+      addview="gfb.Help"
+      title="Help"
+      description="GFB Help." />
+
 
 </portlets>
