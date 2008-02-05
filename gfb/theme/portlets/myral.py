@@ -34,7 +34,13 @@ class Renderer(base.Renderer):
         self.portal = portal_state.portal()
 
         pm = getToolByName(self.portal, 'portal_membership')
+        pc = getToolByName(self.portal, 'portal_catalog')
         hf = pm.getHomeFolder()
+        
+        username = pm.getAuthenticatedMember().getUserName()
+        self.username = username
+        self.P = pc.searchResults(portal_type="RiskAssessmentLink", Creator=username)
+        self.Provider = pc.searchResults(portal_type="Provider", Creator=username)
         self.home_folder = hf
         self.home_folder_url = hf.absolute_url()
 
@@ -46,14 +52,10 @@ class Renderer(base.Renderer):
         return self.home_folder_url
 
     def myrals(self):
-        if not self.home_folder:
-            return None
-        P = self.home_folder.getFolderContents({'portal_type': 'RiskAssessmentLink'})
-        return P
+        return self.P
         
     def provider_ok(self):
-        P = self.home_folder.getFolderContents({'portal_type': 'Provider'})
-        return not not len(P)        
+        return not not len(self.Provider)        
 
     @memoize
     def _data(self):

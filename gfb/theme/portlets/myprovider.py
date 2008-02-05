@@ -37,11 +37,10 @@ class Renderer(base.Renderer):
         return self._data()
 
     def provider(self):
+        pc = getToolByName(self, 'portal_catalog')
         pm = getToolByName(self, 'portal_membership')
-        hf = pm.getHomeFolder()
-        if not hf:
-            return None
-        P = hf.getFolderContents({'portal_type': 'Provider'})
+        username = pm.getAuthenticatedMember().getUserName()
+        P = pc.searchResults(portal_type="Provider", Creator=username)
         return len(P)>0 and P[0].getObject() or None
 
     def create_url(self):
