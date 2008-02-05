@@ -12,10 +12,10 @@
     </dt>
 
     <dd class="portletItem" tal:condition="provider_ok">
-        <a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink">
+        <a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
             Add a new Risk Assessment Link
         </a>
-        <hr tal:condition="myrals">
+        <hr tal:condition="myrals" />
         <span tal:condition="myrals" i18n:translate="label_your_links">Your existing links:</span>
     </dd>
 

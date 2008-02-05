@@ -21,7 +21,7 @@
 
      <div class="documentEditable">
 
-            <h5 class="hiddenStructure">Views</h5>
+            <h5 class="hiddenStructure" i18n:domain="plone" i18n:translate="">Views</h5>
         
             <ul class="contentViews">
               <li>

@@ -24,13 +24,13 @@
             Edit this information
             </span>
         </a>
-        <hr>
+        <hr />
         <strong tal:content="provider/pretty_title_or_id" /><br/>
         <a tal:attributes="href provider/getUrl" tal:content="provider/getUrl" /><br/>
         <span tal:replace="provider/getContact_name" /><br/>
-        <span tal:replace="structure python:'<br>'.join(provider.getAddress())" /><br/>
-        <span i18n:translate="label_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
-        <span i18n:translate="label_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
+        <span tal:define="br string:&gt;br/>; lines python:br.join(provider.getAddress())" tal:replace="structure " /><br/>
+        <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
+        <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
     </dd>
 
     <dd class="portletItem"

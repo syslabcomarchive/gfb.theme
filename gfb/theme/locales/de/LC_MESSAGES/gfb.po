@@ -1,0 +1,94 @@
+# Alexander Pilz <info@syslab.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: gfb\n"
+"POT-Creation-Date: 2008-02-05 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Alexander Pilz <info@syslab.com>\n"
+"Language-Team: Alexander Pilz <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: gfb\n"
+
+
+#: ../portlets/help.py:51
+msgid "Add Help Portlet"
+msgstr "Hilfe Portlet hinzufügen"
+
+#: ../portlets/myprovider.py:61
+msgid "Add MyProvider Portlet"
+msgstr "Mein Anbieter Portlet hinzufügen"
+
+#: ../portlets/myral.py:67
+msgid "Add MyRAL Portlet"
+msgstr "Mein Gefährdungsbeurteilungs-Link Portlet hinzufügen"
+
+#: ../portlets/help.py:22
+msgid "Help"
+msgstr "Hilfe"
+
+#: ../portlets/myral.py:68
+msgid "Lists all Risk Assessment Links in the current members homefolder."
+msgstr "Zeigt alle Gefährdungsbeurteilungslinks des aktuellen Benutzers"
+
+#: ../portlets/myral.py:23
+msgid "My Risk Assessment Links"
+msgstr "Meine Gefährdungsbeurteilungs-Links"
+
+#: ../portlets/myprovider.py:22
+msgid "Provider Overview"
+msgstr "Anbieter Übersicht"
+
+#: ../portlets/myprovider.py:62
+msgid "Shows information about the current logged in users provider data."
+msgstr "Zeigt Angaben über den Anbieter des gerade angemeldeten Benutzers"
+
+#: ../portlets/help.py:52
+msgid "Shows information on how to use the GFB portal."
+msgstr "Hilfe zur Benutzung des GFB Portals."
+
+#. Default: "Hilfe"
+#: ../portlets/help.pt
+msgid "box_help"
+msgstr "Hilfe"
+
+#. Default: "Account information"
+#: ../portlets/myprovider.pt
+msgid "box_myprovider"
+msgstr "Anbieterinformationen"
+
+#. Default: "My Links"
+#: ../portlets/myral.pt
+msgid "box_myral"
+msgstr "Meine Links"
+
+#. Default: "There are currently no Risk Assessment Links in this folder."
+#: ../portlets/myral.pt
+msgid "description_no_riskassessmentlinks_in_folder"
+msgstr "Keine Gefährdunsbeurteilungslinks gefunden."
+
+#. Default: "Please complete your Provider information. You need a valid provider record before you can add links."
+#: ../portlets/myral.pt
+msgid "help_complete_provider"
+msgstr "Bitte geben Sie Ihre Anbieterinformationen ein. Es muss ein gültiger Anbietereintrag vorhanden sein, bevor Sie Links hinzufügen können."
+
+#. Default: "Edit this information"
+#: ../portlets/myprovider.pt
+msgid "label_edit_information"
+msgstr "Diese Angaben bearbeiten"
+
+#. Default: "Your existing links:"
+#: ../portlets/myral.pt
+msgid "label_your_links"
+msgstr "Ihre Links"
+
+#. Default: "Add a new Risk Assessment Link"
+#: ../portlets/myral.pt
+msgid "link_add_ral"
+msgstr "Neuen Link hinzufügen"
+

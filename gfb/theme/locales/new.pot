@@ -1,0 +1,95 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-02-05 15:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: gfb\n"
+
+#: ../portlets/help.py:51
+msgid "Add Help Portlet"
+msgstr ""
+
+#: ../portlets/myprovider.py:61
+msgid "Add MyProvider Portlet"
+msgstr ""
+
+#: ../portlets/myral.py:67
+msgid "Add MyRAL Portlet"
+msgstr ""
+
+#: ../portlets/help.py:22
+msgid "Help"
+msgstr ""
+
+#: ../portlets/myral.py:68
+msgid "Lists all Risk Assessment Links in the current members homefolder."
+msgstr ""
+
+#: ../portlets/myral.py:23
+msgid "My Risk Assessment Links"
+msgstr ""
+
+#: ../portlets/myprovider.py:22
+msgid "Provider Overview"
+msgstr ""
+
+#: ../portlets/myprovider.py:62
+msgid "Shows information about the current logged in users provider data."
+msgstr ""
+
+#: ../portlets/help.py:52
+msgid "Shows information on how to use the GFB portal."
+msgstr ""
+
+#. Default: "Hilfe"
+#: ../portlets/help.pt
+msgid "box_help"
+msgstr ""
+
+#. Default: "Account information"
+#: ../portlets/myprovider.pt
+msgid "box_myprovider"
+msgstr ""
+
+#. Default: "My Links"
+#: ../portlets/myral.pt
+msgid "box_myral"
+msgstr ""
+
+#. Default: "There are currently no Risk Assessment Links in this folder."
+#: ../portlets/myral.pt
+msgid "description_no_riskassessmentlinks_in_folder"
+msgstr ""
+
+#. Default: "Please complete your Provider information. You need a valid provider record before you can add links."
+#: ../portlets/myral.pt
+msgid "help_complete_provider"
+msgstr ""
+
+#. Default: "Edit this information"
+#: ../portlets/myprovider.pt
+msgid "label_edit_information"
+msgstr ""
+
+#. Default: "Your existing links:"
+#: ../portlets/myral.pt
+msgid "label_your_links"
+msgstr ""
+
+#. Default: "Add a new Risk Assessment Link"
+#: ../portlets/myral.pt
+msgid "link_add_ral"
+msgstr ""
+

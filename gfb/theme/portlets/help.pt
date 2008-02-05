@@ -20,7 +20,6 @@
            class="tile"
            tal:attributes="href string:${help/absolute_url};
                            title help/Title" tal:content="help/Title">
-            Edit this information
         </a>
         <br/>
         <span tal:replace="help/Description"/>
