@@ -22,5 +22,13 @@
      addview=".myral.AddForm"
      />
 
+ <!-- GFB Help portlet -->
+ <plone:portlet
+     name="gfb.Help"
+     interface=".help.IHelpPortlet"
+     assignment=".help.Assignment"
+     renderer=".help.Renderer"
+     addview=".help.AddForm"
+     />
      
 </configure>

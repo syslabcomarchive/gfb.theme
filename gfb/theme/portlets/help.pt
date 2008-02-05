@@ -1,0 +1,34 @@
+<dl class="portlet portletMyProvider"
+    i18n:domain="gfb"
+    tal:define="help view/help_document" tal:condition="nocall:help" >
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span class="tile"
+              i18n:translate="box_help">
+            Hilfe
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+
+    <dd class="portletItem"
+        tal:condition="python:help is not None"
+        tal:define="plone_view context/@@plone;">
+
+        <a href="#"
+           class="tile"
+           tal:attributes="href string:${help/absolute_url};
+                           title help/Title" tal:content="help/Title">
+            Edit this information
+        </a>
+        <br/>
+        <span tal:replace="help/Description"/>
+    </dd>
+
+    <dd class="portletFooter" tal:condition="python:help is not None">
+        <a tal:attributes="href help/absolute_url" i18n:domain="plone" i18n:translate="box_morelink"
+              >More...</a>
+    </dd>
+
+</dl>
