@@ -35,7 +35,12 @@
 
     <dd class="portletItem"
         tal:condition="python: provider is None">
-        There is no information about your provider. Please click <a tal:attributes="href view/create_url">here</a> to add it.
+        <span i18n:translate="info_no_provider">No provider information is available.</span>
+        <form action="" tal:attributes="action view/create_url">
+            <input type="hidden" name="type_name" value="Provider" />
+            <input type="submit" value="Create Provider" 
+                i18n:attributes="value"/>
+        </form>
     </dd>
 
     <dd class="portletFooter" tal:condition="python:provider is not None">
