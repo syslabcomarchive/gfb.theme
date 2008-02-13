@@ -1,0 +1,3 @@
+[actions]
+action.success=traverse_to:string:dashboard
+action.failure=traverse_to:string:login_failed
