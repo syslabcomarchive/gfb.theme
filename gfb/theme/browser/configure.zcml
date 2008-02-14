@@ -11,6 +11,15 @@
         />
 
     <!-- Viewlets registration -->
+    <!-- The personal bar -->
+    <browser:viewlet
+        name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        class=".viewlets.PersonalBarViewletGFB"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+
     <!-- Zope 3 browser resources -->
 
     <!-- Resource directory for images -->
