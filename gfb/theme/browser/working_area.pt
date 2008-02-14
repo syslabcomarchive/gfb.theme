@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="context/main_template/macros/master"
+       
+      i18n:domain="plone">
+  <body>
+
+    <div metal:fill-slot="main"
+        i18n:domain="gfb"
+        tal:define="dummy view/setup">
+    
+
+        <div tal:define="provider view/provider;">
+        
+                  <h3 i18n:translate="box_myprovider">Provider information</h3>
+        
+        
+            <div tal:condition="python:provider is not None"
+                tal:define="plone_view context/@@plone;">
+        
+                <div>
+                    <a href="#"
+                       class="tile"
+                       tal:attributes="href string:${provider/absolute_url}/edit;
+                                       title provider/Description">
+                        <span i18n:translate="label_edit_information">
+                        Edit this information
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <strong tal:content="provider/pretty_title_or_id" /><br/>
+                    <a tal:attributes="href provider/getUrl" tal:content="provider/getUrl" /><br/>
+                    <span tal:replace="provider/getContact_name" /><br/>
+                    <span tal:define="br string:&gt;br/>; lines python:br.join(provider.getAddress())" tal:replace="structure " /><br/>
+                    <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
+                    <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
+                </div>
+            </div>
+        
+            <div tal:condition="python: provider is None">
+                <a href="" tal:attributes="href view/create_provider_url"><span 
+                    i18n:translate="label_add_provider">Add Provider information</span></a><br />
+                <span i18n:translate="info_no_provider">No provider information is available.</span>
+                <!--form action="" tal:attributes="action view/create_url">
+                    <input type="hidden" name="type_name" value="Provider" />
+                    <input type="submit" value="Create Provider" 
+                        i18n:attributes="value"/>
+                </form-->
+            </div>
+        
+            <div tal:condition="python:provider is not None">
+                <a tal:attributes="href provider/absolute_url" i18n:domain="plone" i18n:translate="box_morelink"
+                      >More...</a>
+            </div>
+        
+        </div>
+
+        <div tal:define="myrals view/myrals; 
+            home_url view/home_url; 
+            provider_ok view/provider_ok;"> 
+            <h3 i18n:translate="box_myral">My Links</h3>
+    
+            <div tal:condition="provider_ok">
+                <a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
+                    Add a new Risk Assessment Link
+                </a>
+            </div>
+        
+            <div tal:condition="not: provider_ok">
+                <span i18n:translate="help_complete_provider" tal:omit-tag="">
+                    Please complete your Provider information. You need a valid provider record before you can add links.
+                </span>
+            </div>
+        
+            <span tal:condition="provider_ok">
+                <dl tal:repeat="obj myrals">
+                <span
+                    tal:define="oddrow repeat/obj/odd;
+                                plone_view context/@@plone;
+                                getIcon nocall:plone_view/getIcon;
+                                item_icon python:getIcon(obj);">
+                                
+                    <dt>
+                    <a href="#"
+                           class="tile"
+                           tal:attributes="href obj/getURL;
+                                           title obj/Description">
+                            <img tal:replace="structure item_icon/html_tag" />
+                            <span tal:replace="obj/pretty_title_or_id">
+                             Some Document
+                            </span>
+                        </a>
+                    </dt>
+                    <dd>
+                        <span tal:replace="obj/Description" />
+                    </dd>
+                </span>
+                </dl>
+            
+                <div class="portletItem"
+                    tal:condition="not: myrals"
+                    i18n:translate="description_no_riskassessmentlinks_in_folder">
+                    There are currently no Risk Assessment Links in this folder.
+                </div>
+            </span>
+        </div>
+    
+    
+    </div>
+  </body>
+</html>
