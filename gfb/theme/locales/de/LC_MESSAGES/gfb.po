@@ -92,3 +92,16 @@ msgstr "Ihre Links"
 msgid "link_add_ral"
 msgstr "Neuen Link hinzufügen"
 
+#: ../portlets/myprovider.pt
+msgid "Create Provider"
+msgstr "Anbieter erstellen"
+
+#. Default <span i18n:translate="info_no_provider">No provider information is available.</span>
+# ../portlets/myprovider.pt
+msgid "info_no_provider"
+msgstr "Es wurde noch keine Anbieterinformation angegeben."
+
+#. Default Add Provider information
+#: ../portlets/myprovider.pt
+msgid "label_add_provider"
+msgstr "Anbieterinformation eingeben"
