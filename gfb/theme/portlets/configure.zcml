@@ -30,5 +30,13 @@
      renderer=".help.Renderer"
      addview=".help.AddForm"
      />
-     
+
+ <!-- Worklist Navigation portlet -->
+ <plone:portlet
+     name="gfb.WorkNav"
+     interface=".worknav.IWorkNavPortlet"
+     assignment=".worknav.Assignment"
+     renderer=".worknav.Renderer"
+     addview=".worknav.AddForm"
+     />
 </configure>

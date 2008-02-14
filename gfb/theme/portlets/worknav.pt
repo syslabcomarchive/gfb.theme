@@ -1,0 +1,27 @@
+<dl class="portlet portletMyProvider"
+    i18n:domain="gfb"
+    tal:define="home_url view/home_url">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span class="tile"
+              i18n:translate="">
+            Navigation
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+
+    <dd class="portletItem">
+        <a href="" tal:attributes="href string:${home_url}/@@working-area">Working area</a>
+    </dd>
+
+    <dd class="portletItem">
+        Blubber
+    </dd>
+
+    <dd class="portletFooter">  
+            footer
+    </dd>
+
+</dl>
