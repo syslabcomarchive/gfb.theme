@@ -17,5 +17,9 @@
       title="Help"
       description="GFB Help." />
 
+  <portlet
+      addview="gfb.WorkNav"
+      title="Work-area Navigation"
+      description="Work-area Navigation" />
 
 </portlets>
