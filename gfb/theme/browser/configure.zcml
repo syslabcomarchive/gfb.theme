@@ -21,8 +21,8 @@
         />
 
     <browser:page
-      for="Products.ATContentTypes.interface.folder.IATFolder"
-      name="working-area"
+      for="*"
+      name="workingarea"
       class=".WorkingArea.WorkingArea"
       permission="zope.Public"
       />
