@@ -1,3 +1,3 @@
 [actions]
-action.success=traverse_to:string:dashboard
+action.success=traverse_to:string:Members/@@workingarea
 action.failure=traverse_to:string:login_failed
