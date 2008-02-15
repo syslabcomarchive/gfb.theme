@@ -16,12 +16,12 @@
         <a href="" tal:attributes="href string:${home_url}/@@working-area">Working area</a>
     </dd>
 
-    <dd class="portletItem">
+    <!--dd class="portletItem">
         Blubber
-    </dd>
+    </dd-->
 
-    <dd class="portletFooter">  
+    <!--dd class="portletFooter">  
             footer
-    </dd>
+    </dd-->
 
 </dl>
