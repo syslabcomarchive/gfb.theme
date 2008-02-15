@@ -8,6 +8,33 @@
     <div metal:fill-slot="main"
         i18n:domain="gfb"
         tal:define="dummy view/setup">
+
+            <div id="dashboard-actions"
+                 tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel');
+                             groups python:controlPanel.getGroups('member');
+                             getIconFor nocall:putils/getIconFor" >
+                <ul>
+                    <tal:groups condition="groups"
+                        define="allowed python:['MemberPassword']">
+                        <tal:group repeat="group groups">
+                            <tal:configlets repeat="configlet python:controlPanel.enumConfiglets(group=group['id'])">
+                                <li tal:condition="python:configlet['id'] in allowed and configlet['visible']"> 
+                                    <a href=""          
+                                       tal:attributes="href configlet/url">
+                                        <img src="" alt="" tal:attributes="src python:getIconFor('controlpanel',configlet['id']);
+                                                                           alt configlet/title;"
+                                             i18n:attributes="alt"
+                                             tal:on-error="string:" />
+                                    <tal:configletname tal:content="configlet/title"
+                                                       i18n:translate=""></tal:configletname>
+                                    </a>
+                                </li>
+                            </tal:configlets>
+                        </tal:group>
+                    </tal:groups>
+                </ul>
+            </div>
+
     
 
         <div tal:define="provider view/provider;">
@@ -19,14 +46,18 @@
                 tal:define="plone_view context/@@plone;">
         
                 <div>
-                    <a href="#"
+                <form action="" tal:attributes="action string:${provider/absolute_url}/edit">
+                    <input type="submit" value="label_edit_information" 
+                        i18n:attributes="value"/>
+                </form>
+                    <!--a href="#"
                        class="tile"
                        tal:attributes="href string:${provider/absolute_url}/edit;
                                        title provider/Description">
                         <span i18n:translate="label_edit_information">
                         Edit this information
                         </span>
-                    </a>
+                    </a-->
                 </div>
                 <div>
                     <strong tal:content="provider/pretty_title_or_id" /><br/>
@@ -39,14 +70,14 @@
             </div>
         
             <div tal:condition="python: provider is None">
-                <a href="" tal:attributes="href view/create_provider_url"><span 
-                    i18n:translate="label_add_provider">Add Provider information</span></a><br />
+                <!--a href="" tal:attributes="href view/create_provider_url"><span 
+                    i18n:translate="label_add_provider">Add Provider information</span></a><br /-->
                 <span i18n:translate="info_no_provider">No provider information is available.</span>
-                <!--form action="" tal:attributes="action view/create_url">
+                <form action="" tal:attributes="action view/create_provider_url">
                     <input type="hidden" name="type_name" value="Provider" />
                     <input type="submit" value="Create Provider" 
                         i18n:attributes="value"/>
-                </form-->
+                </form>
             </div>
         
             <div tal:condition="python:provider is not None">
@@ -62,9 +93,13 @@
             <h3 i18n:translate="box_myral">My Links</h3>
     
             <div tal:condition="provider_ok">
-                <a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
+                <!--a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
                     Add a new Risk Assessment Link
-                </a>
+                </a-->
+                <form action="#" tal:attributes="action string:${home_url}/createObject">
+                    <input type="hidden" name="type_name" value="RiskAssessmentLink" />
+                    <input type="submit" value="link_add_ral" i18n:attributes="value" />
+                </form>
             </div>
         
             <div tal:condition="not: provider_ok">

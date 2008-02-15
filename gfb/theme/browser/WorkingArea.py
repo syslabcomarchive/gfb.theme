@@ -36,9 +36,9 @@ class WorkingArea(BrowserView):
 
 
     def create_provider_url(self):
-        if not self.hf:
+        if not self.home_folder:
             return ''
-        href="%s/createObject?type_name=Provider" % self.hf.absolute_url()
+        href="%s/createObject?type_name=Provider" % self.home_folder_url
         return href
 
 
