@@ -13,7 +13,7 @@
 
 
     <dd class="portletItem">
-        <a href="" tal:attributes="href string:${home_url}/@@working-area">Working area</a>
+        <a href="" tal:attributes="href string:${home_url}/@@workingarea">Working area</a>
     </dd>
 
     <!--dd class="portletItem">
