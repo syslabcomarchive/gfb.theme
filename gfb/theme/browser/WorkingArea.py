@@ -24,7 +24,7 @@ class WorkingArea(BrowserView):
         self.P = pc.searchResults(portal_type="RiskAssessmentLink", Creator=username)
         self.Provider = pc.searchResults(portal_type="Provider", Creator=username)
         self.home_folder = hf
-        self.home_folder_url = hf.absolute_url()
+        self.home_folder_url = hf and hf.absolute_url() or ''
         
 
     def provider(self):
