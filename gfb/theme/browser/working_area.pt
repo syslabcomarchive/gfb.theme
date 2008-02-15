@@ -133,7 +133,7 @@
                 </span>
                 </dl>
             
-                <div class="portletItem"
+                <div 
                     tal:condition="not: myrals"
                     i18n:translate="description_no_riskassessmentlinks_in_folder">
                     There are currently no Risk Assessment Links in this folder.
