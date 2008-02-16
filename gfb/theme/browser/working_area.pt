@@ -3,8 +3,32 @@
       metal:use-macro="context/main_template/macros/master"
        
       i18n:domain="plone">
-  <body>
 
+<metal:cssslot fill-slot="css_slot">
+  <style type="text/css">
+  
+  .ws_address { position: relative; }
+  .ws_address_info { width: 300px;  }
+  .item_actions { position:relative; float: right; width:200px; text-align: right; margin-top: -20px; }
+  .item_actions form { display: inline; margin: 0; padding: 0; }
+  .item_actions .actionbtn { float: left; padding-right: 10px; }
+  .item_actions .actionbtn a { 
+    display: block; 
+    text-decoration: none; 
+    vertical-align: middle;
+    line-height: 1.5em; 
+    padding: 1px 3px 0px 18px;
+    margin-bottom: 1px ! important;
+    
+  }
+  
+  #ras_results dd { background-color: transparent; margin-left: 0; padding-left: 2em !important; padding-right: 2em; padding-bottom: 1em; border-bottom: 1px dotted gray; padding: 2px; } 
+  #ras_results dd .item_description { width: 400px;  }
+  
+</style>
+</metal:cssslot>
+
+  <body>
     <div metal:fill-slot="main"
         i18n:domain="gfb"
         tal:define="dummy view/setup">
@@ -36,30 +60,21 @@
             </div>
 
     
-
-        <div tal:define="provider view/provider;">
+        <h1>Working Area</h1>
         
-                  <h3 i18n:translate="box_myprovider">Provider information</h3>
+        <p class="discreet">
+          <!-- @Fux: Hier evtl. ein kurzer Erlaeuterungstext fuer den user. -->
+          Here you can add a Provider and manage your Assessment Links.
+        </p>
+            
+        <fieldset tal:define="provider view/provider;">
         
+          <legend i18n:translate="box_myprovider">Provider information</legend>
         
-            <div tal:condition="python:provider is not None"
+            <div class="ws_address" tal:condition="python:provider is not None"
                 tal:define="plone_view context/@@plone;">
         
-                <div>
-                <form action="" tal:attributes="action string:${provider/absolute_url}/edit">
-                    <input type="submit" value="label_edit_information" 
-                        i18n:attributes="value"/>
-                </form>
-                    <!--a href="#"
-                       class="tile"
-                       tal:attributes="href string:${provider/absolute_url}/edit;
-                                       title provider/Description">
-                        <span i18n:translate="label_edit_information">
-                        Edit this information
-                        </span>
-                    </a-->
-                </div>
-                <div>
+                <div class="ws_address_info">
                     <strong tal:content="provider/pretty_title_or_id" /><br/>
                     <a tal:attributes="href provider/getUrl" tal:content="provider/getUrl" /><br/>
                     <span tal:replace="provider/getContact_name" /><br/>
@@ -67,76 +82,108 @@
                     <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
                     <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
                 </div>
+                
+                <div class="item_actions">
+                   
+                    <form action="" tal:attributes="action string:${provider/absolute_url}/edit">
+                      <div class="actionbtn">
+                          <a class="context" tal:attributes="href provider/absolute_url" i18n:domain="plone" 
+                             i18n:translate="label_view_information">View</a>
+                       </div>
+                       <div class="actionbtn">
+                          <input class="context" type="submit" value="Edit" 
+                              i18n:attributes="value"/>
+                       </div>
+                    </form>
+                   
+                </div>
             </div>
         
             <div tal:condition="python: provider is None">
                 <!--a href="" tal:attributes="href view/create_provider_url"><span 
                     i18n:translate="label_add_provider">Add Provider information</span></a><br /-->
-                <span i18n:translate="info_no_provider">No provider information is available.</span>
+                <div i18n:translate="info_no_provider">There is currently no provider information available.
+                Please create a provider to be able to add Assessment Links.</div>
+                <br />
                 <form action="" tal:attributes="action view/create_provider_url">
                     <input type="hidden" name="type_name" value="Provider" />
-                    <input type="submit" value="Create Provider" 
+                    <input type="submit" class="standalone" value="Create Provider" 
                         i18n:attributes="value"/>
                 </form>
             </div>
         
-            <div tal:condition="python:provider is not None">
-                <a tal:attributes="href provider/absolute_url" i18n:domain="plone" i18n:translate="box_morelink"
-                      >More...</a>
-            </div>
-        
-        </div>
+        </fieldset>
+        <br />
 
         <div tal:define="myrals view/myrals; 
             home_url view/home_url; 
             provider_ok view/provider_ok;"> 
-            <h3 i18n:translate="box_myral">My Links</h3>
-    
+            <h2 i18n:translate="box_myral">My Links</h2>
+            
+                         
+            <div tal:condition="not: provider_ok">
+                <span i18n:translate="help_complete_provider" tal:omit-tag="">
+                    Please complete your Provider information. You need a valid provider record before you can add links.
+                </span>
+            </div><br />
+  
             <div tal:condition="provider_ok">
                 <!--a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
                     Add a new Risk Assessment Link
                 </a-->
                 <form action="#" tal:attributes="action string:${home_url}/createObject">
                     <input type="hidden" name="type_name" value="RiskAssessmentLink" />
-                    <input type="submit" value="link_add_ral" i18n:attributes="value" />
+                    <input type="submit" class="standalone" value="link_add_ral" i18n:attributes="value" />
                 </form>
             </div>
-        
-            <div tal:condition="not: provider_ok">
-                <span i18n:translate="help_complete_provider" tal:omit-tag="">
-                    Please complete your Provider information. You need a valid provider record before you can add links.
-                </span>
-            </div>
+            <br />
         
             <span tal:condition="provider_ok">
-                <dl tal:repeat="obj myrals">
-                <span
-                    tal:define="oddrow repeat/obj/odd;
-                                plone_view context/@@plone;
-                                getIcon nocall:plone_view/getIcon;
-                                item_icon python:getIcon(obj);">
-                                
-                    <dt>
-                    <a href="#"
-                           class="tile"
-                           tal:attributes="href obj/getURL;
-                                           title obj/Description">
-                            <img tal:replace="structure item_icon/html_tag" />
-                            <span tal:replace="obj/pretty_title_or_id">
-                             Some Document
-                            </span>
-                        </a>
-                    </dt>
-                    <dd>
-                        <span tal:replace="obj/Description" />
-                    </dd>
-                </span>
+                
+                <form>
+                <dl id="ras_results">
+                  <span tal:repeat="obj myrals" tal:omit-tag="">
+                    <span tal:omit-tag=""
+                        tal:define="oddrow repeat/obj/odd;
+                                    plone_view context/@@plone;
+                                    getIcon nocall:plone_view/getIcon;
+                                    item_icon python:getIcon(obj);">
+                                    
+                        <dt>
+                          <img tal:replace="structure item_icon/html_tag" />&nbsp;<a href="#"
+                               class="tile"
+                               tal:attributes="href obj/getURL;
+                                               title obj/Description" 
+                               tal:content="obj/pretty_title_or_id">Some Document</a>
+                        </dt>
+                        <dd>
+                            <div class="item_description" tal:content="obj/Description">desc</div>
+                            <!-- Buttons - @Fux: wenn Du die Buttons hier nicht willst, schmeiss den Abschnitt einfach raus -->
+                            <div class="item_actions">
+                              <div class="actionbtn">
+                                 <a class="context" tal:attributes="href obj/absolute_url" i18n:domain="plone" 
+                                     i18n:translate="label_view_information">View</a>
+                              </div>
+                              <div class="actionbtn">
+                                  <a class="context" tal:attributes="href string:${obj/absolute_url}/edit" i18n:domain="plone" 
+                                     i18n:translate="label_edit">Edit</a>
+                              </div>
+                              <div class="actionbtn">
+                                  <a class="context" tal:attributes="href string:${obj/absolute_url}/edit" i18n:domain="plone" 
+                                     i18n:translate="label_delete">Delete</a>
+                              </div>
+                            </div>
+                            <!-- //Buttons -->
+                        </dd>
+                    </span>
+                  </span>
                 </dl>
+                </form>
             
-                <div 
-                    tal:condition="not: myrals"
+                <div tal:condition="not: myrals"><p class="discreet"
                     i18n:translate="description_no_riskassessmentlinks_in_folder">
                     There are currently no Risk Assessment Links in this folder.
+                    </p>
                 </div>
             </span>
         </div>
