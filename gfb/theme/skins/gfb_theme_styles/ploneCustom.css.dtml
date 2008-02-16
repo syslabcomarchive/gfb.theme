@@ -19,7 +19,7 @@
   .item_actions .actionbtn a:hover, 
   .item_actions .actionbtn a:active { color: &dtml-fontColor;; }
   
-  #ras_results dd { background-color: transparent; margin-left: 0; padding-left: 2em !important; padding-right: 2em; padding-bottom: 10px; border-bottom: 1px dotted gray; padding: 2px; } 
+  #ras_results dd { background-color: transparent; margin-left: 0; padding: 0em 1em 1em 2em !important; border-bottom: 1px dotted gray; padding: 2px; } 
   #ras_results dd .item_description { width: 400px;  }
 
 /* </dtml-with> */
