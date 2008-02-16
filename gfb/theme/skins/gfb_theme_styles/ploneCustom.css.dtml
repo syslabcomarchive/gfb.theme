@@ -1,0 +1,25 @@
+/*
+** Table-based column layout for all browsers.
+**
+** There's a table-less column layout alternative in the plone_tableless
+** skin layer, if you prefer layouts without tables.
+*/
+
+/* <dtml-with base_properties> */
+
+  .ws_address { position: relative; }
+  .ws_address_info { width: 300px;  }
+  .item_actions { position:relative; float: right; width:200px; text-align: right; margin-top: -20px; }
+  .item_actions form { display: inline; margin: 0; padding: 0; }
+  .item_actions .actionbtn { float: left; padding-right: 10px; }
+  .item_actions .actionbtn a { display: block; text-decoration: none; vertical-align: middle; line-height: 1.5em; padding: 1px 3px 0px 18px; margin-bottom: 1px ! important; }
+  .item_actions .actionbtn a, 
+  .item_actions .actionbtn a:link, 
+  .item_actions .actionbtn a:visited, 
+  .item_actions .actionbtn a:hover, 
+  .item_actions .actionbtn a:active { color: &dtml-fontColor;; }
+  
+  #ras_results dd { background-color: transparent; margin-left: 0; padding-left: 2em !important; padding-right: 2em; padding-bottom: 10px; border-bottom: 1px dotted gray; padding: 2px; } 
+  #ras_results dd .item_description { width: 400px;  }
+
+/* </dtml-with> */
