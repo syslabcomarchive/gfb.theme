@@ -62,9 +62,9 @@
     
         <h1>Working Area</h1>
         
-        <p class="discreet">
-          <!-- @Fux: Hier evtl. ein kurzer Erlaeuterungstext fuer den user. -->
-          Here you can add a Provider and manage your Assessment Links.
+        <p class="discreet"
+            i18n:translate="workingarea_intro">
+          Here you can add a Provider and manage your Risk Assessment Links.
         </p>
             
         <fieldset tal:define="provider view/provider;">
@@ -76,25 +76,23 @@
         
                 <div class="ws_address_info">
                     <strong tal:content="provider/pretty_title_or_id" /><br/>
-                    <a tal:attributes="href provider/getUrl" tal:content="provider/getUrl" /><br/>
+                    <a tal:attributes="href provider/getRemoteUrl" tal:content="provider/getRemoteUrl" /><br/>
                     <span tal:replace="provider/getContact_name" /><br/>
                     <span tal:define="br string:&gt;br/>; lines python:br.join(provider.getAddress())" tal:replace="structure " /><br/>
-                    <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone"  /><br/>
+                    <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone" /><br/>
                     <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
                 </div>
                 
                 <div class="item_actions">
                    
-                    <form action="" tal:attributes="action string:${provider/absolute_url}/edit">
                       <div class="actionbtn">
                           <a class="context" tal:attributes="href provider/absolute_url" i18n:domain="plone" 
-                             i18n:translate="label_view_information">View</a>
+                             i18n:translate="label_view">View</a>
                        </div>
                        <div class="actionbtn">
-                          <input class="context" type="submit" value="Edit" 
-                              i18n:attributes="value"/>
+                        <a class="context" tal:attributes="href string:${provider/absolute_url}/edit" i18n:domain="plone" 
+                             i18n:translate="label_edit">Edit</a>
                        </div>
-                    </form>
                    
                 </div>
             </div>
@@ -161,16 +159,17 @@
                             <!-- Buttons - @Fux: wenn Du die Buttons hier nicht willst, schmeiss den Abschnitt einfach raus -->
                             <div class="item_actions">
                               <div class="actionbtn">
-                                 <a class="context" tal:attributes="href obj/absolute_url" i18n:domain="plone" 
-                                     i18n:translate="label_view_information">View</a>
+                                 <a class="context" tal:attributes="href obj/getURL" i18n:domain="plone" 
+                                     i18n:translate="label_view">View</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/absolute_url}/edit" i18n:domain="plone" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit" i18n:domain="plone" 
                                      i18n:translate="label_edit">Edit</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/absolute_url}/edit" i18n:domain="plone" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation" i18n:domain="plone" 
                                      i18n:translate="label_delete">Delete</a>
+                                     
                               </div>
                             </div>
                             <!-- //Buttons -->

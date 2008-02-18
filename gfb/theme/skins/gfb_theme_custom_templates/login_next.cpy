@@ -24,7 +24,9 @@ if membership_tool.isAnonymousUser():
 
 came_from = REQUEST.get('came_from', None)
 
-
+hf = membership_tool.getHomeFolder()
+if hf is not None:
+    return REQUEST.RESPONSE.redirect(hf.absolute_url())
 
 # In case of GFB, we're not intersted in the came_from mechanism
 
