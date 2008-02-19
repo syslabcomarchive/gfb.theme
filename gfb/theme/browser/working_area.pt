@@ -60,7 +60,7 @@
             </div>
 
     
-        <h1>Working Area</h1>
+        <h1 i18n:translate="label_workingarea">Working Area</h1>
         
         <p class="discreet"
             i18n:translate="workingarea_intro">

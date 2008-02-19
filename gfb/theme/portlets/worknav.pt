@@ -13,15 +13,8 @@
 
 
     <dd class="portletItem">
-        <a href="" tal:attributes="href string:${home_url}/@@workingarea">Working area</a>
+        <a href="" tal:attributes="href string:${home_url}/@@workingarea"
+            i18n:translate="label_workingarea">Working area</a>
     </dd>
-
-    <!--dd class="portletItem">
-        Blubber
-    </dd-->
-
-    <!--dd class="portletFooter">  
-            footer
-    </dd-->
 
 </dl>
