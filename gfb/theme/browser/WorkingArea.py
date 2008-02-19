@@ -31,7 +31,9 @@ class WorkingArea(BrowserView):
         pc = getToolByName(self, 'portal_catalog')
         pm = getToolByName(self, 'portal_membership')
         username = pm.getAuthenticatedMember().getUserName()
-        P = pc.searchResults(portal_type="Provider", Creator=username)
+        f = pm.getMembersFolder()
+        path = "/".join( f.getPhysicalPath() ) + '/' + username
+        P = pc.searchResults(portal_type="Provider", path=path)
         return len(P)>0 and P[0].getObject() or None
 
 
