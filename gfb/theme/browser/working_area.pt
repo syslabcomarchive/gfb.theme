@@ -1,8 +1,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
       lang="en-US"
       metal:use-macro="context/main_template/macros/master"
-       
       i18n:domain="plone">
+
+<metal:head fill-slot="top_slot"
+tal:define="dummy python:request.set('disable_border',1)" />
 
 <metal:cssslot fill-slot="css_slot">
   <style type="text/css">
