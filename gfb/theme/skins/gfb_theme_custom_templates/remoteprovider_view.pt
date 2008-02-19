@@ -52,7 +52,7 @@
 
 
 
-        <h2 i18n:translate="label_schema_contact_person" i18n:domain="plone">Contact Person</h2>
+        <h2 i18n:translate="label_schema_Contact Person" i18n:domain="plone">Contact Person</h2>
         
         <label i18n:translate="RemoteProvider_label_contact_name">Name</label>
         <div >
