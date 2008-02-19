@@ -101,7 +101,22 @@ msgstr "Anbieter erstellen"
 msgid "info_no_provider"
 msgstr "Es wurde noch keine Anbieterinformation angegeben."
 
-#. Default Add Provider information
+#. Default "Add Provider information"
 #: ../portlets/myprovider.pt
 msgid "label_add_provider"
 msgstr "Anbieterinformation eingeben"
+
+#. Default "Working Area"
+#: working_area.pt
+msgid "label_workingarea"
+msgstr "Arbeitsbereich"
+
+#. Default "Here you edit your Provider information and manage Risk Assessment Links."
+#: working_area.pt
+msgid "workingarea_intro"
+msgstr "Hier können Sie Ihre Anbieterinformation bearbeiten und Gefährgunsbeurteilungslinks hinzufügen und verwalten."
+
+#. Default "Up to my working area"
+#: password_form.pt
+msgid "label_to_workingarea"
+msgstr "Zurück zum Arbeitsbereich"
