@@ -30,7 +30,7 @@ class WorkingArea(BrowserView):
     def provider(self):
         pc = getToolByName(self, 'portal_catalog')
         pm = getToolByName(self, 'portal_membership')
-        username = pm.getAuthenticatedMember().getUserName()
+        username = pm.getAuthenticatedMember().getUserId()
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + username
         P = pc.searchResults(portal_type="Provider", path=path)
