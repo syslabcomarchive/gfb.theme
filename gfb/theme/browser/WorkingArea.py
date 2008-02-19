@@ -21,20 +21,17 @@ class WorkingArea(BrowserView):
         
         username = pm.getAuthenticatedMember().getUserName()
         self.username = username
+        self.userid = pm.getAuthenticatedMember().getUserId()
+        f = pm.getMembersFolder()
+        path = "/".join( f.getPhysicalPath() ) + '/' + username
         self.P = pc.searchResults(portal_type="RiskAssessmentLink", Creator=username)
-        self.Provider = pc.searchResults(portal_type="Provider", Creator=username)
+        self.Provider = pc.searchResults(portal_type="Provider", path=path)
         self.home_folder = hf
         self.home_folder_url = hf and hf.absolute_url() or ''
         
 
     def provider(self):
-        pc = getToolByName(self, 'portal_catalog')
-        pm = getToolByName(self, 'portal_membership')
-        username = pm.getAuthenticatedMember().getUserId()
-        f = pm.getMembersFolder()
-        path = "/".join( f.getPhysicalPath() ) + '/' + username
-        P = pc.searchResults(portal_type="Provider", path=path)
-        return len(P)>0 and P[0].getObject() or None
+        return len(self.Provider)>0 and self.Provider[0].getObject() or None
 
 
     def create_provider_url(self):
