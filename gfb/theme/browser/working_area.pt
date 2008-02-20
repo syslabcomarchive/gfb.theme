@@ -11,7 +11,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
   
   .ws_address { position: relative; }
   .ws_address_info { width: 300px;  }
-  .item_actions { position:relative; float: right; width:300px; text-align: right; margin-top: -20px; }
+  .item_actions { position:relative; float: right; width:350px; text-align: right; margin-top: -20px; }
   .item_actions form { display: inline; margin: 0; padding: 0; }
   .item_actions .actionbtn { float: left; padding-right: 10px; }
   .item_actions .actionbtn a { 

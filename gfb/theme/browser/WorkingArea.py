@@ -18,7 +18,10 @@ class WorkingArea(BrowserView):
         pm = getToolByName(self, 'portal_membership')
         pc = getToolByName(self, 'portal_catalog')
         
-        self.userid = pm.getAuthenticatedMember().getUserId()
+        try:
+            self.userid = pm.getAuthenticatedMember().getUserId()
+        except:
+            self.userid = pm.getAuthenticatedMember().getUserName()
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
         self.P = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
