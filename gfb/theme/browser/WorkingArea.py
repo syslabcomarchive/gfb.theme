@@ -24,7 +24,7 @@ class WorkingArea(BrowserView):
         self.userid = pm.getAuthenticatedMember().getUserId()
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
-        self.P = pc.searchResults(portal_type="RiskAssessmentLink", Creator=username)
+        self.P = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
         self.Provider = pc.searchResults(portal_type="Provider", path=path)
         self.home_folder = hf
         self.home_folder_url = hf and hf.absolute_url() or ''
