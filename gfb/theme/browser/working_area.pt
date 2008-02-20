@@ -11,7 +11,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
   
   .ws_address { position: relative; }
   .ws_address_info { width: 300px;  }
-  .item_actions { position:relative; float: right; width:200px; text-align: right; margin-top: -20px; }
+  .item_actions { position:relative; float: right; width:300px; text-align: right; margin-top: -20px; }
   .item_actions form { display: inline; margin: 0; padding: 0; }
   .item_actions .actionbtn { float: left; padding-right: 10px; }
   .item_actions .actionbtn a { 
@@ -21,8 +21,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
     line-height: 1.5em; 
     padding: 1px 3px 0px 18px;
     margin-bottom: 1px ! important;
-    
   }
+  #publish_button {color: red;}
   
   #ras_results dd { background-color: transparent; margin-left: 0; padding-left: 2em !important; padding-right: 2em; padding-bottom: 1em; border-bottom: 1px dotted gray; padding: 2px; } 
   #ras_results dd .item_description { width: 400px;  }
@@ -69,7 +69,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
           Here you can add a Provider and manage your Risk Assessment Links.
         </p>
             
-        <fieldset tal:define="provider view/provider;">
+        <fieldset tal:define="provider view/provider;
+                        providerReviewState view/providerReviewState">
         
           <legend i18n:translate="box_myprovider">Provider information</legend>
         
@@ -85,17 +86,19 @@ tal:define="dummy python:request.set('disable_border',1)" />
                     <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
                 </div>
                 
-                <div class="item_actions">
-                   
+                <div class="item_actions"  i18n:domain="plone" >
                       <div class="actionbtn">
-                          <a class="context" tal:attributes="href provider/absolute_url" i18n:domain="plone" 
+                          <a class="context" tal:attributes="href provider/absolute_url"
                              i18n:translate="label_view">View</a>
                        </div>
                        <div class="actionbtn">
-                        <a class="context" tal:attributes="href string:${provider/absolute_url}/edit" i18n:domain="plone" 
+                        <a class="context" tal:attributes="href string:${provider/absolute_url}/edit"
                              i18n:translate="label_edit">Edit</a>
                        </div>
-                   
+                      <div class="actionbtn" tal:condition="python:providerReviewState=='private'">
+                        <a class="context" id="publish_button" tal:attributes="href string:${provider/absolute_url}/content_status_modify?workflow_action=publish"
+                            i18n:translate="Publish">Publish</a>
+                       </div>
                 </div>
             </div>
         
@@ -159,19 +162,22 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         <dd>
                             <div class="item_description" tal:content="obj/Description">desc</div>
                             <!-- Buttons - @Fux: wenn Du die Buttons hier nicht willst, schmeiss den Abschnitt einfach raus -->
-                            <div class="item_actions">
+                            <div class="item_actions" i18n:domain="plone" >
                               <div class="actionbtn">
-                                 <a class="context" tal:attributes="href obj/getURL" i18n:domain="plone" 
+                                 <a class="context" tal:attributes="href obj/getURL" 
                                      i18n:translate="label_view">View</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit" i18n:domain="plone" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit" 
                                      i18n:translate="label_edit">Edit</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation" i18n:domain="plone" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation" 
                                      i18n:translate="label_delete">Delete</a>
-                                     
+                              </div>
+                              <div class="actionbtn" tal:condition="python:obj.review_state=='private'">
+                                 <a class="context" id="publish_button" tal:attributes="href string:${obj/getURL}/content_status_modify?workflow_action=publish" 
+                                     i18n:translate="Publish">Publish</a>
                               </div>
                             </div>
                             <!-- //Buttons -->

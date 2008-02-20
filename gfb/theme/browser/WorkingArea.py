@@ -17,15 +17,14 @@ class WorkingArea(BrowserView):
     def setup(self):
         pm = getToolByName(self, 'portal_membership')
         pc = getToolByName(self, 'portal_catalog')
-        hf = pm.getHomeFolder()
         
-        username = pm.getAuthenticatedMember().getUserName()
-        self.username = username
         self.userid = pm.getAuthenticatedMember().getUserId()
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
         self.P = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
         self.Provider = pc.searchResults(portal_type="Provider", path=path)
+
+        hf = pm.getHomeFolder()
         self.home_folder = hf
         self.home_folder_url = hf and hf.absolute_url() or ''
         
@@ -33,6 +32,11 @@ class WorkingArea(BrowserView):
     def provider(self):
         return len(self.Provider)>0 and self.Provider[0].getObject() or None
 
+    def providerReviewState(self):
+        p = self.provider()
+        pw = getToolByName(self, 'portal_workflow')
+        return p and pw.getInfoFor(p, 'review_state') or ''
+        
 
     def create_provider_url(self):
         if not self.home_folder:
