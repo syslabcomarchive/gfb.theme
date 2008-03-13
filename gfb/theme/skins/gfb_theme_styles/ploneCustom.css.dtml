@@ -7,19 +7,19 @@
 
 /* <dtml-with base_properties> */
 
-  .ws_address { position: relative; }
-  .ws_address_info { width: 300px;  }
-  .item_actions { position:relative; float: right; width:200px; text-align: right; margin-top: -20px; }
+  .ws_address { position: relative; height: 1%; padding: 0; margin: 0; clear: both;  }
+  .ws_address_info { position:relative; }
+  .item_actions { position:relative; float: right; width: 34em; padding: 0.5em 0em; }
   .item_actions form { display: inline; margin: 0; padding: 0; }
-  .item_actions .actionbtn { float: left; padding-right: 10px; }
-  .item_actions .actionbtn a { display: block; text-decoration: none; vertical-align: middle; line-height: 1.5em; padding: 1px 3px 0px 18px; margin-bottom: 1px ! important; }
-  .item_actions .actionbtn a, 
-  .item_actions .actionbtn a:link, 
-  .item_actions .actionbtn a:visited, 
-  .item_actions .actionbtn a:hover, 
+  .item_actions .actionbtn { float: left; padding-right: 0.5em; }
+  .item_actions .actionbtn a { display: block; background: transparent url(linkTransparent.gif) 9px 1px no-repeat !important; text-decoration: none; vertical-align: middle; line-height: 1.5em; padding: 0.1em 1em 0em 1.5em !important; margin-bottom: 1px !important; }
+  .item_actions .actionbtn a,
+  .item_actions .actionbtn a:link,
+  .item_actions .actionbtn a:visited,
+  .item_actions .actionbtn a:hover,
   .item_actions .actionbtn a:active { color: &dtml-fontColor;; }
-  
-  #ras_results dd { background-color: transparent; margin-left: 0; padding: 0em 1em 1em 2em !important; border-bottom: 1px dotted gray; padding: 2px; } 
-  #ras_results dd .item_description { width: 400px;  }
+
+  #ras_results dt { padding: 0.5em 0 0 0 !important; margin: 0; }
+  #ras_results dd { margin: 0; padding: 0.5em 0em !important; border-bottom: 1px dotted gray; }
 
 /* </dtml-with> */

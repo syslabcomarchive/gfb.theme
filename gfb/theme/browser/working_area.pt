@@ -6,29 +6,6 @@
 <metal:head fill-slot="top_slot"
 tal:define="dummy python:request.set('disable_border',1)" />
 
-<metal:cssslot fill-slot="css_slot">
-  <style type="text/css">
-  
-  .ws_address { position: relative; }
-  .ws_address_info { width: 300px;  }
-  .item_actions { position:relative; float: right; width:350px; text-align: right; margin-top: -20px; }
-  .item_actions form { display: inline; margin: 0; padding: 0; }
-  .item_actions .actionbtn { float: left; padding-right: 10px; }
-  .item_actions .actionbtn a { 
-    display: block; 
-    text-decoration: none; 
-    vertical-align: middle;
-    line-height: 1.5em; 
-    padding: 1px 3px 0px 18px;
-    margin-bottom: 1px ! important;
-  }
-  #publish_button {color: red;}
-  
-  #ras_results dd { background-color: transparent; margin-left: 0; padding-left: 2em !important; padding-right: 2em; padding-bottom: 1em; border-bottom: 1px dotted gray; padding: 2px; } 
-  #ras_results dd .item_description { width: 400px;  }
-  
-</style>
-</metal:cssslot>
 
   <body>
     <div metal:fill-slot="main"
@@ -44,8 +21,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         define="allowed python:['MemberPassword']">
                         <tal:group repeat="group groups">
                             <tal:configlets repeat="configlet python:controlPanel.enumConfiglets(group=group['id'])">
-                                <li tal:condition="python:configlet['id'] in allowed and configlet['visible']"> 
-                                    <a href=""          
+                                <li tal:condition="python:configlet['id'] in allowed and configlet['visible']">
+                                    <a href=""
                                        tal:attributes="href configlet/url">
                                         <img src="" alt="" tal:attributes="src python:getIconFor('controlpanel',configlet['id']);
                                                                            alt configlet/title;"
@@ -61,22 +38,22 @@ tal:define="dummy python:request.set('disable_border',1)" />
                 </ul>
             </div>
 
-    
+
         <h1 i18n:translate="label_workingarea">Working Area</h1>
-        
+
         <p class="discreet"
             i18n:translate="workingarea_intro">
           Here you can add a Provider and manage your Risk Assessment Links.
         </p>
-            
+
         <fieldset tal:define="provider view/provider;
                         providerReviewState view/providerReviewState">
-        
+
           <legend i18n:translate="box_myprovider">Provider information</legend>
-        
+
             <div class="ws_address" tal:condition="python:provider is not None"
                 tal:define="plone_view context/@@plone;">
-        
+
                 <div class="ws_address_info">
                     <strong tal:content="provider/pretty_title_or_id" /><br/>
                     <a tal:attributes="href provider/getRemoteUrl" tal:content="provider/getRemoteUrl" /><br/>
@@ -85,7 +62,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                     <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone" /><br/>
                     <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
                 </div>
-                
+
                 <div class="item_actions"  i18n:domain="plone" >
                       <div class="actionbtn">
                           <a class="context" tal:attributes="href provider/absolute_url"
@@ -101,35 +78,35 @@ tal:define="dummy python:request.set('disable_border',1)" />
                        </div>
                 </div>
             </div>
-        
+
             <div tal:condition="python: provider is None">
-                <!--a href="" tal:attributes="href view/create_provider_url"><span 
+                <!--a href="" tal:attributes="href view/create_provider_url"><span
                     i18n:translate="label_add_provider">Add Provider information</span></a><br /-->
                 <div i18n:translate="info_no_provider">There is currently no provider information available.
                 Please create a provider to be able to add Assessment Links.</div>
                 <br />
                 <form action="" tal:attributes="action view/create_provider_url">
                     <input type="hidden" name="type_name" value="Provider" />
-                    <input type="submit" class="standalone" value="Create Provider" 
+                    <input type="submit" class="standalone" value="Create Provider"
                         i18n:attributes="value"/>
                 </form>
             </div>
-        
+
         </fieldset>
         <br />
 
-        <div tal:define="myrals view/myrals; 
-            home_url view/home_url; 
-            provider_ok view/provider_ok;"> 
+        <div tal:define="myrals view/myrals;
+            home_url view/home_url;
+            provider_ok view/provider_ok;">
             <h2 i18n:translate="box_myral">My Links</h2>
-            
-                         
+
+
             <div tal:condition="not: provider_ok">
                 <span i18n:translate="help_complete_provider" tal:omit-tag="">
                     Please complete your Provider information. You need a valid provider record before you can add links.
                 </span>
             </div><br />
-  
+
             <div tal:condition="provider_ok">
                 <!--a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
                     Add a new Risk Assessment Link
@@ -140,9 +117,9 @@ tal:define="dummy python:request.set('disable_border',1)" />
                 </form>
             </div>
             <br />
-        
+
             <span tal:condition="provider_ok">
-                
+
                 <form>
                 <dl id="ras_results">
                   <span tal:repeat="obj myrals" tal:omit-tag="">
@@ -151,12 +128,12 @@ tal:define="dummy python:request.set('disable_border',1)" />
                                     plone_view context/@@plone;
                                     getIcon nocall:plone_view/getIcon;
                                     item_icon python:getIcon(obj);">
-                                    
+
                         <dt>
                           <img tal:replace="structure item_icon/html_tag" />&nbsp;<a href="#"
                                class="tile"
                                tal:attributes="href obj/getURL;
-                                               title obj/Description" 
+                                               title obj/Description"
                                tal:content="obj/pretty_title_or_id">Some Document</a>
                         </dt>
                         <dd>
@@ -164,29 +141,30 @@ tal:define="dummy python:request.set('disable_border',1)" />
                             <!-- Buttons - @Fux: wenn Du die Buttons hier nicht willst, schmeiss den Abschnitt einfach raus -->
                             <div class="item_actions" i18n:domain="plone" >
                               <div class="actionbtn">
-                                 <a class="context" tal:attributes="href obj/getURL" 
+                                 <a class="context" tal:attributes="href obj/getURL"
                                      i18n:translate="label_view">View</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit"
                                      i18n:translate="label_edit">Edit</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation" 
+                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation"
                                      i18n:translate="label_delete">Delete</a>
                               </div>
                               <div class="actionbtn" tal:condition="python:obj.review_state=='private'">
-                                 <a class="context" id="publish_button" tal:attributes="href string:${obj/getURL}/content_status_modify?workflow_action=publish" 
+                                 <a class="context" id="publish_button" tal:attributes="href string:${obj/getURL}/content_status_modify?workflow_action=publish"
                                      i18n:translate="Publish">Publish</a>
                               </div>
                             </div>
+                            <br clear="all" />
                             <!-- //Buttons -->
                         </dd>
                     </span>
                   </span>
                 </dl>
                 </form>
-            
+
                 <div tal:condition="not: myrals"><p class="discreet"
                     i18n:translate="description_no_riskassessmentlinks_in_folder">
                     There are currently no Risk Assessment Links in this folder.
@@ -194,8 +172,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
                 </div>
             </span>
         </div>
-    
-    
+
+
     </div>
   </body>
 </html>
