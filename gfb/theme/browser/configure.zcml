@@ -20,6 +20,22 @@
         permission="zope2.View" 
         />
 
+    <browser:viewletManager
+        name="gfb.edit.belowcontenttitle"
+        provides=".interfaces.IGFBEditBelowcontenttitle"
+        permission="zope2.View"
+        for="Products.RiskAssessmentLink.content.interfaces.IRiskAssessmentLink"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        />
+
+    <browser:viewlet
+        name="gfb.edit_help"
+        manager=".interfaces.IGFBEditBelowcontenttitle"
+        class=".viewlets.EditHelp"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+
     <browser:page
       for="*"
       name="workingarea"
