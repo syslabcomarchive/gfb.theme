@@ -22,4 +22,10 @@
   #ras_results dt { padding: 0.5em 0 0 0 !important; margin: 0; }
   #ras_results dd { margin: 0; padding: 0.5em 0em !important; border-bottom: 1px dotted gray; }
 
+.fieldRequired {
+background: url(&dtml-portal_url;/required.gif) center left no-repeat;
+padding: 0 0 0 8px;
+color: &dtml-fontColor;;
+}
+
 /* </dtml-with> */
