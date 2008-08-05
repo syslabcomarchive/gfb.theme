@@ -76,12 +76,15 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         <a class="context" id="publish_button" tal:attributes="href string:${provider/absolute_url}/content_status_modify?workflow_action=publish"
                             i18n:translate="Publish">Publish</a>
                        </div>
+                    <p class="item_actions" tal:condition="python:providerReviewState=='private'">
+                        <span i18n:domain="gfb" i18n:translate="label_publish_provider">Please publish 
+                        your provider information so that it will be visible to others.</span>
+                    </p>
                 </div>
+
             </div>
 
             <div tal:condition="python: provider is None">
-                <!--a href="" tal:attributes="href view/create_provider_url"><span
-                    i18n:translate="label_add_provider">Add Provider information</span></a><br /-->
                 <div i18n:translate="info_no_provider">There is currently no provider information available.
                 Please create a provider to be able to add Assessment Links.</div>
                 <br />
@@ -108,9 +111,6 @@ tal:define="dummy python:request.set('disable_border',1)" />
             </div><br />
 
             <div tal:condition="provider_ok">
-                <!--a tal:attributes="href string:${home_url}/createObject?type_name=RiskAssessmentLink" i18n:translate="link_add_ral">
-                    Add a new Risk Assessment Link
-                </a-->
                 <form action="#" tal:attributes="action string:${home_url}/createObject">
                     <input type="hidden" name="type_name" value="RiskAssessmentLink" />
                     <input type="submit" class="standalone" value="link_add_ral" i18n:attributes="value" />
@@ -138,7 +138,6 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         </dt>
                         <dd>
                             <div class="item_description" tal:content="obj/Description">desc</div>
-                            <!-- Buttons - @Fux: wenn Du die Buttons hier nicht willst, schmeiss den Abschnitt einfach raus -->
                             <div class="item_actions" i18n:domain="plone" >
                               <div class="actionbtn">
                                  <a class="context" tal:attributes="href obj/getURL"
@@ -158,7 +157,6 @@ tal:define="dummy python:request.set('disable_border',1)" />
                               </div>
                             </div>
                             <br clear="all" />
-                            <!-- //Buttons -->
                         </dd>
                     </span>
                   </span>

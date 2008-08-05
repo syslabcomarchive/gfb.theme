@@ -120,3 +120,8 @@ msgstr "Hier können Sie Ihre Anbieterinformation bearbeiten und Gefährgunsbeur
 #: password_form.pt
 msgid "label_to_workingarea"
 msgstr "Zurück zum Arbeitsbereich"
+
+#. Default "Please publish your provider information so that it will be visible to others."
+#: working_area.pt
+msgid "label_publish_provider"
+msgstr "Bitte veröffentlichen Sie Ihre Anbieterinformation, damit sie für andere sichtbar wird."
