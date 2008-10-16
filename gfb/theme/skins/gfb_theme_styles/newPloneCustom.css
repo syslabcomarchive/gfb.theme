@@ -26,7 +26,7 @@ html.kupu-html body {
 
 body {
     position: relative;
-    background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
+    background: #F7F7F7 url(bl-gr_bg.jpg) repeat-x;
     width: 980px;
     margin: 0px auto;
     font: 14px/17px "Times New Roman", Times, Georgia, serif;
@@ -130,7 +130,7 @@ display: block;
 }
 
 .LSBox input.searchButton {
-    background: transparent url(ico_search.gif) no-repeat 10px 3px;
+    background: transparent url(search_pink.gif) no-repeat 10px 3px;
     border: 0 none;
     font-weight: bold;
     color: white;
@@ -244,11 +244,11 @@ dl.portlet.portletMyProvider {
 }
 
 li.plussOK {
-    list-style-image: url(ico_criteria_passed.gif);
+    list-style-image: url(plussOK.gif);
 }
 
 li.minusNOK {
-    list-style-image: url(ico_criteria_missing.gif);
+    list-style-image: url(minusNOK.gif);
     color: #666;
 }
 
@@ -259,7 +259,6 @@ li.minusNOK {
 }
 
 dt.portletHeader span.tile,
-dt.portletHeader div.tile,
 .portletHeader a {
     color: whitesmoke;
     line-height: 27px;
@@ -291,27 +290,18 @@ dd.portletItem {
 .portletMyProvider .portletItem a {
     color: #171717;
     padding-left: 20px;
-    background: url(ico_link_internal.gif) no-repeat 10px 2px;
+    background: url(arrow_right9.gif) no-repeat 10px 2px;
 }
 
 .portletFooter {
     margin: 12px;
 }
 .portletFooter a,
-a.doublelink{
-    background: url(ico_link_external.gif) no-repeat 0 center;
+.doublelink {
+    background: url(arrow_double.gif) no-repeat 0 center;
     padding-left: 15px;
     font-weight: normal;
     font-style: normal;
-    color: #a8126a;
-}
-
-a.doublelink:visited{
-    color: #a8126a;
-}
-
-a.doublelink:hover{
-    color: #48628C;
 }
 
 /* @end */
@@ -392,7 +382,7 @@ a.doublelink:hover{
 }
 
 .navTreeFolderish {
-    background-image: url(ico_link_internal.gif);
+    background-image: url(arrow_right9.gif);
     background-position: 10px 2px;
     background-repeat: no-repeat;
 }
@@ -403,7 +393,7 @@ a.doublelink:hover{
 
 .navTreeCurrentItem {
     background-position: 8px 1px;
-    background-image: url(ico_link_subnavi_active.gif);
+    background-image: url(arrow_down9.gif);
     background-repeat: no-repeat;
 }
 
@@ -512,7 +502,7 @@ a {
 
 .singlelink {
     padding: 6px 30px;
-    background: #E5E6E8  url(ico_getinfo.gif) no-repeat 10px 8px;
+    background: #E5E6E8  url(gray_arrow_r.gif) no-repeat 10px 8px;
     display: block;
     color: #666;
     margin-bottom: 10px;
@@ -657,7 +647,7 @@ pre,
 .standalone {
     color: #A8126A;
     font-weight: bold;
-    background: #E5E6E8 url(ico_link_internal.gif) no-repeat 10px center;
+    background: #E5E6E8 url(arrow_right9.gif) no-repeat 10px center;
     padding-left: 24px;
 }
 
@@ -862,7 +852,6 @@ padding: 0 0 0 8px;
     color: &dtml-fontColor;
 ;
 }
-
 
 /* @end */
 

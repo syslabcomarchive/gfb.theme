@@ -29,9 +29,10 @@
             </metal:field>
         </p>
 
+
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        
+        <div id="providerinfo">
         <div class="documentUrl">
             <label i18n:translate="RemoteProvider_label_url">Url</label>
             <div>
@@ -40,7 +41,7 @@
                 </metal:field>
             </div>
         </div>
-<br/>
+
         <div>
             <label i18n:translate="RemoteProvider_label_providerCategory">ProviderCategory</label>
             <div>
@@ -49,18 +50,17 @@
                 </metal:field>
             </div>
         </div>
-
-
-
-        <h2 i18n:translate="label_schema_Contact Person" i18n:domain="plone">Contact Person</h2>
-        
+        </div>
+         
+<div id="providerperson">
+              
         <label i18n:translate="RemoteProvider_label_contact_name">Name</label>
         <div >
             <metal:field use-macro="python:here.widget('contact_name', mode='view')">
             Name
             </metal:field>
         </div>
-<br/>
+
         <label i18n:translate="RemoteProvider_label_address">Address</label>
         <div >
             <metal:field use-macro="python:here.widget('address', mode='view')">
@@ -68,7 +68,6 @@
             </metal:field>
         </div>
         
-        <br/>
         <label i18n:translate="RemoteProvider_label_phone">Phone</label>
         <p >
             <metal:field use-macro="python:here.widget('phone', mode='view')">
@@ -82,7 +81,14 @@
             Fax
             </metal:field>
         </p>
+        <label i18n:translate="remoteprovider_contact_url_label">Contact URL</label>
+        <p >
+            <metal:field use-macro="python:here.widget('contact_url', mode='view')">
+            Fax
+            </metal:field>
+        </p>
 
+</div>
 
 
 
@@ -97,4 +103,3 @@
 
 </body>
 </html>
-
