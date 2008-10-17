@@ -64,6 +64,7 @@
     name="getVocabularyPath"
     for="*"
     class=".vocabulary.VocabularyPathView"
+    layer=".interfaces.IThemeSpecific"
     permission="zope2.Public"
     />
 
