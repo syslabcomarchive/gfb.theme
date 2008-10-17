@@ -59,4 +59,12 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+  <!-- copied from osha.theme! remove when unifying gfb and osha... -->
+  <browser:page
+    name="getVocabularyPath"
+    for="*"
+    class=".vocabulary.VocabularyPathView"
+    permission="zope2.Public"
+    />
+
 </configure>
