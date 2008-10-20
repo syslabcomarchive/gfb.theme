@@ -47,7 +47,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
         </p>
 
         <fieldset tal:define="provider view/provider;
-                        providerReviewState view/providerReviewState">
+                        providerReviewState view/providerReviewState;
+                        adminOnProvider python:user.allowed(provider, ['Manager']);">
 
           <legend i18n:translate="box_myprovider">Provider information</legend>
 
@@ -68,11 +69,12 @@ tal:define="dummy python:request.set('disable_border',1)" />
                           <a class="context" tal:attributes="href provider/absolute_url"
                              i18n:translate="label_view">View</a>
                        </div>
-                       <div class="actionbtn">
+                       <div class="actionbtn" tal:condition="adminOnProvider">
                         <a class="context" tal:attributes="href string:${provider/absolute_url}/edit"
                              i18n:translate="label_edit">Edit</a>
                        </div>
-                      <div class="actionbtn" tal:condition="python:providerReviewState=='private'">
+                      <div class="actionbtn" tal:condition="python:adminOnProvider 
+                            and providerReviewState=='private'">
                         <a class="context" id="publish_button" tal:attributes="href string:${provider/absolute_url}/content_status_modify?workflow_action=publish"
                             i18n:translate="Publish">Publish</a>
                        </div>
