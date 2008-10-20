@@ -5,9 +5,9 @@ plone_skin:string=GFBTheme
 logoName:string=logo.jpg
 
 fontFamily:string="Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif
-fontBaseSize:string=69%
+fontBaseSize:string=80%
 fontColor:string=Black
-fontSmallSize:string=85%
+fontSmallSize:string=95%
 
 backgroundColor:string=White
 
