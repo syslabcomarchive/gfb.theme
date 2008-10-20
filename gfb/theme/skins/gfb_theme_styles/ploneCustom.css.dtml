@@ -27,6 +27,7 @@ html.kupu-html body {
 body {
     position: relative;
     background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
+    width: 980px;
     margin: 0px auto;
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
@@ -35,6 +36,7 @@ body {
     position: relative;
     background: #fff;
     text-align: left;
+    width: 980px;
     margin: 0 auto;
 }
 
