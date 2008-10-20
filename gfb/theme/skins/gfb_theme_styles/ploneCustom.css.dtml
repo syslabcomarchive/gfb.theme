@@ -29,7 +29,7 @@ body {
     background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
     width: 980px;
     margin: 0px auto;
-    font: 14px/17px "Times New Roman", Times, Georgia, serif;
+    font: 14px/17px Verdana, Helvetica, "Lucida Grande", Lucida, Arial, sans-serif;
 }
 
 #visual-portal-wrapper {
