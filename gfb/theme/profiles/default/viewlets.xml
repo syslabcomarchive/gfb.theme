@@ -5,6 +5,14 @@
       <viewlet name="plone.app.i18n.locales.languageselector"
          insert-before="*" />
     </hidden>
+    
+    <order manager="plone.portaltop" skinname="*"
+           based-on="Plone Default">
+           <viewlet name="gfb.topborder" />
+           <viewlet name="plone.header" />
+           <viewlet name="plone.personal_bar" />
+           <viewlet name="plone.path_bar" />
+       </order>
 
     <order manager="plone.portalheader" skinname="*">
         <viewlet name="plone.skip_links" />

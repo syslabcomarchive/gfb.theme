@@ -1057,6 +1057,10 @@ padding: 0 0 0 8px;
 }
 
 
+#gfb_topborder{
+    background: #e5e6e8
+}
+
 /* @end */
 
 /* </dtml-with> */

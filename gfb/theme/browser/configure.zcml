@@ -36,6 +36,13 @@
         permission="zope2.View" 
         />
 
+    <browser:viewlet
+        name="gfb.topborder"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        template="templates/topborder.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
 
   <browser:viewlet  
       name="plone.app.i18n.locales.languageselector"
@@ -44,6 +51,8 @@
       permission="zope2.View"
       layer=".interfaces.IThemeSpecific"
       />
+
+
 
 
     <browser:page
