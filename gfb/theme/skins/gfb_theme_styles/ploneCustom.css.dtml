@@ -390,6 +390,7 @@ li.minusNOK {
     background: #A8126A url(global_li_sel.jpg);
     padding-left: 10px;
     border: 1px solid #A8126A;
+    font-size:120%;
 }
 
 dt.portletHeader span.tile,
