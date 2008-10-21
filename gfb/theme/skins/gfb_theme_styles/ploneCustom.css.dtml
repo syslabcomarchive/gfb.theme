@@ -87,7 +87,7 @@ body {
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     line-height: 20px;
         float: right; 
-width: 300px;
+width: 350px;
 }
 
 #portal-siteactions li {
@@ -449,6 +449,29 @@ a.doublelink:hover{
 }
 
 /* @end */
+
+ul.staticPortlet{
+    width: 200px
+    display: block;
+    clear: both;
+    margin: 0px;
+    padding: 0 0 0 0;
+    margin: 0 0 10px 0;
+    height: 32px;
+    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
+    font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+}
+
+ul.staticPortlet li{
+    display: block;
+    margin: 0;
+    padding: 0 0 0 12px;
+    float: left;
+    color: white;
+    line-height: 32px;
+    font-weight: bold;
+    background: #424951 url(bg_topnavi_break.gif) repeat-x
+}
 
 /* @group Globalnav */
 
