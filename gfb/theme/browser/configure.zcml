@@ -36,6 +36,16 @@
         permission="zope2.View" 
         />
 
+
+  <browser:viewlet  
+      name="plone.app.i18n.locales.languageselector"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class="Products.LinguaPlone.browser.selector.TranslatableLanguageSelector"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+
     <browser:page
       for="*"
       name="workingarea"
