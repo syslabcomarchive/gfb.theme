@@ -680,9 +680,6 @@ a:hover {
     color: #48628C;
 }
 
-a:visited {
-    color: #9DA1A0;
-}
 
 ul {
     list-style-type: disc;
