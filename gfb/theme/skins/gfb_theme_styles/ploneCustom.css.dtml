@@ -347,16 +347,14 @@ top: 0;
 margin: 0;
 }
 
-#portal-column-two dt.portletHeader {
-    background: #4B516B;
-    padding: 0px 12px;
-    color: whitesmoke;
-    margin-bottom: 5px;
-    font: 16px/20px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    vertical-align: middle;
+/*#portal-column-two dt.portletHeader {
     margin-top: 0;
-    border: 0 none;
-}
+    border: 0 none;    
+    height:32px;
+    line-height:normal;
+    margin:0 0 10px 0;
+    vertical-align: middle;
+}*/
 
 
 dl.portlet.portletMyProvider {
@@ -387,11 +385,25 @@ li.minusNOK {
 }
 
 .portletHeader {
+    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
+    border: 1px solid #424951;
+    font-size:100%;
+    color:whitesmoke;
+    padding: 0 12px;
+    color: whitesmoke;
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+    vertical-align: middle;
+    line-height:27px;
+}
+
+
+dl.portletNavigationTree dt.portletHeader {
     background: #A8126A url(global_li_sel.jpg);
     padding-left: 10px;
     border: 1px solid #A8126A;
     font-size:120%;
 }
+
 
 dt.portletHeader span.tile,
 dt.portletHeader div.tile,
@@ -450,6 +462,8 @@ a.doublelink:hover{
 }
 
 /* @end */
+
+
 
 ul.staticPortlet{
     width: 200px
