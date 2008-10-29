@@ -13,6 +13,7 @@
 
 html.kupu-html body {
     width: 95%;
+    background: white;
 }
 
 /* */
