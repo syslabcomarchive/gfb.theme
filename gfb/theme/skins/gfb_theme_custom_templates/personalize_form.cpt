@@ -21,12 +21,12 @@
 
      <div class="documentEditable">
 
-            <h5 class="hiddenStructure" i18n:domain="plone" i18n:translate="">Views</h5>
+            <h5 class="hiddenStructure">Views</h5>
         
             <ul class="contentViews">
               <li>
                 <a href=""
-                   tal:attributes="href string: ${portal_url}/author/${member}"
+                   tal:attributes="href string:${portal_url}/author/${member}"
                    i18n:translate="label_view">View</a>
               </li>
               <li class="selected">
@@ -51,12 +51,16 @@
                 <h1 class="documentFirstHeading"
                     i18n:translate="heading_my_preferences">Personal Preferences</h1>
 
-                <a href=""
-                   class="link-parent"
-                   tal:attributes="href string:${portal_url}/dashboard"
-                   i18n:translate="label_to_dashboard">
-                    Up to my dashboard
-                </a>
+            <a href=""
+               class="link-parent"
+               tal:define="pm here/portal_membership;
+                           hf pm/getHomeFolder;
+                           url python:hf and hf.absolute_url() or here.portal_url()"
+               tal:attributes="href url"
+               i18n:domain="gfb"
+               i18n:translate="label_to_workingarea">
+                Up to my working area
+            </a>
 
                 <p i18n:translate="description_my_preferences">
                 Your personal settings.
@@ -133,37 +137,13 @@
                         </tal:macro>
 
                         <div class="field"
-                             tal:define="error errors/postalAddress | nothing;
-                                         postalAddress python:request.get('postalAddress', member.getProperty('postalAddress', ''));"
+                             tal:define="error errors/location | nothing;
+                                         location python:request.get('location', member.getProperty('location', ''));"
                              tal:attributes="class python:test(error, 'field error', 'field')">
 
-                            <label for="postalAddress" i18n:translate="label_postalAddress">Postal Address</label>
+                            <label for="location" i18n:translate="label_location">Location</label>
 
-                            <div class="formHelp" i18n:translate="help_postalAddress">
-                            Your address.
-                            </div>
-
-                            <div tal:content="error">Validation error output</div>
-
-                            <input type="text"
-                                   id="postalAddress"
-                                   name="postalAddress"
-                                   size="25"
-                                   value="member.postalAddress html_quote"
-                                   tal:attributes="value postalAddress;
-                                                   disabled python:member.canWriteProperty('postalAddress') and default or 'disabled'"
-                                   />
-
-                        </div>
-
-                        <div class="field"
-                             tal:define="error errors/localityName | nothing;
-                                         localityName python:request.get('localityName', member.getProperty('localityName', ''));"
-                             tal:attributes="class python:test(error, 'field error', 'field')">
-
-                            <label for="localityName" i18n:translate="label_localityName">Locality Name</label>
-
-                            <div class="formHelp" i18n:translate="help_localityName">
+                            <div class="formHelp" i18n:translate="help_location">
                             Your location - either city and country - or in a company setting,
                             where your office is located.
                             </div>
@@ -171,84 +151,12 @@
                             <div tal:content="error">Validation error output</div>
 
                             <input type="text"
-                                   id="localityName"
-                                   name="localityName"
+                                   id="location"
+                                   name="location"
                                    size="25"
-                                   value="member.localityName html_quote"
-                                   tal:attributes="value localityName;
-                                                   disabled python:member.canWriteProperty('localityName') and default or 'disabled'"
-                                   />
-
-                        </div>
-
-                        <div class="field"
-                             tal:define="error errors/stateOrProvinceName | nothing;
-                                         stateOrProvinceName python:request.get('stateOrProvinceName', member.getProperty('stateOrProvinceName', ''));"
-                             tal:attributes="class python:test(error, 'field error', 'field')">
-
-                            <label for="localityName" i18n:translate="label_stateOrProvinceName">Country</label>
-
-                            <div class="formHelp" i18n:translate="help_stateOrProvinceName">
-                            Your country.
-                            </div>
-
-                            <div tal:content="error">Validation error output</div>
-
-                            <input type="text"
-                                   id="stateOrProvinceName"
-                                   name="stateOrProvinceName"
-                                   size="25"
-                                   value="member.stateOrProvinceName html_quote"
-                                   tal:attributes="value stateOrProvinceName;
-                                                   disabled python:member.canWriteProperty('stateOrProvinceName') and default or 'disabled'"
-                                   />
-
-                        </div>
-
-                        <div class="field"
-                             tal:define="error errors/telephoneNumber | nothing;
-                                         telephoneNumber python:request.get('telephoneNumber', member.getProperty('telephoneNumber', ''));"
-                             tal:attributes="class python:test(error, 'field error', 'field')">
-
-                            <label for="telephoneNumber" i18n:translate="label_telephoneNumber">Telephone</label>
-
-                            <div class="formHelp" i18n:translate="help_telephoneNumber">
-                            Your telephone number.
-                            </div>
-
-                            <div tal:content="error">Validation error output</div>
-
-                            <input type="text"
-                                   id="telephoneNumber"
-                                   name="telephoneNumber"
-                                   size="25"
-                                   value="member.telephoneNumber html_quote"
-                                   tal:attributes="value telephoneNumber;
-                                                   disabled python:member.canWriteProperty('telephoneNumber') and default or 'disabled'"
-                                   />
-
-                        </div>
-
-                        <div class="field"
-                             tal:define="error errors/facsimileTelephoneNumber | nothing;
-                                         facsimileTelephoneNumber python:request.get('facsimileTelephoneNumber', member.getProperty('facsimileTelephoneNumber', ''));"
-                             tal:attributes="class python:test(error, 'field error', 'field')">
-
-                            <label for="facsimileTelephoneNumber" i18n:translate="label_facsimileTelephoneNumber">Fax</label>
-
-                            <div class="formHelp" i18n:translate="help_facsimileTelephoneNumber">
-                            Your fax number.
-                            </div>
-
-                            <div tal:content="error">Validation error output</div>
-
-                            <input type="text"
-                                   id="facsimileTelephoneNumber"
-                                   name="facsimileTelephoneNumber"
-                                   size="25"
-                                   value="member.facsimileTelephoneNumber html_quote"
-                                   tal:attributes="value facsimileTelephoneNumber;
-                                                   disabled python:member.canWriteProperty('facsimileTelephoneNumber') and default or 'disabled'"
+                                   value="member.location html_quote"
+                                   tal:attributes="value location;
+                                                   disabled python:member.canWriteProperty('location') and default or 'disabled'"
                                    />
 
                         </div>
@@ -286,7 +194,7 @@
                                          description python:request.get('description', member.getProperty('description', ''));"
                              tal:attributes="class python:test(error, 'field error', 'field')">
 
-                            <label for="description" i18n:translate="label_description">Description</label>
+                            <label for="description" i18n:translate="label_biography">Biography</label>
 
                             <div class="formHelp" i18n:translate="help_biography">
                             A short overview of who you are and what you do. Will be displayed
@@ -527,3 +435,5 @@
 
 </body>
 </html>
+
+
