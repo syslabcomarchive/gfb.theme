@@ -18,7 +18,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                              getIconFor nocall:putils/getIconFor" >
                 <ul>
                     <tal:groups condition="groups"
-                        define="allowed python:['MemberPassword']">
+                        define="allowed python:['MemberPrefs']">
                         <tal:group repeat="group groups">
                             <tal:configlets repeat="configlet python:controlPanel.enumConfiglets(group=group['id'])">
                                 <li tal:condition="python:configlet['id'] in allowed and configlet['visible']">
