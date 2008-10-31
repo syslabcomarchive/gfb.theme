@@ -9,6 +9,29 @@
 
 /* <dtml-with base_properties> */
 
+#you-have-chosen {
+    float:left;
+    margin:0;
+    width:200px;
+    height:32px;
+    background-color: #2b3c52;
+    font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    color: #cccedf;
+    clear: both;
+    display: block;
+    line-height:32px;
+}
+#you-have-chosen span {
+    font-size:11px;
+    padding-left: 12px;
+}
+
+.feedmixer-more-link {
+    text-align:right;
+}
+.feedmixer-title {
+    font-weight: normal;
+}
 /* kupu bug */
 
 html.kupu-html body {
@@ -29,16 +52,22 @@ body {
     position: relative;
     background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
     width: 100%;
-    margin: 0px auto;
+    //margin: 0px auto;
+    text-align:center;
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
-
+#border-wrapper {
+    padding: 0 22px;
+    margin: 0 auto;
+    text-align:center;
+}
 #visual-portal-wrapper {
     position: relative;
     background: #fff;
     text-align: left;
-    width: 980px;
     margin: 0 auto;
+    min-width: 980px;
+    max-width: 1236px;
 }
 
 
@@ -72,7 +101,7 @@ body {
 #portal-searchbox {
     display: block;
     width: 235px;
-    float: left;
+    float: right;
     background: #424951 url(bg_topnavi_break.gif) repeat-x;
     font-size: 85%;
     height: 32px;
@@ -111,8 +140,9 @@ width: 350px;
 
 div#portal-personaltools-wrapper {
     float: right;
-width: 230px;
-display: block;
+    width: 230px;
+    display: block;
+    clear: both;
 }
 
 #portal-personaltools li {
@@ -385,14 +415,14 @@ li.minusNOK {
     color: #666;
 }
 
+
 .portletHeader {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
     border: 1px solid #424951;
     font-size:100%;
     color:whitesmoke;
     padding: 0 12px;
     color: whitesmoke;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+    background: #424951 ;
     vertical-align: middle;
     line-height:27px;
 }
@@ -473,8 +503,8 @@ ul.staticPortlet{
     margin: 0px;
     padding: 0 0 0 0;
     margin: 0 0 10px 0;
-    height: 32px;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
+    height: 30px;
+    background: #4B516B; repeat-x 200px;
     font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
@@ -484,30 +514,30 @@ ul.staticPortlet li{
     padding: 0 0 0 12px;
     float: left;
     color: white;
-    line-height: 32px;
-    font-weight: bold;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x
+    line-height: 30px;
+    //font-weight: bold;
+    background: #4B516B repeat-x;
+    font-size: 12px;
 }
 
 /* @group Globalnav */
 
 #portal-globalnav {
     width: 545px;
-    float: left;
-    clear: both;
     display: block;
     margin: 0px;
-    padding: 0 0 0 200px;
+    padding: 0;
     height: 32px;
     background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    float:left;
 }
 
 #portal-globalnav li {
     display: block;
     margin: 0;
     padding: 0 24px 0 12px;
-    border-right: 2px solid #424951;
+    border-right: 1px solid #424951;
     float: left;
     background: #424951 url(bg_topnavi_break.gif) repeat-x
 }
@@ -515,7 +545,8 @@ ul.staticPortlet li{
 #portal-globalnav li a {
     line-height: 32px;
     color: white;
-    font-weight: bold;
+    //font-weight: bold;
+    font-size: 12px;
 }
 
 #portal-globalnav li:hover, 
@@ -524,7 +555,7 @@ ul.staticPortlet li{
 }
 
 #portal-globalnav li a:hover {
-    color: black;
+    color: white;
 }
 
 /* @end */
@@ -557,6 +588,7 @@ ul.staticPortlet li{
 
 .navTreeLevel1 li {
     background-color: #CED2D7;
+    
 }
 
 .navTreeLevel2 li,
@@ -565,27 +597,51 @@ ul.staticPortlet li{
 }
 
 .navTreeFolderish {
-    background-image: url(ico_link_internal.gif);
-    background-position: 10px 2px;
-    background-repeat: no-repeat;
+    //background-image: url(ico_link_internal.gif);
+    //background-position: 10px 2px;
+    //background-repeat: no-repeat;
+    text-indent:-20px;
+}
+
+li.navTreeItem {
+    list-style-type: none;
+    list-style-image: url(ico_link_internal.gif);
+    margin-left:20px;
+    text-indent:-20px;
+    margin-top: 1px;
+    margin-bottom:1px;
+    //border-bottom: 1px solid #4a5b6d;
+
+    
+}
+li.navTreeCurrentNode {
+    list-style-image: url(ico_link_subnavi_active.gif);
+}
+ul.navTreeLevel0 {
+    background:#A3AAB2 none repeat scroll 0 0;
+}
+ul.navTreeLevel1 {
+    background:#CED2D7 none repeat scroll 0 0;
+    margin-left:-20px;
+    padding-left: 20px;
 }
 
 .navTreeFolderish span {
     padding-left: 10px;
 }
 
-.navTreeCurrentItem {
+/*.navTreeCurrentItem {
     background-position: 8px 1px;
     background-image: url(ico_link_subnavi_active.gif);
     background-repeat: no-repeat;
-}
+}*/
 
 .navTreeLevel0 li a {
     padding-left: 10px;
 }
 
 .navTreeLevel1 li a {
-    margin-left: 10px;
+    //margin-left: 10px;
 }
 
 /* @end */
@@ -1092,6 +1148,14 @@ padding: 0 0 0 8px;
 #gfb_topborder{
     background: #e5e6e8
 }
+
+#portal-column-one .portletHeader {
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+}
+#portal-column-one ul.staticPortlet, #portal-column-one ul.staticPortlet li  {
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+}
+
 
 /* @end */
 

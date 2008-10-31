@@ -26,11 +26,17 @@
                 Nov 1
             </span>
             <br />
-            <a href=""
-               tal:attributes="href entry/link;
-                               title entry/title">
-                <span tal:replace="structure entry/title">Title</span>
-            </a>
+            <div class="feedmixer-title">
+                <span tal:replace="structure entry/title">Title</span><br/>
+            </div>
+            <div class="feedmixer-more-link">
+                <a href=""
+                    tal:attributes="href entry/link;
+                                    title entry/title"
+                    i18n:domain="plone"
+                    i18n:translate="box_morelink">more...
+                </a>
+            </div>
         </dd>
     </tal:entry>
     

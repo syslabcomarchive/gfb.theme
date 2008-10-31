@@ -15,6 +15,9 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: gfb\n"
 
+#:../gfb/portal_view_customizations/zope.interface.interface-plone.global_sections
+msgid "label_you_have_chosen"
+msgstr "Sie haben gewählt:"
 
 #: ../portlets/help.py:51
 msgid "Add Help Portlet"
