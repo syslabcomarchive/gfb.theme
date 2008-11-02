@@ -5,12 +5,12 @@
     <dt class="portletHeader">
         <a href="#"
               class="tile"
-              tal:condition="python:len(request.PARENTS)>3"
-              tal:content="python:request.PARENTS[-4].Title()">
+              tal:condition="python:len(request.PARENTS)>4"
+              tal:content="python:request.PARENTS[-5].Title()">
         </a>
         <a href="#" 
            class="tile"
-           tal:condition="python:len(request.PARENTS)<4"
+           tal:condition="python:len(request.PARENTS)<5"
            tal:attributes="href string:${root/absolute_url}/sitemap" 
            i18n:translate="box_navigation">Navigation</a>
     </dt>
