@@ -517,6 +517,14 @@ a.doublelink:hover{
     color: #48628C;
 }
 
+.portlet-static-unsere-partner {
+    background: url(partner-bg.jpg) repeat-x 0 0;
+    height: 243px;
+}
+.portlet-static-unsere-partner ul.staticPortlet li {
+    font-weight: normal;
+    font-size: 11px;
+}
 /* @end */
 
 
