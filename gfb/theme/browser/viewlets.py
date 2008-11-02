@@ -11,3 +11,6 @@ class EditHelp(ViewletBase):
     
 class SiteTitleViewlet(ViewletBase):
     render = ViewPageTemplateFile('templates/site_title.pt')
+    
+    
+    

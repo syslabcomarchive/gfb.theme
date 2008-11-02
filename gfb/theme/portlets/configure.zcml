@@ -54,5 +54,12 @@
      class=".feedmixer.Renderer" 
      />
 
+ <!-- Custom navigation portlet -->
+ <plone:portletRenderer 
+     portlet="plone.app.portlets.portlets.navigation.INavigationPortlet" 
+     layer="gfb.theme.browser.interfaces.IThemeSpecific"
+     class=".navigation.Renderer" 
+     />  
+
 
 </configure>

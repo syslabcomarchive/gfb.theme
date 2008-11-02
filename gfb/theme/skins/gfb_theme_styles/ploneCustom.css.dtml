@@ -443,13 +443,22 @@ li.minusNOK {
     line-height:27px;
 }
 
+#portal-column-one .portletHeader {
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+    border: 1px solid #424951;
+}
+#portal-column-one ul.staticPortlet, #portal-column-one ul.staticPortlet li  {
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+}
 
-dl.portletNavigationTree dt.portletHeader {
+
+#portal-column-one dl.portletNavigationTree dt.portletHeader {
     background: #A8126A url(global_li_sel.jpg);
     padding-left: 10px;
     border: 1px solid #A8126A;
     font-size:100%;
 }
+
 
 
 dt.portletHeader span.tile,
@@ -594,75 +603,65 @@ ul.staticPortlet li{
     margin: 0;
 }   
 .portletNavigationTree li {
-    background: #A3AAB2;
-    margin-bottom: 1px;
+    background: #d8dbe0;
+    //margin-bottom: 1px;
     line-height: 21px;
 }
-
-.portletNavigationTree span {
-    padding-left: 10px;
+.portletNavigationTree li a:hover {
+    background-color: #e9eaef;
 }
 
 .portletNavigationTree li a {
-    color: #171717;
+    color: #000000;
 }
 
 .navTreeLevel1 li {
-    background-color: #CED2D7;
+    background-color: #ffffff;
     
 }
 
 .navTreeLevel2 li,
 .navTreeLevel3 li {
-    background-color: #E7E9EB;
-}
-
-.navTreeFolderish {
-    //background-image: url(ico_link_internal.gif);
-    //background-position: 10px 2px;
-    //background-repeat: no-repeat;
-    text-indent:-20px;
+    background-color: #ffffff;
 }
 
 li.navTreeItem {
-    list-style-type: none;
-    list-style-image: url(ico_link_internal.gif);
-    margin-left:20px;
-    text-indent:-20px;
-    margin-top: 1px;
-    margin-bottom:1px;
-    //border-bottom: 1px solid #4a5b6d;
+    margin: 0 0 0 0px;
+    border-bottom: 1px solid #4a5b6d;
+}
 
-    
+.navTreeLevel0 a.navTreeCurrentItem {
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 6px;
 }
-li.navTreeCurrentNode {
-    list-style-image: url(ico_link_subnavi_active.gif);
+.navTreeLevel0 a.navTreeItemInPath  {
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 6px;
 }
+
+.navTreeLevel1 a.navTreeCurrentItem {
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 6px;
+}
+.navTreeLevel1 a.navTreeItemInPath  {
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 6px;
+}
+
+
 ul.navTreeLevel0 {
-    background:#A3AAB2 none repeat scroll 0 0;
+    background:#d8dbe0 none repeat scroll 0 0;
 }
 ul.navTreeLevel1 {
-    background:#CED2D7 none repeat scroll 0 0;
-    margin-left:-20px;
+    background:#ffffff none repeat scroll 0 0;
+    border-top:1px solid #4A5B6D;
+}
+
+
+.navTreeLevel0 li div a  {
     padding-left: 20px;
+    display: block;
 }
 
-.navTreeFolderish span {
-    padding-left: 10px;
-}
-
-/*.navTreeCurrentItem {
-    background-position: 8px 1px;
-    background-image: url(ico_link_subnavi_active.gif);
-    background-repeat: no-repeat;
-}*/
-
-.navTreeLevel0 li a {
-    padding-left: 10px;
-}
-
-.navTreeLevel1 li a {
-    //margin-left: 10px;
+.navTreeLevel1 li div a {
+    padding-left: 30px;
+    display: block;
 }
 
 /* @end */
@@ -1170,12 +1169,7 @@ padding: 0 0 0 8px;
     background: #e5e6e8
 }
 
-#portal-column-one .portletHeader {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
-}
-#portal-column-one ul.staticPortlet, #portal-column-one ul.staticPortlet li  {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
-}
+
 
 
 /* @end */
