@@ -52,7 +52,13 @@
       layer=".interfaces.IThemeSpecific"
       />
 
-
+  <browser:viewlet
+      name="gfb.site_title"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      class=".viewlets.SiteTitleViewlet"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View" 
+      />
 
 
     <browser:page

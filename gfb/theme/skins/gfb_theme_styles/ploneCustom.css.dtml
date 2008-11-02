@@ -17,7 +17,7 @@
     background-color: #2b3c52;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #cccedf;
-    clear: both;
+    //clear: both;
     display: block;
     line-height:32px;
 }
@@ -78,7 +78,7 @@ body {
 }
 
 #portal-header {
-    background: white url(blue_bg.jpg ) no-repeat right top;
+    background: #4f647c url(blue_bg.jpg ) no-repeat left top;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -98,6 +98,22 @@ body {
     display: block;
 }
 
+#gfb_site_title {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: FranklinICTDemi, Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: 1px;
+    color: white;
+    position:relative;
+    float:right;
+    top:50px;
+    right: 12px;
+    display: block;
+    clear: right;
+}
+
+
+
 #portal-searchbox {
     display: block;
     width: 235px;
@@ -116,8 +132,8 @@ body {
 #portal-siteactions {
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     line-height: 20px;
-        float: right; 
-width: 350px;
+    float: right; 
+    width: 350px;
 }
 
 #portal-siteactions li {
@@ -522,15 +538,20 @@ ul.staticPortlet li{
 
 /* @group Globalnav */
 
+#portal-globalnav-box {
+    margin-left:200px;
+    margin-right:250px;
+    width:100%;
+}
 #portal-globalnav {
-    width: 545px;
+    //width: 545px;
     display: block;
-    margin: 0px;
+    margin: 0px 250px 0 0 ;
     padding: 0;
     height: 32px;
     background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    float:left;
+    //float:left;
 }
 
 #portal-globalnav li {

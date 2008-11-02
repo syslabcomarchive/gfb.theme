@@ -8,3 +8,6 @@ class PersonalBarViewletGFB(PersonalBarViewlet):
 
 class EditHelp(ViewletBase):
     render = ViewPageTemplateFile('editing_help.pt')
+    
+class SiteTitleViewlet(ViewletBase):
+    render = ViewPageTemplateFile('templates/site_title.pt')
