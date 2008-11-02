@@ -4,6 +4,7 @@
            based-on="Plone Default">
       <viewlet name="plone.app.i18n.locales.languageselector"
          insert-before="*" />
+      <viewlet name="plone.path_bar" />
     </hidden>
     
     <order manager="plone.portaltop" skinname="*"
@@ -11,7 +12,7 @@
            <viewlet name="gfb.topborder" />
            <viewlet name="plone.header" />
            <viewlet name="plone.personal_bar" />
-           <viewlet name="plone.path_bar" />
+           <viewlet name="gfb.path_bar" />
        </order>
 
     <order manager="plone.portalheader" skinname="*">
@@ -20,8 +21,8 @@
         <viewlet name="plone.site_actions" />
         <viewlet name="gfb.site_title" />
         <viewlet name="plone.logo" />
-        <viewlet name="plone.global_sections" />
         <viewlet name="plone.searchbox" />
+        <viewlet name="plone.global_sections" />
     </order>
 
 </object>

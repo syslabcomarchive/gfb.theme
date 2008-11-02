@@ -1,0 +1,12 @@
+
+#breadcrumbs-you-are-here:click {
+    action-client: toggleClass;
+    toggleClass-kssSelector: css("#hidden-path-bar");
+    toggleClass-value: 'hide-path-bar';
+
+    action-client: toggleClass;
+    toggleClass-kssSelector: css("#portal-breadcrumbs");
+    toggleClass-value: 'portal-breadcrumbs-highlighted';
+
+    
+}

@@ -16,11 +16,11 @@
             tal:define="oddrow repeat/entry/odd"
             tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
 
-            <img src="" 
+            <!--img src="" 
                  tal:attributes="src string:${here/portal_url}/newsitem_icon.gif"
                  alt="News Article Icon"
                  title="News Article Icon"
-                 />
+                 /-->
             <span class="portletItemDetails"
                 tal:content="python:toLocalizedTime(entry['updated'])">
                 Nov 1
@@ -33,7 +33,7 @@
                 <a href=""
                     tal:attributes="href entry/link;
                                     title entry/title"
-                    i18n:domain="plone"
+                    i18n:domain="gfb"
                     i18n:translate="box_morelink">more...
                 </a>
             </div>
@@ -41,10 +41,10 @@
     </tal:entry>
     
     <dd class="portletFooter">
-      <a href="#"
+      <!--a href="#"
           class="tile"
           tal:attributes="href view/more_url"
-          i18n:translate="box_full_feed_view">More&hellip;</a>
+          i18n:translate="box_full_feed_view">More&hellip;</a-->
         <span class="portletBottomLeft"></span>
         <span class="portletBottomRight"></span>
     </dd>

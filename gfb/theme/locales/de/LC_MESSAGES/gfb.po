@@ -15,6 +15,15 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: gfb\n"
 
+
+#:../browser/templates/path_pat.pt
+msgid "you_are_here"
+msgstr "Sie befinden sich hier ..."
+
+#:../portlets/feedmixer.pt:37
+msgid "box_morelink"
+msgstr "mehr infos"
+
 #:../browser/viewlets:SiteTitleViewlet
 msgid "title_risk_assessment"
 msgstr "GEFÄHRDUNGSBEURTEILUNG"
@@ -22,6 +31,11 @@ msgstr "GEFÄHRDUNGSBEURTEILUNG"
 #:../gfb/portal_view_customizations/zope.interface.interface-plone.global_sections
 msgid "label_you_have_chosen"
 msgstr "Sie haben gewählt:"
+
+#:../gfb/portal_view_customizations/zope.interface.interface-plone.global_sections
+msgid "label_homepage"
+msgstr "Startseite"
+
 
 #: ../portlets/help.py:51
 msgid "Add Help Portlet"

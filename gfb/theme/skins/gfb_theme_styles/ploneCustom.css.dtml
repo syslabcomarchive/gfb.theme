@@ -29,6 +29,11 @@
 .feedmixer-more-link {
     text-align:right;
 }
+.feedmixer-more-link a {
+    padding-left: 20px;
+    font-size:12px;
+    background: url(ico_link_internal.gif) no-repeat 8px 2px;
+}
 .feedmixer-title {
     font-weight: normal;
 }
@@ -172,21 +177,32 @@ div#portal-personaltools-wrapper {
 }   
 
 #portal-breadcrumbs {
-    clear: left;
+    //clear: left;
     border-left: 200px solid #4a5b6d;
     height: 35px;
     padding: 10px 10px 10px  22px;
     font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #666;
-    width: 500px;;
-    float: left;
     display: block;
+    margin-right: 235px;
 }
+.portal-breadcrumbs-highlighted {
+    background: #e5e6e8 none repeat scroll 0 0 ;
+}
+.portal-breadcrumbs-highlighted #hidden-path-bar {
+    display: inline;
+}
+
+.portal-breadcrumbs-highlighted #breadcrumbs-you-are-here {
+    background: url(lc_active.gif) no-repeat 2px 0px;
+    padding-left: 20px;
+}
+
 
 .LSBox input.searchButton {
     background: transparent url(ico_search.gif) no-repeat 10px 3px;
     border: 0 none;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
     font-size: 110%;
     width: 70px;
@@ -377,7 +393,8 @@ top: 0;
 #portal-column-two {
     width: 235px;
     padding: 0;
-    background: white url(blue_forl.jpg) repeat-x;
+    //background: white url(blue_forl.jpg) repeat-x;
+    background: white url(col2-bg.jpg) repeat-x;
     border-left: 1px solid #ccc;
 }
 
@@ -389,19 +406,43 @@ top: 0;
 
 /* @group Portlets */
 
-.portlet {
-    font: bold 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-margin: 0;
+#slc-linkcollection-linkbox {
+    border: 0px;
+    background-color: #ebecf0;
+    top: -10px;
+    position:relative;
+}
+#slc-linkcollection-linkbox ul {
+    padding:0;
+    margin:0;
+    text-indent: 0;
+}
+#slc-linkcollection-linkbox ul li {
+    list-style-image: none;
+    list-style: none;
+    padding:0;
+    margin: 0px;
+}
+#slc-linkcollection-linkbox ul li.linkList a {
+    background: url(lc_inactive.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    color: black;
+    font-weight: normal;
 }
 
-/*#portal-column-two dt.portletHeader {
-    margin-top: 0;
-    border: 0 none;    
-    height:32px;
-    line-height:normal;
-    margin:0 0 10px 0;
-    vertical-align: middle;
-}*/
+#slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
+    background: url(lc_active.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.portlet {
+    font: bold 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    margin: 0;
+}
+
 
 
 dl.portlet.portletMyProvider {
@@ -433,12 +474,12 @@ li.minusNOK {
 
 
 .portletHeader {
-    border: 1px solid #424951;
+    border: 1px solid #415063;
     font-size:100%;
     color:whitesmoke;
     padding: 0 12px;
     color: whitesmoke;
-    background: #424951 ;
+    background: #415063 ;
     vertical-align: middle;
     line-height:27px;
 }
@@ -621,6 +662,7 @@ ul.staticPortlet li{
 
 .portletNavigationTree li a {
     color: #000000;
+    line-height: 1.6em;
 }
 
 .navTreeLevel1 li {
@@ -635,21 +677,22 @@ ul.staticPortlet li{
 
 li.navTreeItem {
     margin: 0 0 0 0px;
-    border-bottom: 1px solid #4a5b6d;
+    border-top: 1px solid #4a5b6d;
+    border-collapse: collapse;
 }
 
 .navTreeLevel0 a.navTreeCurrentItem {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 6px;
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
 }
 .navTreeLevel0 a.navTreeItemInPath  {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 6px;
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
 }
 
 .navTreeLevel1 a.navTreeCurrentItem {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 6px;
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 4px;
 }
 .navTreeLevel1 a.navTreeItemInPath  {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 6px;
+    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 4px;
 }
 
 
@@ -658,7 +701,7 @@ ul.navTreeLevel0 {
 }
 ul.navTreeLevel1 {
     background:#ffffff none repeat scroll 0 0;
-    border-top:1px solid #4A5B6D;
+    //border-top:1px solid #4A5B6D;
 }
 
 
@@ -674,18 +717,31 @@ ul.navTreeLevel1 {
 
 /* @end */
 
+
+/* @path_bar */
+#breadcrumbs-you-are-here {
+    background: url(lc_inactive.gif) no-repeat 2px 0px;
+    padding-left: 20px;
+}
+.hide-path-bar {
+    display: none;
+}
+
+/* @end */
+
 /* @group text */
 
 .documentFirstHeading{
-    background-color: #4B516B;
-    padding: 4px 8px;
+    background-color: #415063;
+    padding: 4px 8px 4px 8px;
     color: whitesmoke;
-    margin-bottom: 15px;
+    //margin-bottom: 5px;
     font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     vertical-align: middle;
     margin-top: 0;
     font-weight: bold;
 }
+
 
 
 h2 {
@@ -743,7 +799,7 @@ display: block !important;
 
 
 .documentDescription{
-    padding: 6px 0px;
+    padding: 6px 0px 0px 0px;
     font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 

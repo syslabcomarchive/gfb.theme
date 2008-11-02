@@ -1,5 +1,5 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet
+from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):
@@ -13,4 +13,6 @@ class SiteTitleViewlet(ViewletBase):
     render = ViewPageTemplateFile('templates/site_title.pt')
     
     
+class PathBarViewletGFB(PathBarViewlet):
+    render = ViewPageTemplateFile('templates/path_bar.pt')
     

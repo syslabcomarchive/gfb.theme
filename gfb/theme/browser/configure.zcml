@@ -60,6 +60,15 @@
       permission="zope2.View" 
       />
 
+  <!-- The breadcrumbs -->
+  <browser:viewlet
+      name="gfb.path_bar"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".viewlets.PathBarViewletGFB"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+
 
     <browser:page
       for="*"
