@@ -45,7 +45,7 @@ html.kupu-html body {
     text-align:left;
 }
 /* fck text alignment */
-iframe html body.content {
+iframe html body#content {
     text-align:left;
 }
 /* */
