@@ -44,7 +44,10 @@ html.kupu-html body {
     background: white;
     text-align:left;
 }
-
+/* fck text alignment */
+iframe html body.content {
+    text-align:left;
+}
 /* */
 
 * {
