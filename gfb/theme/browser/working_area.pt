@@ -43,12 +43,15 @@ tal:define="dummy python:request.set('disable_border',1)" />
 
         <p class="discreet"
             i18n:translate="workingarea_intro">
-          Here you can add a Provider and manage your Risk Assessment Links.
+          Here you can manage your Risk Assessment Links.
         </p>
 
+        <!-- The box for the provider is shown only when no provider is present yet
+            or if the user has Manager rights on the provider -->
         <fieldset tal:define="provider view/provider;
                         providerReviewState view/providerReviewState;
-                        adminOnProvider python:user.allowed(provider, ['Manager']);">
+                        adminOnProvider python:user.allowed(provider, ['Manager']);"
+                        tal:condition="python:adminOnProvider or provider is None">
 
           <legend i18n:translate="box_myprovider">Provider information</legend>
 
