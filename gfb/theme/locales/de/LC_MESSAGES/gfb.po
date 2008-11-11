@@ -135,7 +135,7 @@ msgstr "Arbeitsbereich"
 #. Default "Here you edit your Provider information and manage Risk Assessment Links."
 #: working_area.pt
 msgid "workingarea_intro"
-msgstr "Hier können Sie Ihre Anbieterinformation bearbeiten und Gefährgunsbeurteilungslinks hinzufügen und verwalten."
+msgstr "Hier können Sie Ihre Gefährgunsbeurteilungslinks hinzufügen und verwalten."
 
 #. Default "Up to my working area"
 #: password_form.pt
