@@ -4,7 +4,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="gfb">
 
 <metal:block fill-slot="top_slot"
                    tal:define="dummy python:request.set('disable_border',1)" />
@@ -24,52 +24,6 @@
                 searchterm request/SearchableText|nothing;
                 use_view_action site_properties/typesUseViewActionInListings|python:();">
 
-    
-    
-
-
-
-<!--
-  <div class="search_results">
-    <div class="info_of_search">
-      <p class="formHelp">Herausgeber: Bundlesmister XY etc</p>
-      <h5>Uberschrift der ersten Suchenxxx</h5>
-      <p>will provide you with the most recent findings etc. will provide you
-        with the most recent findings etc. will provide you with the most recent
-        findings etc. will provide you with the most recent findings etc. will
-        provide you with the most recent findings etc. will provide you with
-        the most recent findings etc. will provide you with the most recent findings
-        etc. will provide you with the most recent findings etc. will provide
-        you with the most recent findings etc. will provide you with the most
-        recent findings etc. </p>
-      <a>mehr info</a> 
-    </div>
-      
-      
-    <div class="search_medium">
-      <h5>Richlinie</h5>
-      <p class="formHelp">verfugbar als.<br>
-      </p>
-      <ul>
-        <li>PDF-download</li>
-        <li>Broschure</li>
-        <li>fur Mittglider des Bundes kostenfrei</li>
-      </ul>
-      <p>&nbsp;</p>
-    </div>
-    <div> <br/>
-    </div>
-  </div>
-
--->
-
-
-
-
-
-
-
-
   <form name="searchform" 
         action="simple_search"
         class="searchPage">
@@ -78,9 +32,9 @@
         <div metal:define-macro="main">
           <div id="simplesearch">
             <ul class="search-top">
-              <li><a class="selected">Einfache Suche</a></li>
-              <li><a>Erweitere Suche in der Databank</a></li>
-              <li><a>Suchtips</a></li>
+              <li><a class="selected" i18n:translate="label_simple_search" href="simple_search">Simple Search</a></li>
+              <li><a i18n:translate="label_advanced_search" href="advanced_search">Advanced Database Search</a></li>
+              <li><a href="searchtipps" i18n:translate="label_searchtips">Search Tips</a></li>
             </ul>
           </div>
           <div id="searchfields">
@@ -91,30 +45,16 @@
                    i18n:attributes="title title_search_title;"
                    tal:attributes="value request/SearchableText|nothing;"/>
             <br />
-            <p class="formHelp">Hinweis ...</p>
+            <p class="formHelp" i18n:translate="help_simple_search">Note: Variable or unknown parts of a word can be searched for using the * key.</p>
             <!--input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" /-->
             <input class="context cancelbutton" 
                    type="submit" 
                    name="submit" 
-                   value="Suche" 
+                   value="Search" 
                    i18n:attributes="value label_search;"/>
           </div>
         </div>
-        
-        
-      <!--  
-      <p class="discreet"
-         i18n:translate="search_results_advanced">
-      Did you not find what you were looking for? Try the
-      <span i18n:name="advanced_search">
-      <a href=""
-         i18n:translate="search_results_advanced_link"
-         tal:attributes="href string:$portal_url/search_form?SearchableText=${request/SearchableText|python:''}">Advanced Search</a>
-      </span>
-      to refine your search.
-      </p>
-    -->
-    <p>&nbsp;</p>
+        <p>&nbsp;</p>
   </form>
 
 
@@ -123,12 +63,12 @@
 
 
   <h1 class="documentFirstHeading">
-      <span i18n:translate="heading_search_results">
+      <span i18n:translate="heading_search_results" i18n:domain="plone">
           Search results
       </span>
       <span class="discreet">
       &mdash;
-      <span i18n:translate="batch_x_items_matching_your_criteria"
+      <span i18n:translate="batch_x_items_matching_your_criteria" i18n:domain="plone"
       ><span i18n:name="number" 
       tal:omit-tag="" 
       tal:content="python:len(results)">234</span> items matching your search terms</span>
@@ -136,7 +76,7 @@
 
 
       <div tal:condition="not: results">
-          <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
+          <p><strong i18n:translate="description_no_results_found" i18n:domain="plone">No results were found.</strong></p>
       </div>
 
       <div tal:condition="results"
@@ -156,9 +96,12 @@
                             
          <div class="search_results">
             <div class="info_of_search">
-                <p class="formHelp" tal:omit-tag="not:result/Creator">
+                <p class="formHelp" 
+                   tal:define="title python:result_provider[0].Title()"
+                   tal:condition="title"
+                   tal:on-error="nothing">
                   <span i18n:translate="label_editor">Herausgeber</span>: 
-                  <span tal:replace="result/Creator" />
+                  <span tal:replace="title" />
                 </p>
               
                 <h5 tal:content="result/pretty_title_or_id" />
@@ -184,7 +127,7 @@
                     <li tal:condition="result_price"><span i18n:translate="label_price">Price</span>: 
                         &euro; <span tal:replace="result_price" /></li>
                     <li tal:condition="result_free_for_members" 
-                        i18n:translate="label_free_for_members">free for members</li>
+                        i18n:translate="label_free_for_members">Free for members</li>
                     
                 </ul>
                 <p>&nbsp;</p>

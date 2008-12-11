@@ -146,3 +146,45 @@ msgstr "Zurück zum Arbeitsbereich"
 #: working_area.pt
 msgid "label_publish_provider"
 msgstr "Bitte veröffentlichen Sie Ihre Anbieterinformation, damit sie für andere sichtbar wird."
+
+#. Default "Note: Variable or unknown parts of a word can be searched for using the * key."
+#: simple_search.pt
+msgid "help_simple_search"
+msgstr "Hinweis: Variable oder unbekannte Wortteile können Sie mit * eingeben."
+
+#. Default "Simple Search"
+#: simple_search.pt
+msgid "label_simple_search"
+msgstr "Einfache Suche"
+
+#. Default "Advanced Database Search"
+#: simple_search.pt
+msgid "label_advanced_search"
+msgstr "Erweitere Suche in der Databank"
+
+
+#. Default "Search Tips"
+#: simple_search.pt
+msgid "label_searchtips"
+msgstr "Suchtipps"
+
+
+#. Default "Free for members"
+#: simple_search.pt
+msgid "label_free_for_members"
+msgstr "Für Mitglieder kostenfrei"
+
+#. Default "Price"
+#: simple_search.pt
+msgid "label_price"
+msgstr "Preis"
+
+#. Default "available as"
+#: simple_search.pt
+msgid "label_available_as"
+msgstr "Verfügbar als"
+
+#. Default "Search"
+#: simple_search.pt
+msgid "label_search"
+msgstr "Suchen"
