@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+    <metal:block fill-slot="column_two_slot" />
+<metal:cssslot fill-slot="css_slot"
+               tal:define="global mockup here/@@ATMockup;
+                           dummy python:mockup.preload(types=[('ATDocument', 'ATContentTypes')]);">
+</metal:cssslot>
+
+<body>
+<div metal:fill-slot="main">
+  <div metal:define-macro="main">
+    <form action="search"
+          class="enableAutoFocus"
+          method="get"
+          name="search"
+          tal:define="DateTime python:modules['DateTime'].DateTime">
+
+    <div id="simplesearch">
+      <ul class="search-top">
+        <li><a class="selected">Einfache Suche</a></li>
+        <li><a>Erweitere Suche in der Databank</a></li>
+        <li><a>Suchtips</a></li>
+      </ul>
+    </div>
+    <div id="searchfields">
+      <input id="SearchableText" type="text" name="Ihr suchbegriff" size="25" />
+      <br />
+      <p class="formHelp">Hinsweis blab blab bablb</p>
+        <div class="column1b">
+          <h5>Suchkriterien</h5>
+          <input class="radio_search" type="radio" value="Spezielle Handlungshilfe, eingeschrankt nach" checked> <label>Spezielle Handlungshilfe, eingeschrankt nach</label>
+		  <ul>
+		  <li>Anbieter<a class="pluss">Hinzufugen</a></li></ul>
+		  <table><tr><td>• branche</td><td><a class="pluss">Hinzufugen</a></td></tr>
+		  <tr><td>• Gefahrdungsart</td><td><a class="pluss">Hinzufugen</a></td></tr></table>
+
+          <input class="radio_search" type="radio" value="Allgemeine und Einfuhrende Handlungshilfe"><label>Allgemeine und Einfuhrende Handlungshilfe</label>
+        </div>
+        <div class="column2b">
+         <h5>Sprache und Region</h5>
+
+<ul>
+        <li><span>Sprassfassung</span>
+          <select name="Sprachfassung">
+            <option>nur deutsche Texte</option>
+          </select>
+        </li>
+        <li><span>Infos gelten for</span>
+        <select name="infos">
+          <option>alle EU-Mitgliderstaten</option>
+        </select>
+        </li>
+            <div class="field"
+                tal:define="fieldName string:nace;">
+                <metal:use use-macro="here/filter_macros/macros/ATVocabularyPicker"></metal:use>
+            </div>
+
+        <br/>
+
+      <p>
+        <input class="context" type="reset" value="Abbrechen" />
+        <input class="context cancelbutton" type="submit" name="submit" value="Suche" />
+      </p>
+	  </div>
+    </div>
+  </form>
+  </div>
+
+
+
+  <p>&nbsp;</p>
+  <div class="search-top"> <span>Ergebisse Ihrer Suche</span> <span>Medium</span> </div>
+  <div class="search_results">
+    <div class="info_of_search">
+      <p class="formHelp">Herausgeber: Bundlesmister XY etc</p>
+      <h5>Uberschrift der ersten Suchenxxx</h5>
+      <p>will provide you with the most recent findings etc. will provide you
+        with the most recent findings etc. will provide you with the most recent
+        findings etc. will provide you with the most recent findings etc. will
+        provide you with the most recent findings etc. will provide you with
+        the most recent findings etc. will provide you with the most recent findings
+        etc. will provide you with the most recent findings etc. will provide
+        you with the most recent findings etc. will provide you with the most
+        recent findings etc. </p>
+      <a>mehr info</a> </div>
+    <div class="seach_medium">
+      <h5>Richlinie</h5>
+      <p class="formHelp">verfugbar als.<br>
+      </p>
+      <ul>
+        <li>PDF-download</li>
+        <li>Broschure</li>
+        <li>fur Mittglider des Bundes kostenfrei</li>
+      </ul>
+      <p>&nbsp;</p>
+    </div>
+    <div> <br/>
+    </div>
+  </div>
+</div>
+</body>
+</html>

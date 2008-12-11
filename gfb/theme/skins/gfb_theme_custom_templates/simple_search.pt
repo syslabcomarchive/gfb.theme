@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+    <metal:block fill-slot="column_two_slot" />
+
+
+<body>
+
+<div metal:fill-slot="main">
+  <div metal:define-macro="main">
+    <form action="search"
+          class="enableAutoFocus"
+          method="get"
+          name="search"
+          tal:define="DateTime python:modules['DateTime'].DateTime">
+    <div id="simplesearch">
+      <ul class="search-top">
+        <li><a class="selected">Einfache Suche</a></li>
+        <li><a>Erweitere Suche in der Databank</a></li>
+        <li><a>Suchtips</a></li>
+      </ul>
+    </div>
+    <div id="searchfields">
+      <input id="SearchableText" type="text" name="Ihr suchbegriff" size="25" />
+      <br />
+      <p class="formHelp">Hinsweis blab blab bablb</p>
+      <input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" />
+      <input class="context cancelbutton" type="submit" name="submit" value="Suche" i18n:translate="label_search"/>
+    </div>
+    </form>
+  </div>
+
+
+     <p>&nbsp;</p>
+  <div class="search-top">
+        <span>Ergebisse Ihrer Suche</span>
+        <span>Medium</span>
+
+    </div>
+
+
+
+  <div class="search_results">
+    <div class="info_of_search">
+      <p class="formHelp">Herausgeber: Bundlesmister XY etc</p>
+      <h5>Uberschrift der ersten Suchenxxx</h5>
+      <p>will provide you with the most recent findings etc. will provide you
+        with the most recent findings etc. will provide you with the most recent
+        findings etc. will provide you with the most recent findings etc. will
+        provide you with the most recent findings etc. will provide you with
+        the most recent findings etc. will provide you with the most recent findings
+        etc. will provide you with the most recent findings etc. will provide
+        you with the most recent findings etc. will provide you with the most
+        recent findings etc. </p>
+      <a>mehr info</a> </div>
+    <div class="seach_medium">
+      <h5>Richlinie</h5>
+      <p class="formHelp">verfugbar als.<br>
+      </p>
+      <ul>
+        <li>PDF-download</li>
+        <li>Broschure</li>
+        <li>fur Mittglider des Bundes kostenfrei</li>
+      </ul>
+      <p>&nbsp;</p>
+    </div>
+    <div> <br/>
+    </div>
+  </div>
+</div>
+</body>
+</html>

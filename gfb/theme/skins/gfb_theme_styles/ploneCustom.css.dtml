@@ -46,7 +46,7 @@ html.kupu-html body {
 }
 /* fck text alignment */
 body#content {
-    text-align:left;
+text-align:left;
 }
 iframe html body#content {
     text-align:left;
@@ -144,7 +144,7 @@ body {
 #portal-siteactions {
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     line-height: 20px;
-    float: right; 
+    float: right;
     width: 350px;
 }
 
@@ -181,7 +181,7 @@ div#portal-personaltools-wrapper {
     }
 #portal-personaltools li a {
     color: #666;;
-}   
+}
 
 #portal-breadcrumbs {
     //clear: left;
@@ -377,7 +377,7 @@ top: 0;
 	margin-left: 0;
 
 	}
-	
+
 
 #LSNothingFound {
 	text-align: center;
@@ -635,7 +635,7 @@ ul.staticPortlet li{
     font-size: 12px;
 }
 
-#portal-globalnav li:hover, 
+#portal-globalnav li:hover,
 #portal-globalnav li.selected {
     background: #A8126A url(global_li_sel.jpg);
 }
@@ -657,7 +657,7 @@ ul.staticPortlet li{
 
 .portletNavigationTree .portletItem {
     margin: 0;
-}   
+}
 .portletNavigationTree li {
     background: #d8dbe0;
     //margin-bottom: 1px;
@@ -674,7 +674,7 @@ ul.staticPortlet li{
 
 .navTreeLevel1 li {
     background-color: #ffffff;
-    
+
 }
 
 .navTreeLevel2 li,
@@ -954,7 +954,7 @@ table {
     padding: 0;
     margin-top: 0px;
 }
-    
+
 em {
     font-style: normal;
     font-weight: bold;
@@ -1056,13 +1056,13 @@ body.section-db.template-db_filter h2,
 	height: 25px;
 	padding: 0;
 	width: 100%;
-	
+
 }
 #simplesearch li {
 	float: left;
 	margin: 0;
 	list-style-image: none;
-	list-style-type: none	
+	list-style-type: none
 }
 
 
