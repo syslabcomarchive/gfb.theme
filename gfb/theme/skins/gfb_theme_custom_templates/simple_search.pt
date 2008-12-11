@@ -6,45 +6,30 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
 
-    <metal:block fill-slot="column_two_slot" />
+<metal:block fill-slot="top_slot"
+                   tal:define="dummy python:request.set('disable_border',1)" />
+<metal:block fill-slot="column_two_slot" />
 
 
 <body>
+<div metal:fill-slot="main"
+     tal:define="use_types_blacklist request/use_types_blacklist | python:True;
+                use_navigation_root request/use_navigation_root | python:True;
+                dummy python:request.set('portal_type', 'RiskAssessmentLink');
+                results python:here.queryCatalog(REQUEST=request,use_types_blacklist=use_types_blacklist, use_navigation_root=use_navigation_root);
+                Batch python:modules['Products.CMFPlone'].Batch;
+                b_size python:30;b_start python:0;b_start request/b_start | b_start;
+                desc_length site_properties/search_results_description_length;
+                desc_ellipsis site_properties/ellipsis;
+                searchterm request/SearchableText|nothing;
+                use_view_action site_properties/typesUseViewActionInListings|python:();">
 
-<div metal:fill-slot="main">
-  <div metal:define-macro="main">
-    <form action="search"
-          class="enableAutoFocus"
-          method="get"
-          name="search"
-          tal:define="DateTime python:modules['DateTime'].DateTime">
-    <div id="simplesearch">
-      <ul class="search-top">
-        <li><a class="selected">Einfache Suche</a></li>
-        <li><a>Erweitere Suche in der Databank</a></li>
-        <li><a>Suchtips</a></li>
-      </ul>
-    </div>
-    <div id="searchfields">
-      <input id="SearchableText" type="text" name="Ihr suchbegriff" size="25" />
-      <br />
-      <p class="formHelp">Hinsweis blab blab bablb</p>
-      <input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" />
-      <input class="context cancelbutton" type="submit" name="submit" value="Suche" i18n:translate="label_search"/>
-    </div>
-    </form>
-  </div>
-
-
-     <p>&nbsp;</p>
-  <div class="search-top">
-        <span>Ergebisse Ihrer Suche</span>
-        <span>Medium</span>
-
-    </div>
+    
+    
 
 
 
+<!--
   <div class="search_results">
     <div class="info_of_search">
       <p class="formHelp">Herausgeber: Bundlesmister XY etc</p>
@@ -57,8 +42,11 @@
         etc. will provide you with the most recent findings etc. will provide
         you with the most recent findings etc. will provide you with the most
         recent findings etc. </p>
-      <a>mehr info</a> </div>
-    <div class="seach_medium">
+      <a>mehr info</a> 
+    </div>
+      
+      
+    <div class="search_medium">
       <h5>Richlinie</h5>
       <p class="formHelp">verfugbar als.<br>
       </p>
@@ -72,6 +60,148 @@
     <div> <br/>
     </div>
   </div>
+
+-->
+
+
+
+
+
+
+
+
+  <form name="searchform" 
+        action="simple_search"
+        class="searchPage">
+        
+        
+        <div metal:define-macro="main">
+          <div id="simplesearch">
+            <ul class="search-top">
+              <li><a class="selected">Einfache Suche</a></li>
+              <li><a>Erweitere Suche in der Databank</a></li>
+              <li><a>Suchtips</a></li>
+            </ul>
+          </div>
+          <div id="searchfields">
+            <input id="SearchableText" 
+                   type="text" 
+                   name="SearchableText" 
+                   size="25" 
+                   i18n:attributes="title title_search_title;"
+                   tal:attributes="value request/SearchableText|nothing;"/>
+            <br />
+            <p class="formHelp">Hinweis ...</p>
+            <!--input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" /-->
+            <input class="context cancelbutton" 
+                   type="submit" 
+                   name="submit" 
+                   value="Suche" 
+                   i18n:attributes="value label_search;"/>
+          </div>
+        </div>
+        
+        
+      <!--  
+      <p class="discreet"
+         i18n:translate="search_results_advanced">
+      Did you not find what you were looking for? Try the
+      <span i18n:name="advanced_search">
+      <a href=""
+         i18n:translate="search_results_advanced_link"
+         tal:attributes="href string:$portal_url/search_form?SearchableText=${request/SearchableText|python:''}">Advanced Search</a>
+      </span>
+      to refine your search.
+      </p>
+    -->
+    <p>&nbsp;</p>
+  </form>
+
+
+
+
+
+
+  <h1 class="documentFirstHeading">
+      <span i18n:translate="heading_search_results">
+          Search results
+      </span>
+      <span class="discreet">
+      &mdash;
+      <span i18n:translate="batch_x_items_matching_your_criteria"
+      ><span i18n:name="number" 
+      tal:omit-tag="" 
+      tal:content="python:len(results)">234</span> items matching your search terms</span>
+  </h1>
+
+
+      <div tal:condition="not: results">
+          <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
+      </div>
+
+      <div tal:condition="results"
+            tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+
+        <div class="searchResults">
+          <tal:results repeat="result batch">
+          <tal:entry define="result_url result/getURL;
+                             result_type result/portal_type;
+                             result_ob result/getObject;
+                             result_medium result_ob/getMedium | python:[];
+                             result_price result_ob/getPrice;
+                             result_free_for_members result_ob/getFree_for_members;
+                             result_provider result_ob/getRemoteProvider | nothing;
+                             item_icon python:plone_view.getIcon(result);
+                             url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
+                            
+         <div class="search_results">
+            <div class="info_of_search">
+                <p class="formHelp" tal:omit-tag="not:result/Creator">
+                  <span i18n:translate="label_editor">Herausgeber</span>: 
+                  <span tal:replace="result/Creator" />
+                </p>
+              
+                <h5 tal:content="result/pretty_title_or_id" />
+
+                <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
+                    Cropped description
+                </p>
+                <div>
+                    <a href="#" 
+                       tal:attributes="href url">mehr info</a>
+                </div>
+
+            </div>
+            
+            <div class="search_medium">
+                <h5>Richtlinie</h5>
+                <p class="formHelp" i18n:translate="label_available_as">available as</p>          
+                <ul>
+                  <li tal:repeat="medium result_medium" tal:content="medium">PDF-download</li>
+                </ul>
+                <br/>
+                <ul>
+                    <li tal:condition="result_price"><span i18n:translate="label_price">Price</span>: 
+                        &euro; <span tal:replace="result_price" /></li>
+                    <li tal:condition="result_free_for_members" 
+                        i18n:translate="label_free_for_members">free for members</li>
+                    
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+
+            <div class="visualClear"><!-- --></div>
+          </div>
+
+          </tal:entry>
+          </tal:results>
+
+        </div>
+       
+        <div metal:use-macro="here/batch_macros/macros/navigation" />
+
+  </div>
+
 </div>
 </body>
 </html>
