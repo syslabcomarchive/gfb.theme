@@ -101,5 +101,15 @@
     layer=".interfaces.IThemeSpecific"
     permission="zope2.Public"
     />
+    
+    
+    <browser:page
+        for="*"
+        name="advanced_search"
+        class=".advanced_search.AdvancedSearchView"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
+    
 
 </configure>

@@ -1,0 +1,161 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="vocabularypickerwidget">
+
+  <head><title></title></head>
+
+  <body>
+
+    <metal:view_macro define-macro="view">
+
+      <tal:define define="terms       accessor;
+                          terms       python:[x for x in terms if x];
+                          widget      nocall:field/widget;
+                          vocab_str   widget/vocabulary;"
+                  condition="terms">
+        <tal:block tal:condition="not:field/multiValued"
+               tal:define="term python:terms[0];
+                           obj python:widget.getTermByKey(here, term);
+                           Title obj;">
+
+            <span tal:content="python:Title or term">
+               term's title or identifier
+            </span>
+
+        </tal:block>
+        <ul tal:condition="field/multiValued">
+          <li tal:omit-tag=""
+               tal:content="nothing"
+               tal:on-error="nothing"
+               tal:define="foo python:terms.sort()">
+             if we are not using orderablereferencefield we don't have the order attribute
+             we swallow this error silently using tal:on-error
+          </li>
+          <li tal:repeat="term terms">
+            <tal:block tal:define="obj python:widget.getTermByKey(here, term);">
+                <span tal:replace="python:obj or term">
+                  term's title or identifier
+                </span>
+             </tal:block>
+          </li>
+        </ul>
+
+      </tal:define>
+    </metal:view_macro>
+
+    <metal:vocabularyitem_edit define-macro="vocabularyitem_edit"
+             tal:define="multiVal           python:test(field.multiValued, 1, 0);
+                         widget             nocall: field/widget;
+                         vocab_str          widget/vocabulary;
+                         fieldName          fieldName;
+                         fieldRealName      field/getName;
+                         portal_type        use_portal_type | here/portal_type;
+                         nodesHaveCBs       nodesHaveCBs|widget/nodesHaveCBs|python:1;
+                         sortAlphabetically sortAlphabetically|widget/sortAlphabetically|python:0;
+                         quicksearch_vocabulary quicksearch_vocabulary|widget/quicksearch_vocabulary|vocab_str;
+                         quicksearch_help_text widget/quicksearch_help_text|string:;
+                         level              level | widget/level | python:0;
+                         root_node          root_node | string:;
+                         hide_id            hide_id |widget/hide_id|string:;
+                         no_help            no_help|python:False;
+                         min_chars          min_chars|string:2;
+                         instance python:here.restrictedTraverse('@@ATMockup').getFakeInstance(portal_type);
+                         terms              python:same_type(value, []) and value or [value];
+                         ">
+                    <script type='text/javascript' src='jquery.js'></script>
+                    <script type='text/javascript' src='jquery.autocomplete.js'></script>
+          <input type="hidden"
+                 value=""
+                 tal:condition="python:not field.required and multiVal"
+                 tal:attributes="name string:${fieldName}:default:ignore_empty"
+                 />
+
+          <tal:single tal:condition="not: multiVal" >
+              <tal:value tal:condition="value">
+                  <tal:block tal:define="Title python:widget.getTermByKey(here, value)" >
+                      <input size=""
+                             type="text"
+                             value=""
+                             id=""
+                             tal:attributes="value Title | value;
+                                             size python:test(widget.size=='', 30, widget.size);
+                                             id string:${fieldName}_label" readonly="readonly" />
+
+                  </tal:block>
+              </tal:value>
+              <input id=""
+                     size="20"
+                     type="text"
+                     value="No items set. Click the browse button to select."
+                     readonly="readonly"
+                     i18n:attributes="value label_no_items_set;"
+                     tal:condition="not:  value"
+                     tal:attributes="id string:${fieldName}_label"/>
+              <input type="hidden"
+                     value=""
+                     name=""
+                     tal:attributes="name fieldName;
+                                     value value;
+                                     id string:${fieldName}" />
+
+          </tal:single>
+          
+          <tal:multi tal:condition="multiVal">
+            <div style="float: left">
+              <ul class="visualNoMarker"
+                  tal:attributes="id string:${fieldName};">
+                <span tal:condition="value" tal:omit-tag="">
+                 <span tal:define="terms python:[(x,widget.getTermByKey(instance, x)) for x in value if x]">
+                    <li tal:repeat="term terms">
+                      <label tal:define="title python: term[1] or term[0];">
+                        <input type="checkbox"
+                               tal:attributes="name string:${fieldName}:list;
+                                               value python:term[0];"
+                               checked="checked">
+                        <span tal:condition="not:hide_id">
+                            <tal:block replace="python:'%s (%s)' % (term[1], term[0])" />
+                        </span>
+                        <span tal:condition="hide_id">
+                            <tal:block replace="python:'%s' % (term[1])" />
+                        </span>
+                      </label>
+                    </li>
+                   </span>
+                 </span>
+              </ul>
+              </div>
+          </tal:multi>
+          <div style="clear: both"
+               tal:define="global at_url at_url|python:'/'.join(here.getPhysicalPath());
+                           global base_url base_url|python:'/'.join(here.getPhysicalPath())">
+
+              <input type="button"
+                     class="searchButton"
+                     value="Add..."
+                     onClick=""
+                     i18n:attributes="value label_add"
+                     i18n:domain="plone"
+                     tal:attributes="id string:button_add_${fieldName};
+                        onClick string:javascript:vocabularypicker_openBrowser('${fieldName}',
+                     '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
+                     '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}')" /><br />
+
+
+          </div>
+    </metal:vocabularyitem_edit>
+
+    <metal:edit_macro define-macro="edit">
+      <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+        <metal:fill fill-slot="widget_body">
+          <metal:use use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit" />
+        </metal:fill>
+      </metal:use>
+    </metal:edit_macro>
+
+    <metal:search_macro define-macro="search">
+      <div metal:use-macro="here/gfb_itembrowser/macros/edit"></div>
+    </metal:search_macro>
+  </body>
+</html>
