@@ -70,9 +70,14 @@ class AdvancedSearchView(BrowserView):
         if nace:
             query = query & In('nace', nace)    
 
+        getCategoryIndependent = self.request.get('getCategoryIndependent', '0')
+        if getCategoryIndependent=='1':
+            query = query & Eq('getCategoryIndependent', True)
+
+
         getRemoteLanguage = self.request.get('getRemoteLanguage', '')
         if getRemoteLanguage:
-            query = query & In('getRemoteLanguage', getRemoteLanguage)
+            query = query & Eq('getRemoteLanguage', getRemoteLanguage)
 
         category = self.request.get('category', '')
         if category:
@@ -80,7 +85,7 @@ class AdvancedSearchView(BrowserView):
 
         country = self.request.get('country', '')
         if country:
-            query = query & In('country', country)
+            query = query & Eq('country', country)
 
         provider = list(self.request.get('remote_provider', ''))
         if '' in provider:
@@ -119,6 +124,7 @@ class AdvancedSearchView(BrowserView):
     def search(self):
         context = Acquisition.aq_inner(self.context)
         query = self.buildQuery()
+        print query
         portal_catalog = getToolByName(context, 'portal_catalog')
         if hasattr(portal_catalog, 'getZCatalog'):
             portal_catalog = portal_catalog.getZCatalog()

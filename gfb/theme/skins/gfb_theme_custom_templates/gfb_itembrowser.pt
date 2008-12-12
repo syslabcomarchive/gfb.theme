@@ -71,6 +71,18 @@
                  tal:condition="python:not field.required and multiVal"
                  tal:attributes="name string:${fieldName}:default:ignore_empty"
                  />
+                 
+             <div tal:define="global at_url at_url|python:'/'.join(here.getPhysicalPath());
+                              global base_url base_url|python:'/'.join(here.getPhysicalPath())"
+                  style="float:right; width:150px; margin-top: -1em;">
+                        
+                        <a tal:attributes="href string:javascript:vocabularypicker_openBrowser('${fieldName}',
+                        '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
+                        '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}');;">
+                            <img src="plus_icon.gif">
+                            <span i18n:translate="label_add">Add...</span>
+                        </a>
+             </div>
 
           <tal:single tal:condition="not: multiVal" >
               <tal:value tal:condition="value">
@@ -127,23 +139,6 @@
               </ul>
               </div>
           </tal:multi>
-          <div style="clear: both"
-               tal:define="global at_url at_url|python:'/'.join(here.getPhysicalPath());
-                           global base_url base_url|python:'/'.join(here.getPhysicalPath())">
-
-              <input type="button"
-                     class="searchButton"
-                     value="Add..."
-                     onClick=""
-                     i18n:attributes="value label_add"
-                     i18n:domain="plone"
-                     tal:attributes="id string:button_add_${fieldName};
-                        onClick string:javascript:vocabularypicker_openBrowser('${fieldName}',
-                     '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
-                     '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}')" /><br />
-
-
-          </div>
     </metal:vocabularyitem_edit>
 
     <metal:edit_macro define-macro="edit">

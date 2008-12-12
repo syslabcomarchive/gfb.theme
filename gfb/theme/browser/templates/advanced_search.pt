@@ -49,7 +49,6 @@
                 dummy python:request.set('portal_type', 'RiskAssessmentLink');
                 Batch python:modules['Products.CMFPlone'].Batch;
                 use_view_action site_properties/typesUseViewActionInListings|python:();
-                
                 SearchableText request/SearchableText|string:;
                             nace request/nace|string:;
                             nace python:nace==[''] and '' or nace;
@@ -70,7 +69,6 @@
                             searchterm request/SearchableText|nothing;
                             results view/search;
                            ">
-                
 
   <form name="searchform" 
         tal:attributes="action template/id"
@@ -102,15 +100,15 @@
 
             <div class="column1b">
                 <h5>Suchkriterien</h5>
-                <input class="radio_search" type="radio" value="Spezielle Handlungshilfe, eingeschrankt nach" checked> 
+                <input class="radio_search" type="radio" value="0" name="getCategoryIndependent" 
+                       tal:attributes="checked python:request.get('getCategoryIndependent','0')=='0'"> 
                 <label>Spezielle Handlungshilfe, eingeschrankt nach</label>
 
-                <div class="field">
-                    <div metal:define-macro="Provider">
-                      <div tal:define=" fieldName   string:remote_provider;
+                    <metal:macro define-macro="Provider">
+                      <tal:define define="fieldName   string:remote_provider;
                                         fieldRealName string:remoteProvider;
                                         mockup      nocall:here/@@ATMockup;
-                                        value       python:[];
+                                        value       provider;
                                         nodesHaveCBs python:0;
                                         use_portal_type portal_type|string:RALink;
                                         vocabulary  string:getProviderVocabulary;
@@ -123,19 +121,23 @@
                                         hide_id     python:True;
                                         at_url      here/portal_url/getPortalPath;
                                         dummy       python:here.REQUEST.set('mode', 'search')
-                                        "
-                            class="field">
-                        <div metal:use-macro="here/gfb_itembrowser/macros/search"></div>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="field"
-                    tal:define="fieldName string:nace;">
-                    <div metal:define-macro="NACE_compact">
-                      <div tal:define=" fieldName   string:nace;
+                                        ">
+                        <ul class="search_index">
+                            <li>
+                                <span tal:replace="python:widget.Label(here)" />
+                                <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                            </li>
+                        </ul>
+                      </tal:define>
+                    </metal:macro>
+                    
+                    <div class="visualClear"><!-- --></div>
+                    
+                    <metal:macro define-macro="NACE_compact">
+                      <tal:define define=" fieldName   string:nace;
                                         mockup      nocall:here/@@ATMockup;
-                                        value       string:;
+                                        value       nace;
+                                        level       python:3;
                                         use_portal_type portal_type|string:RALink;
                                         field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
                                         widget      nocall: field/widget;
@@ -143,57 +145,137 @@
                                         accessor    python:field.getDefault(here);
                                         errors      python:{};
                                         at_url      here/portal_url/getPortalPath;
-                                        "
-                            class="field">
-                        <div metal:use-macro="here/gfb_itembrowser/macros/search"></div>
+                                        ">
+                        <ul class="search_index">
+                            <li>
+                                <span tal:replace="python:widget.Label(here)" />
+                                <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                            </li>
+                        </ul>
 
-                      </div>
-                    </div>
-                </div>
+                      </tal:define>
+                    </metal:macro>
 
-                <div class="field" tal:define="portal_type string:RiskAssessmentLink">
-                    <div metal:define-macro="riskfactors">
-                        <div tal:define="fieldName  string:riskfactors;
-                                         mockup     nocall:here/@@ATMockup;
-                                         value      string:;
-                                        use_portal_type portal_type|string:RALink;
+                    <div class="visualClear"><!-- --></div>
+                    
+                    <metal:macro define-macro="riskfactors">
+                        <tal:define define="fieldName  string:riskfactors;
+                                        mockup     nocall:here/@@ATMockup;
+                                        level       python:3;
+                                        value       riskfactors;
+                                        use_portal_type portal_type|string:RiskAssessmentLink;
                                         field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
                                         widget      nocall: field/widget;
                                         mode        string:search;
                                         accessor    python:field.getDefault(here);
                                         errors      python:{};
                                         at_url      here/portal_url/getPortalPath;
-                                        "
-                            class="field">
-                        <div metal:use-macro="here/gfb_itembrowser/macros/search"></div>
+                                        ">
+                            <ul class="search_index">
+                                <li>
+                                    <span tal:replace="python:widget.Label(here)" />
+                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                                </li>
+                            </ul>
 
-                      </div>
-                    </div>
-                </div>
+                      </tal:define>
+                  </metal:macro>
 
-                <ul>
-                    <li>Anbieter <a class="pluss">Hinzufugen</a></li>
-                    <li>branche <a class="pluss">Hinzufugen</a></li>
-                    <li>Gefahrdungsart <a class="pluss">Hinzufugen</a></li>
-                </ul>
+                  <div class="visualClear"><!-- --></div>
 
-                <input class="radio_search" type="radio" value="Allgemeine und Einfuhrende Handlungshilfe">
+                <input class="radio_search" type="radio" value="1" name="getCategoryIndependent" 
+                       tal:attributes="checked python:request.get('getCategoryIndependent','0')=='1'">
+                
                 <label>Allgemeine und Einfuhrende Handlungshilfe</label>
-                <ul>
-                    <li>Anbieter <a class="pluss">Hinzufugen</a></li>
-                </ul>
+
+                  <tal:define define="fieldName   string:remote_provider;
+                                    fieldRealName string:remoteProvider;
+                                    mockup      nocall:here/@@ATMockup;
+                                    value       provider;
+                                    nodesHaveCBs python:0;
+                                    use_portal_type portal_type|string:RALink;
+                                    vocabulary  string:getProviderVocabulary;
+                                    quicksearch_vocabulary string:getProviderQuicksearch;
+                                    field       python:mockup.getFakeInstanceField(use_portal_type, fieldRealName);
+                                    widget      nocall: field/widget;
+                                    mode        string:search;
+                                    accessor    python:field.getDefault(here);
+                                    errors      python:{};
+                                    hide_id     python:True;
+                                    at_url      here/portal_url/getPortalPath;
+                                    dummy       python:here.REQUEST.set('mode', 'search')
+                                    ">
+                    <ul class="search_index">
+                        <li>
+                            <span tal:replace="python:widget.Label(here)" />
+                            <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                        </li>
+                    </ul>
+                  </tal:define>
+
+                <div class="visualClear"><!-- --></div>
+
             </div>
             
             <div class="column2b">
                 <h5>Sprache und Region</h5>
 
-                <div class="field_default">
-                  <metal:use use-macro="here/filter_macros/macros/RemoteLanguage_compact"></metal:use>
-                </div>
+                <ul class="search_index">
+                
+                <li>
+                    <span metal:define-macro="RemoteLanguage_compact">
+                      <span i18n:domain="syslabcom" tal:omit-tag=""
+                            tal:define="filter_helper   here/@@filter_helper;
+                                        search_langs filter_helper/getRemotelanguages;
+                                        size size|string:1;
+                                        selected_lang getRemoteLanguage|request/getRemoteLanguage|string:">
+                            <span i18n:domain="RALink" i18n:translate="label_remote_language">Remote Language</span>
+                            <select name="getRemoteLanguage"
+                                    tabindex=""
+                                    id="getRemoteLanguage"
+                                    tal:attributes="size size;
+                                        tabindex tabindex/next">
 
-                <div class="field_default">
-                  <metal:use use-macro="here/filter_macros/macros/Country_compact_index"></metal:use>
-                </div>
+                                <option value="" i18n:domain="RALink" i18n:translate="label_any_language">Any language</option>
+                                <tal:langs tal:repeat="lang search_langs">
+                                    <option value="#" tal:attributes="value python:lang[0];
+                                            selected python:lang[0] == selected_lang and 1 or 0"
+                                            tal:content="python:lang[1]"> 
+                                        language 
+                                    </option>
+                               </tal:langs>
+                           </select>
+                      </span>
+                    </span>
+                </li>
+
+                <li>
+                    <span metal:define-macro="Country_compact_index">
+                      <span tal:define="fieldName   string:country;
+                                        value       value|python:[];
+                                        mode        string:search;
+                                        size size|string:1;
+                                        ">
+                            <span i18n:domain="RALink" i18n:translate="label_country">Country</span>
+                            <select tal:attributes="name fieldName;
+                                                    value value|python:[];
+                                                    id fieldName;
+                                                    size size;
+                                                    tabindex tabindex/next;"
+                                    tal:define="values python:here.portal_catalog.uniqueValuesFor('country');
+                                                isodict here/portal_countryutils/getCountryIsoDict">
+                              <option value="" i18n:domain="RALink"
+                                    i18n:translate="label_select">Select...</option>    
+                              <option tal:repeat="country values"
+                                      tal:attributes="value country;
+                                                      selected python:here.checkSelected(country, value) and 'selected' or None;"
+                                      tal:content="python:isodict.get(country, country)"
+                                      i18n:translate="">country</option>
+                            </select>
+                      </span>
+                    </span>
+                </li>
+                </ul>
 
 
                 <p>

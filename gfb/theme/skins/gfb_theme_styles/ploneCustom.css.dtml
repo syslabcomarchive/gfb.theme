@@ -1131,8 +1131,9 @@ input.radio_search {
 	float: left;
 }
 
-#searchfields form div.column1b ul {
-	margin: 15px 0px 20px 40px;;
+#searchfields div.column1b ul.search_index {
+	margin: 15px 0px 20px 40px;
+	line-height: 100%;
 }
 
 div.column1b,
