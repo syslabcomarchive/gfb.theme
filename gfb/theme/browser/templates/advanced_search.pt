@@ -138,7 +138,7 @@
                                         mockup      nocall:here/@@ATMockup;
                                         value       nace;
                                         level       python:3;
-                                        use_portal_type portal_type|string:RALink;
+                                        use_portal_type portal_type|string:RiskAssessmentLink;
                                         field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
                                         widget      nocall: field/widget;
                                         mode        string:search;
@@ -193,7 +193,7 @@
                                     mockup      nocall:here/@@ATMockup;
                                     value       provider;
                                     nodesHaveCBs python:0;
-                                    use_portal_type portal_type|string:RALink;
+                                    use_portal_type portal_type|string:RiskAssessmentLink;
                                     vocabulary  string:getProviderVocabulary;
                                     quicksearch_vocabulary string:getProviderQuicksearch;
                                     field       python:mockup.getFakeInstanceField(use_portal_type, fieldRealName);
@@ -229,14 +229,14 @@
                                         search_langs filter_helper/getRemotelanguages;
                                         size size|string:1;
                                         selected_lang getRemoteLanguage|request/getRemoteLanguage|string:">
-                            <span i18n:domain="RALink" i18n:translate="label_remote_language">Remote Language</span>
+                            <span i18n:domain="RiskAssessmentLink" i18n:translate="label_remote_language">Remote Language</span>
                             <select name="getRemoteLanguage"
                                     tabindex=""
                                     id="getRemoteLanguage"
                                     tal:attributes="size size;
                                         tabindex tabindex/next">
 
-                                <option value="" i18n:domain="RALink" i18n:translate="label_any_language">Any language</option>
+                                <option value="" i18n:domain="RiskAssessmentLink" i18n:translate="label_any_language">Any language</option>
                                 <tal:langs tal:repeat="lang search_langs">
                                     <option value="#" tal:attributes="value python:lang[0];
                                             selected python:lang[0] == selected_lang and 1 or 0"
@@ -256,7 +256,7 @@
                                         mode        string:search;
                                         size size|string:1;
                                         ">
-                            <span i18n:domain="RALink" i18n:translate="label_country">Country</span>
+                            <span i18n:domain="RiskAssessmentLink" i18n:translate="label_country">Country</span>
                             <select tal:attributes="name fieldName;
                                                     value value|python:[];
                                                     id fieldName;
@@ -264,7 +264,7 @@
                                                     tabindex tabindex/next;"
                                     tal:define="values python:here.portal_catalog.uniqueValuesFor('country');
                                                 isodict here/portal_countryutils/getCountryIsoDict">
-                              <option value="" i18n:domain="RALink"
+                              <option value="" i18n:domain="RiskAssessmentLink"
                                     i18n:translate="label_select">Select...</option>    
                               <option tal:repeat="country values"
                                       tal:attributes="value country;
