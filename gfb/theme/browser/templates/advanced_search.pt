@@ -110,7 +110,7 @@
                                         mockup      nocall:here/@@ATMockup;
                                         value       provider;
                                         nodesHaveCBs python:0;
-                                        use_portal_type portal_type|string:RALink;
+                                        use_portal_type portal_type|string:RiskAssessmentLink;
                                         vocabulary  string:getProviderVocabulary;
                                         quicksearch_vocabulary string:getProviderQuicksearch;
                                         field       python:mockup.getFakeInstanceField(use_portal_type, fieldRealName);
