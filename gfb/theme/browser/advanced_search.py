@@ -56,8 +56,8 @@ class AdvancedSearchView(BrowserView):
         #query = { 'sort_on': 'effective',
         #          'sort_order':'reverse',
         #          'Language': ''}
-        language = getToolByName(context, 'portal_languages').getPreferredLanguage()
-        query = query & In('Language', ['', language])
+        #language = getToolByName(context, 'portal_languages').getPreferredLanguage()
+        #query = query & In('Language', ['', language])
 
 #        keywords = self.request.get('keywords', [])
 #        if keywords:
@@ -70,9 +70,9 @@ class AdvancedSearchView(BrowserView):
         if nace:
             query = query & In('nace', nace)    
 
-        getCategoryIndependent = self.request.get('getCategoryIndependent', '0')
-        if getCategoryIndependent=='1':
-            query = query & Eq('getCategoryIndependent', True)
+        getCategoryIndependent = self.request.get('getCategoryIndependent', '1')
+        getCategoryIndependent = bool(int(getCategoryIndependent))
+        query = query & Eq('getCategoryIndependent', getCategoryIndependent)
 
 
         getRemoteLanguage = self.request.get('getRemoteLanguage', '')
@@ -110,9 +110,6 @@ class AdvancedSearchView(BrowserView):
         if riskfactors:
             query = query & In('getRiskfactors', riskfactors)
 
-        getCategoryIndependent = self.request.get('getCategoryIndependent', '')
-        if getCategoryIndependent:
-            query = query & Eq('getCategoryIndependent', True)
 
         SearchableText = self.request.get('SearchableText', '')
         if SearchableText != '':

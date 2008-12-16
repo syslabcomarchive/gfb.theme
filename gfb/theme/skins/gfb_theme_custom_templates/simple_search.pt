@@ -45,12 +45,33 @@
                    tal:attributes="value request/SearchableText|nothing;"/>
             <br />
             <p class="formHelp" i18n:translate="help_simple_search">Note: Variable or unknown parts of a word can be searched for using the * key.</p>
-            <!--input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" /-->
-            <input class="context cancelbutton" 
-                   type="submit" 
-                   name="submit" 
-                   value="Search" 
-                   i18n:attributes="value label_search;"/>
+
+            
+            <div class="visualClear"><!-- --></div>
+            <div class="submit_column column2b">
+                
+            </div>
+            <div class="submit_column column2b">
+
+                    <input class="context cancelbutton" 
+                       type="submit" 
+                       name="submit" 
+                       value="Search" 
+                       i18n:attributes="value label_search;"/>
+
+                   <input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" />
+            </div>
+            
+            
+            <!--div>
+                <input class="context cancelbutton" 
+                       type="submit" 
+                       name="submit" 
+                       value="Search" 
+                       i18n:attributes="value label_search;"/>
+                <input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" />
+            </div-->
+            
           </div>
         </div>
         <p>&nbsp;</p>
@@ -91,9 +112,11 @@
                              result_free_for_members result_ob/getFree_for_members;
                              result_provider result_ob/getRemoteProvider | nothing;
                              item_icon python:plone_view.getIcon(result);
+                             catIndependent result/getCategoryIndependent;
+                             showclass python:catIndependent and 'highlighted' or 'default';
                              url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
                             
-         <div class="search_results">
+         <div class="search_results" tal:attributes="class string:${showclass} search_results">
             <div class="info_of_search">
                 <p class="formHelp" 
                    tal:define="title python:result_provider[0].Title()"

@@ -1028,6 +1028,16 @@ img.tileImage {
 
 /* @group forms */
 
+.floated_control {
+    float:right; 
+    width:20em; 
+    margin-top: -1.1em; 
+    text-align:right; 
+    padding-right:1em;
+}
+.floated_control select {
+    font-size: 90%;
+}
 a.pluss {
 	padding-left: 20px;
 	background: url(plus_icon.gif) no-repeat 0 3px;
@@ -1040,7 +1050,8 @@ div.search_medium {
     background-color: #E5E6E8;
     border: 0 none !important;
     padding-top:  13px;
-    padding-bottom:  13px;
+    padding-bottom:  0px;
+    min-height: 140px;
 }
 
 .info_of_search {
@@ -1062,6 +1073,8 @@ div.search_medium li {
 	border-bottom: 2px solid #ecedf2;
 	clear: both;
 }
+
+.searchResults .highlighted { background: #F6F6F6; }
 
 div.search_medium {
 	padding: 13px;
@@ -1141,9 +1154,21 @@ div.column2b {
 	width: 49%;
 	float: left;
 	margin-top: 15px;
-	}
+}
+
 .column1b{
-	border-right: 1px solid #c8cdd3;
+	border-right: 1px solid #c9ccd3;
+}
+
+.context {text-transform: none;}
+
+.submit_column {
+    margin-top: 0 !important;
+    padding-top:0px !important;
+    padding-bottom: 13px !important;
+    margin-bottom: 0 !important;
+    text-align:right !important;
+    height: 2em;
 }
 
 #searchfields input.context {

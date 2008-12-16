@@ -69,18 +69,18 @@
           <input type="hidden"
                  value=""
                  tal:condition="python:not field.required and multiVal"
-                 tal:attributes="name string:${fieldName}:default:ignore_empty"
+                 tal:attributes="name string:${fieldName}:default"
                  />
                  
              <div tal:define="global at_url at_url|python:'/'.join(here.getPhysicalPath());
                               global base_url base_url|python:'/'.join(here.getPhysicalPath())"
-                  style="float:right; width:150px; margin-top: -1em;">
+                  class="floated_control">
                         
                         <a tal:attributes="href string:javascript:vocabularypicker_openBrowser('${fieldName}',
                         '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
                         '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}');;">
                             <img src="plus_icon.gif">
-                            <span i18n:translate="label_add">Add...</span>
+                            <span i18n:domain="gfb" i18n:translate="label_add">Add...</span>
                         </a>
              </div>
 
@@ -113,7 +113,6 @@
                                      id string:${fieldName}" />
 
           </tal:single>
-          
           <tal:multi tal:condition="multiVal">
             <div style="float: left">
               <ul class="visualNoMarker"
