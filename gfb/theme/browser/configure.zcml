@@ -78,6 +78,15 @@
         permission="zope2.View"
         />
 
+    <!-- The search box -->
+    <browser:viewlet
+        name="plone.searchbox"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.SearchBoxViewletGFB"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+
     <browser:page
       for="*"
       name="workingarea"

@@ -1,5 +1,5 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet
+from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):
@@ -18,4 +18,6 @@ class PathBarViewletGFB(PathBarViewlet):
 
 class GlobalSectionsViewletGFB(GlobalSectionsViewlet):
     render = ViewPageTemplateFile('templates/sections.pt')
-    
+
+class SearchBoxViewletGFB(SearchBoxViewlet):
+    render = ViewPageTemplateFile('templates/searchbox.pt')
