@@ -73,7 +73,7 @@
     <browser:viewlet
         name="plone.global_sections"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        class=".viewlets.GlobalSectionsViewlet"
+        class=".viewlets.GlobalSectionsViewletGFB"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View"
         />
