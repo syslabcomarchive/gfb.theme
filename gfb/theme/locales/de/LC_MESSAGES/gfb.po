@@ -1,11 +1,11 @@
-# Alexander Pilz <info@syslab.com>, 2007.
+# Alexander Pilz <info@syslab.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: gfb\n"
 "POT-Creation-Date: 2008-02-05 09:19+0000\n"
 "PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
-"Last-Translator: Alexander Pilz <info@syslab.com>\n"
-"Language-Team: Alexander Pilz <info@syslab.com>\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Alexander Pilz, Wolfgang Thomas <info@syslab.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +63,7 @@ msgstr "Meine Gefährdungsbeurteilungs-Links"
 
 #: ../portlets/myprovider.py:22
 msgid "Provider Overview"
-msgstr "Anbieter Übersicht"
+msgstr "Anbieterübersicht"
 
 #: ../portlets/myprovider.py:62
 msgid "Shows information about the current logged in users provider data."
@@ -135,7 +135,7 @@ msgstr "Arbeitsbereich"
 #. Default "Here you edit your Provider information and manage Risk Assessment Links."
 #: working_area.pt
 msgid "workingarea_intro"
-msgstr "Hier können Sie Ihre Gefährgunsbeurteilungslinks hinzufügen und verwalten."
+msgstr "Hier können Sie Ihre Gefährdungsbeurteilungslinks hinzufügen und verwalten."
 
 #. Default "Up to my working area"
 #: password_form.pt
