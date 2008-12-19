@@ -1,0 +1,148 @@
+# Wolfgang Thomas <info@syslab.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: gfb\n"
+"POT-Creation-Date: 2008-02-05 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Wolfgang Thomas, Alexander Pilz <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: gfb\n"
+
+
+#:../browser/templates/path_pat.pt
+msgid "you_are_here"
+msgstr "You are here ..."
+
+#:../portlets/feedmixer.pt:37
+msgid "box_morelink"
+msgstr "more information"
+
+#:../browser/viewlets:SiteTitleViewlet
+msgid "title_risk_assessment"
+msgstr "RISK ASSESSMENT"
+
+#:../gfb/portal_view_customizations/zope.interface.interface-plone.global_sections
+msgid "label_you_have_chosen"
+msgstr "You have selected:"
+
+#:../gfb/portal_view_customizations/zope.interface.interface-plone.global_sections
+msgid "label_homepage"
+msgstr "Homepage"
+
+
+#: ../portlets/help.py:51
+msgid "Add Help Portlet"
+msgstr "Add Help Portlet"
+
+#: ../portlets/myprovider.py:61
+msgid "Add MyProvider Portlet"
+msgstr "Add MyProvider Portlet"
+
+#: ../portlets/myral.py:67
+msgid "Add MyRAL Portlet"
+msgstr "Add MyRAL Portlet"
+
+#: ../portlets/help.py:22
+msgid "Help"
+msgstr "Help"
+
+#: ../portlets/myral.py:68
+msgid "Lists all Risk Assessment Links in the current members homefolder."
+msgstr "Lists all Risk Assessment Links in the current members homefolder."
+
+#: ../portlets/myral.py:23
+msgid "My Risk Assessment Links"
+msgstr "My Risk Assessment Links"
+
+#: ../portlets/myprovider.py:22
+msgid "Provider Overview"
+msgstr "Provider Overview"
+
+#: ../portlets/myprovider.py:62
+msgid "Shows information about the current logged in users provider data."
+msgstr "Shows information about the current logged in user's provider data."
+
+#: ../portlets/help.py:52
+msgid "Shows information on how to use the GFB portal."
+msgstr "Shows information on how to use the GFB portal."
+
+#. Default: "Hilfe"
+#: ../portlets/help.pt
+msgid "box_help"
+msgstr "Help"
+
+#. Default: "Account information"
+#: ../portlets/myprovider.pt
+msgid "box_myprovider"
+msgstr "Provider information"
+
+#. Default: "My Links"
+#: ../portlets/myral.pt
+msgid "box_myral"
+msgstr "My links"
+
+#. Default: "There are currently no Risk Assessment Links in this folder."
+#: ../portlets/myral.pt
+msgid "description_no_riskassessmentlinks_in_folder"
+msgstr "There are currently no Risk Assessment Links in this folder."
+
+#. Default: "Please complete your Provider information. You need a valid provider record before you can add links."
+#: ../portlets/myral.pt
+msgid "help_complete_provider"
+msgstr "Please complete your Provider information. You need a valid provider record before you can add links."
+
+#. Default: "Edit this information"
+#: ../portlets/myprovider.pt
+msgid "label_edit_information"
+msgstr "Edit this information"
+
+#. Default: "Your existing links:"
+#: ../portlets/myral.pt
+msgid "label_your_links"
+msgstr "Your links"
+
+#. Default: "Add a new Risk Assessment Link"
+#: ../portlets/myral.pt
+msgid "link_add_ral"
+msgstr "Add new link"
+
+#: ../portlets/myprovider.pt
+msgid "Create Provider"
+msgstr "Create Provider"
+
+#. Default <span i18n:translate="info_no_provider">No provider information is available.</span>
+# ../portlets/myprovider.pt
+msgid "info_no_provider"
+msgstr "There is currently no provider information available. Please create a provider to be able to add Assessment Links."
+
+#. Default "Add Provider information"
+#: ../portlets/myprovider.pt
+msgid "label_add_provider"
+msgstr "Create Provider"
+
+#. Default "Working Area"
+#: working_area.pt
+msgid "label_workingarea"
+msgstr "Working area"
+
+#. Default "Here you edit your Provider information and manage Risk Assessment Links."
+#: working_area.pt
+msgid "workingarea_intro"
+msgstr "Here you can manage your Risk Assessment Links."
+
+#. Default "Up to my working area"
+#: password_form.pt
+msgid "label_to_workingarea"
+msgstr "Back to the working area"
+
+#. Default "Please publish your provider information so that it will be visible to others."
+#: working_area.pt
+msgid "label_publish_provider"
+msgstr "Please publish your provider information so that it will become visible to others."
