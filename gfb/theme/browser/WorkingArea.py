@@ -25,7 +25,7 @@ class WorkingArea(BrowserView):
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
         self.P = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
-        self.Provider = pc.searchResults(portal_type="Provider", path=path)
+        self.Provider = pc.searchResults(portal_type="Provider", path=path, Language='all')
 
         hf = pm.getHomeFolder()
         self.home_folder = hf
