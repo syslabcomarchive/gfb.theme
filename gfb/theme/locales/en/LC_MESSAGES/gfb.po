@@ -146,3 +146,25 @@ msgstr "Back to the working area"
 #: working_area.pt
 msgid "label_publish_provider"
 msgstr "Please publish your provider information so that it will become visible to others."
+
+
+# Default "Search results"
+# advanced_search.pt
+msgid "heading_search_results"
+msgstr "Search results"
+
+# Default "Documents"
+# advanced_search.pt
+msgid "batch_x_items"
+msgstr "$(number) documents"
+
+# Default "Page"
+# advanced_search.pt
+msgid "label_page"
+msgstr "Page"
+
+# Default "Medium"
+# advanced_search.pt
+msgid "heading_search_medium"
+msgstr "Medium"
+

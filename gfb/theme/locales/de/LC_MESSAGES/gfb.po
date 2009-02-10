@@ -208,3 +208,24 @@ msgstr "Spezielle Handlungshilfe, eingeschränkt nach..."
 
 msgid "label_add"
 msgstr "Hinzufügen..."
+
+# Default "Search results"
+# advanced_search.pt
+msgid "heading_search_results"
+msgstr "Ergebnisse Ihrer Suche"
+
+# Default "Documents"
+# advanced_search.pt
+msgid "batch_x_items"
+msgstr "$(number) Dokumente"
+
+# Default "Page"
+# advanced_search.pt
+msgid "label_page"
+msgstr "Seite"
+
+# Default "Medium"
+# advanced_search.pt
+msgid "heading_search_medium"
+msgstr "Medium"
+
