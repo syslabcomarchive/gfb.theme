@@ -50,24 +50,24 @@
                 Batch python:modules['Products.CMFPlone'].Batch;
                 use_view_action site_properties/typesUseViewActionInListings|python:();
                 SearchableText request/SearchableText|string:;
-                            nace request/nace|string:;
-                            nace python:nace==[''] and '' or nace;
-                            provider request/remote_provider|python:'';
-                            provider python:provider==[''] and '' or provider;
-                            category request/category|string:;
-                            getRemoteLanguage request/getRemoteLanguage|string:;
-                            country request/country|string:;
-                            getCategoryIndependent request/getCategoryIndependent|string:1;
-                            getCategoryIndependent python:bool(int(getCategoryIndependent));
-                            riskfactors request/riskfactors|string:;
-                            riskfactors python:riskfactors==[''] and '' or riskfactors;
-                            DateTime python:modules['DateTime'].DateTime;
-                            b_size python:1;b_start python:0;
-                            b_start request/b_start | b_start;
-                            desc_length site_properties/search_results_description_length;
-                            desc_ellipsis site_properties/ellipsis;
-                            searchterm request/SearchableText|nothing;
-                            results view/search;
+                nace request/nace|string:;
+                nace python:nace==[''] and '' or nace;
+                provider request/remote_provider|python:'';
+                provider python:provider==[''] and '' or provider;
+                category request/category|string:;
+                getRemoteLanguage request/getRemoteLanguage|string:;
+                country request/country|string:;
+                getCategoryIndependent request/getCategoryIndependent|string:1;
+                getCategoryIndependent python:bool(int(getCategoryIndependent));
+                riskfactors request/riskfactors|string:;
+                riskfactors python:riskfactors==[''] and '' or riskfactors;
+                DateTime python:modules['DateTime'].DateTime;
+                b_size python:10;b_start python:0;
+                b_start request/b_start | b_start;
+                desc_length site_properties/search_results_description_length;
+                desc_ellipsis site_properties/ellipsis;
+                searchterm request/SearchableText|nothing;
+                results view/search;
                            ">
   <form name="searchform" 
         tal:attributes="action template/id"
@@ -76,12 +76,14 @@
         <div metal:define-macro="main">
           <div id="simplesearch">
             <ul class="search-top">
-              <li><a i18n:translate="label_simple_search" href="simple_search">Simple Search</a></li>
               <li><a class="selected" 
                      i18n:translate="label_advanced_search" 
-                     href="advanced_search">Advanced Database Search</a>
+                     href="advanced_search">Search the Database</a>
               </li>
-              <li><a href="searchtipps" i18n:translate="label_searchtips">Search Tips</a></li>
+              <li>
+                  <a href="searchtipps" 
+                     i18n:translate="label_searchtips">Search Tips</a>
+              </li>
             </ul>
           </div>
           <div id="searchfields">
@@ -90,16 +92,16 @@
                    name="SearchableText" 
                    size="25" 
                    i18n:attributes="title title_search_title;"
-                   tal:attributes="value request/SearchableText|nothing;"/>
+                   tal:define="filltext view/getFillText | string:xxx"
+                   tal:attributes="value request/SearchableText|filltext"/>
             <br />
-            <p class="formHelp" 
+            <!--p class="formHelp" 
                i18n:translate="help_simple_search">
                Note: Variable or unknown parts of a word can be searched for using the * key.
-            </p>
+            </p-->
 
             <div class="column1b">
-                <h5 i18n:translate="heading_searchcriteria">Search Criteria</h5>
-                
+               
                 <p>
                 <input class="radio_search" 
                        type="radio" 
@@ -117,124 +119,20 @@
                        value="0" 
                        name="getCategoryIndependent" 
                        tal:attributes="checked python:getCategoryIndependent==False"> 
-                <label i18n:translate="label_special_guideline">Special Action Guideline, restrict by...</label>
+                <label i18n:translate="label_special_guideline">Special Action Guideline</label>
                 </p>
                     
-                    <metal:macro define-macro="NACE_compact">
-                      <tal:define define=" fieldName   string:nace;
-                                        mockup      nocall:here/@@ATMockup;
-                                        value       nace;
-                                        level       python:3;
-                                        use_portal_type portal_type|string:RiskAssessmentLink;
-                                        field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
-                                        widget      nocall: field/widget;
-                                        mode        string:search;
-                                        accessor    python:field.getDefault(here);
-                                        errors      python:{};
-                                        at_url      here/portal_url/getPortalPath;
-                                        ">
-                        <ul class="search_index">
-                            <li>
-                                <span tal:replace="python:widget.Label(here)" />
-                                <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
-                            </li>
-                        </ul>
-
-                      </tal:define>
-                    </metal:macro>
-
-                    <div class="visualClear"><!-- --></div>
-                    
-                    <metal:macro define-macro="riskfactors">
-                        <tal:define define="fieldName  string:riskfactors;
-                                        mockup     nocall:here/@@ATMockup;
-                                        level       python:3;
-                                        value       riskfactors;
-                                        use_portal_type portal_type|string:RiskAssessmentLink;
-                                        field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
-                                        widget      nocall: field/widget;
-                                        mode        string:search;
-                                        accessor    python:field.getDefault(here);
-                                        errors      python:{};
-                                        at_url      here/portal_url/getPortalPath;
-                                        ">
-                            <ul class="search_index">
-                                <li>
-                                    <span tal:replace="python:widget.Label(here)" />
-                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
-                                </li>
-                            </ul>
-
-                      </tal:define>
-                  </metal:macro>
 
                 <div class="visualClear"><!-- --></div>
 
             </div>
             
             <div class="column2b">
-                <h5>Sprache und Region</h5>
+            
+                restrict by ...
 
                 <ul class="search_index">
                 
-                <li>
-                    <span metal:define-macro="RemoteLanguage_compact">
-                      <span i18n:domain="syslabcom" tal:omit-tag=""
-                            tal:define="filter_helper   here/@@filter_helper;
-                                        search_langs filter_helper/getRemotelanguages;
-                                        size size|string:1;
-                                        selected_lang getRemoteLanguage|request/getRemoteLanguage|string:">
-                            <span i18n:domain="RiskAssessmentLink" i18n:translate="label_remote_language">Remote Language</span>
-                            <div class="floated_control">
-                                <select name="getRemoteLanguage" style="width: 20em;"
-                                        tabindex=""
-                                        id="getRemoteLanguage"
-                                        tal:attributes="size size;
-                                            tabindex tabindex/next">
-
-                                    <option value="" i18n:domain="RiskAssessmentLink" i18n:translate="label_any_language">Any language</option>
-                                    <tal:langs tal:repeat="lang search_langs">
-                                        <option value="#" tal:attributes="value python:lang[0];
-                                                selected python:lang[0] == selected_lang"
-                                                tal:content="python:lang[1]"> 
-                                            language 
-                                        </option>
-                                   </tal:langs>
-                               </select>
-                          </div>
-                      </span>
-                    </span>
-                </li>
-
-                <!--li>
-                    <span metal:define-macro="Country_compact_index">
-                      <span tal:define="fieldName   string:country;
-                                        value       country|python:[];
-                                        mode        string:search;
-                                        size size|string:1;
-                                        ">
-                            <span i18n:domain="RiskAssessmentLink" i18n:translate="label_country">Information valid for</span>
-                            <div class="floated_control">
-                                <select style="width: 20em;"
-                                        tal:attributes="name fieldName;
-                                                        value value|python:[];
-                                                        id fieldName;
-                                                        size size;
-                                                        tabindex tabindex/next;"
-                                        tal:define="values python:here.portal_catalog.uniqueValuesFor('country');
-                                                    isodict here/portal_countryutils/getCountryIsoDict">
-                                  <option value="" i18n:domain="RiskAssessmentLink"
-                                        i18n:translate="label_select">Select...</option>    
-                                  <option tal:repeat="country values"
-                                          tal:attributes="value country;
-                                                          selected python:here.checkSelected(country, value) and 'selected' or None;"
-                                          tal:content="python:isodict.get(country, country)"
-                                          i18n:translate="">country</option>
-                                </select>
-                            </div>
-                      </span>
-                    </span>
-                </li-->
                 <li>
                       <tal:define define="fieldName   string:remote_provider;
                                         fieldRealName string:remoteProvider;
@@ -257,18 +155,51 @@
                                 <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
                       </tal:define>
                     
-                    <div class="visualClear"><!-- --></div>
                 </li>
-
+                <li>
+                    <metal:macro define-macro="NACE_compact">
+                      <tal:define define=" fieldName   string:nace;
+                                        mockup      nocall:here/@@ATMockup;
+                                        value       nace;
+                                        level       python:3;
+                                        use_portal_type portal_type|string:RiskAssessmentLink;
+                                        field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
+                                        widget      nocall: field/widget;
+                                        mode        string:search;
+                                        accessor    python:field.getDefault(here);
+                                        errors      python:{};
+                                        at_url      here/portal_url/getPortalPath;
+                                        ">
+                                <span tal:replace="python:widget.Label(here)" />
+                                <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                      </tal:define>
+                    </metal:macro>
+                </li>
+                <li>                    
+                    <metal:macro define-macro="riskfactors">
+                        <tal:define define="fieldName  string:riskfactors;
+                                        mockup     nocall:here/@@ATMockup;
+                                        level       python:3;
+                                        value       riskfactors;
+                                        use_portal_type portal_type|string:RiskAssessmentLink;
+                                        field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
+                                        widget      nocall: field/widget;
+                                        mode        string:search;
+                                        accessor    python:field.getDefault(here);
+                                        errors      python:{};
+                                        at_url      here/portal_url/getPortalPath;
+                                        ">
+                                    <span tal:replace="python:widget.Label(here)" />
+                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                      </tal:define>
+                    </metal:macro>
+                </li>
                 </ul>
                 </div>
 
-
                 <div class="visualClear"><!-- --></div>
-                <div class="submit_column column1b">
-                    
-                </div>
-                <div class="submit_column column2b">
+
+                <div class="submit_column">
 
                         <input class="context cancelbutton" 
                            type="submit" 
@@ -276,10 +207,10 @@
                            value="Search" 
                            i18n:attributes="value label_search;"/>
 
-                       <input class="context" type="reset" i18n:translate="label_cancel" value="Abbrechen" />
                 </div>
 
             </div>
+
             
         </div>
         <p>&nbsp;</p>
@@ -448,6 +379,7 @@
                              result_medium result_ob/getMedium | python:[];
                              result_price result_ob/getPrice;
                              result_free_for_members result_ob/getFree_for_members;
+                             result_method result_ob/getType_methodology;
                              result_provider result_ob/getRemoteProvider | nothing;
                              item_icon python:plone_view.getIcon(result);
                              url python:'%s?searchterm=%s'%(result_type in use_view_action and result_url+'/view' or result_url+'/', searchterm);">
@@ -475,18 +407,17 @@
             </div>
             
             <div class="search_medium">
-                <h5>Richtlinie</h5>
+                <h5 tal:content="python:view.get_printable_method(result_method)">Richtlinie</h5>
                 <p class="formHelp" i18n:translate="label_available_as">available as</p>          
                 <ul>
-                  <li tal:repeat="medium result_medium" tal:content="medium">PDF-download</li>
+                  <li tal:repeat="medium python:view.get_printable_medium(result_medium)" 
+                      tal:content="medium">PDF-download</li>
+                  <li tal:condition="result_price"><span i18n:translate="label_brochure">Brochure</span>: 
+                      <span tal:replace="result_price" />&nbsp;&euro;<span tal:condition="result_free_for_members">*</span>
+                  </li>
                 </ul>
-                <br/>
-                <ul>
-                    <li tal:condition="result_price"><span i18n:translate="label_price">Price</span>: 
-                        &euro; <span tal:replace="result_price" /></li>
-                    <li tal:condition="result_free_for_members" 
-                        i18n:translate="label_free_for_members">Free for members</li>
-                    
+                <ul style="list-style-image: url(ico_asterisk.gif);" tal:condition="result_free_for_members">
+                  <li><span tal:omit-tag="" i18n:translate="label_free_for_members">Free for members</span></li>
                 </ul>
                 <p>&nbsp;</p>
             </div>

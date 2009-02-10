@@ -3,7 +3,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
-
+from gfb.theme import GFBMessageFactory as _
 
 class AdvancedSearchView(BrowserView):
     """View for displaying the gfb search form
@@ -17,6 +17,11 @@ class AdvancedSearchView(BrowserView):
     def __call__(self):
         self.request.set('disable_border', True)
         return self.template() 
+
+    def getFillText(self):
+        """ return the translated fill text """
+        label = "label_your_searchtext" 
+        return _(label)
 
     def search_types(self):
         """ returns a list of translated search types to select from """
@@ -33,6 +38,34 @@ class AdvancedSearchView(BrowserView):
 
         return TYPES
 
+    def get_printable_medium(self, mediumlist):
+        """ returns a list of media """
+        pv = getToolByName(self.context, 'portal_vocabularies')
+        vocab = pv.RiskassessmentMedia
+        strs = []
+        dl = vocab.getDisplayList(vocab)
+        for i in mediumlist:
+            if not i.strip():
+                continue
+            val = dl.getValue(i)
+            if val:
+                strs.append(val)
+        return strs
+    
+
+    def get_printable_method(self, methodlist):
+        """ returns a translated and comma spearated string of methods """
+        pv = getToolByName(self.context, 'portal_vocabularies')
+        vocab = pv.RiskassessmentTypeMethodology
+        strs = []
+        dl = vocab.getDisplayList(vocab)
+        for i in methodlist:
+            if not i.strip():
+                continue
+            val = dl.getValue(i)
+            if val:
+                strs.append(val)
+        return ", ".join(strs)
 
     def search_portal_types(self):
         """ compute the list of query params to search for portal_types"""
@@ -56,8 +89,8 @@ class AdvancedSearchView(BrowserView):
         #query = { 'sort_on': 'effective',
         #          'sort_order':'reverse',
         #          'Language': ''}
-        #language = getToolByName(context, 'portal_languages').getPreferredLanguage()
-        #query = query & In('Language', ['', language])
+        language = getToolByName(context, 'portal_languages').getPreferredLanguage()
+        query = query & In('Language', ['', language])
 
 #        keywords = self.request.get('keywords', [])
 #        if keywords:

@@ -160,7 +160,7 @@ msgstr "Einfache Suche"
 #. Default "Advanced Database Search"
 #: simple_search.pt
 msgid "label_advanced_search"
-msgstr "Erweitere Suche in der Databank"
+msgstr "Suche in der Databank"
 
 
 #. Default "Search Tips"
@@ -172,17 +172,22 @@ msgstr "Suchtipps"
 #. Default "Free for members"
 #: simple_search.pt
 msgid "label_free_for_members"
-msgstr "Für Mitglieder kostenfrei"
+msgstr "Für Mitgliedsbetriebe kostenfrei"
 
 #. Default "Price"
 #: simple_search.pt
 msgid "label_price"
 msgstr "Preis"
 
+#. Default "Price"
+#: simple_search.pt
+msgid "label_brochure"
+msgstr "Broschüre"
+
 #. Default "available as"
 #: simple_search.pt
 msgid "label_available_as"
-msgstr "Verfügbar als"
+msgstr "verfügbar als..."
 
 #. Default "Search"
 #: simple_search.pt
@@ -203,11 +208,11 @@ msgstr "Suchkriterien"
 #. Default "Special Action Guideline, restrict by..."
 #: advanced_search.pt
 msgid "label_special_guideline"
-msgstr "Spezielle Handlungshilfe, eingeschränkt nach..."
+msgstr "Spezielle Handlungshilfe"
 
 
 msgid "label_add"
-msgstr "Hinzufügen..."
+msgstr "Auswählen"
 
 # Default "Search results"
 # advanced_search.pt
@@ -228,4 +233,7 @@ msgstr "Seite"
 # advanced_search.pt
 msgid "heading_search_medium"
 msgstr "Medium"
+
+msgid "label_your_searchtext"
+msgstr "Ihr Suchbegriff"
 
