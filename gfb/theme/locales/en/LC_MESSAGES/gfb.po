@@ -156,7 +156,7 @@ msgstr "Search results"
 # Default "Documents"
 # advanced_search.pt
 msgid "batch_x_items"
-msgstr "$(number) documents"
+msgstr "${number} documents"
 
 # Default "Page"
 # advanced_search.pt

@@ -1369,9 +1369,53 @@ padding: 0 0 0 8px;
     background: #e5e6e8
 }
 
+#heading_search_results_box {
+    background-color:#415063;
+    color:whitesmoke;
+    font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+    font-size:15px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:20px;
+    margin-top:0;
+    padding:0;
+    vertical-align:middle;
+}
+#heading_search_results {
+    float:left;
+    display:block;
+    padding: 4px 0.5em 4px 8px;
+}    
+#search_num_results {
+    font-size: 80%;
+    vertical-align: baseline;
+    font-weight: normal;
+    padding-right: 1em;
+}
 
+#heading_search_medium {
+    float: right;
+    width: 160px;
+    padding: 4px 13px 4px 12px;
+    border-left: 2px solid #3f455d;
+}
+div.separationBar {
+    display:inline;
+    border-left: 2px solid #3f455d;
+}
 
-
+.listingBar {
+    font-size: 80%;
+    font-weight: normal;
+    vertical-align: baseline;
+    
+}
+.listingBar a {
+    color: whitesmoke;
+}
 /* @end */
 
 /* </dtml-with> */
