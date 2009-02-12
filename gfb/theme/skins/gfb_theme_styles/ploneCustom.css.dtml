@@ -145,7 +145,6 @@ body {
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     line-height: 20px;
     float: right;
-    width: 350px;
 }
 
 #portal-siteactions li {
