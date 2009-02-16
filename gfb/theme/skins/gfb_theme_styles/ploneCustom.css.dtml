@@ -60,7 +60,13 @@ iframe html body#content {
     font-size: 100%;
 }
 
+/* Accessibility elements, applied by JS */
+body.largeText { font-size: 95%; }
+body.smallText { font-size: 60%; }
+
+
 body {
+    font-family:"Verdana";
     position: relative;
     background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
     width: 100%;
@@ -181,12 +187,11 @@ div#portal-personaltools-wrapper {
 #portal-personaltools li a {
     color: #666;;
 }
-
 #portal-breadcrumbs {
     //clear: left;
     border-left: 200px solid #4a5b6d;
     height: 35px;
-    padding: 10px 10px 10px  22px;
+    padding:10px 10px 22px 22px;
     font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #666;
     display: block;
@@ -202,6 +207,9 @@ div#portal-personaltools-wrapper {
 .portal-breadcrumbs-highlighted #breadcrumbs-you-are-here {
     background: url(lc_active.gif) no-repeat 2px 0px;
     padding-left: 20px;
+}
+#breadcrumbs-you-are-here {
+  cursor:pointer;
 }
 
 
@@ -374,9 +382,9 @@ top: 0;
 	padding: 0 1px;
 	display: block;
 	margin-left: 0;
-
-	}
-
+    border:none;
+    margin-left:-30px; 
+}
 
 #LSNothingFound {
 	text-align: center;
@@ -696,7 +704,8 @@ li.navTreeItem {
 }
 
 .navTreeLevel1 a.navTreeCurrentItem {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 4px;
+  background:transparent url(ico_link_subnavi_active_right.gif) no-repeat scroll 16px 4px;
+  background-color: #D8DBE0;
 }
 .navTreeLevel1 a.navTreeItemInPath  {
     background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 4px;
@@ -704,8 +713,10 @@ li.navTreeItem {
 
 
 ul.navTreeLevel0 {
-    background:#d8dbe0 none repeat scroll 0 0;
+  background:#D8DBE0 none repeat scroll 0 0;
+  margin-left:0;
 }
+
 ul.navTreeLevel1 {
     background:#ffffff none repeat scroll 0 0;
     //border-top:1px solid #4A5B6D;
@@ -721,6 +732,22 @@ ul.navTreeLevel1 {
     padding-left: 30px;
     display: block;
 }
+
+/* Navtree improvements */
+.navTreeLevel0 li div a {
+  padding-bottom:2px;
+  padding-top:2px;
+}
+
+ul.navTree span {
+  line-height: 15px;
+  font-family: "arial";
+}
+
+
+
+
+
 
 /* @end */
 
@@ -1369,17 +1396,13 @@ div#providerperson label {
 }
 
 .fieldRequired {
-    background: url(&dtml-portal_url;
-    /required.gif) center left no-repeat;
-padding: 0 0 0 8px;
+    background: url(&dtml-portal_url;/required.gif) center left no-repeat;
+    padding: 0 0 0 8px;
     color: &dtml-fontColor;
-;
+
 }
 
 
-#gfb_topborder{
-    background: #e5e6e8
-}
 
 #heading_search_results_box {
     background-color:#415063;
@@ -1434,6 +1457,87 @@ div#link_to_tool {
     margin-bottom: 1em;
     
 }
+
+
+/* """"""""""""""""""""""""""""""""" TINA CUSTOM """""""""""""""""""""""*/
+
+
+#searchGadget {
+    padding-right:10px;
+    padding-left:15px;
+}
+
+#gfb_topborder {
+  background:#dee2e5 none repeat scroll 0 0;
+}
+
+.documentContent ul, div#region-content div ul  {
+    list-style-image:url(&dtml-portal_url;/bullet.gif);
+    list-style-type:square;
+    margin: 0 0 0.5em 1.5em;
+}
+
+#content image {
+  margin-top: 4px;
+  float:left;
+  margin-bottom: 2px;
+  margin-right: 10px;
+}
+
+#border-wrapper {
+  background-color:##EBECF0;
+}
+
+
+.portlet {
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:normal;
+}
+
+.risktable tr {
+  border-bottom:2px #E7E9EB;
+  padding:5px 10px;
+}
+
+
+/*
+ul {
+  list-style-type:disc;
+  margin-left:15px;
+}
+*/
+
+
+.managePortletsLink {
+  font-family:"Arial";
+}
+
+
+#globalnav-wrapper {
+  height:32px;
+  background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+}
+
+#portaltab-einstieg {
+  //margin-left:8.5em;
+}
+
+#portaltab-handlungshilfen {
+  //margin-left:8.5em;
+}
+
+#portaltab-gefaehrdungsfaktoren {
+  //margin-left:8.5em;
+}
+
+#portaltab-service {
+  //margin-left:8.5em;
+}
+
+
+
 
 /* @end */
 
