@@ -656,7 +656,7 @@ ul.staticPortlet li{
 
 /* @group Navigation */
 
-.portletNavigationTree {
+.portletNavigationTree, #portal-globalnav ul.submenu {
     font-weight: normal;
     font-style: normal;
     font-size: 90%;
@@ -666,48 +666,45 @@ ul.staticPortlet li{
 .portletNavigationTree .portletItem {
     margin: 0;
 }
-.portletNavigationTree li {
+.portletNavigationTree li, #portal-globalnav ul.submenu li {
     background: #d8dbe0;
     //margin-bottom: 1px;
     line-height: 21px;
 }
-.portletNavigationTree li a:hover {
+.portletNavigationTree li a:hover, #portal-globalnav ul.submenu li a:hover {
     background-color: #e9eaef;
 }
 
-.portletNavigationTree li a {
+.portletNavigationTree li a, #portal-globalnav ul.submenu li a {
     color: #000000;
     line-height: 1.6em;
 }
 
-.navTreeLevel1 li {
-    background-color: #ffffff;
-
-}
-
+.navTreeLevel1 li,
 .navTreeLevel2 li,
-.navTreeLevel3 li {
+.navTreeLevel3 li.
+#portal-globalnav ul.submenu li {
     background-color: #ffffff;
 }
 
-li.navTreeItem {
+li.navTreeItem, #portal-globalnav ul.submenu li.navTreeItem {
     margin: 0 0 0 0px;
     border-top: 1px solid #4a5b6d;
     border-collapse: collapse;
 }
 
-.navTreeLevel0 a.navTreeCurrentItem {
+.navTreeLevel0 a.navTreeCurrentItem, #portal-globalnav ul.submenu .navTreeLevel0 a.navTreeCurrentItem {
     background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
 }
-.navTreeLevel0 a.navTreeItemInPath  {
+.navTreeLevel0 a.navTreeItemInPath , #portal-globalnav ul.submenu .navTreeLevel0 a.navTreeItemInPath{
     background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
 }
 
-.navTreeLevel1 a.navTreeCurrentItem {
+.navTreeLevel1 a.navTreeCurrentItem, #portal-globalnav ul.submenu .navTreeLevel1 a.navTreeCurrentItem {
   background:transparent url(ico_link_subnavi_active_right.gif) no-repeat scroll 16px 4px;
   background-color: #D8DBE0;
 }
-.navTreeLevel1 a.navTreeItemInPath  {
+.navTreeLevel1 a.navTreeItemInPath , #portal-globalnav ul.submenu .navTreeLevel1 a.navTreeItemInPath {
     background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 4px;
 }
 
@@ -739,13 +736,28 @@ ul.navTreeLevel1 {
   padding-top:2px;
 }
 
+
+/* in the dropdown navi, we need no indenting */
+#portal-globalnav ul.submenu li div a {
+    padding-left: 0px;
+}
+#portal-globalnav ul.submenu li {
+    padding-left: 0.5em;
+}
+/* No item imgs */
+#portal-globalnav ul.submenu li div a img{
+    display:none;
+}
+
+
 ul.navTree span {
   line-height: 15px;
   font-family: "arial";
 }
 
-
-
+#portal-globalnav ul.submenu li {
+    //background:#424951 none repeat-x scroll 0 0;
+}
 
 
 
