@@ -1,14 +1,8 @@
 <?xml version="1.0"?>
 <object>
-    <hidden manager="plone.portaltop" skinname="*"
-           based-on="Plone Default">
-      <viewlet name="plone.app.i18n.locales.languageselector"
-         insert-before="*" />
-      <viewlet name="plone.path_bar" />
-    </hidden>
+
     
-    <order manager="plone.portaltop" skinname="*"
-           based-on="Plone Default">
+    <order manager="plone.portaltop" skinname="*">
            <viewlet name="gfb.topborder" />
            <viewlet name="plone.header" />
            <viewlet name="plone.personal_bar" />
@@ -21,8 +15,16 @@
         <viewlet name="plone.site_actions" />
         <viewlet name="gfb.site_title" />
         <viewlet name="plone.logo" />
-        <viewlet name="plone.searchbox" />
-        <viewlet name="plone.global_sections" />
+        <viewlet name="gfb.global_sections" />
     </order>
+    
+    <hidden manager="plone.portaltop"  skinname="*">
+      <viewlet name="plone.app.i18n.locales.languageselector" />
+      <viewlet name="plone.path_bar" />
+    </hidden>
 
+    <hidden manager="plone.portalheader" skinname="*">
+        <viewlet name="plone.searchbox" />
+        <viewlet name="plone.global_sections" />    
+    </hidden>
 </object>

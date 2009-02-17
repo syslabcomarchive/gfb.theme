@@ -17,7 +17,6 @@
     background-color: #2b3c52;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #cccedf;
-    //clear: both;
     display: block;
     line-height:32px;
 }
@@ -75,7 +74,7 @@ body {
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
 #border-wrapper {
-    padding: 0 22px;
+    //XXXpadding: 0 22px;
     margin: 0 auto;
     text-align:center;
 }
@@ -84,20 +83,22 @@ body {
     background: #fff;
     text-align: left;
     margin: 0 auto;
+/*
     min-width: 980px;
     max-width: 1236px;
+*/
 }
 
 
 /* @group top */
 
-#portal-top {
+/*#portal-top {
 	width: 100%;
 }
-
+*/
 #portal-header {
     background: #4f647c url(blue_bg.jpg ) no-repeat left top;
-    width: 100%;
+    //XXXwidth: 100%;
     padding: 0;
     margin: 0;
 }
@@ -376,14 +377,10 @@ top: 0;
 }
 
 .LSBox {
-	clear: left;
-	float: left;
 	text-align: right;
 	padding: 0 1px;
-	display: block;
 	margin-left: 0;
     border:none;
-    margin-left:-30px; 
 }
 
 #LSNothingFound {
@@ -611,15 +608,10 @@ ul.staticPortlet li{
 
 /* @group Globalnav */
 
-#portal-globalnav-box {
-    margin-left:200px;
-    margin-right:250px;
-    width:100%;
-}
 #portal-globalnav {
     //width: 545px;
-    display: block;
-    margin: 0px 250px 0 0 ;
+    //display: block;
+    //margin: 0px 250px 0 0 ;
     padding: 0;
     height: 32px;
     background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
@@ -639,7 +631,6 @@ ul.staticPortlet li{
 #portal-globalnav li a {
     line-height: 32px;
     color: white;
-    //font-weight: bold;
     font-size: 12px;
 }
 
@@ -839,7 +830,7 @@ h4 {
     font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     vertical-align: middle;
     font-weight: bold;
-display: block !important;
+    display: block !important;
 }
 
 
@@ -1471,7 +1462,7 @@ div#link_to_tool {
 }
 
 
-/* """"""""""""""""""""""""""""""""" TINA CUSTOM """""""""""""""""""""""*/
+/* """"""""""""""""""""""""""""""""" CUSTOM """""""""""""""""""""""*/
 
 
 #searchGadget {
@@ -1480,7 +1471,7 @@ div#link_to_tool {
 }
 
 #gfb_topborder {
-  background:#dee2e5 none repeat scroll 0 0;
+  background: #ebecf0 none repeat scroll 0 0;
 }
 
 .documentContent ul, div#region-content div ul  {
@@ -1497,7 +1488,7 @@ div#link_to_tool {
 }
 
 #border-wrapper {
-  background-color:##EBECF0;
+  background-color:#EBECF0;
 }
 
 
@@ -1514,14 +1505,6 @@ div#link_to_tool {
 }
 
 
-/*
-ul {
-  list-style-type:disc;
-  margin-left:15px;
-}
-*/
-
-
 .managePortletsLink {
   font-family:"Arial";
 }
@@ -1532,24 +1515,25 @@ ul {
   background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
 }
 
-#portaltab-einstieg {
-  //margin-left:8.5em;
+#globalnav-group {
+    height:32px; 
+    width: 100%; 
+    background: #424951 url(bg_topnavi_break.gif) repeat-x;
+    line-height: 32px;
 }
 
-#portaltab-handlungshilfen {
-  //margin-left:8.5em;
+#portal-globalnav-box {
+    float: left;
+}
+#search { 
+    float: right; 
+    width: 240px; 
 }
 
-#portaltab-gefaehrdungsfaktoren {
-  //margin-left:8.5em;
+#portal-searchbox { 
+    float: right; 
+    width: 40px; 
 }
-
-#portaltab-service {
-  //margin-left:8.5em;
-}
-
-
-
 
 /* @end */
 

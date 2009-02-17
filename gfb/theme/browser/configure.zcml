@@ -71,7 +71,7 @@
 
     <!-- The global sections -->
     <browser:viewlet
-        name="plone.global_sections"
+        name="gfb.global_sections"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".viewlets.GlobalSectionsViewletGFB"
         layer=".interfaces.IThemeSpecific"
@@ -79,13 +79,13 @@
         />
 
     <!-- The search box -->
-    <browser:viewlet
+    <!--browser:viewlet
         name="plone.searchbox"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".viewlets.SearchBoxViewletGFB"
         layer=".interfaces.IThemeSpecific"
         permission="zope2.View" 
-        />
+        /-->
 
     <browser:page
       for="*"

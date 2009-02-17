@@ -1,6 +1,5 @@
-<tal:tabs tal:condition="view/portal_tabs"
-          i18n:domain="plone">
-    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+<div id="globalnav-group">
 
     <div id="you-have-chosen" 
          tal:define="rcp python:here.portal_url.getRelativeContentPath(here);
@@ -15,17 +14,74 @@
              i18n:domain="gfb">
            Homepage
        </span>
+
     </div>
-    <div id="portal-globalnav-box">
-    <ul id="portal-globalnav">
-        <tal:tabs tal:repeat="tab view/portal_tabs"><li tal:attributes="id string:portaltab-${tab/id};
-                            class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'">
-            <a href="" 
-               tal:content="tab/name"
-               tal:attributes="href tab/url;
-                               title tab/description|nothing">
-            Tab Name
-            </a></li></tal:tabs>
-    </ul>
+
+    <tal:tabs tal:condition="view/portal_tabs"
+              i18n:domain="plone">
+        <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+        
+        <div id="portal-globalnav-box">
+        <ul id="portal-globalnav">
+            <tal:tabs tal:repeat="tab view/portal_tabs"><li tal:attributes="id string:portaltab-${tab/id};
+                                class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'">
+                <a href="" 
+                   tal:content="tab/name"
+                   tal:attributes="href tab/url;
+                                   title tab/description|nothing">
+                Tab Name
+                </a></li></tal:tabs>
+        </ul>
+        </div>
+    </tal:tabs>
+
+
+    <div id="portal-searchbox"
+         i18n:domain="plone">
+        <form name="searchform"
+              action="search"
+              tal:attributes="action string:${view/site_url}/search">
+
+            <label for="searchGadget" class="hiddenStructure"
+                        i18n:translate="text_search">Search Site</label>
+<!--
+            <div class="LSBox">
+            <input name="SearchableText"
+                   type="text"
+                   size="18"
+                   value=""
+                   title="Search Site"
+                   accesskey="4"
+                   i18n:attributes="title title_search_site;"
+                   tal:attributes="value request/SearchableText|nothing;
+                                   id view/search_input_id"
+                   class="inputLabel" />
+
+            <input class="searchButton"
+                   type="submit"
+                   value="Search"
+                   i18n:attributes="value label_search;" />
+        
+           
+
+            <div class="LSResult" id="LSResult" style=""><div class="LSShadow" id="LSShadow"></div></div>
+            </div>
+            -->
+        </form>
+<!--
+        <div id="portal-advanced-search"
+             class="hiddenStructure">
+            <a href="#"
+               tal:attributes="href string:${view/site_url}/search_form"
+               i18n:translate="label_advanced_search"
+               accesskey="5">
+                Advanced Search&hellip;
+            </a>
+        </div>
+-->        
     </div>
-</tal:tabs>
+
+</div>
+
+
