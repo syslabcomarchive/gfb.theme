@@ -74,7 +74,7 @@ body {
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
 #border-wrapper {
-    //XXXpadding: 0 22px;
+    padding: 0 16px;
     margin: 0 auto;
     text-align:center;
 }
@@ -92,13 +92,10 @@ body {
 
 /* @group top */
 
-/*#portal-top {
-	width: 100%;
-}
-*/
+
 #portal-header {
     background: #4f647c url(blue_bg.jpg ) no-repeat left top;
-    //XXXwidth: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
 }
