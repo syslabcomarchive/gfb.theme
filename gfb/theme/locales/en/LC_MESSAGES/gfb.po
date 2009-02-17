@@ -171,6 +171,6 @@ msgstr "Medium"
 msgid "label_your_searchtext"
 msgstr "your searchtext"
 
-msgid "link_rechtliche_hinweise"
-msgstr "Legal notes"
+msgid "link_nutzungshinweise"
+msgstr "Instructions for use"
 

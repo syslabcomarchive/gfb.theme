@@ -238,7 +238,7 @@ msgid "label_your_searchtext"
 msgstr "Ihr Suchbegriff"
 
 msgid "link_rechtliche_hinweise"
-msgstr "Rechtliche Hinweise"
+msgstr "Nutzungshinweise"
 
 
 
