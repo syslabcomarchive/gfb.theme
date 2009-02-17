@@ -1521,6 +1521,9 @@ div#link_to_tool {
     background: #424951 url(bg_topnavi_break.gif) repeat-x;
     line-height: 32px;
 }
+#globalnav-group .hiddenStructure {
+    float:left;
+}
 
 #portal-globalnav-box {
     float: left;
@@ -1532,7 +1535,7 @@ div#link_to_tool {
 
 #portal-searchbox { 
     float: right; 
-    width: 40px; 
+    width: 250px; 
 }
 
 /* @end */

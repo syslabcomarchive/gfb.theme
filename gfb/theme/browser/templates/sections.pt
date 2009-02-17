@@ -17,9 +17,9 @@
 
     </div>
 
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
     <tal:tabs tal:condition="view/portal_tabs"
               i18n:domain="plone">
-        <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
 
         
         <div id="portal-globalnav-box">
@@ -45,7 +45,7 @@
 
             <label for="searchGadget" class="hiddenStructure"
                         i18n:translate="text_search">Search Site</label>
-<!--
+
             <div class="LSBox">
             <input name="SearchableText"
                    type="text"
@@ -67,9 +67,8 @@
 
             <div class="LSResult" id="LSResult" style=""><div class="LSShadow" id="LSShadow"></div></div>
             </div>
-            -->
         </form>
-<!--
+
         <div id="portal-advanced-search"
              class="hiddenStructure">
             <a href="#"
@@ -79,7 +78,6 @@
                 Advanced Search&hellip;
             </a>
         </div>
--->        
     </div>
 
 </div>
