@@ -1548,6 +1548,63 @@ ul.submenu {
     z-index: 30;
 }
 
+
+/*
+** link classes for js usage
+*/
+.link-external-js {
+    background: transparent url(&dtml-portal_url;/link_external.gif) 0px 3px no-repeat;
+    padding: 1px 0px 1px 10px;
+}
+.link-https-js {
+    background: transparent url(&dtml-portal_url;/lock_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 10px;
+}
+.link-mailto-js {
+    background: transparent url(&dtml-portal_url;/mail_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 12px;
+}
+.link-news-js {
+    background: transparent url(&dtml-portal_url;/topic_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+.link-ftp-js {
+    background: transparent url(&dtml-portal_url;/file_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+.link-pdf-js {
+    background: transparent url(&dtml-portal_url;/pdf_icon.gif) 0px -1px no-repeat;
+    padding: 0px 2px 1px 16px;
+}
+/*
+** office group
+*/
+
+.link-doc-js {
+    background: transparent url(&dtml-portal_url;/msword_icon.gif) 0px -1px no-repeat;
+    padding: 0px 2px 1px 16px;
+}
+.link-xls-js {
+    background: transparent url(&dtml-portal_url;/xls_icon.gif) 0px -1px no-repeat;
+    padding: 0px 2px 1px 16px;
+}
+.link-ppt-js {
+    background: transparent url(&dtml-portal_url;/msppt_icon.gif) 0px -1px no-repeat;
+    padding: 0px 2px 1px 16px;
+}
+.link-zip-js {
+    background: transparent url(&dtml-portal_url;/zip_icon.gif) 0px -1px no-repeat;
+    padding: 0px 2px 1px 16px;
+}
+.link-irc-js {
+    background: transparent url(&dtml-portal_url;/discussionitem_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+.link-callto-js {
+    background: transparent url(&dtml-portal_url;/phone_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+
 /* @end */
 
 /* </dtml-with> */

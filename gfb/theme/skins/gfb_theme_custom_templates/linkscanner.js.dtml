@@ -140,7 +140,7 @@ function modifyLinkTag(node) {
         }
     }
 }
-registerPloneFunction(scanforlinks)   
+/*registerPloneFunction(scanforlinks)   */
 
 function registerPloneFunction(func){
     // registers a function to fire onload. 
