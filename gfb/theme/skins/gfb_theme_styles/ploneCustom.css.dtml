@@ -395,7 +395,7 @@ top: 0;
     width: 200px;
     padding: 0;
     border-right: 1px solid #ccc;
-    background: white url(blue_forl.jpg) repeat-x;
+    background: white;
 }
 
 #portal-column-two {
@@ -659,8 +659,12 @@ ul.staticPortlet li{
     //margin-bottom: 1px;
     line-height: 21px;
 }
-.portletNavigationTree li a:hover, #portal-globalnav ul.submenu li a:hover {
+.portletNavigationTree li a:hover, #portal-globalnav ul.submenu li.navTreeItem:hover {
     background-color: #e9eaef;
+}
+
+#portal-globalnav li.selected ul.submenu a:hover {
+    background-color:#e9eaef;
 }
 
 .portletNavigationTree li a, #portal-globalnav ul.submenu li a {
@@ -1527,12 +1531,21 @@ div#link_to_tool {
 }
 #search { 
     float: right; 
-    width: 240px; 
+    width: 250px; 
 }
 
 #portal-searchbox { 
     float: right; 
     width: 250px; 
+}
+
+#portal-globalnav {
+    position:static;
+    z-index: 3;
+}
+
+ul.submenu {
+    z-index: 30;
 }
 
 /* @end */

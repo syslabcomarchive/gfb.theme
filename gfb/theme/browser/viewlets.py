@@ -2,6 +2,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
 from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
+from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
+from plone.app.portlets.portlets.navigation import Assignment
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):
@@ -18,14 +20,20 @@ class SiteTitleViewlet(ViewletBase):
 class PathBarViewletGFB(PathBarViewlet):
     render = ViewPageTemplateFile('templates/path_bar.pt')
 
-class GlobalSectionsViewletGFB(GlobalSectionsViewlet, SearchBoxViewlet):
+class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, SearchBoxViewlet):
     render = ViewPageTemplateFile('templates/sections.pt')
 
     def update(self):
-        # from viewletbase
+        # from viewletbase                
         self.portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')
         self.site_url = self.portal_state.portal_url()
+
+        # from dropdownmenu
+        super(DropdownMenuViewlet, self).update()
+        self.properties = getToolByName(self.context, 'portal_properties').navtree_properties
+        self.data = Assignment()
+
 
         # from globalsections
         context_state = getMultiAdapter((self.context, self.request),
