@@ -1,0 +1,159 @@
+portal_url = '<dtml-var portal_url>';
+function osha_gotoURL (x) {
+    if (x=='') {
+        document.forms['networkchooser'].reset();
+        return;
+    } else {
+        if(x.substr(5, 11)=='http://') {
+            loc = x;
+        } else {
+            loc = 'http://'+x;
+        }
+        window.location.href = loc
+    }
+}
+
+function getContentArea() {
+	// to end all doubt on where the content sits. It also felt a bit silly doing this over and over in every
+	// function, even if it is a tiny operation. Just guarding against someone changing the names again, in the name
+	// of semantics or something.... ;)
+	node =  document.getElementById('region-content')
+	if (! node){
+		node = document.getElementById('content')
+		}
+	return node
+}
+
+function getPortlets() {
+    portlets = new Array();
+    left = document.getElementById('portal-column-one');
+    right = document.getElementById('portal-column-two');
+    if(left) {
+        portlets.push(left)
+    }
+	if(right) {
+        portlets.push(right)
+    }
+	return portlets
+}
+
+// script for detecting external links.
+// sets their target-attribute to _blank , and adds a class external
+function scanforlinks() {
+    // securing against really old DOMs 
+    if (! document.getElementsByTagName){return false};
+    if (! document.getElementById){return false};
+    // Quick utility function by Geir Bækholt
+    // Scan all links in the document and set classes on them dependant on 
+    // whether they point to the current site or are external links
+    contentarea = getContentArea();
+    portlets = getPortlets();
+    if (! contentarea && portlets.length<=0){
+        return false
+    }
+    var links = contentarea.getElementsByTagName('a');
+    for (i=0; i < links.length; i++){      
+        modifyLinkTag(links[i]);
+    }
+    for(i=0;i<portlets.length;i++) {
+        var plinks = portlets[i].getElementsByTagName('a');
+        for (j=0; j < plinks.length; j++){      
+            modifyLinkTag(plinks[j]);
+        }
+    }
+}
+
+function injectNode(node, injectedtype, injectedclass) {
+    var injectednode = document.createElement(injectedtype)
+    // Not injecting a space character to make the image appear closer to the link.
+    // That way it looks more like Plone's mailto and https insertion.
+    // XXX: Injecting the space character again, since ommitting it
+    // breaks IE7 compatibility.
+    var injectedtext = document.createTextNode(String.fromCharCode(160));
+    injectednode.appendChild(injectedtext);
+    injectednode.className = injectedclass;
+    node.parentNode.insertBefore(injectednode, node);
+}
+
+function modifyLinkTag(node) {
+    linkname = node.getAttribute('name');
+    if(linkname) {
+        if(linkname.indexOf('navigationlink')==0 ) {
+            return;
+        }
+    }
+    if (node.getAttribute('href') && node.className.indexOf('link-plain')==-1 ){
+        var linkval = node.getAttribute('href')
+
+        // check if the link href is a relative link, or an absolute link to the current host.
+		if (linkval.toLowerCase().indexOf(window.location.protocol+'//'+window.location.host)==0) {
+            // we are here because the link is an absolute pointer internal to our host
+            // do nothing
+        } else if (linkval.indexOf('http:') != 0){
+            // not a http-link. Possibly an internal relative link, but also possibly a mailto ot other snacks
+            // add tests for all relevant protocols as you like.
+            protocols = ['ftp', 'news', 'irc', 'callto']
+            // h323, sip and callto are internet telephony VoIP protocols
+            
+            for (p=0; p < protocols.length; p++){  
+                 if (linkval.indexOf(protocols[p]+':') == 0){
+                    // this link matches the protocol . add a classname protocol+link
+                    linkclass = 'link-'+protocols[p]
+                    injectNode(node, 'span', linkclass+'-js')
+                    if(node.className==linkclass||node.className==linkclass+'-js') {
+                        node.removeAttribute('class');
+                    }
+                    break;
+                }
+            }
+        } 
+                //         else {
+                //             // we are in here if the link points to somewhere else than our site.
+                //             if ( node.getElementsByTagName('img').length == 0 ){
+                // // we do not want to mess with those links that already have images in them
+                // injectNode(node, 'span', 'link-external-js');
+                //                 if(node.className=='link-external') {
+                //                     node.className='';
+                //                 }
+                //             }
+                //         /*
+                //             if (node.getAttribute('onclick') == false){
+                //                if (node.addEventListener) node.addEventListener("onclick",window.open(node.href), true);
+                //                else if (node.attachEvent) node.attachEvent("onclick",window.open(node.href));
+                //             }
+                //         */
+                //         }
+        pathelems = linkval.split('/');
+        filename = pathelems[pathelems.length-1];
+        fileelems = filename.split('.');
+
+        if(filename.indexOf('?')<0 && fileelems.length>1 && node.getElementsByTagName('img').length == 0) {
+            ending = fileelems[fileelems.length-1].toLowerCase();
+            endings = ['pdf', 'doc', 'xls', 'ppt', 'zip'];
+            for (e=0; e < endings.length; e++){ 
+                if (ending == endings[e]) {
+                    linkclass = 'link-'+ending+'-js';
+                    injectNode(node, 'span', linkclass);
+                    break;
+                }
+            }
+        }
+    }
+}
+registerPloneFunction(scanforlinks)   
+
+function registerPloneFunction(func){
+    // registers a function to fire onload. 
+    // Turned out we kept doing this all the time
+    // Use this for initilaizing any javascript that should fire once the page has been loaded. 
+    // 
+    if (window.addEventListener) window.addEventListener("load",func,false);
+    else if (window.attachEvent) window.attachEvent("onload",func);   
+}
+
+function unRegisterPloneFunction(func){
+    // uregisters a previous function to fire onload. 
+    if (window.removeEventListener) window.removeEventListener("load",func,false);
+    else if (window.detachEvent) window.detachEvent("onload",func);   
+}
+
