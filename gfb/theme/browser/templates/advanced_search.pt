@@ -104,6 +104,7 @@
                
                 <p>
                 <input class="radio_search" 
+                       id="radio_category_common"
                        type="radio" 
                        value="1" 
                        name="getCategoryIndependent" 
@@ -115,6 +116,7 @@
                 
                 <p>
                 <input class="radio_search" 
+                       id="radio_category_special"
                        type="radio" 
                        value="0" 
                        name="getCategoryIndependent" 
@@ -133,7 +135,7 @@
 
                 <ul class="search_index">
                 
-                <li>
+                <li id="search_control_remote_provider">
                       <tal:define define="fieldName   string:remote_provider;
                                         fieldRealName string:remoteProvider;
                                         mockup      nocall:here/@@ATMockup;
@@ -156,7 +158,7 @@
                       </tal:define>
                     
                 </li>
-                <li>
+                <li id="search_control_nace" class="search_deactivatable disabled">
                     <metal:macro define-macro="NACE_compact">
                       <tal:define define=" fieldName   string:nace;
                                         mockup      nocall:here/@@ATMockup;
@@ -175,7 +177,7 @@
                       </tal:define>
                     </metal:macro>
                 </li>
-                <li>                    
+                <li id="search_control_riskfactors" class="search_deactivatable disabled">                    
                     <metal:macro define-macro="riskfactors">
                         <tal:define define="fieldName  string:riskfactors;
                                         mockup     nocall:here/@@ATMockup;

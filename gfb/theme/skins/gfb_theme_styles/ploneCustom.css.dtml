@@ -69,7 +69,6 @@ body {
     position: relative;
     background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
     width: 100%;
-    //margin: 0px auto;
     text-align:center;
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
@@ -83,10 +82,8 @@ body {
     background: #fff;
     text-align: left;
     margin: 0 auto;
-/*
     min-width: 980px;
     max-width: 1236px;
-*/
 }
 
 
@@ -186,7 +183,6 @@ div#portal-personaltools-wrapper {
     color: #666;;
 }
 #portal-breadcrumbs {
-    //clear: left;
     border-left: 200px solid #4a5b6d;
     height: 35px;
     padding:10px 10px 22px 22px;
@@ -401,7 +397,6 @@ top: 0;
 #portal-column-two {
     width: 235px;
     padding: 0;
-    //background: white url(blue_forl.jpg) repeat-x;
     background: white url(col2-bg.jpg) repeat-x;
     border-left: 1px solid #ccc;
 }
@@ -579,26 +574,25 @@ a.doublelink:hover{
 
 
 
-ul.staticPortlet{
-    width: 200px
+ul.staticPortlet {
+    width: 200px;
     display: block;
     clear: both;
     margin: 0px;
     padding: 0 0 0 0;
     margin: 0 0 10px 0;
     height: 30px;
-    background: #4B516B; repeat-x 200px;
+    background: #4B516B repeat-x 200px;
     font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
-ul.staticPortlet li{
+ul.staticPortlet li {
     display: block;
     margin: 0;
     padding: 0 0 0 12px;
     float: left;
     color: white;
     line-height: 30px;
-    //font-weight: bold;
     background: #4B516B repeat-x;
     font-size: 12px;
 }
@@ -606,14 +600,10 @@ ul.staticPortlet li{
 /* @group Globalnav */
 
 #portal-globalnav {
-    //width: 545px;
-    //display: block;
-    //margin: 0px 250px 0 0 ;
     padding: 0;
     height: 32px;
     background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    //float:left;
 }
 
 #portal-globalnav li {
@@ -656,7 +646,6 @@ ul.staticPortlet li{
 }
 .portletNavigationTree li, #portal-globalnav ul.submenu li {
     background: #d8dbe0;
-    //margin-bottom: 1px;
     line-height: 21px;
 }
 .portletNavigationTree li a:hover, #portal-globalnav ul.submenu li.navTreeItem:hover {
@@ -672,12 +661,12 @@ ul.staticPortlet li{
     line-height: 1.6em;
 }
 
-.navTreeLevel1 li,
+/*.navTreeLevel1 li,
 .navTreeLevel2 li,
-.navTreeLevel3 li.
+.navTreeLevel3 li,
 #portal-globalnav ul.submenu li {
     background-color: #ffffff;
-}
+}*/
 
 li.navTreeItem, #portal-globalnav ul.submenu li.navTreeItem {
     margin: 0 0 0 0px;
@@ -708,7 +697,6 @@ ul.navTreeLevel0 {
 
 ul.navTreeLevel1 {
     background:#ffffff none repeat scroll 0 0;
-    //border-top:1px solid #4A5B6D;
 }
 
 
@@ -747,10 +735,6 @@ ul.navTree span {
   font-family: "arial";
 }
 
-#portal-globalnav ul.submenu li {
-    //background:#424951 none repeat-x scroll 0 0;
-}
-
 
 
 /* @end */
@@ -773,7 +757,6 @@ ul.navTree span {
     background-color: #415063;
     padding: 4px 8px 4px 8px;
     color: whitesmoke;
-    //margin-bottom: 5px;
     font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     vertical-align: middle;
     margin-top: 0;
@@ -1136,8 +1119,9 @@ div.search_medium {
     font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
-body.section-db.template-db_filter h1,
-body.section-db.template-db_filter h2,
+/*body.section-db.template-db_filter h1,
+body.section-db.template-db_filter h2,*/
+
 .search-top {
     background: #4B516B;
     color: white;
@@ -1220,20 +1204,20 @@ div.column2b {
     margin-top:0.5em;
 	font-weight: normal;
 	padding-left: 17px;
-	background: url(ico_search.gif) no-repeat 0 2px;
+	background: url(ico_search.gif) no-repeat 0 4px;
 }
 
 #searchfields input.context cancelbutton {
-	background-image: url(cancel_button.gif) no-repeat 0 2px;
+	background: url(cancel_button.gif) no-repeat 0 2px;
 }
 
 #simplesearch  li a.selected {
 	color: black;
-	background: #E5E6E8 url(search_li_selected.gif) no-repeat 11px 7px;
+	background: url(search_li_selected.gif) no-repeat 11px 7px;
 }
 
 .info_of_search a {
-		font-weight: bold;
+    font-weight: bold;
 	background: url(ico_link_internal.gif) no-repeat 0 4px;
 	padding-left: 13px;
 }
@@ -1242,10 +1226,10 @@ body.section-db.template-db_filter h2 {
     padding: 5px 8px;
 }
 
-form {
+/*form {
     #content: 0;
 }
-
+*/
 body.section-db.template-db_filter #portal-breadcrumbs {
     border-color: white;
 }
@@ -1478,7 +1462,6 @@ div#link_to_tool {
 .documentContent ul, div#region-content div ul  {
     list-style-image:url(&dtml-portal_url;/bullet.gif);
     list-style-type:square;
-    margin: 0 0 0.5em 1.5em;
 }
 
 #content image {
@@ -1548,6 +1531,13 @@ ul.submenu {
     z-index: 30;
 }
 
+
+.disabled {
+    color: gray;
+}
+.disabled a {
+    display: none;
+}
 
 /*
 ** link classes for js usage

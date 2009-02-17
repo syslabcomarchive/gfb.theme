@@ -7,6 +7,19 @@
     action-client: toggleClass;
     toggleClass-kssSelector: css("#portal-breadcrumbs");
     toggleClass-value: 'portal-breadcrumbs-highlighted';
-
     
 }
+
+
+input#radio_category_common:click {
+    action-client: addClass;
+    addClass-kssSelector: css(".search_deactivatable");
+    addClass-value: 'disabled';
+}
+
+input#radio_category_special:click {
+    action-client: removeClass;
+    removeClass-kssSelector: css(".search_deactivatable");
+    removeClass-value: 'disabled';
+}
+

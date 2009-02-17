@@ -159,4 +159,6 @@ class AdvancedSearchView(BrowserView):
         if hasattr(portal_catalog, 'getZCatalog'):
             portal_catalog = portal_catalog.getZCatalog()
         
-        return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
+        #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
+        return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
+        
