@@ -1,3 +1,4 @@
+from Acquisition import aq_inner, aq_base
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
 from zope.component import getMultiAdapter
