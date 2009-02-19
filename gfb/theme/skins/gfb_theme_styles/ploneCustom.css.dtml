@@ -1619,6 +1619,10 @@ ul.submenu {
     padding: 1px 0px 1px 16px;
 }
 
+div#footeractions-wrapper {
+    text-align: center;
+    padding: 2em 0 1em 0;
+}
 ul#portal-footeractions {
     margin: 0;
     padding: 0;

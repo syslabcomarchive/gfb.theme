@@ -10,9 +10,9 @@
                 tal:define="icon python:view.getIconFor('plone', action['id'], 'site_icon.gif');
                             is_last repeat/action/end">
 
-                <img alt="" src=""
+                <!--img alt="" src=""
                      tal:attributes="src string:${view/site_url}/$icon;
-                                     alt action/title" />
+                                     alt action/title" /-->
                 <a href="" rel="nofollow"
                    tal:define="title action/title;
                                id action/id;"
