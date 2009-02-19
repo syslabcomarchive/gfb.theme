@@ -7,6 +7,7 @@ from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
 from plone.app.portlets.portlets.navigation import Assignment
 from plone.memoize import ram
 from plone.memoize.compress import xhtml_compress
+from plone.app.portlets.cache import get_language
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):

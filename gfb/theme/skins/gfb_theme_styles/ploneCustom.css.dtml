@@ -9,6 +9,10 @@
 
 /* <dtml-with base_properties> */
 
+h1, h2, h3, h4, h5, h6 {
+    font-family:Arial,Verdana,Lucida,Helvetica,sans-serif;
+}
+
 #you-have-chosen {
     float:left;
     margin:0;
@@ -959,6 +963,19 @@ table {
     border-bottom: 2px solid white;
 }
 
+
+.risktable tr {
+  border-bottom:2px #E7E9EB;
+  padding:5px 10px;
+}
+.risktable th {
+    width: 25%;
+}
+.risktable td {
+    width: 75%
+}
+
+
 .strong {
     font-weight: bold;
 }
@@ -1066,6 +1083,13 @@ div.search_medium {
     padding:  13px 0 0 0;
     min-height: 140px;
     
+}
+div.search_medium {
+    font-family: Arial,sans-serif;
+}
+div#region-content div.search_medium ul  {
+    list-style-type:bullet;
+    list-style-image : none;
 }
 
 .info_of_search {
@@ -1213,7 +1237,7 @@ div.column2b {
 
 #simplesearch  li a.selected {
 	color: black;
-	background: url(search_li_selected.gif) no-repeat 11px 7px;
+	background: #e5e6e8 url(search_li_selected.gif) no-repeat 11px 7px;
 }
 
 .info_of_search a {
@@ -1483,11 +1507,6 @@ div#link_to_tool {
   line-height:normal;
 }
 
-.risktable tr {
-  border-bottom:2px #E7E9EB;
-  padding:5px 10px;
-}
-
 
 .managePortletsLink {
   font-family:"Arial";
@@ -1593,6 +1612,20 @@ ul.submenu {
 .link-callto-js {
     background: transparent url(&dtml-portal_url;/phone_icon.gif) 0px 1px no-repeat;
     padding: 1px 0px 1px 16px;
+}
+
+ul#portal-footeractions {
+    margin: 0;
+    padding: 0;
+}
+ul#portal-footeractions li {
+    display: inline;
+}
+ul#portal-footeractions li a {
+    text-decoration: none;
+}
+ul#portal-footeractions .breadcrumbSeparator {
+    color: #808080;
 }
 
 /* @end */
