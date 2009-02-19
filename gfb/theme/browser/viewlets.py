@@ -4,6 +4,8 @@ from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
 from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
 from plone.app.portlets.portlets.navigation import Assignment
+from plone.memoize import ram
+from plone.memoize.compress import xhtml_compress
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):
@@ -61,7 +63,7 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, Searc
         folder = context_state.folder()
         self.folder_path = '/'.join(folder.getPhysicalPath())
         
-class FooterActions(common.ViewletBase):
+class FooterActions(ViewletBase):
     
     _template = ViewPageTemplateFile('templates/footer_actions.pt')
     
