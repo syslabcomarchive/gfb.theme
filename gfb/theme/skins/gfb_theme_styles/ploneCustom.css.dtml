@@ -71,7 +71,7 @@ body.smallText { font-size: 60%; }
 body {
     font-family:"Verdana";
     position: relative;
-    background: #F7F7F7 url(bl-gr_bg.gif) repeat-x;
+    background: #EBECF0 none repeat-x;
     width: 100%;
     text-align:center;
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
@@ -726,8 +726,13 @@ ul.navTreeLevel1 {
     padding-left: 0px;
 }
 #portal-globalnav ul.submenu li {
+    padding-left: 0;
+    padding-right: 0;
+}
+#portal-globalnav ul.submenu li div {
     padding-left: 0.5em;
 }
+
 /* No item imgs */
 #portal-globalnav ul.submenu li div a img{
     display:none;
