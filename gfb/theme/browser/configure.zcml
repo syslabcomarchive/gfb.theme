@@ -87,6 +87,17 @@
         permission="zope2.View" 
         /-->
 
+    <!-- The bottom language selector bar -->
+    <browser:viewlet
+        name="gfb.footer.actions"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".viewlets.FooterActions"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+
+
     <browser:page
       for="*"
       name="workingarea"
@@ -127,6 +138,8 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
+    
+    
     
 
 </configure>

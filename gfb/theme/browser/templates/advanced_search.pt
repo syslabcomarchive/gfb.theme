@@ -421,7 +421,6 @@
                 <ul style="list-style-image: url(ico_asterisk.gif);" tal:condition="result_free_for_members">
                   <li><span tal:omit-tag="" i18n:translate="label_free_for_members">Free for members</span></li>
                 </ul>
-                <p>&nbsp;</p>
             </div>
 
             <div class="visualClear"><!-- --></div>

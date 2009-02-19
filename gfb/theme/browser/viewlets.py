@@ -61,6 +61,56 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, Searc
         folder = context_state.folder()
         self.folder_path = '/'.join(folder.getPhysicalPath())
         
+class FooterActions(common.ViewletBase):
+    
+    _template = ViewPageTemplateFile('templates/footer_actions.pt')
+    
+    
+    
+    def _footer_render_details_cachekey(fun, self):
+        """
+        Generates a key based on:
+    
+        * Current URL
+        * Negotiated language
+        * Anonymous user flag
+        
+        """
+        context = aq_inner(self.context)
+    
+        anonymous = getToolByName(context, 'portal_membership').isAnonymousUser()
+    
+        key= "".join((
+            '/'.join(aq_inner(self.context).getPhysicalPath()),
+            get_language(aq_inner(self.context), self.request),
+            str(anonymous),
+            ))
+        return key    
+    
+    
+    @ram.cache(_footer_render_details_cachekey) 
+    def render(self):
+        return xhtml_compress(self._template())
+
+    def update(self):
+        context_state = getMultiAdapter((self.context, self.request),
+                                        name=u'plone_context_state')
+        portal_state = getMultiAdapter((self.context, self.request),
+                                            name=u'plone_portal_state')    
+                                            
+        self.portal = portal_state.portal() 
+        self.site_url = portal_state.portal_url()                                   
+                                        
+        self.portal_actionicons = aq_base(getToolByName(self.context, 'portal_actionicons'))
+                                                
+        self.footer_actions = context_state.actions().get('footer_actions', None)        
+        
+        plone_utils = getToolByName(self.context, 'plone_utils')
+        self.getIconFor = plone_utils.getIconFor
+
+    def icon(self, action):
+        return self.getIconFor('plone', action['id'], None)        
+        
 
 
 #class SearchBoxViewletGFB(SearchBoxViewlet):

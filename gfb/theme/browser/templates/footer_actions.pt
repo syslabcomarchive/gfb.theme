@@ -1,0 +1,31 @@
+<div id="footeractions-wrapper">
+
+    <ul id="portal-footeractions"
+        i18n:domain="osha">
+
+        <tal:footer-actions
+             condition="view/footer_actions"
+             repeat="action view/footer_actions">
+            <li tal:attributes="id string:footeraction-${action/id}"
+                tal:define="icon python:view.getIconFor('plone', action['id'], 'site_icon.gif');
+                            is_last repeat/action/end">
+
+                <img alt="" src=""
+                     tal:attributes="src string:${view/site_url}/$icon;
+                                     alt action/title" />
+                <a href="" rel="nofollow"
+                   tal:define="title action/title;
+                               id action/id;"
+                   i18n:attributes="title"
+                   i18n:translate=""
+                   tal:content="title"
+                   tal:attributes="href action/url;
+                                   title title;"
+                >Footer action</a>
+                <span class="breadcrumbSeparator" tal:condition="not: is_last">|</span>
+            </li>
+        </tal:footer-actions>
+
+
+    </ul>
+</div>
