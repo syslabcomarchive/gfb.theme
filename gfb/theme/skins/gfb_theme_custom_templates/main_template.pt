@@ -144,6 +144,26 @@
                 </div>
 
               </metal:block>
+
+              <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
+              
+              <div tal:define="context_state context/@@plone_context_state;
+                                portlet_assignable context_state/portlet_assignable"
+                    tal:condition="python:not sl and not sr and portlet_assignable and checkPermission('Portlets: Manage portlets', context)">
+                  <a class="managePortletsFallback"
+                     tal:attributes="href string:${context_state/canonical_object_url}/@@manage-portlets"
+                     i18n:translate="manage_portlets_fallback">
+                     Manage portlets
+                  </a>
+              </div>
+
+              <metal:block i18n:domain="plone">
+
+                <div tal:replace="structure provider:plone.portalfooter" />
+
+              </metal:block>
+
+
             </td>
             <tal:comment replace="nothing"> End of main content block </tal:comment>
 
@@ -164,23 +184,6 @@
       </table>
       <tal:comment replace="nothing"> end column wrapper </tal:comment>
 
-      <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
-      
-      <div tal:define="context_state context/@@plone_context_state;
-                        portlet_assignable context_state/portlet_assignable"
-            tal:condition="python:not sl and not sr and portlet_assignable and checkPermission('Portlets: Manage portlets', context)">
-          <a class="managePortletsFallback"
-             tal:attributes="href string:${context_state/canonical_object_url}/@@manage-portlets"
-             i18n:translate="manage_portlets_fallback">
-             Manage portlets
-          </a>
-      </div>
-
-      <metal:block i18n:domain="plone">
-
-        <div tal:replace="structure provider:plone.portalfooter" />
-
-      </metal:block>
 
       <div class="visualClear"><!-- --></div>
     </div>
