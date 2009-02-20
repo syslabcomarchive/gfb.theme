@@ -1685,6 +1685,35 @@ td#portal-column-one div.visualPadding {
     background: transparent url(&dtml-portal_url;/gradient_background_portletbox.jpg) repeat-x top;
 }
 
+
+/* Tina neu */
+
+dd {
+  line-height:4.5em;
+  margin-bottom:1em;
+}
+
+td#risktable {
+  border: solid red;
+}
+
+.risklabel {
+  float:left;
+  margin-top:0.5em;
+  width: 20%;
+}
+
+#portlet-riskassessmentlink ul {
+  color: #515151;
+}
+
+#visualMarker li {
+  color:#000000;
+}
+
+
+
+
 /* @end */
 
 /* </dtml-with> */
