@@ -77,7 +77,7 @@ body {
     font: &dtml-fontBaseSize; <dtml-var fontFamily>;
 }
 #border-wrapper {
-    padding: 0 16px;
+    padding: 16px;
     margin: 0 auto;
     text-align:center;
 }
@@ -86,7 +86,7 @@ body {
     position: relative;
     background: #fff;
     text-align: left;
-    margin: 0px auto;
+    margin: 0 auto;
     min-width: 980px;
     max-width: 1236px;
 }
@@ -173,7 +173,7 @@ body {
 
 div#portal-personaltools-wrapper {
     float: right;
-    width: 230px;
+    width: 400px;
     display: block;
     clear: both;
 }
@@ -194,7 +194,6 @@ div#portal-personaltools-wrapper {
     font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #666;
     display: block;
-    margin-right: 235px;
 }
 .portal-breadcrumbs-highlighted {
     background: #e5e6e8 none repeat scroll 0 0 ;
@@ -1703,7 +1702,9 @@ td#portal-column-one div.visualPadding {
   color:#000000;
 }
 
-
+#gfb_topborder {
+    display: none;
+}
 
 
 /* @end */
