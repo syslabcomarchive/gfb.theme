@@ -685,12 +685,15 @@ ul.staticPortlet li {
 }
 
 li.navTreeItem {
-    margin: 1px 1px 1px 0px;
+    margin: 1px 0px 1px 0px;
     /*border-top: 1px solid #4a5b6d;
     border-collapse: collapse;*/
-    background:#e9eaef none repeat scroll 0 0;
+    /*background:#e9eaef none repeat scroll 0 0;*/
 }
 
+li.navTreeItem div {
+    background:#e9eaef none repeat scroll 0 0;
+}
 #portal-globalnav ul.submenu li.navTreeItem {
     margin: 0;
     border-top: 1px solid #4a5b6d;
@@ -699,9 +702,12 @@ li.navTreeItem {
 
 
 /* Selected item in navtree level 0 */
-.navTreeLevel0 li.navTreeCurrentNode div {
+.navTreeLevel0 li.navTreeCurrentNode > div {
     background-color: #d8dbe0;
 }
+
+
+
 .navTreeLevel0 a.navTreeCurrentItem {
     background: url(ico_link_subnavi_active_right.gif) no-repeat scroll 6px 6px;
 }
@@ -746,7 +752,7 @@ ul.navTreeLevel3 {
 }
 
 ul.navTreeLevel0 {
-  margin-left:0;
+  margin:0 1px 0 0 ;
 }
 
 
