@@ -673,6 +673,9 @@ ul.staticPortlet li {
     background-color: #d8dbe0;
 }
 
+#portal-globalnav ul.submenu li.navTreeItem div:hover {
+    background-color: #d8dbe0;
+}
 /* this one is needed to overwrite the one from dropdownmenu.css */
 #portal-globalnav li.selected ul.submenu a:hover {
     background-color: #d8dbe0;
