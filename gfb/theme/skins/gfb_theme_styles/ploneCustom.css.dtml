@@ -462,6 +462,9 @@ dl.portlet.portletMyProvider {
     font-weight: normal;
 }
 
+#portlet-riskassessmentlink ul {
+  color: #515151;
+}
 #portlet-riskassessmentlink li {
     list-style-type: disc;
     list-style-position: outside;
@@ -470,6 +473,13 @@ dl.portlet.portletMyProvider {
     font-style: normal;
     margin-bottom: 0;
 }
+
+
+#portlet-riskassessmentlink dd {
+  line-height:4.5em;
+  margin-bottom:1em;
+}
+
 
 li.plussOK {
     list-style-image: url(ico_criteria_passed.gif);
@@ -1028,7 +1038,9 @@ table {
 }
 
 .risklabel {
-    float: left;
+  float:left;
+  margin-top:0.5em;
+  width: 20%;
 }
 .riskvalue {
     float: left;
@@ -1686,26 +1698,6 @@ td#portal-column-one div.visualPadding {
 }
 
 
-/* Tina neu */
-
-dd {
-  line-height:4.5em;
-  margin-bottom:1em;
-}
-
-td#risktable {
-  border: solid red;
-}
-
-.risklabel {
-  float:left;
-  margin-top:0.5em;
-  width: 20%;
-}
-
-#portlet-riskassessmentlink ul {
-  color: #515151;
-}
 
 #visualMarker li {
   color:#000000;
