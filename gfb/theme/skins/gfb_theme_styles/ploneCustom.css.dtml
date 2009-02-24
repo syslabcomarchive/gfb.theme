@@ -1159,6 +1159,9 @@ div#region-content div.search_medium ul  {
     list-style-type:bullet;
     list-style-image : none;
 }
+div#region-content li {
+    margin-left: 2.5em;
+}
 
 .info_of_search {
 	width: 549px;
