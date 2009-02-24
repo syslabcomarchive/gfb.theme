@@ -189,7 +189,6 @@ div#portal-personaltools-wrapper {
 }
 #portal-breadcrumbs {
     border-left: 200px solid #4a5b6d;
-    height: 35px;
     padding:10px 10px 22px 22px;
     font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #666;
@@ -507,7 +506,7 @@ li.minusNOK {
     border: 1px solid #424951;
 }
 #portal-column-one ul.staticPortlet, #portal-column-one ul.staticPortlet li  {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 198px 50%;
 }
 
 
@@ -591,14 +590,14 @@ a.doublelink:hover{
 
 
 ul.staticPortlet {
-    width: 200px;
+    width: 198px;
     display: block;
     clear: both;
     margin: 0px;
     padding: 0 0 0 0;
     margin: 0 0 10px 0;
     height: 30px;
-    background: #4B516B repeat-x 200px;
+    background: #4B516B repeat-x 198px;
     font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
@@ -1691,7 +1690,7 @@ ul#portal-footeractions .breadcrumbSeparator {
 
 td#portal-column-one div.visualPadding {
     min-height:1200px;
-    padding:0 2px 0 0;
+    padding:0;
     width: 198px;
     background: transparent url(&dtml-portal_url;/gradient_background_portletbox.jpg) repeat-x top;
 }
