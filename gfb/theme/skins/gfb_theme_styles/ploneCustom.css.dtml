@@ -1228,6 +1228,7 @@ div.search_medium {
 	margin-bottom: 10px;
 	padding: 2px 6px;
 	margin-left:11px;
+    color:#76797C;
 }
 
 #content label.formQuestion {
