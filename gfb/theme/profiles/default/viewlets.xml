@@ -11,7 +11,7 @@
 
     <order manager="plone.portalheader" skinname="*">
         <viewlet name="plone.skip_links" />
-        <viewlet name="plone.app.i18n.locales.languageselector" />
+        <viewlet name="gfb.languageselector" />
         <viewlet name="plone.site_actions" />
         <viewlet name="gfb.site_title" />
         <viewlet name="plone.logo" />

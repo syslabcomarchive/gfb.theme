@@ -8,6 +8,13 @@ from plone.app.portlets.portlets.navigation import Assignment
 from plone.memoize import ram
 from plone.memoize.compress import xhtml_compress
 from plone.app.portlets.cache import get_language
+#from plone.app.i18n.locales.browser.selector import LanguageSelector 
+from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+
+#Overwrite Languageselector to customize appearance
+class GFBLanguageSelector(TranslatableLanguageSelector):
+    render = ViewPageTemplateFile('templates/languageselector.pt')
+
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(PersonalBarViewlet):

@@ -106,7 +106,6 @@ body {
     float: right;
     margin: 6px;
     display: block;
-    width: 60px;
 }
 
 #portal-languageselector li {
@@ -116,6 +115,21 @@ body {
     display: block;
 }
 
+#portal-languageselector li a {
+    font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+    font-size:90%;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:20px;
+    color: silver;
+    
+}
+#portal-languageselector li a:hover {
+    color:#E4DBC0;
+}
 #gfb_site_title {
     font-weight: bold;
     font-size: 14px;
@@ -1762,6 +1776,7 @@ dl.error dd {
 form.searchPage {
     margin-bottom: 1em;
 }
+
 
 /* @end */
 
