@@ -6,7 +6,7 @@
 
 
 /* Gfb floating skin hacks */
-#visual-portal-wrapper {
+/*#visual-portal-wrapper {
     width: 980px;
     _width: 981px;
 }
@@ -30,6 +30,26 @@
     width: 545px;
     _width: 545px;
 }
+*/
+#portal-globalnav-box {
+    width: 500px;
+    _width: 500px;
+}
+#portal-globalnav {
+    width: 545px;
+    _width: 545px;
+}
+#gfb_site_title {
+    top: 50px;
+    width: 300px;
+}
+#portal-languageselector {
+    width: 100px;
+}
+#portal-siteactions {
+    width:400px;
+}
+
 /* end */
 
 * html #portal-columns {
