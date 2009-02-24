@@ -597,6 +597,10 @@ a.doublelink:hover{
 .portlet-static-unsere-partner {
     /* XXX background: url(partner-bg.jpg) repeat-x 0 0;*/
     /*height: 243px;*/
+    color: black;    
+}
+.portlet-static-unsere-partner a{
+    color: black;
 }
 .portlet-static-unsere-partner ul.staticPortlet li {
     font-weight: normal;
