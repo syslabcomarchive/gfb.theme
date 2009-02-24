@@ -211,12 +211,12 @@ div#portal-personaltools-wrapper {
 
 
 .LSBox input.searchButton {
-    background: transparent url(ico_search.gif) no-repeat 10px 3px;
+    background: transparent url(ico_search.gif) no-repeat 4px 4px;
     border: 0 none;
     font-weight: normal;
     color: white;
     font-size: 110%;
-    width: 70px;
+    margin-right: 1em;
     text-align: right;
 }
 
@@ -1594,7 +1594,7 @@ div#link_to_tool {
 
 #portal-searchbox { 
     float: right; 
-    width: 250px; 
+    width: 23em; 
 }
 
 #portal-globalnav {
@@ -1704,6 +1704,58 @@ td#portal-column-one div.visualPadding {
 #gfb_topborder {
     display: none;
 }
+
+
+dl.portalMessage {
+    font-size: &dtml-fontSmallSize;;
+    background-color: #ffffe3; 
+    border: 1px solid #996;    
+    margin:0.5em 0 0.75em;
+}
+dl.portalMessage a {
+    color: black;
+    border: none;
+    text-decoration: underline;
+}
+dl.portalMessage dt {
+    background-color: #996; 
+    font-weight: bold;
+    float: left;
+    margin: 0 0.5em 0 0;
+    padding: 0.5em 0.75em;
+    color: White;
+    line-height: 1.25em;
+}
+dl.portalMessage dd {
+    padding: 0.5em 0.5em; 
+    margin: 0;
+    line-height: 1.25em;
+}
+dl.warning {
+    border-color: #d80;
+}
+dl.warning dt {
+    background-color: #d80;
+}
+dl.error {
+    border-color: #d00;    
+}
+dl.error dt {
+    background-color: #d00; 
+}
+dl.warning {
+    border-color: #d80;    
+}
+dl.warning dd {
+    background-color: #fd7; 
+}
+dl.error {
+    border-color: #d80;    
+}
+dl.error dd {
+    background-color: #fd7; 
+}
+
 
 
 /* @end */
