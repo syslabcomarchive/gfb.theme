@@ -5,6 +5,9 @@ from Products.CMFCore.utils import getToolByName
 from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
 from gfb.theme import GFBMessageFactory as _
 
+
+
+
 class AdvancedSearchView(BrowserView):
     """View for displaying the gfb search form
     It creates a search query based on the input from the template and returns the results.
@@ -161,4 +164,9 @@ class AdvancedSearchView(BrowserView):
         
         #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
         return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
+        
+
+class HomepageSearchView(AdvancedSearchView):
+    template = ViewPageTemplateFile('templates/homepage_search.pt')        
+        
         

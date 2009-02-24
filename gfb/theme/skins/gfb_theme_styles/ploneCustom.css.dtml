@@ -1144,6 +1144,11 @@ img.tileImage {
     margin: 8px 0 10px 20px;
 }
 
+img.image-left {
+    float: left;
+    margin: 8px 20px 10px 0px;
+}
+
 /* @end */
 
 /* @group forms */
@@ -1151,7 +1156,7 @@ img.tileImage {
 .floated_control {
     float:right; 
     width:20em; 
-    margin-top: -1.1em; 
+    margin-top: -1.4em; 
     text-align:right; 
     padding-right:2em;
 }
@@ -1251,9 +1256,9 @@ body.section-db.template-db_filter h2,*/
 	padding: 0;
 	width: 100%;
 }
-#simplesearch li {
+div#simplesearch ul.search-top li {
 	float: left;
-	margin: 0;
+	margin: 0 0 0 0 ;
 	list-style-image: none;
 	list-style-type: none;
 }

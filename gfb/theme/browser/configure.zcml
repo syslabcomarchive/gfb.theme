@@ -148,6 +148,13 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
+    <browser:page
+        for="*"
+        name="homepage_search"
+        class=".advanced_search.HomepageSearchView"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
     
     
     
