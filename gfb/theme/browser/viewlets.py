@@ -65,6 +65,12 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, Searc
         folder = context_state.folder()
         self.folder_path = '/'.join(folder.getPhysicalPath())
         
+        
+    def search_site_url(self):
+        langtool = getToolByName(self.context, 'portal_languages')
+        preflang = langtool.getPreferredLanguage()
+        return "%s/%s" %(self.site_url, preflang)
+        
 class FooterActions(ViewletBase):
     
     _template = ViewPageTemplateFile('templates/footer_actions.pt')
@@ -108,7 +114,6 @@ class FooterActions(ViewletBase):
         self.portal_actionicons = aq_base(getToolByName(self.context, 'portal_actionicons'))
                                                 
         self.footer_actions = context_state.actions().get('footer_actions', None)        
-        
         plone_utils = getToolByName(self.context, 'plone_utils')
         self.getIconFor = plone_utils.getIconFor
 
@@ -117,5 +122,7 @@ class FooterActions(ViewletBase):
         
 
 
-#class SearchBoxViewletGFB(SearchBoxViewlet):
-#    render = ViewPageTemplateFile('templates/searchbox.pt')
+    
+    
+    
+    
