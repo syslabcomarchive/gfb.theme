@@ -1169,13 +1169,35 @@ a.pluss {
 	margin-left: 20px;
 }
 
+#searchtippstext {
+    margin: 0 17px;
+}
+
+form.searchform-controls div#searchtippstext {
+    display:none;
+}
+form.searchform-controls a#searchdatabase {
+    background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
+    color:black;
+}
+
+
+form.searchform-tipps div#searchcontrols {
+    display:none;
+}
+form.searchform-tipps a#searchtipps {
+    background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
+    color:black;
+}
+
+
 
 div#searchfields,
 div.search_medium {
     background-color: #E5E6E8;
     border: 0 none !important;
     padding:  13px 0 0 0;
-    min-height: 140px;
+    min-height: 12em;
     
 }
 div.search_medium {
@@ -1186,7 +1208,7 @@ div#region-content div.search_medium ul  {
     list-style-image : none;
 }
 div#region-content li {
-    margin-left: 2.5em;
+    /*margin-left: 2.5em;*/
 }
 
 .info_of_search {
@@ -1333,10 +1355,10 @@ div.column2b {
 	background: url(cancel_button.gif) no-repeat 0 2px;
 }
 
-#simplesearch  li a.selected {
+/*#simplesearch  li a.selected {
 	color: black;
 	background: #e5e6e8 url(search_li_selected.gif) no-repeat 11px 7px;
-}
+}*/
 
 .info_of_search a {
     font-weight: bold;
@@ -1643,6 +1665,9 @@ ul.submenu {
 .disabled a {
     display: none;
 }
+.searchbox_deactivated {
+    display: none;
+} 
 
 /*
 ** link classes for js usage

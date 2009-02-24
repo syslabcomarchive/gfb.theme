@@ -23,3 +23,31 @@ input#radio_category_special:click {
     removeClass-value: 'disabled';
 }
 
+a#searchtipps:click {
+    evt-click-preventdefault: True;
+
+    action-client: addClass;
+    addClass-kssSelector: css("#searchform");
+    addClass-value: 'searchform-tipps';
+
+    action-client: removeClass;
+    removeClass-kssSelector: css("#searchform");
+    removeClass-value: 'searchform-controls';
+
+
+} 
+
+a#searchdatabase:click {
+    evt-click-preventdefault: True;
+
+    action-client: addClass;
+    addClass-kssSelector: css("#searchform");
+    addClass-value: 'searchform-controls';
+
+    action-client: removeClass;
+    removeClass-kssSelector: css("#searchform");
+    removeClass-value: 'searchform-tipps';
+
+
+
+}

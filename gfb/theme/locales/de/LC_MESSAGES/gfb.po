@@ -240,5 +240,7 @@ msgstr "Ihr Suchbegriff"
 msgid "link_rechtliche_hinweise"
 msgstr "Nutzungshinweise"
 
+msgid "label_restrict_by"
+msgstr "einschränken nach"
 
 
