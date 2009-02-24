@@ -115,6 +115,9 @@ body {
     display: block;
 }
 
+#portal-languageselector li.currentLanguage {
+    display:none;
+}
 #portal-languageselector li a {
     font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
     font-size:90%;
