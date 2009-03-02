@@ -1,4 +1,21 @@
 portal_url = '<dtml-var portal_url>';
+
+// works currently only for german-language and 
+// is used only by the german FOP
+function adjustTitle(elem) {
+    var newTitle = '(neues Fenster)';
+    titleVal = elem.getAttribute('title');
+    if (titleVal){
+        if(titleVal.lastIndexOf(newTitle)==-1){
+            titleVal = titleVal + ' ' + newTitle;
+        }
+    }
+    else{
+        titleVal = 'Externer Link: ' + newTitle;
+    }
+    elem.setAttribute('title', titleVal);
+}
+
 function osha_gotoURL (x) {
     if (x=='') {
         document.forms['networkchooser'].reset();
