@@ -1659,6 +1659,8 @@ div#link_to_tool {
 #portal-searchbox { 
     float: right; 
     width: 23em; 
+    position:relative;
+    top: -32px;
 }
 
 #portal-globalnav {
