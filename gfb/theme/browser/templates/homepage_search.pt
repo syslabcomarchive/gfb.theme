@@ -114,11 +114,16 @@
                        type="text" 
                        name="SearchableText" 
                        size="25" 
+                       class="inputLabel"
                        i18n:attributes="title title_search_title;"
                        tal:define="filltext view/getFillText | string:xxx"
                        tal:attributes="value request/SearchableText|filltext"/>
                 <br />
-
+                <p class="formHelp" 
+                   i18n:translate="help_and_or">
+                   und/oder
+                </p>
+                
                 <div class="column1b">
                    
                     <p>
