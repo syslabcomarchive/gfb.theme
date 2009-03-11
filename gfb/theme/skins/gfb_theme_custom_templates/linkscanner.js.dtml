@@ -124,22 +124,22 @@ function modifyLinkTag(node) {
                 }
             }
         } 
-                //         else {
-                //             // we are in here if the link points to somewhere else than our site.
-                //             if ( node.getElementsByTagName('img').length == 0 ){
-                // // we do not want to mess with those links that already have images in them
-                // injectNode(node, 'span', 'link-external-js');
-                //                 if(node.className=='link-external') {
-                //                     node.className='';
-                //                 }
-                //             }
-                //         /*
-                //             if (node.getAttribute('onclick') == false){
-                //                if (node.addEventListener) node.addEventListener("onclick",window.open(node.href), true);
-                //                else if (node.attachEvent) node.attachEvent("onclick",window.open(node.href));
-                //             }
-                //         */
-                //         }
+                         else {
+                             // we are in here if the link points to somewhere else than our site.
+                             if ( node.getElementsByTagName('img').length == 0 ){
+                 // we do not want to mess with those links that already have images in them
+                 injectNode(node, 'span', 'link-external-js');
+                                 if(node.className=='link-external') {
+                                     node.className='';
+                                 }
+                             }
+                         /*
+                             if (node.getAttribute('onclick') == false){
+                                if (node.addEventListener) node.addEventListener("onclick",window.open(node.href), true);
+                                else if (node.attachEvent) node.attachEvent("onclick",window.open(node.href));
+                             }
+                         */
+                         }
         pathelems = linkval.split('/');
         filename = pathelems[pathelems.length-1];
         fileelems = filename.split('.');
