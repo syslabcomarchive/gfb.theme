@@ -4,9 +4,46 @@
 
 /* <dtml-with base_properties> */
 
+#portal-globalnav li{
+height: 32px;
+}
+
+#border-wrapper {
+position: relative;
+}
+
+.floated_control {
+width:8em;
+}
+
+#slc-linkcollection-linkbox ul li.linkList a {
+display: block;
+_background-position:4px 2px;
+margin-bottom: 0px;
+_margin-bottom: -10px;
+}
+
+#portal-languageselector {
+width: 70px;
+}
+
+
+#portal-siteactions {
+width:500px;
+}
+
+.submit_column {
+height:2.3em;
+padding: 0 !important;
+}
+
+
+div.column1b, div.column2b {
+width:46%;
+}
 
 /* Gfb floating skin hacks */
-/*#visual-portal-wrapper {
+#visual-portal-wrapper {
     width: 980px;
     _width: 981px;
 }
@@ -24,32 +61,15 @@
     _position:absolute;
     _top:140px;
     _left: -10px;
-}
-#portal-globalnav {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
-    width: 545px;
-    _width: 545px;
-}
-*/
-#portal-globalnav-box {
-    width: 500px;
-    _width: 500px;
-}
-#portal-globalnav {
-    width: 545px;
-    _width: 545px;
-}
-#gfb_site_title {
-    top: 50px;
-    width: 300px;
-}
-#portal-languageselector {
-    width: 100px;
-}
-#portal-siteactions {
-    width:400px;
-}
 
+}
+#portal-globalnav {
+    background: transparent;
+    width: 525px;
+    _width: 525px;
+margin-top: -16px;
+height: 32px;
+}
 /* end */
 
 * html #portal-columns {

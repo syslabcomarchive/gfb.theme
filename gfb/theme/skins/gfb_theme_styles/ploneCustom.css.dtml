@@ -815,7 +815,10 @@ ul.navTreeLevel0 {
 
 /* in the dropdown navi, we need no indenting */
 #portal-globalnav ul.submenu li div a {
-    padding-left: 0px;
+    padding: 3px 0px;
+    line-height: 1.3em;
+    font-family: "arial";
+    font-size: 100%;
 }
 #portal-globalnav ul.submenu li {
     padding-left: 0;
@@ -830,8 +833,8 @@ ul.navTreeLevel0 {
 }
 
 
-ul.navTree span {
-  line-height: 15px;
+ul.navTree span  {
+  line-height: 1.3em;
   font-family: "arial";
 }
 
@@ -1654,10 +1657,6 @@ div#link_to_tool {
     z-index: 3;
 }
 
-ul.submenu {
-    z-index: 30;
-}
-
 
 .disabled {
     color: gray;
@@ -1814,6 +1813,130 @@ dl.error dd {
 form.searchPage {
     margin-bottom: 1em;
 }
+
+
+
+
+
+
+
+
+
+/*Tinas Fixes*/
+
+/* Distance top to text should be the same as to bottom text */
+div#content ul {
+  list-style-type:disc;
+  margin-bottom: 0.75em;
+}
+
+
+.column2 .field_picker input, .column2 .field_picker select {
+  margin-top:0.2em;
+  width:75%;
+}
+
+.column2 {
+  padding-left:2em;
+}
+
+.search-top {
+  margin:2.5em 0 0;
+}
+
+
+/*
+#portal-globalnav {
+  margin-top: 0em;
+}
+
+#portal-globalnav-box {
+  margin-left:0;
+  margin-right:0;
+  width:0;
+}
+
+#gfb_site_title {
+  top:30px;
+}
+
+.feedmixer-more-link {
+  margin-bottom:-0.13em;
+}
+
+#portal-globalnav {
+  z-index:25;
+}
+
+
+
+
+#searchfields #SearchableText {
+  width:310px;
+}
+
+
+
+
+
+.feedmixer-more-link {
+  margin-bottom:0.63em;
+}
+
+#portal-globalnav {
+  z-index:25;
+}
+
+#searchGadget {
+  max-width:13em;
+}
+
+ul {
+  list-style-type:none;
+  margin-left: 0.7em;
+}
+
+.navTreeLevel2 li div a {
+  display:block;
+  padding-left:0px;
+}
+.navTreeLevel0 li div a {
+  display:block;
+  padding-bottom:2px;
+  padding-left:0px;
+  padding-top:2px;
+}
+
+.feedmixer-more-link {
+  margin-bottom:0.33em;
+}
+
+ul.search_index {
+  line-height:15px;
+  list-style-image:url(ico_bullet.gif);
+  width:37em;
+}
+
+ul.navTreeLevel0 span {
+  padding-left:1.6em;
+}
+
+ul.navTreeLevel0, ul.navTreeLevel1, ul.navTreeLevel2, ul.navTreeLevel3 {
+  margin-bottom:0;
+  margin-left:0;
+}
+
+ul.navTreeLevel1 li span {
+  padding-left:2.5em;
+}
+
+
+.navTreeLevel0 a.navTreeCurrentItem {
+  background:white url(ico_link_subnavi_active_right.gif) no-repeat scroll 6px 6px;
+}
+
+*/
+
 
 
 /* @end */

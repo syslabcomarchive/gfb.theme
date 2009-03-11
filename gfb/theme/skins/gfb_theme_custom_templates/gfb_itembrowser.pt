@@ -114,7 +114,7 @@
 
           </tal:single>
           <tal:multi tal:condition="multiVal">
-            <div style="float: left">
+            <div>
               <ul class="visualNoMarker"
                   tal:attributes="id string:${fieldName};">
                 <span tal:condition="value" tal:omit-tag="">
@@ -136,6 +136,7 @@
                    </span>
                  </span>
               </ul>
+              <div class="visualClear"></div>
               </div>
           </tal:multi>
     </metal:vocabularyitem_edit>
