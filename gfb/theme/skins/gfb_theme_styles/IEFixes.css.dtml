@@ -56,6 +56,7 @@ width:46%;
 #portal-globalnav-box {
     margin-left:210px;
     margin-right:250px;
+    margin-right:250px;
     width: 500px;
     _width: 500px;
     _position:absolute;
@@ -64,12 +65,18 @@ width:46%;
 
 }
 #portal-globalnav {
-    background: transparent;
     width: 525px;
     _width: 525px;
-margin-top: -16px;
-height: 32px;
+    height: 32px;
 }
+
+* html #portal-globalnav {
+    margin-top: -16px;
+}
+
+#portal-searchbox {
+}
+
 /* end */
 
 * html #portal-columns {
@@ -240,5 +247,6 @@ table.ploneCalendar caption {
 * html dl.portalMessage dt {
     margin-right: 0;
 }
+
 
 /* </dtml-with> */

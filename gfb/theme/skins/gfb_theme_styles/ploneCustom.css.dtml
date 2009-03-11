@@ -80,6 +80,7 @@ body {
     padding: 16px;
     margin: 0 auto;
     text-align:center;
+    position: relative;
 }
 
 #visual-portal-wrapper {
@@ -635,10 +636,24 @@ ul.staticPortlet li {
 
 /* @group Globalnav */
 
+/*EMN Fix*/
+#portal-globalnav-box {
+    margin-left:210px;
+    margin-right:250px;
+    width: 500px;
+    _width: 500px;
+    _position:absolute;
+    _top:140px;
+    _left: -10px;
+    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
+}
+
+/*EMN Fix*/
 #portal-globalnav {
+    width: 545px;
+    _width: 545px;
     padding: 0;
     height: 32px;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
@@ -1158,10 +1173,7 @@ img.image-left {
 
 .floated_control {
     float:right; 
-    width:20em; 
     margin-top: -1.4em; 
-    text-align:right; 
-    padding-right:2em;
 }
 .floated_control select {
     font-size: 90%;
@@ -1639,9 +1651,6 @@ div#link_to_tool {
     float:left;
 }
 
-#portal-globalnav-box {
-    float: left;
-}
 #search { 
     float: right; 
     width: 250px; 
