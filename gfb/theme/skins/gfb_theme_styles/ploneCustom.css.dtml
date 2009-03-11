@@ -1830,7 +1830,12 @@ div#content ul {
   margin-bottom: 0.75em;
 }
 
+ul#portal-sitemap ul {
+  list-style-type:none;
+}
 
+
+/*
 .column2 .field_picker input, .column2 .field_picker select {
   margin-top:0.2em;
   width:75%;
@@ -1843,7 +1848,7 @@ div#content ul {
 .search-top {
   margin:2.5em 0 0;
 }
-
+*/
 
 /*
 #portal-globalnav {
@@ -1891,10 +1896,6 @@ div#content ul {
   max-width:13em;
 }
 
-ul {
-  list-style-type:none;
-  margin-left: 0.7em;
-}
 
 .navTreeLevel2 li div a {
   display:block;
