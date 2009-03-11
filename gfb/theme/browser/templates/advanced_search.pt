@@ -110,7 +110,7 @@
                        i18n:translate="help_and_or">
                         und/oder
                     </p>
-                   
+                    <br />
                     <p>
                     <input class="radio_search" 
                            id="radio_category_common"
@@ -167,7 +167,8 @@
                           </tal:define>
                         
                     </li>
-                    <li id="search_control_nace" class="search_deactivatable disabled">
+                    <li id="search_control_nace" class="search_deactivatable disabled"
+                        tal:attributes="class python:request.get('getCategoryIndependent', '1')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="NACE_compact">
                           <tal:define define=" fieldName   string:nace;
                                             mockup      nocall:here/@@ATMockup;
@@ -186,7 +187,8 @@
                           </tal:define>
                         </metal:macro>
                     </li>
-                    <li id="search_control_riskfactors" class="search_deactivatable disabled">                    
+                    <li id="search_control_riskfactors" class="search_deactivatable disabled"
+                    tal:attributes="class python:request.get('getCategoryIndependent', '1')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
                                             mockup     nocall:here/@@ATMockup;
