@@ -101,15 +101,15 @@
                        name="SearchableText" 
                        size="25" 
                        class="inputLabel"
-                       i18n:attributes="title view/getFillText;"
-                       tal:attributes="value request/SearchableText|string:"/>
+                       tal:attributes="value request/SearchableText|string:;
+                                       title view/getFillText;"/>
                 <br />
-                <p class="formHelp" 
-                   i18n:translate="help_and_or">
-                   und/oder
-                </p>
 
                 <div class="column1b">
+                    <p class="formHelp" 
+                       i18n:translate="help_and_or">
+                        und/oder
+                    </p>
                    
                     <p>
                     <input class="radio_search" 
