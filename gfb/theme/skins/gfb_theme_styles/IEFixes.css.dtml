@@ -74,7 +74,8 @@ width:46%;
     margin-top: -16px;
 }
 
-#portal-searchbox {
+* html #portal-searchbox {
+    top: 0px;
 }
 
 /* end */
@@ -247,6 +248,8 @@ table.ploneCalendar caption {
 * html dl.portalMessage dt {
     margin-right: 0;
 }
+
+
 
 
 /* </dtml-with> */

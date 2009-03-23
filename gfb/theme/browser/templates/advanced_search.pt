@@ -113,7 +113,9 @@
                 </div>
 
                 <div class="column1b">
-                    <p>
+                
+                
+                    <div class="common_radio_search_box">
                     <input class="radio_search" 
                            id="radio_category_common"
                            type="radio" 
@@ -122,10 +124,10 @@
                            tal:attributes="checked python:getCategoryIndependent==True">
 
                     <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
-                    </p>
+                    </div>
 
                     
-                    <p>
+                    <div>
                     <input class="radio_search" 
                            id="radio_category_special"
                            type="radio" 
@@ -133,7 +135,7 @@
                            name="getCategoryIndependent" 
                            tal:attributes="checked python:getCategoryIndependent==False"> 
                     <label i18n:translate="label_special_guideline">Special Action Guideline</label>
-                    </p>
+                    </div>
                         
 
                     <div class="visualClear"><!-- --></div>

@@ -1385,10 +1385,6 @@ body.section-db.template-db_filter h2 {
     padding: 5px 8px;
 }
 
-/*form {
-    #content: 0;
-}
-*/
 body.section-db.template-db_filter #portal-breadcrumbs {
     border-color: white;
 }
@@ -1665,7 +1661,7 @@ div#link_to_tool {
 
 #portal-globalnav {
     position:static;
-    z-index: 3;
+    /*z-index: 3;*/
 }
 
 
@@ -1858,9 +1854,6 @@ div#content div#simplesearch ul.search-top {
   margin-bottom: 0.75em;
 }
 
-/*div.column2b {
-  margin:3.8em 11px 10px;
-}*/
 
 *+html div.column2b {
   margin-left:2em;
@@ -1870,7 +1863,7 @@ div#content div#simplesearch ul.search-top {
   margin-right:8.8em;
 }
 
-/*IE Fixes Tina*/
+
 * html #searchfields {
   width: 58em;
 }
@@ -1978,11 +1971,24 @@ dd.portletItem {
   border-left:199px solid #4A5B6D;
 }
 
+
 /* und /oder box styling */
 #and_or_box {
     margin:15px 11px 10px;
 }
 
+.common_radio_search_box {
+    margin-bottom: 1em;
+}
+div.column1b div input {
+    margin-top: 0.2em;
+}
+/* End box styleing */
+
+/* Fix for the dropdown problem with the edit actions */
+#portal-globalnav ul.submenu {
+    z-index: 1000 !important;
+}
 
 /* @end */
 
