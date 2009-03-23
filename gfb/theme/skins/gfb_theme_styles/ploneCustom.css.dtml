@@ -1333,7 +1333,7 @@ ul.search_index {
 div.column1b {
 	width: 360px;
 	float: left;
-    margin: 15px 11px 10px 11px;
+    margin: 15px 11px 0px 11px;
 }
 
 div.column2b {
@@ -1839,6 +1839,149 @@ ul#portal-sitemap ul {
 
 
 
+
+
+
+
+
+
+/* Tinas Fixes zweiter Teil */
+
+div#content div#simplesearch ul.search-top {
+  margin-bottom:0;
+  margin-top:0;
+}
+
+
+#slc-linkcollection-linkbox ul{
+  list-style-type:disc;
+  margin-bottom: 0.75em;
+}
+
+/*div.column2b {
+  margin:3.8em 11px 10px;
+}*/
+
+*+html div.column2b {
+  margin-left:2em;
+}
+
+#searchfields input.context {
+  margin-right:8.8em;
+}
+
+/*IE Fixes Tina*/
+* html #searchfields {
+  width: 58em;
+}
+* html #searchfields input.context {
+  margin-right:6.5em;
+} 
+*+html #searchfields input.context {
+  margin-right:6.5em;
+} 
+
+dd.portletItem {
+  margin-top:0.7em;
+}
+
+div#link_to_tool {
+  height:3.3em;
+}
+* html div#link_to_tool {
+  height:0.5em;
+  margin-bottom: -1em;
+}
+
+* html ul.search_index {
+line-height:5px;
+}
+
+/* War nicht gefordert :)
+#you-have-chosen {
+  font-weight:bold;
+}
+
+*+html #you-have-chosen {
+  font-weight:bold;
+} */
+
+/* Navi in IE7 nicht bold */
+*+html #portal-globalnav {
+  font-weight:bold;
+}
+#portal-globalnav {
+  font-weight:bold;
+}
+
+/* Optimierung Searchbox Homepage */
+#searchfields #SearchableText {
+  margin-bottom:0;
+}
+
+ul.search_index {
+  margin-top:0.8em;
+  margin-bottom: 0;
+}
+
+*+html ul.search_index {
+  margin-top:0.9em;
+}
+
+* html ul.search_index {
+  margin-top:2.3em;
+}
+
+* html #searchfields #SearchableText {
+  margin-left:1.7em;
+}
+
+
+/* */
+#portlet-riskassessmentlink ul.visualMarker li {
+  margin-bottom:-0.5em;
+  margin-top:0.5em;
+}
+
+#portlet-riskassessmentlink p {
+  padding-top:1em;
+}
+
+
+* html .floated_control {
+  margin-top:-1em;
+}
+
+*+html .floated_control {
+  margin-top:-1.3em;
+}
+
+*+html #heading_search_results_box {
+  height:2em;
+}
+
+* html #heading_search_results_box {
+  height:1em;
+  font-size: 102%; 
+  line-height: 0.9em;
+}
+
+* html dd.portletItem odd {
+  margin-bottom: 2000px;
+}
+
+dd.portletItem {
+  margin-bottom: 2000px;
+}
+
+* html #portal-breadcrumbs {
+  border-left:199px solid #4A5B6D;
+}
+
+/* und /oder box styling */
+#and_or_box {
+    margin:15px 11px 10px;
+}
 
 
 /* @end */

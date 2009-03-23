@@ -105,12 +105,14 @@
                                        title view/getFillText;"/>
                 <br />
 
-                <div class="column1b">
+                <div id="and_or_box">
                     <p class="formHelp" 
                        i18n:translate="help_and_or">
                         und/oder
                     </p>
-                    <br />
+                </div>
+
+                <div class="column1b">
                     <p>
                     <input class="radio_search" 
                            id="radio_category_common"
