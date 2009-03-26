@@ -972,9 +972,12 @@ a {
     color: #A8126A;
     }
 
+.nutzungshinweise {
+    background: #E5E6E8  url(ico_getinfo.gif) no-repeat 10px 8px;
+    color: #666;
+}
 .singlelink {
     padding: 6px 30px;
-    background: #E5E6E8  url(ico_getinfo.gif) no-repeat 10px 8px;
     display: block;
     color: #666;
     margin-bottom: 10px;
@@ -1676,6 +1679,10 @@ div#link_to_tool {
 /*
 ** link classes for js usage
 */
+.link-internal-js {
+    background: transparent url(&dtml-portal_url;/link_internal.gif) 0px 3px no-repeat;
+    padding: 1px 0px 1px 10px;
+}
 .link-external-js {
     background: transparent url(&dtml-portal_url;/link_external.gif) 0px 3px no-repeat;
     padding: 1px 0px 1px 10px;
@@ -1727,6 +1734,11 @@ div#link_to_tool {
 .link-callto-js {
     background: transparent url(&dtml-portal_url;/phone_icon.gif) 0px 1px no-repeat;
     padding: 1px 0px 1px 16px;
+}
+
+/* Deactivating unwanted internal links */
+.search_index .link-internal-js, .search-top .link-internal-js{
+    display:none;
 }
 
 div#footeractions-wrapper {
@@ -1969,12 +1981,10 @@ dd.portletItem {
 * html ul.submenu li {
   border: 1px solid red;
   position: static;
-  font-color: #000000;
+  color: #000000;
 }
 * html #portal-globalnav li a {
-  /*display:block;*/
-  /*position:static;*/
-  font-color: #000000;
+  color: #000000;
 }
 
 
