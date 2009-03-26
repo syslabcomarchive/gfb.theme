@@ -57,7 +57,7 @@
                 category request/category|string:;
                 getRemoteLanguage request/getRemoteLanguage|string:;
                 country request/country|string:;
-                getCategoryIndependent request/getCategoryIndependent|string:1;
+                getCategoryIndependent request/getCategoryIndependent|string:0;
                 getCategoryIndependent python:bool(int(getCategoryIndependent));
                 riskfactors request/riskfactors|string:;
                 riskfactors python:riskfactors==[''] and '' or riskfactors;
@@ -130,7 +130,18 @@
                 
                 <div class="column1b">
                                    
+                   
                     <div class="common_radio_search_box">
+                    <input class="radio_search" 
+                           id="radio_category_special"
+                           type="radio" 
+                           value="0" 
+                           name="getCategoryIndependent" 
+                           tal:attributes="checked python:getCategoryIndependent==False"> 
+                    <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+                    </div>
+
+                    <div>
                     <input class="radio_search" 
                            id="radio_category_common"
                            type="radio" 
@@ -139,17 +150,6 @@
                            tal:attributes="checked python:getCategoryIndependent==True">
 
                     <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
-                    </div>
-
-                    
-                    <div>
-                    <input class="radio_search" 
-                           id="radio_category_special"
-                           type="radio" 
-                           value="0" 
-                           name="getCategoryIndependent" 
-                           tal:attributes="checked python:getCategoryIndependent==False"> 
-                    <label i18n:translate="label_special_guideline">Special Action Guideline</label>
                     </div>
                         
 
@@ -187,7 +187,7 @@
                         
                     </li>
                     <li id="search_control_nace" class="search_deactivatable disabled"
-                    tal:attributes="class python:request.get('getCategoryIndependent', '1')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
+                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="NACE_compact">
                           <tal:define define=" fieldName   string:nace;
                                             mockup      nocall:here/@@ATMockup;
@@ -207,7 +207,7 @@
                         </metal:macro>
                     </li>
                     <li id="search_control_riskfactors" class="search_deactivatable disabled"
-                    tal:attributes="class python:request.get('getCategoryIndependent', '1')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
+                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
                                             mockup     nocall:here/@@ATMockup;
