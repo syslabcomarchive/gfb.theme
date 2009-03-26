@@ -71,6 +71,7 @@
               tal:attributes="action string:${view/search_site_url}/search">
 
             <label for="searchGadget" class="hiddenStructure"
+                        
                         i18n:translate="text_search">Search Site</label>
 
             <div class="LSBox">
@@ -80,6 +81,7 @@
                    value=""
                    title="Search Site"
                    accesskey="4"
+                   i18n:domain="gfb" 
                    i18n:attributes="title title_search_site;"
                    tal:attributes="value request/SearchableText|nothing;
                                    id view/search_input_id"

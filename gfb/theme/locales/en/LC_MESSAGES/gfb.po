@@ -174,3 +174,8 @@ msgstr "your searchtext"
 msgid "link_nutzungshinweise"
 msgstr "Instructions for use"
 
+# Default "Search"
+# gfb/theme/browser/templates/sections.pt
+msgid "title_search_site"
+msgstr "Search"
+

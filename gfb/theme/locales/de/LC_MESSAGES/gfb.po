@@ -243,4 +243,8 @@ msgstr "Nutzungshinweise"
 msgid "label_restrict_by"
 msgstr "einschränken nach"
 
+# Default "Search"
+# gfb/theme/browser/templates/sections.pt
+msgid "title_search_site"
+msgstr "Suchen"
 
