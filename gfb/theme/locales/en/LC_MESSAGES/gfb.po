@@ -148,6 +148,12 @@ msgid "label_publish_provider"
 msgstr "Please publish your provider information so that it will become visible to others."
 
 
+#. Default "Free"
+#: simple_search.pt
+msgid "label_free"
+msgstr "free"
+
+
 # Default "Search results"
 # advanced_search.pt
 msgid "heading_search_results"
