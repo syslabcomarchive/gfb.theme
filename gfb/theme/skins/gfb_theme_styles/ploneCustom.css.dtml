@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 .feedmixer-more-link a {
     padding-left: 20px;
     font-size:12px;
-    background: url(ico_link_internal.gif) no-repeat 8px 2px;
 }
 .feedmixer-title {
     font-weight: normal;
@@ -575,8 +574,6 @@ dd.portletItem {
 
 .portletMyProvider .portletItem a {
     color: #171717;
-    padding-left: 20px;
-    background: url(ico_link_internal.gif) no-repeat 10px 2px;
 }
 
 .portletFooter {
@@ -1137,8 +1134,6 @@ pre,
 .standalone {
     color: #A8126A;
     font-weight: bold;
-    background: #E5E6E8 url(ico_link_internal.gif) no-repeat 10px center;
-    padding-left: 24px;
 }
 
 del {
@@ -1383,8 +1378,6 @@ div.column2b {
 
 .info_of_search a {
     font-weight: bold;
-	background: url(ico_link_internal.gif) no-repeat 0 4px;
-	padding-left: 13px;
 }
 
 body.section-db.template-db_filter h2 {
