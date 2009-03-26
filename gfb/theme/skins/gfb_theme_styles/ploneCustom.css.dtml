@@ -1974,9 +1974,6 @@ ul.search_index {
   margin-bottom: 2000px;
 }
 
-dd.portletItem {
-  margin-bottom: 2000px;
-}
 
 * html #portal-breadcrumbs {
   border-left:199px solid #4A5B6D;
