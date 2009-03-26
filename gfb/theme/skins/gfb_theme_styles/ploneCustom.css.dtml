@@ -1990,6 +1990,10 @@ div.column1b div input {
     z-index: 1000 !important;
 }
 
+#searchfor-created {
+    margin-top: 0.5em;
+}
+
 /*Tinas Änderungen Stand Mittwoch 25.03*/
 
 /*fixt den Abstand des Anbieter Blocks in allen drei Browsern*/

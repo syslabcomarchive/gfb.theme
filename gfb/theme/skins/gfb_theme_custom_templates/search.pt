@@ -48,7 +48,8 @@
                i18n:attributes="value label_search;"/>
         <br />
 
-        <span for="created" i18n:translate="label_new_items_since">New items since</span>
+        <div id="searchfor-created">
+            <span for="created" i18n:translate="label_new_items_since">New items since</span>
         
             <tal:datetime define="today python:DateTime().earliestTime()">
             <select name="created:list:date"
@@ -68,6 +69,7 @@
             </select>
             </tal:datetime>
             <input type="hidden" name="created_usage" value="range:min" />
+        </div>
     </form>
 
 
