@@ -1066,13 +1066,20 @@ table {
     margin: 1px 0 0 0 ;
 }
 
+div#content .riskfield ul {
+    margin-top: -0.2em;
+    margin-bottom: 0;
+}
+div#content .riskfield ul li {
+    margin: 0 0 0 16px;
+}
+
 .risklabel {
   float:left;
-  margin-top:0.5em;
   width: 20%;
 }
 .riskvalue {
-    float: left;
+  float: left;
 }
 
 .strong {
