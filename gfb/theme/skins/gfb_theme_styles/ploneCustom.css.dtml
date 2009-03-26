@@ -595,14 +595,6 @@ a.doublelink:hover{
     color: #48628C;
 }
 
-.portlet-static-unsere-partner {
-    /* XXX background: url(partner-bg.jpg) repeat-x 0 0;*/
-    /*height: 243px;*/
-    color: black;    
-}
-.portlet-static-unsere-partner a{
-    color: black;
-}
 .portlet-static-unsere-partner ul.staticPortlet li {
     font-weight: normal;
     font-size: 11px;
@@ -1971,12 +1963,20 @@ dd.portletItem {
   border-left:199px solid #4A5B6D;
 }
 
-
-/* und /oder box styling */
-#and_or_box {
-    margin:15px 11px 10px;
+/*Versuch das dropdown menu im IE6 zu fixen*/
+* html ul.submenu li {
+  border: 1px solid red;
+  position: static;
+  font-color: #000000;
+}
+* html #portal-globalnav li a {
+  /*display:block;*/
+  /*position:static;*/
+  font-color: #000000;
 }
 
+
+/* und /oder box styling */
 .common_radio_search_box {
     margin-bottom: 1em;
 }
@@ -1990,7 +1990,82 @@ div.column1b div input {
     z-index: 1000 !important;
 }
 
+/*Tinas Änderungen Stand Mittwoch 25.03*/
+
+/*fixt den Abstand des Anbieter Blocks in allen drei Browsern*/
+ul.search_index {
+  margin-top:1em;
+}
+
+*+html ul.search_index {
+  margin-top:0.9em;
+}
+
+* html ul.search_index {
+  margin-top:1.5em;
+}
+/* fixt die verzogene pinke Leiste im IE6*/
+* html li#portaltab-einstieg {
+  position: relative;
+}
+* html li#portaltab-handlungshilfen {
+  position: relative;
+}
+* html li#portaltab-gefaehrdungsfaktoren {
+  position: relative;
+}
+* html li#portaltab-service {
+  position: relative;
+}
+
+/* soll den zusammengeschobenen hintergrundlayer hinter der Navi im IE6 fixen
+   Background:transparent fixt das Problem*/
+* html #portal-globalnav-box {
+  position: absolute;
+  height: 100%;
+  background: transparent;
+}
+*+html #portal-globalnav-box {
+  background: transparent;
+}
+#portal-globalnav-box {
+  background: transparent;
+}
+
+/* die und und oder box skinnen*/
+#and_or_box {
+  margin-left: 1em;
+  margin-top:0.5em;
+}
+* html #and_or_box {
+  margin-left: 1.7em;
+}
+
+/* soll den Abstand zwischen Allgemeine Handlungshilfen und Spezielle Handlungshilfen fixen*/
+.common_radio_search_box {
+  margin-bottom: 1em;
+}
+* html .common_radio_search_box {
+  margin-bottom: 0em;
+}
+
+/* soll Lücke im FF schließen*/
+#portal-breadcrumbs {
+  padding-bottom: 39px;
+}
+* html #portal-breadcrumbs {
+  padding-bottom: 35px;
+}
+*+html #portal-breadcrumbs {
+  padding-bottom: 35px;
+}
+
+
+
 /* @end */
+
+
+
 
 /* </dtml-with> */
 
