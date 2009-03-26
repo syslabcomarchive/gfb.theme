@@ -398,6 +398,7 @@
                              result_free_for_members result_ob/getFree_for_members;
                              result_method result_ob/getType_methodology;
                              result_provider result_ob/getRemoteProvider | nothing;
+                             result_editdate result_ob/getDateOfEditing | nothing;
                              item_icon python:plone_view.getIcon(result);
                              url python:'%s?searchterm=%s'%(result_type in use_view_action and result_url+'/view' or result_url+'/', searchterm);">
                             
@@ -417,6 +418,10 @@
                     Cropped description
                 </p>
                 <div>
+                    <p class="formHelp" tal:condition="result_editdate">
+                        <span tal:replace="python:result_ob.getField('dateOfEditing').widget.label">Date of Editing</span>:
+                        <span tal:replace="result_editdate" />
+                    </p>
                     <a href="#" 
                        tal:attributes="href url">mehr info</a>
                 </div>
