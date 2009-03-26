@@ -167,6 +167,7 @@ function modifyLinkTag(node) {
         }
     }
 }
+unRegisterPloneFunction(scanforlinks);
 registerPloneFunction(scanforlinks);   
 
 function registerPloneFunction(func){
