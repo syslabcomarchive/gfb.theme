@@ -411,7 +411,6 @@ top: 0;
 #portal-column-one {
     width: 200px;
     padding: 0;
-    /*border-right: 1px solid #ccc;*/
     background: transparent url(&dtml-portal_url;/gradient_column_border.jpg) no-repeat top right;
 }
 
@@ -1933,10 +1932,6 @@ ul.search_index {
 #portlet-riskassessmentlink ul.visualMarker li {
   margin-bottom:-0.5em;
   margin-top:0.5em;
-}
-
-#portlet-riskassessmentlink p {
-  padding-top:1em;
 }
 
 
