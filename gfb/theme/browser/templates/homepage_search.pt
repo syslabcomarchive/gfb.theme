@@ -86,6 +86,7 @@
                            
   <form name="searchform" id="searchform"
         action="advanced_search"
+        tal:attributes="action string:${portal_url}/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/advanced_search"
         class="searchPage searchform-controls">
         
         <div metal:define-macro="main">
