@@ -1737,7 +1737,7 @@ div#link_to_tool {
 }
 
 /* Deactivating unwanted internal links */
-.search_index .link-internal-js, .search-top .link-internal-js{
+.search_index .link-internal-js, .search-top .link-internal-js, ul.formTabs .link-internal-js{
     display:none;
 }
 
