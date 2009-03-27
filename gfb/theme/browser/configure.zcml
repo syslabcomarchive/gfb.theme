@@ -157,6 +157,13 @@
     />
     
     
+    <browser:page
+        for="*"
+        name="gfb_glossary"
+        class=".glossary.GlossaryView"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
     
 
 </configure>
