@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gfb">
+
+
+<body>
+<div metal:fill-slot="main">
+
+<h1 class="documentFirstHeading" id="glossarHeader">Glossar - Buchstabe K</h1>
+
+<div id="alphabetischeTabelle" width="200" float="left"><table id="alphabetTable" width="200">
+	
+	<tbody><tr>
+	<td><a href="http://www.Abfall">A</td>
+	<td><a href="http://www.Bergamott">B</td>
+	<td><a href="http://www.Clausthaler">C</td>
+	<td><a href="http://www.Dolomiten">D</td>
+	<td><a href="http://www.Esel">E</td>
+	<td><a href="http://www.Feuer">F</td>
+	<td><a href="http://www.Gottesanbeterin">G</td>
+	<td><a href="http://www.Holunderblüte">H</td></tr></tbody>
+	<tbody><tr>
+	<td><a href="http://www.Information">I</td>
+	<td><a href="http://www.Jockey">J</td>
+	<td class="sonderfall4"><a href="http://www.Katastrophe">K</td>
+	<td><a href="http://www.Ludwigshafen">L</td>
+	<td><a href="http://www.Magnolie">M</td>
+	<td><a href="http://www.Nilpferd">N</td>
+	<td><a href="http://www.Ostrawa">O</td>
+	<td><a href="http://www.Paul">P</td></tr></tbody>
+	<tbody><tr>
+	<td><a href="http://www.Quitte">Q</td>
+	<td><a href="http://www.Regen">R</td>
+	<td><a href="http://www.Stuttgart">S</td>
+	<td><a href="http://www.Telefon">T</td>
+	<td><a href="http://www.Umgang">U</td>
+	<td><a href="http://www.Verlust">V</td>
+	<td><a href="http://www.Wege">W</td>
+	<td><a href="http://www.Xaver">X</td></tr></tbody>
+	<tbody><tr>
+	<td><a href="http://www.Ypsilon">Y</td>
+	<td><a href="http://www.Zug">Z</td>
+	<td><a href="http://www.Umlaut">Ä</td>
+	<td><a href="http://www.nochmal">Ö</td>
+	<td><a href="http://www.Letzens">Ü</td>
+	<td class="sonderfall1"><a href="http://www.Nummern">1</td>
+	<td class="sonderfall2"><a href="http://www.und">-</td>
+	<td class="sonderfall3"><a href="http://www.Zahlen">9</td></tr><tbody>
+	
+</table></div>
+     
+	<dl id="listeGlossary">
+		<dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
+		<dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
+		<dt class="pfeilextra"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_active.gif"> <a href="http://www.Aufklappen">Ein aufgeklappter Begriff</dt>
+			<dd>das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater.</dd>
+		 <dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
+	</dl>
+
+
+
+</div>
+</body>
+</html>
+
+
+
