@@ -1997,10 +1997,14 @@ div.column1b div input {
     z-index: 1000 !important;
 }
 
+<<<<<<< .mine
+=======
+=======
 #searchfor-created {
     margin-top: 0.5em;
 }
 
+>>>>>>> .r1500
 /*Tinas Änderungen Stand Mittwoch 25.03*/
 
 /*fixt den Abstand des Anbieter Blocks in allen drei Browsern*/
@@ -2071,12 +2075,122 @@ ul.search_index {
   padding-bottom: 35px;
 }
 
+/*Tinas Glossary Stils ANFANG 26.03*/
+
+/*finetuning tabelle*/
+#alphabetTable td.sonderfall1 {
+  border:none;
+  border-bottom: 0.5px solid white;
+}
+#alphabetTable td.sonderfall2 {
+  border:none;
+  border-bottom: 0.5px solid white;
+}
+#alphabetTable td.sonderfall3 {
+  border:none;
+  border-bottom: 0.5px solid white;
+  border-right: 0.5px solid white;
+}
+#alphabetTable td.sonderfall4 {
+  background-color:#A8126A; 
+}
+
+#glossarHeader {
+  width: 74%;
+  float:left;
+  margin-right:3em;
+}
+
+#alphabetischeTabelle {
+  background-color:#4b516b
+  color: #ffffff;
+  width: 200px;
+}
+
+#alphabetTable {
+  background-color:#4B516B;
+  right:1.4em;
+  margin:0;
+  padding:3px;
+  position:relative;
+}
+
+#alphabetTable td{
+  color: #ffffff;
+  padding: 3px 3px 3px 8px;
+  font-weight: normal;
+  border: 0.5px solid white;
+}
+
+
+#listeGlossary dt {
+  list-style-image:url(lc_inactive.gif);
+  margin-bottom:0.5em;
+  margin-top:0.5em;
+}
+
+#alphabetTable a {
+  color: #ffffff;
+}
+
+#alphabetTable a:hover {
+  color: #A8126A;
+}
+
+#listeGlossary dd {
+  background-color:#E5E6E8;
+  position:relative;
+  padding-top: 0.7em;
+  position:relative;
+  padding-bottom: 0.5em;
+  margin-bottom:1em;
+}
+
+#listeGlossary {
+  background-color:#ffffff;
+  bottom:3em;
+  position:relative;
+  width:75.5%;
+}
+
+#listeGlossary {
+  margin:0;
+}
+
+#listeGlossary dt.pfeilextra {
+  background-color:#E5E6E8; 
+  margin:0;
+  margin-top:0.8em; 
+  padding-top:0.5em;
+  list-style-type:url(lc_active.gif) no-repeat scroll 2px 0; 
+}
+
+#listeGlossary dt{
+  list-style-type:url(lc_inactive.gif) no-repeat scroll 2px 0;
+}
+
+
+#listeGlossary dt a {
+  color: #000000;
+}
+#listeGlossary dt a:hover {
+  color: #A8126A;
+}
+#listeGlossary img {
+  padding-bottom: 0.3em;
+}
+
+/*um die Navi zu fixen*/
+  #portal-globalnav {
+  right:0.9em;
+  position:relative;
+}
+#portal-globalnav li:hover, #portal-globalnav li.selected {
+  padding-left:1.5em;
+}
 
 
 /* @end */
-
-
-
 
 /* </dtml-with> */
 
