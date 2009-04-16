@@ -1898,7 +1898,7 @@ div#link_to_tool {
 line-height:5px;
 }
 
-/* War nicht gefordert :)
+/* War nicht gefordert :)*/
 #you-have-chosen {
   font-weight:bold;
 }
@@ -1974,7 +1974,7 @@ ul.search_index {
 
 /*Versuch das dropdown menu im IE6 zu fixen*/
 * html ul.submenu li {
-  border: 1px solid red;
+  border: 0px solid red;
   position: static;
   color: #000000;
 }
@@ -1997,14 +1997,10 @@ div.column1b div input {
     z-index: 1000 !important;
 }
 
-<<<<<<< .mine
-=======
-=======
 #searchfor-created {
     margin-top: 0.5em;
 }
 
->>>>>>> .r1500
 /*Tinas Änderungen Stand Mittwoch 25.03*/
 
 /*fixt den Abstand des Anbieter Blocks in allen drei Browsern*/
@@ -2075,122 +2071,83 @@ ul.search_index {
   padding-bottom: 35px;
 }
 
-/*Tinas Glossary Stils ANFANG 26.03*/
-
-/*finetuning tabelle*/
-#alphabetTable td.sonderfall1 {
-  border:none;
-  border-bottom: 0.5px solid white;
-}
-#alphabetTable td.sonderfall2 {
-  border:none;
-  border-bottom: 0.5px solid white;
-}
-#alphabetTable td.sonderfall3 {
-  border:none;
-  border-bottom: 0.5px solid white;
-  border-right: 0.5px solid white;
-}
-#alphabetTable td.sonderfall4 {
-  background-color:#A8126A; 
+/* fixt den Abstand des Content zum Header für den FF*/
+#portal-columns {
+  margin-top:-0.5em;
 }
 
-#glossarHeader {
-  width: 74%;
+/* Versuch die Top Navi im IE6 zu fixen*/
+* html #globalnav-group {
+  background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
+  height:32px;
+  line-height:32px;
+  width:100%;
+}
+* html #portal-globalnav-box {
+  background:transparent none repeat scroll 0 0;
+}
+* html #portal-globalnav {
+  -x-system-font:none;
+  font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+  font-size:90%;
+  font-size-adjust:none;
+  font-stretch:normal;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:bold;
+  height:32px;
+  line-height:normal;
+  padding:0;
+  width:545px;
+}
+* html #portal-globalnav li {
+  background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
+  border-right:1px solid #424951;
+  display:block;
   float:left;
-  margin-right:3em;
-}
-
-#alphabetischeTabelle {
-  background-color:#4b516b
-  color: #ffffff;
-  width: 200px;
-}
-
-#alphabetTable {
-  background-color:#4B516B;
-  right:1.4em;
   margin:0;
-  padding:3px;
-  position:relative;
+  padding:0 24px 0 12px;
 }
-
-#alphabetTable td{
-  color: #ffffff;
-  padding: 3px 3px 3px 8px;
-  font-weight: normal;
-  border: 0.5px solid white;
+* html #portal-globalnav li a {
+  color:white;
+  font-size:12px;
+  line-height:32px;
 }
-
-
-#listeGlossary dt {
-  list-style-image:url(lc_inactive.gif);
-  margin-bottom:0.5em;
-  margin-top:0.5em;
+* html #portal-globalnav li:hover, #portal-globalnav li.selected {
+  background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
 }
-
-#alphabetTable a {
-  color: #ffffff;
-}
-
-#alphabetTable a:hover {
-  color: #A8126A;
-}
-
-#listeGlossary dd {
-  background-color:#E5E6E8;
-  position:relative;
-  padding-top: 0.7em;
-  position:relative;
-  padding-bottom: 0.5em;
-  margin-bottom:1em;
-}
-
-#listeGlossary {
-  background-color:#ffffff;
-  bottom:3em;
-  position:relative;
-  width:75.5%;
-}
-
-#listeGlossary {
+* html #portal-globalnav ul.submenu a, #portal-globalnav ul.submenu a:hover {
+  border-color:#8CACBB;
+  border-style:solid none none;
+  display:block;
   margin:0;
+  position:static !important;
+  white-space:normal;
+}
+* html #portal-globalnav ul.submenu li div a {
+  font-family:"arial";
+  font-size:100%;
+  line-height:1.3em;
+  padding:3px 0;
+}
+* html .state-published {
+  color:#436976 !important;
 }
 
-#listeGlossary dt.pfeilextra {
-  background-color:#E5E6E8; 
-  margin:0;
-  margin-top:0.8em; 
-  padding-top:0.5em;
-  list-style-type:url(lc_active.gif) no-repeat scroll 2px 0; 
+/* Versuch das hintergrundproblem in der linken portletspalten zu fixen*/
+* html dd.portletItem {
+  margin-top:0.7em;
+  height: 1000px;
 }
 
-#listeGlossary dt{
-  list-style-type:url(lc_inactive.gif) no-repeat scroll 2px 0;
+/* Versuch die Position der Boxen innerhalb der Suche zu fixen*/
+* html .common_radio_search_box {
+  margin-bottom:2em;
 }
-
-
-#listeGlossary dt a {
-  color: #000000;
-}
-#listeGlossary dt a:hover {
-  color: #A8126A;
-}
-#listeGlossary img {
-  padding-bottom: 0.3em;
-}
-
-/*um die Navi zu fixen*/
-  #portal-globalnav {
-  right:0.9em;
-  position:relative;
-}
-#portal-globalnav li:hover, #portal-globalnav li.selected {
-  padding-left:1.5em;
-}
-
-
 /* @end */
+
+
+
 
 /* </dtml-with> */
 
