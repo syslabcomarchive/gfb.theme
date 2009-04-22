@@ -63,6 +63,9 @@
                          min_chars          min_chars|string:2;
                          instance python:here.restrictedTraverse('@@ATMockup').getFakeInstance(portal_type);
                          terms              python:same_type(value, []) and value or [value];
+                         portal_url_tool    nocall:here/portal_url;
+                         portal_url         python:portal_url_tool();
+
                          ">
                     <script type='text/javascript' src='jquery.js'></script>
                     <script type='text/javascript' src='jquery.autocomplete.js'></script>
@@ -72,13 +75,13 @@
                  tal:attributes="name string:${fieldName}:default"
                  />
                  
-             <div tal:define="global at_url at_url|python:'/'.join(here.getPhysicalPath());
-                              global base_url base_url|python:'/'.join(here.getPhysicalPath())"
+             <div tal:define="global at_url at_url|python:'/'.join(portal_url_tool.getRelativeContentPath(here));
+                      global base_url base_url|python:'/'.join(portal_url_tool.getRelativeContentPath(here))"
                   class="floated_control">
                         
                         <a tal:attributes="href string:javascript:vocabularypicker_openBrowser('${fieldName}',
                         '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
-                        '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}');;">
+                        '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}', '${portal_url}');;">
                             <img src="plus_icon.gif">
                             <span i18n:domain="gfb" i18n:translate="label_add">Add...</span>
                         </a>
