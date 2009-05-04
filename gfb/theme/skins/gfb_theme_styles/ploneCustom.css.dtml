@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align:right;
 }
 .feedmixer-more-link a {
+    padding-left: 20px;
     font-size:12px;
 }
 .feedmixer-title {
@@ -1961,9 +1962,7 @@ ul.search_index {
   line-height: 0.9em;
 }
 
-* html dd.portletItem odd {
-  margin-bottom: 2000px;
-}
+
 
 
 * html #portal-breadcrumbs {
@@ -2131,18 +2130,14 @@ ul.search_index {
   color:#436976 !important;
 }
 
-/* Versuch das hintergrundproblem in der linken portletspalten zu fixen*/
-* html dd.portletItem {
-  margin-top:0.7em;
-  height: 1000px;
-}
+
 
 /* Versuch die Position der Boxen innerhalb der Suche zu fixen*/
 * html .common_radio_search_box {
   margin-bottom:2em;
 }
 
-/* fixt den Abstand des Content zum Header f√ºr den FF*/
+/* fixt den Abstand des Content zum Header für den FF*/
 #portal-columns {
 margin-top:-0.5em;
 }
@@ -2204,35 +2199,93 @@ padding:3px 0;
 color:#436976 !important;
 }
 
-/* Versuch das hintergrundproblem in der linken portletspalten zu fixen
-* html dd.portletItem {
-margin-top:0.7em;
-height: auto;
-}*/
 
-* html td#portal-column-one div.visualPadding {
-  background:transparent url(http://www.gefaehrdungsbeurteilung.de/gradient_background_portletbox.jpg) repeat-x scroll center top;
+/** html td#portal-column-one div.visualPadding {
+  background:transparent url(&dtml-portal_url;/gradient_background_portletbox.jpg) repeat-x scroll center top;
   height:auto;
   padding:0;
   width:198px;
-}
+}*/
 
 /* Versuch die Position der Boxen innerhalb der Suche zu fixen*/
 * html .common_radio_search_box {
 margin-bottom:2em;
 }
 
-/* fixen der pfeilicons im linken portlet f√ºr die IEs*/
+/* fixen der pfeilicons im linken portlet für die IEs*/
 
 * html .link-internal-js {
-  background:transparent url(http://www.gefaehrdungsbeurteilung.de/link_internal.gif) no-repeat scroll 0 3px;
+  background:transparent url(&dtml-portal_url;/link_internal.gif) no-repeat scroll 0 3px;
   padding:1px 0 1px 10px;
 }
 
 *+html .link-internal-js {
-  background:transparent url(http://www.gefaehrdungsbeurteilung.de/link_internal.gif) no-repeat scroll 0 3px;
+  background:transparent url(&dtml-portal_url;/link_internal.gif) no-repeat scroll 0 3px;
   padding:1px 0 1px 10px;
 }
+
+/* fix für IE7 reche Portletspalte Darstellungsfehler*/
+
+*+html #portal-column-two {
+  width:200px;
+}
+
+*+html #visual-portal-wrapper {
+  margin:0 auto;
+  max-width:1236px;
+  min-width:1180px;
+  position:relative;
+}
+
+/* fix für IE6 reche Portletspalte Darstellungsfehler*/
+
+* html #portal-column-two {
+  width:200px;
+}
+* html #portal-column-two dd.portletItem {
+  height:50px;
+}
+* html #simplesearch ul {
+  width:auto;
+}
+* html #simplesearch {
+  width:auto;
+}
+* html #searchfields {
+  width:auto;
+}
+ /*fixen des "unsere Partner Portlets" für IE6*/
+
+/** html .portletNavigationTree, #portal-globalnav ul.submenu {
+  margin-bottom:-640px;
+}*/
+
+
+* html .portletNavigationTree, #portal-globalnav ul.submenu {
+  margin-bottom:none;
+}
+
+
+/* fixen der breite des Contentbereichs für den IE6*/
+
+* html #portal-columns {
+  width:100% !important;
+}
+
+* html #visual-portal-wrapper {
+  background:#FFFFFF none repeat scroll 0 0;
+  margin:0 auto;
+  width:1120px;
+}
+
+* html div#searchfields, div.search_medium {
+  width:100%;
+}
+
+* html .portlet-static-unsere-partner {
+  height: 500px;
+}
+
 /* @end */
 
 
