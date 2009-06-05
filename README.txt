@@ -1,7 +1,16 @@
-gfb.theme Package Readme
-=========================
+.. contents::
 
-Overview
---------
+.. Note!
+   -----
+   
+   - code repository
+   - bug tracker
+   - questions/comments feedback mail
 
-An installable theme for Plone 3.0
+
+- Code repository: https://svn.syslab.com/svn/syslabcom/gfb/
+- Questions and comments to info (at) syslab (dot) com
+- Report bugs at http://products.syslab.com/products/gfb.theme/issues
+
+
+
