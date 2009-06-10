@@ -1,15 +1,12 @@
 <?xml version="1.0"?>
 <object>
-
-    
-    <order manager="plone.portaltop" skinname="*">
+    <order manager="plone.portaltop" skinname="GFBTheme">
            <viewlet name="gfb.topborder" />
            <viewlet name="plone.header" />
            <viewlet name="plone.personal_bar" />
            <viewlet name="gfb.path_bar" />
-       </order>
-
-    <order manager="plone.portalheader" skinname="*">
+    </order>
+    <order manager="plone.portalheader" skinname="GFBTheme">
         <viewlet name="plone.skip_links" />
         <viewlet name="gfb.languageselector" />
         <viewlet name="plone.site_actions" />
@@ -18,23 +15,23 @@
         <viewlet name="gfb.global_sections" />
     </order>
     
-    <order manager="plone.portalfooter" skinname="*"
+    <order manager="plone.portalfooter" skinname="GFBTheme"
            based-on="Plone Default">
-      <viewlet name="gfb.footer.actions"
-               insert-before="*" />
+        <viewlet name="gfb.footer.actions"
+                 insert-before="*" />
     </order>
     
     
-    <hidden manager="plone.portaltop"  skinname="*">
+    <hidden manager="plone.portaltop"  skinname="GFBTheme">
       <viewlet name="plone.app.i18n.locales.languageselector" />
       <viewlet name="plone.path_bar" />
     </hidden>
 
-    <hidden manager="plone.portalheader" skinname="*">
+    <hidden manager="plone.portalheader" skinname="GFBTheme">
         <viewlet name="plone.searchbox" />
         <viewlet name="plone.global_sections" />    
     </hidden>
-    <hidden manager="plone.portalfooter" skinname="*">
+    <hidden manager="plone.portalfooter" skinname="GFBTheme">
       <viewlet name="plone.footer" />
       <viewlet name="plone.colophon" />
     </hidden>
