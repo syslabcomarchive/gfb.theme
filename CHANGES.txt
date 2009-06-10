@@ -1,6 +1,10 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2 (unreleased)
+--------------------------
+- viewlets.xml fixed to apply only to our skin [pilz]
+
 gfb.theme 1.1 (2009-05-12)
 --------------------------
 
