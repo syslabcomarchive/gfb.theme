@@ -92,7 +92,7 @@
           <div id="searchfields">
 
             <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                <span tal:replace="structure tipps/getText" />
+                <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
             <div id="searchcontrols">          
@@ -431,16 +431,38 @@
             <div class="search_medium">
                 <h5 tal:content="python:view.get_printable_method(result_method)">Richtlinie</h5>
                 <p class="formHelp" i18n:translate="label_available_as">available as</p>          
-                <ul>
-                  <li tal:repeat="medium python:view.get_printable_medium(result_medium)" 
-                      tal:content="medium">PDF-download</li>
-                  <li tal:condition="result_price"><span i18n:translate="label_brochure">Brochure</span>: 
-                      <span tal:replace="result_price" />&nbsp;&euro;<span tal:condition="result_free_for_members">*</span>
-                  </li>
-                </ul>
-                <ul style="list-style-image: url(ico_asterisk.gif);" tal:condition="result_free_for_members">
-                  <li><span tal:omit-tag="" i18n:translate="label_free_for_members">Free for members</span></li>
-                </ul>
+
+				<ul class="visualMarker"
+		            tal:define="media python:view.get_printable_medium(result_medium)">
+
+		            <li tal:repeat="medium media" tal:content="medium"></li>
+
+					<li id="ral_price">
+			            <span i18n:domain="RiskAssessmentLink" i18n:translate="ra_price_label">Price</span>:
+
+						<tal:block condition="result_price">
+			                <span tal:replace="result_price" />&nbsp;&euro;&nbsp;
+			                    <span tal:condition="result_free_for_members" tal:omit-tag="">*
+			                </span>
+			           </tal:block>
+
+			           <tal:block condition="not:result_price">
+							<span i18n:translate="label_free" i18n:domain="gfb" />
+			           </tal:block>
+
+			         </li>
+
+		        </ul>
+				<ul id="ral_free" tal:condition="result_free_for_members">
+		        	<li>
+						<span tal:omit-tag="" 
+							i18n:domain="gfb" 
+							i18n:translate="label_free_for_members">
+							Free for members
+						</span>
+					</li>
+		        </ul>
+
             </div>
 
             <div class="visualClear"><!-- --></div>

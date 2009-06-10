@@ -79,7 +79,7 @@
         
         <p tal:content="index_top/Description" />
         
-        <div tal:replace="structure index_top/getText" />
+        <div tal:replace="structure index_top/getText |nothing" />
          
     </tal:block>
                            
@@ -107,7 +107,7 @@
           <div id="searchfields">
 
             <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                <span tal:replace="structure tipps/getText" />
+                <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
             <div id="searchcontrols">          
@@ -253,7 +253,7 @@
 
     <div tal:define="index_bottom nocall:here/index_bottom | nothing"
          tal:condition="index_bottom"
-         tal:replace="structure index_bottom/getText">
+         tal:replace="structure index_bottom/getText |nothing">
          
     </div>
 
