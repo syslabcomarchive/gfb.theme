@@ -23,6 +23,9 @@ gfb.theme 1.2 (unreleased)
 
 - changed linkscanner to not scan document actions but add marker for internal and external links [pilz]
 
+- Added glossary [pilz]
+
+
 gfb.theme 1.1 (2009-05-12)
 --------------------------
 

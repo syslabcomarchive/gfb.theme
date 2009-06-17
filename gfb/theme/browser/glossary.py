@@ -1,4 +1,4 @@
-import Acquisition
+import Acquisition, re
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -22,89 +22,38 @@ class GlossaryView(BrowserView):
         return self.template() 
 
 
-
-
-
-
     def buildQuery(self):
         """ Build the query based on the request """
         context = Acquisition.aq_inner(self.context)
-
-        query = self.search_portal_types()
-
-        #query = { 'sort_on': 'effective',
-        #          'sort_order':'reverse',
-        #          'Language': ''}
-        language = getToolByName(context, 'portal_languages').getPreferredLanguage()
-        query = query & In('Language', ['', language])
-
-#        keywords = self.request.get('keywords', [])
-#        if keywords:
-#            query = query & In('Subject', keywords)
-#            #query.update({'Subject':keywords})
-
-        nace = list(self.request.get('nace', ''))
-        if '' in nace:
-            nace.remove('')
-        if nace:
-            query = query & In('nace', nace)    
-
-        getCategoryIndependent = self.request.get('getCategoryIndependent', '1')
-        getCategoryIndependent = bool(int(getCategoryIndependent))
-        query = query & Eq('getCategoryIndependent', getCategoryIndependent)
-
-
-        getRemoteLanguage = self.request.get('getRemoteLanguage', '')
-        if getRemoteLanguage:
-            query = query & Eq('getRemoteLanguage', getRemoteLanguage)
-
-        category = self.request.get('category', '')
-        if category:
-            query = query & In('category', category)    
-
-        country = self.request.get('country', '')
-        if country:
-            query = query & Eq('country', country)
-
-        provider = list(self.request.get('remote_provider', ''))
-        if '' in provider:
-            provider.remove('')
-        if provider:
-            pv = getToolByName(self, 'portal_vocabularies')
-            cat = getToolByName(self, 'portal_catalog')
-            VOCAB = pv.get('provider_category')
-            cats = VOCAB and VOCAB.keys() or list()
-            providerUIDs = list()
-            for prov in provider:
-                # if a category was selected, get all providers with that category
-                if prov in cats:
-                    res = cat(portal_type='Provider', getProvider_category=prov)
-                    for r in res:
-                        providerUIDs.append(r.UID)
-                else:
-                    providerUIDs.append(prov)
-            query = query & In('getRemoteProviderUID', providerUIDs)
-
-        riskfactors = self.request.get('riskfactors', '')
-        if riskfactors:
-            query = query & In('getRiskfactors', riskfactors)
-
-
-        SearchableText = self.request.get('SearchableText', '')
-        if SearchableText != '':
-            query = query & Generic('SearchableText', {'query': SearchableText, 'ranking_maxhits': 10000 })
-
+        query = In('portal_type', 'HelpCenterDefinition') & Eq('review_state', 'published')
         return query
         
 
-    def search(self):
+    def data(self):
         context = Acquisition.aq_inner(self.context)
         query = self.buildQuery()
-        print query
         portal_catalog = getToolByName(context, 'portal_catalog')
         if hasattr(portal_catalog, 'getZCatalog'):
             portal_catalog = portal_catalog.getZCatalog()
         
-        #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
-        return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
-        
+        results = portal_catalog.evalAdvancedQuery(query, (('sortable_title','asc'),))
+
+        L = []
+        for res in results:
+            t = unicode(res.Title, 'utf-8')
+            d = res.Description
+            idx = len(t) and t[0] or u'other'
+            idx = idx.upper()
+#            if idx == u'Ä': 
+#                idx = 'AE'
+#            elif idx == u'Ö': 
+#                idx = 'OE'
+#            elif idx == u'Ü': 
+#                idx = 'UE'
+            expr = unicode('[ÄÖÜA-Z]', 'utf-8')
+            if not re.match(expr, idx):
+                import pdb;pdb.set_trace()
+                idx='other'
+            L.append(dict(title=t, desc=d, idx=idx))
+    
+        return L

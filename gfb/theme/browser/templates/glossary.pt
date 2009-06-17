@@ -8,57 +8,92 @@
 
 
 <body>
-<div metal:fill-slot="main">
+<div metal:fill-slot="main" 
+	 tal:define="data view/data;">
 
-<h1 class="documentFirstHeading" id="glossarHeader">Glossar - Buchstabe K</h1>
+	<script language="javascript">
+	var currentidx = "A";
+	function updateFilter() {
+		jq('.glossary_idx').removeClass('glossary_idx_highlight');
+		jq('.'+currentidx).addClass('glossary_idx_highlight');
+		jq('.toggle_container').hide();
+		jq('.toggle_trigger').hide();
+		jq('.'+currentidx).show();		
+	}
 
-<div id="alphabetischeTabelle" width="200" float="left"><table id="alphabetTable" width="200">
-	
-	<tbody><tr>
-	<td><a href="http://www.Abfall">A</td>
-	<td><a href="http://www.Bergamott">B</td>
-	<td><a href="http://www.Clausthaler">C</td>
-	<td><a href="http://www.Dolomiten">D</td>
-	<td><a href="http://www.Esel">E</td>
-	<td><a href="http://www.Feuer">F</td>
-	<td><a href="http://www.Gottesanbeterin">G</td>
-	<td><a href="http://www.Holunderblüte">H</td></tr></tbody>
-	<tbody><tr>
-	<td><a href="http://www.Information">I</td>
-	<td><a href="http://www.Jockey">J</td>
-	<td class="sonderfall4"><a href="http://www.Katastrophe">K</td>
-	<td><a href="http://www.Ludwigshafen">L</td>
-	<td><a href="http://www.Magnolie">M</td>
-	<td><a href="http://www.Nilpferd">N</td>
-	<td><a href="http://www.Ostrawa">O</td>
-	<td><a href="http://www.Paul">P</td></tr></tbody>
-	<tbody><tr>
-	<td><a href="http://www.Quitte">Q</td>
-	<td><a href="http://www.Regen">R</td>
-	<td><a href="http://www.Stuttgart">S</td>
-	<td><a href="http://www.Telefon">T</td>
-	<td><a href="http://www.Umgang">U</td>
-	<td><a href="http://www.Verlust">V</td>
-	<td><a href="http://www.Wege">W</td>
-	<td><a href="http://www.Xaver">X</td></tr></tbody>
-	<tbody><tr>
-	<td><a href="http://www.Ypsilon">Y</td>
-	<td><a href="http://www.Zug">Z</td>
-	<td><a href="http://www.Umlaut">Ä</td>
-	<td><a href="http://www.nochmal">Ö</td>
-	<td><a href="http://www.Letzens">Ü</td>
-	<td class="sonderfall1"><a href="http://www.Nummern">1</td>
-	<td class="sonderfall2"><a href="http://www.und">-</td>
-	<td class="sonderfall3"><a href="http://www.Zahlen">9</td></tr><tbody>
-	
-</table></div>
+	jq(document).ready(function(){
+		updateFilter();
+		//Slide up and down & toggle the Class on click
+		jq('.toggle_trigger').click(function(){
+			jq(this).next('.toggle_container').slideToggle('fast');
+			jq(this).toggleClass('pfeilextra');
+		});
+	  }
+	  
+	);
+	function selectIdx(idx) {
+		currentidx = idx;
+		updateFilter();
+	}
+	</script>
+
+	<h1 class="documentFirstHeading" id="glossarHeader">Glossar</h1>
+<span tal:replace="python:[x['idx'] for x in data]"/>
+	<div id="alphabetischeTabelle" width="200" float="left">
+		<table id="alphabetTable" width="200">
+		<tbody>
+		<tr>
+			<td tal:attributes="class string:glossary_idx ${idx}" 
+				tal:repeat="idx python:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']">
+				<a class="link-plain" 
+				   tal:attributes="href string:javascript:selectIdx(idx='${idx}')" 
+				   tal:content="idx">A</a>
+			</td>
+		</tr>
+		<tr>
+			<td tal:attributes="class string:glossary_idx ${idx}" 
+				tal:repeat="idx python:['I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']">
+				<a class="link-plain" 
+				   tal:attributes="href string:javascript:selectIdx(idx='${idx}')" 
+				   tal:content="idx">A</a>
+			</td>
+		<tr>
+			<td tal:attributes="class string:glossary_idx ${idx}" 
+				tal:repeat="idx python:['Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X']">
+				<a class="link-plain" 
+				   tal:attributes="href string:javascript:selectIdx(idx='${idx}')" 
+				   tal:content="idx">A</a>
+			</td>
+		<tr>
+			<td tal:attributes="class string:glossary_idx ${idx}" 
+				tal:repeat="idx python:['Y', 'Z', 'Ä', 'Ö', 'Ü']">
+				<a class="link-plain" 
+				   tal:attributes="href string:javascript:selectIdx(idx='${idx}')" 
+				   tal:content="idx">A</a>
+			</td>
+			<td tal:attributes="class string:glossary_idx other" 
+				colspan="3" align="center">
+				<a class="link-plain" 
+				   href="javascript:selectIdx(idx='other')">&nbsp;1&nbsp;&nbsp;-&nbsp;&nbsp;9&nbsp;</a>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
      
 	<dl id="listeGlossary">
-		<dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
-		<dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
-		<dt class="pfeilextra"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_active.gif"> <a href="http://www.Aufklappen">Ein aufgeklappter Begriff</dt>
-			<dd>das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater.</dd>
-		 <dt class="pfeil"><img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> <a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</dt>
+
+		<tal:block repeat="elem data">
+		<dt tal:attributes="class string:pfeil toggle_trigger ${elem/idx}">
+			<a class="link-plain" tal:content="elem/title">Ein aufgeklappter Begriff</a>
+		</dt>
+		<dd class="toggle_container" tal:content="elem/desc">das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater.</dd>
+		</tal:block>
+
+		 <!--dt class="pfeil">
+			<img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> 
+			<a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</a>
+		</dt-->
 	</dl>
 
 

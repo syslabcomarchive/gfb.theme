@@ -2412,6 +2412,123 @@ color:#436976 !important;
 /* @end */
 
 
+/*Tinas Glossary Stils ANFANG 26.03*/
+
+/*finetuning tabelle*/
+#alphabetTable td.sonderfall1 {
+  border:none;
+  border-bottom: 0.5px solid white;
+}
+#alphabetTable td.sonderfall2 {
+  border:none;
+  border-bottom: 0.5px solid white;
+}
+#alphabetTable td.sonderfall3 {
+  border:none;
+  border-bottom: 0.5px solid white;
+  border-right: 0.5px solid white;
+}
+#alphabetTable td.sonderfall4 {
+  background-color:#A8126A; 
+}
+
+#glossarHeader {
+  width: 74%;
+  float:left;
+  margin-right:3em;
+}
+
+#alphabetischeTabelle {
+  background-color:#4b516b
+  color: #ffffff;
+  width: 200px;
+}
+
+#alphabetTable {
+  background-color:#4B516B;
+  right:1.4em;
+  margin:0;
+  padding:3px;
+  position:relative;
+}
+
+#alphabetTable td{
+  color: #ffffff;
+  padding: 3px 3px 3px 8px;
+  font-weight: normal;
+  border: 0.5px solid white;
+}
+
+
+#listeGlossary dt {
+  background: url(lc_inactive.gif) no-repeat 0px 4px;
+  padding: 3px 0 0 16px;
+  margin: 0.5em 0 0 0;
+}
+
+#alphabetTable a {
+  color: #ffffff;
+  display: block;
+}
+
+#alphabetTable a:hover {
+  color: #A8126A;
+}
+
+#listeGlossary dd {
+  background-color:#E5E6E8;
+  position:relative;
+  padding-top: 0.7em;
+  position:relative;
+  padding-bottom: 0.5em;
+  margin-bottom:1em;
+}
+
+#listeGlossary {
+  background-color:#ffffff;
+  bottom:3em;
+  position:relative;
+  width:75.5%;
+  margin:0;
+}
+
+#listeGlossary dt.pfeilextra {
+  background-color:#E5E6E8; 
+  padding: 3px 0 0 16px;
+  margin: 0.5em 0 0 0;
+  background: #E5E6E8 url(lc_active.gif) no-repeat scroll 0px 4px; 
+}
+
+#listeGlossary dt a {
+  color: #000000;
+}
+#listeGlossary dt a:hover {
+  color: #A8126A;
+}
+#listeGlossary img {
+  padding-bottom: 0.3em;
+}
+
+/*um die Navi zu fixen*/
+  #portal-globalnav {
+  right:0.9em;
+  position:relative;
+}
+#portal-globalnav li:hover, #portal-globalnav li.selected {
+  padding-left:1.5em;
+}
+.glossary-active {
+	background-color: red;
+}
+.glossary_idx_highlight {
+	background-color: #E5E6E8;
+}
+#alphabetTable td.glossary_idx_highlight a {
+	color: #4B516B;
+}
+
+/* @end */
+
 
 
 /* </dtml-with> */
