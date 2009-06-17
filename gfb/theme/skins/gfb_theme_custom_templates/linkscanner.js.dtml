@@ -34,7 +34,10 @@ function getContentArea() {
 	// to end all doubt on where the content sits. It also felt a bit silly doing this over and over in every
 	// function, even if it is a tiny operation. Just guarding against someone changing the names again, in the name
 	// of semantics or something.... ;)
-	node =  document.getElementById('region-content')
+	node =  document.getElementById('parent-fieldname-text')
+	if (! node){
+		node =  document.getElementById('region-content')
+	}
 	if (! node){
 		node = document.getElementById('content')
 		}
@@ -105,12 +108,12 @@ function modifyLinkTag(node) {
         // check if the link href is a relative link, or an absolute link to the current host.
 		if (linkval.toLowerCase().indexOf(window.location.protocol+'//'+window.location.host)==0) {
             // we are here because the link is an absolute pointer internal to our host
-            /*if(node.className!='singlelink') {
+            if(node.className!='singlelink') {
                 injectNode(node, 'span', 'link-internal-js');
                 if(node.className=='link-internal') {
                     node.className='';
                 }            
-            }*/
+            }
         } else if (linkval.indexOf('http:') != 0){
             // not a http-link. Possibly an internal relative link, but also possibly a mailto ot other snacks
             // add tests for all relevant protocols as you like.
@@ -129,7 +132,8 @@ function modifyLinkTag(node) {
                     break;
                 }
             }
-            if(node.className!='singlelink' and found==0) {
+			
+            if(node.className!='singlelink' && found==0) {
                 injectNode(node, 'span', 'link-internal-js');
                 if(node.className=='link-internal') {
                     node.className='';
@@ -144,12 +148,12 @@ function modifyLinkTag(node) {
                     node.className='';
                 }
             }
-             /*
+             
                  if (node.getAttribute('onclick') == false){
                     if (node.addEventListener) node.addEventListener("onclick",window.open(node.href), true);
                     else if (node.attachEvent) node.attachEvent("onclick",window.open(node.href));
                  }
-             */
+             
         }
         pathelems = linkval.split('/');
         filename = pathelems[pathelems.length-1];
