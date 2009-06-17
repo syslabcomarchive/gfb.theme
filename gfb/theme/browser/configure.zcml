@@ -131,13 +131,13 @@
         layer=".interfaces.IThemeSpecific"
         />
 
-  <!-- copied from osha.theme! remove when unifying gfb and osha... -->
-  <browser:page
-    name="getVocabularyPath"
-    for="*"
-    class=".vocabulary.VocabularyPathView"
-    layer=".interfaces.IThemeSpecific"
-    permission="zope2.Public"
+    <!-- copied from osha.theme! remove when unifying gfb and osha... -->
+    <browser:page
+       name="getVocabularyPath"
+       for="*"
+       class=".vocabulary.VocabularyPathView"
+       layer=".interfaces.IThemeSpecific"
+       permission="zope2.Public"
     />
     
     
@@ -165,5 +165,14 @@
         layer=".interfaces.IThemeSpecific"
     />
     
+    <browser:page
+        for="*"
+        name="ra_inline"
+        class=".ra_inline.RAInlineView"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
+    
+
 
 </configure>

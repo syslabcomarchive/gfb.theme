@@ -390,7 +390,8 @@
 
         <div class="searchResults">
           <tal:results repeat="result batch">
-          <tal:entry define="result_url result/getURL;
+          <tal:entry define="result_uid result/UID;
+							 result_url string:ra_inline?uid=${result_uid};
                              result_type result/portal_type;
                              result_ob result/getObject;
                              result_medium result_ob/getMedium | python:[];
