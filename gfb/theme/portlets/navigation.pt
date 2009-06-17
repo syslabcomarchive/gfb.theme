@@ -3,16 +3,13 @@
     tal:define="root view/navigation_root">
 
     <dt class="portletHeader">
-        <a href="#"
-              class="tile"
+        <span class="tile"
               tal:condition="python:len(request.PARENTS)>4"
-              tal:content="python:request.PARENTS[-5].Title()">
-        </a>
-        <a href="#" 
-           class="tile"
+              tal:content="python:request.PARENTS[-5].Title()"></span>
+        <span 
+	       class="tile"
            tal:condition="python:len(request.PARENTS)<5"
-           tal:attributes="href string:${root/absolute_url}/sitemap" 
-           i18n:translate="box_navigation">Navigation</a>
+           i18n:translate="box_navigation">Navigation</span>
     </dt>
 
     <dd class="portletItem lastItem">

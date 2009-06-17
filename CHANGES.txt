@@ -3,12 +3,19 @@ gfb.theme Changelog
 
 gfb.theme 1.2 (unreleased)
 --------------------------
+
 - viewlets.xml fixed to apply only to our skin [pilz]
+
 - homepage_search does not require the included textdocs to be present anymore. Therefore it is now callable in a fresh portal
+
 - adapted medium result view to the appearance of the RA Portlet [pilz]
+
 - added latest skin changes [pecek]
+
 - added a browserview (ra_inline) to display riskassessment links which are placed 
   in the membersfolder, in the context of the search [pilz]
+
+- Removed link around header in Navi portlet [pilz]
 
 
 gfb.theme 1.1 (2009-05-12)
