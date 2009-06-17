@@ -17,6 +17,10 @@ gfb.theme 1.2 (unreleased)
 
 - Removed link around header in Navi portlet [pilz]
 
+- Fixed a css bug to support the ra_inline view [pecek]
+
+- removed the internal link marker for javascript urls [pilz]
+
 
 gfb.theme 1.1 (2009-05-12)
 --------------------------

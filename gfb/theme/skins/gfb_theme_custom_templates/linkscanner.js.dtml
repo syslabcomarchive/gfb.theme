@@ -114,9 +114,9 @@ function modifyLinkTag(node) {
         } else if (linkval.indexOf('http:') != 0){
             // not a http-link. Possibly an internal relative link, but also possibly a mailto ot other snacks
             // add tests for all relevant protocols as you like.
-            protocols = ['ftp', 'news', 'irc', 'callto']
+            protocols = ['ftp', 'news', 'irc', 'callto', 'javascript']
             // h323, sip and callto are internet telephony VoIP protocols
-            
+            var found = 0;
             for (p=0; p < protocols.length; p++){  
                  if (linkval.indexOf(protocols[p]+':') == 0){
                     // this link matches the protocol . add a classname protocol+link
@@ -125,10 +125,11 @@ function modifyLinkTag(node) {
                     if(node.className==linkclass||node.className==linkclass+'-js') {
                         node.removeAttribute('class');
                     }
+					found = 1;
                     break;
                 }
             }
-            if(node.className!='singlelink') {
+            if(node.className!='singlelink' and found==0) {
                 injectNode(node, 'span', 'link-internal-js');
                 if(node.className=='link-internal') {
                     node.className='';

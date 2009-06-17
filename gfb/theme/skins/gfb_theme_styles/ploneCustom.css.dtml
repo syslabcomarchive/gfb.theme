@@ -1072,7 +1072,7 @@ table {
     margin: 1px 0 0 0 ;
 }
 
-.riskfield ul {
+div#risktable div.riskvalue ul {
     margin-top: -0.2em;
     margin-bottom: 0;
 }
@@ -1830,6 +1830,7 @@ form.searchPage {
 
 
 /* Distance top to text should be the same as to bottom text */
+div#region-content ul,
 div#content ul {
   list-style-type:disc;
   margin-bottom: 0.75em;
