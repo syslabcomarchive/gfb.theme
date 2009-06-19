@@ -1,6 +1,11 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.1 (1009-06-19)
+----------------------------
+
+- removed stale empty images directory
+
 gfb.theme 1.2 (1009-06-19)
 --------------------------
 
