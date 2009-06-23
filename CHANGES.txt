@@ -1,6 +1,13 @@
 gfb.theme Changelog
 ===================
 
+
+gfb.theme 1.2.2 (1009-06-23)
+----------------------------
+
+- added missing style files, minor style fixes (pecek)
+
+
 gfb.theme 1.2.1 (1009-06-19)
 ----------------------------
 

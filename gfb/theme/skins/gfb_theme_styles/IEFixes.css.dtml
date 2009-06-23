@@ -8,6 +8,10 @@
 height: 32px;
 }
 
+#portal-globalnav-box {
+z-index: 12 !important;
+}
+
 #border-wrapper {
 position: relative;
 }
