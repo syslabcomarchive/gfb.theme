@@ -1,6 +1,12 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.3 (1009-06-23)
+----------------------------
+
+- exchanged wrong ploneCustom.css, re-adding glossary skins (pilz)
+
+- added no entries statement to glossary if no items are present for selected index (pilz)
 
 gfb.theme 1.2.2 (1009-06-23)
 ----------------------------
