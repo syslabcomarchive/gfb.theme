@@ -73,17 +73,17 @@
 			<td tal:attributes="class string:glossary_idx AE" 
 				align="center">
 				<a class="link-plain" 
-				   href="javascript:selectIdx(idx='AE')">Ä</a>
+				   href="javascript:selectIdx(idx='AE')">&Auml;</a>
 			</td>
 			<td tal:attributes="class string:glossary_idx OE" 
 				align="center">
 				<a class="link-plain" 
-				   href="javascript:selectIdx(idx='OE')">Ö</a>
+				   href="javascript:selectIdx(idx='OE')">&Ouml;</a>
 			</td>
 			<td tal:attributes="class string:glossary_idx UE" 
 				align="center">
 				<a class="link-plain" 
-				   href="javascript:selectIdx(idx='UE')">Ü</a>
+				   href="javascript:selectIdx(idx='UE')">&Uuml;</a>
 			</td>
 			<td tal:attributes="class string:glossary_idx other" 
 				colspan="3" align="center">
