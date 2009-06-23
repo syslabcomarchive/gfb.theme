@@ -2,4 +2,6 @@
 <object name="portal_javascripts">
  <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression="" id="linkscanner.js" inline="False"/>
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression="" id="fixIE6.js" inline="False"/>
 </object>
