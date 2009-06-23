@@ -1,25 +1,30 @@
 gfb.theme Changelog
 ===================
 
-gfb.theme 1.2.3 (1009-06-23)
+gfb.theme 1.2.4 (unreleased)
+----------------------------
+
+- fixed problem where linkscanner also marks links in navi (pilz)
+
+gfb.theme 1.2.3 (2009-06-23)
 ----------------------------
 
 - exchanged wrong ploneCustom.css, re-adding glossary skins (pilz)
 
 - added no entries statement to glossary if no items are present for selected index (pilz)
 
-gfb.theme 1.2.2 (1009-06-23)
+gfb.theme 1.2.2 (2009-06-23)
 ----------------------------
 
 - added missing style files, minor style fixes (pecek)
 
 
-gfb.theme 1.2.1 (1009-06-19)
+gfb.theme 1.2.1 (2009-06-19)
 ----------------------------
 
 - removed stale empty images directory
 
-gfb.theme 1.2 (1009-06-19)
+gfb.theme 1.2 (2009-06-19)
 --------------------------
 
 - viewlets.xml fixed to apply only to our skin [pilz]
