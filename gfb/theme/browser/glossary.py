@@ -39,21 +39,34 @@ class GlossaryView(BrowserView):
         results = portal_catalog.evalAdvancedQuery(query, (('sortable_title','asc'),))
 
         L = []
+        # make sure empty letters get a notice (65-90)
+        keep_track = {}
+        for i in range(65,91):
+            keep_track[chr(i)] = 0
+        keep_track['AE'] = 0 
+        keep_track['OE'] = 0 
+        keep_track['UE'] = 0 
+        keep_track['other'] = 0 
+
         for res in results:
             t = unicode(res.Title, 'utf-8')
             d = res.Description
             idx = len(t) and t[0] or u'other'
             idx = idx.upper()
-#            if idx == u'Ä': 
-#                idx = 'AE'
-#            elif idx == u'Ö': 
-#                idx = 'OE'
-#            elif idx == u'Ü': 
-#                idx = 'UE'
-            expr = unicode('[ÄÖÜA-Z]', 'utf-8')
+            if idx == unicode('Ä', 'utf-8'): 
+                idx = 'AE'
+            elif idx == unicode('Ö', 'utf-8'): 
+                idx = 'OE'
+            elif idx == unicode('Ü', 'utf-8'): 
+                idx = 'UE'
+            expr = unicode('[A-Z]', 'utf-8')
             if not re.match(expr, idx):
-                import pdb;pdb.set_trace()
                 idx='other'
             L.append(dict(title=t, desc=d, idx=idx))
-    
+            keep_track[idx] = 1
+            
+        empties = [x for x in keep_track.keys() if keep_track[x]==0]
+        for key in empties:
+            L.append(dict(title=_('label_no_entries'), desc='', idx=key ))
+
         return L

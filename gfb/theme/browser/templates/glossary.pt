@@ -38,7 +38,6 @@
 	</script>
 
 	<h1 class="documentFirstHeading" id="glossarHeader">Glossar</h1>
-<span tal:replace="python:[x['idx'] for x in data]"/>
 	<div id="alphabetischeTabelle" width="200" float="left">
 		<table id="alphabetTable" width="200">
 		<tbody>
@@ -66,10 +65,25 @@
 			</td>
 		<tr>
 			<td tal:attributes="class string:glossary_idx ${idx}" 
-				tal:repeat="idx python:['Y', 'Z', 'Ä', 'Ö', 'Ü']">
+				tal:repeat="idx python:['Y', 'Z']">
 				<a class="link-plain" 
 				   tal:attributes="href string:javascript:selectIdx(idx='${idx}')" 
 				   tal:content="idx">A</a>
+			</td>
+			<td tal:attributes="class string:glossary_idx AE" 
+				align="center">
+				<a class="link-plain" 
+				   href="javascript:selectIdx(idx='AE')">Ä</a>
+			</td>
+			<td tal:attributes="class string:glossary_idx OE" 
+				align="center">
+				<a class="link-plain" 
+				   href="javascript:selectIdx(idx='OE')">Ö</a>
+			</td>
+			<td tal:attributes="class string:glossary_idx UE" 
+				align="center">
+				<a class="link-plain" 
+				   href="javascript:selectIdx(idx='UE')">Ü</a>
 			</td>
 			<td tal:attributes="class string:glossary_idx other" 
 				colspan="3" align="center">
@@ -90,10 +104,6 @@
 		<dd class="toggle_container" tal:content="elem/desc">das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater.</dd>
 		</tal:block>
 
-		 <!--dt class="pfeil">
-			<img src="http://localhost:5040/gfb/portal_skins/custom/lc_inactive.gif"> 
-			<a href="http://www.Aufklappen">Ein Begriff zum Aufklappen</a>
-		</dt-->
 	</dl>
 
 

@@ -15,6 +15,9 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: gfb\n"
 
+#:../browser/glossary.py
+msgid "label_no_entries"
+msgstr "No Entries"
 
 #:../browser/templates/path_pat.pt
 msgid "you_are_here"
