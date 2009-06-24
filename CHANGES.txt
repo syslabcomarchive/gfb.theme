@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-gfb.theme 1.2.4 (unreleased)
+gfb.theme 1.2.4 (2009-06-25)
 ----------------------------
 
 - fixed problem where linkscanner also marks links in navi (pilz)
