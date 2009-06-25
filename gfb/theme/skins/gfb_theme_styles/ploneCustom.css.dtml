@@ -2100,6 +2100,8 @@ ul.search_index {
   height:32px;
   line-height:normal;
   padding:0;
+  position:relative;
+  left:0px;
   width:545px;
 }
 * html #portal-globalnav li {
@@ -2517,9 +2519,10 @@ color:#436976 !important;
   right:0.9em;
   position:relative;
 }
-#portal-globalnav li:hover, #portal-globalnav li.selected {
+/*Verursacht springen der Navi*/
+/*#portal-globalnav li:hover, #portal-globalnav li.selected {
   padding-left:1.5em;
-}
+}*/
 .glossary-active {
 	background-color: red;
 }
