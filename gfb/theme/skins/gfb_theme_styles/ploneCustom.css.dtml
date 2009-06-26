@@ -891,7 +891,13 @@ h2 {
     margin-bottom: 12px;
     margin-top: 0px;
 }
-
+* html .treeview ul {
+  background-color:#ffffff;
+  padding:80px 0 0;
+}
+* html .treeview li.collapsable, .treeview li.expandable {
+  background-color:#FFFFFF;
+}
 
 h3 {
     font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
@@ -1363,7 +1369,7 @@ div.column2b {
 	width: 350px;
 	float: left;
 }  
-    
+
 
 .context {text-transform: none;}
 
@@ -1975,7 +1981,17 @@ ul.search_index {
 }
 
 *+html .floated_control {
-  margin-top:-1.3em;
+ margin-top:-1.3em;
+}
+*+html .floated_control img {
+ position:relative;
+ right:8px;
+ bottom:16px;
+}
+* html .floated_control img {
+ position:relative;
+ right:8px;
+ bottom:6px;
 }
 
 *+html #heading_search_results_box {
