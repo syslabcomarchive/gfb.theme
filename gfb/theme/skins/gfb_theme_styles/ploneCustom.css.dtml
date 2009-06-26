@@ -1263,6 +1263,7 @@ div.search_medium {
 * html div.search_medium ul {
   position:relative;
   left:10px;
+  margin:0 0 0 15px;
 }
 
 div#region-content div.search_medium ul  {
