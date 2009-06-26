@@ -1241,12 +1241,30 @@ div.search_medium {
     background-color: #E5E6E8;
     border: 0 none !important;
     padding:  13px 0 0 0;
-    min-height: 12em;
-    
+    min-height: 12em;   
 }
 div.search_medium {
     font-family: Arial,sans-serif;
 }
+
+/*IE6FIX*/
+* html div.search_medium {
+  padding:13px 10px 25px 0;
+  width:180px;
+}
+* html div.search_medium h5 {
+  position:relative;
+  left:10px;
+}
+* html div.search_medium p {
+  position:relative;
+  left:10px;
+}
+* html div.search_medium ul {
+  position:relative;
+  left:10px;
+}
+
 div#region-content div.search_medium ul  {
     list-style-image : none;
 }
