@@ -434,6 +434,7 @@ top: 0;
     top: -10px;
     position:relative;
 }
+
 #slc-linkcollection-linkbox ul {
     padding:0;
     margin:0;
@@ -880,8 +881,17 @@ h2 {
     font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #3D4E60;
     margin-bottom: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
+/*IE6 Fix*/
+* html h2 {
+    font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    color: #3D4E60;
+    margin-bottom: 12px;
+    margin-top: 0px;
+}
+
 
 h3 {
     font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
@@ -935,10 +945,9 @@ h4 {
     font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
-
 #parent-fieldname-description,
 .documentByLine {
-    padding: 12px 0px;
+    padding:8px 0 0;
     margin-bottom: 8px;
     font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
@@ -1001,8 +1010,9 @@ ol {
     margin: 0.5em 0 0.75em 0em;
 }
 
+/*Verursacht das die Bullets bei den Ausgabelisten zu weit nach rechts rutschen*/
 #content li, #region-content li {
-    margin: 0.3em 0 0.3em 2.5em;
+    /*margin: 0.3em 0 0.3em 2.5em;*/
     list-style-position: outside;
 }
 
@@ -1055,6 +1065,18 @@ table {
     border-collapse: collapse;
     font-size: 1em;
     }
+
+table td {
+  padding:3px;
+}
+
+/*Rahmen für die Tabellen*/
+.section-de template-richdocument_view kssActive tbody {
+  border-bottom: 1px solid #000000;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
+  border-top:1px solid #000000;
+}
 
 
 #risktable {
@@ -2438,7 +2460,7 @@ color:#436976 !important;
 }
 
 #glossarHeader {
-  width: 74%;
+  width: 71%;
   float:left;
   margin-right:3em;
 }
