@@ -6,8 +6,9 @@
         tal:condition="python:available and len(languages)>=2">
         <tal:language repeat="lang languages">
         <li tal:define="code lang/code;
-                        selected lang/selected"
-            tal:condition="not: selected"
+                        selected lang/selected;
+						translated lang/translated"
+            tal:condition="python: not selected and translated"
             tal:attributes="class python: selected and 'currentLanguage' or '';">
                 <a href=""
                    tal:define="flag lang/flag|nothing;

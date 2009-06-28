@@ -89,16 +89,8 @@ class AdvancedSearchView(BrowserView):
 
         query = self.search_portal_types()
 
-        #query = { 'sort_on': 'effective',
-        #          'sort_order':'reverse',
-        #          'Language': ''}
         language = getToolByName(context, 'portal_languages').getPreferredLanguage()
         query = query & In('Language', ['', language])
-
-#        keywords = self.request.get('keywords', [])
-#        if keywords:
-#            query = query & In('Subject', keywords)
-#            #query.update({'Subject':keywords})
 
         nace = list(self.request.get('nace', ''))
         if '' in nace:
@@ -106,7 +98,7 @@ class AdvancedSearchView(BrowserView):
         if nace:
             query = query & In('nace', nace)    
 
-        getCategoryIndependent = self.request.get('getCategoryIndependent', '1')
+        getCategoryIndependent = self.request.get('getCategoryIndependent', '0')
         getCategoryIndependent = bool(int(getCategoryIndependent))
         query = query & Eq('getCategoryIndependent', getCategoryIndependent)
 

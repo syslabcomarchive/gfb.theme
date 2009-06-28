@@ -6,6 +6,10 @@ gfb.theme 1.2.5 (2009-06-28)
 
 - more IE6 fixes (pecek)
 - ra_inline now correctly sets the proper context (pilz)
+- Changed translations (pilz)
+- Fixed Bug where selection and results in search form did not match (pilz)
+- Show language switch only if translation is available (pilz)
+
 
 gfb.theme 1.2.4 (2009-06-25)
 ----------------------------

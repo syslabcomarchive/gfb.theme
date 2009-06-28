@@ -205,7 +205,7 @@ msgstr "Suchen"
 #. Default "Common and Introductory Action Guideline"
 #: advanced_search.pt
 msgid "label_common_introduction"
-msgstr "Allgemeine und Einführende Handlungshilfen"
+msgstr "Grundlagenwissen"
 
 
 #. Default "Searchcriteria"
@@ -216,7 +216,7 @@ msgstr "Suchkriterien"
 #. Default "Special Action Guideline, restrict by..."
 #: advanced_search.pt
 msgid "label_special_guideline"
-msgstr "Spezielle Handlungshilfen"
+msgstr "Spezifische Handlungshilfen"
 
 
 msgid "label_add"
