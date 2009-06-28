@@ -28,6 +28,6 @@ class RAInlineView(BrowserView):
         ob = result.getObject()
 
         #put the object in current context
-        N = ob.__of__(self.context)
+        N = Acquisition.aq_inner(Acquisition.aq_base(ob)).__of__(self.context)
         return N()
 
