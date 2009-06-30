@@ -2423,7 +2423,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 * html div.column1b {
-  width:280px;
+  width:260px;
 }
 
 /* Fix for IE6 after implementing the Js fix from JC*/
