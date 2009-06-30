@@ -1204,14 +1204,17 @@ form.searchform-tipps a#searchtipps {
 
 
 
-div#searchfields,
+div#searchfields {
+    background-color: #E5E6E8;
+    border: 0 none !important;
+    padding:  13px 0 0 0;
+    /*height: 14em;*/   
+}
 div.search_medium {
     background-color: #E5E6E8;
     border: 0 none !important;
     padding:  13px 0 0 0;
-    height: 14em;   
-}
-div.search_medium {
+    height: 14em;
     font-family: Arial,sans-serif;
 }
 
@@ -2007,7 +2010,7 @@ ul.search_index {
 
 
 /* und /oder box styling */
-.common_radio_search_box {
+.common_radio_search_box {div#region-content li
     margin-bottom: 1em;
 }
 div.column1b div input {
