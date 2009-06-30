@@ -22,12 +22,14 @@ position: relative;
 width:8em;
 }
 
+
 #slc-linkcollection-linkbox ul li.linkList a {
-display: block;
-_background-position:4px 2px;
-margin-bottom: 0px;
-_margin-bottom: -10px;
+	display: block;
+	_background-position:4px 2px;
+	margin-bottom: 0px;
+	_margin-bottom: -10px;
 }
+
 
 #portal-languageselector {
 width: 70px;

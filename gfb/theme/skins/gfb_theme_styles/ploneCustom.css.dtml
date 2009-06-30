@@ -427,38 +427,6 @@ top: 0;
 
 /* @group Portlets */
 
-#slc-linkcollection-linkbox {
-    border: 0px;
-    background-color: #ebecf0;
-    top: -10px;
-    position:relative;
-}
-
-#slc-linkcollection-linkbox ul {
-    padding:0;
-    margin:0;
-    text-indent: 0;
-}
-div#region-content #slc-linkcollection-linkbox ul li,
-#slc-linkcollection-linkbox ul li {
-    list-style-image: none;
-    list-style: none;
-    padding:0;
-    margin: 0px;
-}
-#slc-linkcollection-linkbox ul li.linkList a {
-    background: url(lc_inactive.gif) no-repeat 2px 2px;
-    padding-left: 20px;
-    color: black;
-    font-weight: normal;
-}
-
-#slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
-    background: url(lc_active.gif) no-repeat 2px 2px;
-    padding-left: 20px;
-    font-weight: bold;
-    color: black;
-}
 
 
 .portlet {
@@ -1907,11 +1875,6 @@ div#content div#simplesearch ul.search-top {
 }
 
 
-#slc-linkcollection-linkbox ul{
-  list-style-type:disc;
-  margin-bottom: 0.75em;
-}
-
 
 *+html div.column2b {
   margin-left:2em;
@@ -2351,11 +2314,14 @@ color:#436976 !important;
   background-color:transparent;
 }
 
-/*Fix für IE6 fehlerhafte Linkcollection*/
 
+
+
+/* XXXXXFix für IE6 fehlerhafte Linkcollection*/
+/*
 * html #slc-linkcollection-linkbox ul .linklist-item-1 {
   position:relative;
-  bottom:5px;
+  bottom:10px;
 }
 
 * html #slc-linkcollection-linkbox ul .linklist-item-2 {
@@ -2383,6 +2349,54 @@ color:#436976 !important;
   position:relative;
   bottom:25px;
 }
+*/
+
+#slc-linkcollection-linkbox {
+    border: 0px;
+    background-color: #ebecf0;
+    top: -10px;
+    position:relative;
+}
+#slc-linkcollection-linkbox ul {
+    padding:0;
+    margin:0;
+    text-indent: 0;
+}
+div#region-content #slc-linkcollection-linkbox ul li,
+#slc-linkcollection-linkbox ul li {
+    list-style-image: none;
+    list-style: none;
+    padding:0;
+    margin: 0px;
+}
+#slc-linkcollection-linkbox ul li.linkList a {
+    background: url(lc_inactive.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    color: black;
+    font-weight: normal;
+}
+
+#slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
+    background: url(lc_active.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: black;
+}
+* html #slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
+	margin-left: 2px;
+}
+#slc-linkcollection-linkbox ul{
+  list-style-type:disc;
+  margin-bottom: 0.75em;
+}
+
+
+
+
+
+
+
+
 
 /* BugFix für das linke Naviportlet und die subnavi header*/
 
