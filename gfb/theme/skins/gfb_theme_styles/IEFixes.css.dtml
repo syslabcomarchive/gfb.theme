@@ -3,6 +3,8 @@
 */
 
 /* <dtml-with base_properties> */
+/* requires the hoverfix.htc file which needs to have the content-type text/x-component set. I have added this to custom */
+body { behavior: url("&dtml-portal_url;/hoverfix.htc"); } 
 
 #portal-globalnav li{
 height: 32px;
@@ -48,8 +50,8 @@ width:46%;
 
 /* Gfb floating skin hacks */
 #visual-portal-wrapper {
-    width: 980px;
-    _width: 981px;
+    width: 960px;
+    _width: 961px;
 }
 #searchGadget {
     _margin-top:6px;
@@ -252,8 +254,6 @@ table.ploneCalendar caption {
 * html dl.portalMessage dt {
     margin-right: 0;
 }
-
-
 
 
 /* </dtml-with> */

@@ -37,8 +37,8 @@
 	}
 	</script>
 
-	<h1 class="documentFirstHeading" id="glossarHeader">Glossar</h1>
-	<div id="alphabetischeTabelle" width="200" float="left">
+
+	<div id="alphabetischeTabelle" width="200">
 		<table id="alphabetTable" width="200">
 		<tbody>
 		<tr>
@@ -94,6 +94,9 @@
 		</tbody>
 		</table>
 	</div>
+
+	<h1 class="documentFirstHeading" id="glossarHeader">Glossar</h1>
+	<div class="visualClear"></div>
      
 	<dl id="listeGlossary">
 

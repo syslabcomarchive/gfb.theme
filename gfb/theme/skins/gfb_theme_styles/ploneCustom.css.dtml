@@ -87,8 +87,7 @@ body {
     background: #fff;
     text-align: left;
     margin: 0 auto;
-    min-width: 980px;
-    max-width: 1236px;
+    width: 980px;
 }
 
 
@@ -440,6 +439,7 @@ top: 0;
     margin:0;
     text-indent: 0;
 }
+div#region-content #slc-linkcollection-linkbox ul li,
 #slc-linkcollection-linkbox ul li {
     list-style-image: none;
     list-style: none;
@@ -1241,7 +1241,7 @@ div.search_medium {
     background-color: #E5E6E8;
     border: 0 none !important;
     padding:  13px 0 0 0;
-    min-height: 12em;   
+    height: 14em;   
 }
 div.search_medium {
     font-family: Arial,sans-serif;
@@ -1270,7 +1270,7 @@ div#region-content div.search_medium ul  {
     list-style-image : none;
 }
 div#region-content li {
-    /*margin-left: 2.5em;*/
+    margin-left: 2.5em;
 }
 
 .info_of_search {
@@ -1378,7 +1378,7 @@ ul.search_index {
 }
 
 div.column1b {
-	width: 360px;
+	width: 260px;
 	float: left;
     margin: 15px 11px 0px 11px;
 }
@@ -2297,8 +2297,6 @@ color:#436976 !important;
 
 *+html #visual-portal-wrapper {
   margin:0 auto;
-  max-width:1236px;
-  min-width:1180px;
   position:relative;
 }
 
@@ -2340,7 +2338,7 @@ color:#436976 !important;
 * html #visual-portal-wrapper {
   background:#FFFFFF none repeat scroll 0 0;
   margin:0 auto;
-  width:1120px;
+  width:980px;
 }
 
 * html .portlet-static-unsere-partner {
@@ -2460,23 +2458,26 @@ color:#436976 !important;
 * html #visual-portal-wrapper {
   background:#FFFFFF none repeat scroll 0 0;
   margin:0 auto;
-  width:1024px;
+  width:980px;
   position:relative;
   text-align:left;
 }
 *+html #visual-portal-wrapper {
   background:#FFFFFF none repeat scroll 0 0;
   margin:0 auto;
-  width:1024px;
+  width:980px;
   position:relative;
   text-align:left;
 }
 /* @end */
 
 
-/*Tinas Glossary Stils ANFANG 26.03*/
 
-/*finetuning tabelle*/
+/* Glossar tabelle*/
+#alphabetTable {
+	background-color: #4b516b;
+}
+
 #alphabetTable td.sonderfall1 {
   border:none;
   border-bottom: 0.5px solid white;
@@ -2494,21 +2495,26 @@ color:#436976 !important;
   background-color:#A8126A; 
 }
 
+#listeGlossary {
+	float: left;
+}
 #glossarHeader {
-  width: 71%;
+  width: 500px;
   float:left;
-  margin-right:3em;
 }
 
+
 #alphabetischeTabelle {
-  background-color:#4b516b
+/*  background-color:#4b516b*/
+  background-color: white;
   color: #ffffff;
   width: 200px;
+  float: right;
 }
 
 #alphabetTable {
   background-color:#4B516B;
-  right:1.4em;
+  //right:1.4em;
   margin:0;
   padding:3px;
   position:relative;
@@ -2550,7 +2556,7 @@ color:#436976 !important;
   background-color:#ffffff;
   bottom:3em;
   position:relative;
-  width:75.5%;
+  width: 500px;
   margin:0;
 }
 
@@ -2572,14 +2578,10 @@ color:#436976 !important;
 }
 
 /*um die Navi zu fixen*/
-  #portal-globalnav {
+#portal-globalnav {
   right:0.9em;
   position:relative;
 }
-/*Verursacht springen der Navi*/
-/*#portal-globalnav li:hover, #portal-globalnav li.selected {
-  padding-left:1.5em;
-}*/
 .glossary-active {
 	background-color: red;
 }
