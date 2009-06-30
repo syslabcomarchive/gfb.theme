@@ -1,6 +1,12 @@
 gfb.theme Changelog
 ===================
 
+
+gfb.theme 1.2.6 (2009-06-30)
+----------------------------
+
+- long list of gfb skinfixes. See projects.syslab.com/gfb for details (thomas, pilz)
+
 gfb.theme 1.2.5 (2009-06-28)
 ----------------------------
 
