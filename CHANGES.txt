@@ -6,6 +6,7 @@ gfb.theme 1.2.6 (2009-06-30)
 ----------------------------
 
 - long list of gfb skinfixes. See projects.syslab.com/gfb for details (thomas, pilz)
+- Fixed overlapping text in search mask, fixing #14 (pilz) 
 
 gfb.theme 1.2.5 (2009-06-28)
 ----------------------------
