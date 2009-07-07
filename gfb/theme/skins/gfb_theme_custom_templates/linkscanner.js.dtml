@@ -34,7 +34,10 @@ function getContentArea() {
 	// to end all doubt on where the content sits. It also felt a bit silly doing this over and over in every
 	// function, even if it is a tiny operation. Just guarding against someone changing the names again, in the name
 	// of semantics or something.... ;)
-	node =  document.getElementById('parent-fieldname-text')
+	node =  document.getElementById('linkcollection-prefetched-docs')
+	if (! node){
+		node =  document.getElementById('parent-fieldname-text')
+	}
 	if (! node){
 		node =  document.getElementById('region-content')
 	}
@@ -173,7 +176,11 @@ function modifyLinkTag(node) {
     }
 }
 unRegisterPloneFunction(scanforlinks);
-registerPloneFunction(scanforlinks);   
+
+jq(document).ready(function(){
+	scanforlinks();
+});
+/*registerPloneFunction(scanforlinks);   */
 
 function registerPloneFunction(func){
     // registers a function to fire onload. 
