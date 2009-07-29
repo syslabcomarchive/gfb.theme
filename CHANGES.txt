@@ -5,7 +5,7 @@ gfb.theme 1.2.8 (29.07.2009)
 ----------------------------
 - Hauptnavi Hover problem #10 (pilz)
 - Im Glossar fehlt Im IE der hover-Efekt, im FF und IE fehlt die Hand beim Überfahren #23 (pilz)
-- Im IE kein Hintergeund bei aktiven Seitennavigationselement #24 (pilz)
+- Im IE kein Hintergrund bei aktiven Seitennavigationselement #24 (pilz)
 - IE6 Speedprobleme #25 (pilz)
 - In Suchliste Icon für interne Links entfernen #26 (pilz)
 - make linkscanner also scan for linkcollection bodies (pilz)
