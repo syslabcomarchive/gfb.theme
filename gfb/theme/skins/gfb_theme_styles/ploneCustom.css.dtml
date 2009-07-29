@@ -1561,9 +1561,16 @@ div#providerperson label {
 
 }
 
+.show-all-results {
+  font-weight: normal;
+  color: white; 
+  font-size: 80%;
+}
+a.show-all-results:hover {
+  color: white;
+}
 
-
-#heading_search_results_box {
+#heading_search_results_box, #footer_batch_box {
     background-color:#415063;
     color:whitesmoke;
     font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
@@ -1577,6 +1584,10 @@ div#providerperson label {
     margin-top:0;
     padding:0;
     vertical-align:middle;
+}
+#footer_batch {
+    display:block;
+    padding: 4px 0.5em 4px 8px;
 }
 #heading_search_results {
     float:left;
@@ -1755,7 +1766,9 @@ div#link_to_tool {
 .portletNavigationTree .link-internal-js, 
 .search_index .link-internal-js, 
 .search-top .link-internal-js, 
-ul.formTabs .link-internal-js {
+ul.formTabs .link-internal-js,
+span.listingBar .link-internal-js,
+#footer_batch_box .link-internal-js {
     display:none;
 }
 
@@ -1979,11 +1992,13 @@ ul.search_index {
  bottom:6px;
 }
 
-*+html #heading_search_results_box {
+*+html #heading_search_results_box,
+*+html #footer_search_results_box {
   height:2em;
 }
 
-* html #heading_search_results_box {
+* html #heading_search_results_box,
+* html #footer_search_results_box  {
   height:1em;
   font-size: 102%; 
   line-height: 0.16em;
@@ -2511,9 +2526,15 @@ div#region-content #slc-linkcollection-linkbox ul li,
   padding: 3px 3px 3px 8px;
   font-weight: normal;
   border: 0.5px solid white;
+  cursor: pointer;
 }
-
-
+#alphabetTable td:hover {
+  background-color: #E5E6E8;
+  color: #4B516B;
+}
+#alphabetTable td:hover a {
+  color :#4B516B;
+}
 #listeGlossary dt {
   background: url(lc_inactive.gif) no-repeat 0px 4px;
   padding: 3px 0 0 16px;
@@ -2526,8 +2547,10 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 #alphabetTable a:hover {
-  color: #A8126A;
+  color: #4B516B;
 }
+
+
 
 #listeGlossary dd {
   background-color:#E5E6E8;

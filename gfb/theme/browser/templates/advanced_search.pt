@@ -62,7 +62,9 @@
                 riskfactors request/riskfactors|string:;
                 riskfactors python:riskfactors==[''] and '' or riskfactors;
                 DateTime python:modules['DateTime'].DateTime;
-                b_size python:10;b_start python:0;
+                b_size request/b_size | python:10;
+                b_size python:int(b_size); 
+                b_start python:0;
                 b_start request/b_start | b_start;
                 desc_length site_properties/search_results_description_length;
                 desc_ellipsis site_properties/ellipsis;
@@ -255,6 +257,8 @@
                 documents</span>)
             </span>
 
+            <metal:macro define-macro="batch">
+
             <div class="separationBar">&nbsp;</div>
 
             <!-- Navigation -->
@@ -367,6 +371,8 @@
 
 
             </span>           
+
+            </metal:macro>
                   
         </span>
 
@@ -473,13 +479,37 @@
           </tal:results>
 
         </div>
-   </div>
+   </div>   
+   
+   <div id="footer_batch_box">
+       <span id="footer_batch" >
+           <span tal:omit-tag=""
+                 i18n:translate="heading_search_results" i18n:domain="gfb">
+               Search results
+           </span>
 
+           <span id="search_num_results">
+               (<span i18n:translate="batch_x_items" i18n:domain="gfb"
+               ><span i18n:name="number" 
+               tal:omit-tag="" 
+               tal:content="python:len(results)">234</span> 
+               documents</span>)
+           </span>
+
+           <a tal:condition="not:request/b_size | nothing" 
+              tal:attributes="href python:'%s?b_size=%s&%s' % (template.id, len(results), batch.pageurl(request.form)) " 
+              class="show-all-results" i18n:translate="label_show_all" i18n:domain="gfb">Alle Anzeigen</a>
+
+           <metal:macro use-macro="template/macros/batch"></metal:macro>
+       </span>
+   </div>   
+   
   </div>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-  <div style="color:#ddd" tal:content="view/buildQuery" />
+  
+ 
+<p><br/></p>
+ 
+  <!--div style="color:#ddd" tal:content="view/buildQuery" /-->
 
 </div>
 </body>

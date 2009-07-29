@@ -188,3 +188,9 @@ msgstr "Instructions for use"
 msgid "title_search_site"
 msgstr "Search"
 
+
+#. Default "Show all"
+#: advanced_search.pt
+msgid "label_show_all"
+msgstr "Show all"
+

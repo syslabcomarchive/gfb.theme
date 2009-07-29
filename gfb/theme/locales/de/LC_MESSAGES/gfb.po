@@ -207,6 +207,10 @@ msgstr "Suchen"
 msgid "label_common_introduction"
 msgstr "Grundlagenwissen"
 
+#. Default "Show all"
+#: advanced_search.pt
+msgid "label_show_all"
+msgstr "Alle Anzeigen"
 
 #. Default "Searchcriteria"
 #: advanced_search.pt
