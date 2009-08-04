@@ -102,7 +102,7 @@
 
 		<tal:block repeat="elem data">
 		<dt tal:attributes="class string:pfeil toggle_trigger ${elem/idx}">
-			<a class="link-plain" tal:content="elem/title">Ein aufgeklappter Begriff</a>
+			<a class="link-plain" href="#" onclick="return false;" tal:content="elem/title">Ein aufgeklappter Begriff</a>
 		</dt>
 		<dd class="toggle_container" tal:content="elem/desc">das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater das ist der blind text der hier steht nur um nett auszusehen und wenig sinn zu machen wir alle wünschen ihnen viel spaß beim lesen und hoffen das sie uns bald wieder besuchen in diesem und keinem anderen theater.</dd>
 		</tal:block>
