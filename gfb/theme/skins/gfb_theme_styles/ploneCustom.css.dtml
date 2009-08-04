@@ -2529,11 +2529,11 @@ div#region-content #slc-linkcollection-linkbox ul li,
   cursor: pointer;
 }
 #alphabetTable td:hover {
-  background-color: #E5E6E8;
-  color: #4B516B;
+  background-color: #A8126A;
+  color: white;
 }
 #alphabetTable td:hover a {
-  color :#4B516B;
+  color :white;
 }
 #listeGlossary dt {
   background: url(lc_inactive.gif) no-repeat 0px 4px;
@@ -2547,7 +2547,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 #alphabetTable a:hover {
-  color: #4B516B;
+  color: white;
 }
 
 
@@ -2581,6 +2581,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 #listeGlossary dt a:hover {
   color: #A8126A;
+  cursor: pointer;
 }
 #listeGlossary img {
   padding-bottom: 0.3em;
@@ -2595,10 +2596,10 @@ div#region-content #slc-linkcollection-linkbox ul li,
 	background-color: red;
 }
 .glossary_idx_highlight {
-	background-color: #E5E6E8;
+	background-color: #A8126A;
 }
 #alphabetTable td.glossary_idx_highlight a {
-	color: #4B516B;
+	color: white;
 }
 
 /* @end */
