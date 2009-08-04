@@ -1,6 +1,14 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.9 (04.08.2009)
+----------------------------
+
+- provide the glossary entry links with proper href attribute to enable pointer tooltip on 
+  hover in IE6 (thomasw)
+- make glossary alphabet look like layout provided by DM in ticket 23 (thomasw)
+
+
 gfb.theme 1.2.8 (29.07.2009)
 ----------------------------
 - Hauptnavi Hover problem #10 (pilz)
