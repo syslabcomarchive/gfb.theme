@@ -2608,7 +2608,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
   background-color:#FFFFFF!important;
 }
 * html .navTreeLevel0 li.navTreeCurrentNode div {
-  background-color:#D8DBE0!important;
+  background-color:#D8DBE0;
 }
 
 
