@@ -651,7 +651,7 @@ ul.staticPortlet li {
 .navTreeLevel2 li.navTreeItem div ,
 .navTreeLevel3 li.navTreeItem div ,
 .navTreeLevel4 li.navTreeItem div  {
-    background-color: #ffffff;
+    background-color: #ffffff!important;
 }
 
 
@@ -2600,6 +2600,12 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 #alphabetTable td.glossary_idx_highlight a {
 	color: white;
+}
+
+/*Tinas Fix*/
+
+* html .navTreeLevel1 li.navTreeItem div, .navTreeLevel2 li.navTreeItem div, .navTreeLevel3 li.navTreeItem div, .navTreeLevel4 li.navTreeItem div {
+  background-color:#FFFFFF!important;
 }
 
 /* @end */

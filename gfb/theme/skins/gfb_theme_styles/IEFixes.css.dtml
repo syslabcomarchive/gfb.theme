@@ -272,4 +272,10 @@ table.ploneCalendar caption {
 * html .navTreeLevel0 a.navTreeItemInPath {
   background:transparent url(ico_link_subnavi_active.gif) no-repeat scroll 6px 6px;
 }
+
+/*Tinas Fix*/
+
+* html .navTreeLevel1 li.navTreeItem div, .navTreeLevel2 li.navTreeItem div, .navTreeLevel3 li.navTreeItem div, .navTreeLevel4 li.navTreeItem div {
+  background-color:#FFFFFF!important;
+}
 /* </dtml-with> */
