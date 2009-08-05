@@ -2605,7 +2605,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 /*Tinas Fix*/
 
 * html .navTreeLevel1 li.navTreeItem div, .navTreeLevel2 li.navTreeItem div, .navTreeLevel3 li.navTreeItem div, .navTreeLevel4 li.navTreeItem div {
-  background-color:#FFFFFF;
+  background-color:#FFFFFF!important;
 }
 
 /* @end */
