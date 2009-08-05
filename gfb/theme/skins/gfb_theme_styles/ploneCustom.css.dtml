@@ -2607,6 +2607,11 @@ div#region-content #slc-linkcollection-linkbox ul li,
 * html .navTreeLevel1 li.navTreeItem div, .navTreeLevel2 li.navTreeItem div, .navTreeLevel3 li.navTreeItem div, .navTreeLevel4 li.navTreeItem div {
   background-color:#FFFFFF!important;
 }
+* html .navTreeLevel0 li.navTreeCurrentNode div {
+  background-color:#D8DBE0!important;
+}
+
+
 
 /* @end */
 
