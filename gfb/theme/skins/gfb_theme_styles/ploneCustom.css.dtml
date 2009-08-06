@@ -1820,46 +1820,46 @@ dl.portalMessage a {
     text-decoration: underline;
 }
 dl.portalMessage dt {
-    background-color: #996; 
-    font-weight: bold;
-    float: left;
-    margin: 0 0.5em 0 0;
-    padding: 0.5em 0.75em;
-    color: White;
-    line-height: 1.25em;
+  background-color: #996; 
+  font-weight: bold;
+  float: left;
+  margin: 0 0.5em 0 0;
+  padding: 0.5em 0.75em;
+  color: White;
+  line-height: 1.25em;
 }
 dl.portalMessage dd {
-    padding: 0.5em 0.5em; 
-    margin: 0;
-    line-height: 1.25em;
+  padding: 0.5em 0.5em; 
+  margin: 0;
+  line-height: 1.25em;
 }
 dl.warning {
-    border-color: #d80;
+  border-color: #d80;
 }
 dl.warning dt {
-    background-color: #d80;
+  background-color: #d80;
 }
 dl.error {
-    border-color: #d00;    
+  border-color: #d00;    
 }
 dl.error dt {
-    background-color: #d00; 
+  background-color: #d00; 
 }
 dl.warning {
-    border-color: #d80;    
+  border-color: #d80;    
 }
 dl.warning dd {
-    background-color: #fd7; 
+  background-color: #fd7; 
 }
 dl.error {
-    border-color: #d80;    
+  border-color: #d80;    
 }
 dl.error dd {
-    background-color: #fd7; 
+  background-color: #fd7; 
 }
 
 form.searchPage {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 
@@ -1874,14 +1874,6 @@ div#content ul {
 ul#portal-sitemap ul {
   list-style-type:none;
 }
-
-
-
-
-
-
-
-
 
 /* Tinas Fixes zweiter Teil */
 
@@ -2185,18 +2177,18 @@ ul.search_index {
 
 /* fixt den Abstand des Content zum Header für den FF*/
 #portal-columns {
-margin-top:-0.5em;
+  margin-top:-0.5em;
 }
 
 /* Versuch die Top Navi im IE6 zu fixen*/
 * html #globalnav-group {
-background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
-height:32px;
-line-height:32px;
-width:100%;
+  background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
+  height:32px;
+  line-height:32px;
+  width:100%;
 }
 * html #portal-globalnav-box {
-background:transparent none repeat scroll 0 0;
+  background:transparent none repeat scroll 0 0;
 }
 * html #portal-globalnav {
   font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
