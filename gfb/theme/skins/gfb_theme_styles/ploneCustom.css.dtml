@@ -2228,21 +2228,21 @@ line-height:32px;
 background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
 }
 * html #portal-globalnav ul.submenu a, #portal-globalnav ul.submenu a:hover {
-border-color:#8CACBB;
-border-style:solid none none;
-display:block;
-margin:0;
-position:static !important;
-white-space:normal;
+  border-color:#8CACBB;
+  border-style:solid none none;
+  display:block;
+  margin:0;
+  position:static !important;
+  white-space:normal;
 }
 * html #portal-globalnav ul.submenu li div a {
-font-family:"arial";
-font-size:100%;
-line-height:1.3em;
-padding:3px 0;
+  font-family:"arial";
+  font-size:100%;
+  line-height:1.3em;
+  padding:3px 0;
 }
 * html .state-published {
-color:#436976 !important;
+  color:#436976 !important;
 }
 
 
@@ -2339,28 +2339,28 @@ color:#436976 !important;
 
 
 #slc-linkcollection-linkbox {
-    border: 0px;
-    background-color: #ebecf0;
-    top: -10px;
-    position:relative;
+  border: 0px;
+  background-color: #ebecf0;
+  top: -10px;
+  position:relative;
 }
 #slc-linkcollection-linkbox ul {
-    padding:0;
-    margin:0;
-    text-indent: 0;
+  padding:0;
+  margin:0;
+  text-indent: 0;
 }
 div#region-content #slc-linkcollection-linkbox ul li,
 #slc-linkcollection-linkbox ul li {
-    list-style-image: none;
-    list-style: none;
-    padding:0;
-    margin: 0px;
+  list-style-image: none;
+  list-style: none;
+  padding:0;
+  margin: 0px;
 }
 #slc-linkcollection-linkbox ul li.linkList a {
-    background: url(lc_inactive.gif) no-repeat 2px 2px;
-    padding-left: 20px;
-    color: black;
-    font-weight: normal;
+  background: url(lc_inactive.gif) no-repeat 2px 2px;
+  padding-left: 20px;
+  color: black;
+  font-weight: normal;
 }
 
 #slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
