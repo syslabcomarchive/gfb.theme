@@ -2385,6 +2385,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
   left:296px;
 }
 
+
 /*Bugfix für externe Links im Newsportlet*/
 
 .feedmixer-more-link a {
@@ -2580,6 +2581,19 @@ position:relative;
 left:380px;
 }
 
+/* navi-pfeilchen im suchergebnis als background-image */
+
+#heading_search_results span.previous a, #footer_batch_box span.previous a  {
+  background:transparent none no-repeat scroll 0 4px;
+  background-image: url(ico_gfb_arrow_left.gif) !important;
+  padding:0 2px 0 8px;
+}
+
+#heading_search_results span.next a, #footer_batch_box span.next a {
+  background:transparent none no-repeat scroll 0 4px;
+  background-image: url(ico_gfb_arrow_right.gif) !important;
+  padding:0 2px 0 8px; ;
+}
 
 
 /* @end */

@@ -255,6 +255,8 @@
                 tal:omit-tag="" 
                 tal:content="python:len(results)">234</span> 
                 documents</span>)
+                <!-- See comment below why we need this hack -->
+                <img src="spacer.gif" width="1" height="10" alt="previous search results">
             </span>
 
             <metal:macro define-macro="batch">
@@ -277,7 +279,12 @@
                   tal:condition="p">
                     <a href=""
                        tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:p.first} ))">
-                       <img src="ico_gfb_arrow_left.gif" alt="previous search results">
+
+                   <!-- This is the damnedest fucking hack for IE6. We use CSS to set an arrow as background image
+                       on the <a> tag for classes 'previous' and 'next'. But since removing the arrow-image here
+                       leads to a collapse of the search results bar, we substitute it with a spacer 10px high.
+                       Go figure... thomasw -->
+                       <img src="spacer.gif" width="1" height="10" alt="previous search results">
                     </a>
                 </span> 
 
@@ -365,7 +372,7 @@
                   tal:condition="n">
                     <a href=""
                        tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:n.first} ))">
-                       <img src="ico_gfb_arrow_right.gif" alt="next search results">
+                       <img src="spacer.gif" width="1" height="10" alt="next search results">
                     </a>
                 </span>
 
