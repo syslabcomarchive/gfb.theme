@@ -1430,13 +1430,13 @@ div#providerperson label {
 }
 
 .column2b h5 {
-	padding-left: 25px !important;
-	margin-left: 0 !important;
-	margin-right: -10px !important;
+  padding-left: 25px !important;
+  margin-left: 0 !important;
+  margin-right: -10px !important;
 }
 
 .column2b ul {
-	margin-left: 30px;
+  margin-left: 30px;
 }
 
 
@@ -1446,49 +1446,49 @@ div#providerperson label {
 /* @group bottom */
 
 #portal-footer {
-    float: none;
-    line-height: 1.2em;
-    margin: 2em 0em 1em 0em;
-    padding: 0.5em 0em 1em 0em;
-    text-align: center;
+  float: none;
+  line-height: 1.2em;
+  margin: 2em 0em 1em 0em;
+  padding: 0.5em 0em 1em 0em;
+  text-align: center;
 }
 
 #portal-footer p {
-    margin: 0.25em 0;
+  margin: 0.25em 0;
 }
 
 #portal-footer a {
-    text-decoration: none;
-    border: none;
+  text-decoration: none;
+  border: none;
 }
 
 #portal-footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #portal-colophon {
-    float: none;
-    margin: 0 0 1em 0;
-    padding: 0 0 1em 0;
-    text-align: center;
-    color: #666;
+  float: none;
+  margin: 0 0 1em 0;
+  padding: 0 0 1em 0;
+  text-align: center;
+  color: #666;
 }
 
 #portal-colophon ul {
-    list-style-image: none;
-    list-style-type: none;
+  list-style-image: none;
+  list-style-type: none;
 }
 
 #portal-colophon ul li {
-    display: inline !important;
-    font-size: 90%;
-    padding: 0 0.75em;
+  display: inline !important;
+  font-size: 90%;
+  padding: 0 0.75em;
 }
 
 #portal-colophon ul li a {
-    text-decoration: none;
-    border-bottom: 1px #ccc solid;
-    color: #666;
+  text-decoration: none;
+  border-bottom: 1px #ccc solid;
+  color: #666;
 }
 
 /* @end */
@@ -1496,43 +1496,43 @@ div#providerperson label {
 /* @group syslab */
 
 .ws_address {
-    position: relative;
-    height: 1%;
-    padding: 0;
-    margin: 0;
-    clear: both;
+  position: relative;
+  height: 1%;
+  padding: 0;
+  margin: 0;
+  clear: both;
 }
 
 .ws_address_info {
-    position: relative;
+  position: relative;
 }
 
 .item_actions {
-    position: relative;
-    float: right;
-    width: 34em;
-    padding: 0.5em 0em;
+  position: relative;
+  float: right;
+  width: 34em;
+  padding: 0.5em 0em;
 }
 
 .item_actions form {
-    display: inline;
-    margin: 0;
-    padding: 0;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .item_actions .actionbtn {
-    float: left;
-    padding-right: 0.5em;
+  float: left;
+  padding-right: 0.5em;
 }
 
 .item_actions .actionbtn a {
-    display: block;
-    background: transparent url(linkTransparent.gif) 9px 1px no-repeat !important;
-    text-decoration: none;
-    vertical-align: middle;
-    line-height: 1.5em;
-    padding: 0.1em 1em 0em 1.5em !important;
-    margin-bottom: 1px !important;
+  display: block;
+  background: transparent url(linkTransparent.gif) 9px 1px no-repeat !important;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 1.5em;
+  padding: 0.1em 1em 0em 1.5em !important;
+  margin-bottom: 1px !important;
 }
 
 .item_actions .actionbtn a,
