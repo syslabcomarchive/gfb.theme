@@ -2572,10 +2572,9 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 * html .next a img {
-border:1px solid red;
-position:relative;
-left:290px;
+  position:relative;
 }
+
 *+html .next a img {
 position:relative;
 left:380px;
