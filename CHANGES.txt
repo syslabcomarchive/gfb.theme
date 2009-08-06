@@ -1,6 +1,13 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.10 (06.08.2009)
+-----------------------------
+
+- fixed display bug in IE6 for wrong coloring of highlighted navigation level 1 (pecek)
+- fixed display bug in IE6 and IE7 where next-/previous arrows were placed on top of the batch navigatio
+  in the search results (thomasw)
+
 gfb.theme 1.2.9 (04.08.2009)
 ----------------------------
 
