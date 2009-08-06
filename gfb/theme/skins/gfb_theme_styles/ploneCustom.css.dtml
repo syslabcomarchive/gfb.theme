@@ -2199,33 +2199,33 @@ width:100%;
 background:transparent none repeat scroll 0 0;
 }
 * html #portal-globalnav {
-font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:90%;
-font-size-adjust:none;
-font-stretch:normal;
-font-style:normal;
-font-variant:normal;
-font-weight:bold;
-height:32px;
-line-height:normal;
-padding:0;
-width:545px;
+  font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+  font-size:90%;
+  font-size-adjust:none;
+  font-stretch:normal;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:bold;
+  height:32px;
+  line-height:normal;
+  padding:0;
+  width:545px;
 }
 * html #portal-globalnav li {
-background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
-border-right:1px solid #424951;
-display:block;
-float:left;
-margin:0;
-padding:0 24px 0 12px;
+  background:#424951 url(bg_topnavi_break.gif) repeat-x scroll 0 0;
+  border-right:1px solid #424951;
+  display:block;
+  float:left;
+  margin:0;
+  padding:0 24px 0 12px;
 }
 * html #portal-globalnav li a {
-color:white;
-font-size:12px;
-line-height:32px;
+  color:white;
+  font-size:12px;
+  line-height:32px;
 }
 * html #portal-globalnav li:hover, #portal-globalnav li.selected {
-background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
+  background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
 }
 * html #portal-globalnav ul.submenu a, #portal-globalnav ul.submenu a:hover {
   border-color:#8CACBB;
