@@ -2571,7 +2571,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
   background-color:#D8DBE0!important;
 }
 
-* html .next a img {
+* html .next img {
   position:relative;
 }
 
