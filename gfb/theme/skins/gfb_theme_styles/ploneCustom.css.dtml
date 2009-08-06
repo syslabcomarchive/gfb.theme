@@ -586,37 +586,37 @@ ul.staticPortlet {
 }
 
 ul.staticPortlet li {
-    display: block;
-    margin: 0;
-    padding: 0 0 0 12px;
-    float: left;
-    color: white;
-    line-height: 30px;
-    background: #4B516B repeat-x;
-    font-size: 12px;
+  display: block;
+  margin: 0;
+  padding: 0 0 0 12px;
+  float: left;
+  color: white;
+  line-height: 30px;
+  background: #4B516B repeat-x;
+  font-size: 12px;
 }
 
 /* @group Globalnav */
 
 /*EMN Fix*/
 #portal-globalnav-box {
-    margin-left:210px;
-    margin-right:250px;
-    width: 500px;
-    _width: 500px;
-    _position:absolute;
-    _top:140px;
-    _left: -10px;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
+  margin-left:210px;
+  margin-right:250px;
+  width: 500px;
+  _width: 500px;
+  _position:absolute;
+  _top:140px;
+  _left: -10px;
+  background: #424951 url(bg_topnavi_break.gif) repeat-x 200px;
 }
 
 /*EMN Fix*/
 #portal-globalnav {
-    width: 545px;
-    _width: 545px;
-    padding: 0;
-    height: 32px;
-    font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  width: 545px;
+  _width: 545px;
+  padding: 0;
+  height: 32px;
+  font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 #portal-globalnav li {
