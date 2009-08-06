@@ -449,12 +449,12 @@ dl.portlet.portletMyProvider {
   color: #515151;
 }
 #portlet-riskassessmentlink li {
-    list-style-type: disc;
-    list-style-position: outside;
-    margin-left: 1.8em;
-    font-weight: normal;
-    font-style: normal;
-    margin-bottom: 0;
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 1.8em;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 0;
 }
 
 
@@ -465,17 +465,17 @@ dl.portlet.portletMyProvider {
 
 
 span.plussOK {
-    background:transparent url(ico_criteria_passed.gif) no-repeat scroll 0 3px;
-    padding:1px 0 1px 10px;
-    width: 20px;
+  background:transparent url(ico_criteria_passed.gif) no-repeat scroll 0 3px;
+  padding:1px 0 1px 10px;
+  width: 20px;
 }
 li.plussOK {
-    list-style-image: url(ico_criteria_passed.gif);
+  list-style-image: url(ico_criteria_passed.gif);
 }
 
 li.minusNOK {
-    list-style-image: url(ico_criteria_missing.gif);
-    color: #666;
+  list-style-image: url(ico_criteria_missing.gif);
+  color: #666;
     
 }
 
