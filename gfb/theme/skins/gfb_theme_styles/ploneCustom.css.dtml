@@ -481,14 +481,14 @@ li.minusNOK {
 
 
 .portletHeader {
-    border: 1px solid #415063;
-    font-size:100%;
-    color:whitesmoke;
-    padding: 0 12px;
-    color: whitesmoke;
-    background: #415063 ;
-    vertical-align: middle;
-    line-height:27px;
+  border: 1px solid #415063;
+  font-size:100%;
+  color:whitesmoke;
+  padding: 0 12px;
+  color: whitesmoke;
+  background: #415063 ;
+  vertical-align: middle;
+  line-height:27px;
 }
 
 #portal-column-one .portletHeader {
