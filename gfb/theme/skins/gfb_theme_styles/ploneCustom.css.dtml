@@ -492,21 +492,21 @@ li.minusNOK {
 }
 
 #portal-column-one .portletHeader {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
-    border: 1px solid #424951;
+  background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 200px 50%;
+  border: 1px solid #424951;
 }
 #portal-column-one ul.staticPortlet, #portal-column-one ul.staticPortlet li  {
-    background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 198px 50%;
+  background: #424951 url(bg_topnavi_break.gif) repeat-x scroll 198px 50%;
 }
 
 
 #portal-column-one dl.portletNavigationTree dt.portletHeader {
-    background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
-    border-color:#A8126A #4A5B6D #A8126A #A8126A;
-    border-style:solid;
-    border-width:1px;
-    font-size:100%;
-    padding-left:10px;
+  background:#A8126A url(global_li_sel.jpg) repeat scroll 0 0;
+  border-color:#A8126A #4A5B6D #A8126A #A8126A;
+  border-style:solid;
+  border-width:1px;
+  font-size:100%;
+  padding-left:10px;
 }
 
 
@@ -514,75 +514,75 @@ li.minusNOK {
 dt.portletHeader span.tile,
 dt.portletHeader div.tile,
 .portletHeader a {
-    color: whitesmoke;
-    line-height: 27px;
-    font-weight: bold;
-    font-size: 100%;
+  color: whitesmoke;
+  line-height: 27px;
+  font-weight: bold;
+  font-size: 100%;
 }
 
 .portlet ul {
-    list-style-type: none;
-    font-family: Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  list-style-type: none;
+  font-family: Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 dd.portletItem {
-    margin: 2px 10px;
+  margin: 2px 10px;
 }
 
 .portletMyProvider {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 90%;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 90%;
 }
 
 .portletMyProvider .portletItem {
-    margin-bottom: 1px;
-    line-height: 21px;
-    background: #A3AAB2
+  margin-bottom: 1px;
+  line-height: 21px;
+  background: #A3AAB2
 }
 
 .portletMyProvider .portletItem a {
-    color: #171717;
+  color: #171717;
 }
 
 .portletFooter {
-    margin: 12px;
+  margin: 12px;
 }
 .portletFooter a,
 a.doublelink{
-    background: url(ico_link_external.gif) no-repeat 0 center;
-    padding-left: 15px;
-    font-weight: normal;
-    font-style: normal;
-    color: #a8126a;
+  background: url(ico_link_external.gif) no-repeat 0 center;
+  padding-left: 15px;
+  font-weight: normal;
+  font-style: normal;
+  color: #a8126a;
 }
 
 a.doublelink:visited{
-    color: #a8126a;
+  color: #a8126a;
 }
 
 a.doublelink:hover{
-    color: #48628C;
+  color: #48628C;
 }
 
 .portlet-static-unsere-partner ul.staticPortlet li {
-    font-weight: normal;
-    font-size: 11px;
+  font-weight: normal;
+  font-size: 11px;
 }
 /* @end */
 
 
 
 ul.staticPortlet {
-    width: 198px;
-    display: block;
-    clear: both;
-    margin: 0px;
-    padding: 0 0 0 0;
-    margin: 0 0 10px 0;
-    height: 30px;
-    background: #4B516B repeat-x 198px;
-    font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  width: 198px;
+  display: block;
+  clear: both;
+  margin: 0px;
+  padding: 0 0 0 0;
+  margin: 0 0 10px 0;
+  height: 30px;
+  background: #4B516B repeat-x 198px;
+  font: 100% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 ul.staticPortlet li {
@@ -2571,6 +2571,15 @@ div#region-content #slc-linkcollection-linkbox ul li,
   background-color:#D8DBE0!important;
 }
 
+* html .next a img {
+border:1px solid red;
+position:relative;
+left:290px;
+}
+*+html .next a img {
+position:relative;
+left:380px;
+}
 
 
 
