@@ -229,7 +229,7 @@ msgstr "Auswählen"
 # Default "Search results"
 # advanced_search.pt
 msgid "heading_search_results"
-msgstr "Ergebnisse Ihrer Suche"
+msgstr "Suchergebnisse"
 
 # Default "Documents"
 # advanced_search.pt
