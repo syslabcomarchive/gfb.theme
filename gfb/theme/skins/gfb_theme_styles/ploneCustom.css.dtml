@@ -2599,7 +2599,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 	background-color: #A8126A;
 }
 #alphabetTable td.glossary_idx_highlight a {
-	color: white;
+ color: white;
 }
 
 /*Tinas Fix*/
