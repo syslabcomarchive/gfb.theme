@@ -620,12 +620,12 @@ ul.staticPortlet li {
 }
 
 #portal-globalnav li {
-    display: block;
-    margin: 0;
-    padding: 0 24px 0 12px;
-    border-right: 1px solid #424951;
-    float: left;
-    background: #424951 url(bg_topnavi_break.gif) repeat-x
+  display: block;
+  margin: 0;
+  padding: 0 24px 0 12px;
+  border-right: 1px solid #424951;
+  float: left;
+  background: #424951 url(bg_topnavi_break.gif) repeat-x
 }
 
 #portal-globalnav li a {
