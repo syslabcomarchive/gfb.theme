@@ -629,18 +629,18 @@ ul.staticPortlet li {
 }
 
 #portal-globalnav li a {
-    line-height: 32px;
-    color: white;
-    font-size: 12px;
+  line-height: 32px;
+  color: white;
+  font-size: 12px;
 }
 
 #portal-globalnav li:hover,
 #portal-globalnav li.selected {
-    background: #A8126A url(global_li_sel.jpg);
+  background: #A8126A url(global_li_sel.jpg);
 }
 
 #portal-globalnav li a:hover {
-    color: white;
+  color: white;
 }
 
 /* @end */
@@ -651,80 +651,70 @@ ul.staticPortlet li {
 .navTreeLevel2 li.navTreeItem div ,
 .navTreeLevel3 li.navTreeItem div ,
 .navTreeLevel4 li.navTreeItem div  {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
-
-
 .portletNavigationTree, #portal-globalnav ul.submenu {
-    font-weight: normal;
-    font-style: normal;
-    font-size: 90%;
-    margin: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 90%;
+  margin: 0;
 }
 
 .portletNavigationTree .portletItem {
-    margin: 0;
+  margin: 0;
 }
 /* dropdown navi background */
 #portal-globalnav ul.submenu li {
-    background: #e9eaef;
+  background: #e9eaef;
 }
 .portletNavigationTree li, #portal-globalnav ul.submenu li {
-    line-height: 21px;
+  line-height: 21px;
 }
 
 /* hovering for navigation items */
 .portletNavigationTree li a:hover, 
 #portal-globalnav ul.submenu li.navTreeItem:hover {
-    background-color: #d8dbe0;
+  background-color: #d8dbe0;
 }
 
 #portal-globalnav ul.submenu li.navTreeItem div:hover {
-    background-color: #d8dbe0;
+  background-color: #d8dbe0;
 }
 /* this one is needed to overwrite the one from dropdownmenu.css */
 #portal-globalnav li.selected ul.submenu a:hover {
-    background-color: #d8dbe0;
+  background-color: #d8dbe0;
 }
 
 .portletNavigationTree li a, 
 #portal-globalnav ul.submenu li a {
-    color: #000000;
-    line-height: 1.6em;
+  color: #000000;
+  line-height: 1.6em;
 }
 
 li.navTreeItem {
-    margin: 1px 0px 1px 0px;
-    /*border-top: 1px solid #4a5b6d;
-    border-collapse: collapse;*/
-    /*background:#e9eaef none repeat scroll 0 0;*/
+  margin: 1px 0px 1px 0px;
+  /*border-top: 1px solid #4a5b6d;
+  border-collapse: collapse;*/
+  /*background:#e9eaef none repeat scroll 0 0;*/
 }
 
 li.navTreeItem div {
-    background:#e9eaef none repeat scroll 0 0;
+  background:#e9eaef none repeat scroll 0 0;
 }
 #portal-globalnav ul.submenu li.navTreeItem {
-    margin: 0;
-    border-top: 1px solid #4a5b6d;
-    border-collapse: collapse;
+  margin: 0;
+  border-top: 1px solid #4a5b6d;
+  border-collapse: collapse;
 }
-
-
 /* Selected item in navtree level 0 */
 .navTreeLevel0 li.navTreeCurrentNode > div {
-    background-color: #d8dbe0;
+  background-color: #d8dbe0;
 }
-
-
-
 .navTreeLevel0 a.navTreeCurrentItem {
-    background: url(ico_link_subnavi_active_right.gif) no-repeat scroll 6px 6px;
+  background: url(ico_link_subnavi_active_right.gif) no-repeat scroll 6px 6px;
 }
-
-
-
 .navTreeLevel0 a.navTreeItemInPath {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
+  background: url(ico_link_subnavi_active.gif) no-repeat scroll 6px 4px;
 }
 
 .navTreeLevel1 a.navTreeCurrentItem {
@@ -734,14 +724,12 @@ li.navTreeItem div {
 .navTreeLevel1 a.navTreeItemInPath  {
     background: url(ico_link_subnavi_active.gif) no-repeat scroll 16px 6px;
 }
-
-
 .navTreeLevel2 a.navTreeCurrentItem {
   background:transparent url(ico_link_subnavi_active_right.gif) no-repeat scroll 26px 6px;
   background-color: #D8DBE0;
 }
 .navTreeLevel2 a.navTreeItemInPath  {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 26px 6px;
+  background: url(ico_link_subnavi_active.gif) no-repeat scroll 26px 6px;
 }
 
 .navTreeLevel3 a.navTreeCurrentItem {
@@ -749,9 +737,8 @@ li.navTreeItem div {
   background-color: #D8DBE0;
 }
 .navTreeLevel3 a.navTreeItemInPath  {
-    background: url(ico_link_subnavi_active.gif) no-repeat scroll 36px 6px;
+  background: url(ico_link_subnavi_active.gif) no-repeat scroll 36px 6px;
 }
-
 
 ul.navTreeLevel0, 
 ul.navTreeLevel1, 
@@ -764,49 +751,46 @@ ul.navTreeLevel0 {
   margin:0 1px 0 0 ;
 }
 
-
 /* indent for Level 1 */
 .navTreeLevel0 li div a  {
-    padding-left: 20px;
-    display: block;
-    padding-bottom:2px;
-    padding-top:2px;
+  padding-left: 20px;
+  display: block;
+  padding-bottom:2px;
+  padding-top:2px;
 }
 
 /* indent 2 times for Level 3 */
 .navTreeLevel1 li div a {
-    padding-left: 30px;
-    display: block;
+  padding-left: 30px;
+  display: block;
 }
 /* indent 3 times for Level 3 */
 .navTreeLevel2 li div a {
-    padding-left: 40px;
-    display: block;
+  padding-left: 40px;
+  display: block;
 }
 /* indent 4 times for Level 4 */
 .navTreeLevel3 li div a {
-    padding-left: 50px;
-    display: block;
+  padding-left: 50px;
+  display: block;
 }
-
-
 /* in the dropdown navi, we need no indenting */
 #portal-globalnav ul.submenu li div a {
-    padding: 3px 0px;
-    line-height: 1.3em;
-    font-family: "arial";
-    font-size: 100%;
+  padding: 3px 0px;
+  line-height: 1.3em;
+  font-family: "arial";
+  font-size: 100%;
 }
 #portal-globalnav ul.submenu li {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 #portal-globalnav ul.submenu li div {
-    padding-left: 0.5em;
+  padding-left: 0.5em;
 }
 /* No item imgs */
 #portal-globalnav ul.submenu li div a img{
-    display:none;
+  display:none;
 }
 
 
@@ -815,18 +799,15 @@ ul.navTree span  {
   font-family: "arial";
 }
 
-
-
 /* @end */
-
 
 /* @path_bar */
 #breadcrumbs-you-are-here {
-    background: url(lc_inactive.gif) no-repeat 2px 0px;
-    padding-left: 20px;
+  background: url(lc_inactive.gif) no-repeat 2px 0px;
+  padding-left: 20px;
 }
 .hide-path-bar {
-    display: none;
+  display: none;
 }
 
 /* @end */
@@ -834,30 +815,27 @@ ul.navTree span  {
 /* @group text */
 
 .documentFirstHeading{
-    background-color: #415063;
-    padding: 4px 8px 4px 8px;
-    color: whitesmoke;
-    font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    vertical-align: middle;
-    margin-top: 0;
-    font-weight: bold;
+  background-color: #415063;
+  padding: 4px 8px 4px 8px;
+  color: whitesmoke;
+  font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  vertical-align: middle;
+  margin-top: 0;
+  font-weight: bold;
 }
-
-
-
 h2 {
-    font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    color: #3D4E60;
-    margin-bottom: 12px;
-    margin-top: 10px;
+  font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: #3D4E60;
+  margin-bottom: 12px;
+  margin-top: 10px;
 }
 
 /*IE6 Fix*/
 * html h2 {
-    font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    color: #3D4E60;
-    margin-bottom: 12px;
-    margin-top: 0px;
+  font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: #3D4E60;
+  margin-bottom: 12px;
+  margin-top: 0px;
 }
 * html .treeview ul {
   background-color:#ffffff;
@@ -868,38 +846,38 @@ h2 {
 }
 
 h3 {
-    font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    color: #62778e;
-    margin-bottom: 12px;
-    margin-top: 20px;
+  font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: #62778e;
+  margin-bottom: 12px;
+  margin-top: 20px;
 }
 
 h4 {
-    font: bold 12px/16px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    color: #62778e;
-    margin-bottom: 12px;
-    margin-top: 20px;
+  font: bold 12px/16px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: #62778e;
+  margin-bottom: 12px;
+  margin-top: 20px;
 }
 
 .discussion h3 {
-    background-color: #4B516B;
-    padding-left: 1em;
-    font: 16px/30px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    margin: -1em -1em 0.5em -1em;
+  background-color: #4B516B;
+  padding-left: 1em;
+  font: 16px/30px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  margin: -1em -1em 0.5em -1em;
 }
 
 .discussion h3 a {
-    color: whitesmoke !important;
-    margin-bottom: 15px;
-    padding-left: 1.5em;
-    font: 16px/30px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: whitesmoke !important;
+  margin-bottom: 15px;
+  padding-left: 1.5em;
+  font: 16px/30px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 #category {
-    float: right;
-    border-left: 2px solid #E5E6E8;
-    padding-left: 12px;
-    color: #48628C;
+  float: right;
+  border-left: 2px solid #E5E6E8;
+  padding-left: 12px;
+  color: #48628C;
 }
 
 .template-riskassessmentlink_view #region-content label {
