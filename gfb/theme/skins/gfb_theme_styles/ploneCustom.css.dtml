@@ -2572,14 +2572,14 @@ div#region-content #slc-linkcollection-linkbox ul li,
   background-color:#D8DBE0!important;
 }
 
-* html .next img {
+/** html .next img {
   position:relative;
 }
 
 *+html .next a img {
 position:relative;
 left:380px;
-}
+}*/
 
 /* navi-pfeilchen im suchergebnis als background-image */
 
