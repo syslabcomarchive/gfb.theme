@@ -1,6 +1,12 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.11 (10.08.2009)
+-----------------------------
+
+- gave a proper title to the logo image (thomasw)
+- made font-size for h3 and h4 slightly larger as requested in ticket 29 (thomasw)
+
 gfb.theme 1.2.10 (06.08.2009)
 -----------------------------
 
