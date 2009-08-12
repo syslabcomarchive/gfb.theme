@@ -1,9 +1,9 @@
 gfb.theme Changelog
 ===================
 
-gfb.theme 1.2.12 (unreleased)
+gfb.theme 1.2.12 (2009-08-12)
 -----------------------------
-- style changes to fix https://projects.syslab.com/gfb/issues/31
+- style changes to fix https://projects.syslab.com/gfb/issues/31 (pilz)
 
 gfb.theme 1.2.11 (10.08.2009)
 -----------------------------
