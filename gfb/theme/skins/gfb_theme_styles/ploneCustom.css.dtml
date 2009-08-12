@@ -837,12 +837,21 @@ h2 {
   margin-bottom: 12px;
   margin-top: 0px;
 }
+.treeview ul {
+  background-color: transparent;
+}
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 1px; display: block; }
+.filetree span.folder { background: none 0 0 no-repeat; }
+.filetree li.expandable span.folder { background: none 0 0 no-repeat; }
+.filetree span.file { background: none 0 0 no-repeat; }
+
+
 * html .treeview ul {
-  background-color:#ffffff;
-  padding:80px 0 0;
+  /*background-color:#ffffff;*/
+  /*padding:80px 0 0;*/
 }
 * html .treeview li.collapsable, .treeview li.expandable {
-  background-color:#FFFFFF;
+/*  background-color:#FFFFFF;*/
 }
 
 h3 {
