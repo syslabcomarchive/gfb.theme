@@ -1,6 +1,10 @@
 gfb.theme Changelog
 ===================
 
+gfb.theme 1.2.12 (unreleased)
+-----------------------------
+- style changes to fix https://projects.syslab.com/gfb/issues/31
+
 gfb.theme 1.2.11 (10.08.2009)
 -----------------------------
 
