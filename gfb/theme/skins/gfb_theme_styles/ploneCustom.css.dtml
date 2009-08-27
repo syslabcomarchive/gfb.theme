@@ -1162,6 +1162,11 @@ img.image-left {
   float:right; 
   margin-top: -1.4em; 
 }
+
+div.column2b .floated_control {
+    margin-top: 0;
+}
+
 .floated_control select {
   font-size: 90%;
 }
@@ -1946,13 +1951,15 @@ ul.search_index {
 }
 
 
-* html .floated_control {
+* html div.column2b .floated_control {
   margin-top:-1em;
 }
 
-*+html .floated_control {
+*+html div.column2b .floated_control {
  margin-top:-1.3em;
 }
+
+/*
 *+html .floated_control img {
  position:relative;
  right:8px;
@@ -1963,6 +1970,7 @@ ul.search_index {
  right:8px;
  bottom:6px;
 }
+*/
 
 *+html #heading_search_results_box,
 *+html #footer_search_results_box {
