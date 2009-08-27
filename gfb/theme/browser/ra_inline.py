@@ -29,5 +29,8 @@ class RAInlineView(BrowserView):
 
         #put the object in current context
         N = Acquisition.aq_inner(Acquisition.aq_base(ob)).__of__(self.context)
+        # save the original object's path - needed for correct linking of actions
+        setattr(N, 'original_url_path', ob.absolute_url_path())
+
         return N()
 
