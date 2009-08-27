@@ -11,6 +11,12 @@ from plone.app.portlets.cache import get_language
 #from plone.app.i18n.locales.browser.selector import LanguageSelector 
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
 
+from plone.app.layout.viewlets.common import SearchBoxViewlet, TitleViewlet
+from zope.component import getMultiAdapter
+from Products.CMFPlone.utils import safe_unicode
+from cgi import escape
+
+
 #Overwrite Languageselector to customize appearance
 class GFBLanguageSelector(TranslatableLanguageSelector):
     render = ViewPageTemplateFile('templates/languageselector.pt')
@@ -125,11 +131,28 @@ class FooterActions(ViewletBase):
         self.getIconFor = plone_utils.getIconFor
 
     def icon(self, action):
-        return self.getIconFor('plone', action['id'], None)        
-        
+        return self.getIconFor('plone', action['id'], None)
 
 
-    
-    
-    
+class GFBTitleViewlet(TitleViewlet):
+
+    def update(self):
+        self.portal_state = getMultiAdapter((self.context, self.request),
+                                            name=u'plone_portal_state')
+        self.context_state = getMultiAdapter((self.context, self.request),
+                                             name=u'plone_context_state')
+        self.page_title = self.context_state.object_title
+        self.portal_title = self.portal_state.portal_title
+
+    def index(self):
+        portal_title = safe_unicode(self.portal_title())
+        page_title = safe_unicode(self.page_title())
+        if page_title == portal_title:
+            return u"<title>%s</title>" % (escape(portal_title))
+        else:
+            return u"<title>%s &mdash; %s</title>" % (
+                escape(safe_unicode(portal_title)),
+                escape(safe_unicode(page_title))
+                )
+
     
