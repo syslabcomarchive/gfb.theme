@@ -245,7 +245,7 @@ div#portal-personaltools-wrapper {
     padding-left: 20px;
 }
 
-li#document-action-sendto {
+li#document-action-sendto, li#document-action-sendto_ralink {
     background: url(mail_icon.gif) no-repeat 0 1px;
     padding-left: 20px;
 }
