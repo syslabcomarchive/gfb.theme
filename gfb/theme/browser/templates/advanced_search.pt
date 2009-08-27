@@ -437,7 +437,7 @@
                         <span tal:replace="result_editdate" />
                     </p>
                     <a href="#" 
-                       tal:attributes="href url">mehr info</a>
+                       tal:attributes="href url" i18n:translate="label_more_info">mehr info</a>
                 </div>
 
             </div>

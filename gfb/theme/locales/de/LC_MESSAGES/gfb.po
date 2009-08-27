@@ -260,3 +260,5 @@ msgstr "einschränken nach"
 msgid "title_search_site"
 msgstr "Suchen"
 
+msgid "label_more_info"
+msgstr "mehr Informationen"

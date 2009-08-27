@@ -194,3 +194,5 @@ msgstr "Search"
 msgid "label_show_all"
 msgstr "Show all"
 
+msgid "label_more_info"
+msgstr "more info"
