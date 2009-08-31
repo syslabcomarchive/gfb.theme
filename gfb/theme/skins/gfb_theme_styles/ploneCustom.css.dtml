@@ -2618,6 +2618,14 @@ left:380px;
   padding:0 2px 0 8px; ;
 }
 
+/* Fix fuer #12 */
+
+div#content dl dd {
+    margin-bottom: 1.5em;
+}
+
+
+
 
 /* @end */
 
