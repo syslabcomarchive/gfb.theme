@@ -961,7 +961,7 @@ a {
 }
 
 a:hover {
-  color: #48628C;
+  text-decoration: underline;
 }
 
 
