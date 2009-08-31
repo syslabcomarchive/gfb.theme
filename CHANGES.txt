@@ -1,14 +1,16 @@
 gfb.theme Changelog
 ===================
 
-gfb.theme unreleased
---------------------
+gfb.theme 1.2.13 (2009-08-31)
+-----------------------------
 
 - we define our own TitleViewlet to change the order of portal and page title in the HTML head section (thomasw)
 - little hack in ra_inline: set the original path of the RA Link as attribute on the volatile object in new context. 
 This path can be read by the sendto-action (thomasw)
 - style fix for mis-aligned floated_control links / icons (thomasw)
 - added translation for "more info" (thomasw)
+- hovering over links makes them underlined, not blue (thomasw)
+- add 1.5 em space after dd (for folder listings) (thomasw)
 
 gfb.theme 1.2.12 (2009-08-12)
 -----------------------------
