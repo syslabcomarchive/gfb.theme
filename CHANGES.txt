@@ -1,8 +1,8 @@
 gfb.theme Changelog
 ===================
 
-gfb.theme unreleased
---------------------
+gfb.theme 1.2.14 (2009-09-01)
+-----------------------------
 
 -use the sitemap builder from OSHA also for GFB (thomasw)
 
