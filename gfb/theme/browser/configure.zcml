@@ -174,5 +174,13 @@
 		layer=".interfaces.IThemeSpecific"
         />
 
+  <!-- sitemap builder -->
+  <browser:page
+      name="sitemap.xml.gz"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class="osha.theme.browser.sitemap.SiteMapView"
+      permission="zope2.Public"
+      layer=".interfaces.IThemeSpecific"
+     />
 
 </configure>
