@@ -1,9 +1,0 @@
-Changelog for gfb.theme
-
-    (name of developer listed in brackets)
-
-gfb.theme - 0.1 Unreleased
-
-    - Initial package structure.
-      [zopeskel]
-

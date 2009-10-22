@@ -62,6 +62,5 @@ setup(name='gfb.theme',
       entry_points="""
       # -*- entry_points -*- 
       """,
-      paster_plugins = ["ZopeSkel"],
       )      
       
