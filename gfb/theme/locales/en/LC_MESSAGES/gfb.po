@@ -196,3 +196,6 @@ msgstr "Show all"
 
 msgid "label_more_info"
 msgstr "more info"
+
+msgid "label_provider"
+msgstr "Provider"

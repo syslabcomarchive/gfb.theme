@@ -262,3 +262,7 @@ msgstr "Suchen"
 
 msgid "label_more_info"
 msgstr "mehr Informationen"
+
+msgid "label_provider"
+msgstr "Anbieter"
+

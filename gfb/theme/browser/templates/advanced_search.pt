@@ -422,7 +422,7 @@
                    tal:define="title python:result_provider[0].Title()"
                    tal:condition="title"
                    tal:on-error="nothing">
-                  <span i18n:translate="label_editor">Herausgeber</span>: 
+                  <span i18n:translate="label_provider" i18n:domain="gfb">Anbieter</span>: 
                   <span tal:replace="title" />
                 </p>
               
