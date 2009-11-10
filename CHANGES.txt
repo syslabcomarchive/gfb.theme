@@ -4,7 +4,7 @@ gfb.theme Changelog
 1.2.16 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Replaced the logo with a better resolution version (thomasw)
 
 
 1.2.15 (2009-10-22)
