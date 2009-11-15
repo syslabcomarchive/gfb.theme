@@ -1,11 +1,10 @@
 gfb.theme Changelog
 ===================
 
-1.2.16 (unreleased)
+1.2.16 (2009-11-15)
 -------------------
 
 - Replaced the logo with a better resolution version (thomasw)
-
 
 1.2.15 (2009-10-22)
 -------------------
@@ -21,8 +20,7 @@ gfb.theme 1.2.13 (2009-08-31)
 -----------------------------
 
 - we define our own TitleViewlet to change the order of portal and page title in the HTML head section (thomasw)
-- little hack in ra_inline: set the original path of the RA Link as attribute on the volatile object in new context. 
-This path can be read by the sendto-action (thomasw)
+- little hack in ra_inline: set the original path of the RA Link as attribute on the volatile object in new context.  This path can be read by the sendto-action (thomasw)
 - style fix for mis-aligned floated_control links / icons (thomasw)
 - added translation for "more info" (thomasw)
 - hovering over links makes them underlined, not blue (thomasw)
@@ -30,6 +28,7 @@ This path can be read by the sendto-action (thomasw)
 
 gfb.theme 1.2.12 (2009-08-12)
 -----------------------------
+
 - style changes to fix https://projects.syslab.com/gfb/issues/31 (pilz)
 
 gfb.theme 1.2.11 (10.08.2009)
