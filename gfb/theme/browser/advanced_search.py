@@ -122,7 +122,8 @@ class AdvancedSearchView(BrowserView):
             pv = getToolByName(self, 'portal_vocabularies')
             cat = getToolByName(self, 'portal_catalog')
             VOCAB = pv.get('provider_category')
-            cats = VOCAB and VOCAB.keys() or list()
+            v_dict = VOCAB and VOCAB.getVocabularyDict(self.context) or dict()
+            cats = v_dict.keys()
             providerUIDs = list()
             for prov in provider:
                 # if a category was selected, get all providers with that category
