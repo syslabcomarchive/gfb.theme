@@ -2627,6 +2627,10 @@ div#content dl dd {
 
 /**************Css für IE und FF Fix, Searchbox Field is not aligned*********/
 
+.multival-result-wrapper {
+width:190px;
+}
+
 #remote_provider {
 margin-left:0px;
 width:190px;
