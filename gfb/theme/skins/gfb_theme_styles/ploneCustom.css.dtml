@@ -2645,8 +2645,7 @@ margin-right:5px;
 }
 
 * html .floated_control a:hover {
-position:relative;
-top:10px;
+
 }
 /* @end */
 
