@@ -2628,13 +2628,13 @@ div#content dl dd {
 /**************Css für IE und FF Fix, Searchbox Field is not aligned*********/
 
 .multival-result-wrapper {
-width:190px;
+width:200px;
 }
 
 #remote_provider {
 list-style-type:none!important;
 margin-left:0px;
-width:190px;
+width:200px;
 }
 
 #remote_provider li {
