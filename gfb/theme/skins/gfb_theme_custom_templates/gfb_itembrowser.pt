@@ -117,7 +117,7 @@
 
           </tal:single>
           <tal:multi tal:condition="multiVal">
-            <div>
+            <div class="multival-result-wrapper">
               <ul class="visualNoMarker"
                   tal:attributes="id string:${fieldName};">
                 <span tal:condition="value" tal:omit-tag="">
