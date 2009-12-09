@@ -2639,11 +2639,11 @@ width:200px;
 
 #remote_provider li {
 margin-left:0px!important;
-}
+}/*
 
 #remote_provider input {
 margin-right:5px;
-}*/
+}
 
 /* @end */
 
