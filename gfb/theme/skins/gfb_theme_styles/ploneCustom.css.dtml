@@ -2641,7 +2641,7 @@ width:190px;
 margin-left:0px!important;
 }
 
-#remote_provider_bl {
+#remote_provider input {
 margin-right:5px;
 }
 
