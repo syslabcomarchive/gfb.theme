@@ -2644,6 +2644,10 @@ margin-left:0px!important;
 margin-right:5px;
 }
 
+* html .floated_control a:hover {
+border-bottom:1px solid #A8126A;
+text-decoration:none;
+}
 
 /* @end */
 

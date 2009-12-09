@@ -3,10 +3,12 @@
 */
 
 /* <dtml-with base_properties> */
-.floated_control img {
+/*.floated_control img {
 position:relative;
 right:6px;
 bottom:17px;
 }
+*/
+
 
 /* </dtml-with> */
