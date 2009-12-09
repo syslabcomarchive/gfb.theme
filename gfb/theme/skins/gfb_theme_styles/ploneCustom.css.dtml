@@ -2657,8 +2657,8 @@ bottom:6px;
 
 *+html .floated_control img {
 position:relative;
-right:5px;
-bottom:10px;
+right:6px;
+bottom:17px;
 }
 /* @end */
 
