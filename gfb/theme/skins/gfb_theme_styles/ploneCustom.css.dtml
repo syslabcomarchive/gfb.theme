@@ -2631,11 +2631,10 @@ div#content dl dd {
 width:200px;
 }
 
-/*#remote_provider {
+#remote_provider {
 list-style-type:none!important;
 margin-left:0px;
-width:200px;
-}*/
+}
 
 #remote_provider li {
 margin-left:0px!important;
