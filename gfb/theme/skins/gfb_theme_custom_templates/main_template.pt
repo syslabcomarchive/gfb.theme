@@ -44,19 +44,19 @@
 
     <tal:iefixstart replace="structure string:&lt;!--[if IE 6]&gt;" />
         <style type="text/css" media="all" tal:condition="exists: portal/IE6Fixes.css"
-               tal:content="string:@import url($portal_url/IEFixes.css);">
+               tal:content="string:@import url($portal_url/IE6Fixes.css);">
         </style>
     <tal:iefixend replace="structure string:&lt;![endif]--&gt;" />
 
     <tal:iefixstart replace="structure string:&lt;!--[if IE 7]&gt;" />
         <style type="text/css" media="all" tal:condition="exists: portal/IE7Fixes.css"
-               tal:content="string:@import url($portal_url/IEFixes.css);">
+               tal:content="string:@import url($portal_url/IE7Fixes.css);">
         </style>
     <tal:iefixend replace="structure string:&lt;![endif]--&gt;" />
 
     <tal:iefixstart replace="structure string:&lt;!--[if IE 8]&gt;" />
         <style type="text/css" media="all" tal:condition="exists: portal/IE8Fixes.css"
-               tal:content="string:@import url($portal_url/IEFixes.css);">
+               tal:content="string:@import url($portal_url/IE8Fixes.css);">
         </style>
     <tal:iefixend replace="structure string:&lt;![endif]--&gt;" />
 
