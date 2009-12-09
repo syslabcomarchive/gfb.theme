@@ -2632,6 +2632,7 @@ width:190px;
 }
 
 #remote_provider {
+list-style-type:none;
 margin-left:0px;
 width:190px;
 }
