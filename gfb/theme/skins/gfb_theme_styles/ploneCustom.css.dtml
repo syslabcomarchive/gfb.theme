@@ -2625,7 +2625,12 @@ div#content dl dd {
 }
 
 
+/**************Css für IE und FF Fix, Searchbox Field is not aligned*********/
 
+#remote_provider {
+margin-left:0px;
+width:350px;
+}
 
 /* @end */
 
