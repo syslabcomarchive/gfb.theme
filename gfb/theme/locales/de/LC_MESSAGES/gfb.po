@@ -163,7 +163,7 @@ msgstr "Einfache Suche"
 #. Default "Advanced Database Search"
 #: simple_search.pt
 msgid "label_advanced_search"
-msgstr "Suche in der Databank"
+msgstr "Suche in der Datenbank"
 
 
 #. Default "Search Tips"
