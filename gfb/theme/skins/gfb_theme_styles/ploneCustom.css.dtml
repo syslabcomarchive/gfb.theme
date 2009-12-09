@@ -2629,7 +2629,7 @@ div#content dl dd {
 
 #remote_provider {
 margin-left:0px;
-width:350px;
+width:190px;
 }
 
 /* @end */
