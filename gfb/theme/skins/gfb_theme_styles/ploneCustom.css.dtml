@@ -2651,7 +2651,7 @@ padding-bottom:5px
 * html .floated_control img {
 position:relative;
 right:5px;
-bottom:5px;
+bottom:6px;
 }
 /* @end */
 
