@@ -2649,6 +2649,7 @@ padding-bottom:5px
 }
 
 * html .floated_control a:hover {
+border-bottom:1px solid pink;
 text-decoration:none;
 }
 
