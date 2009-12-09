@@ -2644,8 +2644,8 @@ margin-left:0px!important;
 margin-right:5px;
 }
 
-* html .floated_control a:hover {
-
+* html .floated_control a {
+padding-bottom:5px
 }
 /* @end */
 
