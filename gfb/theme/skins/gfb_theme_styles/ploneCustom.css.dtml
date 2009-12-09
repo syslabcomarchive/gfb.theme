@@ -2648,6 +2648,10 @@ margin-right:5px;
 padding-bottom:5px
 }
 
+* html .floated_control a:hover {
+text-decoration:none;
+}
+
 * html .floated_control img {
 position:relative;
 right:5px;
