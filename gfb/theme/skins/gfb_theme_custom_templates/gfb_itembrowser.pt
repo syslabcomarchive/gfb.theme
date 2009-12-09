@@ -79,9 +79,8 @@
                       global base_url base_url|python:'/'.join(portal_url_tool.getRelativeContentPath(here))"
                   class="floated_control">
                         
-                        <a tal:attributes="href string:javascript:vocabularypicker_openBrowser('${fieldName}',
-                        '${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}',
-                        '${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}', '${portal_url}');;">
+                        <a target="_itembrowser" tal:attributes="href string:${portal_url}/${at_url}/itembrowser_popup?fieldName=${fieldName}&fieldRealName=${fieldRealName}&portal_type=${portal_type}&level:int=${level}&root_node=${root_node}&nodesHaveCBs=${nodesHaveCBs}&sortAlphabetically=${sortAlphabetically}&hide_id=${hide_id}; 
+                            onclick string:javascript:vocabularypicker_openBrowser('${fieldName}','${at_url}',  '${fieldRealName}', '${portal_type}', '${level}', '${root_node}','${nodesHaveCBs}', '${sortAlphabetically}', '${hide_id}', '${portal_url}');;return false;;">
                             <img src="plus_icon.gif">
                             <span i18n:domain="gfb" i18n:translate="label_add">Add...</span>
                         </a>
