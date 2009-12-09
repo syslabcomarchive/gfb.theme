@@ -178,7 +178,8 @@
                                             accessor    python:field.getDefault(here);
                                             errors      python:{};
                                             hide_id     python:True;
-                                            at_url      here/portal_url/getPortalPath;
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
                                             dummy       python:here.REQUEST.set('mode', 'search')
                                             ">
                                     <span tal:replace="python:widget.Label(here)" />
@@ -199,7 +200,8 @@
                                             mode        string:search;
                                             accessor    python:field.getDefault(here);
                                             errors      python:{};
-                                            at_url      here/portal_url/getPortalPath;
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
                                             ">
                                     <span tal:replace="python:widget.Label(here)" />
                                     <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
@@ -219,7 +221,8 @@
                                             mode        string:search;
                                             accessor    python:field.getDefault(here);
                                             errors      python:{};
-                                            at_url      here/portal_url/getPortalPath;
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
                                             ">
                                         <span tal:replace="python:widget.Label(here)" />
                                         <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>

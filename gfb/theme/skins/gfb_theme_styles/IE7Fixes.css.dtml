@@ -1,0 +1,8 @@
+/*
+** Stylesheet with Internet Explorer 6-specific workarounds.
+*/
+
+/* <dtml-with base_properties> */
+
+
+/* </dtml-with> */
