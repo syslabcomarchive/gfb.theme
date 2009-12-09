@@ -2627,7 +2627,7 @@ div#content dl dd {
 
 /**************Css für IE und FF Fix, Searchbox Field is not aligned*********/
 
-.multival-result-wrapper {
+/*.multival-result-wrapper {
 width:200px;
 }
 
@@ -2643,7 +2643,7 @@ margin-left:0px!important;
 
 #remote_provider input {
 margin-right:5px;
-}
+}*/
 
 /* @end */
 
