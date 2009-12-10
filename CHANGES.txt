@@ -1,10 +1,14 @@
 gfb.theme Changelog
 ===================
 
-1.2.18 (unreleased)
+1.2.18 (2009-12-10)
 -------------------
 
-- Nothing changed yet.
+- changed databank to datenbank, fixes #61 (REQUIRES PO DOUBLE RESTART!) (pilz)
+
+- fix translation for Nutzungshinweise. Fixes #51 (pilz)
+
+- Fix für #56, Provider languages not reflected (pilz)
 
 
 1.2.17 (2009-11-25)
