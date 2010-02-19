@@ -2695,7 +2695,7 @@ padding:8px;
 background-color:#415063;
 color:whitesmoke;
 font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:30px;
+font-size:30px!important;
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
@@ -2714,7 +2714,7 @@ h2 {
 border-bottom:1px solid #3D4E60;
 color:#3D4E60;
 font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:25px;
+font-size:25px!important;
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
@@ -2729,7 +2729,7 @@ margin-top:45px;
 h3 {
 color:#3E4E60;
 font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:20px;
+font-size:20px!important;
 font-weight:normal;
 letter-spacing:2px;
 margin-bottom:5px;
@@ -2739,7 +2739,7 @@ margin-top:35px;
 h4 {
 color:#3E4E60;
 font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:15px;
+font-size:15px!important;
 font-weight:normal;
 letter-spacing:2px;
 margin-bottom:5px;
