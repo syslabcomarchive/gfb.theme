@@ -2649,6 +2649,102 @@ border-bottom:1px solid #A8126A;
 text-decoration:none;
 }
 
+
+/*********css für neues Tabellenlayout*************/
+
+#parent-fieldname-text table {
+border-collapse:collapse;
+font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+font-size:12px;
+margin:20px;
+text-align:left;
+/*width:480px;*/
+}
+
+tbody {
+
+}
+
+#parent-fieldname-text tr:hover td {
+background:#E5E6E8 none repeat scroll 0 0;
+}
+
+#parent-fieldname-text th {
+background:#E5E6E8 none repeat scroll 0 0;
+border-color:#A1A8B2 #FFFFFF #FFFFFF #E5E6E8;
+border-style:solid;
+border-width:4px 1px 1px;
+color:#003399;
+font-weight:normal;
+padding:8px;
+}
+
+#parent-fieldname-text td {
+background:#F2F2F2 none repeat scroll 0 0;
+border-bottom:1px solid #FFFFFF;
+border-left:1px solid #F2F2F2;
+border-right:1px solid #FFFFFF;
+color:#666699;
+padding:8px;
+}
+
+/********************css für neue Überschriftenformatierung***************/
+
+.documentFirstHeading {
+-x-system-font:none;
+background-color:#415063;
+color:whitesmoke;
+font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:30px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+letter-spacing:2px;
+line-height:50px;
+margin-bottom:20px;
+margin-top:0;
+padding:4px 16px;
+vertical-align:middle;
+}
+
+h2 {
+-x-system-font:none;
+border-bottom:1px solid #3D4E60;
+color:#3D4E60;
+font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:25px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+letter-spacing:2px;
+line-height:35px;
+margin-bottom:15px;
+margin-top:45px;
+}
+
+h3 {
+color:#3E4E60;
+font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:20px;
+font-weight:normal;
+letter-spacing:2px;
+margin-bottom:5px;
+margin-top:35px;
+}
+
+h4 {
+color:#3E4E60;
+font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:15px;
+font-weight:normal;
+letter-spacing:2px;
+margin-bottom:5px;
+}
+
 /* @end */
 
 
