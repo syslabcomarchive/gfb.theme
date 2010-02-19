@@ -2675,7 +2675,7 @@ border-color:#A1A8B2 #FFFFFF #FFFFFF #E5E6E8;
 border-style:solid;
 border-width:4px 1px 1px;
 color:#003399;
-font-weight:normal;
+font-weight:bold;
 padding:8px;
 }
 
@@ -2684,7 +2684,8 @@ background:#F2F2F2 none repeat scroll 0 0;
 border-bottom:1px solid #FFFFFF;
 border-left:1px solid #F2F2F2;
 border-right:1px solid #FFFFFF;
-color:#666699;
+/*color:#666699;*/
+color:#003399;
 padding:8px;
 }
 
