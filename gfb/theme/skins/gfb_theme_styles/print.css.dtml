@@ -128,6 +128,18 @@ font-size:13pt!important;
 margin-top:30px!important;
 }
 
+/************css for printing out tables with background*******/
+#parent-fieldname-text table th {
+border-color:#A1A8B2 #A1A8B2 #A1A8B2 #A1A8B2!important;
+border-style:solid!important;
+border-width:4px 1px 1px!important;
+}
+
+#parent-fieldname-text table td {
+border-bottom:1px solid #A1A8B2!important;
+border-left:1px solid #A1A8B2!important;
+border-right:1px solid #A1A8B2!important;
+}
 
 
 /* @end */

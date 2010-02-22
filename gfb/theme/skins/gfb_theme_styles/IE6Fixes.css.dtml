@@ -15,4 +15,10 @@ text-decoration:none;
 }
 
 
+td#portal-column-one div.visualPadding {
+border:1px solid red;
+height:1200px!important;
+padding:0;
+width:198px;
+}
 /* </dtml-with> */

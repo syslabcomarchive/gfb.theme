@@ -2654,8 +2654,9 @@ text-decoration:none;
 
 #parent-fieldname-text table {
 border-collapse:collapse;
-font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
+letter-spacing:1px;
 margin:20px;
 text-align:left;
 /*width:480px;*/
@@ -2722,7 +2723,7 @@ font-style:normal;
 font-variant:normal;
 font-weight:normal;
 letter-spacing:2px;
-line-height:35px;
+line-height:30px;
 margin-bottom:15px;
 margin-top:45px;
 }
@@ -2741,7 +2742,7 @@ h4 {
 color:#3E4E60;
 font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
 font-size:15px!important;
-font-weight:normal;
+font-weight:bold;
 letter-spacing:2px;
 margin-bottom:5px;
 }
