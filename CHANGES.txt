@@ -18,7 +18,7 @@ gfb.theme Changelog
 
 - fix translation for Nutzungshinweise. Fixes #51 (pilz)
 
-- Fix für #56, Provider languages not reflected (pilz)
+- Fix for #56, Provider languages not reflected (pilz)
 
 
 1.2.17 (2009-11-25)
