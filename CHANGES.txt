@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.2.19 (unreleased)
+1.2.19 (2010-02-28)
 -------------------
 
 - css changes for the headlines (pecek/pilz)
