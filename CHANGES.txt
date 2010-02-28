@@ -4,8 +4,12 @@ gfb.theme Changelog
 1.2.19 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- css changes for the headlines (pecek/pilz)
+- new styles for the print css (pecek/pilz)
+- fix for tabellen and headlines (pecek/pilz)
+- added email icon to theme #256 (pecek, thomasw)
+- new css styles for print.css and ie6 fixes (pecek/pilz)
+- Fix verschiedenster Bugs und Features #343, #341, #255, #254 (pecek) 
 
 1.2.18 (2009-12-10)
 -------------------
