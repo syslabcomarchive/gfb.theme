@@ -120,7 +120,7 @@ function modifyLinkTag(node) {
         } else if (linkval.indexOf('http:') != 0){
             // not a http-link. Possibly an internal relative link, but also possibly a mailto ot other snacks
             // add tests for all relevant protocols as you like.
-            protocols = ['ftp', 'news', 'irc', 'callto', 'javascript']
+            protocols = ['ftp', 'news', 'irc', 'callto', 'javascript', 'mailto']
             // h323, sip and callto are internet telephony VoIP protocols
             var found = 0;
             for (p=0; p < protocols.length; p++){  
