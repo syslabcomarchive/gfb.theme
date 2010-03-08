@@ -2693,57 +2693,53 @@ padding:8px;
 /********************css für neue Überschriftenformatierung***************/
 
 .documentFirstHeading {
--x-system-font:none;
 background-color:#415063;
 color:whitesmoke;
-font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:30px!important;
+font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:19px !important;
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
 font-variant:normal;
 font-weight:normal;
-letter-spacing:2px;
-line-height:50px;
-margin-bottom:20px;
+letter-spacing:0;
+line-height:20px;
+margin-bottom:10px;
 margin-top:0;
-padding:4px 16px;
+padding:3px 16px 4px;
 vertical-align:middle;
 }
 
 h2 {
--x-system-font:none;
-border-bottom:1px solid #3D4E60;
+border-bottom:0 solid #3D4E60;
 color:#3D4E60;
-font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:25px!important;
+font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:19px !important;
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
-font-variant:normal;
-font-weight:normal;
-letter-spacing:2px;
-line-height:30px;
+font-weight:lighter;
+letter-spacing:0;
 margin-bottom:15px;
-margin-top:45px;
+margin-top:25px;
 }
 
 h3 {
-color:#3E4E60;
-font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:20px!important;
+color:#3D4E60;
+font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:16px !important;
 font-weight:normal;
-letter-spacing:2px;
+letter-spacing:0;
 margin-bottom:5px;
-margin-top:35px;
+margin-top:25px;
 }
 
 h4 {
 color:#3E4E60;
-font-family:"Arial Narrow","Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:15px!important;
+font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
+font-size:13px !important;
 font-weight:bold;
-letter-spacing:2px;
+letter-spacing:0;
 margin-bottom:5px;
 }
 
