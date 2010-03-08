@@ -2743,6 +2743,19 @@ letter-spacing:0;
 margin-bottom:5px;
 }
 
+/************styles für subnavi größe**********/
+
+#portal-globalnav ul.submenu li div a {
+font-family:"arial";
+font-size:110%;
+line-height:1.3em;
+padding:3px 0;
+}
+
+#portal-globalnav ul {
+width:16em;
+}
+
 /* @end */
 
 
