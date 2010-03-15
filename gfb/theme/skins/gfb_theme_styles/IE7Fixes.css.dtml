@@ -18,8 +18,6 @@ font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
 letter-spacing:1px;
 margin:0;
-position:relative;
-right:20px;
 text-align:left;
 }
 
