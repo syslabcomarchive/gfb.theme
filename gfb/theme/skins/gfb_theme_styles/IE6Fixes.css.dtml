@@ -29,7 +29,7 @@ border-collapse:collapse;
 font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
 letter-spacing:1px;
-margin:0;
+margin:0 0 10px 0;
 position:relative;
 right:25px;
 text-align:left;
