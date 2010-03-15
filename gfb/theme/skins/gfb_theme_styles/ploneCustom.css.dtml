@@ -2657,7 +2657,7 @@ border-collapse:collapse;
 font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
 letter-spacing:1px;
-margin:20px;
+margin:0px;
 text-align:left;
 /*width:480px;*/
 }
