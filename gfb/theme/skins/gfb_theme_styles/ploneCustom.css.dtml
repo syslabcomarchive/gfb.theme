@@ -1703,8 +1703,8 @@ div#link_to_tool {
   padding: 1px 0px 1px 10px;
 }
 .link-mailto-js {
-  background: transparent url(&dtml-portal_url;/ts_emailabo.gif) 0px 1px no-repeat;
-  padding: 1px 0px 1px 12px;
+  background: transparent url(&dtml-portal_url;/mail_icon.gif) 0px 1px no-repeat;
+  padding: 1px 0px 1px 20px;
 }
 .link-news-js {
   background: transparent url(&dtml-portal_url;/topic_icon.gif) 0px 1px no-repeat;
