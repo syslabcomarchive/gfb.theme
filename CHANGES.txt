@@ -7,7 +7,7 @@ gfb.theme Changelog
 - css changes for the fontsize topnavi subnavi level 0 and 1 (pecek)
 - css changes for the headlines ticket #254 (pecek)
 - change of email icons  ticket #256 (thomasw)
-- bugfix for Tabellenlayout/margin entfernt,Ie`s angepaßt ticket #255 (pecek)
+- bugfix for Tabellenlayout/margin entfernt, ticket #255 (pecek)
 
 1.2.19 (2010-02-28)
 -------------------
