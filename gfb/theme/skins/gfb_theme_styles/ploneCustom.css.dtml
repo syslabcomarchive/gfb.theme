@@ -2652,7 +2652,7 @@ text-decoration:none;
 
 /*********css für neues Tabellenlayout*************/
 
-#parent-fieldname-text table {
+#content table {
 border-collapse:collapse;
 font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
@@ -2666,11 +2666,11 @@ tbody {
 
 }
 
-#parent-fieldname-text tr:hover td {
+#content tr:hover td {
 background:#E5E6E8 none repeat scroll 0 0;
 }
 
-#parent-fieldname-text th {
+#content th {
 background:#E5E6E8 none repeat scroll 0 0;
 border-color:#A1A8B2 #FFFFFF #FFFFFF #E5E6E8;
 border-style:solid;
@@ -2680,7 +2680,7 @@ font-weight:bold;
 padding:8px;
 }
 
-#parent-fieldname-text td {
+#content td {
 background:#F2F2F2 none repeat scroll 0 0;
 border-bottom:1px solid #FFFFFF;
 border-left:1px solid #F2F2F2;

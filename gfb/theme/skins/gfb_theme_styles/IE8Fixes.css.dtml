@@ -4,7 +4,7 @@
 
 /*********css für neues Tabellenlayout*************/
 
-#parent-fieldname-text table {
+#content table {
 border-collapse:collapse;
 font-family:"Arial narrow","Lucida Grande",Sans-Serif;
 font-size:12px;
