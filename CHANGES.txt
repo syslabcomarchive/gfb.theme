@@ -1,11 +1,13 @@
 gfb.theme Changelog
 ===================
 
-1.2.21 (unreleased)
+1.2.21 (2010-03-17)
 -------------------
 
 - Replaced "#parent-fieldname-text" with "#content" in table style definition
   to make them work also with link collections (thomasw)
+- Fixed js function getContentArea for https://projects.syslab.com/gfb/issues/63
+  (thomasw)
 
 1.2.20 (2010-03-16)
 -------------------
