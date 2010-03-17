@@ -35,7 +35,7 @@ function getContentArea() {
 	// function, even if it is a tiny operation. Just guarding against someone changing the names again, in the name
 	// of semantics or something.... ;)
 	node =  document.getElementById('linkcollection-prefetched-docs')
-	if (! node){
+	if (! node || ! jq.trim(node.innerHTML).length){
 		node =  document.getElementById('parent-fieldname-text')
 	}
 	if (! node){
