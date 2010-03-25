@@ -63,7 +63,7 @@
                 riskfactors python:riskfactors==[''] and '' or riskfactors;
                 DateTime python:modules['DateTime'].DateTime;
                 b_size request/b_size | python:10;
-                b_size python:int(b_size); 
+                b_size python:int(b_size);
                 b_start python:0;
                 b_start request/b_start | b_start;
                 desc_length site_properties/search_results_description_length;
@@ -74,12 +74,12 @@
   <form name="searchform" id="searchform"
         tal:attributes="action template/id"
         class="searchPage searchform-controls">
-        
+
         <div metal:define-macro="main">
           <div id="simplesearch">
             <ul class="search-top">
               <li><a class="selected" id="searchdatabase"
-                     i18n:translate="label_advanced_search" 
+                     i18n:translate="label_advanced_search"
                      href="advanced_search">Search the Database</a>
               </li>
               <li>
@@ -89,67 +89,67 @@
             </ul>
           </div>
 
-          
-          
+
+
           <div id="searchfields">
 
             <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
                 <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
-            <div id="searchcontrols">          
-                <input id="SearchableText" 
-                       type="text" 
-                       name="SearchableText" 
-                       size="25" 
+            <div id="searchcontrols">
+                <input id="SearchableText"
+                       type="text"
+                       name="SearchableText"
+                       size="25"
                        class="inputLabel"
                        tal:attributes="value request/SearchableText|string:;
                                        title view/getFillText;"/>
                 <br />
 
                 <div id="and_or_box">
-                    <p class="formHelp" 
+                    <p class="formHelp"
                        i18n:translate="help_and_or">
                         und/oder
                     </p>
                 </div>
 
                 <div class="column1b">
-                
-                
-                   
+
+
+
                     <div class="common_radio_search_box">
-                    <input class="radio_search" 
+                    <input class="radio_search"
                            id="radio_category_special"
-                           type="radio" 
-                           value="0" 
-                           name="getCategoryIndependent" 
-                           tal:attributes="checked python:getCategoryIndependent==False"> 
+                           type="radio"
+                           value="0"
+                           name="getCategoryIndependent"
+                           tal:attributes="checked python:getCategoryIndependent==False">
                     <label i18n:translate="label_special_guideline">Special Action Guideline</label>
                     </div>
 
                     <div>
-                    <input class="radio_search" 
+                    <input class="radio_search"
                            id="radio_category_common"
-                           type="radio" 
-                           value="1" 
-                           name="getCategoryIndependent" 
+                           type="radio"
+                           value="1"
+                           name="getCategoryIndependent"
                            tal:attributes="checked python:getCategoryIndependent==True">
 
                     <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
                     </div>
-                        
+
 
                     <div class="visualClear"><!-- --></div>
 
                 </div>
-                
+
                 <div class="column2b">
-                
+
                     <span tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</span>...
 
                     <ul class="search_index">
-                    
+
                     <li id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
                                             fieldRealName string:remoteProvider;
@@ -172,7 +172,7 @@
                                     <span tal:replace="python:widget.Label(here)" />
                                     <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
                           </tal:define>
-                        
+
                     </li>
                     <li id="search_control_nace" class="search_deactivatable disabled"
                         tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
@@ -196,7 +196,7 @@
                         </metal:macro>
                     </li>
                     <li id="search_control_riskfactors" class="search_deactivatable disabled"
-                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
+                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
                                             mockup     nocall:here/@@ATMockup;
@@ -223,17 +223,17 @@
 
                     <div class="submit_column">
 
-                            <input class="context cancelbutton" 
-                               type="submit" 
-                               name="submit" 
-                               value="Search" 
+                            <input class="context cancelbutton"
+                               type="submit"
+                               name="submit"
+                               value="Search"
                                i18n:attributes="value label_search;"/>
 
                     </div>
 
                 </div>
             </div>
-            
+
         </div>
         <p>&nbsp;</p>
   </form>
@@ -244,19 +244,19 @@
 
 
       <div id="heading_search_results_box">
-      
-      
+
+
         <span id="heading_search_results" >
             <span tal:omit-tag=""
                   i18n:translate="heading_search_results" i18n:domain="gfb">
                 Search results
             </span>
-            
+
             <span id="search_num_results">
                 (<span i18n:translate="batch_x_items" i18n:domain="gfb"
-                ><span i18n:name="number" 
-                tal:omit-tag="" 
-                tal:content="python:len(results)">234</span> 
+                ><span i18n:name="number"
+                tal:omit-tag=""
+                tal:content="python:len(results)">234</span>
                 documents</span>)
                 <!-- See comment below why we need this hack -->
                 <img src="spacer.gif" width="1" height="10" alt="previous search results">
@@ -289,7 +289,7 @@
                        Go figure... thomasw -->
                        <img src="spacer.gif" width="1" height="10" alt="previous search results">
                     </a>
-                </span> 
+                </span>
 
                 <span i18n:translate="label_page" i18n:domain="gfb">Page</span>
 
@@ -380,16 +380,16 @@
                 </span>
 
 
-            </span>           
+            </span>
 
             </metal:macro>
-                  
+
         </span>
 
         <div id="heading_search_medium">Medium</div>
-        
-        <div class="visualClear"> </div> 
-      </div>      
+
+        <div class="visualClear"> </div>
+      </div>
 
 
 
@@ -407,7 +407,7 @@
         <div class="searchResults">
           <tal:results repeat="result batch">
           <tal:entry define="result_uid result/UID;
-							 result_url string:ra_inline?uid=${result_uid};
+                             result_url string:ra_inline?uid=${result_uid};
                              result_type result/portal_type;
                              result_ob result/getObject;
                              result_medium result_ob/getMedium | python:[];
@@ -418,17 +418,17 @@
                              result_editdate result_ob/getDateOfEditing | nothing;
                              item_icon python:plone_view.getIcon(result);
                              url python:'%s?searchterm=%s'%(result_type in use_view_action and result_url+'/view' or result_url+'/', searchterm);">
-                            
+
          <div class="search_results">
             <div class="info_of_search">
-                <p class="formHelp" 
+                <p class="formHelp"
                    tal:define="title python:result_provider[0].Title()"
                    tal:condition="title"
                    tal:on-error="nothing">
-                  <span i18n:translate="label_provider" i18n:domain="gfb">Anbieter</span>: 
+                  <span i18n:translate="label_provider" i18n:domain="gfb">Anbieter</span>:
                   <span tal:replace="title" />
                 </p>
-              
+
                 <h5 tal:content="result/pretty_title_or_id" />
 
                 <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
@@ -439,46 +439,46 @@
                         <span tal:replace="python:result_ob.getField('dateOfEditing').widget.label">Date of Editing</span>:
                         <span tal:replace="result_editdate" />
                     </p>
-                    <a href="#" 
+                    <a href="#"
                        tal:attributes="href url" i18n:translate="label_more_info">mehr info</a>
                 </div>
 
             </div>
-            
+
             <div class="search_medium">
                 <h5 tal:content="python:view.get_printable_method(result_method)">Richtlinie</h5>
-                <p class="formHelp" i18n:translate="label_available_as">available as</p>          
+                <p class="formHelp" i18n:translate="label_available_as">available as</p>
 
-				<ul class="visualMarker"
-		            tal:define="media python:view.get_printable_medium(result_medium)">
+                <ul class="visualMarker"
+                    tal:define="media python:view.get_printable_medium(result_medium)">
 
-		            <li tal:repeat="medium media" tal:content="medium"></li>
+                    <li tal:repeat="medium media" tal:content="medium"></li>
 
-					<li id="ral_price">
-			            <span i18n:domain="RiskAssessmentLink" i18n:translate="ra_price_label">Price</span>:
+                    <li id="ral_price">
+                        <span i18n:domain="RiskAssessmentLink" i18n:translate="ra_price_label">Price</span>:
 
-						<tal:block condition="result_price">
-			                <span tal:replace="result_price" />&nbsp;&euro;&nbsp;
-			                    <span tal:condition="result_free_for_members" tal:omit-tag="">*
-			                </span>
-			           </tal:block>
+                        <tal:block condition="result_price">
+                            <span tal:replace="result_price" />&nbsp;&euro;&nbsp;
+                                <span tal:condition="result_free_for_members" tal:omit-tag="">*
+                            </span>
+                       </tal:block>
 
-			           <tal:block condition="not:result_price">
-							<span i18n:translate="label_free" i18n:domain="gfb" />
-			           </tal:block>
+                       <tal:block condition="not:result_price">
+                            <span i18n:translate="label_free" i18n:domain="gfb" />
+                       </tal:block>
 
-			         </li>
+                     </li>
 
-		        </ul>
-				<ul id="ral_free" tal:condition="result_free_for_members">
-		        	<li>
-						<span tal:omit-tag="" 
-							i18n:domain="gfb" 
-							i18n:translate="label_free_for_members">
-							Free for members
-						</span>
-					</li>
-		        </ul>
+                </ul>
+                <ul id="ral_free" tal:condition="result_free_for_members">
+                    <li>
+                        <span tal:omit-tag=""
+                            i18n:domain="gfb"
+                            i18n:translate="label_free_for_members">
+                            Free for members
+                        </span>
+                    </li>
+                </ul>
 
             </div>
 
@@ -489,8 +489,8 @@
           </tal:results>
 
         </div>
-   </div>   
-   
+   </div>
+
    <div id="footer_batch_box">
        <span id="footer_batch" >
            <span tal:omit-tag=""
@@ -500,25 +500,25 @@
 
            <span id="search_num_results">
                (<span i18n:translate="batch_x_items" i18n:domain="gfb"
-               ><span i18n:name="number" 
-               tal:omit-tag="" 
-               tal:content="python:len(results)">234</span> 
+               ><span i18n:name="number"
+               tal:omit-tag=""
+               tal:content="python:len(results)">234</span>
                documents</span>)
            </span>
 
-           <a tal:condition="not:request/b_size | nothing" 
-              tal:attributes="href python:'%s?b_size=%s&%s' % (template.id, len(results), batch.pageurl(request.form)) " 
+           <a tal:condition="not:request/b_size | nothing"
+              tal:attributes="href python:'%s?b_size=%s&%s' % (template.id, len(results), batch.pageurl(request.form)) "
               class="show-all-results" i18n:translate="label_show_all" i18n:domain="gfb">Alle Anzeigen</a>
 
            <metal:macro use-macro="template/macros/batch"></metal:macro>
        </span>
-   </div>   
-   
+   </div>
+
   </div>
-  
- 
+
+
 <p><br/></p>
- 
+
   <!--div style="color:#ddd" tal:content="view/buildQuery" /-->
 
 </div>
