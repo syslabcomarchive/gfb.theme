@@ -337,6 +337,18 @@ background-color: white;
 	z-index: 3;
 }
 
+.LSResultRALinks {
+	position: relative;
+	display: block;
+	text-align: right;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0;
+	left: 11px;
+	top: 7em;
+	z-index: 3;
+}
+
 .LSShadow {
 	position: relative;
 }
@@ -357,6 +369,11 @@ top: 0;
 	border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
 	width: 30em;
 	text-transform: none;
+}
+
+.LSResultRALinks .livesearchContainer
+{
+    width: 50em;
 }
 
 * html .livesearchContainer {
