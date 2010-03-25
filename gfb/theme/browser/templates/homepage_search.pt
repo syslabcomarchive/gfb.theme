@@ -35,6 +35,9 @@
     </script>
   </tal:js>
 
+<script type="text/javascript" src="livesearch_ralinks.js"
+    tal:attributes="src string:$portal_url/livesearch_ralinks.js">
+</script>
 </metal:javascriptslot>
 
 <metal:block fill-slot="top_slot"
@@ -90,6 +93,10 @@
         class="searchPage searchform-controls">
         
         <div metal:define-macro="main">
+
+        <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
+
+
           <div id="simplesearch">
             <ul class="search-top">
               <li><a class="selected" id="searchdatabase"
@@ -110,7 +117,7 @@
                 <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
-            <div id="searchcontrols">          
+            <div id="searchcontrols" class="LSBoxRALinks">          
                 <input id="SearchableText" 
                        type="text" 
                        name="SearchableText" 

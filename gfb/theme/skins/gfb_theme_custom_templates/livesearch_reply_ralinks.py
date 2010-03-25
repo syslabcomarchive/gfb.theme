@@ -13,13 +13,14 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.PythonScripts.standard import url_quote
 from Products.PythonScripts.standard import url_quote_plus
 from Products.PythonScripts.standard import html_quote
+from Products.CMFPlone.browser.navtree import getNavigationRoot
 
 ploneUtils = getToolByName(context, 'plone_utils')
 portal_url = getToolByName(context, 'portal_url')()
 pretty_title_or_id = ploneUtils.pretty_title_or_id
 plone_view = context.restrictedTraverse('@@plone')
 
-from osha.policy.utils import logit
+#from osha.policy.utils import logit
 #logit("livesearch_reply_ralinks")
 
 portalProperties = getToolByName(context, 'portal_properties')
@@ -70,9 +71,9 @@ searchterms = url_quote_plus(r)
 
 site_encoding = context.plone_utils.getSiteEncoding()
 
-
-#logit('SearchableText:', r)
-#logit('types:', friendly_types)
+root_path = getNavigationRoot(context)
+root_ob = context.restrictedTraverse(path)
+path = root_ob.absolute_url()
 
 results = catalog(SearchableText=r, portal_type=friendly_types)
 
@@ -145,7 +146,7 @@ else:
     if len(results)>limit:
         # add a more... row
         write('''<li class="LSRow">''')
-        write( '<a href="%s" style="font-weight:normal">%s</a>' % ('advanced_search?SearchableText=' + searchterms, ts.translate(label_show_all)))
+        write( '<a href="%s/%s" style="font-weight:normal">%s</a>' % (path, 'handlungshilfen/datenbank/advanced_search?SearchableText=' + searchterms, ts.translate(label_show_all)))
         write('''</li>''')
     write('''</ul>''')
     write('''</div>''')
