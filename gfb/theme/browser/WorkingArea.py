@@ -63,7 +63,14 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
 
     def myrals(self):
         objs = [x.getObject() for x in self.RALinks]
-        return [dict(obj=obj, state=self.pwt.getInfoFor(obj, 'review_state')) for obj in objs]
+        return [dict(obj=obj,
+            state=self.pwt.getInfoFor(obj, 'review_state'),
+            translation=obj.getTranslation(self.getOppositeLang(obj.Language())),
+            target_language=self.getOppositeLang(obj.Language()))
+            for obj in objs]
         
     def provider_ok(self):
-        return not not len(self.Provider)    
+        return not not len(self.Provider)
+
+    def getOppositeLang(self, lang):
+        return lang in ('de', '') and 'en' or 'de'

@@ -167,6 +167,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         tal:define="oddrow repeat/myral/odd;
                                     plone_view context/@@plone;
                                     obj nocall:myral/obj;
+                                    translation nocall:myral/translation;
                                     state myral/state;
                                     url obj/absolute_url;
                                     getIcon nocall:plone_view/getIcon;
@@ -186,6 +187,21 @@ tal:define="dummy python:request.set('disable_border',1)" />
                                  <a class="context" tal:attributes="href url"
                                      i18n:translate="label_view">View</a>
                               </div>
+
+                              <div class="actionbtn">
+                                 <a class="context"
+                                     tal:attributes="href string:${translation/absolute_url}?set_language=${myral/target_language}"
+                                     i18n:translate="" i18n:domain="gfb"
+                                     tal:content="string:View ${myral/target_language} version"
+                                     tal:condition="translation">View translation</a>
+                                 <a class="context" 
+                                     tal:attributes="href string:$url/@@translate?newlanguage=${myral/target_language}"
+                                     i18n:translate="" i18n:domain="gfb"
+                                     id="translate_into_button"
+                                     tal:content="string:Translate into ${myral/target_language}"
+                                     tal:condition="not:translation">Create translation</a>
+                              </div>
+
                               <div class="actionbtn">
                                   <a class="context" tal:attributes="href string:${url}/edit"
                                      i18n:translate="label_edit">Edit</a>

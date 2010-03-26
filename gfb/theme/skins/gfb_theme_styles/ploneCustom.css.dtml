@@ -419,6 +419,7 @@ top: 0;
 
 /* @end */
 
+#publish_button, #translate_into_button {color: red;}
 
 
 /* @group Columns */
@@ -1516,7 +1517,6 @@ div#providerperson label {
 .item_actions {
   position: relative;
   float: right;
-  width: 34em;
   padding: 0.5em 0em;
 }
 
