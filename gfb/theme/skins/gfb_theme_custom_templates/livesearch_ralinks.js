@@ -167,12 +167,12 @@ var livesearch = function (){
     function _setup(i) {
         // add an id which is used by other functions to find the correct node
         
-        var $id = 'searchForm';
+        var $id = 'searchform';
         var $form = jq(this).parents('form:first');
         var $key_handler = _keyhandlerfactory($form);
         _search_handlers[$id] = _searchfactory($form, this);
 
-        $form.attr('id', $id).css('white-space', 'nowrap').submit($key_handler.submit);
+        $form.attr('id', $id).submit($key_handler.submit);
         jq(this).attr('autocomplete','off')
                .keydown($key_handler.handler)
                .focus(_search_handlers[$id].search_delayed)
