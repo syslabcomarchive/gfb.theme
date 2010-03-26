@@ -81,11 +81,12 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         <a class="context" id="publish_button" tal:attributes="href string:${provider/absolute_url}/content_status_modify?workflow_action=publish"
                             i18n:translate="Publish">Publish</a>
                        </div>
+
+                </div>
                     <p class="item_actions" tal:condition="python:providerReviewState=='private'">
                         <span i18n:domain="gfb" i18n:translate="label_publish_provider">Please publish 
                         your provider information so that it will be visible to others.</span>
                     </p>
-                </div>
 
             </div>
 
