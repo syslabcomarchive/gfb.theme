@@ -199,3 +199,9 @@ msgstr "more info"
 
 msgid "label_provider"
 msgstr "Provider"
+
+msgid "Translate into de"
+msgstr "Translate into German"
+
+msgid "View de version"
+msgstr "View German version"

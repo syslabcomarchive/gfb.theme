@@ -266,3 +266,8 @@ msgstr "mehr Informationen"
 msgid "label_provider"
 msgstr "Anbieter"
 
+msgid "Translate into en"
+msgstr "Ins Englische übersetzen"
+
+msgid "View en version"
+msgstr "Englishe Version anzeigen"
