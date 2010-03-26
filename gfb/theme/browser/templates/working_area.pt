@@ -162,17 +162,20 @@ tal:define="dummy python:request.set('disable_border',1)" />
 
                 <form>
                 <dl id="ras_results">
-                  <span tal:repeat="obj myrals" tal:omit-tag="">
+                  <span tal:repeat="myral myrals" tal:omit-tag="">
                     <span tal:omit-tag=""
-                        tal:define="oddrow repeat/obj/odd;
+                        tal:define="oddrow repeat/myral/odd;
                                     plone_view context/@@plone;
+                                    obj nocall:myral/obj;
+                                    state myral/state;
+                                    url obj/absolute_url;
                                     getIcon nocall:plone_view/getIcon;
                                     item_icon python:getIcon(obj);">
 
                         <dt>
                           <img tal:replace="structure item_icon/html_tag" />&nbsp;<a href="#"
                                class="tile"
-                               tal:attributes="href obj/getURL;
+                               tal:attributes="href url;
                                                title obj/Description"
                                tal:content="obj/pretty_title_or_id">Some Document</a>
                         </dt>
@@ -180,19 +183,19 @@ tal:define="dummy python:request.set('disable_border',1)" />
                             <div class="item_description" tal:content="obj/Description">desc</div>
                             <div class="item_actions" i18n:domain="plone" >
                               <div class="actionbtn">
-                                 <a class="context" tal:attributes="href obj/getURL"
+                                 <a class="context" tal:attributes="href url"
                                      i18n:translate="label_view">View</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/edit"
+                                  <a class="context" tal:attributes="href string:${url}/edit"
                                      i18n:translate="label_edit">Edit</a>
                               </div>
                               <div class="actionbtn">
-                                  <a class="context" tal:attributes="href string:${obj/getURL}/delete_confirmation"
+                                  <a class="context" tal:attributes="href string:${url}/delete_confirmation"
                                      i18n:translate="label_delete">Delete</a>
                               </div>
-                              <div class="actionbtn" tal:condition="python:obj.review_state=='private'">
-                                 <a class="context" id="publish_button" tal:attributes="href string:${obj/getURL}/content_status_modify?workflow_action=publish"
+                              <div class="actionbtn" tal:condition="python:state=='private'">
+                                 <a class="context" id="publish_button" tal:attributes="href string:${url}/content_status_modify?workflow_action=publish"
                                      i18n:translate="Publish">Publish</a>
                               </div>
                             </div>

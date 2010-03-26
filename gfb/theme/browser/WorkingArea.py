@@ -15,6 +15,7 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         super(WorkingArea, self).__init__(context, request)
         self.context = context
         self.tool = getToolByName(context, 'portal_languages', None)
+        self.pwt = getToolByName(context, 'portal_workflow')
         portal_tool = getToolByName(context, 'portal_url', None)
         self.portal_url = None
         if portal_tool is not None:
@@ -34,7 +35,7 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
             self.userid = pm.getAuthenticatedMember().getUserName()
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
-        self.P = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
+        self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
         self.Provider = pc.searchResults(portal_type="Provider", path=path, Language='all')
 
         hf = pm.getHomeFolder()
@@ -47,8 +48,7 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
 
     def providerReviewState(self):
         p = self.provider()
-        pw = getToolByName(self, 'portal_workflow')
-        return p and pw.getInfoFor(p, 'review_state') or ''
+        return p and self.pwt.getInfoFor(p, 'review_state') or ''
         
 
     def create_provider_url(self):
@@ -62,7 +62,8 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         return self.home_folder_url
 
     def myrals(self):
-        return self.P
+        objs = [x.getObject() for x in self.RALinks]
+        return [dict(obj=obj, state=self.pwt.getInfoFor(obj, 'review_state')) for obj in objs]
         
     def provider_ok(self):
         return not not len(self.Provider)    
