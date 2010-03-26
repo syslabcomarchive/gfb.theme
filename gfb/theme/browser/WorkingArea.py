@@ -2,13 +2,23 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from zope.component import getMultiAdapter
+from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
 
-class WorkingArea(BrowserView):
+class WorkingArea(BrowserView, TranslatableLanguageSelector):
     """
     Working Area for normal users
     """
     
     template = ViewPageTemplateFile('templates/working_area.pt')
+
+    def __init__(self, context, request, **args):
+        super(WorkingArea, self).__init__(context, request)
+        self.context = context
+        self.tool = getToolByName(context, 'portal_languages', None)
+        portal_tool = getToolByName(context, 'portal_url', None)
+        self.portal_url = None
+        if portal_tool is not None:
+            self.portal_url = portal_tool.getPortalObject().absolute_url()
 
     def __call__(self):
         return self.template()

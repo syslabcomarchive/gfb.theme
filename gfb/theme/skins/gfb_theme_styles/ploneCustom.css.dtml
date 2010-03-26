@@ -101,13 +101,13 @@ body {
     margin: 0;
 }
 
-#portal-languageselector {
+#portal-languageselector, #inline-languageselector {
     float: right;
     margin: 6px;
     display: block;
 }
 
-#portal-languageselector li {
+#portal-languageselector li, #inline-languageselector li {
     float: right;
     list-style-image: none;
     list-style-type: none;
@@ -2375,7 +2375,10 @@ div#region-content #slc-linkcollection-linkbox ul li,
   margin-bottom: 0.75em;
 }
 
-
+#dashboard-actions li
+{
+    display: block;
+}
 
 
 

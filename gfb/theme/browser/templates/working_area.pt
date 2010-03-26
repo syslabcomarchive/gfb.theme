@@ -106,6 +106,41 @@ tal:define="dummy python:request.set('disable_border',1)" />
         <div tal:define="myrals view/myrals;
             home_url view/home_url;
             provider_ok view/provider_ok;">
+
+
+        <tal:language
+            tal:define="languages view/languages;
+                        showFlags view/showFlags;">
+            <ul id="inline-languageselector"
+                tal:condition="python:len(languages)>=2">
+                <tal:language repeat="lang languages">
+                <li tal:define="code lang/code;
+                                selected lang/selected;
+                                translated lang/translated"
+                    tal:condition="python: not selected"
+                    tal:attributes="class python: selected and 'currentLanguage' or '';">
+                        <a href=""
+                           tal:define="flag lang/flag|nothing;
+                                       name lang/name"
+                           tal:attributes="href lang/url;
+                                           title name">
+                            <tal:flag condition="python:showFlags and flag">
+                            <tal:langname replace="name">language name</tal:langname>
+                                <img
+                                     width="14"
+                                     height="11"
+                                     alt=""
+                                     tal:attributes="src string:${view/portal_url}${flag};
+                                                     title python: name;
+                                                     class python: selected and 'currentItem' or '';" />
+                            </tal:flag>
+
+                        </a>&nbsp;
+                </li>
+                </tal:language>
+            </ul>
+        </tal:language>
+
             <h2 i18n:translate="box_myral">My Links</h2>
 
 
