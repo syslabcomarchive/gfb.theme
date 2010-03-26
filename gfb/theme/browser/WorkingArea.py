@@ -8,7 +8,7 @@ class WorkingArea(BrowserView):
     Working Area for normal users
     """
     
-    template = ViewPageTemplateFile('working_area.pt')
+    template = ViewPageTemplateFile('templates/working_area.pt')
 
     def __call__(self):
         return self.template()
