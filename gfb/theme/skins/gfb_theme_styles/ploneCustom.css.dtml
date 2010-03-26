@@ -1770,6 +1770,7 @@ div#link_to_tool {
 .search-top .link-internal-js, 
 ul.formTabs .link-internal-js,
 span.listingBar .link-internal-js,
+.actionbtn .link-internal-js,
 #footer_batch_box .link-internal-js {
   display:none;
 }
