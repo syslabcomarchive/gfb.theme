@@ -49,6 +49,8 @@ class Renderer(base.Renderer):
         home_folder_url = hf and hf.absolute_url() or pt()
         return home_folder_url
 
+    def getLanguage(self):
+        return getToolByName(self, 'portal_languages').getPreferredLanguage()
 
 class AddForm(base.NullAddForm):
     form_fields = form.Fields(IWorkNavPortlet)
