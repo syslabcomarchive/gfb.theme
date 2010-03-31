@@ -2040,7 +2040,7 @@ div.column1b div input {
     margin-top: 0.5em;
 }
 
-/*Tinas √Ñnderungen Stand Mittwoch 25.03*/
+/*Tinas aenderungen Stand Mittwoch 25.03*/
 
 /*fixt den Abstand des Anbieter Blocks in allen drei Browsern*/
 ul.search_index {
@@ -2783,6 +2783,48 @@ margin:0 0 0 15em!important;
 top:0.4em;
 z-index:10;
 }
+
+
+/* Welcome image on home page */
+
+div.welcome_image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+div.welcome_image .link-internal-js {
+  display:none;
+}
+div.welcome_image h2 {
+    font-size: 22px !important;
+    margin: 0;
+    line-height: 150%;
+    color: black;
+}
+h2#basiswissen {
+   position: absolute;
+   top: 25px;
+   left: 60px;
+   width: 100%;
+}
+h2#datenbanksuche {
+   position: absolute;
+   top: 25px;
+   left: 225px;
+   width: 100%;
+}
+h2#expertenwissen {
+   position: absolute;
+   top: 25px;
+   left: 370px;
+   width: 100%;
+}
+h2#service {
+   position: absolute;
+   top: 200px;
+   left: 200px;
+   width: 100%;
+}
+
 
 /* @end */
 
