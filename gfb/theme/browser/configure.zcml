@@ -147,7 +147,13 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
-    
+    <browser:page
+        for="*"
+        name="homepage_search_new"
+        class=".advanced_search.HomepageSearchNewView"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
     
     <browser:page
         for="*"

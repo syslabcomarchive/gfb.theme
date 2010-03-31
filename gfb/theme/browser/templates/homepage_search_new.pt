@@ -1,0 +1,296 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gfb">
+
+<metal:cssslot fill-slot="css_slot"
+             tal:define="global mockup here/@@ATMockup;
+                         dummy python:mockup.preload(types=[('RiskAssessmentLink', 'RiskAssessmentLink')]);">
+<style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
+       tal:content="string:@import url($portal_url/riskassessment_styles.css);">
+</style>
+
+</metal:cssslot>
+
+<metal:javascriptslot fill-slot="javascript_head_slot">
+
+  <script language="JavaScript">
+  function resetSize(aSelect) {
+    if(aSelect) {
+      aSelect.style.width = 'auto';
+    }
+  }
+  </script>
+
+  <tal:js define="js python:here.getUniqueWidgetAttr(mockup.getFields(), 'helper_js')"
+          condition="js"
+          repeat="item js">
+    <script type="text/javascript"
+            charset="iso-8859-1"
+            tal:condition="python:exists('portal/%s' % item)"
+            tal:attributes="src string:$portal_url/$item">
+    </script>
+  </tal:js>
+
+<script type="text/javascript" src="livesearch_ralinks.js"
+    tal:attributes="src string:$portal_url/livesearch_ralinks.js">
+</script>
+</metal:javascriptslot>
+
+<metal:block fill-slot="top_slot"
+                   tal:define="dummy python:request.set('disable_border',1)" />
+<!--metal:block fill-slot="column_two_slot" /-->
+
+
+<body>
+<div metal:fill-slot="main"
+     tal:define="use_types_blacklist request/use_types_blacklist | python:True;
+                use_navigation_root request/use_navigation_root | python:True;
+                dummy python:request.set('portal_type', 'RiskAssessmentLink');
+                Batch python:modules['Products.CMFPlone'].Batch;
+                use_view_action site_properties/typesUseViewActionInListings|python:();
+                SearchableText request/SearchableText|string:;
+                nace request/nace|string:;
+                nace python:nace==[''] and '' or nace;
+                provider request/remote_provider|python:'';
+                provider python:provider==[''] and '' or provider;
+                category request/category|string:;
+                getRemoteLanguage request/getRemoteLanguage|string:;
+                country request/country|string:;
+                getCategoryIndependent request/getCategoryIndependent|string:0;
+                getCategoryIndependent python:bool(int(getCategoryIndependent));
+                riskfactors request/riskfactors|string:;
+                riskfactors python:riskfactors==[''] and '' or riskfactors;
+                DateTime python:modules['DateTime'].DateTime;
+                b_size python:10;b_start python:0;
+                b_start request/b_start | b_start;
+                desc_length site_properties/search_results_description_length;
+                desc_ellipsis site_properties/ellipsis;
+                searchterm request/SearchableText|nothing;
+                results view/search;
+                           ">
+           
+           
+           
+    <tal:block define="index_foursteps nocall:here/index_foursteps | nothing"
+         tal:condition="index_foursteps">
+        
+        <h1 class="documentFirstHeading" tal:content="index_foursteps/Title"></h1>
+        
+        <div tal:replace="structure index_foursteps/getText |nothing" />
+         
+    </tal:block>
+
+    <!-- Der folgende Code befindet sich in index_foursteps
+    -->
+    <!--tal:block>
+    <div class="welcome_image">
+        <img usemap="#imgmap_welcome" src="GFBWelcome0S_neu.jpg" alt="gfbwelcomeos.jpg">
+        <map id="imgmap_welcome" name="imgmap_welcome">
+            <area title="Basiswissen alt Text" alt="Basiswissen alt Text" coords="219,60,170,9,9,7,7,111,171,111"  shape="poly"
+                href="/de/einstieg">
+            <area title="Datenbanksuche alt Text" alt="Datenbanksuche alt Text" coords="317,9,170,10,219,60,169,113,321,113,370,60" shape="poly"
+                href="/de/handlungshilfen/datenbank">
+            <area title="Expertenwissen alt Text" alt="Expertenwissen alt Text" coords="498,61,446,9,321,11,372,61,321,113,446,112" shape="poly"
+                href="/de/gefaehrdungsfaktoren" >
+
+            <area title="Service alt Text" alt="Service alt Text" coords="12,168,496,230" shape="rect"
+                href="/de/service">
+        </map>
+        <h2 id="basiswissen"><a href="/de/einstieg" title="Basiswissen alt Text">Basis<br/>wissen</a></h2>
+        <h2 id="datenbanksuche"><a href="/de/handlungshilfen/datenbank" title="Datenbanksuche alt Text">Datenbank<br/>suche</a></h2>
+        <h2 id="expertenwissen"><a href="/de/gefaehrdungsfaktoren" title="Expertenwissen alt Text">Experten<br/>wissen</a></h2>
+        <h2 id="service"><a href="/de/service" title="Service alt Text">Service</a></h2>
+    </div>
+    </tal:block-->
+
+
+  <form name="searchform" id="searchform"
+        action="advanced_search"
+        tal:attributes="action string:${portal_url}/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/advanced_search"
+        class="searchPage searchform-controls">
+        
+        <div metal:define-macro="main">
+
+        <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
+
+
+          <div id="simplesearch">
+            <ul class="search-top">
+              <li><a class="selected" id="searchdatabase"
+                     i18n:translate="label_advanced_search" 
+                     href="homepage_search">Search the Database</a>
+              </li>
+              <li>
+                  <a href="searchtipps" id="searchtipps"
+                     i18n:translate="label_searchtips">Search Tips</a>
+              </li>
+            </ul>
+          </div>
+          
+          
+          <div id="searchfields">
+
+            <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+                <span tal:replace="structure tipps/getText |nothing" />
+            </div>
+
+            <div id="searchcontrols" class="LSBoxRALinks">          
+                <input id="SearchableText" 
+                       type="text" 
+                       name="SearchableText" 
+                       size="25" 
+                       class="inputLabel"
+                       tal:attributes="value request/SearchableText|string:;
+                                       title view/getFillText;"/>
+                <br />
+
+                <div id="and_or_box">
+                    <p class="formHelp" 
+                       i18n:translate="help_and_or">
+                        und/oder
+                    </p>
+                </div>
+
+                
+                <div class="column1b">
+                                   
+                   
+                    <div class="common_radio_search_box">
+                    <input class="radio_search" 
+                           id="radio_category_special"
+                           type="radio" 
+                           value="0" 
+                           name="getCategoryIndependent" 
+                           tal:attributes="checked python:getCategoryIndependent==False"> 
+                    <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+                    </div>
+
+                    <div>
+                    <input class="radio_search" 
+                           id="radio_category_common"
+                           type="radio" 
+                           value="1" 
+                           name="getCategoryIndependent" 
+                           tal:attributes="checked python:getCategoryIndependent==True">
+
+                    <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
+                    </div>
+                        
+
+                    <div class="visualClear"><!-- --></div>
+
+                </div>
+                
+                <div class="column2b">
+                
+                    <span tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</span>...
+
+                    <ul class="search_index">
+                    
+                    <li id="search_control_remote_provider">
+                          <tal:define define="fieldName   string:remote_provider;
+                                            fieldRealName string:remoteProvider;
+                                            mockup      nocall:here/@@ATMockup;
+                                            value       provider;
+                                            nodesHaveCBs python:0;
+                                            use_portal_type portal_type|string:RiskAssessmentLink;
+                                            vocabulary  string:getProviderVocabulary;
+                                            quicksearch_vocabulary string:getProviderQuicksearch;
+                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldRealName);
+                                            widget      nocall: field/widget;
+                                            mode        string:search;
+                                            accessor    python:field.getDefault(here);
+                                            errors      python:{};
+                                            hide_id     python:True;
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
+                                            dummy       python:here.REQUEST.set('mode', 'search')
+                                            ">
+                                    <span tal:replace="python:widget.Label(here)" />
+                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                          </tal:define>
+                        
+                    </li>
+                    <li id="search_control_nace" class="search_deactivatable disabled"
+                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
+                        <metal:macro define-macro="NACE_compact">
+                          <tal:define define=" fieldName   string:nace;
+                                            mockup      nocall:here/@@ATMockup;
+                                            value       nace;
+                                            level       python:3;
+                                            use_portal_type portal_type|string:RiskAssessmentLink;
+                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
+                                            widget      nocall: field/widget;
+                                            mode        string:search;
+                                            accessor    python:field.getDefault(here);
+                                            errors      python:{};
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
+                                            ">
+                                    <span tal:replace="python:widget.Label(here)" />
+                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                          </tal:define>
+                        </metal:macro>
+                    </li>
+                    <li id="search_control_riskfactors" class="search_deactivatable disabled"
+                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
+                        <metal:macro define-macro="riskfactors">
+                            <tal:define define="fieldName  string:riskfactors;
+                                            mockup     nocall:here/@@ATMockup;
+                                            level       python:3;
+                                            value       riskfactors;
+                                            use_portal_type portal_type|string:RiskAssessmentLink;
+                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
+                                            widget      nocall: field/widget;
+                                            mode        string:search;
+                                            accessor    python:field.getDefault(here);
+                                            errors      python:{};
+                                            preflang    here/portal_languages/getPreferredLanguage;
+                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
+                                            ">
+                                        <span tal:replace="python:widget.Label(here)" />
+                                        <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                          </tal:define>
+                        </metal:macro>
+                    </li>
+                    </ul>
+                    </div>
+
+                    <div class="visualClear"><!-- --></div>
+
+                    <div class="submit_column">
+
+                            <input class="context cancelbutton" 
+                               type="submit" 
+                               name="submit" 
+                               value="Search" 
+                               i18n:attributes="value label_search;"/>
+
+                    </div>
+              </div>
+
+
+          </div>
+
+            
+        </div>
+        <p>&nbsp;</p>
+  </form>
+
+
+    <!--div tal:define="index_bottom nocall:here/index_bottom | nothing"
+         tal:condition="index_bottom"
+         tal:replace="structure index_bottom/getText |nothing">
+         
+    </div-->
+
+</div>
+</body>
+</html>
+
+
+

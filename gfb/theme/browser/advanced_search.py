@@ -160,6 +160,8 @@ class AdvancedSearchView(BrowserView):
         
 
 class HomepageSearchView(AdvancedSearchView):
-    template = ViewPageTemplateFile('templates/homepage_search.pt')        
-        
-        
+    template = ViewPageTemplateFile('templates/homepage_search.pt')
+
+
+class HomepageSearchNewView(AdvancedSearchView):
+    template = ViewPageTemplateFile('templates/homepage_search_new.pt')
