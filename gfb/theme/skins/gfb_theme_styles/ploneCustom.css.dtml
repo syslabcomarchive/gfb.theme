@@ -1771,6 +1771,7 @@ div#link_to_tool {
 ul.formTabs .link-internal-js,
 span.listingBar .link-internal-js,
 .actionbtn .link-internal-js,
+div#tabs .link-internal-js,
 #footer_batch_box .link-internal-js {
   display:none;
 }
@@ -2823,6 +2824,10 @@ h2#service {
    top: 200px;
    left: 200px;
    width: 100%;
+}
+
+.ui-tabs .ui-tabs-hide {
+     display: none;
 }
 
 
