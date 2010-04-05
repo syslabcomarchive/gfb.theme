@@ -13,6 +13,10 @@
        tal:content="string:@import url($portal_url/riskassessment_styles.css);">
 </style>
 
+<style type="text/css" media="all" tal:condition="exists: portal/jquery-ui.css"
+       tal:content="string:@import url($portal_url/jquery-ui.css);">
+</style>
+
 </metal:cssslot>
 
 <metal:javascriptslot fill-slot="javascript_head_slot">
@@ -38,6 +42,19 @@
 <script type="text/javascript" src="livesearch_ralinks.js"
     tal:attributes="src string:$portal_url/livesearch_ralinks.js">
 </script>
+
+<script type="text/javascript" src="jquery-ui-1.8.custom.min.js"
+    tal:attributes="src string:$portal_url/jquery-ui-1.8.custom.min.js">
+</script>
+
+<script type="text/javascript">
+    jq(function() {
+    jq('#tabs').tabs({
+            event: 'mouseover'
+        });
+    });
+</script>
+
 </metal:javascriptslot>
 
 <metal:block fill-slot="top_slot"
@@ -107,6 +124,27 @@
     </div>
     </tal:block-->
 
+
+
+<h1 class="documentFirstHeading" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
+
+
+    <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li class="ui-state-default ui-corner-top"><a href="#tabs-1" i18n:translate="label_top_thema">Top Thema</a></li>
+            <li class="ui-state-default ui-corner-top"><a href="#tabs-2" i18n:translate="label_gute_praxis">Gute Praxis</a></li>
+        </ul>
+        <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+            <div tal:replace="structure view/top_thema" />
+        </div>
+        <div id="tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+            <div tal:replace="structure view/gute_praxis" />
+        </div>
+
+    </div>
+
+<div class="visualClear">&nbsp;</div>
+<h1 class="documentFirstHeading" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
 
   <form name="searchform" id="searchform"
         action="advanced_search"
