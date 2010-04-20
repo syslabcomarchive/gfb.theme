@@ -124,32 +124,9 @@ document.images[Bildname].src = eval(Tauschbildname);
         
         <h1 class="documentFirstHeading" tal:content="index_foursteps/Title"></h1>
         
-        <div id="four_steps" tal:content="structure index_foursteps/getText |nothing" />
+        <div id="four_steps" tal:content="structure index_foursteps/getText|nothing" />
          
     </tal:block>
-
-    <!-- Der folgende Code befindet sich in index_foursteps
-    -->
-    <!--tal:block>
-    <div class="welcome_image">
-        <img usemap="#imgmap_welcome" src="GFBWelcome0S_neu.jpg" alt="gfbwelcomeos.jpg">
-        <map id="imgmap_welcome" name="imgmap_welcome">
-            <area title="Basiswissen alt Text" alt="Basiswissen alt Text" coords="219,60,170,9,9,7,7,111,171,111"  shape="poly"
-                href="/de/einstieg">
-            <area title="Datenbanksuche alt Text" alt="Datenbanksuche alt Text" coords="317,9,170,10,219,60,169,113,321,113,370,60" shape="poly"
-                href="/de/handlungshilfen/datenbank">
-            <area title="Expertenwissen alt Text" alt="Expertenwissen alt Text" coords="498,61,446,9,321,11,372,61,321,113,446,112" shape="poly"
-                href="/de/gefaehrdungsfaktoren" >
-
-            <area title="Service alt Text" alt="Service alt Text" coords="12,168,496,230" shape="rect"
-                href="/de/service">
-        </map>
-        <h2 id="basiswissen"><a href="/de/einstieg" title="Basiswissen alt Text">Basis<br/>wissen</a></h2>
-        <h2 id="datenbanksuche"><a href="/de/handlungshilfen/datenbank" title="Datenbanksuche alt Text">Datenbank<br/>suche</a></h2>
-        <h2 id="expertenwissen"><a href="/de/gefaehrdungsfaktoren" title="Expertenwissen alt Text">Experten<br/>wissen</a></h2>
-        <h2 id="service"><a href="/de/service" title="Service alt Text">Service</a></h2>
-    </div>
-    </tal:block-->
 
 
 
@@ -347,11 +324,6 @@ document.images[Bildname].src = eval(Tauschbildname);
   </form>
 
 
-    <!--div tal:define="index_bottom nocall:here/index_bottom | nothing"
-         tal:condition="index_bottom"
-         tal:replace="structure index_bottom/getText |nothing">
-         
-    </div-->
 
 </div>
 </body>
