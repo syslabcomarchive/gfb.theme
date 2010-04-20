@@ -13,16 +13,3 @@ function adjustTitle(elem) {
     }
     elem.setAttribute('title', titleVal);
 }
-
-
-
-var ArrowBlue = "GFBWelcome4section_black_background.jpg";    
-var ArrowPink1 = "GFBWelcome4section_pink1.jpg";
-var ArrowPink2 = "GFBWelcome4section_pink2.jpg";
-var ArrowPink3 = "GFBWelcome4section_pink3.jpg";
-var ArrowPink4 = "GFBWelcome4section_pink4.jpg";
-
-function ChangeImage(Bildname,Tauschbildname)
-{
-document.images[Bildname].src = eval(Tauschbildname);
-}

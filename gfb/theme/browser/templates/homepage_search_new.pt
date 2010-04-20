@@ -47,12 +47,28 @@
     tal:attributes="src string:$portal_url/jquery-ui-1.8.custom.min.js">
 </script>
 
+<script type="text/javascript" src="jquery.tooltip.js"
+    tal:attributes="src string:$portal_url/jquery.tooltip.js">
+</script>
+
 <script type="text/javascript">
     jq(function() {
     jq('#tabs').tabs({
             event: 'mouseover'
         });
     });
+
+var ArrowBlue = "GFBWelcome4section_black_background.jpg";    
+var ArrowPink1 = "GFBWelcome4section_pink1.jpg";
+var ArrowPink2 = "GFBWelcome4section_pink2.jpg";
+var ArrowPink3 = "GFBWelcome4section_pink3.jpg";
+var ArrowPink4 = "GFBWelcome4section_pink4.jpg";
+
+function ChangeImage(Bildname,Tauschbildname)
+{
+document.images[Bildname].src = eval(Tauschbildname);
+}
+
 </script>
 
 </metal:javascriptslot>
