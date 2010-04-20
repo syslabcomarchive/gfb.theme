@@ -37,7 +37,8 @@
 			extraClass: "",
 			top: 15,
 			left: 15,
-			id: "tooltip"
+			id: "tooltip",
+			attach_to: '#region-content'
 		},
 		block: function() {
 			$.tooltip.blocked = !$.tooltip.blocked;
@@ -97,9 +98,10 @@
 		if( helper.parent )
 			return;
 		// create the helper, h3 for title, div for url
+		var myElem = $(settings.attach_to);
 		helper.parent = $('<div id="' + settings.id + '"><h3></h3><div class="body"></div><div class="url"></div></div>')
 			// add to document
-			.appendTo(document.body)
+			.appendTo(myElem)
 			// hide it at first
 			.hide();
 			
