@@ -13,9 +13,9 @@
        tal:content="string:@import url($portal_url/riskassessment_styles.css);">
 </style>
 
-<style type="text/css" media="all" tal:condition="exists: portal/jquery-ui.css"
+<!-- <style type="text/css" media="all" tal:condition="exists: portal/jquery-ui.css"
        tal:content="string:@import url($portal_url/jquery-ui.css);">
-</style>
+</style> -->
 
 </metal:cssslot>
 
@@ -134,9 +134,11 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 
     <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-            <li class="ui-state-default ui-corner-top"><a href="#tabs-1" i18n:translate="label_top_thema">Top Thema</a></li>
-            <li class="ui-state-default ui-corner-top"><a href="#tabs-2" i18n:translate="label_gute_praxis">Gute Praxis</a></li>
+        <ul class="search-top ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li class="ui-state-default ui-corner-top"><a href="#tabs-1"
+     id="tabs-1-link" i18n:translate="label_top_thema">Top Thema</a></li>
+            <li class="ui-state-default ui-corner-top"><a href="#tabs-2"
+    id="tabs-2-link" i18n:translate="label_gute_praxis">Gute Praxis</a></li>
         </ul>
         <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
             <div tal:replace="structure view/top_thema" />

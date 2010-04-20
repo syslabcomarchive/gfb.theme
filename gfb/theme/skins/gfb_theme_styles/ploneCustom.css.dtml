@@ -1201,12 +1201,13 @@ a.pluss {
 form.searchform-controls div#searchtippstext {
    display:none;
 }
-form.searchform-controls a#searchdatabase {
+form.searchform-controls a#searchdatabase,
+div.ui-tabs li.ui-tabs-selected a{
   background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
 
-form.searchform-tipps div#searchcontrols {
+form.searchform-tipps div#searchcontrols{
   display:none;
 }
 form.searchform-tipps a#searchtipps {
@@ -1313,20 +1314,23 @@ body.section-db.template-db_filter h2,*/
   margin: 0;
 }
 
-#simplesearch ul {
+#simplesearch ul,
+div.ui-tabs ul {
   background: #4B516B;
   height: 25px;
   padding: 0;
   width: 100%;
 }
-div#simplesearch ul.search-top li {
+div#simplesearch ul.search-top li,
+div.ui-tabs li {
   float: left;
   margin: 0 0 0 0 ;
   list-style-image: none;
   list-style-type: none;
 }
 
-#simplesearch li a {
+#simplesearch li a,
+div.ui-tabs li a {
   color: white;
   font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
   background: transparent url(search_li_arrow.gif) no-repeat 11px 7px;
