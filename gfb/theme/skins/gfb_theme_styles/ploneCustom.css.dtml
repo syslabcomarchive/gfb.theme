@@ -2789,42 +2789,43 @@ z-index:10;
 /* Welcome image on home page */
 
 div.welcome_image {
-   position: relative;
-   width: 100%; /* for IE 6 */
+    position: relative;
+    width: 100%;
 }
 div.welcome_image .link-internal-js {
   display:none;
 }
-div.welcome_image h2 {
-    font-size: 22px !important;
-    margin: 0;
-    line-height: 150%;
-    color: black;
+div.welcome_image h2 a{
+  color: white!important
 }
-h2#basiswissen {
+div.welcome_image h2{
+  top: 35px!important;
+  font-size: 1.2em !important;
+  margin: 0;
+  line-height: 150%;
+}
+div.welcome_image h2#basiswissen {
    position: absolute;
-   top: 25px;
-   left: 60px;
+   left: 55px;
    width: 100%;
 }
-h2#datenbanksuche {
+div.welcome_image h2#datenbanksuche {
    position: absolute;
-   top: 25px;
-   left: 225px;
+   left: 175px;
    width: 100%;
 }
-h2#expertenwissen {
+div.welcome_image h2#expertenwissen {
    position: absolute;
-   top: 25px;
-   left: 370px;
+   left: 295px;
    width: 100%;
 }
-h2#service {
+div.welcome_image h2#service {
    position: absolute;
-   top: 200px;
-   left: 200px;
+   top: 45px!important;
+   left: 410px;
    width: 100%;
 }
+
 
 .ui-tabs .ui-tabs-hide {
      display: none;
