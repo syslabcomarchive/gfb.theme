@@ -56,7 +56,18 @@
     jq('#tabs').tabs({
             event: 'mouseover'
         });
+    jq('#four_steps a').tooltip(
+		{
+		track: true,
+		delay: 0,
+		showURL: false,
+		showBody: " - ",
+		fade: 250,
+		attach_to: '#four_steps'
+		}
+	);
     });
+
 
 var ArrowBlue = "GFBWelcome4section_black_background.jpg";    
 var ArrowPink1 = "GFBWelcome4section_pink1.jpg";
@@ -113,7 +124,7 @@ document.images[Bildname].src = eval(Tauschbildname);
         
         <h1 class="documentFirstHeading" tal:content="index_foursteps/Title"></h1>
         
-        <div tal:replace="structure index_foursteps/getText |nothing" />
+        <div id="four_steps" tal:content="structure index_foursteps/getText |nothing" />
          
     </tal:block>
 
@@ -235,7 +246,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     </div>
                         
 
-                    <div class="visualClear"><!-- --></div>
+                    <div class="visualClear"></div>
 
                 </div>
                 
@@ -314,7 +325,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     </ul>
                     </div>
 
-                    <div class="visualClear"><!-- --></div>
+                    <div class="visualClear"></div>
 
                     <div class="submit_column">
 
