@@ -1,0 +1,45 @@
+<p><style type="text/css">
+div.welcome_image h2 a{
+  color: white!important
+}
+div.welcome_image h2{
+  top: 35px!important;
+  font-size: 1.2em !important;
+  margin: 0;
+  line-height: 150%;
+}
+div.welcome_image h2#basiswissen {
+   position: absolute;
+   left: 55px;
+   width: 100%;
+}
+div.welcome_image h2#datenbanksuche {
+   position: absolute;
+   left: 175px;
+   width: 100%;
+}
+div.welcome_image h2#expertenwissen {
+   position: absolute;
+   left: 295px;
+   width: 100%;
+}
+div.welcome_image h2#service {
+   position: absolute;
+   top: 45px!important;
+   left: 410px;
+   width: 100%;
+}
+</style></p>
+<div class="welcome_image"><img alt="gfbwelcomeos.jpg" src="/osha/gfb/de/gfbwelcome4section_black_background.jpg" usemap="#imgmap_welcome" />         <!--map id="imgmap_welcome" name="imgmap_welcome">
+<area title="Basiswissen alt Text" alt="Basiswissen alt Text" coords="219,60,170,9,9,7,7,111,171,111" shape="poly" href="/de/einstieg" />
+<area title="Datenbanksuche alt Text" alt="Datenbanksuche alt Text" coords="317,9,170,10,219,60,169,113,321,113,370,60" shape="poly" href="/de/handlungshilfen/datenbank" />
+<area title="Expertenwissen alt Text" alt="Expertenwissen alt Text" coords="498,61,446,9,321,11,372,61,321,113,446,112" shape="poly" href="/de/gefaehrdungsfaktoren" />
+<area title="Service alt Text" alt="Service alt Text" coords="12,168,496,230" shape="rect" href="/de/service" />         </map-->
+<h2 id="basiswissen"><a title="Basiswissen alt Text" href="/de/einstieg">Basis-<br />
+wissen</a></h2>
+<h2 id="datenbanksuche"><a title="Datenbanksuche alt Text" href="/de/handlungshilfen/datenbank">Handlungs-<br />
+hilfen</a></h2>
+<h2 id="expertenwissen"><a title="Expertenwissen alt Text" href="/de/gefaehrdungsfaktoren">Experten-<br />
+wissen</a></h2>
+<h2 id="service"><a title="Service alt Text" href="/de/service">Service</a></h2>
+</div>
