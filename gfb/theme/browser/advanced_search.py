@@ -169,31 +169,31 @@ class HomepageSearchNewView(AdvancedSearchView):
     @property
     def top_thema(self):
         #import pdb; pdb.set_trace()
-        text = 'Es wurde kein aktuelles "Top Thema" gefunden.'
+        #text = 'Es wurde kein aktuelles "Top Thema" gefunden.'
         folder = getattr(self.context, "top-thema", None)
         if folder:
             path = '/'.join(folder.getPhysicalPath())
             catalog = getToolByName(self.context, 'portal_catalog')
-            res = catalog(path=path, portal_type="Document", review_state='published',
+            res = catalog(path=path, portal_type=("News Item", "Document"), review_state='published',
                 sort_on="effective", sort_order="reverse")
             if len(res):
                 obj = res[0].getObject()
                 if obj:
-                    text = obj.getText()
-        return text
+                    return obj
+        return None
             
 
     @property
     def gute_praxis(self):
-        text = 'Es wurde kein aktuelles "Besipiel guter Praxis" gefunden.'
+        #text = 'Es wurde kein aktuelles "Besipiel guter Praxis" gefunden.'
         folder = getattr(self.context, "gute-praxis", None)
         if folder:
             path = '/'.join(folder.getPhysicalPath())
             catalog = getToolByName(self.context, 'portal_catalog')
-            res = catalog(path=path, portal_type="Document", review_state='published',
+            res = catalog(path=path, portal_type=("News Item", "Document"), review_state='published',
                 sort_on="effective", sort_order="reverse")
             if len(res):
                 obj = res[0].getObject()
                 if obj:
-                    text = obj.getText()
-        return text
+                    return obj
+        return None

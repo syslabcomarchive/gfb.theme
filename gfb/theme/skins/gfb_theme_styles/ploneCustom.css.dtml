@@ -1214,12 +1214,20 @@ form.searchform-tipps a#searchtipps {
   background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
-div#searchfields,
-div.ui-tabs-panel {
+div#searchfields {
   background-color: #E5E6E8;
   border: 0 none !important;
   padding:  13px 0 0 0;
   /*height: 14em;*/   
+}
+div.ui-tabs-panel {
+  background-color: #E5E6E8;
+  border: 0 none !important;
+  padding:  13px;
+}
+div.ui-tabs-panel h3 {
+    padding: 0;
+    margin: 5px 0;
 }
 div.search_medium {
   background-color: #E5E6E8;
@@ -1777,7 +1785,7 @@ div#link_to_tool {
 ul.formTabs .link-internal-js,
 span.listingBar .link-internal-js,
 .actionbtn .link-internal-js,
-div#tabs .link-internal-js,
+div#tabs ul.search-top .link-internal-js,
 #footer_batch_box .link-internal-js {
   display:none;
 }

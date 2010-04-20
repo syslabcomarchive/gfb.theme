@@ -57,15 +57,15 @@
             event: 'mouseover'
         });
     jq('#four_steps a').tooltip(
-		{
-		track: true,
-		delay: 0,
-		showURL: false,
-		showBody: " - ",
-		fade: 250,
-		attach_to: '#four_steps'
-		}
-	);
+        {
+        track: true,
+        delay: 0,
+        showURL: false,
+        showBody: " - ",
+        fade: 250,
+        attach_to: '#four_steps'
+        }
+    );
     });
 
 
@@ -141,10 +141,30 @@ document.images[Bildname].src = eval(Tauschbildname);
     id="tabs-2-link" i18n:translate="label_gute_praxis">Gute Praxis</a></li>
         </ul>
         <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-            <div tal:replace="structure view/top_thema" />
+          <span tal:define="obj nocall:view/top_thema">
+            <span tal:condition="obj">
+                <span tal:content="python:toLocalizedTime(obj.effective())" />
+                <h3 tal:content="obj/Title" />
+                 <div tal:replace="structure obj/Description" />
+                 <div><a href="." tal:attributes="href obj/absolute_url">Mehr</a></div>
+            </span>
+            <span tal:condition="not:obj">
+                <div i18n:translate="info_no_topthema">Es wurde kein aktuelles Top Thema gefunden</div>
+            </span>
+          </span>
         </div>
         <div id="tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-            <div tal:replace="structure view/gute_praxis" />
+        <span tal:define="obj nocall:view/gute_praxis">
+            <span tal:condition="obj">
+                <span tal:content="python:toLocalizedTime(obj.effective())" />
+                <h3 tal:content="obj/Title" />
+                 <div tal:replace="structure obj/Description" />
+                 <div><a href="." tal:attributes="href obj/absolute_url">Mehr</a></div>
+            </span>
+            <span tal:condition="not:obj">
+                <div i18n:translate="info_no_goodpractice">Es wurde kein aktuelles "Besipiel guter Praxis" gefunden.</div>
+            </span>
+        </span>
         </div>
 
     </div>
