@@ -1203,7 +1203,7 @@ form.searchform-controls div#searchtippstext {
 }
 form.searchform-controls a#searchdatabase,
 div.ui-tabs li.ui-tabs-selected a{
-  background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
+  background: #AAB1BB url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
 
@@ -1211,17 +1211,19 @@ form.searchform-tipps div#searchcontrols{
   display:none;
 }
 form.searchform-tipps a#searchtipps {
-  background:#E5E6E8 url(search_li_selected.gif) no-repeat scroll 11px 7px;
+  background:#AAB1BB url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
 div#searchfields {
-  background-color: #E5E6E8;
+  // background-color: #E5E6E8;
+  background: url("col2-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px 0 0 0;
   /*height: 14em;*/   
 }
 div.ui-tabs-panel {
-  background-color: #E5E6E8;
+  // background-color: #E5E6E8;
+  background: url("col2-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px;
 }
@@ -2746,6 +2748,12 @@ padding:3px 16px 4px;
 vertical-align:middle;
 }
 
+.documentFirstHeading.frontpage {
+  // background-color: #F2F2F2;
+  background-color: #FFFFFF;
+  color: #363636;
+}
+
 h2 {
 border-bottom:0 solid #3D4E60;
 color:#3D4E60;
@@ -2805,6 +2813,7 @@ z-index:10;
 div.welcome_image {
     position: relative;
     width: 100%;
+    margin-bottom: 12px;
 }
 div.welcome_image .link-internal-js {
   display:none;
@@ -2813,11 +2822,16 @@ div.welcome_image h2 a{
   color: white!important
 }
 div.welcome_image h2{
-  top: 35px!important;
+  top: 43px!important;
   font-size: 1.2em !important;
   margin: 0;
-  line-height: 150%;
+  line-height: 120%;
 }
+
+*+html div.welcome_image h2{
+  top: 47px!important;
+}
+
 div.welcome_image h2#basiswissen {
    position: absolute;
    left: 55px;
@@ -2835,11 +2849,14 @@ div.welcome_image h2#expertenwissen {
 }
 div.welcome_image h2#service {
    position: absolute;
-   top: 45px!important;
+   top: 51px!important;
    left: 410px;
    width: 100%;
 }
 
+*+html div.welcome_image h2#service {
+  top: 55px!important;
+}
 
 .ui-tabs .ui-tabs-hide {
      display: none;
