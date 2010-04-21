@@ -1341,7 +1341,7 @@ div#content div.ui-tabs ul {
   margin-bottom: 0;
 }
 div#simplesearch ul.search-top li,
-div.ui-tabs li {
+div#region-content div.ui-tabs li {
   float: left;
   margin: 0 0 0 0 ;
   list-style-image: none;
