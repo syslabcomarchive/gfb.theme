@@ -99,7 +99,7 @@
             return;
         // create the helper, h3 for title, div for url
         var myElem = $(settings.attach_to);
-        helper.parent = $('<div id="' + settings.id + '"><h3></h3><div class="body"></div><div class="url"></div></div>')
+        helper.parent = $('<div id="' + settings.id + '"><div class="title"></div><div class="body"></div><div class="url"></div></div>')
             // add to document
             .appendTo(myElem)
             // hide it at first
@@ -110,7 +110,7 @@
             helper.parent.bgiframe();
 
         // save references to title and url elements
-        helper.title = $('h3', helper.parent);
+        helper.title = $('div.title', helper.parent);
         helper.body = $('div.body', helper.parent);
         helper.url = $('div.url', helper.parent);
     }
