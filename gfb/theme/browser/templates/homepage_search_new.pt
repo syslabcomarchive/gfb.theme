@@ -69,11 +69,11 @@
     });
 
 
-var ArrowBlue = "GFBWelcome4section_black_background.jpg";    
-var ArrowPink1 = "GFBWelcome4section_pink1.jpg";
-var ArrowPink2 = "GFBWelcome4section_pink2.jpg";
-var ArrowPink3 = "GFBWelcome4section_pink3.jpg";
-var ArrowPink4 = "GFBWelcome4section_pink4.jpg";
+var ArrowBlue = "foursteps_background.jpg";    
+var ArrowPink1 = "foursteps_pink1.jpg";
+var ArrowPink2 = "foursteps_pink2.jpg";
+var ArrowPink3 = "foursteps_pink3.jpg";
+var ArrowPink4 = "foursteps_pink4.jpg";
 
 function ChangeImage(Bildname,Tauschbildname)
 {
