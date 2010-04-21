@@ -204,7 +204,7 @@ div#portal-personaltools-wrapper {
     color: #666;;
 }
 #portal-breadcrumbs {
-    border-left: 200px solid #4a5b6d;
+    border-left: 200px solid #4A5B6D;
     padding:10px 10px 22px 22px;
     font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     color: #666;
@@ -225,6 +225,9 @@ div#portal-personaltools-wrapper {
   cursor:pointer;
 }
 
+div#searchfields .formHelp{
+  color: #5A5A5A;
+}
 
 .LSBox input.searchButton {
     background: transparent url(ico_search.gif) no-repeat 4px 4px;
@@ -1203,7 +1206,7 @@ form.searchform-controls div#searchtippstext {
 }
 form.searchform-controls a#searchdatabase,
 div.ui-tabs li.ui-tabs-selected a{
-  background: #AAB1BB url(search_li_selected.gif) no-repeat scroll 11px 7px;
+  background: #BAC1C9 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
 
@@ -1211,19 +1214,19 @@ form.searchform-tipps div#searchcontrols{
   display:none;
 }
 form.searchform-tipps a#searchtipps {
-  background:#AAB1BB url(search_li_selected.gif) no-repeat scroll 11px 7px;
+  background:#BAC1C9 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
 div#searchfields {
   // background-color: #E5E6E8;
-  background: url("col2-bg.jpg") repeat-x scroll 0 0 white;
+  background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px 0 0 0;
   /*height: 14em;*/   
 }
 div.ui-tabs-panel {
   // background-color: #E5E6E8;
-  background: url("col2-bg.jpg") repeat-x scroll 0 0 white;
+  background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px;
 }
@@ -1302,7 +1305,7 @@ div.search_medium {
   margin-bottom: 10px;
   padding: 2px 6px;
   margin-left:11px;
-  color:#76797C;
+  color:#5A5A5A;
 }
 
 #content label.formQuestion {
@@ -1393,8 +1396,8 @@ div.column2b {
   margin-bottom: 0 !important;
   text-align:right !important;
   height: 1.3em;
-  background-color: #a1a8b2;
-  border: 1px solid #70767d;
+  background-color: #D6D9DE;
+  border: 1px solid #BAC1C9;
 }
 
 #searchfields input.context {
