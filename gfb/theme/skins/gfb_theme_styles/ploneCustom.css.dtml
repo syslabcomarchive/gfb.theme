@@ -18,9 +18,11 @@ h1, h2, h3, h4, h5, h6 {
     margin:0;
     width:200px;
     height:32px;
-    background-color: #2b3c52;
+    // background-color: #2b3c52;
+    background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    color: #cccedf;
+    // color: #cccedf;
+    color: whitesmoke;
     display: block;
     line-height:32px;
 }
@@ -502,12 +504,14 @@ li.minusNOK {
 
 
 .portletHeader {
-  border: 1px solid #415063;
+  // border: 1px solid #// 415063;
+  border: 0;
   font-size:100%;
   color:whitesmoke;
   padding: 0 12px;
   color: whitesmoke;
-  background: #415063 ;
+  // background: #415063 ;
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%; 
   vertical-align: middle;
   line-height:27px;
 }
@@ -1330,7 +1334,7 @@ body.section-db.template-db_filter h2,*/
 
 #simplesearch ul,
 div#content div.ui-tabs ul {
-  background: #4B516B;
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
   height: 25px;
   padding: 0;
   width: 100%;
@@ -1595,7 +1599,8 @@ a.show-all-results:hover {
 }
 
 #heading_search_results_box, #footer_batch_box {
-  background-color:#415063;
+  // background-color:#415063;
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
   color:whitesmoke;
   font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
   font-size:15px;
@@ -2734,7 +2739,8 @@ padding:8px;
 /********************css für neue Überschriftenformatierung***************/
 
 .documentFirstHeading {
-background-color:#415063;
+// background-color:#415063;
+background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
 color:whitesmoke;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
 font-size:19px !important;
@@ -2753,7 +2759,7 @@ vertical-align:middle;
 
 .documentFirstHeading.frontpage {
   // background-color: #F2F2F2;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   color: #363636;
 }
 
