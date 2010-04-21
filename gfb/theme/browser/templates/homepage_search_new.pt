@@ -122,7 +122,7 @@ document.images[Bildname].src = eval(Tauschbildname);
     <tal:block define="index_foursteps nocall:here/index_foursteps | nothing"
          tal:condition="index_foursteps">
         
-        <h1 class="documentFirstHeading" tal:content="index_foursteps/Title"></h1>
+        <h1 class="documentFirstHeading frontpage" tal:content="index_foursteps/Title"></h1>
         
         <div id="four_steps" tal:content="structure index_foursteps/getText|nothing" />
          
@@ -130,7 +130,7 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 
 
-<h1 class="documentFirstHeading" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
+<h1 class="documentFirstHeading frontpage" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
 
 
     <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
@@ -170,7 +170,7 @@ document.images[Bildname].src = eval(Tauschbildname);
     </div>
 
 <div class="visualClear">&nbsp;</div>
-<h1 class="documentFirstHeading" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
+<h1 class="documentFirstHeading frontpage" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
 
   <form name="searchform" id="searchform"
         action="advanced_search"
