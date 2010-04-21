@@ -2502,24 +2502,24 @@ div#region-content #slc-linkcollection-linkbox ul li,
 
 
 /* Glossar tabelle*/
-#alphabetTable {
+#content #alphabetTable {
   background-color: #4b516b;
 }
 
-#alphabetTable td.sonderfall1 {
+#content #alphabetTable td.sonderfall1 {
   border:none;
   border-bottom: 0.5px solid white;
 }
-#alphabetTable td.sonderfall2 {
+#content #alphabetTable td.sonderfall2 {
   border:none;
   border-bottom: 0.5px solid white;
 }
-#alphabetTable td.sonderfall3 {
+#content #alphabetTable td.sonderfall3 {
   border:none;
   border-bottom: 0.5px solid white;
   border-right: 0.5px solid white;
 }
-#alphabetTable td.sonderfall4 {
+#content #alphabetTable td.sonderfall4 {
   background-color:#A8126A; 
 }
 
@@ -2532,7 +2532,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 
-#alphabetischeTabelle {
+#content #alphabetischeTabelle {
 /*  background-color:#4b516b*/
   background-color: white;
   color: #ffffff;
@@ -2540,7 +2540,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
   float: right;
 }
 
-#alphabetTable {
+#content #alphabetTable {
   background-color:#4B516B;
   //right:1.4em;
   margin:0;
@@ -2548,18 +2548,19 @@ div#region-content #slc-linkcollection-linkbox ul li,
   position:relative;
 }
 
-#alphabetTable td{
+#content #alphabetTable td{
   color: #ffffff;
   padding: 3px 3px 3px 8px;
   font-weight: normal;
   border: 0.5px solid white;
+  background: transparent;
   cursor: pointer;
 }
-#alphabetTable td:hover {
+#content #alphabetTable td:hover {
   background-color: #A8126A;
   color: white;
 }
-#alphabetTable td:hover a {
+#content #alphabetTable td:hover a {
   color :white;
 }
 #listeGlossary dt {
@@ -2576,7 +2577,6 @@ div#region-content #slc-linkcollection-linkbox ul li,
 #alphabetTable a:hover {
   color: white;
 }
-
 
 
 #listeGlossary dd {
@@ -2622,10 +2622,10 @@ div#region-content #slc-linkcollection-linkbox ul li,
 .glossary-active {
   background-color: red;
 }
-.glossary_idx_highlight {
+#content #alphabetTable td.glossary_idx_highlight {
   background-color: #A8126A;
 }
-#alphabetTable td.glossary_idx_highlight a {
+#content #alphabetTable td.glossary_idx_highlight a {
   color: white;
 }
 
