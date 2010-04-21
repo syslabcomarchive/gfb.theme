@@ -138,7 +138,7 @@ document.images[Bildname].src = eval(Tauschbildname);
             <li class="ui-state-default ui-corner-top"><a href="#tabs-1"
      id="tabs-1-link" i18n:translate="label_top_thema">Top Thema</a></li>
             <li class="ui-state-default ui-corner-top"><a href="#tabs-2"
-    id="tabs-2-link" i18n:translate="label_gute_praxis">Gute Praxis</a></li>
+    id="tabs-2-link" i18n:translate="label_gute_praxis">Aktuelles Beispiel guter Praxis</a></li>
         </ul>
         <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
           <span tal:define="obj nocall:view/top_thema">
