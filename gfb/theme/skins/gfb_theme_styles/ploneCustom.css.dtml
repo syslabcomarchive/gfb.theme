@@ -2844,23 +2844,19 @@ div.welcome_image h2{
 div.welcome_image h2#basiswissen {
    position: absolute;
    left: 55px;
-   width: 100%;
 }
 div.welcome_image h2#datenbanksuche {
    position: absolute;
    left: 175px;
-   width: 100%;
 }
 div.welcome_image h2#expertenwissen {
    position: absolute;
    left: 295px;
-   width: 100%;
 }
 div.welcome_image h2#service {
    position: absolute;
    top: 51px!important;
    left: 410px;
-   width: 100%;
 }
 
 *+html div.welcome_image h2#service {
