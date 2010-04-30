@@ -1,4 +1,4 @@
-from Acquisition import aq_inner, aq_base
+from Acquisition import aq_inner, aq_base, aq_parent
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
 from zope.component import getMultiAdapter
@@ -20,6 +20,18 @@ from cgi import escape
 #Overwrite Languageselector to customize appearance
 class GFBLanguageSelector(TranslatableLanguageSelector):
     render = ViewPageTemplateFile('templates/languageselector.pt')
+
+    def isSpecialFish(self):
+        """ Method that returns true if the language selector should be displayed
+        even if the object is not translated.
+        This is the case for the Members folder"""
+        try:
+            parent = aq_parent(aq_inner(self.context))
+            if parent.id == 'Members':
+                return True
+        except:
+            pass
+        return False
 
 
 # Overwrite PersonalBarViewlet

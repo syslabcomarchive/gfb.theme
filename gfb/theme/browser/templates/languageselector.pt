@@ -1,14 +1,15 @@
 <tal:language
     tal:define="available view/available;
                 languages view/languages;
-                showFlags view/showFlags;">
+                showFlags view/showFlags;
+                specialFish view/isSpecialFish;">
     <ul id="portal-languageselector"
         tal:condition="python:available and len(languages)>=2">
         <tal:language repeat="lang languages">
         <li tal:define="code lang/code;
                         selected lang/selected;
 						translated lang/translated"
-            tal:condition="python: not selected and translated"
+            tal:condition="python: not selected and (translated or specialFish)"
             tal:attributes="class python: selected and 'currentLanguage' or '';">
                 <a href=""
                    tal:define="flag lang/flag|nothing;
