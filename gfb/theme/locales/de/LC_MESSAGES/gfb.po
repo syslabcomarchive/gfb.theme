@@ -271,3 +271,21 @@ msgstr "Ins Englische übersetzen"
 
 msgid "View en version"
 msgstr "Englishe Version anzeigen"
+
+msgid "label_top_thema"
+msgstr "Top Thema"
+
+msgid "label_aktuelle_infos"
+msgstr "Aktuelle Infos"
+
+msgid "label_gute_praxis"
+msgstr "Aktuelles Beispiel guter Praxis"
+
+msgid "info_no_topthema"
+msgstr "Es wurde kein Top Thema gefunden."
+
+msgid "info_no_goodpractice"
+msgstr "Es wurde kein aktuelles Besipiel guter Praxis gefunden."
+
+msgid "label_datenbanksuche"
+msgstr "Datenbank mit Handlungshilfen zur Gefährdungsbeurteilung"
