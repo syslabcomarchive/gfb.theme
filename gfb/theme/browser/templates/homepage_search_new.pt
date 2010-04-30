@@ -146,7 +146,8 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <span tal:content="python:toLocalizedTime(obj.effective())" />
                 <h3 tal:content="obj/Title" />
                  <div tal:replace="structure obj/Description" />
-                 <div><a href="." tal:attributes="href obj/absolute_url">Mehr</a></div>
+                 <div><a href="." tal:attributes="href obj/absolute_url"
+                     i18n:translate="box_morelink" i18n:domain="plone">More...</a></div>
             </span>
             <span tal:condition="not:obj">
                 <div i18n:translate="info_no_topthema">Es wurde kein aktuelles Top Thema gefunden</div>
@@ -159,7 +160,8 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <span tal:content="python:toLocalizedTime(obj.effective())" />
                 <h3 tal:content="obj/Title" />
                  <div tal:replace="structure obj/Description" />
-                 <div><a href="." tal:attributes="href obj/absolute_url">Mehr</a></div>
+                 <div><a href="." tal:attributes="href obj/absolute_url"
+                     i18n:translate="box_morelink" i18n:domain="plone">More...</a></div>
             </span>
             <span tal:condition="not:obj">
                 <div i18n:translate="info_no_goodpractice">Es wurde kein aktuelles "Besipiel guter Praxis" gefunden.</div>
