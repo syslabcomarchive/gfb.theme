@@ -4,9 +4,9 @@ gfb.theme Changelog
 1.3.0 (2010-04-30)
 ------------------
 
-- Major update to adress the following issues:
-- #334 Nutzeroberfläche optimieren (thomasw)
-- #251 Überarbeitung der Startseite (pecek, thomasw)
+- Major update to address the following issues:
+- #334 Nutzeroberflaeche optimieren (thomasw)
+- #251 Ueberarbeitung der Startseite (pecek, thomasw)
 - #249 Datenbank Suche (thomasw)
 - Further: bugfix for broken glossary as a result of #255 Optimierung der Tabellendarstellung (thomasw)
 
