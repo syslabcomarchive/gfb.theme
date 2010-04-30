@@ -371,7 +371,7 @@ top: 0;
 	visibility: visible;
 	text-align: left;
 	color: &dtml-globalFontColor;;
-	border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
+    border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
 	width: 30em;
 	text-transform: none;
 }
@@ -379,6 +379,15 @@ top: 0;
 .LSResultRALinks .livesearchContainer
 {
     width: 50em;
+}
+*+ html .livesearchContainer {
+    border: 0;
+}
+*+ html .livesearchContainer #livesearchLegend{
+    background-color: #F2F2F2;
+}
+*+ html .livesearchContainer .LSIEFix{
+    background-color: #F2F2F2;
 }
 
 * html .livesearchContainer {
