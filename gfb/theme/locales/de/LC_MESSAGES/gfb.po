@@ -289,3 +289,6 @@ msgstr "Es wurde kein aktuelles Besipiel guter Praxis gefunden."
 
 msgid "label_datenbanksuche"
 msgstr "Datenbank mit Handlungshilfen zur Gefährdungsbeurteilung"
+
+msgid "glossary"
+msgstr "Glossar"

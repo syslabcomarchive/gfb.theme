@@ -223,3 +223,6 @@ msgstr "No current example of good practice was found."
 
 msgid "label_datenbanksuche"
 msgstr "Database with practical aids for the risk assessment"
+
+msgid "glossary"
+msgstr "Glossary"
