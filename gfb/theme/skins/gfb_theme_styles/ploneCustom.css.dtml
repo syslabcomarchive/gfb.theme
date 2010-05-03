@@ -1218,7 +1218,8 @@ form.searchform-controls div#searchtippstext {
    display:none;
 }
 form.searchform-controls a#searchdatabase,
-div.ui-tabs li.ui-tabs-selected a{
+div.tab-1-selected li a#tabs-1-link,
+div.tab-2-selected li a#tabs-2-link{
   background: #BAC1C9 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
@@ -1342,7 +1343,7 @@ body.section-db.template-db_filter h2,*/
 }
 
 #simplesearch ul,
-div#content div.ui-tabs ul {
+div#content div#tabs ul {
   background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
   height: 25px;
   padding: 0;
@@ -1350,7 +1351,7 @@ div#content div.ui-tabs ul {
   margin-bottom: 0;
 }
 div#simplesearch ul.search-top li,
-div#region-content div.ui-tabs li {
+div#region-content div#tabs li {
   float: left;
   margin: 0 0 0 0 ;
   list-style-image: none;
@@ -1358,7 +1359,7 @@ div#region-content div.ui-tabs li {
 }
 
 #simplesearch li a,
-div.ui-tabs li a {
+div#tabs li a {
   color: white;
   font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
   background: transparent url(search_li_arrow.gif) no-repeat 11px 7px;
@@ -1369,6 +1370,7 @@ div.ui-tabs li a {
   padding-right: 8px;
 
 }
+
 
 input.radio_search {
   width: 14px !important;
@@ -2872,7 +2874,9 @@ div.welcome_image h2#service {
   top: 55px!important;
 }
 
-.ui-tabs .ui-tabs-hide {
+.ui-tabs .ui-tabs-hide,
+div.tab-1-selected div#tabs-2,
+div.tab-2-selected div#tabs-1 {
      display: none;
 }
 

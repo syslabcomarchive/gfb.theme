@@ -33,9 +33,7 @@ a#searchtipps:click {
     action-client: removeClass;
     removeClass-kssSelector: css("#searchform");
     removeClass-value: 'searchform-controls';
-
-
-} 
+}
 
 a#searchdatabase:click {
     evt-click-preventdefault: True;
@@ -47,7 +45,30 @@ a#searchdatabase:click {
     action-client: removeClass;
     removeClass-kssSelector: css("#searchform");
     removeClass-value: 'searchform-tipps';
+}
 
+a#tabs-1-link:click {
+    evt-click-preventdefault: True;
 
+    action-client: addClass;
+    addClass-kssSelector: css("#tabs");
+    addClass-value: 'tab-1-selected';
+
+    action-client: removeClass;
+    removeClass-kssSelector: css("#tabs");
+    removeClass-value: 'tab-2-selected';
+}
+
+a#tabs-2-link:click {
+    evt-click-preventdefault: True;
+
+    action-client: addClass;
+    addClass-kssSelector: css("#tabs");
+    addClass-value: 'tab-2-selected';
+
+    action-client: removeClass;
+    removeClass-kssSelector: css("#tabs");
+    removeClass-value: 'tab-1-selected';
 
 }
+

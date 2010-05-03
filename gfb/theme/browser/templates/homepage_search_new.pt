@@ -53,9 +53,6 @@
 
 <script type="text/javascript">
     jq(function() {
-    jq('#tabs').tabs({
-            event: 'mouseover'
-        });
     jq('#four_steps a').tooltip(
         {
         track: true,
@@ -133,14 +130,14 @@ document.images[Bildname].src = eval(Tauschbildname);
 <h1 class="documentFirstHeading frontpage" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
 
 
-    <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-        <ul class="search-top ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-            <li class="ui-state-default ui-corner-top"><a href="#tabs-1"
+    <div id="tabs" class="tab-1-selected">
+        <ul class="search-top">
+            <li><a href="#tabs-1" class="selected"
      id="tabs-1-link" i18n:translate="label_top_thema">Top Thema</a></li>
-            <li class="ui-state-default ui-corner-top"><a href="#tabs-2"
+            <li><a href="#tabs-2"
     id="tabs-2-link" i18n:translate="label_gute_praxis">Aktuelles Beispiel guter Praxis</a></li>
         </ul>
-        <div id="tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+        <div id="tabs-1" class="ui-tabs-panel">
           <span tal:define="obj nocall:view/top_thema">
             <span tal:condition="obj">
                 <span tal:content="python:toLocalizedTime(obj.effective())" />
@@ -154,7 +151,7 @@ document.images[Bildname].src = eval(Tauschbildname);
             </span>
           </span>
         </div>
-        <div id="tabs-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+        <div id="tabs-2" class="ui-tabs-panel">
         <span tal:define="obj nocall:view/gute_praxis">
             <span tal:condition="obj">
                 <span tal:content="python:toLocalizedTime(obj.effective())" />
