@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     width:200px;
     height:32px;
     // background-color: #2b3c52;
-    background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
+    background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     // color: #cccedf;
     color: whitesmoke;
@@ -520,7 +520,7 @@ li.minusNOK {
   padding: 0 12px;
   color: whitesmoke;
   // background: #415063 ;
-  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%; 
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0; 
   vertical-align: middle;
   line-height:27px;
 }
@@ -1344,7 +1344,7 @@ body.section-db.template-db_filter h2,*/
 
 #simplesearch ul,
 div#content div#tabs ul {
-  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   height: 25px;
   padding: 0;
   width: 100%;
@@ -1611,7 +1611,7 @@ a.show-all-results:hover {
 
 #heading_search_results_box, #footer_batch_box {
   // background-color:#415063;
-  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   color:whitesmoke;
   font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
   font-size:15px;
@@ -1959,6 +1959,7 @@ line-height:5px;
 }
 
 /* War nicht gefordert :)*/
+/*
 #you-have-chosen {
   font-weight:bold;
 }
@@ -1966,6 +1967,7 @@ line-height:5px;
 *+html #you-have-chosen {
   font-weight:bold;
 } 
+*/
 
 /* Navi in IE7 nicht bold */
 *+html #portal-globalnav {
@@ -2751,7 +2753,7 @@ padding:8px;
 
 .documentFirstHeading {
 // background-color:#415063;
-background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 20%;
+background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
 color:whitesmoke;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
 font-size:19px !important;
