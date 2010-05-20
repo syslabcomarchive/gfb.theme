@@ -1756,7 +1756,8 @@ div#link_to_tool {
 }
 .link-mailto-js {
   background: transparent url(&dtml-portal_url;/mail_icon.gif) 0px 1px no-repeat;
-  padding: 1px 0px 1px 20px;
+  /*padding: 1px 0px 1px 20px;*/
+  padding:0 0 0 15px;
 }
 .link-news-js {
   background: transparent url(&dtml-portal_url;/topic_icon.gif) 0px 1px no-repeat;
