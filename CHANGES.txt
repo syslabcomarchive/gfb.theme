@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.3.2 (unreleased)
+1.3.2 (2010-05-26)
 ------------------
 
 - Fixed padding of e-mail icon #256 (pecek)
