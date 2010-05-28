@@ -2845,36 +2845,52 @@ div.welcome_image h2 a{
   color: white!important
 }
 div.welcome_image h2{
-  top: 43px!important;
+  /*top: 43px!important;*/  /*needed for the ie bugfix*/
   font-size: 1.2em !important;
   margin: 0;
   line-height: 120%;
 }
 
 *+html div.welcome_image h2{
-  top: 47px!important;
+  /*top: 47px!important;*/
 }
 
 div.welcome_image h2#basiswissen {
-   position: absolute;
-   left: 55px;
+  /* position: absolute;
+   left: 55px;*/
+bottom:85px;
+float:left;
+margin:0 50px;
+position:relative;
 }
 div.welcome_image h2#datenbanksuche {
-   position: absolute;
-   left: 175px;
+  /* position: absolute;
+   left: 175px;*/
+bottom:85px;
+float:left;
+margin:0 32px;
+position:relative;
 }
 div.welcome_image h2#expertenwissen {
-   position: absolute;
-   left: 295px;
+  /* position: absolute;
+   left: 295px;*/
+bottom:85px;
+float:left;
+margin:0 8px;
+position:relative;
 }
 div.welcome_image h2#service {
-   position: absolute;
+  /* position: absolute;
    top: 51px!important;
-   left: 410px;
+   left: 410px;/*
+bottom:85px;
+float:left;
+margin:0 38px;
+position:relative;
 }
 
 *+html div.welcome_image h2#service {
-  top: 55px!important;
+ /* top: 55px!important;*/
 }
 
 .ui-tabs .ui-tabs-hide,
