@@ -2774,7 +2774,10 @@ vertical-align:middle;
 .documentFirstHeading.frontpage {
   // background-color: #F2F2F2;
   background: #FFFFFF;
+  clear:both; /*needed for the IE Fix*/
   color: #363636;
+/* background:#363636;
+   color:fff;/*
 }
 
 h2 {
