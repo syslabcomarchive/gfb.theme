@@ -18,10 +18,10 @@ h1, h2, h3, h4, h5, h6 {
     margin:0;
     width:200px;
     height:32px;
-    // background-color: #2b3c52;
+    /* background-color: #2b3c52;*/
     background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
     font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-    // color: #cccedf;
+    /* color: #cccedf;*/
     color: whitesmoke;
     display: block;
     line-height:32px;
@@ -513,13 +513,13 @@ li.minusNOK {
 
 
 .portletHeader {
-  // border: 1px solid #// 415063;
+  /* border: 1px solid #// 415063; */
   border: 0;
   font-size:100%;
   color:whitesmoke;
   padding: 0 12px;
   color: whitesmoke;
-  // background: #415063 ;
+  /* background: #415063 ; */
   background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0; 
   vertical-align: middle;
   line-height:27px;
@@ -889,9 +889,9 @@ h2 {
 }
 
 h3 {
- // font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  /*font: bold 14px/18px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;*/
   font-family:  Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-  font-weight:bold;
+  font-weight :bold;
   font-size:125%;
   color: #62778e;
   margin-bottom: 12px;
@@ -1232,14 +1232,14 @@ form.searchform-tipps a#searchtipps {
   color:black;
 }
 div#searchfields {
-  // background-color: #E5E6E8;
+  /* background-color: #E5E6E8;*/
   background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px 0 0 0;
   /*height: 14em;*/   
 }
 div.ui-tabs-panel {
-  // background-color: #E5E6E8;
+  /* background-color: #E5E6E8;*/
   background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px;
@@ -1289,7 +1289,7 @@ div#region-content li {
 }
 
 div.search_medium li {
-  color: grey;
+  color: gray;
   padding-bottom: 0px;
   font-size: 95%;
   line-height: 100%;
@@ -1610,7 +1610,7 @@ a.show-all-results:hover {
 }
 
 #heading_search_results_box, #footer_batch_box {
-  // background-color:#415063;
+  /* background-color:#415063;*/
   background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   color:whitesmoke;
   font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
@@ -2062,7 +2062,7 @@ ul.search_index {
 
 
 /* und /oder box styling */
-.common_radio_search_box {div#region-content li
+.common_radio_search_box { 
     margin-bottom: 1em;
 }
 div.column1b div input {
@@ -2343,7 +2343,7 @@ ul.search_index {
 
 
 * html .portletNavigationTree, #portal-globalnav ul.submenu {
-  margin-bottom:none;
+  margin-bottom:0;
 }
 
 
@@ -2556,7 +2556,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
 
 #content #alphabetTable {
   background-color:#4B516B;
-  //right:1.4em;
+  /*right:1.4em;*/
   margin:0;
   padding:3px;
   position:relative;
@@ -2753,7 +2753,7 @@ padding:8px;
 /********************css für neue Überschriftenformatierung***************/
 
 .documentFirstHeading {
-// background-color:#415063;
+/* background-color:#415063;*/
 background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
 color:whitesmoke;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
@@ -2772,7 +2772,7 @@ vertical-align:middle;
 }
 
 .documentFirstHeading.frontpage {
-  // background-color: #F2F2F2;
+  /* background-color: #F2F2F2;*/
   background: #FFFFFF;
   clear:both; /*needed for the IE Fix*/
   color: #363636;
