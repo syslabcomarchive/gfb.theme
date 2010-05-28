@@ -2908,6 +2908,9 @@ div.tab-2-selected div#tabs-1 {
 }
 
 /* jquery tooltips */
+div#tooltip {
+  clear: both;
+}
 
 #tooltip h3, #tooltip div { margin: 0; }
 
