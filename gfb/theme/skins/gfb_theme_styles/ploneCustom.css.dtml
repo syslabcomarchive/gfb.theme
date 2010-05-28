@@ -2889,7 +2889,7 @@ div.welcome_image h2#service {
   /* position: absolute;
    top: 51px!important;
    left: 410px;*/
-bottom:85px;
+bottom:75px;
 float:left;
 margin:0 38px;
 position:relative;
@@ -2909,9 +2909,6 @@ div.tab-2-selected div#tabs-1 {
 
 /* jquery tooltips */
 
-#tooltip {
-    position: relative;
-}
 #tooltip h3, #tooltip div { margin: 0; }
 
 
