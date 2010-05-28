@@ -2888,7 +2888,7 @@ text-decoration:none;
 div.welcome_image h2#service {
   /* position: absolute;
    top: 51px!important;
-   left: 410px;/*
+   left: 410px;*/
 bottom:85px;
 float:left;
 margin:0 38px;
