@@ -2865,6 +2865,7 @@ bottom:85px;
 float:left;
 margin:0 50px;
 position:relative;
+text-decoration:none;
 }
 div.welcome_image h2#datenbanksuche {
   /* position: absolute;
@@ -2873,6 +2874,7 @@ bottom:85px;
 float:left;
 margin:0 32px;
 position:relative;
+text-decoration:none;
 }
 div.welcome_image h2#expertenwissen {
   /* position: absolute;
@@ -2881,6 +2883,7 @@ bottom:85px;
 float:left;
 margin:0 8px;
 position:relative;
+text-decoration:none;
 }
 div.welcome_image h2#service {
   /* position: absolute;
@@ -2890,10 +2893,12 @@ bottom:85px;
 float:left;
 margin:0 38px;
 position:relative;
+text-decoration:none;
 }
 
 *+html div.welcome_image h2#service {
  /* top: 55px!important;*/
+text-decoration:none;
 }
 
 .ui-tabs .ui-tabs-hide,
