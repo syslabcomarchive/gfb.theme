@@ -2777,7 +2777,7 @@ vertical-align:middle;
   clear:both; /*needed for the IE Fix*/
   color: #363636;
 /* background:#363636;
-   color:fff;/*
+   color:fff;*/
 }
 
 h2 {
