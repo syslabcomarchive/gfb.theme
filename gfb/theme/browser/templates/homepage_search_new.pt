@@ -121,7 +121,10 @@ document.images[Bildname].src = eval(Tauschbildname);
         
         <h1 class="documentFirstHeading frontpage" tal:content="index_foursteps/Title"></h1>
         
-        <div id="four_steps" tal:content="structure index_foursteps/getText|nothing" />
+        <div id="four_steps">
+            <div class="visualClear"></div>
+            <span tal:replace="structure index_foursteps/getText|nothing" />
+        </div>
          
     </tal:block>
 
