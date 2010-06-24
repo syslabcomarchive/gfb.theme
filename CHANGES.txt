@@ -4,7 +4,8 @@ gfb.theme Changelog
 1.3.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- fixing the arrow on the new homepage yet again; contains special hacks for
+  the EN translation (longer words) and IE6 (font somehow larger) (thomasw)
 
 
 1.3.2 (2010-05-26)
