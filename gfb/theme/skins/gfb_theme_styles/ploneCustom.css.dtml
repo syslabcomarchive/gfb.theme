@@ -2766,7 +2766,7 @@ font-variant:normal;
 font-weight:normal;
 letter-spacing:0;
 line-height:20px;
-margin-bottom:0px;
+margin-bottom:10px;
 margin-top:0;
 padding:3px 16px 4px;
 vertical-align:middle;
@@ -2856,7 +2856,7 @@ div.welcome_image h2{
   line-height: 120%;
 }
 #four_steps {
-
+  margin-top: -10px;
 }
 
 *+html div.welcome_image h2{
