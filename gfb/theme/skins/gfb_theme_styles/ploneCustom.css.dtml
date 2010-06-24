@@ -2836,7 +2836,8 @@ z-index:10;
 
 
 /* Welcome image on home page */
-/***deleted the margin bottom for the welcome image to fix the problem with the distance to the next headline***/
+
+/* NOTE: the welcome image now needs to be below the 4 h2 tags! */
 
 div.welcome_image {
     position: relative;
@@ -2849,60 +2850,66 @@ div.welcome_image .link-internal-js {
 div.welcome_image h2 a{
   color: white!important
 }
+div.welcome_image img {
+  margin-top: -35px!important;
+}
+
 div.welcome_image h2{
-  /*top: 43px!important;*/  /*needed for the ie bugfix*/
   font-size: 1.2em !important;
   margin: 0;
   line-height: 120%;
+  top: 45px;
 }
 #four_steps {
   margin-top: -10px;
 }
 
-*+html div.welcome_image h2{
-  /*top: 47px!important;*/
-}
-
 div.welcome_image h2#basiswissen {
-  /* position: absolute;
-   left: 55px;*/
-bottom:85px;
 float:left;
 margin:0 50px;
 position:relative;
 text-decoration:none;
 }
+* html div.welcome_image h2#basiswissen {
+  margin: 0 50px 0 25px;
+}
 div.welcome_image h2#datenbanksuche {
-  /* position: absolute;
-   left: 175px;*/
-bottom:85px;
 float:left;
 margin:0 32px;
 position:relative;
 text-decoration:none;
 }
+div.welcome_image h2.en#datenbanksuche {
+margin:0 15px;
+}
+* html div.welcome_image h2.en#datenbanksuche {
+margin:0 10px;
+}
 div.welcome_image h2#expertenwissen {
-  /* position: absolute;
-   left: 295px;*/
-bottom:85px;
 float:left;
 margin:0 8px;
 position:relative;
 text-decoration:none;
 }
+div.welcome_image h2.en#expertenwissen {
+margin:0 30px;
+}
+* html div.welcome_image h2#expertenwissen {
+  margin: 0 4px;
+}
 div.welcome_image h2#service {
-  /* position: absolute;
-   top: 51px!important;
-   left: 410px;*/
-bottom:75px;
+top: 55px;
 float:left;
 margin:0 38px;
 position:relative;
 text-decoration:none;
 }
+div.welcome_image h2.en#service {
+margin:0 15px;
+}
 
 *+html div.welcome_image h2#service {
- /* top: 55px!important;*/
+ top: 55px!important;
 text-decoration:none;
 }
 
