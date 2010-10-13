@@ -20,6 +20,12 @@
         <viewlet name="gfb.footer.actions"
                  insert-before="*" />
     </order>
+
+    <order manager="plone.belowcontent" skinname="GFBTheme"
+        based-on="Plone Default">
+        <viewlet name="gfb.totopofpage"
+            insert-after="plone.nextprevious" />
+    </order>
     
     
     <hidden manager="plone.portaltop"  skinname="GFBTheme">
