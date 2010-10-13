@@ -226,3 +226,6 @@ msgstr "Database with practical aids for the risk assessment"
 
 msgid "glossary"
 msgstr "Glossary"
+
+msgid "label_to_top_of_page"
+msgstr "To top of page"

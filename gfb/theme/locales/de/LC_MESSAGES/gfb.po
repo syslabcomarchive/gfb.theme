@@ -292,3 +292,6 @@ msgstr "Handlungshilfen für die Gefährdungsbeurteilung"
 
 msgid "glossary"
 msgstr "Glossar"
+
+msgid "label_to_top_of_page"
+msgstr "Zum Seitenanfang"
