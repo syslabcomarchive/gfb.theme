@@ -1,5 +1,4 @@
-<div class="linkToTop">
-	<span class="link-internal-js">&nbsp;</span>
-	<a href="#" class="solitaryLink" tal:attributes="href string:${view/getLink}#documentContent"
-    	i18n:translate="label_to_top_of_page" i18n:domain="gfb">To top of page</a>
-</div>
+<p class="linkToTop"><span class="link-internal-js">&nbsp;</span><a href="#" 
+    class="solitaryLink" tal:attributes="href string:${view/getLink}#documentContent"
+    i18n:translate="label_to_top_of_page" i18n:domain="gfb">To top of page</a>
+</p>
