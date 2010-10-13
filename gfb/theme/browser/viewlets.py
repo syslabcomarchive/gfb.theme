@@ -167,4 +167,8 @@ class GFBTitleViewlet(TitleViewlet):
                 escape(safe_unicode(page_title))
                 )
 
-    
+
+class ToTopOfPage(ViewletBase):
+
+    render = ViewPageTemplateFile('templates/to_top_of_page.pt')
+

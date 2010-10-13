@@ -98,7 +98,14 @@
         permission="zope2.View"
         />
 
-
+	<!-- Viewlet that contains link "to top of page" -->
+	<browser:viewlet
+		name="gfb.totopofpage"
+		manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+		class=".viewlets.ToTopOfPage"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
 
     <browser:page
       for="*"
