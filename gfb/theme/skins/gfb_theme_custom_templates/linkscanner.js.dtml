@@ -111,7 +111,7 @@ function modifyLinkTag(node) {
         // check if the link href is a relative link, or an absolute link to the current host.
 		if (linkval.toLowerCase().indexOf(window.location.protocol+'//'+window.location.host)==0) {
             // we are here because the link is an absolute pointer internal to our host
-            if(node.className!='singlelink') {
+            if(node.className!='singlelink'  && node.className!='solitaryLink') {
                 injectNode(node, 'span', 'link-internal-js');
                 if(node.className=='link-internal') {
                     node.className='';
