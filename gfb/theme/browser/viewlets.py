@@ -172,3 +172,8 @@ class ToTopOfPage(ViewletBase):
 
     render = ViewPageTemplateFile('templates/to_top_of_page.pt')
 
+    def getLink(self):
+        context = self.context
+        link = context.request.get('ACTUAL_URL') + \
+            (context.request.get('QUERY_STRING') and '?' + context.request.get('QUERY_STRING') or '')
+        return link
