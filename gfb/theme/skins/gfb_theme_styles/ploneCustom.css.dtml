@@ -2926,6 +2926,11 @@ div#tooltip {
 
 #tooltip h3, #tooltip div { margin: 0; }
 
+/* Link "Zum Seitenanfang" */
+div.linkToTop, p.linkToTop
+{
+    float:right;
+}
 
 
 /* @end */
