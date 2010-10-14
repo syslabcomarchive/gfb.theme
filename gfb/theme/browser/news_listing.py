@@ -4,8 +4,11 @@ import Acquisition
 from Products.AdvancedQuery import Or, Eq, And, In, Le
 from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 class LocalNewsListing(OSHNewsLocalView):
+    
+    template = ViewPageTemplateFile('templates/oshnews_view.pt')
     
     @instance.memoize
     def getResults(self):

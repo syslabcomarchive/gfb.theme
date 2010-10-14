@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:fill-slot="main">
+<metal:main_macro define-macro="main">
+    <metal:body define-macro="body_macro"
+                tal:define="templateId template/getId">
+
+
+        <h1 class="documentFirstHeading" tal:content="view/Title"> 
+        </h1>
+        
+        <div tal:content="structure here/Description" />
+
+        <metal:listingmacro define-macro="listing">
+        <tal:topiccontents define="topicContents view/queryCatalog;
+                                   batch topicContents;">
+
+        <div tal:content="structure view/getBodyText" ></div>
+
+        <tal:listing condition="topicContents">
+
+            <div metal:define-macro="text-field-view"
+                 id="parent-fieldname-text" class="stx"
+                 tal:define="text view/getText|nothing"
+                 tal:condition="python:text and text.strip()!='' and not text=='<p></p>'"
+                 tal:attributes="class python:view.Format() in ('text/structured',
+                                                       'text/x-rst', ) and 'stx' or 'plain'">
+                <div metal:define-slot="inside" tal:replace="structure text">The body</div>
+            </div>
+                <div summary="News listing" border="0"
+                       cellpadding="0" cellspacing="0" width="100%"
+                       tal:define="showLinkToNewsItem view/showLinkToNewsItem;"
+                       i18n:attributes="summary summary_content_listing;">
+                        <tal:brain tal:repeat="obj topicContents">
+                        <span tal:define="oddrow repeat/obj/odd;"
+                            tal:attributes="class python:oddrow and 'even' or 'odd'">
+                            <tal:fields define="url obj/getURL;
+                                                obj_type obj/portal_type;
+                                                obj_creator obj/Creator;
+                                                obj_modified obj/modified;
+                                                obj_description obj/Description;
+                                                obj_typeinfo python: here.portal_types.getTypeInfo(obj_type);
+                                                icon python:portal_url+'/'+ obj_typeinfo.getIcon();
+                                                obj_wf_state obj/review_state|python: wtool.getInfoFor(obj, 'review_state', '');
+                                                obj_wf_state_class python:'state-' + normalizeString(obj_wf_state);
+                                                title_or_id obj/pretty_title_or_id;
+                                                ">
+                            <tal:block define="value python: getattr(obj, 'Title', None)">
+
+                                    <h2>
+                                    
+                                    <a href="#" tal:attributes="href url;
+                                                                class obj_wf_state_class"
+                                                tal:condition="showLinkToNewsItem"
+                                                tal:content="title_or_id" />
+                                    <span tal:condition="not:showLinkToNewsItem"
+                                        tal:attributes="class obj_wf_state_class"
+                                        tal:content="title_or_id" />
+                                    (<span class="teaserdate" tal:content="python:toLocalizedTime(obj['EffectiveDate'])"/>)                                                  
+                                    </h2>
+                                    <tal:block define="newsItem obj/getObject; 
+                                                       news_type newsItem/portal_type;
+                                                       hasImage python:news_type=='News Item' and newsItem.getField('image').getAccessor(newsItem)()" tal:condition="hasImage">
+                                    <div class="newsImageContainer" style="width: 100px;"
+                                         tal:condition="python: obj.portal_type in ['News Item']">
+                                        <a href="#"
+                                           tal:attributes="href url"
+                                           tal:condition="showLinkToNewsItem"
+                                           class="parent-fieldname-image">
+                                           <img tal:attributes="src string:${url}/image_thumb; alt title_or_id;" width="80"/>
+                                        </a>
+                                    <span tal:condition="not:showLinkToNewsItem"
+                                        class="parent-fieldname-image">
+                                        <img tal:attributes="src string:${url}/image_thumb; alt title_or_id;" width="80"/>
+                                        </span>
+                                    </div>                                     
+                                    </tal:block>
+                                    
+                                    <span tal:omit-tag="" tal:condition="not:obj_description"> 
+                                        &nbsp; 
+                                    </span> 
+                                    <span class="description" tal:content="structure obj_description">
+                                        description 
+                                    </span>
+                            </tal:block>
+                            </tal:fields>
+                          <div class="visualClear"></div>
+                        </span>
+                        </tal:brain>
+                </div>
+            </tal:listing>
+
+                <p class="bold" tal:condition="python:here.getId()!='archive' and 'archive' in here.objectIds()">
+                <a href="" i18n:translate="link_newsboard_previousnews" i18n:domain="osha"
+                   tal:attributes="href string:${here/absolute_url}/archive">Show previous news</a>
+                </p>
+
+            <!-- Navigation -->
+            <div metal:use-macro="here/batch_macros/macros/navigation" />
+
+        </tal:topiccontents>
+        </metal:listingmacro>
+    </metal:body>
+
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</metal:main_macro>
+
+</div>
+
+</body>
+</html>
