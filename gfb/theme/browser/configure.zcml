@@ -196,4 +196,12 @@
       layer=".interfaces.IThemeSpecific"
      />
 
+  <!-- News listing -->
+  <browser:page
+    name="local-news-listing"
+    for="*"
+    class=".news_listing.LocalNewsListing"
+    permission="zope2.View"
+    />
+
 </configure>
