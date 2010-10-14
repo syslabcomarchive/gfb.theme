@@ -135,6 +135,11 @@ msgstr "Create Provider"
 msgid "label_workingarea"
 msgstr "Working area"
 
+#. Default "Working Area of"
+#: working_area.pt
+msgid "label_workingarea_of"
+msgstr "Working area of ${name} (${provider})"
+
 #. Default "Here you edit your Provider information and manage Risk Assessment Links."
 #: working_area.pt
 msgid "workingarea_intro"

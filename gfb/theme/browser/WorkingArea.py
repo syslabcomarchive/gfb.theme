@@ -29,10 +29,12 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         pm = getToolByName(self, 'portal_membership')
         pc = getToolByName(self, 'portal_catalog')
         
+        member = pm.getAuthenticatedMember()
         try:
-            self.userid = pm.getAuthenticatedMember().getUserId()
+            self.userid = member.getUserId()
         except:
-            self.userid = pm.getAuthenticatedMember().getUserName()
+            self.userid = member.getUserName()
+        self.fullname = member.getProperty('fullname')
         f = pm.getMembersFolder()
         path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
         self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
@@ -74,3 +76,14 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
 
     def getOppositeLang(self, lang):
         return lang in ('de', '') and 'en' or 'de'
+
+    def getUserName(self):
+        return self.fullname
+
+    def getProviderName(self):
+        provider = self.provider()
+        return provider and provider.Title() or "n/a"
+
+class WorkingAreaManager(WorkingArea):
+    """ Working Area that does not force the view to the currently logged in
+        user's home folder, but displays the content of any user folder."""

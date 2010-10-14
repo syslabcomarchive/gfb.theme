@@ -39,7 +39,10 @@ tal:define="dummy python:request.set('disable_border',1)" />
             </div>
 
 
-        <h1 i18n:translate="label_workingarea">Working Area</h1>
+        <h1 i18n:translate="label_workingarea_of">Working Area of 
+            <span i18n:name="name" tal:content="view/getUserName">User</span> 
+            (<span i18n:name="provider" tal:content="view/getProviderName">Provider</span>)
+        </h1>
 
         <p class="discreet"
             i18n:translate="workingarea_intro">
