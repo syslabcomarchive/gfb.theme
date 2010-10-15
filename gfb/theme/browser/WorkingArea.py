@@ -91,7 +91,6 @@ class WorkingAreaManager(WorkingArea):
 
     def __init__(self, context, request, **args):
         super(WorkingAreaManager, self).__init__(context, request)
-        import pdb; pdb.set_trace()
         self.error = ''
         self.userid = self.request.get('userid', '')
         if self.userid:
