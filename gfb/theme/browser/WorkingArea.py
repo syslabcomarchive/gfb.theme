@@ -3,6 +3,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from zope.component import getMultiAdapter
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+from Products.statusmessages.interfaces import IStatusMessage
 
 class WorkingArea(BrowserView, TranslatableLanguageSelector):
     """
@@ -78,7 +79,7 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         return lang in ('de', '') and 'en' or 'de'
 
     def getUserName(self):
-        return self.fullname
+        return self.fullname and self.fullname or self.userid
 
     def getProviderName(self):
         provider = self.provider()
@@ -87,3 +88,40 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
 class WorkingAreaManager(WorkingArea):
     """ Working Area that does not force the view to the currently logged in
         user's home folder, but displays the content of any user folder."""
+
+    def __init__(self, context, request, **args):
+        super(WorkingAreaManager, self).__init__(context, request)
+        import pdb; pdb.set_trace()
+        self.error = ''
+        self.userid = self.request.get('userid', '')
+        if self.userid:
+            pm = getToolByName(context, 'portal_membership')
+            self.member = pm.getMemberById(self.userid)
+            if not self.member:
+                self.error = 'No user found for %s' %self.userid
+        else:
+            self.error = "You must provide a userid"
+            self.member = None
+
+    def setup(self):
+        if self.member:
+            pc = getToolByName(self.context, 'portal_catalog')
+            pm = getToolByName(self.context, 'portal_membership')
+            self.fullname = self.member.getProperty('fullname')
+            f = pm.getMembersFolder()
+            path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
+            self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
+            self.Provider = pc.searchResults(portal_type="Provider", path=path, Language='all')
+
+            hf = self.context.restrictedTraverse(path)
+            self.home_folder = hf
+            self.home_folder_url = hf and hf.absolute_url() or ''
+        else:
+            self.fullname = self.userid = self.RALinks = self.Provider = self.home_folder = self.home_folder_url = ''
+
+
+    def __call__(self):
+        if self.error:
+            status = IStatusMessage(self.request)
+            status.addStatusMessage(self.error, type='error')
+        return self.template()

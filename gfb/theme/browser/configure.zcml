@@ -114,6 +114,13 @@
       permission="zope.Public"
       />
 
+    <browser:page
+      for="*"
+      name="workingarea-manager"
+      class=".WorkingArea.WorkingAreaManager"
+      permission="zope.Public"
+      />
+
     <!-- Zope 3 browser resources -->
 
     <!-- Resource directory for images -->

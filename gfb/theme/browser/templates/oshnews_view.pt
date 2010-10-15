@@ -32,7 +32,7 @@
                                                        'text/x-rst', ) and 'stx' or 'plain'">
                 <div metal:define-slot="inside" tal:replace="structure text">The body</div>
             </div>
-                <div summary="News listing" border="0"
+                <div summary="News listing" border="0" id="news_listing"
                        cellpadding="0" cellspacing="0" width="100%"
                        tal:define="showLinkToNewsItem view/showLinkToNewsItem;"
                        i18n:attributes="summary summary_content_listing;">
