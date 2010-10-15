@@ -2943,6 +2943,7 @@ div#tooltip {
 div.linkToTop, p.linkToTop
 {
     float:right;
+    margin-left: 2.5em;
 }
 
 

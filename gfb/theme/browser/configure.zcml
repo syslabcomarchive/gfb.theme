@@ -98,14 +98,6 @@
         permission="zope2.View"
         />
 
-	<!-- Viewlet that contains link "to top of page" -->
-	<browser:viewlet
-		name="gfb.totopofpage"
-		manager="plone.app.layout.viewlets.interfaces.IBelowContent"
-		class=".viewlets.ToTopOfPage"
-        layer=".interfaces.IThemeSpecific"
-        permission="zope2.View"
-        />
 
     <browser:page
       for="*"
@@ -192,6 +184,15 @@
         class=".viewlets.GFBTitleViewlet"
         permission="zope2.View"
 		layer=".interfaces.IThemeSpecific"
+        />
+
+    <!-- Render the document actions -->
+    <browser:viewlet
+        name="gfb.abovecontenttitle.documentactions"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".viewlets.GFBDocumentActionsViewlet"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
         />
 
   <!-- sitemap builder -->

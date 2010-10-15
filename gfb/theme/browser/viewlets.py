@@ -1,6 +1,7 @@
 from Acquisition import aq_inner, aq_base, aq_parent
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
+from plone.app.layout.viewlets.content import DocumentActionsViewlet
 from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
 from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
@@ -168,9 +169,9 @@ class GFBTitleViewlet(TitleViewlet):
                 )
 
 
-class ToTopOfPage(ViewletBase):
+class GFBDocumentActionsViewlet(DocumentActionsViewlet):
 
-    render = ViewPageTemplateFile('templates/to_top_of_page.pt')
+    index = ViewPageTemplateFile('templates/document_actions.pt')
 
     def getLink(self):
         context = self.context

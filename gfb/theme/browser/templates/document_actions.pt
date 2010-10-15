@@ -1,0 +1,27 @@
+<div class="visualClear"></div>
+<div i18n:domain="plone"
+     class="documentActions">
+    <tal:docactions tal:condition="view/actions">
+
+    <h5 class="hiddenStructure" i18n:translate="heading_document_actions">Document Actions</h5>
+
+    <ul tal:define="normalizeString nocall: context/@@plone/normalizeString">
+    <tal:actions repeat="daction view/actions">
+        <li tal:attributes="id python:'document-action-' + normalizeString(daction['id'])">
+            <a href=""
+               tal:attributes="href daction/url;
+                               title daction/description"
+               tal:content="daction/title">
+            </a>
+        </li>
+    </tal:actions>
+<li class="linkToTop"><span class="link-to-top">&nbsp;</span><a href="#" 
+    class="solitaryLink" tal:attributes="href string:${view/getLink}#documentContent"
+    i18n:translate="label_to_top_of_page" i18n:domain="gfb">To top of page</a>
+</li>
+    </ul>
+    </tal:docactions>
+
+    <div tal:replace="structure provider:plone.documentactions" />
+
+</div>

@@ -21,12 +21,16 @@
                  insert-before="*" />
     </order>
 
-    <order manager="plone.belowcontent" skinname="GFBTheme"
+    <order manager="plone.belowcontentbody" skinname="GFBTheme"
         based-on="Plone Default">
-        <viewlet name="gfb.totopofpage"
-            insert-after="plone.nextprevious" />
+        <viewlet name="slc.linkcollection.linkbox" />
+        <viewlet name="plone.belowcontentbody.contenthistory" />
+        <viewlet name="gfb.abovecontenttitle.documentactions" />
     </order>
-    
+
+    <hidden manager="plone.belowcontentbody" skinname="GFBTheme">
+        <viewlet name="plone.abovecontenttitle.documentactions" />
+    </hidden>
     
     <hidden manager="plone.portaltop"  skinname="GFBTheme">
       <viewlet name="plone.app.i18n.locales.languageselector" />
