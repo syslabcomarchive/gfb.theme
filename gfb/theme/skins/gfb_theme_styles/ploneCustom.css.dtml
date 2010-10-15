@@ -1771,6 +1771,11 @@ div#link_to_tool {
   background: transparent url(&dtml-portal_url;/pdf_icon.gif) 0px -1px no-repeat;
   padding: 0px 2px 1px 16px;
 }
+
+#news_listing .link-internal-js {
+    padding-top: 0px;
+}
+
 /*
 ** office group
 */
@@ -2812,6 +2817,10 @@ font-size:13px !important;
 font-weight:bold;
 letter-spacing:0;
 margin-bottom:5px;
+}
+
+#news_listing h2 {
+    font-size: 17px !important;
 }
 
 /************styles für subnavi größe**********/
