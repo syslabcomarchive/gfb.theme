@@ -110,7 +110,7 @@
       for="*"
       name="workingarea-manager"
       class=".WorkingArea.WorkingAreaManager"
-      permission="zope.Public"
+      permission="cmf.ManagePortal"
       />
 
     <!-- Zope 3 browser resources -->

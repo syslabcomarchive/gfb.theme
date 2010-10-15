@@ -95,18 +95,19 @@ class WorkingAreaManager(WorkingArea):
         self.userid = self.request.get('userid', '')
         if self.userid:
             pm = getToolByName(context, 'portal_membership')
-            self.member = pm.getMemberById(self.userid)
-            if not self.member:
+            self.memberok = not not pm.getMemberById(self.userid)
+            if not self.memberok:
                 self.error = 'No user found for %s' %self.userid
         else:
             self.error = "You must provide a userid"
-            self.member = None
+            self.memberok = False
 
     def setup(self):
-        if self.member:
+        if self.memberok:
             pc = getToolByName(self.context, 'portal_catalog')
             pm = getToolByName(self.context, 'portal_membership')
-            self.fullname = self.member.getProperty('fullname')
+            member = pm.getMemberById(self.userid)
+            self.fullname = member.getProperty('fullname')
             f = pm.getMembersFolder()
             path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
             self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
