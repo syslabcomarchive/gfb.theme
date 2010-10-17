@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.3.5 (unreleased)
+1.3.5 (2010-10-17)
 ------------------
 
 - Nothing changed yet.
