@@ -113,6 +113,13 @@
       permission="cmf.ManagePortal"
       />
 
+    <browser:page
+      for="*"
+      name="provider-overview"
+      class=".WorkingArea.ProviderOverview"
+      permission="cmf.ManagePortal"
+      />
+
     <!-- Zope 3 browser resources -->
 
     <!-- Resource directory for images -->

@@ -10,7 +10,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
   <body>
     <div metal:fill-slot="main"
         i18n:domain="gfb"
-        tal:define="dummy view/setup">
+        tal:define="dummy view/setup;
+			isManager python:user.allowed(here, ['Manager']);">
 
             <div id="dashboard-actions"
                  tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel');
@@ -43,6 +44,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
             <span i18n:name="name" tal:content="view/getUserName">User</span> 
             (<span i18n:name="provider" tal:content="view/getProviderName">Provider</span>)
         </h1>
+		<h2 tal:condition="python:view.getTemplateName()=='workingarea-manager'"
+			i18n:translate="label_manager_view">Manager View</h2>
 
         <p class="discreet"
             i18n:translate="workingarea_intro">
@@ -217,6 +220,10 @@ tal:define="dummy python:request.set('disable_border',1)" />
                               <div class="actionbtn" tal:condition="python:state=='private'">
                                  <a class="context" id="publish_button" tal:attributes="href string:${url}/content_status_modify?workflow_action=publish"
                                      i18n:translate="Publish">Publish</a>
+                              </div>
+                              <div class="actionbtn" tal:condition="isManager">
+                                 <a class="context" id="transfer_button" tal:attributes="href string:${url}/synchronize_content"
+                                     i18n:translate="label_transfer">Transfer</a>
                               </div>
                             </div>
                             <br clear="all" />
