@@ -35,11 +35,8 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        return self._data()
-
-    @memoize
-    def _data(self):
         return True
+
 
     def home_url(self):
         pm = getToolByName(self, 'portal_membership')
