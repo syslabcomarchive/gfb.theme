@@ -108,13 +108,6 @@
 
     <browser:page
       for="*"
-      name="workingarea-manager"
-      class=".WorkingArea.WorkingAreaManager"
-      permission="cmf.ManagePortal"
-      />
-
-    <browser:page
-      for="*"
       name="provider-overview"
       class=".WorkingArea.ProviderOverview"
       permission="cmf.ManagePortal"
