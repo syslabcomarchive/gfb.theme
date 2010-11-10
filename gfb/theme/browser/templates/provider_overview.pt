@@ -18,7 +18,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
         <ul>
             <li tal:repeat="member view/getMembers">
                 <a href="" i18n:translate="label_workingarea_of"
-                tal:attributes="href string:${member/url}/workingarea-manager">Working Area of
+                tal:attributes="href string:${member/url}/workingarea">Working Area of
                 <span i18n:name="name" tal:content="member/name">User</span>
                 (<span i18n:name="provider" tal:content="member/provider">Provider</span>)
                 </a>

@@ -11,7 +11,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
     <div metal:fill-slot="main"
         i18n:domain="gfb"
         tal:define="dummy view/setup;
-            isManager python:user.allowed(here, ['Manager']);">
+            isManager view/isManager">
 
             <div id="dashboard-actions"
                  tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel');
@@ -44,8 +44,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
             <span i18n:name="name" tal:content="view/getUserName">User</span>
             (<span i18n:name="provider" tal:content="view/getProviderName">Provider</span>)
         </h1>
-        <h2 tal:condition="python:view.getTemplateName()=='workingarea-manager'"
-            i18n:translate="label_manager_view">Manager View</h2>
+        <p class="warning_text" tal:condition="isManager" i18n:translate="label_manager_view">Manager View</p>
 
         <p class="discreet"
             i18n:translate="workingarea_intro">
@@ -226,18 +225,19 @@ tal:define="dummy python:request.set('disable_border',1)" />
                             <br clear="all" />
 
                             <span tal:condition="isManager"
-                            tal:define="sync_view python:obj.restrictedTraverse('@@synchronize_content');
-								sync_status python:sync_view.getSyncStatus(uid=obj.UID())"
+                            tal:define="canonical obj/getCanonical;
+                                sync_view python:canonical.restrictedTraverse('@@synchronize_content');
+                                sync_status python:sync_view.getSyncStatus(uid=obj.UID())"
                             tal:attributes="class python:sync_status[0]==-1 and 'field unsynced' or 'field synced'">
                                 <strong i18n:translate="label_sync_status">Synchronisation status</strong><br/>
                                 <i class="warning_text" tal:condition="python:sync_status[0]==-1" i18n:translate="label_not_sync">not synchronized</i>
                                 <span class="documentByLine" tal:condition="python:sync_status[0]!=-1">
                                 <span i18n:translate="label_modified_locally">modified locally</span>: <span tal:replace="python:toLocalizedTime(obj.modified(), long_format=1)"/><br/>
 
-								<span i18n:translate="label_last_sync">last synchronization</span>: <span tal:replace="python:toLocalizedTime(sync_view.getLastSync(), long_format=1)" />
-								<i class="warning_text" tal:condition="python:obj.modified()>sync_view.getLastSync()"
-									i18n:translate="label_unsynced_changes">Local unsynchronized changes
-									</i>
+                                <span i18n:translate="label_last_sync">last synchronization</span>: <span tal:replace="python:toLocalizedTime(sync_view.getLastSync(), long_format=1)" />
+                                <i class="warning_text" tal:condition="python:obj.modified()>sync_view.getLastSync()"
+                                    i18n:translate="label_unsynced_changes">Local unsynchronized changes
+                                    </i>
                                 <br>
                                 <span i18n:translate="label_sync_url_remote">URL of the synchronized object</span>: <a tal:condition="python:sync_status[1]" 
                                     tal:attributes="href python:sync_status[1]" 
@@ -245,7 +245,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                                  <span tal:condition="python:sync_status[1]==''">--</span>
                                 </span>
                                 <div class="actionbtn">
-                                 <a class="context" id="transfer_button" tal:attributes="href string:${url}/synchronize_content"
+                                 <a class="context" id="transfer_button" tal:attributes="href string:${canonical/absolute_url}/synchronize_content"
                                      i18n:translate="label_transfer">Transfer</a>
                                 </div>
                             </span>

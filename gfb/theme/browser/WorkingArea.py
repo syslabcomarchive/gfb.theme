@@ -18,6 +18,7 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
     def __init__(self, context, request, **args):
         super(WorkingArea, self).__init__(context, request)
         self.context = context
+        self.error = ''
         self.tool = getToolByName(context, 'portal_languages', None)
         self.pwt = getToolByName(context, 'portal_workflow')
         portal_tool = getToolByName(context, 'portal_url', None)
@@ -26,55 +27,57 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
             self.portal_url = portal_tool.getPortalObject().absolute_url()
 
     def __call__(self):
+        parent = aq_parent(aq_inner(self.context))
+        status = IStatusMessage(self.request)
+        if parent.getId() != "Members":
+            message = "You must call the 'Workingarea' view on a member's home folder"
+            status.addStatusMessage(message, type='error')
+        elif self.isManager():
+            pm = getToolByName(self.context, 'portal_membership')
+            userid = self.context.getId()
+            self.memberok = not not pm.getMemberById(userid)
+            if not self.memberok:
+                message = 'No user found for %s' % userid
+                status.addStatusMessage(message, type='error')
         return self.template()
 
-    def getTemplateName(self):
-        return "workingarea"
-
-    def languages(self):
-        results = LanguageSelector.languages(self)
-        translatable = ITranslatable(self.context, None)
-        if translatable is not None:
-            translations = translatable.getTranslations()
-        else:
-            translations = []
-
-        for data in results:
-            data['translated'] = data['code'] in translations
-            if data['translated']:
-                trans = translations[data['code']][0]
-                state = getMultiAdapter((trans, self.request),
-                        name='plone_context_state')
-                data['url'] = state.view_url() + '/' + self.getTemplateName() + '?set_language=' + data['code']
-            else:
-                state = getMultiAdapter((self.context, self.request),
-                        name='plone_context_state')
-                try:
-                    data['url'] = state.view_url() + '/' + self.getTemplateName() + '?set_language=' + data['code']
-                except AttributeError:
-                    data['url'] = self.context.absolute_url() + '/' + self.getTemplateName()  + '?set_language=' + data['code']
-
-        return results
 
     def setup(self):
         pm = getToolByName(self, 'portal_membership')
         pc = getToolByName(self, 'portal_catalog')
-        
-        member = pm.getAuthenticatedMember()
-        try:
-            self.userid = member.getUserId()
-        except:
-            self.userid = member.getUserName()
-        self.fullname = member.getProperty('fullname')
         f = pm.getMembersFolder()
-        path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
+        
+        if self.isManager():
+            self.userid = self.context.getId()
+            member = pm.getMemberById(self.userid)
+            if not member:
+                self.setError("No user found for %s" % self.userid)
+                return
+
+            self.fullname = member.getProperty('fullname')
+            path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
+            hf = self.context.restrictedTraverse(path)
+            self.home_folder = hf
+            self.home_folder_url = hf and hf.absolute_url() or ''
+        else:
+            member = pm.getAuthenticatedMember()
+            try:
+                self.userid = member.getUserId()
+            except:
+                self.userid = member.getUserName()
+            self.fullname = member.getProperty('fullname')
+            path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
+            hf = pm.getHomeFolder()
+            self.home_folder = hf
+            self.home_folder_url = hf and hf.absolute_url() or ''
+
         self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
         self.Provider = pc.searchResults(portal_type="Provider", path=path, Language='all')
 
-        hf = pm.getHomeFolder()
-        self.home_folder = hf
-        self.home_folder_url = hf and hf.absolute_url() or ''
-        
+
+    def setError(self, message):
+        self.error = message
+        self.fullname = self.userid = self.RALinks = self.Provider = self.home_folder = self.home_folder_url = ''
 
     def provider(self):
         return len(self.Provider)>0 and self.Provider[0].getObject() or None
@@ -115,57 +118,10 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         provider = self.provider()
         return provider and provider.Title() or "n/a"
 
-
-class WorkingAreaManager(WorkingArea):
-    """ Working Area that does not force the view to the currently logged in
-        user's home folder, but displays the content of any user folder."""
-
-    def __init__(self, context, request, **args):
-        super(WorkingAreaManager, self).__init__(context, request)
-        self.error = ''
-        self.userid = self.request.get('userid', '')
-        if not self.userid:
-            try:
-                self.userid = aq_parent(aq_inner(self.context)).getId() == 'Members' and \
-                    self.context.getId() or ''
-            except:
-                pass
-        pm = getToolByName(context, 'portal_membership')
-        if self.userid:
-            self.memberok = not not pm.getMemberById(self.userid)
-            if not self.memberok:
-                self.error = 'No user found for %s' %self.userid
-        else:
-            self.error = "You must provide a userid as parameter or call the view on a member folder"
-            self.memberok = False
-
-
-    def getTemplateName(self):
-        return "workingarea-manager"
-
-    def setup(self):
-        if self.memberok:
-            pc = getToolByName(self.context, 'portal_catalog')
-            pm = getToolByName(self.context, 'portal_membership')
-            member = pm.getMemberById(self.userid)
-            self.fullname = member.getProperty('fullname')
-            f = pm.getMembersFolder()
-            path = "/".join( f.getPhysicalPath() ) + '/' + self.userid
-            self.RALinks = pc.searchResults(portal_type="RiskAssessmentLink", path=path)
-            self.Provider = pc.searchResults(portal_type="Provider", path=path, Language='all')
-
-            hf = self.context.restrictedTraverse(path)
-            self.home_folder = hf
-            self.home_folder_url = hf and hf.absolute_url() or ''
-        else:
-            self.fullname = self.userid = self.RALinks = self.Provider = self.home_folder = self.home_folder_url = ''
-
-
-    def __call__(self):
-        if self.error:
-            status = IStatusMessage(self.request)
-            status.addStatusMessage(self.error, type='error')
-        return self.template()
+    def isManager(self):
+        pm = getToolByName(self, 'portal_membership')
+        member = pm.getAuthenticatedMember()
+        return "Manager" in member.getRoles()
 
 
 class ProviderOverview(BrowserView):
