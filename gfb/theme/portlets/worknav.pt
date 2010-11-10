@@ -2,7 +2,7 @@
     i18n:domain="gfb"
     tal:define="home_url view/home_url;
                 lang view/getLanguage;
-                isManager python:[user.allowed(here, ['Manager'])]">
+                isManager view/isManager">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>

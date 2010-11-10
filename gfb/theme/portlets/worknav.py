@@ -49,6 +49,11 @@ class Renderer(base.Renderer):
     def getLanguage(self):
         return getToolByName(self, 'portal_languages').getPreferredLanguage()
 
+    def isManager(self):
+        pm = getToolByName(self, 'portal_membership')
+        member = pm.getAuthenticatedMember()
+        return "Manager" in member.getRoles()
+
 class AddForm(base.NullAddForm):
     form_fields = form.Fields(IWorkNavPortlet)
     label = _(u"Add WorkNav Portlet")
