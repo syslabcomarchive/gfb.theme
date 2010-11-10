@@ -300,3 +300,33 @@ msgstr "Glossar"
 
 msgid "label_to_top_of_page"
 msgstr "Zum Seitenanfang"
+
+msgid "label_sync_status"
+msgstr "Status der Übertragung"
+
+msgid "label_not_sync"
+msgstr "Noch nicht übertragen"
+
+msgid "label_transfer"
+msgstr "Zur OSHA übertragen"
+
+msgid "label_provider_overview"
+msgstr "Übersicht aller Anbieter"
+
+msgid "label_manager_view"
+msgstr "Manager-Ansicht"
+
+msgid "label_modified_locally"
+msgstr "Zuletzt lokal geändert"
+
+msgid "label_modified_remotely"
+msgstr "Zuletzt bei OSHA geändert"
+
+msgid "label_sync_url_remote"
+msgstr "URL des übertragenen Objekts"
+
+msgid "label_last_sync"
+msgstr "Zuletzt übertragen"
+
+msgid "label_unsynced_changes"
+msgstr "Lokale, noch nicht synchronisierte Änderungen"
