@@ -10,20 +10,20 @@ tal:define="dummy python:request.set('disable_border',1)" />
   <body>
     <div metal:fill-slot="main"
         i18n:domain="gfb"
-		tal:define="lang python:here.portal_languages.getPreferredLanguage();
-			base_url string:${here/portal_url}/$lang">
+        tal:define="lang python:here.portal_languages.getPreferredLanguage();
+            base_url string:${here/portal_url}/$lang">
 
-		<h1 class="documentFirstHeading" i18n:translate="label_provider_overview">Provider Overview</h1>
+        <h1 class="documentFirstHeading" i18n:translate="label_provider_overview">Provider Overview</h1>
 
- 	    <ul>
-			<li tal:repeat="member view/getMembers">
-				<a href="" i18n:translate="label_workingarea_of"
-				tal:attributes="href string:${member/url}/workingarea-manager">Working Area of 
-	            <span i18n:name="name" tal:content="member/name">User</span> 
-	            (<span i18n:name="provider" tal:content="member/provider">Provider</span>)
-				</a>
-			</li>
-		</ul>
-	</div>
+        <ul>
+            <li tal:repeat="member view/getMembers">
+                <a href="" i18n:translate="label_workingarea_of"
+                tal:attributes="href string:${member/url}/workingarea-manager">Working Area of
+                <span i18n:name="name" tal:content="member/name">User</span>
+                (<span i18n:name="provider" tal:content="member/provider">Provider</span>)
+                </a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

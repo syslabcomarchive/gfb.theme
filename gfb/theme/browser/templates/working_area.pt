@@ -11,7 +11,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
     <div metal:fill-slot="main"
         i18n:domain="gfb"
         tal:define="dummy view/setup;
-			isManager python:user.allowed(here, ['Manager']);">
+            isManager python:user.allowed(here, ['Manager']);">
 
             <div id="dashboard-actions"
                  tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel');
@@ -40,12 +40,12 @@ tal:define="dummy python:request.set('disable_border',1)" />
             </div>
 
 
-        <h1 i18n:translate="label_workingarea_of">Working Area of 
-            <span i18n:name="name" tal:content="view/getUserName">User</span> 
+        <h1 i18n:translate="label_workingarea_of">Working Area of
+            <span i18n:name="name" tal:content="view/getUserName">User</span>
             (<span i18n:name="provider" tal:content="view/getProviderName">Provider</span>)
         </h1>
-		<h2 tal:condition="python:view.getTemplateName()=='workingarea-manager'"
-			i18n:translate="label_manager_view">Manager View</h2>
+        <h2 tal:condition="python:view.getTemplateName()=='workingarea-manager'"
+            i18n:translate="label_manager_view">Manager View</h2>
 
         <p class="discreet"
             i18n:translate="workingarea_intro">
@@ -82,7 +82,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                         <a class="context" tal:attributes="href string:${provider/absolute_url}/edit"
                              i18n:translate="label_edit">Edit</a>
                        </div>
-                      <div class="actionbtn" tal:condition="python:adminOnProvider 
+                      <div class="actionbtn" tal:condition="python:adminOnProvider
                             and providerReviewState=='private'">
                         <a class="context" id="publish_button" tal:attributes="href string:${provider/absolute_url}/content_status_modify?workflow_action=publish"
                             i18n:translate="Publish">Publish</a>
@@ -90,7 +90,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
 
                 </div>
                     <p class="item_actions" tal:condition="python:providerReviewState=='private'">
-                        <span i18n:domain="gfb" i18n:translate="label_publish_provider">Please publish 
+                        <span i18n:domain="gfb" i18n:translate="label_publish_provider">Please publish
                         your provider information so that it will be visible to others.</span>
                     </p>
 
@@ -201,7 +201,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                                      i18n:translate="" i18n:domain="gfb"
                                      tal:content="string:View ${myral/target_language} version"
                                      tal:condition="translation">View translation</a>
-                                 <a class="context" 
+                                 <a class="context"
                                      tal:attributes="href string:$url/@@translate?newlanguage=${myral/target_language}"
                                      i18n:translate="" i18n:domain="gfb"
                                      id="translate_into_button"
