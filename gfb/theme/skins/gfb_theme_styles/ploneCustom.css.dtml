@@ -435,6 +435,9 @@ top: 0;
 
 #publish_button, #translate_into_button {color: red;}
 
+.warning_text {
+    color:red;
+}
 
 /* @group Columns */
 
