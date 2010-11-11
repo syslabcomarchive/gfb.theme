@@ -1,51 +1,32 @@
 
 <div id="globalnav-group">
 
-    <div id="you-have-chosen" 
+    <div id="you-have-chosen"
          tal:define="rcp python:here.portal_url.getRelativeContentPath(here);
                      on_homepage python:len(rcp)==2 and rcp[1]=='index_html'">
-       <span tal:condition="not:on_homepage" 
-             i18n:translate="label_you_have_chosen" 
+       <span tal:condition="not:on_homepage"
+             i18n:translate="label_you_have_chosen"
              i18n:domain="gfb">
            You have chosen:
        </span>
-       <span tal:condition="on_homepage" 
-             i18n:translate="label_homepage" 
+       <span tal:condition="on_homepage"
+             i18n:translate="label_homepage"
              i18n:domain="gfb">
            Homepage
        </span>
 
     </div>
 
-    <!--h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5-->
-    <!--tal:tabs tal:condition="view/portal_tabs"
-              i18n:domain="plone">
-
-        
-        <div id="portal-globalnav-box">
-        <ul id="portal-globalnav">
-            <tal:tabs tal:repeat="tab view/portal_tabs"><li tal:attributes="id string:portaltab-${tab/id};
-                                class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'">
-                <a href="" 
-                   tal:content="tab/name"
-                   tal:attributes="href tab/url;
-                                   title tab/description|nothing">
-                Tab Name
-                </a></li></tal:tabs>
-        </ul>
-        </div>
-    </tal:tabs-->
-    
     <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
     <tal:tabs tal:condition="view/portal_tabs"
               i18n:domain="plone">
         <div id="portal-globalnav-box">
             <ul id="portal-globalnav">
-                <tal:tabs tal:repeat="tab view/portal_tabs"><li 
+                <tal:tabs tal:repeat="tab view/portal_tabs"><li
                           tal:attributes="id string:portaltab-${tab/id};
                                           class python:view.selected_portal_tab==tab['id'] and 'selected' or 'plain'"
-                          tal:define="subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));">                                 
-                    <a href="" 
+                          tal:define="subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));">
+                    <a href=""
                        tal:content="tab/name"
                        tal:attributes="href tab/url;
                                        title tab/description|nothing">
@@ -61,7 +42,7 @@
                     </li></tal:tabs>
             </ul>
         </div>
-    </tal:tabs>    
+    </tal:tabs>
 
 
     <div id="portal-searchbox"
@@ -71,7 +52,7 @@
               tal:attributes="action string:${view/search_site_url}/search">
 
             <label for="searchGadget" class="hiddenStructure"
-                        
+
                         i18n:translate="text_search">Search Site</label>
 
             <div class="LSBox">
@@ -81,7 +62,7 @@
                    value=""
                    title="Search Site"
                    accesskey="4"
-                   i18n:domain="gfb" 
+                   i18n:domain="gfb"
                    i18n:attributes="title title_search_site;"
                    tal:attributes="value request/SearchableText|nothing;
                                    id view/search_input_id"
@@ -91,8 +72,8 @@
                    type="submit"
                    value="Search"
                    i18n:attributes="value label_search;" />
-        
-           
+
+
 
             <div class="LSResult" id="LSResult" style=""><div class="LSShadow" id="LSShadow"></div></div>
             </div>
