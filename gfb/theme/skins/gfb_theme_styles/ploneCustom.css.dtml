@@ -135,7 +135,7 @@ body {
 }
 #gfb_site_title {
     font-weight: bold;
-    /*font-size: 14px;*/
+    font-size: 110%;
     font-family: FranklinICTDemi, Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
     letter-spacing: 1px;
     color: white;
@@ -859,20 +859,6 @@ ul.navTree span  {
   vertical-align: middle;
   margin-top: 0;
   font-weight: bold;
-}
-h2 {
-  font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-  color: #3D4E60;
-  margin-bottom: 12px;
-  margin-top: 10px;
-}
-
-/*IE6 Fix*/
-* html h2 {
-  font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
-  color: #3D4E60;
-  margin-bottom: 12px;
-  margin-top: 0px;
 }
 .treeview ul {
   background-color: transparent;
@@ -2808,6 +2794,15 @@ letter-spacing:0;
 margin-bottom:15px;
 margin-top:25px;
 }
+
+/*IE6 Fix*/
+* html h2 {
+  font: bold 16px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  color: #3D4E60;
+  margin-bottom: 12px;
+  margin-top: 0px;
+}
+
 
 h3 {
 color:#3D4E60;
