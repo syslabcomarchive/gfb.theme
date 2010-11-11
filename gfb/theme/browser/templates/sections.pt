@@ -80,10 +80,12 @@
         </form>
 
         <div id="portal-advanced-search"
-             class="hiddenStructure">
+             class="hiddenStructure" tal:define="lang here/portal_languages/getPreferredLanguage">
             <a href="#"
-               tal:attributes="href string:${view/site_url}/search_form"
+               tal:attributes="href string:${view/site_url}/$lang/search_form"
                i18n:translate="label_advanced_search"
+               title="Advanced search"
+               i18n:attributes="title label_advanced_search"
                accesskey="5">
                 Advanced Search&hellip;
             </a>
