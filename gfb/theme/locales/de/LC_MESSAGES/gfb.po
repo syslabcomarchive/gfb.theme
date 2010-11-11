@@ -298,6 +298,9 @@ msgstr "Handlungshilfen für die Gefährdungsbeurteilung"
 msgid "glossary"
 msgstr "Glossar"
 
+msgid "accesskey_glossary"
+msgstr "<code>7</code> - Glossar"
+
 msgid "label_to_top_of_page"
 msgstr "Zum Seitenanfang"
 
