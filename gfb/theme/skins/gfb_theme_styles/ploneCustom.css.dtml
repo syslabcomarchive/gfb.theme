@@ -436,6 +436,10 @@ top: 0;
 
 #publish_button, #translate_into_button {color: red;}
 
+.warning_text {
+    color:red;
+}
+
 
 /* @group Columns */
 
@@ -1773,6 +1777,15 @@ div#link_to_tool {
   background: transparent url(&dtml-portal_url;/pdf_icon.gif) 0px -1px no-repeat;
   padding: 0px 2px 1px 16px;
 }
+
+#news_listing .link-internal-js {
+    padding-top: 0px;
+}
+.link-to-top {
+  background: transparent url(&dtml-portal_url;/ico_gfb_arrow_up.gif) 0px 3px no-repeat;
+  padding: 1px 0px 1px 10px;
+}
+
 /*
 ** office group
 */
@@ -2930,6 +2943,12 @@ div#tooltip {
 
 #tooltip h3, #tooltip div { margin: 0; }
 
+/* Link "Zum Seitenanfang" */
+div.linkToTop, p.linkToTop
+{
+    float:right;
+    margin-left: 2.5em;
+}
 
 
 /* @end */
