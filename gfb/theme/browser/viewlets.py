@@ -1,6 +1,6 @@
 from Acquisition import aq_inner, aq_base, aq_parent
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase, PersonalBarViewlet, PathBarViewlet, GlobalSectionsViewlet, SearchBoxViewlet
+from plone.app.layout.viewlets import common
 from plone.app.layout.viewlets.content import DocumentActionsViewlet
 from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
@@ -12,7 +12,7 @@ from plone.app.portlets.cache import get_language
 #from plone.app.i18n.locales.browser.selector import LanguageSelector 
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
 
-from plone.app.layout.viewlets.common import SearchBoxViewlet, TitleViewlet
+
 from zope.component import getMultiAdapter
 from Products.CMFPlone.utils import safe_unicode
 from cgi import escape
@@ -36,21 +36,21 @@ class GFBLanguageSelector(TranslatableLanguageSelector):
 
 
 # Overwrite PersonalBarViewlet
-class PersonalBarViewletGFB(PersonalBarViewlet):
+class PersonalBarViewletGFB(common.PersonalBarViewlet):
     render = ViewPageTemplateFile('personal_bar_gfb.pt')
 
 
-class EditHelp(ViewletBase):
+class EditHelp(common.ViewletBase):
     render = ViewPageTemplateFile('editing_help.pt')
     
-class SiteTitleViewlet(ViewletBase):
+class SiteTitleViewlet(common.ViewletBase):
     render = ViewPageTemplateFile('templates/site_title.pt')
     
     
-class PathBarViewletGFB(PathBarViewlet):
+class PathBarViewletGFB(common.PathBarViewlet):
     render = ViewPageTemplateFile('templates/path_bar.pt')
 
-class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, SearchBoxViewlet):
+class GlobalSectionsViewletGFB(DropdownMenuViewlet, common.GlobalSectionsViewlet, common.SearchBoxViewlet):
     render = ViewPageTemplateFile('templates/sections.pt')
 
     def update(self):
@@ -97,7 +97,7 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, GlobalSectionsViewlet, Searc
         preflang = langtool.getPreferredLanguage()
         return "%s/%s" %(self.site_url, preflang)
         
-class FooterActions(ViewletBase):
+class FooterActions(common.ViewletBase):
     
     _template = ViewPageTemplateFile('templates/footer_actions.pt')
     
@@ -147,7 +147,7 @@ class FooterActions(ViewletBase):
         return self.getIconFor('plone', action['id'], None)
 
 
-class GFBTitleViewlet(TitleViewlet):
+class GFBTitleViewlet(common.TitleViewlet):
 
     def update(self):
         self.portal_state = getMultiAdapter((self.context, self.request),
@@ -178,3 +178,7 @@ class GFBDocumentActionsViewlet(DocumentActionsViewlet):
         link = context.request.get('ACTUAL_URL') + \
             (context.request.get('QUERY_STRING') and '?' + context.request.get('QUERY_STRING') or '')
         return link
+
+class GFBLogoViewlet(common.LogoViewlet):
+
+    index = ViewPageTemplateFile('templates/logo.pt')
