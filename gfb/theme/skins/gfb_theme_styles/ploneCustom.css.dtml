@@ -2898,9 +2898,15 @@ margin-left: 15%;
 position:relative;
 text-decoration:none;
 }
+body.smallText div.welcome_image h2#datenbanksuche{
+    margin-left: 18%;
+}
 div.welcome_image h2.en#datenbanksuche {
 margin:0;
 margin-left: 6%;
+}
+body.smallText div.welcome_image h2.en#datenbanksuche{
+    margin-left: 10%;
 }
 * html div.welcome_image h2.en#datenbanksuche {
 margin:0 10px;
@@ -2914,6 +2920,12 @@ text-decoration:none;
 }
 body.largeText div.welcome_image h2#expertenwissen{
     margin-left: 4%;
+}
+body.smallText div.welcome_image h2#expertenwissen{
+    margin-left: 14%;
+}
+body.smallText div.welcome_image h2.en#expertenwissen{
+    margin-left: 8%;
 }
 div.welcome_image h2.en#expertenwissen {
 margin:0;
