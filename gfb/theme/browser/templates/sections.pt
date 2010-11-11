@@ -17,7 +17,7 @@
 
     </div>
 
-    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+    <h5 class="hiddenStructure" i18n:translate="heading_sections"><a name="portlet-navigation-tree">Sections</a></h5>
     <tal:tabs tal:condition="view/portal_tabs"
               i18n:domain="plone">
         <div id="portal-globalnav-box">
