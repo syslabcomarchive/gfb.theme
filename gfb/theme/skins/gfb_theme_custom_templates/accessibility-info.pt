@@ -71,7 +71,7 @@
         <li i18n:translate="accesskey_search_field"><code>4</code> &mdash; Search field focus</li>
         <li i18n:translate="accesskey_advanced_search"><code>5</code> &mdash; Advanced Search</li>
         <li i18n:translate="accesskey_navigation"><code>6</code> &mdash; Site navigation tree</li>
-		<li i18n:translate="accesskey_glossary" i18n:domain="gfb"><code>7</code> &mdash; Glossary</li>
+        <li i18n:translate="accesskey_glossary" i18n:domain="gfb"><code>7</code> &mdash; Glossary</li>
         <li i18n:translate="accesskey_contact"><code>9</code> &mdash; Contact information</li>
         <li i18n:translate="accesskey_accesskey_details"><code>0</code> &mdash; Access Key details</li>
     </ul>
