@@ -20,14 +20,15 @@ h1, h2, h3, h4, h5, h6 {
     height:32px;
     /* background-color: #2b3c52;*/
     background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
-    font: 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    font: /*90%*/ Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     /* color: #cccedf;*/
     color: whitesmoke;
     display: block;
     line-height:32px;
 }
 #you-have-chosen span {
-    font-size:11px;
+    /*font-size:11px;*/
+    font-size:80%;
     padding-left: 12px;
 }
 
@@ -136,7 +137,7 @@ body {
 }
 #gfb_site_title {
     font-weight: bold;
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-family: FranklinICTDemi, Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
     letter-spacing: 1px;
     color: white;
@@ -256,7 +257,7 @@ li#document-action-sendto, li#document-action-sendto_ralink {
 }
 
 .documentActions {
-    margin: 1.5em 0;
+    margin: 1em 0;
     padding: 0 0 0 25px;;
     text-align: right;
 }
@@ -435,9 +436,6 @@ top: 0;
 
 #publish_button, #translate_into_button {color: red;}
 
-.warning_text {
-    color:red;
-}
 
 /* @group Columns */
 
@@ -668,7 +666,8 @@ ul.staticPortlet li {
 #portal-globalnav li a {
   line-height: 32px;
   color: white;
-  font-size: 12px;
+  /*font-size: 12px;*/
+  font-size:88%;
 }
 
 #portal-globalnav li:hover,
@@ -855,7 +854,7 @@ ul.navTree span  {
   background-color: #415063;
   padding: 4px 8px 4px 8px;
   color: whitesmoke;
-  font: 15px/20px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  font: /*15px/20px Arial,*/ "Helvetica Neue", Helvetica, Geneva, sans-serif;
   vertical-align: middle;
   margin-top: 0;
   font-weight: bold;
@@ -1774,15 +1773,6 @@ div#link_to_tool {
   background: transparent url(&dtml-portal_url;/pdf_icon.gif) 0px -1px no-repeat;
   padding: 0px 2px 1px 16px;
 }
-
-#news_listing .link-internal-js {
-    padding-top: 0px;
-}
-.link-to-top {
-  background: transparent url(&dtml-portal_url;/ico_gfb_arrow_up.gif) 0px 3px no-repeat;
-  padding: 1px 0px 1px 10px;
-}
-
 /*
 ** office group
 */
@@ -2484,12 +2474,14 @@ div#region-content #slc-linkcollection-linkbox ul li,
 /*Bugfix für externe Links im Newsportlet*/
 
 .feedmixer-more-link a {
-  font-size:12px;
+  /*font-size:12px;*/
+    font-size:88%;
   padding-left:0px;
 }
 
 * html .feedmixer-more-link a {
-  font-size:12px;
+  /*font-size:12px;*/
+  font-size:88%;
   padding-left:0px;
 }
 
@@ -2770,7 +2762,7 @@ padding:8px;
 background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
 color:whitesmoke;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:19px !important;
+/*font-size:19px !important;*/
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
@@ -2797,7 +2789,7 @@ h2 {
 border-bottom:0 solid #3D4E60;
 color:#3D4E60;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:19px !important;
+/*font-size:19px !important;*/
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
@@ -2810,7 +2802,7 @@ margin-top:25px;
 h3 {
 color:#3D4E60;
 font-family:Arial,"Helvetica Neue",Helvetica,Geneva,sans-serif;
-font-size:16px !important;
+/*font-size:16px !important;*/
 font-weight:normal;
 letter-spacing:0;
 margin-bottom:5px;
@@ -2824,10 +2816,6 @@ font-size:13px !important;
 font-weight:bold;
 letter-spacing:0;
 margin-bottom:5px;
-}
-
-#news_listing h2 {
-    font-size: 17px !important;
 }
 
 /************styles für subnavi größe**********/
@@ -2942,12 +2930,6 @@ div#tooltip {
 
 #tooltip h3, #tooltip div { margin: 0; }
 
-/* Link "Zum Seitenanfang" */
-div.linkToTop, p.linkToTop
-{
-    float:right;
-    margin-left: 2.5em;
-}
 
 
 /* @end */
