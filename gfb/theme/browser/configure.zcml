@@ -107,6 +107,25 @@
         permission="zope2.View"
         />
 
+    <!-- The skip links for accessibility -->
+    <browser:viewlet
+        name="plone.skip_links"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.GFBSkipLinksViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- The site actions -->
+    <browser:viewlet
+        name="plone.site_actions"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.GFBSiteActionsViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+
     <browser:page
       for="*"
       name="workingarea"

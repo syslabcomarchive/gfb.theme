@@ -179,6 +179,16 @@ class GFBDocumentActionsViewlet(DocumentActionsViewlet):
             (context.request.get('QUERY_STRING') and '?' + context.request.get('QUERY_STRING') or '')
         return link
 
+
 class GFBLogoViewlet(common.LogoViewlet):
 
     index = ViewPageTemplateFile('templates/logo.pt')
+
+
+class GFBSkipLinksViewlet(common.SkipLinksViewlet):
+
+    index = ViewPageTemplateFile('templates/skip_links.pt')
+
+
+class GFBSiteActionsViewlet(common.SiteActionsViewlet):
+    index = ViewPageTemplateFile('templates/site_actions.pt')
