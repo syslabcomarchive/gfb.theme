@@ -190,7 +190,6 @@ body {
 
 div#portal-personaltools-wrapper {
     float: right;
-    width: 400px;
     display: block;
     clear: both;
 }
