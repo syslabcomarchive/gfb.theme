@@ -330,3 +330,12 @@ msgstr "Zuletzt übertragen"
 
 msgid "label_unsynced_changes"
 msgstr "Lokale, noch nicht synchronisierte Änderungen"
+
+msgid "title_normal_text"
+msgstr "Normale Textgröße"
+
+msgid "title_small_text"
+msgstr "Kleine Textgröße"
+
+msgid "title_large_text"
+msgstr "Große Textgröße"
