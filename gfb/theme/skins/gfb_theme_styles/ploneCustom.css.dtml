@@ -20,15 +20,13 @@ h1, h2, h3, h4, h5, h6 {
     height:32px;
     /* background-color: #2b3c52;*/
     background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
-    font: /*90%*/ Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+    font: 85% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
     /* color: #cccedf;*/
     color: whitesmoke;
     display: block;
     line-height:32px;
 }
 #you-have-chosen span {
-    /*font-size:11px;*/
-    font-size:80%;
     padding-left: 12px;
 }
 
@@ -671,7 +669,7 @@ ul.staticPortlet li {
   line-height: 32px;
   color: white;
   /*font-size: 12px;*/
-  font-size:88%;
+  font-size:105%;
 }
 
 #portal-globalnav li:hover,
