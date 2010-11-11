@@ -2880,33 +2880,44 @@ div.welcome_image h2{
 
 div.welcome_image h2#basiswissen {
 float:left;
-margin:0 50px;
+margin:0;
+margin-left: 10%;
 position:relative;
 text-decoration:none;
+}
+div.welcome_image h2.en#basiswissen {
+    margin-left: 8%;
 }
 * html div.welcome_image h2#basiswissen {
   margin: 0 50px 0 25px;
 }
 div.welcome_image h2#datenbanksuche {
 float:left;
-margin:0 32px;
+margin:0;
+margin-left: 15%;
 position:relative;
 text-decoration:none;
 }
 div.welcome_image h2.en#datenbanksuche {
-margin:0 15px;
+margin:0;
+margin-left: 6%;
 }
 * html div.welcome_image h2.en#datenbanksuche {
 margin:0 10px;
 }
 div.welcome_image h2#expertenwissen {
 float:left;
-margin:0 8px;
+margin:0;
+margin-left:7%;
 position:relative;
 text-decoration:none;
 }
+body.largeText div.welcome_image h2#expertenwissen{
+    margin-left: 4%;
+}
 div.welcome_image h2.en#expertenwissen {
-margin:0 30px;
+margin:0;
+margin-left: 7%;
 }
 * html div.welcome_image h2#expertenwissen {
   margin: 0 4px;
@@ -2914,12 +2925,17 @@ margin:0 30px;
 div.welcome_image h2#service {
 top: 55px;
 float:left;
-margin:0 38px;
+margin:0;
+margin-left: 9%;
 position:relative;
 text-decoration:none;
 }
+body.largeText div.welcome_image h2#service{
+    margin-left: 5%;
+}
 div.welcome_image h2.en#service {
-margin:0 15px;
+margin:0;
+margin-left: 7%;
 }
 
 *+html div.welcome_image h2#service {
