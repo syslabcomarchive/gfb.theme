@@ -299,7 +299,10 @@ msgid "glossary"
 msgstr "Glossar"
 
 msgid "accesskey_glossary"
-msgstr "<code>7</code> - Glossar"
+msgstr "<code>7</code> &mdash; Glossar"
+
+msgid "accesskey_language"
+msgstr "<code>8</code> &mdash; Sprache umschalten"
 
 msgid "label_to_top_of_page"
 msgstr "Zum Seitenanfang"

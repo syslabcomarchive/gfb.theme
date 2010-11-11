@@ -11,7 +11,7 @@
 						translated lang/translated"
             tal:condition="python: not selected and (translated or specialFish)"
             tal:attributes="class python: selected and 'currentLanguage' or '';">
-                <a href=""
+                <a href="" accesskey="8"
                    tal:define="flag lang/flag|nothing;
                                name lang/name"
                    tal:attributes="href lang/url;
