@@ -141,12 +141,20 @@ body {
     color: white;
     position:relative;
     float:right;
-    top:50px;
+    top:32px;
     right: 12px;
     display: block;
     clear: right;
 }
 
+#gfb_text_sizes {
+    position:relative;
+    float:right;
+    top: -10px;
+    right: 14px;
+    display: block;
+    clear: right;
+}
 
 
 #portal-searchbox {
