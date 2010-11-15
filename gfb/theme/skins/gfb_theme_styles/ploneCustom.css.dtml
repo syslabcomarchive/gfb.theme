@@ -150,7 +150,7 @@ body {
 #gfb_text_sizes {
     position:relative;
     float:right;
-    top: -10px;
+    top: -25px;
     right: 14px;
     display: block;
     clear: right;
