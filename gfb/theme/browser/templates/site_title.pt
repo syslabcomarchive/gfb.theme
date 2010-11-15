@@ -1,21 +1,3 @@
-<div id="gfb_text_sizes" tal:define="portal_url here/portal_url" i18n:domain="gfb">
-    <a href="javascript:setBaseFontSize('smallText',1);"
-        title="Small Text"
-        i18n:attributes="title title_small_text;"><img src="small.gif" 
-            tal:attributes="src string:$portal_url/A_k.png" title="Small Text" 
-            i18n:attributes="title title_small_text;"/></a>
-    <a href="javascript:setBaseFontSize('',1);"
-        title="Normal Text"
-        i18n:attributes="title title_normal_text;"><img src="medium.gif"
-            tal:attributes="src string:$portal_url/A_m.png" title="Normal Text"
-            i18n:attributes="title title_normal_text;"/></a>
-    <a href="javascript:setBaseFontSize('largeText', 1);"
-        title="Large Text"
-        i18n:attributes="title title_large_text;"><img 
-            src="large.gif" tal:attributes="src string:$portal_url/A_g.png" title="Large Text"
-            i18n:attributes="title title_large_text;"/></a>
-</div>
-
 <div id="gfb_site_title">
       
       <span i18n:domain="gfb"

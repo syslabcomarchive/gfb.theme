@@ -37,11 +37,11 @@ class GFBLanguageSelector(TranslatableLanguageSelector):
 
 # Overwrite PersonalBarViewlet
 class PersonalBarViewletGFB(common.PersonalBarViewlet):
-    render = ViewPageTemplateFile('personal_bar_gfb.pt')
+    render = ViewPageTemplateFile('templates/personal_bar_gfb.pt')
 
 
 class EditHelp(common.ViewletBase):
-    render = ViewPageTemplateFile('editing_help.pt')
+    render = ViewPageTemplateFile('templates/editing_help.pt')
     
 class SiteTitleViewlet(common.ViewletBase):
     render = ViewPageTemplateFile('templates/site_title.pt')
