@@ -148,13 +148,13 @@ body {
 }
 
 #gfb_text_sizes {
-    position:relative;
-    float:right;
-    top: -25px;
-    right: 14px;
-    display: block;
-    clear: right;
+display:block;
+float:right;
+position:relative;
+right:-240px;
+top:6px;
 }
+
 
 #gfb_text_sizes img {
     vertical-align: bottom;
