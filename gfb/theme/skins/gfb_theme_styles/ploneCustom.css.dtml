@@ -148,11 +148,11 @@ body {
 }
 
 #gfb_text_sizes {
-display:block;
+clear:both;
 float:right;
 position:relative;
-right:-240px;
-top:6px;
+right:12px;
+top:-25px;
 }
 
 
@@ -2149,7 +2149,7 @@ ul.search_index {
 
 /* soll L√ºcke im FF schlie√üen*/
 #portal-breadcrumbs {
-  padding-bottom: 39px;
+padding-bottom:54px;
 }
 * html #portal-breadcrumbs {
   padding-bottom: 35px;
