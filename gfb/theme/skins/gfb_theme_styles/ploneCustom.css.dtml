@@ -203,6 +203,8 @@ div#portal-personaltools-wrapper {
     float: right;
     display: block;
     clear: both;
+    /****styles to fix the distance between breadcrumbs and content***/
+   margin-top:-15px;
 }
 
 #portal-personaltools li {
@@ -2231,7 +2233,8 @@ padding-bottom:54px;
 
 /* fixt den Abstand des Content zum Header für den FF*/
 #portal-columns {
-  margin-top:-0.5em;
+  /*margin-top:-0.5em;*/
+   margin-top:-15px;
 }
 
 /* Versuch die Top Navi im IE6 zu fixen*/
