@@ -156,6 +156,9 @@ body {
     clear: right;
 }
 
+#gfb_text_sizes img {
+    vertical-align: bottom;
+}
 
 #portal-searchbox {
     display: block;
