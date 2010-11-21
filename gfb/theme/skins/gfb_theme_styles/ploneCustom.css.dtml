@@ -2149,7 +2149,7 @@ ul.search_index {
   margin-bottom: 0em;
 }
 
-/* soll L√ºcke im FF schlie√üen*/
+/* soll Luecke im FF schliessen*/
 #portal-breadcrumbs {
 padding-bottom:54px;
 }
