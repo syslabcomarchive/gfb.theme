@@ -2883,6 +2883,12 @@ div.welcome_image h2{
   line-height: 120%;
   top: 45px;
 }
+body.largeText div.welcome_image h2{
+  top: 50px;
+}
+body.smallText div.welcome_image h2{
+  top: 40px;
+}
 #four_steps {
   margin-top: -10px;
 }
@@ -2903,19 +2909,26 @@ div.welcome_image h2.en#basiswissen {
 div.welcome_image h2#datenbanksuche {
 float:left;
 margin:0;
-margin-left: 15%;
+margin-left: 17%;
 position:relative;
 text-decoration:none;
 }
 body.smallText div.welcome_image h2#datenbanksuche{
-    margin-left: 18%;
+    margin-left: 20%;
 }
+body.largeText div.welcome_image h2#datenbanksuche{
+     margin-left: 14%;
+}
+body.largeText div.welcome_image h2.en#datenbanksuche{
+     margin-left: 11%;
+}
+
 div.welcome_image h2.en#datenbanksuche {
 margin:0;
-margin-left: 6%;
+margin-left: 15%;
 }
 body.smallText div.welcome_image h2.en#datenbanksuche{
-    margin-left: 10%;
+    margin-left: 18%;
 }
 * html div.welcome_image h2.en#datenbanksuche {
 margin:0 10px;
@@ -2930,15 +2943,19 @@ text-decoration:none;
 body.largeText div.welcome_image h2#expertenwissen{
     margin-left: 4%;
 }
+body.largeText div.welcome_image h2.en#expertenwissen{
+    margin-left: 7%;
+}
+
 body.smallText div.welcome_image h2#expertenwissen{
-    margin-left: 14%;
+    margin-left: 11%;
 }
 body.smallText div.welcome_image h2.en#expertenwissen{
-    margin-left: 8%;
+    margin-left: 13%;
 }
 div.welcome_image h2.en#expertenwissen {
 margin:0;
-margin-left: 7%;
+margin-left: 8%;
 }
 * html div.welcome_image h2#expertenwissen {
   margin: 0 4px;
@@ -2952,11 +2969,19 @@ position:relative;
 text-decoration:none;
 }
 body.largeText div.welcome_image h2#service{
-    margin-left: 5%;
+    margin-left: 7%;
+    top: 62px;
+}
+body.largeText div.welcome_image h2.en#service{
+    margin-left: 6%;
+}
+body.smallText div.welcome_image h2#service{
+    margin-left: 12%;
+    top: 50px;
 }
 div.welcome_image h2.en#service {
 margin:0;
-margin-left: 7%;
+margin-left: 9%;
 }
 
 *+html div.welcome_image h2#service {
