@@ -1,11 +1,11 @@
 gfb.theme Changelog
 ===================
 
-1.3.6 (unreleased)
+1.3.6 (2010-11-23)
 ------------------
 
-- Nothing changed yet.
-
+- adjusted the positioning of the 4 welcome_image headlines for all sizes and 
+  language [thomasw]
 
 1.3.5 (2010-11-21)
 ------------------
