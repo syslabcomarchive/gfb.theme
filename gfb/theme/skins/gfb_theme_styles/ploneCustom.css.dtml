@@ -1288,6 +1288,8 @@ div#region-content li {
   width: 549px;
   float:left;
   padding-top:20px;
+/******IE8 fix*******/
+zoom:1 !important;
 }
 
 div.search_medium li {
@@ -1301,7 +1303,9 @@ div.search_medium ul {
 }
 .search_results {
   border-bottom: 2px solid #ecedf2;
-  clear: both;
+  clear: both
+/****IE8 fix******/
+  zoom:1 !important;
 }
 
 .searchResults .highlighted { background: #F6F6F6; }
@@ -1310,6 +1314,8 @@ div.search_medium {
   padding: 13px;
   width: 160px;
   float: right;
+/******IE8 Fix******/
+zoom:1 !important;
 }
 .search_medium h5 {
   color: black;
