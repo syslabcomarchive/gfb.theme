@@ -1304,7 +1304,7 @@ div.search_medium ul {
 }
 .search_results {
   border-bottom: 2px solid #ecedf2;
-  clear: both
+  clear: both;
 /****IE8 fix******/
   zoom:1 !important;
 }
