@@ -1285,7 +1285,8 @@ div#region-content li {
 }
 
 .info_of_search {
-  width: 549px;
+  /*width: 549px;*/
+  width:530px;
   float:left;
   padding-top:20px;
 /******IE8 fix*******/
