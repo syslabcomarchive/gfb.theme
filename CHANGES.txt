@@ -4,7 +4,9 @@ gfb.theme Changelog
 1.3.8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- In slc.linkcollection 1.3.5 new styles were introdicued by request of EU-OSHA. We need
+  to reproduce the old styles so that nothing changes for GFB
+  [thomasw]
 
 
 1.3.7 (2010-11-26)

@@ -2388,8 +2388,47 @@ padding-bottom:54px;
   background-color:transparent;
 }
 
+/* Old linkcollection styles copied from slc.linkcollectio, pre-revamp.
+Reproduced here so that the revamp of slc.linkcollection does not affect the
+GFB linkcollection styles.
+*/
 
+#slc-linkcollection-linkbox {
+    border: 1px solid rgb(203, 209, 216); 
+    padding: 5px; 
+    background-color: rgb(247, 248, 249); 
+    margin-bottom: 10px;
+    
+}
+#slc-linkcollection-editbox {
+    padding: 3px; float: right;
+}
+.current-linklist-item {
+    font-weight: bold;
+}
 
+#content ul.navigationBox {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin: 0 0 0.75em 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+#content #slc-linkcollection-linkbox .navigationBox li a {
+    padding: 0 0 0 20px;
+}
+
+#content ul.navigationBox li a {
+    display: block;
+}
+
+#content  #slc-linkcollection-linkbox ul li.linkList a:hover {
+    text-decoration: underline;
+}
+
+/* END old linkcollection styles  */
 
 /* XXXXXFix für IE6 fehlerhafte Linkcollection*/
 
@@ -2412,20 +2451,21 @@ div#region-content #slc-linkcollection-linkbox ul li,
   padding:0;
   margin: 0px;
 }
-#slc-linkcollection-linkbox ul li.linkList a {
+#content #slc-linkcollection-linkbox ul li.linkList a {
   background: url(lc_inactive.gif) no-repeat 2px 2px;
   padding-left: 20px;
   color: black;
   font-weight: normal;
 }
 
-#slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
+
+#content  #slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
   background: url(lc_active.gif) no-repeat 2px 2px;
   padding-left: 20px;
   font-weight: bold;
   color: black;
 }
-* html #slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
+* html #content  #slc-linkcollection-linkbox ul li.linkList a.current-linklist-item {
   margin-left: 2px;
 }
 #slc-linkcollection-linkbox ul{
