@@ -2407,7 +2407,7 @@ GFB linkcollection styles.
     font-weight: bold;
 }
 
-#content ul.navigationBox {
+#content ul.navigationLinkBox {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -2416,11 +2416,11 @@ GFB linkcollection styles.
     padding-top: 0;
 }
 
-#content #slc-linkcollection-linkbox .navigationBox li a {
+#content #slc-linkcollection-linkbox .navigationLinkBox li a {
     padding: 0 0 0 20px;
 }
 
-#content ul.navigationBox li a {
+#content ul.navigationLinkBox li a {
     display: block;
 }
 
@@ -3054,6 +3054,13 @@ div.linkToTop, p.linkToTop
 {
     float:right;
     margin-left: 2.5em;
+}
+
+
+/* Don't display slc.linkcollection's toTop link, we have our own version*/
+
+span.linkToTopAnchor{
+    display: none;
 }
 
 
