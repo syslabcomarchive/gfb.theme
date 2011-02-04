@@ -148,6 +148,7 @@
         </div>
     
         <metal:captcha define-macro="captcha_field"
+            i18n:domain="gfb"
             tal:define="captcha_helper here/@@captcha_helper;
                      captcha python:captcha_helper.createCaptcha(here, request)">
                      
@@ -155,10 +156,10 @@
                              tal:define="error errors/captcha_text| nothing;"
                              tal:attributes="class python:test(error, 'field error', 'field')">
 
-            <label for="captcha_text" i18n:translate="label_captcha_text" i18n:domain="osha">
+            <label for="captcha_text" i18n:translate="label_captcha_text">
             Verify your request</label>
 
-            <div class="formHelp" i18n:translate="help_captcha_sendto" i18n:domain="osha">
+            <div class="formHelp" i18n:translate="help_captcha_sendto">
               This helps to prevent automated sending of e-mails.
             </div>
             
@@ -166,14 +167,17 @@
             <br/><a href="" tal:attributes="href captcha/audio_url"><span i18n:translate="captcha_wave_url">[Click to play audio version]</span></a>
 
             <br/>
-            <div class="formHelp" i18n:translate="help_captcha_text" i18n:domain="osha">
+            <div class="formHelp" i18n:translate="help_captcha_text">
               Enter the code shown. Click
+              <span i18n:name="button">
               <input type="submit" class="inline"
                      name="form.button.NewCaptcha"
-                     value="New Image"
+                     value="label_new_image"
                      tabindex=""
                      i18n:attributes="value"
+
                      tal:attributes="tabindex tabindex/next;" />
+              </span>
                      if you cannot read the word properly.
             </div>
 

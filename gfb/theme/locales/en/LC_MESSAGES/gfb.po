@@ -234,3 +234,18 @@ msgstr "Glossary"
 
 msgid "label_to_top_of_page"
 msgstr "To top of page"
+
+msgid "label_captcha_text"
+msgstr "Verify your request"
+
+msgid "help_captcha_sendto"
+msgstr "This helps to prevent automated sending of e-mails."
+
+msgid "captcha_wave_url"
+msgstr "[Click to play audio version]"
+
+msgid "help_captcha_text"
+msgstr "Enter the code shown. Click ${button} if you cannot read the word properly."
+
+msgid "label_new_image"
+msgstr "New Image"
