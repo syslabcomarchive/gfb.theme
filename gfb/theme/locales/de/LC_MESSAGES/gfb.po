@@ -356,7 +356,7 @@ msgid "captcha_wave_url"
 msgstr "[Hier klicken, um Audioversion abzuspielen]"
 
 msgid "help_captcha_text"
-msgstr "Geben Sie den dargestellten Zeichen ein. Klicken Sie ${button} falls Sie die Zeichen nicht lesen können."
+msgstr "Geben Sie die dargestellten Zeichen ein. Klicken Sie ${button} falls Sie die Zeichen nicht lesen können."
 
 msgid "label_new_image"
 msgstr "Neues Bild"
