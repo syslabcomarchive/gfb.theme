@@ -350,16 +350,16 @@ msgid "label_captcha_text"
 msgstr "Bestätigen Sie Ihre Eingabe"
 
 msgid "help_captcha_sendto"
-msgstr "Dadurch wird das automatisierte Versenden von E-Mails erschwert."
+msgstr "Dadurch wird das automatisierte Versenden von E-Mails (SPAM) erschwert."
 
 msgid "captcha_wave_url"
 msgstr "[Hier klicken, um Audioversion abzuspielen]"
 
 msgid "help_captcha_text"
-msgstr "Geben Sie den dargestellten Buchstaben ein. Klicken Sie ${button} falls Sie die Buchstaben nicht lesen können."
+msgstr "Geben Sie den dargestellten Zeichen ein. Klicken Sie ${button} falls Sie die Zeichen nicht lesen können."
 
 msgid "label_new_image"
 msgstr "Neues Bild"
 
 msgid "You need to enter the code shown to verify your request"
-msgstr "Sie müssen die oben dargestellten Buchstaben eingeben, um die Anfrage absenden zu können."
+msgstr "Sie müssen die oben dargestellten Zeichen eingeben, um die Anfrage absenden zu können."
