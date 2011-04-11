@@ -224,8 +224,8 @@ tal:define="dummy python:request.set('disable_border',1)" />
 
                             <br clear="all" />
 
-                            <span tal:condition="isManager"
-                            tal:define="canonical obj/getCanonical;
+                            <span tal:condition="isManager">
+                              <span tal:define="canonical obj/getCanonical;
                                 sync_view python:canonical.restrictedTraverse('@@synchronize_content');
                                 sync_status python:sync_view.getSyncStatus(uid=obj.UID())"
                             tal:attributes="class python:sync_status[0]==-1 and 'field unsynced' or 'field synced'">
@@ -248,6 +248,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
                                  <a class="context" id="transfer_button" tal:attributes="href string:${canonical/absolute_url}/synchronize_content"
                                      i18n:translate="label_transfer">Transfer</a>
                                 </div>
+                              </span>
                             </span>
                         </dd>
                     </span>
