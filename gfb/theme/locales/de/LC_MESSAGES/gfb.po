@@ -363,3 +363,7 @@ msgstr "Neues Bild"
 
 msgid "You need to enter the code shown to verify your request"
 msgstr "Sie müssen die oben dargestellten Zeichen eingeben, um die Anfrage absenden zu können."
+
+msgid "go_to_login_form"
+msgstr "Zum Anmeldeformular"
+

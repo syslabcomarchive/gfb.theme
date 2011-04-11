@@ -249,3 +249,6 @@ msgstr "Enter the code shown. Click ${button} if you cannot read the word proper
 
 msgid "label_new_image"
 msgstr "New Image"
+
+msgid "go_to_login_form"
+msgstr "Go to the login form"
