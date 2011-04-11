@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.3.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Customised logged_out.cpt, so that we no longer show a login form
+  on that page. Rather, we link to login_form #2283 [thomasw]
 
 1.3.10 (2011-03-14)
 -------------------
