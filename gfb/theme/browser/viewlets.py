@@ -1,22 +1,22 @@
 from Acquisition import aq_inner, aq_base, aq_parent
+
+from zope.component import getMultiAdapter
+
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+
+from cgi import escape
+
 from plone.app.layout.viewlets import common
 from plone.app.layout.viewlets.content import DocumentActionsViewlet
-from zope.component import getMultiAdapter
-from Products.CMFCore.utils import getToolByName
-from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
+from plone.app.portlets.cache import get_language
 from plone.app.portlets.portlets.navigation import Assignment
 from plone.memoize import ram
 from plone.memoize.compress import xhtml_compress
-from plone.app.portlets.cache import get_language
-#from plone.app.i18n.locales.browser.selector import LanguageSelector 
-from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
 
-
-from zope.component import getMultiAdapter
-from Products.CMFPlone.utils import safe_unicode
-from cgi import escape
-
+from webcouturier.dropdownmenu.browser.dropdown import DropdownMenuViewlet
 
 #Overwrite Languageselector to customize appearance
 class GFBLanguageSelector(TranslatableLanguageSelector):
