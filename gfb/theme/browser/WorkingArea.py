@@ -80,7 +80,9 @@ class WorkingArea(BrowserView, TranslatableLanguageSelector):
         self.fullname = self.userid = self.RALinks = self.Provider = self.home_folder = self.home_folder_url = ''
 
     def provider(self):
-        return len(self.Provider)>0 and self.Provider[0].getObject() or None
+        provider = len(self.Provider)>0 and self.Provider[0].getObject() or None
+        provider = provider and provider.getTranslation(self.tool.getPreferredLanguage()) or None
+        return provider
 
     def providerReviewState(self):
         p = self.provider()
