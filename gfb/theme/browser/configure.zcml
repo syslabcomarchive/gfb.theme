@@ -223,20 +223,20 @@
         />
 
   <!-- sitemap builder -->
-  <browser:page
+  <!--browser:page
       name="sitemap.xml.gz"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class="osha.theme.browser.sitemap.SiteMapView"
       permission="zope2.Public"
       layer=".interfaces.IThemeSpecific"
-     />
+     /-->
 
   <!-- News listing -->
-  <browser:page
+  <!--browser:page
     name="local-news-listing"
     for="*"
     class=".news_listing.LocalNewsListing"
     permission="zope2.View"
-    />
+    /-->
 
 </configure>

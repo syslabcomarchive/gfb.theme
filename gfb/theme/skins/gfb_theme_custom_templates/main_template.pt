@@ -5,7 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xml:lang="en"
       lang="en"
-      tal:define="lang language; kss_inline_editable python:False;"
+      tal:define="portal_state context/@@plone_portal_state;
+                  lang portal_state/language;
+                  plone_view context/@@plone;
+                  view nocall:view | nocall: plone_view;
+                  kss_inline_editable python:False;
+                  isRTL here/@@plone_portal_state/is_rtl;"
       tal:attributes="lang lang;
                       xml:lang lang">
 
@@ -29,7 +34,7 @@
 
     <div tal:replace="structure provider:plone.htmlhead" />
 
-    <meta tal:define="metatags python:putils.listMetaTags(here).items()"
+    <meta tal:define="metatags python:context.plone_utils.listMetaTags(here).items()"
           tal:condition="metatags"
           tal:repeat="keyval metatags"
           tal:attributes="name python:keyval[0];

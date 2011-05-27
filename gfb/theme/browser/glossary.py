@@ -1,3 +1,4 @@
+# vim: set fileencoding=utf-8 :
 import Acquisition, re
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -15,7 +16,7 @@ class GlossaryView(BrowserView):
     """
 
     template = ViewPageTemplateFile('templates/glossary.pt')
-    template.id = "gfb_glossary"
+    #template.id = "gfb_glossary"
 
     def __call__(self):
         self.request.set('disable_border', True)

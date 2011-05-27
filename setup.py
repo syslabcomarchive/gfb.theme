@@ -55,6 +55,8 @@ setup(name='gfb.theme',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Products.ATVocabularyManager',
+          'Products.AdvancedQuery',
       ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

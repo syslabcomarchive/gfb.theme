@@ -15,7 +15,7 @@ class AdvancedSearchView(BrowserView):
     """
 
     template = ViewPageTemplateFile('templates/advanced_search.pt')
-    template.id = "advanced_search"
+    #template.id = "advanced_search"
 
     def __call__(self):
         self.request.set('disable_border', True)

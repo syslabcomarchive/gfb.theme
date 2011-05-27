@@ -8,7 +8,7 @@ from plone.app.i18n.locales.browser.selector import LanguageSelector
 from Products.statusmessages.interfaces import IStatusMessage
 from Acquisition import aq_parent, aq_inner
 
-class WorkingArea(BrowserView, TranslatableLanguageSelector):
+class WorkingArea(TranslatableLanguageSelector):
     """
     Working Area for normal users
     """
