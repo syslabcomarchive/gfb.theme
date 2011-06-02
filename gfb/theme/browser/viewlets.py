@@ -68,7 +68,7 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, common.GlobalSectionsViewlet
         # from globalsections
         context_state = getMultiAdapter((self.context, self.request),
                                         name=u'plone_context_state')
-        actions = context_state.actions()
+        actions = context_state.actions('portal_tabs')
         portal_tabs_view = getMultiAdapter((self.context, self.request),
                                            name='portal_tabs_view')
         self.portal_tabs = portal_tabs_view.topLevelTabs(actions=actions)
@@ -175,8 +175,8 @@ class GFBDocumentActionsViewlet(DocumentActionsViewlet):
 
     def getLink(self):
         context = self.context
-        link = context.request.get('ACTUAL_URL') + \
-            (context.request.get('QUERY_STRING') and '?' + context.request.get('QUERY_STRING') or '')
+        link = context.REQUEST.get('ACTUAL_URL') + \
+            (context.REQUEST.get('QUERY_STRING') and '?' + context.REQUEST.get('QUERY_STRING') or '')
         return link
 
 
