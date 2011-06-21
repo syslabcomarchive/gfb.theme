@@ -6,9 +6,7 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="gfb">
 
-<metal:cssslot fill-slot="css_slot"
-             tal:define="global mockup here/@@ATMockup;
-                         dummy python:mockup.preload(types=[('RiskAssessmentLink', 'RiskAssessmentLink')]);">
+<metal:cssslot fill-slot="css_slot">
 <style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
        tal:content="string:@import url($portal_url/riskassessment_styles.css);">
 </style>
@@ -28,16 +26,6 @@
     }
   }
   </script>
-
-  <tal:js define="js python:here.getUniqueWidgetAttr(mockup.getFields(), 'helper_js')"
-          condition="js"
-          repeat="item js">
-    <script type="text/javascript"
-            charset="iso-8859-1"
-            tal:condition="python:exists('portal/%s' % item)"
-            tal:attributes="src string:$portal_url/$item">
-    </script>
-  </tal:js>
 
 <script type="text/javascript" src="livesearch_ralinks.js"
     tal:attributes="src string:$portal_url/livesearch_ralinks.js">
@@ -88,7 +76,8 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 <body>
 <div metal:fill-slot="main"
-     tal:define="use_types_blacklist request/use_types_blacklist | python:True;
+     tal:define="site_properties context/portal_properties/site_properties|nothing;
+                use_types_blacklist request/use_types_blacklist | python:True;
                 use_navigation_root request/use_navigation_root | python:True;
                 dummy python:request.set('portal_type', 'RiskAssessmentLink');
                 Batch python:modules['Products.CMFPlone'].Batch;
@@ -143,7 +132,7 @@ document.images[Bildname].src = eval(Tauschbildname);
         <div id="tabs-1" class="ui-tabs-panel">
           <span tal:define="obj nocall:view/top_thema">
             <span tal:condition="obj">
-                <span tal:content="python:toLocalizedTime(obj.effective())" />
+                <span tal:content="python:context.toLocalizedTime(obj.effective())" />
                 <h3 tal:content="obj/Title" />
                  <div tal:replace="structure obj/Description" />
                  <div><a href="." tal:attributes="href obj/absolute_url"
@@ -157,7 +146,7 @@ document.images[Bildname].src = eval(Tauschbildname);
         <div id="tabs-2" class="ui-tabs-panel">
         <span tal:define="obj nocall:view/gute_praxis">
             <span tal:condition="obj">
-                <span tal:content="python:toLocalizedTime(obj.effective())" />
+                <span tal:content="python:context.toLocalizedTime(obj.effective())" />
                 <h3 tal:content="obj/Title" />
                  <div tal:replace="structure obj/Description" />
                  <div><a href="." tal:attributes="href obj/absolute_url"
@@ -259,25 +248,13 @@ document.images[Bildname].src = eval(Tauschbildname);
                     
                     <li id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
-                                            fieldRealName string:remoteProvider;
-                                            mockup      nocall:here/@@ATMockup;
-                                            value       provider;
-                                            nodesHaveCBs python:0;
-                                            use_portal_type portal_type|string:RiskAssessmentLink;
-                                            vocabulary  string:getProviderVocabulary;
-                                            quicksearch_vocabulary string:getProviderQuicksearch;
-                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldRealName);
-                                            widget      nocall: field/widget;
-                                            mode        string:search;
-                                            accessor    python:field.getDefault(here);
-                                            errors      python:{};
-                                            hide_id     python:True;
-                                            preflang    here/portal_languages/getPreferredLanguage;
-                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
-                                            dummy       python:here.REQUEST.set('mode', 'search')
+                                              vocab       string:provider_category;
+                                              selected    request/form/remote_provider|nothing;
                                             ">
-                                    <span tal:replace="python:widget.Label(here)" />
-                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                            <span>Anbieter</span>
+                            <div tal:attributes="id string:tree_${fieldName}" />
+                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+
                           </tal:define>
                         
                     </li>
@@ -285,20 +262,12 @@ document.images[Bildname].src = eval(Tauschbildname);
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="NACE_compact">
                           <tal:define define=" fieldName   string:nace;
-                                            mockup      nocall:here/@@ATMockup;
-                                            value       nace;
-                                            level       python:3;
-                                            use_portal_type portal_type|string:RiskAssessmentLink;
-                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
-                                            widget      nocall: field/widget;
-                                            mode        string:search;
-                                            accessor    python:field.getDefault(here);
-                                            errors      python:{};
-                                            preflang    here/portal_languages/getPreferredLanguage;
-                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
+                                               vocab       string:NACE;
+                                               selected    request/form/nace|nothing;
                                             ">
-                                    <span tal:replace="python:widget.Label(here)" />
-                                    <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                            <span>Branche</span>
+                            <div tal:attributes="id string:tree_${fieldName}" />
+                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
                         </metal:macro>
                     </li>
@@ -306,20 +275,12 @@ document.images[Bildname].src = eval(Tauschbildname);
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
-                                            mockup     nocall:here/@@ATMockup;
-                                            level       python:3;
-                                            value       riskfactors;
-                                            use_portal_type portal_type|string:RiskAssessmentLink;
-                                            field       python:mockup.getFakeInstanceField(use_portal_type, fieldName);
-                                            widget      nocall: field/widget;
-                                            mode        string:search;
-                                            accessor    python:field.getDefault(here);
-                                            errors      python:{};
-                                            preflang    here/portal_languages/getPreferredLanguage;
-                                            at_url      string:${here/portal_url/getPortalPath}/${preflang};
+                                                vocab      string:RiskAssessmentContents;
+                                                selected   request/form/riskfactors|nothing;
                                             ">
-                                        <span tal:replace="python:widget.Label(here)" />
-                                        <span metal:use-macro="here/gfb_itembrowser/macros/vocabularyitem_edit"></span>
+                            <span>Gefährdungsart</span>
+                            <div tal:attributes="id string:tree_${fieldName}" />
+                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
                         </metal:macro>
                     </li>

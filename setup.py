@@ -56,6 +56,7 @@ setup(name='gfb.theme',
           'setuptools',
           # -*- Extra requirements: -*-
           'Products.ATVocabularyManager',
+          'collective.dynatree',
           'Products.AdvancedQuery',
       ],
       tests_require=tests_require,

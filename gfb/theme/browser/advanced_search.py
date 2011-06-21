@@ -158,6 +158,72 @@ class AdvancedSearchView(BrowserView):
         #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
         return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
         
+    def getDynatreeScript(self, vocab, fieldName=None, selected=None):
+        def indent(num, str):
+            return "\n".join([" "*num + part for part in str.split("\n")])
+            
+        def dict2dyna(dict):
+            if not dict:
+                return ''
+            strs = []
+            for key in dict.keys():
+                children = dict[key][1]
+                str_children = str_selected = ''
+                if children:
+                    str_children = ', children: [\n%s\n]' % indent(4, dict2dyna(children))
+                if selected and key in selected:
+                    str_selected = ', select: true, expand: true'
+                elif 'select' in str_children:
+                    str_selected = ', expand: true'
+                strs.append('{title: "%s", key: "%s"' % (dict[key][0], key) + str_selected + str_children + '}')
+            return ",\n".join(strs)
+                
+        portal_vocabularies = getToolByName(self.context, 'portal_vocabularies')
+        vocdict = portal_vocabularies[vocab].getVocabularyDict(self.context)
+        voctitle = portal_vocabularies[vocab].Title()
+        if not fieldName:
+            fieldName = vocab
+
+        if selected:
+            selected_str = '[' + ','.join(['"%s"' % item for item in selected]) + ']'
+        else:
+            selected_str = '[]'
+
+        subtree = indent(20, dict2dyna(vocdict))
+        if 'expand' in subtree:
+            root_expanded = 'true'
+        else:
+            root_expanded = 'false'
+
+        return """<script type="text/javascript">
+    $(function(){
+        // Attach the dynatree widget to an existing <div id="tree"> element
+        // and pass the tree options as an argument to the dynatree() function:
+        $("#tree_%(fieldName)s").dynatree({
+            checkbox: true,
+            children: [
+                {title: "%(voctitle)s", hideCheckbox: true, expand: %(root_expanded)s, children: [
+%(subtree)s
+                    ]
+                }
+            ]
+        });
+        // On submitting create hidden inputs for each selected item
+        $("#searchform").submit(function(){
+            selected = $("#tree_%(fieldName)s").dynatree("getSelectedNodes")
+            for (var i = 0; i < selected.length; i++) {
+                input = document.createElement('input')
+                input.type = "hidden"
+                input.name = "%(fieldName)s:list"
+                input.value = selected[i].data.key
+                $('.column2b').find('.search_index').after(input)
+            }
+        });
+
+    });
+</script>
+                 """ % {'fieldName': fieldName, 'voctitle': voctitle, 'root_expanded': root_expanded, 'subtree': subtree, 'selected_str': selected_str}
+
 
 class HomepageSearchView(AdvancedSearchView):
     template = ViewPageTemplateFile('templates/homepage_search.pt')
