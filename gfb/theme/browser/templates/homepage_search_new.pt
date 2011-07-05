@@ -248,7 +248,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     
                     <li id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
-                                              vocab       string:provider_category;
+                                              vocab       python:view.getVocabulary('provider');
                                               selected    request/form/remote_provider|nothing;
                                             ">
                             <span>Anbieter</span>
@@ -262,7 +262,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="NACE_compact">
                           <tal:define define=" fieldName   string:nace;
-                                               vocab       string:NACE;
+                                               vocab       python:view.getVocabulary('NACE');
                                                selected    request/form/nace|nothing;
                                             ">
                             <span>Branche</span>
@@ -275,7 +275,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
-                                                vocab      string:RiskAssessmentContents;
+                                                vocab      python:view.getVocabulary('RiskFactors');
                                                 selected   request/form/riskfactors|nothing;
                                             ">
                             <span>Gefährdungsart</span>

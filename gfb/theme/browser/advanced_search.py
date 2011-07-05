@@ -5,8 +5,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
 from gfb.theme import GFBMessageFactory as _
 import os.path
-
-
+from zope.component import getUtility
+from gfb.policy.interfaces import IVocabularyUtility
 
 class AdvancedSearchView(BrowserView):
     """View for displaying the gfb search form
@@ -146,7 +146,6 @@ class AdvancedSearchView(BrowserView):
 
         return query
         
-
     def search(self):
         context = Acquisition.aq_inner(self.context)
         query = self.buildQuery()
@@ -158,42 +157,56 @@ class AdvancedSearchView(BrowserView):
         #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
         return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
         
-    def getDynatreeScript(self, vocab, fieldName=None, selected=None):
+    def getVocabulary(self, name):
+        if name != 'provider':
+            portal_vocabularies = getToolByName(self.context, 'portal_vocabularies')
+            return portal_vocabularies[name].getVocabularyDict(self.context)
+        else:
+            util = getUtility(IVocabularyUtility, name)
+            return util.getVocabularyDict()
+
+    def getDynatreeScript(self, vocdict, fieldName=None, selected=None):
         def indent(num, str):
-            return "\n".join([" "*num + part for part in str.split("\n")])
+            return u"\n".join([u" "*num + part for part in str.split(u"\n")])
             
+        def try_unicode(str):
+            if isinstance(str, unicode):
+                return str
+            try:
+                return unicode(str, 'utf-8')
+            except:
+                return str
+
         def dict2dyna(dict):
             if not dict:
-                return ''
+                return u''
             strs = []
             for key in dict.keys():
                 children = dict[key][1]
-                str_children = str_selected = ''
+                str_children = str_selected = u''
                 if children:
-                    str_children = ', children: [\n%s\n]' % indent(4, dict2dyna(children))
+                    str_children = u', children: [\n%s\n]' % indent(4, dict2dyna(children))
                 if selected and key in selected:
-                    str_selected = ', select: true, expand: true'
-                elif 'select' in str_children:
-                    str_selected = ', expand: true'
-                strs.append('{title: "%s", key: "%s"' % (dict[key][0], key) + str_selected + str_children + '}')
-            return ",\n".join(strs)
+                    str_selected = u', select: true, expand: true'
+                elif u'select' in str_children:
+                    str_selected = u', expand: true'
+                strs.append(u'{title: "%s", key: "%s"' % (try_unicode(dict[key][0]), key) + str_selected + str_children + u'}')
+            return u",\n".join(strs)
                 
-        portal_vocabularies = getToolByName(self.context, 'portal_vocabularies')
-        vocdict = portal_vocabularies[vocab].getVocabularyDict(self.context)
-        voctitle = portal_vocabularies[vocab].Title()
+        voctitle = u'(root)'
         if not fieldName:
             fieldName = vocab
 
         if selected:
-            selected_str = '[' + ','.join(['"%s"' % item for item in selected]) + ']'
+            selected_str = u'[' + u','.join([u'"%s"' % item for item in selected]) + u']'
         else:
-            selected_str = '[]'
+            selected_str = u'[]'
 
         subtree = indent(20, dict2dyna(vocdict))
-        if 'expand' in subtree:
-            root_expanded = 'true'
+        if u'expand' in subtree:
+            root_expanded = u'true'
         else:
-            root_expanded = 'false'
+            root_expanded = u'false'
 
         scriptpath = '/'.join([os.path.dirname(os.path.abspath(__file__)), 'tree.js'])
         script = open(scriptpath, 'r').read()

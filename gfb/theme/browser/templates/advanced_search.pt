@@ -146,7 +146,7 @@
 
                     <li id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
-                                              vocab       string:provider_category;
+                                              vocab       python:view.getVocabulary('provider_category');
                                               selected    request/form/remote_provider|nothing;
                                             ">
                             <span>Anbieter</span>
@@ -164,7 +164,7 @@
                                             ">
                             <span>Branche</span>
                             <div tal:attributes="id string:tree_${fieldName}" />
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+                            <!--tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" /-->
                           </tal:define>
                         </metal:macro>
                     </li>
@@ -177,7 +177,7 @@
                                             ">
                             <span>Gefährdungsart</span>
                             <div tal:attributes="id string:tree_${fieldName}" />
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+                            <!--tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" /-->
                           </tal:define>
                         </metal:macro>
                     </li>
