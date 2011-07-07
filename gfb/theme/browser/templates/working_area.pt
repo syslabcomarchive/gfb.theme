@@ -4,14 +4,16 @@
       i18n:domain="plone">
 
 <metal:head fill-slot="top_slot"
-tal:define="dummy python:request.set('disable_border',1)" />
+tal:define="dummy python:request.set('disable_border',1);" />
 
 
   <body>
     <div metal:fill-slot="main"
         i18n:domain="gfb"
         tal:define="dummy view/setup;
-            isManager view/isManager">
+            isManager view/isManager;
+            portal here/portal_url/getPortalObject;
+            putils nocall:here/plone_utils;">
 
             <div id="dashboard-actions"
                  tal:define="controlPanel python:modules['Products.CMFCore.utils'].getToolByName(here, 'portal_controlpanel');

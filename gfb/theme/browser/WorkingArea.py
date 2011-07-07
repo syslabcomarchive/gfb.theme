@@ -15,8 +15,8 @@ class WorkingArea(TranslatableLanguageSelector):
     
     template = ViewPageTemplateFile('templates/working_area.pt')
 
-    def __init__(self, context, request, **args):
-        super(WorkingArea, self).__init__(context, request)
+    def __init__(self, context, request, view=None, manager=None, **args):
+        super(WorkingArea, self).__init__(context, request, view, manager)
         self.context = context
         self.error = ''
         self.tool = getToolByName(context, 'portal_languages', None)
