@@ -129,7 +129,7 @@
                         view, never on edit forms, control panels etc. It's meant to only wrap the
                         actual content that gets rendered on a page, not the other UI elements.
                     </tal:comment>
-                    <div id="content"
+                    <div id="content-core"
                          tal:omit-tag="not:context/@@plone_context_state/is_view_template">
                       <metal:header metal:define-slot="header" tal:content="nothing">
                         Visual Header
