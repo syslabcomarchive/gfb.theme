@@ -32,14 +32,15 @@
         <viewlet name="plone.abovecontenttitle.documentactions" />
     </hidden>
     
-    <hidden manager="plone.portaltop"  skinname="GFBTheme">
-      <viewlet name="plone.app.i18n.locales.languageselector" />
+    <hidden manager="plone.abovecontent"  skinname="GFBTheme">
       <viewlet name="plone.path_bar" />
     </hidden>
 
+
     <hidden manager="plone.portalheader" skinname="GFBTheme">
         <viewlet name="plone.searchbox" />
-        <viewlet name="plone.global_sections" />    
+        <viewlet name="plone.global_sections" />
+        <viewlet name="plone.app.i18n.locales.languageselector" /> 
     </hidden>
     <hidden manager="plone.portalfooter" skinname="GFBTheme">
       <viewlet name="plone.footer" />
