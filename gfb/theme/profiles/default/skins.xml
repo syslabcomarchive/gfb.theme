@@ -12,7 +12,7 @@
     meta_type="Filesystem Directory View"
     directory="gfb.theme:skins/gfb_theme_styles"/>
 
- <skin-path name="GFBTheme" based-on="Plone Default">
+ <skin-path name="GFBTheme" based-on="Plone Classic Theme">
   <layer name="gfb_theme_custom_images"
      insert-after="custom"/>
   <layer name="gfb_theme_custom_templates"

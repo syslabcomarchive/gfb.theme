@@ -16,13 +16,13 @@
     </order>
     
     <order manager="plone.portalfooter" skinname="GFBTheme"
-           based-on="Plone Default">
+           based-on="Plone Classic Theme">
         <viewlet name="gfb.footer.actions"
                  insert-before="*" />
     </order>
 
     <order manager="plone.belowcontentbody" skinname="GFBTheme"
-        based-on="Plone Default">
+        based-on="Plone Classic Theme">
         <viewlet name="slc.linkcollection.linkbox" />
         <viewlet name="plone.belowcontentbody.contenthistory" />
         <viewlet name="gfb.abovecontenttitle.documentactions" />
