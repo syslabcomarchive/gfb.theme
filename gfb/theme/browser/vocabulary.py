@@ -12,7 +12,7 @@ class VocabularyPathView(BrowserView):
             return []
 
         termUID = field.getRaw(self.context)
-        vocabname = field.widget.vocabulary
+        vocabname = field.vocabulary.vocab_name
         
         parents_map = self.getParentsMap(vocabname)
         res = set()
