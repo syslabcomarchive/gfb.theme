@@ -1406,7 +1406,7 @@ div.column1b {
 
 div.column2b {
   margin: 15px 11px 10px 11px;
-  width: 750px;
+  width: 350px;
   float: left;
 }  
 
