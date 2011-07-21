@@ -51,6 +51,11 @@
         attach_to: '#four_steps'
         }
     );
+    jQuery('#basiswissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink1')});
+    jQuery('#datenbanksuche a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink2')});
+    jQuery('#expertenwissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink3')});
+    jQuery('#service a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink4')});
+    jQuery('div#four_steps a').mouseout(function() {ChangeImage('arrow_blue','ArrowBlue')});
     });
 
 
