@@ -1,16 +1,19 @@
-from Acquisition import aq_inner, aq_base, aq_parent
+from Acquisition import aq_inner, aq_base, aq_parent, aq_chain
 
 from zope.component import getMultiAdapter
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
+from Products.CMFCore.interfaces import ISiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+from Products.LinguaPlone.interfaces import ITranslatable
 
 from cgi import escape
 
 from plone.app.layout.viewlets import common
 from plone.app.layout.viewlets.content import DocumentActionsViewlet
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.app.portlets.cache import get_language
 from plone.app.portlets.portlets.navigation import Assignment
 from plone.memoize import ram
@@ -33,6 +36,51 @@ class GFBLanguageSelector(TranslatableLanguageSelector):
         except:
             pass
         return False
+
+    def _translations(self, missing):
+        # Figure out the "closest" translation in the parent chain of the
+        # context. We stop at both an INavigationRoot or an ISiteRoot to look
+        # for translations.
+        # Exceptions: 1) If the object does not implement ITranslatable (= not
+        # LP-aware) or
+        # 2) if the object is set to be neutral
+        # then return this object and don't look for a translation.
+        context = aq_inner(self.context)
+        translations = {}
+        chain = aq_chain(context)
+        for item in chain:
+            if ISiteRoot.providedBy(item) or \
+                not ITranslatable.providedBy(item) or \
+                self.isSpecialFish() or \
+                not item.Language():
+                # We have a site root, which works as a fallback
+                for c in missing:
+                    translations[c] = item
+                break
+
+            translatable = ITranslatable(item, None)
+            if translatable is None:
+                continue
+
+            item_trans = item.getTranslations(review_state=False)
+            for code, trans in item_trans.items():
+                code = str(code)
+                if code not in translations:
+                    # If we don't yet have a translation for this language
+                    # add it and mark it as found
+                    translations[code] = trans
+                    missing = missing - set((code, ))
+
+            if len(missing) <= 0:
+                # We have translations for all
+                break
+            if INavigationRoot.providedBy(item):
+                # Don't break out of the navigation root jail, we assume
+                # the INavigationRoot is usually translated into all languages
+                for c in missing:
+                    translations[c] = item
+                break
+        return translations
 
 
 # Overwrite PersonalBarViewlet
