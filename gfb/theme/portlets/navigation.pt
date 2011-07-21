@@ -5,7 +5,7 @@
     <dt class="portletHeader">
         <span class="tile"
               tal:condition="python:len(request.PARENTS)>4"
-              tal:content="python:request.PARENTS[-5].Title()"></span>
+              tal:content="python:request.PARENTS[-4].Title()"></span>
         <span 
 	       class="tile"
            tal:condition="python:len(request.PARENTS)<5"
