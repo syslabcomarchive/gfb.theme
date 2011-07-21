@@ -47,28 +47,28 @@ a#searchdatabase:click {
     removeClass-value: 'searchform-tipps';
 }
 
-a#tabs-1-link:click {
+a#homepage-tabs-1-link:click {
     evt-click-preventdefault: True;
 
     action-client: addClass;
-    addClass-kssSelector: css("#tabs");
-    addClass-value: 'tab-1-selected';
+    addClass-kssSelector: css("#homepage-tabs");
+    addClass-value: 'homepage-tab-1-selected';
 
     action-client: removeClass;
-    removeClass-kssSelector: css("#tabs");
-    removeClass-value: 'tab-2-selected';
+    removeClass-kssSelector: css("#homepage-tabs");
+    removeClass-value: 'homepage-tab-2-selected';
 }
 
-a#tabs-2-link:click {
+a#homepage-tabs-2-link:click {
     evt-click-preventdefault: True;
 
     action-client: addClass;
-    addClass-kssSelector: css("#tabs");
-    addClass-value: 'tab-2-selected';
+    addClass-kssSelector: css("#homepage-tabs");
+    addClass-value: 'homepage-tab-2-selected';
 
     action-client: removeClass;
-    removeClass-kssSelector: css("#tabs");
-    removeClass-value: 'tab-1-selected';
+    removeClass-kssSelector: css("#homepage-tabs");
+    removeClass-value: 'homepage-tab-1-selected';
 
 }
 

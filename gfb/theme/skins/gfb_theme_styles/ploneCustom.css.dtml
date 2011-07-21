@@ -1221,8 +1221,8 @@ form.searchform-controls div#searchtippstext {
    display:none;
 }
 form.searchform-controls a#searchdatabase,
-div.tab-1-selected li a#tabs-1-link,
-div.tab-2-selected li a#tabs-2-link{
+div.homepage-tab-1-selected li a#homepage-tabs-1-link,
+div.homepage-tab-2-selected li a#homepage-tabs-2-link{
   background: #BAC1C9 url(search_li_selected.gif) no-repeat scroll 11px 7px;
   color:black;
 }
@@ -1353,7 +1353,7 @@ body.section-db.template-db_filter h2,*/
 }
 
 #simplesearch ul,
-div#content div#tabs ul {
+div#content div#homepage-tabs ul {
   background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   height: 25px;
   padding: 0;
@@ -1361,7 +1361,7 @@ div#content div#tabs ul {
   margin-bottom: 0;
 }
 div#simplesearch ul.search-top li,
-div#region-content div#tabs li {
+div#content div#homepage-tabs li {
   float: left;
   margin: 0 0 0 0 ;
   list-style-image: none;
@@ -1369,7 +1369,7 @@ div#region-content div#tabs li {
 }
 
 #simplesearch li a,
-div#tabs li a {
+div#homepage-tabs li a {
   color: white;
   font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
   background: transparent url(search_li_arrow.gif) no-repeat 11px 7px;
@@ -1831,7 +1831,7 @@ div#link_to_tool {
 ul.formTabs .link-internal-js,
 span.listingBar .link-internal-js,
 .actionbtn .link-internal-js,
-div#tabs ul.search-top .link-internal-js,
+div#homepage-tabs ul.search-top .link-internal-js,
 #footer_batch_box .link-internal-js {
   display:none;
 }
@@ -3044,8 +3044,8 @@ text-decoration:none;
 }
 
 .ui-tabs .ui-tabs-hide,
-div.tab-1-selected div#tabs-2,
-div.tab-2-selected div#tabs-1 {
+div.homepage-tab-1-selected div#homepage-tabs-2,
+div.homepage-tab-2-selected div#homepage-tabs-1 {
      display: none;
 }
 
