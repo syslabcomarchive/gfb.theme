@@ -40,12 +40,6 @@
      addview=".worknav.AddForm"
      />
 
- <!-- Custom static portlet -->
- <plone:portletRenderer 
-     portlet="plone.portlet.static.static.IStaticPortlet" 
-     layer="gfb.theme.browser.interfaces.IThemeSpecific"
-     class=".static.Renderer" 
-     />
 
  <!-- Custom feedmixer portlet -->
  <plone:portletRenderer 
