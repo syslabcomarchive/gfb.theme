@@ -211,7 +211,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 </div>
 
                 
-                <div class="column1b">
+                <div class="search_fields">
                                    
                    
                     <div class="common_radio_search_box">
@@ -224,7 +224,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     <label i18n:translate="label_special_guideline">Special Action Guideline</label>
                     </div>
 
-                    <div>
+                    <div class="common_radio_search_box">
                     <input class="radio_search" 
                            id="radio_category_common"
                            type="radio" 
@@ -238,15 +238,13 @@ document.images[Bildname].src = eval(Tauschbildname);
 
                     <div class="visualClear"></div>
 
-                </div>
+         
                 
-                <div class="column2b">
-                
-                    <span tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</span>...
+                    <p tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</p>...
 
-                    <ul class="search_index">
+
                     
-                    <li id="search_control_remote_provider">
+                    <div id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
                                               vocab       python:view.getVocabulary('provider');
                                               selected    request/form/remote_provider|nothing;
@@ -257,8 +255,8 @@ document.images[Bildname].src = eval(Tauschbildname);
 
                           </tal:define>
                         
-                    </li>
-                    <li id="search_control_nace" class="search_deactivatable disabled"
+                    </div>
+                    <div id="search_control_nace" class="search_deactivatable disabled"
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
                         <metal:macro define-macro="NACE_compact">
                           <tal:define define=" fieldName   string:nace;
@@ -270,8 +268,8 @@ document.images[Bildname].src = eval(Tauschbildname);
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
                         </metal:macro>
-                    </li>
-                    <li id="search_control_riskfactors" class="search_deactivatable disabled"
+                    </div>
+                    <div id="search_control_riskfactors" class="search_deactivatable disabled"
                     tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">                    
                         <metal:macro define-macro="riskfactors">
                             <tal:define define="fieldName  string:riskfactors;
@@ -283,8 +281,8 @@ document.images[Bildname].src = eval(Tauschbildname);
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
                         </metal:macro>
-                    </li>
-                    </ul>
+                    </div>
+
                     </div>
 
                     <div class="visualClear"></div>
