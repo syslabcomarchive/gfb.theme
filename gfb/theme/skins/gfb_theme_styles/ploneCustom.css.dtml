@@ -1213,7 +1213,8 @@ a.pluss {
 }
 
 #searchtippstext {
-  margin: 0 17px;
+  margin: 0;
+  padding-left: 5px;
 }
 
 form.searchform-controls div#searchtippstext {
@@ -1410,6 +1411,11 @@ div.column2b {
   float: left;
 }  
 
+div.search_fields{
+    float: left;
+    width: 480px;
+    margin: 15px 11px 0;
+}
 
 .context {text-transform: none;}
 
@@ -2080,9 +2086,6 @@ ul.search_index {
 
 
 /* und /oder box styling */
-.common_radio_search_box { 
-    margin-bottom: 1em;
-}
 div.column1b div input {
     margin-top: 0.2em;
 }
