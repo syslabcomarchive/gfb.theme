@@ -154,6 +154,7 @@ function modifyLinkTag(node) {
             if ( node.getElementsByTagName('img').length == 0 ){
                 // we do not want to mess with those links that already have images in them
                 injectNode(node, 'span', 'link-external-js');
+                adjustTitle(node);
                 if(node.className=='link-external') {
                     node.className='';
                 }
