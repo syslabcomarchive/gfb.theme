@@ -241,4 +241,13 @@
     permission="zope2.View"
     /-->
 
+    <!-- provide an anchor to the top of the content area -->
+    <browser:viewlet
+        name="gfb.abovecontenttitle.documentcontent"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        class=".viewlets.DocumentContentViewlet"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+        />
+
 </configure>

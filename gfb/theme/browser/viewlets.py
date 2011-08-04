@@ -240,3 +240,7 @@ class GFBSkipLinksViewlet(common.SkipLinksViewlet):
 
 class GFBSiteActionsViewlet(common.SiteActionsViewlet):
     index = ViewPageTemplateFile('templates/site_actions.pt')
+
+
+class DocumentContentViewlet(common.ViewletBase):
+    render = ViewPageTemplateFile('templates/document_content.pt')

@@ -21,6 +21,12 @@
                  insert-before="*" />
     </order>
 
+    <order manager="plone.abovecontenttitle" skinname="GFBTheme"
+           based-on="Plone Classic Theme">
+        <viewlet name="gfb.abovecontenttitle.documentcontent"
+                 insert-before="*" />
+    </order>
+
     <order manager="plone.belowcontentbody" skinname="GFBTheme"
         based-on="Plone Classic Theme">
         <viewlet name="slc.linkcollection.linkbox" />
@@ -36,6 +42,9 @@
       <viewlet name="plone.path_bar" />
     </hidden>
 
+    <hidden manager="plone.belowcontent"  skinname="GFBTheme">
+      <viewlet name="plone.belowcontenttitle.keywords" />
+    </hidden>
 
     <hidden manager="plone.portalheader" skinname="GFBTheme">
         <viewlet name="plone.searchbox" />
