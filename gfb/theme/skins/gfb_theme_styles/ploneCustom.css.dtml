@@ -1945,6 +1945,7 @@ ul#portal-sitemap ul {
 div#content div#simplesearch ul.search-top {
   margin-bottom:0;
   margin-top:0;
+  padding-left:0;
 }
 
 
