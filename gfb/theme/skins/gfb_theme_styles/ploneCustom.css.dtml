@@ -153,8 +153,11 @@ float:right;
 position:relative;
 right:12px;
 top:-25px;
+} 
+/* IE7 fix for the text size images */
+*+html #gfb_text_sizes{
+top: 0;
 }
-
 
 #gfb_text_sizes img {
     vertical-align: bottom;
