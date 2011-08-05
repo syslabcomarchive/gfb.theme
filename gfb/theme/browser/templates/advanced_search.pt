@@ -104,7 +104,7 @@
                 <br />
 
                 <div id="and_or_box">
-                    <p class="formHelp"
+                    <p class="formHelp" i18n:domain="gfb"
                        i18n:translate="help_and_or">
                         und/oder
                     </p>
@@ -149,7 +149,7 @@
                                               vocab       python:view.getVocabulary('provider');
                                               selected    request/form/remote_provider|nothing;
                                             ">
-                            <span>Anbieter</span>
+                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
                             <div tal:attributes="id string:tree_${fieldName}" />
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
@@ -162,7 +162,7 @@
                                                vocab       python:view.getVocabulary('NACE');
                                                selected    request/form/nace|nothing;
                                             ">
-                            <span>Branche</span>
+                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label">Branche</label>
                             <div tal:attributes="id string:tree_${fieldName}" />
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>
@@ -175,7 +175,7 @@
                                                 vocab      python:view.getVocabulary('RiskFactors');
                                                 selected   request/form/riskfactors|nothing;
                                             ">
-                            <span>Gefährdungsart</span>
+                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</label>
                             <div tal:attributes="id string:tree_${fieldName}" />
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>

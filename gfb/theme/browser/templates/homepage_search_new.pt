@@ -204,7 +204,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
-            <div id="searchcontrols" class="search_fields">          
+            <div id="searchcontrols" class="LSBoxRALinks search_fields">          
                 <input id="SearchableText" 
                        type="text" 
                        name="SearchableText" 
@@ -249,7 +249,7 @@ document.images[Bildname].src = eval(Tauschbildname);
 
          
                 
-                    <p tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</p>...
+                    <p i18n:translate="label_restrict_by">restrict by...</p>
 
 	
 	
@@ -259,7 +259,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                                               vocab       python:view.getVocabulary('provider');
                                               selected    request/form/remote_provider|nothing;
                                             ">
-                            <span>Anbieter</span>
+                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
                             <div tal:attributes="id string:tree_${fieldName}"></div>
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
 
@@ -270,14 +270,7 @@ document.images[Bildname].src = eval(Tauschbildname);
 	
                     <div id="search_control_nace" class="search_deactivatable disabled"
                     	tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
-                          <tal:define define=" fieldName   string:nace;
-                                               vocab       python:view.getVocabulary('NACE');
-                                               selected    request/form/nace|nothing;
-                                            ">
-                            <span>Branche</span>
-                            <div tal:attributes="id string:tree_${fieldName}"></div>
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
-                         </tal:define>
+                        <metal:macro use-macro="here/advanced_search/macros/NACE_compact"></metal:macro>
                     </div>
 
                     <div id="search_control_riskfactors" class="search_deactivatable disabled"
@@ -286,7 +279,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                                                 vocab      python:view.getVocabulary('RiskFactors');
                                                 selected   request/form/riskfactors|nothing;
                                             ">
-                            <span>Gefährdungsart</span>
+                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</label>
                             <div tal:attributes="id string:tree_${fieldName}"></div>
                             <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
                           </tal:define>

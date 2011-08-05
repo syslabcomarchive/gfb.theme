@@ -1738,7 +1738,8 @@ div#link_to_tool {
 }
 
 
-.disabled {
+.disabled,
+.disabled span.dynatree-node a {
   color: gray;
 }
 .disabled a {
@@ -1746,7 +1747,11 @@ div#link_to_tool {
 }
 .searchbox_deactivated {
   display: none;
-} 
+}
+.disabled .dynatree-expander,
+.disabled .dynatree-icon  {
+    display:none;
+}
 
 /*
 ** link classes for js usage
