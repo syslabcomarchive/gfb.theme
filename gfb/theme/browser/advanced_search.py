@@ -6,6 +6,7 @@ from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
 from gfb.theme import GFBMessageFactory as _
 import os.path
 from zope.component import getUtility
+from zope.i18n import translate
 from gfb.policy.interfaces import IVocabularyUtility
 
 class AdvancedSearchView(BrowserView):
@@ -14,12 +15,12 @@ class AdvancedSearchView(BrowserView):
     This is just another advanced search form.
     """
 
-    template = ViewPageTemplateFile('templates/advanced_search.pt')
+    # template = ViewPageTemplateFile('templates/advanced_search.pt')
     #template.id = "advanced_search"
 
     def __call__(self):
         self.request.set('disable_border', True)
-        return self.template() 
+        return self.index() 
 
     def getFillText(self):
         """ return the translated fill text """
@@ -192,8 +193,9 @@ class AdvancedSearchView(BrowserView):
                     str_selected = u', expand: true'
                 strs.append(u'{title: "%s", key: "%s"' % (try_unicode(dict[key][0]), key) + str_selected + str_children + u'}')
             return u",\n".join(strs)
-                
-        voctitle = u'(root)'
+
+        lang = getToolByName(self, 'portal_languages').getPreferredLanguage()
+        voctitle = translate(_(u'label_click_to_open'), target_language=lang)
         if not fieldName:
             fieldName = vocab
 
@@ -213,13 +215,13 @@ class AdvancedSearchView(BrowserView):
 
         return script % {'fieldName': fieldName, 'voctitle': voctitle, 'root_expanded': root_expanded, 'subtree': subtree, 'selected_str': selected_str}
 
-
-class HomepageSearchView(AdvancedSearchView):
-    template = ViewPageTemplateFile('templates/homepage_search.pt')
+# 
+# class HomepageSearchView(AdvancedSearchView):
+#     template = ViewPageTemplateFile('templates/homepage_search.pt')
 
 
 class HomepageSearchNewView(AdvancedSearchView):
-    template = ViewPageTemplateFile('templates/homepage_search_new.pt')
+    # template = ViewPageTemplateFile('templates/homepage_search_new.pt')
 
     @property
     def top_thema(self):

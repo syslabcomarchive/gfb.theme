@@ -171,6 +171,7 @@
     <browser:page
         for="*"
         name="advanced_search"
+        template="templates/advanced_search.pt"
         class=".advanced_search.AdvancedSearchView"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
@@ -178,7 +179,8 @@
     <browser:page
         for="*"
         name="homepage_search"
-        class=".advanced_search.HomepageSearchView"
+        class=".advanced_search.AdvancedSearchView"
+        template="templates/homepage_search.pt"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
@@ -186,6 +188,7 @@
         for="*"
         name="homepage_search_new"
         class=".advanced_search.HomepageSearchNewView"
+        template="templates/homepage_search_new.pt"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
