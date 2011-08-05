@@ -1,0 +1,61 @@
+# Wolfgang Thomas <info@syslab.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: gfb\n"
+"POT-Creation-Date: 2008-02-05 09:19+0000\n"
+"PO-Revision-Date: Thu Dec  6 15:16:31 2007\n"
+"Last-Translator: Wolfgang Thomas <info@syslab.com>\n"
+"Language-Team: Wolfgang Thomas <info@syslab.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: gfb\n"
+
+
+msgid "label_schema_Author"
+msgstr "Autor"
+
+msgid "label_schema_Riskfactors"
+msgstr "Gefährdungsfaktoren"
+
+msgid "label_schema_Sector"
+msgstr "Branche"
+
+msgid "label_schema_Occupation"
+msgstr "Berufsgruppe"
+
+msgid "label_schema_Provider"
+msgstr "Anbieter"
+
+msgid "label_schema_Other"
+msgstr "Sonstiges"
+
+msgid "label_schema_Contact"
+msgstr "Kontaktperson"
+
+#. Default "Workplace"
+#: content/RiskAssessmentLink.py (DataGridWidget)
+msgid "Workplace"
+msgstr "Arbeitsplatz"
+
+#. Default "Add new row"
+msgid "label_add_new_row"
+msgstr "Neue Zeile hinzufügen"
+
+msgid  "label_save"
+msgstr "Speichern und beenden"
+
+msgid "Keywords"
+msgstr "Schlagworte"
+
+#. Default: "For a simple text search, enter your search term here. Multiple words may be found by combining them with <strong>AND</strong> and <strong>OR</strong>. The text in this field will be matched with items' contents, title and description."
+#: ./skins/plone_forms/search_form.pt:40
+msgid "help_search_text"
+msgstr "Geben Sie für eine einfache Textsuche hier Ihren Suchbegriff ein. Um nach Teilwörtern zu suchen, können Sie die Wortstammsuche mit * nutzen, z.B. findet Kind* auch Kindern. Mehrere Wörter können Sie durch <strong>AND</strong> und <strong>OR</strong> kombinieren."
+
+msgid "label_required"
+msgstr "(Pflichtfeld)"
