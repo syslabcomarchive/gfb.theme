@@ -370,3 +370,5 @@ msgstr "Sie müssen die oben dargestellten Zeichen eingeben, um die Anfrage abse
 msgid "go_to_login_form"
 msgstr "Zum Anmeldeformular"
 
+msgid "label_click_to_open"
+msgstr "zum Öffnen auf das Pluszeichen klicken"

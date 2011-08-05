@@ -255,3 +255,6 @@ msgstr "Go to the login form"
 
 msgid "help_and_or"
 msgstr "and / or"
+
+msgid "label_click_to_open"
+msgstr "click the plus-icon to open"
