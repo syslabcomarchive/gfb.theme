@@ -49,7 +49,8 @@
     <hidden manager="plone.portalheader" skinname="GFBTheme">
         <viewlet name="plone.searchbox" />
         <viewlet name="plone.global_sections" />
-        <viewlet name="plone.app.i18n.locales.languageselector" /> 
+        <viewlet name="plone.app.i18n.locales.languageselector" />
+        <viewlet name="plone.personal_bar" />
     </hidden>
     <hidden manager="plone.portalfooter" skinname="GFBTheme">
       <viewlet name="plone.footer" />
