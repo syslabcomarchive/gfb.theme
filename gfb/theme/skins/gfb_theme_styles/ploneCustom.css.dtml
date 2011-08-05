@@ -1742,7 +1742,8 @@ div#link_to_tool {
 .disabled span.dynatree-node a {
   color: gray;
 }
-.disabled a {
+.disabled a,
+.disabled ul.dynatree-container ul{
   display: none;
 }
 .searchbox_deactivated {

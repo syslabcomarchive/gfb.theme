@@ -19,7 +19,7 @@
                 input.type = "hidden"
                 input.name = "%(fieldName)s:list"
                 input.value = selected[i].data.key
-                $('.column2b').find('.search_index').after(input)
+                $('.search_filters').after(input)
             }
         });
 

@@ -204,7 +204,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
-            <div id="searchcontrols" class="LSBoxRALinks search_fields">          
+            <div id="searchcontrols" class="LSBoxRALinks search_fields">
                 <input id="SearchableText" 
                        type="text" 
                        name="SearchableText" 
@@ -245,15 +245,15 @@ document.images[Bildname].src = eval(Tauschbildname);
                 </div>
                         
 
-                    <div class="visualClear"></div>
+                <div class="visualClear"></div>
 
-         
-                
-                    <p i18n:translate="label_restrict_by">restrict by...</p>
+     
+            
+                <p i18n:translate="label_restrict_by">restrict by...</p>
 
 	
 	
-                    
+                <div class="search_filters">
                     <div id="search_control_remote_provider">
                           <tal:define define="fieldName   string:remote_provider;
                                               vocab       python:view.getVocabulary('provider');
@@ -286,6 +286,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                     </div>
 
                 </div>
+				</div>
 
 
                  <div class="visualClear"></div>

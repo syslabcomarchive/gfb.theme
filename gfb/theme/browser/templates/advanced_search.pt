@@ -138,7 +138,7 @@
 
                 </div>
 
-                <div class="column2b">
+                <div class="search_filters">
 
                     <span tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</span>...
 
