@@ -252,3 +252,6 @@ msgstr "New Image"
 
 msgid "go_to_login_form"
 msgstr "Go to the login form"
+
+msgid "help_and_or"
+msgstr "and / or"

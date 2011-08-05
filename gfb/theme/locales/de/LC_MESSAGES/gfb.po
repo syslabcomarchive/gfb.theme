@@ -349,6 +349,9 @@ msgstr "Große Textgröße"
 msgid "label_captcha_text"
 msgstr "Bestätigen Sie Ihre Eingabe"
 
+msgid "help_and_or"
+msgstr "und / oder"
+
 msgid "help_captcha_sendto"
 msgstr "Dadurch wird das automatisierte Versenden von E-Mails (SPAM) erschwert."
 
