@@ -14,12 +14,15 @@
         // On submitting create hidden inputs for each selected item
         $("#searchform").submit(function(){
             selected = $("#tree_%(fieldName)s").dynatree("getSelectedNodes")
-            for (var i = 0; i < selected.length; i++) {
-                input = document.createElement('input')
-                input.type = "hidden"
-                input.name = "%(fieldName)s:list"
-                input.value = selected[i].data.key
-                $('.search_filters').after(input)
+            if (jQuery("#tree_%(fieldName)s").parent().attr('class').search('disabled')<0)
+            {
+                for (var i = 0; i < selected.length; i++) {
+                    input = document.createElement('input')
+                    input.type = "hidden"
+                    input.name = "%(fieldName)s:list"
+                    input.value = selected[i].data.key
+                    $('.search_filters').after(input)
+                }
             }
         });
 
