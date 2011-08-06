@@ -1405,9 +1405,14 @@ div.column2b {
   float: left;
 }  
 
-div.search_fields{
+div.search_fields_narrow{
     float: left;
     width: 480px;
+    margin: 15px 11px 0;
+}
+div.search_fields_wide{
+    float: left;
+    width: 725px;
     margin: 15px 11px 0;
 }
 
@@ -1857,7 +1862,7 @@ ul#portal-footeractions .breadcrumbSeparator {
 td#portal-column-one div.visualPadding {
   min-height:1200px;
   padding:0;
-  width: 198px;
+  width: 200px;
   background: transparent url(&dtml-portal_url;/gradient_background_portletbox.jpg) repeat-x top;
 }
 
