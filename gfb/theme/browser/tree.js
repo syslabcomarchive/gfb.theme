@@ -1,8 +1,8 @@
 <script type="text/javascript">
-    $(function(){
+    jQuery(function(){
         // Attach the dynatree widget to an existing <div id="tree"> element
         // and pass the tree options as an argument to the dynatree() function:
-        $("#tree_%(fieldName)s").dynatree({
+        jQuery("#tree_%(fieldName)s").dynatree({
             checkbox: true,
             children: [
                 {title: "%(voctitle)s", hideCheckbox: true, expand: %(root_expanded)s, children: [
@@ -12,7 +12,7 @@
             ]
         });
         // On submitting create hidden inputs for each selected item
-        $("#searchform").submit(function(){
+        jQuery("#searchform").submit(function(){
             selected = $("#tree_%(fieldName)s").dynatree("getSelectedNodes")
             if (jQuery("#tree_%(fieldName)s").parent().attr('class').search('disabled')<0)
             {
