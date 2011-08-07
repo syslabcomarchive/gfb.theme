@@ -258,7 +258,7 @@ msgid "link_nutzungshinweise"
 msgstr "Nutzungshinweise"
 
 msgid "label_restrict_by"
-msgstr "einschränken nach"
+msgstr "einschränken nach..."
 
 # Default "Search"
 # gfb/theme/browser/templates/sections.pt
