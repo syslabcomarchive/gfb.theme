@@ -204,7 +204,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <span tal:replace="structure tipps/getText |nothing" />
             </div>
 
-            <div id="searchcontrols" class="LSBoxRALinks search_fields">
+            <div id="searchcontrols" class="LSBoxRALinks search_fields_narrow">
                 <input id="SearchableText" 
                        type="text" 
                        name="SearchableText" 
