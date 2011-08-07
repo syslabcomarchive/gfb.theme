@@ -19,8 +19,6 @@ class RAInlineView(BrowserView):
         uid = self.request.get('uid', None)
         if uid is None:
             raise NotFound
-        if len(uid)>32:
-            uid = uid[:32]  #cropping searchtext= away
         pc = getToolByName(self.context, 'portal_catalog')
         results = pc(UID=uid)
         assert len(results)==1
