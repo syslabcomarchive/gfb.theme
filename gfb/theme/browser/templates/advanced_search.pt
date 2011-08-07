@@ -63,143 +63,134 @@
                 searchterm request/SearchableText|nothing;
                 results view/search;
                            ">
-  <form name="searchform" id="searchform"
+    <form name="searchform" id="searchform"
         action="advanced_search"
         class="searchPage searchform-controls">
 
-        <div metal:define-macro="main">
-    
-    <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
-    
-    
-          <div id="simplesearch">
-            <ul class="search-top">
-              <li><a class="selected" id="searchdatabase"
+        <!-- <div metal:define-macro="main"> -->
+
+            <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
+
+
+            <div id="simplesearch">
+                <ul class="search-top">
+                    <li>
+                        <a class="selected" id="searchdatabase"
                      i18n:translate="label_advanced_search"
                      href="advanced_search">Search the Database</a>
-              </li>
-              <li>
-                  <a href="searchtipps" id="searchtipps"
-                     i18n:translate="label_searchtips">Search Tips</a>
-              </li>
-            </ul>
-          </div>
-
-
-
-          <div id="searchfields">
-
-            <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                <span tal:replace="structure tipps/getText |nothing" />
+                    </li>
+                    <li>
+                        <a href="searchtipps" id="searchtipps"
+                        i18n:translate="label_searchtips">Search Tips</a>
+                    </li>
+                </ul>
             </div>
 
-            <div id="searchcontrols" class="LSBoxRALinks">
-                <input id="SearchableText"
+
+
+            <div id="searchfields">
+
+                <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+                    <span tal:replace="structure tipps/getText |nothing" />
+                </div>
+
+                <div id="searchcontrols" class="LSBoxRALinks search_fields_wide">
+                    <input id="SearchableText"
                        type="text"
                        name="SearchableText"
                        size="25"
                        class="inputLabel"
                        tal:attributes="value request/SearchableText|string:;
                                        title view/getFillText;"/>
-                <br />
 
-                <div id="and_or_box">
-                    <p class="formHelp" i18n:domain="gfb"
-                       i18n:translate="help_and_or">
-                        und/oder
-                    </p>
-                </div>
+                    <div id="and_or_box">
+                        <p class="formHelp" i18n:domain="gfb"
+                            i18n:translate="help_and_or">
+                            und/oder
+                        </p>
+                    </div>
 
-                <div class="column1b">
 
                     <div class="common_radio_search_box">
-                    <input class="radio_search"
+                        <input class="radio_search"
                            id="radio_category_special"
                            type="radio"
                            value="0"
                            name="getCategoryIndependent"
                            tal:attributes="checked python:getCategoryIndependent==False">
-                    <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+                        <label i18n:translate="label_special_guideline">Special Action Guideline</label>
                     </div>
 
-                    <div>
-                    <input class="radio_search"
+                    <div class="common_radio_search_box">
+                        <input class="radio_search"
                            id="radio_category_common"
                            type="radio"
                            value="1"
                            name="getCategoryIndependent"
                            tal:attributes="checked python:getCategoryIndependent==True">
-
-                    <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
+                        <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
                     </div>
 
 
                     <div class="visualClear"><!-- --></div>
 
-                </div>
+                    <p i18n:translate="label_restrict_by">restrict by...</p>
 
-                <div class="search_filters">
+                    <div class="search_filters">
 
-                    <span tal:omit-tag="" i18n:translate="label_restrict_by">restrict by</span>...
-
-                    <ul class="search_index">
-
-                    <li id="search_control_remote_provider">
-                          <tal:define define="fieldName   string:remote_provider;
+                        <div id="search_control_remote_provider">
+                            <tal:define define="fieldName   string:remote_provider;
                                               vocab       python:view.getVocabulary('provider');
                                               selected    request/form/remote_provider|nothing;
                                             ">
-                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
-                            <div tal:attributes="id string:tree_${fieldName}" />
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
-                          </tal:define>
-
-                    </li>
-                    <li id="search_control_nace" class="search_deactivatable disabled"
-                        tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
-                        <metal:macro define-macro="NACE_compact">
-                          <tal:define define=" fieldName   string:nace;
+                                <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
+                                <div tal:attributes="id string:tree_${fieldName}"></div>
+                                <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+                            </tal:define>
+                        </div>
+                        <div id="search_control_nace" class="search_deactivatable disabled"
+                            tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
+                            <metal:macro define-macro="NACE_compact">
+                                <tal:define define=" fieldName   string:nace;
                                                vocab       python:view.getVocabulary('NACE');
                                                selected    request/form/nace|nothing;
                                             ">
-                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label">Branche</label>
-                            <div tal:attributes="id string:tree_${fieldName}" />
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
-                          </tal:define>
-                        </metal:macro>
-                    </li>
-                    <li id="search_control_riskfactors" class="search_deactivatable disabled"
-                    tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
-                        <metal:macro define-macro="riskfactors">
-                            <tal:define define="fieldName  string:riskfactors;
+                                    <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label">Branche</label>
+                                    <div tal:attributes="id string:tree_${fieldName}"></div>
+                                    <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+                                </tal:define>
+                            </metal:macro>
+                        </div>
+                        <div id="search_control_riskfactors" class="search_deactivatable disabled"
+                            tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' and 'search_deactivatable disabled' or 'search_deactivatable'">
+                            <metal:macro define-macro="riskfactors">
+                                <tal:define define="fieldName  string:riskfactors;
                                                 vocab      python:view.getVocabulary('RiskFactors');
                                                 selected   request/form/riskfactors|nothing;
                                             ">
-                            <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</label>
-                            <div tal:attributes="id string:tree_${fieldName}" />
-                            <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
-                          </tal:define>
-                        </metal:macro>
-                    </li>
-                    </ul>
+                                    <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</label>
+                                    <div tal:attributes="id string:tree_${fieldName}"></div>
+                                    <tal:block replace="structure python:view.getDynatreeScript(vocab, fieldName, selected)" />
+                                </tal:define>
+                            </metal:macro>
+                        </div>
                     </div>
 
                     <div class="visualClear"><!-- --></div>
 
                     <div class="submit_column">
 
-                            <input class="context cancelbutton"
+                        <input class="context cancelbutton"
                                type="submit"
                                name="submit"
                                value="Search"
                                i18n:attributes="value label_search;"/>
 
                     </div>
-
                 </div>
             </div>
 
-        </div>
+        <!-- </div> -->
         <p>&nbsp;</p>
   </form>
 
