@@ -8,7 +8,7 @@ var livesearch = function (){
     var _hide_delay = 400;
 
     // stores information for each searchbox on the page
-    var _search_handlers = {};
+    var _search_handlers = new Object;
 
     // constants for better compression
     var _LSHighlight = "LSHighlight";
@@ -186,10 +186,16 @@ var livesearch = function (){
 
     return {
         search: function(id) {
-            _search_handlers[id].search();
+            var handler = _search_handlers[id];
+            if (handler) {
+                handler.search();
+            }
         },
         hide: function(id) {
-            _search_handlers[id].hide();
+            var handler = _search_handlers[id];
+            if (handler) {
+                _search_handlers[id].hide();
+            }
         }
     };
 }();
