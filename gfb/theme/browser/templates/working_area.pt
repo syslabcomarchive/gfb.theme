@@ -55,7 +55,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
 
         <!-- The box for the provider is shown only when no provider is present yet
             or if the user has Manager rights on the provider -->
-        <fieldset tal:define="provider view/provider;
+        <fieldset tal:define="provider nocall:view/provider;
                         providerReviewState view/providerReviewState;
                         adminOnProvider python:user.allowed(provider, ['Manager']);"
                         tal:condition="python:adminOnProvider or provider is None">
@@ -69,7 +69,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
                     <strong tal:content="provider/pretty_title_or_id" /><br/>
                     <a tal:attributes="href provider/getRemoteUrl" tal:content="provider/getRemoteUrl" /><br/>
                     <span tal:replace="provider/getContact_name" /><br/>
-                    <span tal:define="br string:&gt;br/>; lines python:br.join(provider.getAddress())" tal:replace="structure " /><br/>
+                    <span tal:replace="structure view/providerAddress" /><br />
                     <span i18n:translate="contact_phone" i18n:domain="plone" tal:omit-tag="">Phone</span>: <span tal:replace="provider/getPhone" /><br/>
                     <span i18n:translate="contact_fax" i18n:domain="plone" tal:omit-tag="">Fax</span>: <span tal:replace="provider/getFax" /><br/>
                 </div>

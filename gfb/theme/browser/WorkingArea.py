@@ -78,16 +78,27 @@ class WorkingArea(TranslatableLanguageSelector):
     def setError(self, message):
         self.error = message
         self.fullname = self.userid = self.RALinks = self.Provider = self.home_folder = self.home_folder_url = ''
-
+    @property
     def provider(self):
         provider = len(self.Provider)>0 and self.Provider[0].getObject() or None
         provider = provider and provider.getTranslation(self.tool.getPreferredLanguage()) or None
         return provider
 
     def providerReviewState(self):
-        p = self.provider()
+        p = self.provider
         return p and self.pwt.getInfoFor(p, 'review_state') or ''
-        
+
+    @property
+    def providerAddress(self):
+        if self.provider:
+            address = self.provider.getAddress()
+            elems = list()
+            for elem in address:
+                if not isinstance(elem, unicode):
+                    elem = elem.decode('utf-8')
+                elems.append(elem)
+            return u"<br>".join(elems) 
+        return ""
 
     def create_provider_url(self):
         if not self.home_folder:
@@ -117,7 +128,7 @@ class WorkingArea(TranslatableLanguageSelector):
         return self.fullname and self.fullname or self.userid
 
     def getProviderName(self):
-        provider = self.provider()
+        provider = self.provider
         return provider and provider.Title() or "n/a"
 
     def isManager(self):
