@@ -39,8 +39,8 @@ class Renderer(base.Renderer):
 
 
     def home_url(self):
-        pm = getToolByName(self, 'portal_membership')
-        pt = getToolByName(self, 'portal_url')
+        pm = getToolByName(self.context, 'portal_membership')
+        pt = getToolByName(self.context, 'portal_url')
         hf = pm.getHomeFolder()
         self.home_folder = hf
         home_folder_url = hf and hf.absolute_url() or pt()
