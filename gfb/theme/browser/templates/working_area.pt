@@ -13,6 +13,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
         tal:define="dummy view/setup;
             isManager view/isManager;
             portal here/portal_url/getPortalObject;
+            toLocalizedTime nocall: context/@@plone/toLocalizedTime;
             putils nocall:here/plone_utils;">
 
             <div id="dashboard-actions"
