@@ -2,13 +2,13 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from zope.component import getMultiAdapter
-from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+from gfb.theme.browser.viewlets import GFBLanguageSelector
 from Products.LinguaPlone.interfaces import ITranslatable
 from plone.app.i18n.locales.browser.selector import LanguageSelector
 from Products.statusmessages.interfaces import IStatusMessage
 from Acquisition import aq_parent, aq_inner
 
-class WorkingArea(TranslatableLanguageSelector):
+class WorkingArea(GFBLanguageSelector):
     """
     Working Area for normal users
     """
