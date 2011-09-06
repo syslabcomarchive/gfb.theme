@@ -227,7 +227,7 @@
                  metal:define-macro="navigation"
                  tal:define="request request|here/request|container/request|nothing;
                              batch batch|nothing;
-                             template_id template_id|template/getId;
+                             template_id template_id|view/getName;
                              mq python:modules['ZTUtils'].make_query;
                              url batch_base_url | string:${here/absolute_url}/${template_id};
                              currentpage batch/pagenumber;"

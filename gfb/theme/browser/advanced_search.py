@@ -20,7 +20,10 @@ class AdvancedSearchView(BrowserView):
 
     def __call__(self):
         self.request.set('disable_border', True)
-        return self.index() 
+        return self.index()
+
+    def getName(self):
+        return self.__name__
 
     def getFillText(self):
         """ return the translated fill text """
