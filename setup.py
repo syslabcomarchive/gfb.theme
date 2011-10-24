@@ -55,9 +55,11 @@ setup(name='gfb.theme',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'Products.ATVocabularyManager',
           'collective.dynatree',
+          'z3c.json',
           'Products.AdvancedQuery',
+          'Products.ATVocabularyManager',
+          'Products.CMFCore',
       ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

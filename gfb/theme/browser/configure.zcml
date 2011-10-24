@@ -158,6 +158,12 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <browser:resourceDirectory
+        name="gfb.theme.js"
+        directory="js"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- copied from osha.theme! remove when unifying gfb and osha... -->
     <browser:page
        name="getVocabularyPath"
@@ -206,6 +212,14 @@
         name="ra_inline"
         class=".ra_inline.RAInlineView"
         permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
+    />
+
+    <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="vdex_as_json"
+        class=".vdex.VDEXAsJson"
+        permission="zope.Public"
         layer=".interfaces.IThemeSpecific"
     />
 
