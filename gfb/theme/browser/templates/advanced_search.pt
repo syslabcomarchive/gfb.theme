@@ -144,10 +144,10 @@
                         </div>
                         <div class="collective-dynatree-tree">Tree</div>
                         <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=provider_category">Some URL</div>
+                             tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
                         <div class="dynatree_parameters hiddenStructure">selectMode,3/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,False/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="provider_category" name="provider_category2" class="hiddeninput selected" 
-                               tal:attributes="value request/provider_category2 | nothing" />
+                        <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected" 
+                               tal:attributes="value request/remote_provider2 | nothing" />
                         <div class="customhiddeninput"></div>
                         <div class="ui_controls">
                           <div class="sparse">Sparse</div>
