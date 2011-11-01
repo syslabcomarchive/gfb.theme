@@ -3184,6 +3184,14 @@ div.overlay .formControls a {
     margin: 0.75em;
 }
 
+/* dynatree */
+div.flatlist-template {
+    display: none;
+}
+div.ui_controls .sparse{
+    display: none;
+}
+
 /* @end */
 
 
