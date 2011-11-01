@@ -7,7 +7,7 @@ var CustomHiddenForm = Backbone.View.extend({
     render: function(){
         var name = this.model.get("name");
 	// either at least one item is still selected, or one previously selected item remains
-        if(this.model.get("selected").length|jq('input[name="' + name +':list"]').length){
+        if(this.model.get("selected").length||jq('input[name="' + name +':list"]').length){
             var el = this.el;
             var tmpl = this.input_template;
             el.empty();
