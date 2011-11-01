@@ -136,9 +136,17 @@
 
                     <p i18n:translate="label_restrict_by">restrict by...</p>
 
-                    <div class="search_filters"
-                         >
+                    <div class="search_filters">
+                      <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
                       <div class="dynatree-atwidget dynatree-custom">
+                        <div class="flatlist_container">
+                          <div class="flatlist-template">
+                            <span class="flatlist-item" key="{{ key }}">
+                              <span class="delete">X</span>
+                              {{ title }}
+                            </span>
+                          </div>
+                        </div>
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
                         </div>
@@ -152,6 +160,10 @@
                         <div class="ui_controls">
                           <div class="sparse">Sparse</div>
                         </div>
+                      </div>
+
+                      <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label">Branche</label>
+                      <div class="dynatree-atwidget dynatree-custom">
                         <div class="flatlist_container">
                           <div class="flatlist-template">
                             <span class="flatlist-item" key="{{ key }}">
@@ -160,8 +172,6 @@
                             </span>
                           </div>
                         </div>
-                      </div>
-                      <div class="dynatree-atwidget dynatree-custom">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
                         </div>
@@ -175,6 +185,10 @@
                         <div class="ui_controls">
                           <div class="sparse">Sparse</div>
                         </div>
+                      </div>
+
+                      <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</label> 
+                      <div class="dynatree-atwidget dynatree-custom">
                         <div class="flatlist_container">
                           <div class="flatlist-template">
                             <span class="flatlist-item" key="{{ key }}">
@@ -183,28 +197,18 @@
                             </span>
                           </div>
                         </div>
-                      </div>
-                      <div class="dynatree-atwidget dynatree-custom">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
                         </div>
                         <div class="collective-dynatree-tree">Tree</div>
                         <div class="dynatree_ajax_vocabulary hiddenStructure"
                              tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                        <div class="dynatree_parameters hiddenStructure">selectMode,1/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
                         <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
                                tal:attributes="value request/RiskFactors2 | nothing" />
                         <div class="customhiddeninput"></div>
                         <div class="ui_controls">
                           <div class="sparse">Sparse</div>
-                        </div>
-                        <div class="flatlist_container">
-                          <div class="flatlist-template">
-                            <span class="flatlist-item" key="{{ key }}">
-                              <span class="delete">X</span>
-                              {{ title }}
-                            </span>
-                          </div>
                         </div>
                       </div>
 
