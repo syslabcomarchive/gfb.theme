@@ -44,6 +44,7 @@ jq(document).ready(function(){
 			
 			var jqthis = jq(this);
 			jqthis.toggleClass('opened');
+			jqthis.next().toggleClass('opened');
 			var fname = jqthis[0].id.replace('button_', 'widget_');
 			runEffect(fname);
 			return false;

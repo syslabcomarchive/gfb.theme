@@ -3196,7 +3196,8 @@ div.search_filters .dynatree_filter{
     display: none;
 }
 
-div.search_filters ul.dynatree-container{
+div.search_filters ul.dynatree-container,
+div.search_filters div.flatlist_container.opened{
    background-color: #E5E6E8;
    border: none;
 }
