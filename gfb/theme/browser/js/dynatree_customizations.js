@@ -29,8 +29,7 @@ jq(document).ready(function(){
     });
     jq(".closed_widget").hide();
 
-		function runEffect(fname) {
-		        
+		function runEffect(fname) {        
 			// get effect type from 
 			var selectedEffect = "blind";
 			// most effect types need no options passed by default
@@ -38,10 +37,8 @@ jq(document).ready(function(){
 			jq( "#" + fname ).toggle( selectedEffect, options, 500 );
 		};
 
-
 		// set effect from select menu value
 		$( ".toggleButton" ).click(function() {
-			
 			var jqthis = jq(this);
 			jqthis.toggleClass('opened');
 			jqthis.next().toggleClass('opened');
@@ -49,6 +46,4 @@ jq(document).ready(function(){
 			runEffect(fname);
 			return false;
 		});
-
-
 });

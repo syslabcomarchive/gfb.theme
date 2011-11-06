@@ -171,7 +171,10 @@
                     </div>
 
                      <!-- Sector (NACE) -->   
-                      <div class="dynatree-atwidget dynatree-custom">
+                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' 
+                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled' 
+                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
                         <dt href="#" id="button_nace" class="toggleButton">
                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
                            class="fakeLink">Branche</a>
@@ -202,7 +205,10 @@
                     </div>
 
                      <!-- Risk factors -->
-                      <div class="dynatree-atwidget dynatree-custom">
+                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1' 
+                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled' 
+                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
                        <dt href="#" id="button_riskfactors" class="toggleButton">
                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
                            class="fakeLink">Gefährdungsart</a>

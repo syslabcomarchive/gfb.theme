@@ -3220,7 +3220,9 @@ div.search_filters a.fakeLink:hover{
     color: #A8126A;
     cursor: pointer;
 }
-
+div.search_filters div.dynatree-custom.disabled{
+  display: none;
+}
 div.flatlist_container .button {
    border-top: 1px solid #96d1f8;
    background: #65a9d7;

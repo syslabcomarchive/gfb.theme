@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import Acquisition
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -96,15 +97,15 @@ class AdvancedSearchView(BrowserView):
         language = getToolByName(context, 'portal_languages').getPreferredLanguage()
         query = query & In('Language', ['', language])
 
-        nace = list(self.request.get('nace', ''))
-        if '' in nace:
-            nace.remove('')
-        if nace:
-            query = query & In('nace', nace)    
-
         getCategoryIndependent = self.request.get('getCategoryIndependent', '0')
         getCategoryIndependent = bool(int(getCategoryIndependent))
         query = query & Eq('getCategoryIndependent', getCategoryIndependent)
+        
+        nace = list(self.request.get('nace', ''))
+        if '' in nace:
+            nace.remove('')
+        if nace and not getCategoryIndependent:
+            query = query & In('nace', nace)    
 
 
         getRemoteLanguage = self.request.get('getRemoteLanguage', '')
@@ -139,8 +140,8 @@ class AdvancedSearchView(BrowserView):
                     providerUIDs.append(prov)
             query = query & In('getRemoteProviderUID', providerUIDs)
 
-        riskfactors = self.request.get('riskfactors', '')
-        if riskfactors:
+        riskfactors = self.request.get('RiskFactors', '')
+        if riskfactors and not getCategoryIndependent:
             query = query & In('getRiskfactors', riskfactors)
 
 
