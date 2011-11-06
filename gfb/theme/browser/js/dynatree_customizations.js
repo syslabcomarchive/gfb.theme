@@ -27,25 +27,25 @@ jq(document).ready(function(){
         var custom_hidden_form = new CustomHiddenForm({el: jqthis.find(".customhiddeninput"),
                                                        model: datamodel});
     });
-    jq("#widget_remote_provider").hide();
+    jq(".closed_widget").hide();
 
-		function runEffect() {
+		function runEffect(fname) {
+		        
 			// get effect type from 
 			var selectedEffect = "blind";
-
 			// most effect types need no options passed by default
 			var options = {};
-
-
-			// run the effect
-			$( "#widget_remote_provider" ).toggle( selectedEffect, options, 500 );
+			jq( "#" + fname ).toggle( selectedEffect, options, 500 );
 		};
 
 
 		// set effect from select menu value
-		$( "#button_remote_provider" ).click(function() {
-			runEffect();
-			jq(this).toggleClass('opened');
+		$( ".toggleButton" ).click(function() {
+			
+			var jqthis = jq(this);
+			jqthis.toggleClass('opened');
+			var fname = jqthis[0].id.replace('button_', 'widget_');
+			runEffect(fname);
 			return false;
 		});
 
