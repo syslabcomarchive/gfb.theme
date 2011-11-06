@@ -137,8 +137,10 @@
                     <p i18n:translate="label_restrict_by">restrict by...</p>
 
                     <div class="search_filters">
-                      <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label">Anbieter</label>
-                      <div class="dynatree-atwidget dynatree-custom">
+                     <div class="dynatree-atwidget dynatree-custom">
+                      <dt href="#" id="button_remote_provider" class="toggleButton">
+                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
+                            class="fakeLink">Anbieter</a> 
                         <div class="flatlist_container">
                           <div class="flatlist-template">
                             <span class="flatlist-item" key="{{ key }}">
@@ -147,6 +149,10 @@
                             </span>
                           </div>
                         </div>
+                      </dt>
+                      
+
+                      <div id="widget_remote_provider">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
                         </div>
@@ -161,6 +167,7 @@
                           <div class="sparse">Sparse</div>
                         </div>
                       </div>
+                    </div>
 
                       <label i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label">Branche</label>
                       <div class="dynatree-atwidget dynatree-custom">

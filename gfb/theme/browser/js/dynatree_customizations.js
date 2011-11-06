@@ -7,7 +7,7 @@ var CustomHiddenForm = Backbone.View.extend({
     render: function(){
         var name = this.model.get("name");
 	// either at least one item is still selected, or one previously selected item remains
-        if(this.model.get("selected").length||jq('input[name="' + name +':list"]').length){
+        if(this.model.get("selected").length) { //||jq('input[name="' + name +':list"]').length){
             var el = this.el;
             var tmpl = this.input_template;
             el.empty();
@@ -27,4 +27,27 @@ jq(document).ready(function(){
         var custom_hidden_form = new CustomHiddenForm({el: jqthis.find(".customhiddeninput"),
                                                        model: datamodel});
     });
+    jq("#widget_remote_provider").hide();
+
+		function runEffect() {
+			// get effect type from 
+			var selectedEffect = "blind";
+
+			// most effect types need no options passed by default
+			var options = {};
+
+
+			// run the effect
+			$( "#widget_remote_provider" ).toggle( selectedEffect, options, 500 );
+		};
+
+
+		// set effect from select menu value
+		$( "#button_remote_provider" ).click(function() {
+			runEffect();
+			jq(this).toggleClass('opened');
+			return false;
+		});
+
+
 });

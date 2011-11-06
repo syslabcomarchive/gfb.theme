@@ -3192,6 +3192,32 @@ div.ui_controls .sparse{
     display: none;
 }
 
+div.search_filters .dynatree_filter{
+    display: none;
+}
+
+div.search_filters ul.dynatree-container{
+   background-color: #E5E6E8;
+   border: none;
+}
+
+div.search_filters dt{
+    background: url("lc_inactive.gif") no-repeat scroll 0 4px transparent;
+    margin: 0.5em 0 0;
+    padding: 3px 0 0 16px;
+}
+div.search_filters dt.opened{
+    background: url("lc_active.gif") no-repeat scroll 0 4px #E5E6E8;
+
+}
+div.search_filters a.fakeLink{
+    color: #000000;
+}
+div.search_filters a.fakeLink:hover{
+    color: #A8126A;
+    cursor: pointer;
+}
+
 /* @end */
 
 

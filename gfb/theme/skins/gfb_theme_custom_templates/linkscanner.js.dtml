@@ -137,7 +137,7 @@ function modifyLinkTag(node) {
                 }
             }
 			
-            if(node.className!='singlelink' && found==0 ) {
+            if(node.className!='singlelink' && node.className.search('fakeLink')<0 && found==0 ) {
                 if(parentclass!="linkToTop"){
                     injectNode(node, 'span', 'link-internal-js');
                     if(node.className=='link-internal') {
