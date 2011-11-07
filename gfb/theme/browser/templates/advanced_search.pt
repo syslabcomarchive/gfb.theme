@@ -147,12 +147,10 @@
                       </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <div class="flatlist-item button" 
+                            <div class="flatlist-item" 
                                 key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                           </div>
-                        
                         </div>
-                      
                       <div id="widget_remote_provider" class="closed_widget">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
@@ -181,7 +179,7 @@
                          </dt>
                           <div class="flatlist_container">
                             <div class="flatlist-template">
-                            <div class="flatlist-item button" 
+                            <div class="flatlist-item" 
                                 key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                             </div>
                           </div>
@@ -213,7 +211,7 @@
                         </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <div class="flatlist-item button" 
+                            <div class="flatlist-item" 
                                 key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                           </div>
                         </div>

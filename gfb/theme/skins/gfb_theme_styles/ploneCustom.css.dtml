@@ -3192,47 +3192,47 @@ div.ui_controls .sparse{
     display: none;
 }
 
-div.search_filters .dynatree_filter{
+.dynatree_filter{
     display: none;
 }
-div.search_filters div.flatlist_container{
+div.flatlist_container{
   padding: 4px 2px;
 }
-div.search_filters ul.dynatree-container,
-div.search_filters div.flatlist_container.opened{
+ul.dynatree-container,
+div.flatlist_container.opened{
    background-color: #E5E6E8;
    border: none;
    font-size: 100%;
 }
-div.search_filters .dynatree-selected span.dynatree-checkbox {
+.dynatree-selected span.dynatree-checkbox {
   background: url("ico_check_red.gif") no-repeat scroll 0 0 transparent;
 }
-div.search_filters .dynatree-selected span.dynatree-checkbox:hover {
+.dynatree-selected span.dynatree-checkbox:hover {
   background: url("ico_check_red_hover.gif") no-repeat scroll 0 0 transparent;
 }
-div.search_filters dt{
+dt{
     background: url("plus_icon.gif") no-repeat scroll 0 4px transparent;
     margin: 0.5em 0 0;
     padding: 3px 0 0 16px;
 }
-div.search_filters dt.opened{
+dt.opened{
     background: url("minus_icon.gif") no-repeat scroll 0 4px #E5E6E8;
 
 }
-div.search_filters a.fakeLink{
+a.fakeLink{
     color: #000000;
 }
-div.search_filters a.fakeLink:hover{
+a.fakeLink:hover{
     color: #A8126A;
     cursor: pointer;
 }
-div.search_filters div.dynatree-custom.disabled{
+div.dynatree-custom.disabled{
   display: none;
 }
-div.search_filters span.dynatree-selected a{
+span.dynatree-selected a{
   color: #A8126A;
 }
-div.flatlist_container .button {
+div.flatlist_container .flatlist-item {
    border-top: 1px solid #8095a8;
    background: #02020c;
    background: -webkit-gradient(linear, left top, left bottom, from(#627281), to(#02020c));
@@ -3256,7 +3256,7 @@ div.flatlist_container .button {
    float:left;
    }
 
-div.flatlist_container .button .delete{
+div.flatlist_container .flatlist-item .delete{
   //background: url("ico_criteria_missing.gif") no-repeat scroll 0 4px transparent; 
   color: red;
   cursor: pointer;
