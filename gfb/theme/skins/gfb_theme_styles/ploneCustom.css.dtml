@@ -3204,14 +3204,19 @@ div.search_filters div.flatlist_container.opened{
    border: none;
    font-size: 100%;
 }
-
+div.search_filters .dynatree-selected span.dynatree-checkbox {
+  background: url("ico_check_red.gif") no-repeat scroll 0 0 transparent;
+}
+div.search_filters .dynatree-selected span.dynatree-checkbox:hover {
+  background: url("ico_check_red_hover.gif") no-repeat scroll 0 0 transparent;
+}
 div.search_filters dt{
     background: url("plus_icon.gif") no-repeat scroll 0 4px transparent;
     margin: 0.5em 0 0;
     padding: 3px 0 0 16px;
 }
 div.search_filters dt.opened{
-    background: url("minus_icon.gif") no-repeat scroll 0 4px #E5E6E8;
+    background: url("minus_icon.gif") no-repeat scroll 0 4px transparent;
 
 }
 div.search_filters a.fakeLink{
