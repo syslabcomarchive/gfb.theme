@@ -3223,6 +3223,9 @@ div.search_filters a.fakeLink:hover{
 div.search_filters div.dynatree-custom.disabled{
   display: none;
 }
+div.search_filters span.dynatree-selected a{
+  color: #A8126A;
+}
 div.flatlist_container .button {
    border-top: 1px solid #96d1f8;
    background: #65a9d7;
@@ -3241,8 +3244,6 @@ div.flatlist_container .button {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    white-space: nowrap;
-   //font-size: 11px;
-   font-family: Georgia, serif;
    margin: 0 2px;
    text-decoration: none;
    vertical-align: middle;
