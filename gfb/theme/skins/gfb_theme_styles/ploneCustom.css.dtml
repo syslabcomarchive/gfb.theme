@@ -3210,12 +3210,12 @@ div.flatlist_container.opened{
 .dynatree-selected span.dynatree-checkbox:hover {
   background: url("ico_check_red_hover.gif") no-repeat scroll 0 0 transparent;
 }
-dt{
+div.search_filters dt{
     background: url("plus_icon.gif") no-repeat scroll 0 4px transparent;
     margin: 0.5em 0 0;
     padding: 3px 0 0 16px;
 }
-dt.opened{
+div.search_filters dt.opened{
     background: url("minus_icon.gif") no-repeat scroll 0 4px #E5E6E8;
 
 }
@@ -3260,6 +3260,9 @@ div.flatlist_container .flatlist-item .delete{
   //background: url("ico_criteria_missing.gif") no-repeat scroll 0 4px transparent; 
   color: red;
   cursor: pointer;
+}
+div.field.ArchetypesDynatreeWidget{
+  width: 720px;
 }
 
 /* @end */
