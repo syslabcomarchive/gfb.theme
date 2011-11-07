@@ -3216,7 +3216,7 @@ div.search_filters dt{
     padding: 3px 0 0 16px;
 }
 div.search_filters dt.opened{
-    background: url("minus_icon.gif") no-repeat scroll 0 4px transparent;
+    background: url("minus_icon.gif") no-repeat scroll 0 4px #E5E6E8;
 
 }
 div.search_filters a.fakeLink{
