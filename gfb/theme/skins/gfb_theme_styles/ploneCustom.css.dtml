@@ -3240,7 +3240,7 @@ div.flatlist_container .button {
    background: -moz-linear-gradient(top, #627281, #02020c);
    background: -ms-linear-gradient(top, #627281, #02020c);
    background: -o-linear-gradient(top, #627281, #02020c);
-   padding: 0 4px;
+   padding: 0 8px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
@@ -3250,9 +3250,10 @@ div.flatlist_container .button {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
    white-space: nowrap;
-   margin: 0 2px;
+   margin: 2px;
    text-decoration: none;
    vertical-align: middle;
+   float:left;
    }
 
 div.flatlist_container .button .delete{
