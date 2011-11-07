@@ -147,12 +147,11 @@
                       </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                            <div class="flatlist-item button" 
+                                key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                           </div>
                         </div>
+                      <div class="visualClear"></div>
                       <div id="widget_remote_provider" class="closed_widget">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
@@ -181,12 +180,11 @@
                          </dt>
                           <div class="flatlist_container">
                             <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                            <div class="flatlist-item button" 
+                                key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                             </div>
                           </div>
+                      <div class="visualClear"></div>
                       <div id="widget_nace" class="closed_widget">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
@@ -215,12 +213,11 @@
                         </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                            <div class="flatlist-item button" 
+                                key="{{ key }}"><span class="delete">X</span> {{ title }}</div>
                           </div>
                         </div>
+                       <div class="visualClear"></div>
                        <div id="widget_riskfactors" class="closed_widget">
                         <div class="dynatree_filter">
                           <input type="text" class="filter" />
