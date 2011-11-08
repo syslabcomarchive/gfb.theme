@@ -28,22 +28,22 @@ jq(document).ready(function(){
                                                        model: datamodel});
     });
     jq(".closed_widget").hide();
-
-		function runEffect(fname) {        
-			// get effect type from 
-			var selectedEffect = "blind";
-			// most effect types need no options passed by default
-			var options = {};
-			jq( "#" + fname ).toggle( selectedEffect, options, 500 );
-		};
-
-		// set effect from select menu value
-		$( ".toggleButton" ).click(function() {
-			var jqthis = jq(this);
-			jqthis.toggleClass('opened');
-			jqthis.next().toggleClass('opened');
-			var fname = jqthis[0].id.replace('button_', 'widget_');
-			runEffect(fname);
-			return false;
-		});
+    
+    function runEffect(fname) {        
+	// get effect type from 
+	var selectedEffect = "blind";
+	// most effect types need no options passed by default
+	var options = {};
+	jq( "#" + fname ).toggle( selectedEffect, options, 500 );
+    };
+    
+    // set effect from select menu value
+    jq( ".toggleButton" ).click(function() {
+	var jqthis = jq(this);
+	jqthis.toggleClass('opened');
+	jqthis.next().toggleClass('opened');
+	var fname = jqthis[0].id.replace('button_', 'widget_');
+	runEffect(fname);
+	return false;
+    });
 });
