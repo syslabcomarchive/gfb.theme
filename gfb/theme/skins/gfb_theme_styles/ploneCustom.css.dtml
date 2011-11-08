@@ -2167,6 +2167,8 @@ ul.search_index {
 /* soll den Abstand zwischen Allgemeine Handlungshilfen und Spezielle Handlungshilfen fixen*/
 .common_radio_search_box {
   margin-bottom: 1em;
+  float: left;
+  margin-right: 1em;
 }
 * html .common_radio_search_box {
   margin-bottom: 0em;

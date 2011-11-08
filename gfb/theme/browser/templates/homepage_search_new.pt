@@ -260,10 +260,10 @@ document.images[Bildname].src = eval(Tauschbildname);
                       </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                            <div class="flatlist-item" 
+                                key="{{ key }}"><img src="ico_check_red.gif"
+                                 i18n:attributes="title" i18n:domain="gfb"
+                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                           </div>
                         </div>
                       <div id="widget_remote_provider" class="closed_widget">
@@ -294,10 +294,10 @@ document.images[Bildname].src = eval(Tauschbildname);
                          </dt>
                           <div class="flatlist_container">
                             <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                                <div class="flatlist-item" 
+                                key="{{ key }}"><img src="ico_check_red.gif"
+                                 i18n:attributes="title" i18n:domain="gfb"
+                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                             </div>
                           </div>
                       <div id="widget_nace" class="closed_widget">
@@ -328,10 +328,10 @@ document.images[Bildname].src = eval(Tauschbildname);
                         </dt>
                         <div class="flatlist_container">
                           <div class="flatlist-template">
-                            <span class="flatlist-item button" 
-                                key="{{ key }}"><span class="delete">X</span>
-                                {{ title }}
-                            </span>
+                            <div class="flatlist-item" 
+                                key="{{ key }}"><img src="ico_check_red.gif"
+                                 i18n:attributes="title" i18n:domain="gfb"
+                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                           </div>
                         </div>
                        <div id="widget_riskfactors" class="closed_widget">
