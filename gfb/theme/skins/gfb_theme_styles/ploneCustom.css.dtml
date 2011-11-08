@@ -3256,13 +3256,16 @@ div.flatlist_container .flatlist-item {
    float:left;
    }
 
-div.flatlist_container .flatlist-item .delete{
-  //background: url("ico_criteria_missing.gif") no-repeat scroll 0 4px transparent; 
-  color: red;
-  cursor: pointer;
-}
+// div.flatlist_container .flatlist-item .delete{ 
+//   background: url("ico_check_red.gif") no-repeat scroll 0 0 transparent;
+//   color: red;
+//   cursor: pointer;
+// }
 div.field.ArchetypesDynatreeWidget{
   width: 720px;
+}
+div.flatlist_container img.delete{
+  vertical-align: sub;
 }
 
 /* @end */
