@@ -109,7 +109,7 @@
                             und/oder
                         </p>
                     </div>
-
+                    <div class="visualClear"></div>
 
                     <div class="common_radio_search_box">
                         <input class="radio_search"

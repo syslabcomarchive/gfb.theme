@@ -2166,9 +2166,8 @@ ul.search_index {
 
 /* soll den Abstand zwischen Allgemeine Handlungshilfen und Spezielle Handlungshilfen fixen*/
 .common_radio_search_box {
-  margin-bottom: 1em;
+  margin: 0.5em 1em 0.5em 0;
   float: left;
-  margin-right: 1em;
 }
 * html .common_radio_search_box {
   margin-bottom: 0em;
@@ -3269,7 +3268,12 @@ div.field.ArchetypesDynatreeWidget{
 div.flatlist_container img.delete{
   vertical-align: sub;
 }
-
+div#searchcontrols #SearchableText{
+  float:left;
+}
+div#searchcontrols #and_or_box{
+  float:left;
+}
 /* @end */
 
 
