@@ -372,3 +372,6 @@ msgstr "Zum Anmeldeformular"
 
 msgid "label_click_to_open"
 msgstr "zum Öffnen auf das Pluszeichen klicken"
+
+msgid "label_delete_selection"
+msgstr "Auswahl entfernen"
