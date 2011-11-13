@@ -6,7 +6,7 @@ var CustomHiddenForm = Backbone.View.extend({
     },
     render: function(){
         var name = this.model.get("name");
-	// either at least one item is still selected, or one previously selected item remains
+        // either at least one item is still selected, or one previously selected item remains
         if(this.model.get("selected").length ||jq('input[name="' + name +':list"]').length){
             var el = this.el;
             var tmpl = this.input_template;
@@ -30,20 +30,20 @@ jq(document).ready(function(){
     jq(".closed_widget").hide();
     
     function runEffect(fname) {        
-	// get effect type from 
-	var selectedEffect = "blind";
-	// most effect types need no options passed by default
-	var options = {};
-	jq( "#" + fname ).toggle( selectedEffect, options, 500 );
+        // get effect type from 
+        var selectedEffect = "blind";
+        // most effect types need no options passed by default
+        var options = {};
+        jq( "#" + fname ).toggle( selectedEffect, options, 500 );
     };
     
     // set effect from select menu value
     jq( ".toggleButton" ).click(function() {
-	var jqthis = jq(this);
-	jqthis.toggleClass('opened');
-	jqthis.next().toggleClass('opened');
-	var fname = jqthis[0].id.replace('button_', 'widget_');
-	runEffect(fname);
-	return false;
+        var jqthis = jq(this);
+        jqthis.toggleClass('opened');
+        jqthis.next().toggleClass('opened');
+        var fname = jqthis[0].id.replace('button_', 'widget_');
+        runEffect(fname);
+        return false;
     });
 });
