@@ -38,6 +38,7 @@
      tal:define="site_properties context/portal_properties/site_properties|nothing;
                 use_types_blacklist request/use_types_blacklist | python:True;
                 use_navigation_root request/use_navigation_root | python:True;
+                toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                 dummy python:request.set('portal_type', 'RiskAssessmentLink');
                 Batch python:modules['Products.CMFPlone'].Batch;
                 use_view_action site_properties/typesUseViewActionInListings|python:();
@@ -437,6 +438,7 @@
                              result_method result_ob/getType_methodology;
                              result_provider result_ob/getRemoteProvider | nothing;
                              result_editdate result_ob/getDateOfEditing | nothing;
+                             result_editdate python:toLocalizedTime(result_editdate);
                              item_icon python:plone_view.getIcon(result);
                              url result_url">
                            
