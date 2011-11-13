@@ -152,7 +152,7 @@
                     > </textarea>
         </div>
     
-        <!--metal:captcha define-macro="captcha_field"
+        <metal:captcha define-macro="captcha_field"
             i18n:domain="gfb"
             tal:define="captcha_helper here/@@captcha_helper;
                      captcha python:captcha_helper.createCaptcha(here, request)">
@@ -178,10 +178,8 @@
               <input type="submit" class="inline"
                      name="form.button.NewCaptcha"
                      value="label_new_image"
-                     tabindex=""
-                     i18n:attributes="value"
+                     i18n:attributes="value" />
 
-                     tal:attributes="tabindex tabindex/next;" />
               </span>
                      if you cannot read the word properly.
             </div>
@@ -193,13 +191,11 @@
                    name="captcha_text"
                    size="20"
                    value=""
-                   tabindex=""
-                   tal:attributes="tabindex tabindex/next;"
                    />
                    
           </div>
           
-       </metal:captcha-->    
+       </metal:captcha>    
     
     
         <div class="formControls">
