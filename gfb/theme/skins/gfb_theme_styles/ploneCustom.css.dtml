@@ -957,7 +957,7 @@ h4 {
 
 .documentByLine {
   color: #4B516B;
-  margin-bottom: 0;
+ // margin-bottom: 0;
 }
 
 .commentBody {
