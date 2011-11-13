@@ -2157,7 +2157,6 @@ ul.search_index {
 
 /* die und und oder box skinnen*/
 #and_or_box {
-  margin-left: 1em;
   margin-top:0.5em;
 }
 * html #and_or_box {
@@ -3268,11 +3267,8 @@ div.field.ArchetypesDynatreeWidget{
 div.flatlist_container img.delete{
   vertical-align: sub;
 }
-div#searchcontrols #SearchableText{
-  float:left;
-}
-div#searchcontrols #and_or_box{
-  float:left;
+div#searchcontrols .indent1{
+  margin-left: 1em;
 }
 /* @end */
 

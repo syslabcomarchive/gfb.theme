@@ -215,7 +215,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                                        title view/getFillText;"/>
 
 
-                <div id="and_or_box">
+                <div id="and_or_box" class="indent1">
                     <p class="formHelp" 
                        i18n:translate="help_and_or">
                         und/oder
@@ -223,7 +223,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 </div>
                 <div class="visualClear"></div>
                    
-                <div class="common_radio_search_box">
+                <div class="common_radio_search_box indent1">
                     <input class="radio_search" 
                            id="radio_category_special"
                            type="radio" 
@@ -247,9 +247,9 @@ document.images[Bildname].src = eval(Tauschbildname);
 
                 <div class="visualClear"></div>
      
-                <p i18n:translate="label_restrict_by">restrict by...</p>
+                <p i18n:translate="label_restrict_by" class="indent1">restrict by...</p>
 
-                <div class="search_filters">
+                <div class="search_filters indent1">
                      <!-- Remote Provider -->
                      <div class="dynatree-atwidget dynatree-custom">
 
