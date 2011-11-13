@@ -258,6 +258,14 @@
     permission="zope2.View"
     /-->
 
+    <browser:page
+        for="*"
+        name="captcha_helper"
+        class=".CaptchaHelper.CaptchaHelper"
+        permission="zope.Public"
+        allowed_attributes="createCaptcha verifyCaptcha"
+        />
+
     <!-- provide an anchor to the top of the content area -->
     <browser:viewlet
         name="gfb.abovecontenttitle.documentcontent"
