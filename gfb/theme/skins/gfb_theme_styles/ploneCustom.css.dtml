@@ -1211,7 +1211,6 @@ a.pluss {
   margin: 0;
   padding-left: 5px;
 }
-
 form.searchform-controls div#searchtippstext {
    display:none;
 }
@@ -1406,23 +1405,19 @@ div.column2b {
 }  
 
 div.search_fields_narrow{
-    float: left;
-    width: 480px;
-    margin: 15px 11px 0;
+    max-width: 500px;
 }
 div.search_fields_wide{
-    float: left;
-    width: 725px;
-    margin: 0 11px 0;
+    max-width: 740px;
 }
 
 .context {text-transform: none;}
 
 .submit_column {
-  margin-top: 0 !important;
+  margin-top: 0.5em;
   padding-top:0px;
   padding-bottom: 13px !important;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   text-align:right !important;
   height: 1.3em;
   background-color: #D6D9DE;
@@ -1927,8 +1922,10 @@ dl.error dd {
   background-color: #fd7; 
 }
 
-form.searchPage {
+form.searchPage,
+div.searchPage {
   margin-bottom: 1em;
+  max-width: 740px;
 }
 
 
@@ -3268,7 +3265,17 @@ div.flatlist_container img.delete{
   vertical-align: sub;
 }
 div#searchcontrols .indent1{
-  margin-left: 1em;
+  margin-left: 0.75em;
+}
+div#searchcontrols .indent2{
+  margin-left: 1.5em;
+}
+div#searchcontrols .indent3{
+  margin-left: 2.5em;
+  margin-right: 1em;
+}
+div#searchcontrols .bottom1{
+  margin-bottom: 1.2em; 
 }
 /* @end */
 

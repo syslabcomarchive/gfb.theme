@@ -210,12 +210,12 @@ document.images[Bildname].src = eval(Tauschbildname);
                        type="text" 
                        name="SearchableText" 
                        size="25" 
-                       class="inputLabel"
+                       class="inputLabel indent1"
                        tal:attributes="value request/SearchableText|string:;
                                        title view/getFillText;"/>
 
 
-                <div id="and_or_box" class="indent1">
+                <div id="and_or_box" class="indent2">
                     <p class="formHelp" 
                        i18n:translate="help_and_or">
                         und/oder
@@ -223,7 +223,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 </div>
                 <div class="visualClear"></div>
                    
-                <div class="common_radio_search_box indent1">
+                <div class="common_radio_search_box indent2">
                     <input class="radio_search" 
                            id="radio_category_special"
                            type="radio" 
@@ -247,9 +247,9 @@ document.images[Bildname].src = eval(Tauschbildname);
 
                 <div class="visualClear"></div>
      
-                <p i18n:translate="label_restrict_by" class="indent1">restrict by...</p>
+                <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
 
-                <div class="search_filters indent1">
+                <div class="search_filters indent3">
                      <!-- Remote Provider -->
                      <div class="dynatree-atwidget dynatree-custom">
 
