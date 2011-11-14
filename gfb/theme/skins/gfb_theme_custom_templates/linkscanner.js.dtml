@@ -143,6 +143,9 @@ function modifyLinkTag(node) {
                     if(node.className=='link-internal') {
                         node.className='';
                     }
+                    if (node.className.toLocaleLowerCase()=='pdf') {
+                        injectNode(node, 'span', 'link-pdf-js');
+                    }
                 }
                 else
                 {
