@@ -530,7 +530,7 @@
            </span>
 
            <a tal:condition="not:request/b_size | nothing"
-              tal:attributes="href python:'%s?b_size=%s&%s' % (template.id, len(results), batch.pageurl(request.form)) "
+              tal:attributes="href python:'%s?b_size=%s&%s' % (view.getName(), len(results), batch.pageurl(request.form)) "
               class="show-all-results" i18n:translate="label_show_all" i18n:domain="gfb">Alle Anzeigen</a>
 
            <metal:macro use-macro="template/macros/batch"></metal:macro>
