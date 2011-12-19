@@ -1,11 +1,11 @@
 gfb.theme Changelog
 ===================
 
-1.4.1 (unreleased)
+1.4.1 (2011-12-19)
 ------------------
 
-- Nothing changed yet.
-
+- Overriding newsitem_view to enable HTML rendering for the Description
+  field [thomasw]
 
 1.4.0 (2011-11-29)
 ------------------
