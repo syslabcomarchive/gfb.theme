@@ -944,20 +944,18 @@ h4 {
   display: block !important;
 }
 .documentDescription{
-  padding: 6px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 #parent-fieldname-description,
 .documentByLine {
-  padding:8px 0 0;
-  margin-bottom: 8px;
+  padding:0;
   font: bold 13px/19px Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
 .documentByLine {
   color: #4B516B;
- // margin-bottom: 0;
 }
 
 .commentBody {
@@ -1618,7 +1616,7 @@ a.show-all-results:hover {
   color: white;
 }
 
-#heading_search_results_box, #footer_batch_box {
+#heading_search_results_box, #footer_batch_box, .listingBar {
   /* background-color:#415063;*/
   background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   color:whitesmoke;
@@ -1633,6 +1631,12 @@ a.show-all-results:hover {
   margin-top:0;
   padding:0;
   vertical-align:middle;
+}
+#content .listingBar {
+    margin: 10px 0;
+}
+.listingBar .current{
+ color: #A8126A;
 }
 #footer_batch {
   display:block;
@@ -1661,14 +1665,14 @@ div.separationBar {
   border-left: 2px solid #3f455d;
 }
 
-.listingBar {
+.listingBarItems {
   font-size: 80%;
   font-weight: normal;
   vertical-align: baseline;
     
 }
-.listingBar a {
-  color: whitesmoke;
+.listingBar a, .listingBarItems a {
+   color: whitesmoke;
 }
 
 div#link_to_tool {
@@ -1829,7 +1833,8 @@ div#link_to_tool {
 .search_index .link-internal-js, 
 .search-top .link-internal-js, 
 ul.formTabs .link-internal-js,
-span.listingBar .link-internal-js,
+.listingBar .link-internal-js,
+.listingBarItems .link-internal-js,
 .actionbtn .link-internal-js,
 div#homepage-tabs ul.search-top .link-internal-js,
 #footer_batch_box .link-internal-js {
@@ -2449,7 +2454,6 @@ GFB linkcollection styles.
 #slc-linkcollection-linkbox {
   border: 0px;
   background-color: #ebecf0;
-  top: -10px;
   position:relative;
 }
 #slc-linkcollection-linkbox ul {
