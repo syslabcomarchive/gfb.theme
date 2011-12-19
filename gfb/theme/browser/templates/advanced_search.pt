@@ -289,7 +289,7 @@
             <div class="separationBar">&nbsp;</div>
 
             <!-- Navigation -->
-            <span class="listingBar"
+            <span class="listingBarItems"
                  metal:define-macro="navigation"
                  tal:define="request request|here/request|container/request|nothing;
                              batch batch|nothing;
