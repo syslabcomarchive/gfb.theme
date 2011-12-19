@@ -251,12 +251,13 @@
      /-->
 
   <!-- News listing -->
-  <!--browser:page
+  <browser:page
     name="local-news-listing"
     for="*"
     class=".news_listing.LocalNewsListing"
+    template="templates/localnews_view.pt"
     permission="zope2.View"
-    /-->
+    />
 
     <browser:page
         for="*"
