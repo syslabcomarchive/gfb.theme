@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Re-activated news listing [thomasw]
 
 1.4.1 (2011-12-19)
 ------------------
