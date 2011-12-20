@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Customized folder_listing to enable HTML rendering for the Description [thomasw]
 
 1.4.2 (2011-12-19)
 ------------------
