@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.4 (unreleased)
+1.4.4 (2011-12-21)
 ------------------
 
 - Optimised loading speed of working area [thomasw]
