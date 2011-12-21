@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Optimised loading speed of working area [thomasw]
 
 1.4.3 (2011-12-20)
 ------------------

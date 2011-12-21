@@ -199,7 +199,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
 
                               <div class="actionbtn">
                                  <a class="context"
-                                     tal:attributes="href string:${translation/absolute_url}?set_language=${myral/target_language}"
+                                     tal:attributes="href string:${translation}?set_language=${myral/target_language}"
                                      i18n:translate="" i18n:domain="gfb"
                                      tal:content="string:View ${myral/target_language} version"
                                      tal:condition="translation">View translation</a>
@@ -230,7 +230,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
                             <span tal:condition="isManager">
                               <span tal:define="canonical obj/getCanonical;
                                 sync_view python:canonical.restrictedTraverse('@@synchronize_content');
-                                sync_status python:sync_view.getSyncStatus(uid=obj.UID())"
+                                sync_status python:sync_view.getSyncStatus(uid=obj.UID(), fromCache=True)"
                             tal:attributes="class python:sync_status[0]==-1 and 'field unsynced' or 'field synced'">
                                 <strong i18n:translate="label_sync_status">Synchronisation status</strong><br/>
                                 <i class="warning_text" tal:condition="python:sync_status[0]==-1" i18n:translate="label_not_sync">not synchronized</i>
@@ -242,8 +242,8 @@ tal:define="dummy python:request.set('disable_border',1);" />
                                     i18n:translate="label_unsynced_changes">Local unsynchronized changes
                                     </i>
                                 <br>
-                                <span i18n:translate="label_sync_url_remote">URL of the synchronized object</span>: <a tal:condition="python:sync_status[1]" 
-                                    tal:attributes="href python:sync_status[1]" 
+                                <span i18n:translate="label_sync_url_remote">URL of the synchronized object</span>: <a tal:condition="python:sync_status[1]"
+                                    tal:attributes="href python:sync_status[1]"
                                     tal:content="python:sync_status[1]"/>
                                  <span tal:condition="python:sync_status[1]==''">--</span>
                                 </span>

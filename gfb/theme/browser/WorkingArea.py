@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -8,11 +9,12 @@ from plone.app.i18n.locales.browser.selector import LanguageSelector
 from Products.statusmessages.interfaces import IStatusMessage
 from Acquisition import aq_parent, aq_inner
 
+
 class WorkingArea(GFBLanguageSelector):
     """
     Working Area for normal users
     """
-    
+
     template = ViewPageTemplateFile('templates/working_area.pt')
 
     def __init__(self, context, request, view=None, manager=None, **args):
@@ -46,7 +48,7 @@ class WorkingArea(GFBLanguageSelector):
         pm = getToolByName(self, 'portal_membership')
         pc = getToolByName(self, 'portal_catalog')
         f = pm.getMembersFolder()
-        
+
         if self.isManager():
             self.userid = self.context.getId()
             member = pm.getMemberById(self.userid)
@@ -97,7 +99,7 @@ class WorkingArea(GFBLanguageSelector):
                 if not isinstance(elem, unicode):
                     elem = elem.decode('utf-8')
                 elems.append(elem)
-            return u"<br>".join(elems) 
+            return u"<br>".join(elems)
         return ""
 
     def create_provider_url(self):
@@ -112,12 +114,16 @@ class WorkingArea(GFBLanguageSelector):
 
     def myrals(self):
         objs = [x.getObject() for x in self.RALinks]
-        return [dict(obj=obj,
+        rals = [dict(obj=obj,
             state=self.pwt.getInfoFor(obj, 'review_state'),
             translation=obj.getTranslation(self.getOppositeLang(obj.Language())),
             target_language=self.getOppositeLang(obj.Language()))
             for obj in objs]
-        
+        for ral in rals:
+            if ral['translation'] is not None:
+                ral['translation'] = ral['translation'].absolute_url()
+        return rals
+
     def provider_ok(self):
         return not not len(self.Provider)
 
@@ -156,4 +162,4 @@ class ProviderOverview(BrowserView):
                 url=ob.absolute_url()))
 
         return members
-  
+
