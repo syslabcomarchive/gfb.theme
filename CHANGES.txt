@@ -1,11 +1,10 @@
 gfb.theme Changelog
 ===================
 
-1.4.5 (unreleased)
+1.4.5 (2011-12-21)
 ------------------
 
-- Nothing changed yet.
-
+- Added sitemap.xml.gz, copied from OSHA [thomasw]
 
 1.4.4 (2011-12-21)
 ------------------
