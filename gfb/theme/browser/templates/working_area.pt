@@ -114,6 +114,7 @@ tal:define="dummy python:request.set('disable_border',1);" />
 
         <div tal:define="myrals view/myrals;
             home_url view/home_url;
+            plone_view context/@@plone;
             provider_ok view/provider_ok;">
 
 
@@ -174,7 +175,6 @@ tal:define="dummy python:request.set('disable_border',1);" />
                   <span tal:repeat="myral myrals" tal:omit-tag="">
                     <span tal:omit-tag=""
                         tal:define="oddrow repeat/myral/odd;
-                                    plone_view context/@@plone;
                                     obj nocall:myral/obj;
                                     translation nocall:myral/translation;
                                     state myral/state;
