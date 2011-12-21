@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:tal="http://xml.zope.org/namespaces/tal"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<tal:block repeat="obj options/objects | view/objects">
+    <url>
+        <loc tal:content="obj/loc">url</loc>
+        <lastmod tal:condition="obj/lastmod | nothing"
+                 tal:content="obj/lastmod">date modified</lastmod>
+        <changefreq tal:condition="obj/changefreq | nothing"
+                    tal:content="obj/changefreq">change frequency</changefreq>
+        <priority tal:condition="obj/priority | nothing"
+                  tal:content="obj/priority">priority</priority>
+        <news:news>
+            <news:publication_date tal:condition="obj/publication_date | nothing"
+                                   tal:content="obj/publication_date">2006-08-14T03:30:00Z</news:publication_date>
+            <news:keywords tal:condition="obj/keywords | nothing"
+                           tal:content="obj/keywords">Keywords for this news</news:keywords>
+        </news:news>
+
+    </url>
+</tal:block>
+
+</urlset>

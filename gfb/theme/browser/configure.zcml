@@ -4,7 +4,7 @@
     i18n_domain="gfb.theme">
 
 	<include package="Products.CMFCore" file="permissions.zcml" />
-    
+
 	<!-- 'GFBTheme' Zope 3 browser layer -->
     <interface
         interface=".interfaces.IThemeSpecific"
@@ -19,7 +19,7 @@
         manager="plone.app.layout.viewlets.interfaces.IPortalTop"
         class=".viewlets.PersonalBarViewletGFB"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         />
 
     <browser:viewletManager
@@ -35,7 +35,7 @@
         manager=".interfaces.IGFBEditBelowcontenttitle"
         class=".viewlets.EditHelp"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         />
 
     <!--browser:viewlet
@@ -43,11 +43,11 @@
         manager="plone.app.layout.viewlets.interfaces.IPortalTop"
         template="templates/topborder.pt"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         /-->
 
 
-  <browser:viewlet  
+  <browser:viewlet
       name="gfb.languageselector"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       class=".viewlets.GFBLanguageSelector"
@@ -61,7 +61,7 @@
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       class=".viewlets.SiteTitleViewlet"
       layer=".interfaces.IThemeSpecific"
-      permission="zope2.View" 
+      permission="zope2.View"
       />
 
   <!-- The breadcrumbs -->
@@ -88,7 +88,7 @@
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".viewlets.SearchBoxViewletGFB"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         /-->
 
     <!-- The bottom language selector bar -->
@@ -172,8 +172,8 @@
        layer=".interfaces.IThemeSpecific"
        permission="zope2.Public"
     />
-    
-    
+
+
     <browser:page
         for="*"
         name="advanced_search"
@@ -198,7 +198,7 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
-    
+
     <browser:page
         for="*"
         name="gfb_glossary"
@@ -206,7 +206,7 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
-    
+
     <browser:page
         for="*"
         name="ra_inline"
@@ -242,13 +242,13 @@
         />
 
   <!-- sitemap builder -->
-  <!--browser:page
+  <browser:page
       name="sitemap.xml.gz"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      class="osha.theme.browser.sitemap.SiteMapView"
+      class=".sitemap.SiteMapView"
       permission="zope2.Public"
       layer=".interfaces.IThemeSpecific"
-     /-->
+     />
 
   <!-- News listing -->
   <browser:page

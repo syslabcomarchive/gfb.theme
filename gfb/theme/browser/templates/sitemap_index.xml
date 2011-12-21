@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+              xmlns:tal="http://xml.zope.org/namespaces/tal"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                                  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<sitemap tal:repeat="filename options/filenames | nothing">
+   <loc tal:content="filename | nothing">http://www.example.com/sitemap1.xml.gz</loc>
+   <lastmod tal:content="options/now | nothing">2004-10-01T18:23:17+00:00</lastmod>
+</sitemap>
+</sitemapindex>

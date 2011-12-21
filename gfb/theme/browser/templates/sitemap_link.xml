@@ -1,0 +1,9 @@
+<url tal:define="obj options/obj">
+ <loc tal:content="obj/loc">url</loc>
+ <lastmod tal:condition="obj/lastmod | nothing"
+          tal:content="obj/lastmod">date modified</lastmod>
+ <changefreq tal:condition="obj/changefreq | nothing"
+             tal:content="obj/changefreq">change frequency</changefreq>
+ <priority tal:condition="obj/priority | nothing"
+           tal:content="obj/priority">priority</priority>
+</url>
