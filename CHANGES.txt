@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Added missing definition for here_url in newsitem_view
 
 1.4.5 (2011-12-21)
 ------------------
