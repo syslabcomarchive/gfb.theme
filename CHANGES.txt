@@ -1,11 +1,13 @@
 gfb.theme Changelog
 ===================
 
-1.4.7 (unreleased)
+1.4.7 (2011-12-25)
 ------------------
 
-- Nothing changed yet.
-
+- Commented out old homepage_search, so that it cannot be called and lead to
+  errors
+- ra_inline view now throws a proper 400 BadRequest error if the passed in
+  UID is wrong [thomasw]
 
 1.4.6 (2011-12-22)
 ------------------
