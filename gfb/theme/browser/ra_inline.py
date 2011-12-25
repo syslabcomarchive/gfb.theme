@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import Acquisition
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -6,13 +7,9 @@ from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
 from gfb.theme import GFBMessageFactory as _
 
 
-
-
 class RAInlineView(BrowserView):
     """View for displaying ra links fetched by UID in the current context
     """
-    #template = ViewPageTemplateFile('templates/ra_inline.pt')
-    #template.id = "ra_inline"
 
     def __call__(self):
         self.request.set('disable_border', True)
@@ -21,7 +18,8 @@ class RAInlineView(BrowserView):
             raise NotFound
         pc = getToolByName(self.context, 'portal_catalog')
         results = pc(UID=uid)
-        assert len(results)==1
+        if len(results)!=1:
+            self.request.RESPONSE.badRequestError('uid')
         result = results[0]
         ob = result.getObject()
 
