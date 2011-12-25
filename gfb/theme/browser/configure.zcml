@@ -182,14 +182,14 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
     />
-    <browser:page
+    <!--browser:page
         for="*"
         name="homepage_search"
         class=".advanced_search.AdvancedSearchView"
         template="templates/homepage_search.pt"
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
-    />
+    /-->
     <browser:page
         for="*"
         name="homepage_search_new"
