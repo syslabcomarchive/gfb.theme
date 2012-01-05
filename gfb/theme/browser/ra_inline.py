@@ -15,7 +15,7 @@ class RAInlineView(BrowserView):
         self.request.set('disable_border', True)
         uid = self.request.get('uid', None)
         if uid is None:
-            raise NotFound
+            self.request.RESPONSE.badRequestError('uid')
         # guard against wrong formatting of the query string, such as
         # ra_inline?uid=ff07dd4c2126f5540d882a78dbbfc665/?searchterm=None
         # A slash can never be part of the UID, so we should be safe here
