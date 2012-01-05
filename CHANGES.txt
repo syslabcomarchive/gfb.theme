@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.8 (unreleased)
+1.4.8 (2012-01-05)
 ------------------
 
 - Guard against illegally formatted query string in ra_inline [thomasw]
