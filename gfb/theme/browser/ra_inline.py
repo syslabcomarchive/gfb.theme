@@ -16,6 +16,10 @@ class RAInlineView(BrowserView):
         uid = self.request.get('uid', None)
         if uid is None:
             raise NotFound
+        # guard against wrong formatting of the query string, such as
+        # ra_inline?uid=ff07dd4c2126f5540d882a78dbbfc665/?searchterm=None
+        # A slash can never be part of the UID, so we should be safe here
+        uid = uid.split('/')[0]
         pc = getToolByName(self.context, 'portal_catalog')
         results = pc(UID=uid)
         if len(results)!=1:
