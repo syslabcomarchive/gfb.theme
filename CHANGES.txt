@@ -1,10 +1,10 @@
 gfb.theme Changelog
 ===================
 
-1.4.9 (unreleased)
+1.4.9 (2012-01-27)
 ------------------
 
-- Nothing changed yet.
+- Added warning about missing JavaScript instead of only showing "Tree"
 
 
 1.4.8 (2012-01-05)
