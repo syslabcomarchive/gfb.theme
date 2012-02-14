@@ -2802,6 +2802,7 @@ text-align:left;
 
 #content table caption {
     font-size:125%;
+    margin: 0 0 0.75em;
 }
 
 tbody {
