@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.10 (unreleased)
+1.4.10 (2012-02-15)
 -------------------
 
 - Set margin for table caption #4243 [thomasw]
