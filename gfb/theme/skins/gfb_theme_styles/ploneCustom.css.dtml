@@ -3099,6 +3099,7 @@ div.overlay {
     /* some padding to layout nested elements nicely  */
     margin: 1em;
     font-size: 80%;
+    text-align: left;
 }
 
 div.overlay-iframe,
