@@ -128,7 +128,7 @@ body {
     font-weight:normal;
     line-height:20px;
     color: silver;
-    
+
 }
 #portal-languageselector li a:hover {
     color:#E4DBC0;
@@ -153,7 +153,7 @@ float:right;
 position:relative;
 right:12px;
 top:-25px;
-} 
+}
 /* IE7 fix for the text size images */
 *+html #gfb_text_sizes{
 top: 0;
@@ -526,7 +526,7 @@ li.plussOK {
 li.minusNOK {
   list-style-image: url(ico_criteria_missing.gif);
   color: #666;
-    
+
 }
 
 
@@ -538,7 +538,7 @@ li.minusNOK {
   padding: 0 12px;
   color: whitesmoke;
   /* background: #415063 ; */
-  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0; 
+  background: #3B4E6F url(bg_headline_break.gif) repeat-x scroll 200px 0;
   vertical-align: middle;
   line-height:27px;
 }
@@ -725,7 +725,7 @@ ul.staticPortlet li {
 }
 
 /* hovering for navigation items */
-.portletNavigationTree li a:hover, 
+.portletNavigationTree li a:hover,
 #portal-globalnav ul.submenu li.navTreeItem:hover {
   background-color: #d8dbe0;
 }
@@ -738,7 +738,7 @@ ul.staticPortlet li {
   background-color: #d8dbe0;
 }
 
-.portletNavigationTree li a, 
+.portletNavigationTree li a,
 #portal-globalnav ul.submenu li a {
   color: #000000;
   line-height: 1.6em;
@@ -793,8 +793,8 @@ li.navTreeItem div {
   background: url(ico_link_subnavi_active.gif) no-repeat scroll 36px 6px;
 }
 
-ul.navTreeLevel0, 
-ul.navTreeLevel1, 
+ul.navTreeLevel0,
+ul.navTreeLevel1,
 ul.navTreeLevel2,
 ul.navTreeLevel3 {
   /*background:#e9eaef none repeat scroll 0 0;*/
@@ -1188,8 +1188,8 @@ img.image-left {
 /* @group forms */
 
 .floated_control {
-  float:right; 
-  margin-top: -1.4em; 
+  float:right;
+  margin-top: -1.4em;
 }
 
 div.column2b .floated_control {
@@ -1231,7 +1231,7 @@ div#searchfields {
   background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
   padding:  13px 0 0 0;
-  /*height: 14em;*/   
+  /*height: 14em;*/
 }
 div.ui-tabs-panel {
   /* background-color: #E5E6E8;*/
@@ -1400,7 +1400,7 @@ div.column2b {
   margin: 15px 11px 10px 11px;
   width: 350px;
   float: left;
-}  
+}
 
 div.search_fields_narrow{
     max-width: 500px;
@@ -1609,7 +1609,7 @@ div#providerperson label {
 
 .show-all-results {
   font-weight: normal;
-  color: white; 
+  color: white;
   font-size: 80%;
 }
 a.show-all-results:hover {
@@ -1646,7 +1646,7 @@ a.show-all-results:hover {
   float:left;
   display:block;
   padding: 4px 0.5em 4px 8px;
-}    
+}
 #search_num_results {
   font-size: 80%;
   vertical-align: baseline;
@@ -1669,7 +1669,7 @@ div.separationBar {
   font-size: 80%;
   font-weight: normal;
   vertical-align: baseline;
-    
+
 }
 .listingBar a, .listingBarItems a {
    color: whitesmoke;
@@ -1677,7 +1677,7 @@ div.separationBar {
 
 div#link_to_tool {
   margin-top: 1em;
-  margin-bottom: 1em;   
+  margin-bottom: 1em;
 }
 /* """"""""""""""""""""""""""""""""" CUSTOM """""""""""""""""""""""*/
 
@@ -1715,8 +1715,8 @@ div#link_to_tool {
 }
 
 #globalnav-group {
-  height:32px; 
-  width: 100%; 
+  height:32px;
+  width: 100%;
   background: #424951 url(bg_topnavi_break.gif) repeat-x;
   line-height: 32px;
 }
@@ -1724,14 +1724,14 @@ div#link_to_tool {
   float:left;
 }
 
-#search { 
-  float: right; 
-  width: 250px; 
+#search {
+  float: right;
+  width: 250px;
 }
 
-#portal-searchbox { 
-  float: right; 
-  width: 23em; 
+#portal-searchbox {
+  float: right;
+  width: 23em;
   position:relative;
   top: -32px;
 }
@@ -1829,9 +1829,9 @@ div#link_to_tool {
 }
 
 /* Deactivating unwanted internal links */
-.portletNavigationTree .link-internal-js, 
-.search_index .link-internal-js, 
-.search-top .link-internal-js, 
+.portletNavigationTree .link-internal-js,
+.search_index .link-internal-js,
+.search-top .link-internal-js,
 ul.formTabs .link-internal-js,
 .listingBar .link-internal-js,
 .listingBarItems .link-internal-js,
@@ -1860,7 +1860,7 @@ ul#portal-footeractions .breadcrumbSeparator {
 }
 
 td#portal-column-one div.visualPadding {
-  min-height:1200px;
+  min-height:600px;
   padding:0;
   width: 200px;
   background: transparent url(&dtml-portal_url;/gradient_background_portletbox.jpg) repeat-x top;
@@ -1879,8 +1879,8 @@ td#portal-column-one div.visualPadding {
 
 dl.portalMessage {
     font-size: &dtml-fontSmallSize;;
-    background-color: #ffffe3; 
-    border: 1px solid #996;    
+    background-color: #ffffe3;
+    border: 1px solid #996;
     margin:0.5em 0 0.75em;
 }
 dl.portalMessage a {
@@ -1889,7 +1889,7 @@ dl.portalMessage a {
     text-decoration: underline;
 }
 dl.portalMessage dt {
-  background-color: #996; 
+  background-color: #996;
   font-weight: bold;
   float: left;
   margin: 0 0.5em 0 0;
@@ -1898,7 +1898,7 @@ dl.portalMessage dt {
   line-height: 1.25em;
 }
 dl.portalMessage dd {
-  padding: 0.5em 0.5em; 
+  padding: 0.5em 0.5em;
   margin: 0;
   line-height: 1.25em;
 }
@@ -1909,22 +1909,22 @@ dl.warning dt {
   background-color: #d80;
 }
 dl.error {
-  border-color: #d00;    
+  border-color: #d00;
 }
 dl.error dt {
-  background-color: #d00; 
+  background-color: #d00;
 }
 dl.warning {
-  border-color: #d80;    
+  border-color: #d80;
 }
 dl.warning dd {
-  background-color: #fd7; 
+  background-color: #fd7;
 }
 dl.error {
-  border-color: #d80;    
+  border-color: #d80;
 }
 dl.error dd {
-  background-color: #fd7; 
+  background-color: #fd7;
 }
 
 form.searchPage,
@@ -1977,10 +1977,10 @@ div#content div#simplesearch ul.search-top {
 }
 * html #searchfields input.context {
   margin-right:6.5em;
-} 
+}
 *+html #searchfields input.context {
   margin-right:6.5em;
-} 
+}
 
 dd.portletItem {
   margin-top:0.7em;
@@ -2006,7 +2006,7 @@ line-height:5px;
 
 *+html #you-have-chosen {
   font-weight:bold;
-} 
+}
 */
 
 /* Navi in IE7 nicht bold */
@@ -2076,7 +2076,7 @@ ul.search_index {
 * html #heading_search_results_box,
 * html #footer_search_results_box  {
   height:1em;
-  font-size: 102%; 
+  font-size: 102%;
   line-height: 0.16em;
 }
 
@@ -2412,11 +2412,11 @@ GFB linkcollection styles.
 */
 
 #slc-linkcollection-linkbox {
-    border: 1px solid rgb(203, 209, 216); 
-    padding: 5px; 
-    background-color: rgb(247, 248, 249); 
+    border: 1px solid rgb(203, 209, 216);
+    padding: 5px;
+    background-color: rgb(247, 248, 249);
     margin-bottom: 10px;
-    
+
 }
 #slc-linkcollection-editbox {
     padding: 3px; float: right;
@@ -2612,7 +2612,7 @@ div#region-content #slc-linkcollection-linkbox ul li,
   border-right: 0.5px solid white;
 }
 #content #alphabetTable td.sonderfall4 {
-  background-color:#A8126A; 
+  background-color:#A8126A;
 }
 
 #listeGlossary {
@@ -2689,10 +2689,10 @@ div#region-content #slc-linkcollection-linkbox ul li,
 }
 
 #listeGlossary dt.pfeilextra {
-  background-color:#E5E6E8; 
+  background-color:#E5E6E8;
   padding: 3px 0 0 16px;
   margin: 0.5em 0 0 0;
-  background: #E5E6E8 url(lc_active.gif) no-repeat scroll 0px 4px; 
+  background: #E5E6E8 url(lc_active.gif) no-repeat scroll 0px 4px;
 }
 
 #listeGlossary dt a {
@@ -3258,7 +3258,7 @@ div.flatlist_container .flatlist-item {
    float:left;
    }
 
-// div.flatlist_container .flatlist-item .delete{ 
+// div.flatlist_container .flatlist-item .delete{
 //   background: url("ico_check_red.gif") no-repeat scroll 0 0 transparent;
 //   color: red;
 //   cursor: pointer;
@@ -3280,7 +3280,7 @@ div#searchcontrols .indent3{
   margin-right: 1em;
 }
 div#searchcontrols .bottom1{
-  margin-bottom: 1.2em; 
+  margin-bottom: 1.2em;
 }
 /* @end */
 
