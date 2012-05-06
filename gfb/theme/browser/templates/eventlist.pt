@@ -33,6 +33,7 @@ text-align:right; background-color: #D6D9DE; border: 1px solid
 #eventlist-form .formControls input.submit-widget { background: url(ico_search.gif) no-repeat 0 6px;
 border: 0; }
 #eventlist-form #form-buttons-reset { display:none;}
+#eventlist-form #form-widgets-startMonth-day {display:none;}
 .searchPage .dataTables_length { margin-top: 0.5em; }
 .searchPage .dataTables_filter { margin-top: 0.5em; }
 .searchPage .dataTables_info { top:-22px; left:90px; color:white;
