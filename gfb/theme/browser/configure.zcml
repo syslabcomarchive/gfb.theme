@@ -15,7 +15,7 @@
   <browser:page
     name="eventlist"
     for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    class=".eventlist.ListEventsView"
+    class=".eventlist.GFBListEventsView"
     permission="zope2.View"
     layer=".interfaces.IThemeSpecific"
     />

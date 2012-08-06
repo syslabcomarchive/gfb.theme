@@ -6,6 +6,7 @@ from iwwb.eventlist import _
 from iwwb.eventlist.interfaces import IIWWBSearcher
 from iwwb.eventlist.interfaces import IListEventsForm
 from iwwb.eventlist.interfaces import IWWB_SEARCHABLE_FIELDS
+from iwwb.eventlist.browser.eventlist import ListEventsForm, ListEventsView
 from plone.z3cform.layout import FormWrapper
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
@@ -20,80 +21,9 @@ import logging
 logger = logging.getLogger('iwwb.eventlist')
 
 
-class ListEventsForm(form.Form):
-    """The List Events search form based on z3c.form."""
-    fields = field.Fields(IListEventsForm)
-    label = _(u"List Events")
-
-    # don't try to read Plone root for form fields data, this is only mostly
-    # usable for edit forms, where you have an actual context
-    ignoreContext = True
-
-    @button.buttonAndHandler(_(u"List Events"))
-    def list_events(self, action):
-        """Submit button handler."""
-        data, errors = self.extractData()
-
-        if errors:
-            self.status = self.formErrorsMessage
-            return
-
-    @button.buttonAndHandler(_(u"Reset"))
-    def reset_form(self, action):
-        """Cancel button handler."""
-        url = self.request['URL']
-        self.request.response.redirect(url)
-
-
-class ListEventsView(FormWrapper):
+class GFBListEventsView(ListEventsView):
     """A BrowserView to display the ListEventsForm along with its results."""
     index = ViewPageTemplateFile('templates/eventlist.pt')
-    form = ListEventsForm
-
-    def update(self):
-        """Main view method that handles rendering."""
-        super(ListEventsView, self).update()
-
-        if self.request.form.get('form.buttons.reset'):
-            return self.index()
-
-        # Hide the editable border and tabs
-        self.request.set('disable_border', True)
-
-        # Prepare display values for the template
-        self.options = {
-            'events': self.events(),
-        }
-
-    def events(self):
-        """Get the events for the provided parameters using the IIWWBSearcher
-        utility.
-        """
-        querydict = self._construct_query()
-        results = []
-        try:
-            searcher = getUtility(IIWWBSearcher)
-            if querydict:
-                results = searcher.get_results(querydict)
-        except:
-            IStatusMessage(self.request).addStatusMessage(u"An error occured while fetching " \
-                "results. Please try again later.", type="error")
-            logger.exception('Error fetching results')
-
-        if not results:
-            IStatusMessage(self.request).addStatusMessage(_('No events found.'), type="info")
-
-        return results
-
-    def event_type(self, type_id):
-        """Get event type title for the provided event type id."""
-        factory = getUtility(
-            IVocabularyFactory,
-            'iwwb.eventlist.vocabularies.EventTypes'
-        )
-        vocabulary = factory(self.context)
-
-        return vocabulary.getTerm(type_id).title
 
     def _construct_query(self):
         """Parse the searchable fields from the form."""
@@ -124,8 +54,9 @@ class ListEventsView(FormWrapper):
                 if not value:
                     continue
                 if ',' in value:
-                    zips = [x.strip() for x in value.split(',') if x.strip().isdigit()]
-                    if len(zips)>0:
+                    zips = [x.strip() for x in value.split(',')
+                        if x.strip().isdigit()]
+                    if len(zips) > 0:
                         querydict['zip'] = value
                 elif value.strip().isdigit():
                     querydict['zip'] = int(value)
