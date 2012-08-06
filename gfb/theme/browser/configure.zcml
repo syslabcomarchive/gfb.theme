@@ -13,7 +13,7 @@
         />
 
   <browser:page
-    name="eventlist"
+    name="gfbeventlist"
     for="plone.app.layout.navigation.interfaces.INavigationRoot"
     class=".eventlist.GFBListEventsView"
     permission="zope2.View"
