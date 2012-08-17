@@ -12,14 +12,6 @@
         name="GFBTheme"
         />
 
-  <browser:page
-    name="gfbeventlist"
-    for="plone.app.layout.navigation.interfaces.INavigationRoot"
-    class=".eventlist.GFBListEventsView"
-    permission="zope2.View"
-    layer=".interfaces.IThemeSpecific"
-    />
-
     <!-- Viewlets registration -->
     <!-- The personal bar -->
     <browser:viewlet
