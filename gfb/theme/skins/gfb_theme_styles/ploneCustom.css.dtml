@@ -3309,8 +3309,6 @@ div#searchcontrols .bottom1{
     border: 0; }
 #content #eventlist-form #form-buttons-reset {
     display:none;}
-#content #eventlist-form #form-widgets-startMonth-day {
-    display:none;}
 #content .searchPage .dataTables_length {
     margin-top: 0.5em; }
 #content .searchPage .dataTables_filter {
