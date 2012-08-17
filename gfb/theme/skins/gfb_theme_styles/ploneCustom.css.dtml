@@ -3282,6 +3282,64 @@ div#searchcontrols .indent3{
 div#searchcontrols .bottom1{
   margin-bottom: 1.2em;
 }
+
+/* iwwb.eventlist */
+
+#content #eventlist-form .formHelp {
+    display: none;}
+#content #eventlist-form label {
+    font-weight: normal;}
+#content #eventlist-form .field {
+    margin-left: 1em;
+    width: 340px;
+    min-width:340px;}
+#content #eventlist-form #form-widgets-query {
+    width: 320px; }
+#content #eventlist-form {
+    height: 250px;
+    background: url("col-center-bg.jpg") repeat-x scroll 0 0 white; }
+#content #eventlist-form .formControls {
+    width: 740px;
+    margin-top:0.5em;
+    text-align:right;
+    background-color: #D6D9DE;
+    border: 1px solid #BAC1C9;}
+#content #eventlist-form .formControls input.submit-widget {
+    background: url(ico_search.gif) no-repeat 0 6px;
+    border: 0; }
+#content #eventlist-form #form-buttons-reset {
+    display:none;}
+#content #eventlist-form #form-widgets-startMonth-day {
+    display:none;}
+#content .searchPage .dataTables_length {
+    margin-top: 0.5em; }
+#content .searchPage .dataTables_filter {
+    margin-top: 0.5em; }
+#content .searchPage .dataTables_info {
+    top:-22px;
+    left:90px;
+    color:white;
+    position:absolute;}
+#content .searchPage .dataTables_paginate {
+    top:-25px;
+    position:absolute;
+    left:340px; }
+/* why should the pagination be hidden?
+#content .searchPage .pagination .first {
+    display:none; }
+#content .searchPage .pagination .last {
+    display:none; }
+#content .searchPage .pagination .next {
+    display:none; }
+#content .searchPage .pagination .previous {
+    display:none; }
+*/
+#content .searchPage .DTTT_container {
+    margin-top:0.5em;}
+#content div.DTTT_container button.DTTT_button_copy,
+#content div.DTTT_container button.DTTT_button_csv{
+    display: none; }
+
 /* @end */
 
 
