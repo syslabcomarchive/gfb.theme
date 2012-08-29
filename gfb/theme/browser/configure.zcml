@@ -276,4 +276,13 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+ <browser:page
+   name="eventlist"
+   for="OFS.interfaces.IFolder"
+   class=".eventlist.GFBListEventsView"
+   permission="zope2.View"
+   layer=".interfaces.IThemeSpecific"
+   />
+
+
 </configure>
