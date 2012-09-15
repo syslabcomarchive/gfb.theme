@@ -3318,10 +3318,6 @@ div#searchcontrols .bottom1{
     left:90px;
     color:white;
     position:absolute;}
-#content .searchPage .dataTables_paginate {
-    top:-25px;
-    position:absolute;
-    left:340px; }
 #content th.sorting_asc {
     background: url("++resource++jquery.datatables/media/images/sort_asc.png") no-repeat scroll right center #E5E6E8;
 }
