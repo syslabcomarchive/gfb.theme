@@ -3285,8 +3285,6 @@ div#searchcontrols .bottom1{
 
 /* iwwb.eventlist */
 
-#content #eventlist-form .formHelp {
-    display: none;}
 #content #eventlist-form label {
     font-weight: normal;}
 #content #eventlist-form .field {
