@@ -3311,11 +3311,13 @@ div#searchcontrols .bottom1{
     margin-top: 0.5em; }
 #content .searchPage .dataTables_filter {
     margin-top: 0.5em; }
+/*
 #content .searchPage .dataTables_info {
     top:-22px;
     left:90px;
     color:white;
     position:absolute;}
+*/
 #content th.sorting_asc {
     background: url("++resource++jquery.datatables/media/images/sort_asc.png") no-repeat scroll right center #E5E6E8;
 }
