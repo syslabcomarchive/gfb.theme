@@ -2107,7 +2107,7 @@ div.column1b div input {
 
 /* Fix for the dropdown problem with the edit actions */
 #portal-globalnav ul.submenu {
-    z-index: 1000 !important;
+    z-index: 3;
 }
 
 #searchfor-created {
@@ -3304,9 +3304,12 @@ div#searchcontrols .bottom1{
     border: 1px solid #BAC1C9;}
 #content #eventlist-form .formControls input.submit-widget {
     background: url(ico_search.gif) no-repeat 0 6px;
-    border: 0; }
+    border: 0;
+    font-weight: bold;}
 #content #eventlist-form #form-buttons-reset {
-    display:none;}
+    background: none;
+    font-weight: normal;
+}
 #content .searchPage .dataTables_length {
     margin-top: 0.5em; }
 #content .searchPage .dataTables_filter {
