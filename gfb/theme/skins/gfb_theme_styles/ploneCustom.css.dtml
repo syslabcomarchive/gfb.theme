@@ -3321,6 +3321,9 @@ div#searchcontrols .bottom1{
     color:white;
     position:absolute;}
 */
+#content .searchPage th {
+    padding: 8px 14px 8px 8px;
+}
 #content th.sorting_asc {
     background: url("++resource++jquery.datatables/media/images/sort_asc.png") no-repeat scroll right center #E5E6E8;
 }
@@ -3329,6 +3332,10 @@ div#searchcontrols .bottom1{
 }
 #content th.sorting {
     background: url("sort_both.png") no-repeat scroll right center #E5E6E8;
+}
+
+#content #overlay-zipcode #textarea-zipcode {
+    margin-top: 250px;
 }
 
 /* why should the pagination be hidden?
