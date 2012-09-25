@@ -248,6 +248,14 @@
         <area shape="poly" coords="25,403,32,418,48,416,55,433,62,439,35,466,26,448,11,409" href="#" alt="PLZ 52" title="PLZ 52" />
       </map>
 
+        <div id="textarea-zipcode">
+          <textarea id="txtCodes" cols="20" rows="10" readonly="readonly"></textarea><br />
+          <input type="button" name="btnDone" id="btnDone" value="Done" i18n:attributes="value" />
+          <input type="button" name="btnCancel" id="btnCancel" value="Cancel" i18n:attributes="value" />
+        </div>
+      <div class="visualClear"></div>
+    </div>
+
   </form>
   </metal:main>
 </metal:main>
