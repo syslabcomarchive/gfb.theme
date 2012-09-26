@@ -3314,6 +3314,10 @@ div#searchcontrols .bottom1{
     margin-top: 0.5em; }
 #content .searchPage .dataTables_filter {
     margin-top: 0.5em; }
+
+#content #eventlist-form div.formHelp {
+  display: none;
+}
 /*
 #content .searchPage .dataTables_info {
     top:-22px;
