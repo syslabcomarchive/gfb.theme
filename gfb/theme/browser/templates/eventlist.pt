@@ -94,8 +94,8 @@
             <div id="searchtippstext" tal:define="tipps python:getattr(here, 'eventsearchtipps', None)">
                 <span tal:replace="structure tipps/getText |string:nothing" />
             </div>
-            <div id="searchabout">
-                ABOUT!!!
+            <div id="searchabout"  tal:define="about python:getattr(here, 'eventsearchabout', None)">
+                <span tal:replace="structure about/getText |string:nothing" />
             </div>
         </div>
 
