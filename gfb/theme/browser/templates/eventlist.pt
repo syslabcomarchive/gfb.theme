@@ -51,7 +51,7 @@
                 <div id="eventlist-form">
 
                 <!-- For later usage: A widget that displays Risk Factors -->
-                <!--div class="search_filters indent3">
+                <div class="search_filters indent3">
                       <div class="dynatree-atwidget dynatree-custom search_deactivatable"
                           tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
                            and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
@@ -84,7 +84,7 @@
                         </div>
                       </div>
                      </div>
-                 </div-->
+                 </div>
 
                  <span tal:replace="structure view/contents" />
 
