@@ -1,6 +1,6 @@
 portal_url = '<dtml-var portal_url>';
 
-// works currently only for german-language and 
+// works currently only for german-language and
 // is used only by the german FOP
 function adjustTitle(elem) {
     var newTitle = '(neues Fenster)';
@@ -63,11 +63,11 @@ function getPortlets() {
 // script for detecting external links.
 // sets their target-attribute to _blank , and adds a class external
 function scanforlinks() {
-    // securing against really old DOMs 
+    // securing against really old DOMs
     if (! document.getElementsByTagName){return false};
     if (! document.getElementById){return false};
     // Quick utility function by Geir Bækholt
-    // Scan all links in the document and set classes on them dependant on 
+    // Scan all links in the document and set classes on them dependant on
     // whether they point to the current site or are external links
     contentarea = getContentArea();
     portlets = getPortlets();
@@ -75,12 +75,12 @@ function scanforlinks() {
         return false
     }
     var links = contentarea.getElementsByTagName('a');
-    for (i=0; i < links.length; i++){      
+    for (i=0; i < links.length; i++){
         modifyLinkTag(links[i]);
     }
     for(i=0;i<portlets.length;i++) {
         var plinks = portlets[i].getElementsByTagName('a');
-        for (j=0; j < plinks.length; j++){      
+        for (j=0; j < plinks.length; j++){
             modifyLinkTag(plinks[j]);
         }
     }
@@ -116,7 +116,7 @@ function modifyLinkTag(node) {
                 injectNode(node, 'span', 'link-internal-js');
                 if(node.className=='link-internal') {
                     node.className='';
-                }            
+                }
             }
         } else if (linkval.indexOf('http:') != 0){
             // not a http-link. Possibly an internal relative link, but also possibly a mailto ot other snacks
@@ -124,7 +124,7 @@ function modifyLinkTag(node) {
             protocols = ['ftp', 'news', 'irc', 'callto', 'javascript', 'mailto']
             // h323, sip and callto are internet telephony VoIP protocols
             var found = 0;
-            for (p=0; p < protocols.length; p++){  
+            for (p=0; p < protocols.length; p++){
                  if (linkval.indexOf(protocols[p]+':') == 0){
                     // this link matches the protocol . add a classname protocol+link
                     linkclass = 'link-'+protocols[p]
@@ -136,7 +136,7 @@ function modifyLinkTag(node) {
                     break;
                 }
             }
-			
+
             if(node.className!='singlelink' && node.className.search('fakeLink')<0 && found==0 ) {
                 if(parentclass!="linkToTop"){
                     injectNode(node, 'span', 'link-internal-js');
@@ -151,7 +151,7 @@ function modifyLinkTag(node) {
                 {
                      injectNode(node, 'span', 'link-to-top');
                 }
-            }    
+            }
         } else {
             // we are in here if the link points to somewhere else than our site.
             if ( node.getElementsByTagName('img').length == 0 ){
@@ -162,12 +162,12 @@ function modifyLinkTag(node) {
                     node.className='';
                 }
             }
-             
+
                  if (node.getAttribute('onclick') == false){
                     if (node.addEventListener) node.addEventListener("onclick",window.open(node.href), true);
                     else if (node.attachEvent) node.attachEvent("onclick",window.open(node.href));
                  }
-             
+
         }
         pathelems = linkval.split('/');
         filename = pathelems[pathelems.length-1];
@@ -176,7 +176,7 @@ function modifyLinkTag(node) {
         if(filename.indexOf('?')<0 && fileelems.length>1 && node.getElementsByTagName('img').length == 0) {
             ending = fileelems[fileelems.length-1].toLowerCase();
             endings = ['pdf', 'doc', 'xls', 'ppt', 'zip'];
-            for (e=0; e < endings.length; e++){ 
+            for (e=0; e < endings.length; e++){
                 if (ending == endings[e]) {
                     linkclass = 'link-'+ending+'-js';
                     injectNode(node, 'span', linkclass);
@@ -194,17 +194,21 @@ jq(document).ready(function(){
 /*registerPloneFunction(scanforlinks);   */
 
 function registerPloneFunction(func){
-    // registers a function to fire onload. 
+    // registers a function to fire onload.
     // Turned out we kept doing this all the time
-    // Use this for initilaizing any javascript that should fire once the page has been loaded. 
-    // 
+    // Use this for initilaizing any javascript that should fire once the page has been loaded.
+    //
     if (window.addEventListener) window.addEventListener("load",func,false);
-    else if (window.attachEvent) window.attachEvent("onload",func);   
+    else if (window.attachEvent) window.attachEvent("onload",func);
 }
 
 function unRegisterPloneFunction(func){
-    // uregisters a previous function to fire onload. 
+    // uregisters a previous function to fire onload.
     if (window.removeEventListener) window.removeEventListener("load",func,false);
-    else if (window.detachEvent) window.detachEvent("onload",func);   
+    else if (window.detachEvent) window.detachEvent("onload",func);
 }
 
+
+jQuery(document).ready(function() {
+    jQuery("#search-tabs").tabs("#searchfields > div");
+});

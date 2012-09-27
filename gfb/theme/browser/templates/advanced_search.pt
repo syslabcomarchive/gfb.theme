@@ -74,14 +74,14 @@
 
 
             <div id="simplesearch">
-                <ul class="search-top">
+                <ul class="search-top" id="search-tabs">
                     <li>
-                        <a class="selected" id="searchdatabase"
+                        <a class="current" id="searchdatabase"
                      i18n:translate="label_advanced_search"
-                     href="advanced_search">Search the Database</a>
+                     href="#searchcontrols">Search the Database</a>
                     </li>
                     <li>
-                        <a href="searchtipps" id="searchtipps"
+                        <a href="#searchtipps" id="searchtipps"
                         i18n:translate="label_searchtips">Search Tips</a>
                     </li>
                 </ul>
@@ -90,10 +90,6 @@
 
 
             <div id="searchfields">
-
-                <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                    <span tal:replace="structure tipps/getText |nothing" />
-                </div>
 
                 <div id="searchcontrols" class="LSBoxRALinks search_fields_wide">
                     <input id="SearchableText"
@@ -254,6 +250,11 @@
 
                     </div>
                 </div>
+
+                <div id="searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+                    <span tal:replace="structure tipps/getText |nothing" />
+                </div>
+
             </div>
 
         <!-- </div> -->

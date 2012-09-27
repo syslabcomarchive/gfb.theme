@@ -22,30 +22,31 @@
 <metal:main fill-slot="main">
   <metal:main define-macro="main">
 
-    <h1 class="documentFirstHeading" i18n:translate="">
+    <!--h1 class="documentFirstHeading" i18n:translate="">
       Search for events
-    </h1>
+    </h1-->
 
     <form id="searchform" class="searchPage searchform-controls rowlike enableUnloadProtection kssattr-formname-eventlist">
 
         <div id="simplesearch">
-            <ul class="search-top">
+            <ul class="search-top" id="search-tabs">
                 <li>
                     <a class="selected" id="searchdatabase"
                     i18n:translate="label_eventlist_search" i18n:domain="gfb"
-                    href="advanced_search">Suche in Meta-Suchmaschine des Deutschen Bildungsservers</a>
+                    href="#searchcontrols">Suchmaschine des Deutschen Bildungsservers</a>
                 </li>
                 <li>
-                    <a href="searchtipps" id="searchtipps" i18n:domain="gfb"
+                    <a href="#searchtippstext" id="searchtipps" i18n:domain="gfb"
                     i18n:translate="label_searchtips">Search Tips</a>
+                </li>
+                <li>
+                    <a href="#searchabout" id="searchabout" i18n:domain="gfb"
+                    i18n:translate="label_searchabout">Über die Suchmaschine</a>
                 </li>
             </ul>
         </div>
 
         <div id="searchfields">
-            <div id="searchtippstext" tal:define="tipps python:getattr(here, 'eventsearchtipps', None)">
-                <span tal:replace="structure tipps/getText |string:nothing" />
-            </div>
 
             <div id="searchcontrols">
                 <div id="eventlist-form">
@@ -89,6 +90,12 @@
                  <span tal:replace="structure view/contents" />
 
                 </div>
+            </div>
+            <div id="searchtippstext" tal:define="tipps python:getattr(here, 'eventsearchtipps', None)">
+                <span tal:replace="structure tipps/getText |string:nothing" />
+            </div>
+            <div id="searchabout">
+                ABOUT!!!
             </div>
         </div>
 
@@ -254,6 +261,10 @@
           <input type="button" name="btnCancel" id="btnCancel" value="Cancel" i18n:attributes="value" />
         </div>
       <div class="visualClear"></div>
+
+
+
+
     </div>
 
   </form>

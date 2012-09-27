@@ -11,9 +11,6 @@
        tal:content="string:@import url($portal_url/riskassessment_styles.css);">
 </style>
 
-<!-- <style type="text/css" media="all" tal:condition="exists: portal/jquery-ui.css"
-       tal:content="string:@import url($portal_url/jquery-ui.css);">
-</style> -->
 
 </metal:cssslot>
 
@@ -32,9 +29,6 @@
     tal:attributes="src string:$portal_url/livesearch_ralinks.js">
 </script>
 
-<script type="text/javascript" src="jquery-ui-1.8.custom.min.js"
-    tal:attributes="src string:$portal_url/jquery-ui-1.8.custom.min.js">
-</script>
 
 <script type="text/javascript" src="jquery.tooltip.js"
     tal:attributes="src string:$portal_url/jquery.tooltip.js">
@@ -186,10 +180,10 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 
           <div id="simplesearch">
-            <ul class="search-top">
+            <ul class="search-top" id="search-tabs">
               <li><a class="selected" id="searchdatabase"
                      i18n:translate="label_advanced_search"
-                     href="homepage_search">Search the Database</a>
+                     href="#searchcontrols">Search the Database</a>
               </li>
               <li>
                   <a href="searchtipps" id="searchtipps"
@@ -200,10 +194,6 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 
           <div id="searchfields">
-
-            <div id="searchtippstext" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                <span tal:replace="structure tipps/getText |nothing" />
-            </div>
 
             <div id="searchcontrols" class="LSBoxRALinks search_fields_narrow">
                 <input id="SearchableText"
@@ -366,7 +356,9 @@ document.images[Bildname].src = eval(Tauschbildname);
                     </div>
         </div>
 
-        <p>&nbsp;</p>
+            <div id="#searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+                <span tal:replace="structure tipps/getText |nothing" />
+            </div>
   </form>
 
 
