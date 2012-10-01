@@ -3287,6 +3287,14 @@ div#searchcontrols .bottom1{
 
 /* iwwb.eventlist */
 
+#content .kssattr-formname-eventlist #searchfields {
+  position: relative;
+  overflow: visible;
+}
+
+#content #eventlist-form {
+  position: relative;
+}
 #content #eventlist-form label {
     font-weight: normal;}
 #content #eventlist-form .field {
@@ -3320,6 +3328,30 @@ div#searchcontrols .bottom1{
 #content #eventlist-form div.formHelp {
   display: none;
 }
+
+#content #eventlist-form .field#formfield-form-widgets-allwords,
+#content #eventlist-form .field#formfield-form-widgets-startTimeRequired {
+  margin-top: 3em;
+  margin-bottom: 0;
+}
+
+#content #eventlist-form .field#formfield-form-widgets-allwords .label,
+#content #eventlist-form .field#formfield-form-widgets-startTimeRequired .label {
+  font-weight: normal;
+}
+
+#content #eventlist-form .field#formfield-form-widgets-type {
+  clear: left;
+}
+
+#content #eventlist-form .search_filters.indent3 {
+  margin-left: 1em;
+  margin-top: 0.5em;
+  position: absolute;
+  left: 0;
+  top: 5em;
+}
+
 /*
 #content .searchPage .dataTables_info {
     top:-22px;
