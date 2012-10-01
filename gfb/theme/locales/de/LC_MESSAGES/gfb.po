@@ -375,3 +375,6 @@ msgstr "zum Öffnen auf das Pluszeichen klicken"
 
 msgid "label_delete_selection"
 msgstr "Auswahl entfernen"
+
+msgid "label_andor"
+msgstr "und / oder"

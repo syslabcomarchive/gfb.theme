@@ -261,3 +261,6 @@ msgstr "click the plus-icon to open"
 
 msgid "label_delete_selection"
 msgstr "Delete selection"
+
+msgid "label_andor"
+msgstr "and / or"
