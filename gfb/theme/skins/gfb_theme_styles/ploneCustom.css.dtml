@@ -3103,6 +3103,9 @@ div.overlay {
     font-size: 80%;
     text-align: left;
 }
+div.dynatree-atwidget div.overlay {
+    font-size: 100%;
+}
 
 div.overlay-iframe,
 div.overlay-ajax {
@@ -3207,6 +3210,23 @@ div.flatlist_container.opened{
    background-color: #E5E6E8;
    border: none;
    font-size: 100%;
+}
+
+#content #eventlist-form .overlay{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 4px 1px black;
+    padding-left: 1.5em;
+}
+
+#content #eventlist-form ul.dynatree-container {
+    background-color: white;
+    padding: 0;
+}
+#content #eventlist-form .overlay .help{
+    margin-bottom: 10px;
+    font-size: 90%;
 }
 .dynatree-selected span.dynatree-checkbox {
   background: url("ico_check_red.gif") no-repeat scroll 0 0 transparent;
@@ -3343,7 +3363,7 @@ div#searchcontrols .bottom1{
 
 
 #content #eventlist-form .field#formfield-form-widgets-county .label {
-  padding-left: 1em; 
+  padding-left: 1em;
 }
 
 #content #eventlist-form .field#formfield-form-widgets-type {
@@ -3356,6 +3376,10 @@ div#searchcontrols .bottom1{
   position: absolute;
   left: 0;
   top: 5em;
+}
+
+#content #eventlist-form .flatlist_container{
+    display: none;
 }
 
 /*

@@ -17,7 +17,7 @@
   <script tal:attributes="src string:$portal_url/++resource++jquery.datatables/extras/TableTools/media/js/ZeroClipboard.js" type="text/javascript"></script>
   <script tal:attributes="src string:$portal_url/++resource++jquery.datatables/extras/TableTools/media/js/TableTools.js" type="text/javascript"></script>
   <script tal:attributes="src string:$portal_url/++resource++iwwb.eventlist/eventlist.js" type="text/javascript"></script>
-  
+
   <script type="text/javascript" language="javascript">
     /* insert additional label to external searchform */
     jQuery(document).ready(function(){
@@ -60,16 +60,12 @@
             <div id="searchcontrols">
                 <div id="eventlist-form">
 
-                <!-- For later usage: A widget that displays Risk Factors -->
                 <div class="search_filters indent3">
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                       <dt href="#" id="button_riskfactors" class="toggleButton">
+                      <div class="dynatree-atwidget dynatree-custom search_deactivatable dynatree-custom-popup">
+                       <!--dt href="#" id="button_riskfactors" class="toggleButton">
                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
                            class="fakeLink">Gefährdungsart</a>
-                        </dt>
+                        </dt-->
                         <div class="flatlist_container">
                           <div class="flatlist-template">
                             <div class="flatlist-item"
@@ -78,21 +74,29 @@
                                 title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                           </div>
                         </div>
-                       <div id="widget_riskfactors" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
+                        <div id="overlay_RiskFactors" class="overlay closed_widget">
+                            <h2 i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</h2>
+                            <div class="help">HIER KANN EIN KURZER HILFSTEXT STEHEN</div>
+                            <div class="close"><span>Close</span></div>
+                            <div class="dynatree_filter">
+                              <input type="text" class="filter" />
+                            </div>
+                            <div class="collective-dynatree-tree" id="tree_RiskFactors">You need to activate JavaScript for the search to work.</div>
+                            <div class="dynatree_ajax_vocabulary hiddenStructure"
+                              tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
+                            <div class="dynatree_parameters hiddenStructure">selectMode,1/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True/overlay,True</div>
+                            <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
                                tal:attributes="value request/RiskFactors2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
+                            <div class="customhiddeninput"></div>
+                            <div class="ui_controls">
+                                <div class="sparse">Sparse</div>
+                                <div class="treepopup" rel="#tree_RiskFactors" style="display: None">Open</div>
+                            </div>
                         </div>
-                      </div>
+                        <div class="treepopup" rel="#overlay_RiskFactors">
+                            <dt class="fakeLink" i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">
+                            Open</dt>
+                        </div>
                      </div>
                  </div>
 
