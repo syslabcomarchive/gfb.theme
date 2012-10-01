@@ -17,6 +17,15 @@
   <script tal:attributes="src string:$portal_url/++resource++jquery.datatables/extras/TableTools/media/js/ZeroClipboard.js" type="text/javascript"></script>
   <script tal:attributes="src string:$portal_url/++resource++jquery.datatables/extras/TableTools/media/js/TableTools.js" type="text/javascript"></script>
   <script tal:attributes="src string:$portal_url/++resource++iwwb.eventlist/eventlist.js" type="text/javascript"></script>
+  
+  <script type="text/javascript" language="javascript">
+    /* insert additional label to external searchform */
+    jQuery(document).ready(function(){
+      var nd = jQuery('#formfield-form-widgets-county-addlabel');
+      jQuery('#form-widgets-county').parent().append(nd);
+      nd.attr('class', 'label');
+    });
+  </script>
 </metal:js>
 
 <metal:main fill-slot="main">
@@ -97,6 +106,7 @@
             <div id="searchabout"  tal:define="about python:getattr(here, 'eventsearchabout', None)">
                 <span tal:replace="structure about/getText |string:nothing" />
             </div>
+            <span id="formfield-form-widgets-county-addlabel" class="hidden" i18n:domain="gfb" i18n:translate="label_andor">and/or</span>
         </div>
 
         <div class="visualClear"></div>
