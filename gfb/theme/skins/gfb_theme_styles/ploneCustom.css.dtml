@@ -3336,8 +3336,14 @@ div#searchcontrols .bottom1{
 }
 
 #content #eventlist-form .field#formfield-form-widgets-allwords .label,
-#content #eventlist-form .field#formfield-form-widgets-startTimeRequired .label {
+#content #eventlist-form .field#formfield-form-widgets-startTimeRequired .label,
+#content #eventlist-form .field#formfield-form-widgets-county .label {
   font-weight: normal;
+}
+
+
+#content #eventlist-form .field#formfield-form-widgets-county .label {
+  padding-left: 1em; 
 }
 
 #content #eventlist-form .field#formfield-form-widgets-type {
