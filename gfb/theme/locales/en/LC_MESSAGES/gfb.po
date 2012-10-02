@@ -264,3 +264,9 @@ msgstr "Delete selection"
 
 msgid "label_andor"
 msgstr "and / or"
+
+msgid "risk_factors"
+msgstr "Risk factors"
+
+msgid "title_open_riskfactors"
+msgstr "Click here to pick a search term from a list of risk factors."

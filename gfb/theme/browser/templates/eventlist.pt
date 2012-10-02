@@ -60,7 +60,7 @@
             <div id="searchcontrols">
                 <div id="eventlist-form">
 
-                <div class="search_filters indent3">
+                <div class="search_filters indent3" i18n:domain="gfb">
                       <div class="dynatree-atwidget dynatree-custom search_deactivatable dynatree-custom-popup">
                        <!--dt href="#" id="button_riskfactors" class="toggleButton">
                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
@@ -76,7 +76,7 @@
                         </div>
                         <div id="overlay_RiskFactors" class="overlay closed_widget">
                             <h2 i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">Gefährdungsart</h2>
-                            <div class="help">HIER KANN EIN KURZER HILFSTEXT STEHEN</div>
+                            <div class="help" i18n:translate="evenlist_help_risk_factors_selector">HIER KANN EIN KURZER HILFSTEXT STEHEN</div>
                             <div class="close"><span>Close</span></div>
                             <div class="dynatree_filter">
                               <input type="text" class="filter" />
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="treepopup" rel="#overlay_RiskFactors">
-                            <dt class="fakeLink" i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label">
+                            <dt class="fakeLink" i18n:translate="risk_factors" title="Click here to pick a search term from a list of risk factors." i18n:attributes="title title_open_riskfactors">
                             Open</dt>
                         </div>
                      </div>

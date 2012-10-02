@@ -378,3 +378,9 @@ msgstr "Auswahl entfernen"
 
 msgid "label_andor"
 msgstr "und / oder"
+
+msgid "risk_factors"
+msgstr "Gefährdungsart"
+
+msgid "title_open_riskfactors"
+msgstr "Klicken Sie hier um einen Suchbegriff aus einer Liste von Gefähdrungen auszuwählen."
