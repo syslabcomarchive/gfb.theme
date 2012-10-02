@@ -70,6 +70,7 @@ function dynatree_to_input(input, dynatree) {
             new_input += " " + to_add_title;
         });
         input.val(new_input.trim());
+        jq(dynatree).find('.close').click();
     });
 }
 

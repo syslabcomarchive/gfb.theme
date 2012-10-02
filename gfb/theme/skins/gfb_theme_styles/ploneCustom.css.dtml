@@ -3243,10 +3243,11 @@ div.search_filters dt.opened{
     background: url("minus_icon.gif") no-repeat scroll 0 4px #E5E6E8;
 
 }
-a.fakeLink{
+a.fakeLink,dt.fakeLink{
     color: #000000;
 }
-a.fakeLink:hover{
+a.fakeLink:hover,
+dt.fakeLink:hover{
     color: #A8126A;
     cursor: pointer;
 }
