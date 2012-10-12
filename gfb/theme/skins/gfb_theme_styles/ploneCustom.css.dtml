@@ -3420,10 +3420,6 @@ div#searchcontrols .bottom1{
     display:none; }
 */
 #content .searchPage .DTTT_container {
-    margin-top:0.5em;}
-#content div.DTTT_container button.DTTT_button_copy,
-#content div.DTTT_container button.DTTT_button_xls,
-#content div.DTTT_container button.DTTT_button_csv{
     display: none; }
 
 /* @end */
