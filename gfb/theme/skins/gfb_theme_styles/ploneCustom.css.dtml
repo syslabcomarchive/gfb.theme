@@ -3379,7 +3379,9 @@ div#searchcontrols .bottom1{
   top: 5em;
 }
 
-#content #eventlist-form .flatlist_container{
+#content #eventlist-form .flatlist_container,
+#content #eventlist-form #form-widgets-county-novalue,
+#content #eventlist-form #form-widgets-type-novalue{
     display: none;
 }
 
