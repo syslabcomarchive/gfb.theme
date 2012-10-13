@@ -1356,7 +1356,7 @@ div#content div#homepage-tabs ul {
 div#simplesearch ul.search-top li,
 div#content div#homepage-tabs li {
   float: left;
-  margin: 0 0 0 0 ;
+  margin: 0 1em 0 0 ;
   list-style-image: none;
   list-style-type: none;
 }
@@ -3322,7 +3322,8 @@ div#searchcontrols .bottom1{
     margin-left: 1em;
     width: 340px;
     min-width:340px;}
-#content #eventlist-form #form-widgets-query {
+#content #eventlist-form #form-widgets-query,
+#content #eventlist-preselection{
     width: 320px; }
 #content #eventlist-form {
     height: 250px;
@@ -3377,6 +3378,9 @@ div#searchcontrols .bottom1{
   position: absolute;
   left: 0;
   top: 5em;
+}
+#content #eventlist-form select{
+  min-width:200px;
 }
 
 #content #eventlist-form .flatlist_container,
