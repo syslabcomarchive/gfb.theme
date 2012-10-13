@@ -61,11 +61,13 @@
                 <div id="eventlist-form">
 
                 <div class="search_filters indent3" i18n:domain="gfb">
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable dynatree-custom-popup">
-                       <!--dt href="#" id="button_riskfactors" class="toggleButton">
-                         <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
-                           class="fakeLink">Gefährdungsart</a>
-                        </dt-->
+                    <select id="eventlist-preselection" name="preselection" tal:define="values view/get_preselection"
+                        tal:condition="python:len(values)">
+                        <option value="" i18n:translate="">- Optional: Vorauswahl häufiger Suchbegriffe -</option>
+                        <option tal:repeat="val values" tal:content="val" tal:attributes="value val"></option>
+                    </select>
+
+                      <!--div class="dynatree-atwidget dynatree-custom search_deactivatable dynatree-custom-popup">
                         <div class="flatlist_container">
                           <div class="flatlist-template">
                             <div class="flatlist-item"
@@ -97,7 +99,7 @@
                             <dt class="fakeLink" i18n:translate="risk_factors" title="Click here to pick a search term from a list of risk factors." i18n:attributes="title title_open_riskfactors">
                             Open</dt>
                         </div>
-                     </div>
+                     </div-->
                  </div>
 
                  <span tal:replace="structure view/contents" />
