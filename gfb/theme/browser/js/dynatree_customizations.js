@@ -78,4 +78,11 @@ var custom_popup = jq(".dynatree-custom-popup");
 if (custom_popup.size() > 0) {
     dynatree_to_input(jq("#form-widgets-query"), jq(custom_popup[0]));
 }
+
+    jq('#eventlist-form select#eventlist-preselection').change(function() {
+       jq("#form-widgets-query")[0].value = jq(this).find('option:selected')[0].value;
+    });
+
 });
+
+
