@@ -3317,11 +3317,14 @@ div#searchcontrols .bottom1{
   position: relative;
 }
 #content #eventlist-form label {
+    line-height: 0.1em;
     font-weight: normal;}
 #content #eventlist-form .field {
     margin-left: 1em;
     width: 340px;
-    min-width:340px;}
+    min-width:340px;
+}
+
 #content #eventlist-form #form-widgets-query,
 #content #eventlist-preselection{
     width: 320px; }
@@ -3353,9 +3356,18 @@ div#searchcontrols .bottom1{
 
 #content #eventlist-form .field#formfield-form-widgets-allwords,
 #content #eventlist-form .field#formfield-form-widgets-startTimeRequired {
-  margin-top: 3em;
+  margin-top: 2.3em;
   margin-bottom: 0;
+line-height: 0.1em;
 }
+
+#content #eventlist-form .field#formfield-form-widgets-query {
+  margin-bottom: 2em;
+}
+#content #eventlist-form #formfield-form-widgets-county-addlabel {
+  margin-left: 2.5em;
+}
+
 
 #content #eventlist-form .field#formfield-form-widgets-allwords .label,
 #content #eventlist-form .field#formfield-form-widgets-startTimeRequired .label,
@@ -3377,11 +3389,13 @@ div#searchcontrols .bottom1{
   margin-top: 0.5em;
   position: absolute;
   left: 0;
-  top: 5em;
+  top: 3.75em;
 }
-#content #eventlist-form select{
+#content #eventlist-form select#eventlist-preselection,
+#content #eventlist-form select.choice-field {
   min-width:200px;
 }
+
 
 #content #eventlist-form .flatlist_container,
 #content #eventlist-form #form-widgets-county-novalue,
