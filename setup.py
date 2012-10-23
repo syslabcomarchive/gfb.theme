@@ -55,6 +55,7 @@ setup(name='gfb.theme',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'iwwb.eventlist',
           'collective.dynatree',
           'z3c.json',
           'Products.AdvancedQuery',

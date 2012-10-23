@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Added missing dependency [thomasw]
 
 1.4.12 (2012-10-23)
 -------------------
