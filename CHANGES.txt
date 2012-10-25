@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.4.14 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Event-search: Picking a value in the pre-selection drop-down will cause it
+  to be added to the search field, instead of replacing the existing text [thomasw]
 
 1.4.13 (2012-10-23)
 -------------------

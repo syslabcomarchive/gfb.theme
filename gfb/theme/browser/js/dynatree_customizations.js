@@ -80,7 +80,13 @@ if (custom_popup.size() > 0) {
 }
 
     jq('#eventlist-form select#eventlist-preselection').change(function() {
-       jq("#form-widgets-query")[0].value = jq(this).find('option:selected')[0].value;
+       var elem = jq("#form-widgets-query")[0];
+       var oldval = elem.value;
+       var newval = jq(this).find('option:selected')[0].value;
+       if (oldval.toLowerCase().search(newval.toLowerCase()) < 0) {
+             elem.value = oldval + " " + newval;
+      }
+
     });
 
 });
