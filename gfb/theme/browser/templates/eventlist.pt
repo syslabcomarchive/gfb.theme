@@ -151,7 +151,7 @@
                     tal:content="python:startTime and toLocalizedTime(startTime) or ''">Start date</td>
                 <td>
                     <a class="training-supplier" rel="#overlay"
-                    tal:content="event/TrainingSupplier|nothing"
+                    tal:content="structure event/TrainingSupplier|nothing"
                     tal:attributes="href event/TrainingSupplierUrl|nothing">
                     Training Supplier
                     </a>
