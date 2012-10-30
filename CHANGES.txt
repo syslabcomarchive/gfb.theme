@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.14 (unreleased)
+1.4.14 (2012-10-30)
 -------------------
 
 - Event-search: Picking a value in the pre-selection drop-down will cause it
