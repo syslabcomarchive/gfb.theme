@@ -31,6 +31,7 @@
 <metal:main fill-slot="main">
   <metal:main define-macro="main">
 
+    <span id="selected_language" tal:attributes="selected_language here/portal_languages/getPreferredLanguage"></span>
     <!--h1 class="documentFirstHeading" i18n:translate="">
       Search for events
     </h1-->
