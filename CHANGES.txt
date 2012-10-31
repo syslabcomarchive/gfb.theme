@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.15 (unreleased)
+1.4.15 (2012-10-31)
 -------------------
 
 - Added parameter for correct sorting by date [thomasw]
