@@ -118,6 +118,11 @@
 
         <div class="visualClear"></div>
 
+		<div>
+
+        <div class="poweredBy"><span i18n:translate="" i18n:domain="gfb">Powered by</span><a href="http://www.iwwb.de/weiterbildung.html?seite=15" title="InfoWeb Weiterbildung" 
+	target="_blank"><img src="IWWB-Neu-Logo.png" width=36 height=36 title="" alt="InfoWeb Weiterbildung" /></a></div>
+
         <h2 i18n:translate="">
         Results
         </h2>
@@ -162,6 +167,8 @@
             </table>
             <p tal:condition="python: not events" i18n:translate="">No events found.</p>
         </tal:results>
+</div>
+
 
     <!-- ajax overlay -->
     <div class="overlay overlay-ajax" id="overlay">
@@ -278,7 +285,6 @@
           <input type="button" name="btnCancel" id="btnCancel" value="Cancel" i18n:attributes="value" />
         </div>
       <div class="visualClear"></div>
-
 
 
 

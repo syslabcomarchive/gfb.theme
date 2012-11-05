@@ -3403,6 +3403,19 @@ line-height: 0.1em;
     display: none;
 }
 
+#content .searchPage .poweredBy {
+    float: right;
+    right: 8px;
+    top: 2px;
+}
+
+#content .searchPage .poweredBy span {
+    display: block;
+    float: left;
+    padding: 22px 5px 0 0;
+    color: #666666;
+    font: normal 90% Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
+}
 /*
 #content .searchPage .dataTables_info {
     top:-22px;
