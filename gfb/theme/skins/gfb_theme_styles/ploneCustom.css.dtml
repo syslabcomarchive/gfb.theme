@@ -998,6 +998,12 @@ a,
   margin-bottom: 10px;
 }
 
+#listeGlossary dt a.singlelink {
+  display: inline;
+  color: #3a5e8e;
+  padding: 0 5px;
+}
+
 a:hover {
   text-decoration: underline;
 }

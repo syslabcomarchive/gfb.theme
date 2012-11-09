@@ -29,6 +29,9 @@ class GlossaryView(BrowserView):
         query = In('portal_type', 'HelpCenterDefinition') & Eq('review_state', 'published')
         return query
         
+    def editable(self):
+        mtool = getToolByName(self.context, 'portal_membership')
+        return mtool.checkPermission('Modify portal content', self)
 
     def data(self):
         context = Acquisition.aq_inner(self.context)
@@ -64,11 +67,13 @@ class GlossaryView(BrowserView):
                 idx = idx.encode('utf-8')
             if not re.match('[A-Z]', idx):
                 idx='other'
-            L.append(dict(title=t.encode('utf-8'), desc=d, idx=idx))
+            L.append(dict(title=t.encode('utf-8'), desc=d, idx=idx,
+                editlink="%s/edit" % res.getURL()))
             keep_track[idx] = 1
             
         empties = [x for x in keep_track.keys() if keep_track[x]==0]
         for key in empties:
-            L.append(dict(title=_('label_no_entries'), desc='', idx=key ))
+            L.append(dict(title=_('label_no_entries'), desc='', idx=key,
+                editlink=''))
 
         return L
