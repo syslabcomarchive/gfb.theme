@@ -1,10 +1,12 @@
 gfb.theme Changelog
 ===================
 
-1.4.18 (unreleased)
+1.4.18 (2012-12-08)
 -------------------
 
-- Nothing changed yet.
+- strip HTML in search results #6390
+- explicitly set target="_blank" on external links, potential fix for #6389
+  [thomasw]
 
 
 1.4.17 (2012-11-25)
