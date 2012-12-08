@@ -20,6 +20,7 @@ portal_url = getToolByName(context, 'portal_url')()
 pretty_title_or_id = ploneUtils.pretty_title_or_id
 plone_view = context.restrictedTraverse('@@plone')
 portal_state = context.restrictedTraverse('@@plone_portal_state')
+gfbview = context.restrictedTraverse('gfbview')
 
 portalProperties = getToolByName(context, 'portal_properties')
 siteProperties = getattr(portalProperties, 'site_properties', None)
@@ -139,11 +140,12 @@ else:
         klass = 'contenttype-%s' % ploneUtils.normalizeString(result.portal_type)
         write('''<a href="%s" title="%s" class="%s">%s</a>''' % (itemUrl, full_title, klass, display_title))
         display_description = safe_unicode(result.Description)
-        if len(display_description) > MAX_DESCRIPTION:
-            display_description = ''.join((display_description[:MAX_DESCRIPTION],'...'))
+        #if len(display_description) > MAX_DESCRIPTION:
+        #    display_description = ''.join((display_description[:MAX_DESCRIPTION],'...'))
 
         # need to quote it, to avoid injection of html containing javascript and other evil stuff
-        display_description = html_quote(display_description)
+        #display_description = html_quote(display_description)
+        display_description = gfbview.cropHTMLText(display_description, siteProperties.search_results_description_length, siteProperties.ellipsis)
         write('''<div class="LSDescr">%s</div>''' % (display_description))
         write('''</li>''')
         full_title, display_title, display_description = None, None, None
@@ -166,3 +168,4 @@ else:
     write('''</fieldset>''')
 
 return '\n'.join(output).encode(site_encoding)
+
