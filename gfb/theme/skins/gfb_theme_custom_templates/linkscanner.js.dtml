@@ -14,6 +14,7 @@ function adjustTitle(elem) {
         titleVal = 'Externer Link: ' + newTitle;
     }
     elem.setAttribute('title', titleVal);
+    elem.setAttribute('target', '_blank');
 }
 
 function osha_gotoURL (x) {
