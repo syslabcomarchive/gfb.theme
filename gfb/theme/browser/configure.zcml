@@ -12,6 +12,15 @@
         name="GFBTheme"
         />
 
+    <!-- GFB tool view -->
+    <browser:page
+        for="*"
+        name="gfbview"
+        class=".gfbview.GFB"
+        permission="zope.Public"
+        allowed_interface=".interfaces.IGFB"
+    />
+
     <!-- Viewlets registration -->
     <!-- The personal bar -->
     <browser:viewlet

@@ -32,6 +32,7 @@
                  syntool nocall:context/portal_syndication;
                  normalizeString nocall:context/@@plone/normalizeString;
                  toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                 gfbview nocall:here/@@gfbview;
                  use_view_action site_properties/typesUseViewActionInListings|python:();">
 
     <form name="searchform" 
@@ -124,7 +125,7 @@
             </dt>
             
             <dd>
-                <span tal:replace="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
+                <span tal:replace="python:gfbview.cropHTMLText(result.Description, desc_length, desc_ellipsis)">
                     Cropped description
                 </span>
 
@@ -170,7 +171,7 @@
                         </span>
                 </span>    
 
-                <span class="relevance" 
+                <!--span class="relevance" 
                       tal:condition="result/data_record_normalized_score_">
                     &mdash;
                     <tal:relevance i18n:translate="label_relevance_percentage">
@@ -179,7 +180,7 @@
                                tal:omit-tag=""
                                i18n:name="percentage">23</span>%
                     </tal:relevance>
-                </span>
+                </span-->
             </span>
 
             </dd>
