@@ -1,11 +1,10 @@
 gfb.theme Changelog
 ===================
 
-1.4.19 (unreleased)
+1.4.19 (2012-12-08)
 -------------------
 
-- Nothing changed yet.
-
+- strip HTML also in LiveSearch results #6390 [thomasw]
 
 1.4.18 (2012-12-08)
 -------------------
