@@ -7,6 +7,8 @@ from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 from Products.Five.browser import BrowserView
 from Products.ATContentTypes.interface import IATTopic
+from gfb.theme import GFBMessageFactory as _
+
 
 class LocalNewsListing(BrowserView):
 
@@ -56,3 +58,4 @@ class LocalNewsListing(BrowserView):
 
     def showLinkToNewsItem(self):
         return self.context.getProperty('show_link_to_news_item', True)
+
