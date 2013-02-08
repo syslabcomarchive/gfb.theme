@@ -3,7 +3,7 @@ from Acquisition import aq_inner, aq_base, aq_parent, aq_chain
 from zope.component import getMultiAdapter
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
+from Products.CMFPlone.utils import safe_unicode, isDefaultPage
 from Products.CMFCore.interfaces import ISiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
@@ -205,15 +205,28 @@ class GFBTitleViewlet(common.TitleViewlet):
         self.page_title = self.context_state.object_title
         self.portal_title = self.portal_state.portal_title
 
+    def getParentTitles(self, obj):
+        titles = list()
+        while not INavigationRoot.providedBy(obj):
+           titles.append(escape(safe_unicode(obj.Title())))
+           obj = aq_parent(obj)
+        return titles
+
     def index(self):
         portal_title = safe_unicode(self.portal_title())
         page_title = safe_unicode(self.page_title())
         if page_title == portal_title:
             return u"<title>%s</title>" % (escape(portal_title))
         else:
+            if isDefaultPage(self.context, self.request):
+                titles = self.getParentTitles(aq_parent(self.context))
+            else:
+                titles = self.getParentTitles(self.context)
+            titles.reverse()
+            title_string = " &mdash; ".join(titles)
             return u"<title>%s &mdash; %s</title>" % (
-                escape(safe_unicode(portal_title)),
-                escape(safe_unicode(page_title))
+                escape(portal_title),
+                title_string
                 )
 
 
