@@ -218,7 +218,8 @@ class GFBTitleViewlet(common.TitleViewlet):
         if page_title == portal_title:
             return u"<title>%s</title>" % (escape(portal_title))
         else:
-            if isDefaultPage(self.context, self.request):
+            if isDefaultPage(self.context, self.request) and not \
+                INavigationRoot.providedBy(aq_parent(self.context)):
                 titles = self.getParentTitles(aq_parent(self.context))
             else:
                 titles = self.getParentTitles(self.context)
