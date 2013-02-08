@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.22 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Added missing translations [thomasw]
 
 1.4.21 (2013-02-08)
 -------------------
