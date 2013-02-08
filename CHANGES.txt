@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.20 (unreleased)
+1.4.20 (2013-02-08)
 -------------------
 
 - Show title of all parents in the Title attr in HEAD #6665 [thomasw]
