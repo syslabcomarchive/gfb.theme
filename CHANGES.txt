@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.21 (unreleased)
+1.4.21 (2013-02-08)
 -------------------
 
 - Title (in HEAD) fix for portal root #6665 [thomasw]
