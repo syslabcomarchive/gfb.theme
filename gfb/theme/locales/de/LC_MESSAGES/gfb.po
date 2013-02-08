@@ -384,3 +384,6 @@ msgstr "Gefährdungsart"
 
 msgid "title_open_riskfactors"
 msgstr "Klicken Sie hier um einen Suchbegriff aus einer Liste von Gefähdrungen auszuwählen."
+
+msgid "heading_newsboard_latest_news"
+msgstr "Aktuelle Nachrichten zum Thema"
