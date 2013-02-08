@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.22 (unreleased)
+1.4.22 (2013-02-08)
 -------------------
 
 - Added missing translations [thomasw]
