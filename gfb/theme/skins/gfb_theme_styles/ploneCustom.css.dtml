@@ -62,7 +62,9 @@ iframe html body#content {
     border: 0;
     font-size: 100%;
 }
-
+#portal-top {
+margin-top:20px;
+}
 /* Accessibility elements, applied by JS */
 body.largeText { font-size: 95%; }
 body.smallText { font-size: 60%; }
