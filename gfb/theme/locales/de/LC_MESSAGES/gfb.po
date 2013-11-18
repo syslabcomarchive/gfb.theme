@@ -39,6 +39,11 @@ msgstr "Sie haben gewählt:"
 msgid "label_homepage"
 msgstr "Startseite"
 
+msgid "label_highlights"
+msgstr "Aktuelles"
+
+msgid "label_previous_highlights"
+msgstr "Vorherige Nachrichten"
 
 #: ../portlets/help.py:51
 msgid "Add Help Portlet"

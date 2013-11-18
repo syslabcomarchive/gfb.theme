@@ -3463,7 +3463,49 @@ line-height: 0.1em;
 
 /* @end */
 
+/*** homepage #highlights carousel ***/
 
+#highlights{
+    padding-bottom: 2.5em;
+    height: 210px;
+}
+
+#highlightsContainer{
+    padding-bottom: 20px;
+    margin-bottom: 2em;
+}
+
+#highlights-content {
+    height: 215px;
+    margin-bottom: 20px;
+}
+
+.highlight { height: 200px; }
+
+div#content div#homepage-tabs ul#highlights-tabs {
+    list-style: none;
+    width: auto;
+    margin: 0 -13px;
+}
+
+#highlights-tabs li.ui-corner-top {
+    float: left;
+    margin: 0 0.5em 0 0;
+}
+
+#highlights-tabs li.ui-state-active,
+#highlights-tabs a.current {
+    background:#98a2b7;
+}
+
+#highlights-archive {
+  margin-bottom: 1em;
+}
+
+p.teaser_content {
+  margin: 0;
+}
+/*** /#highlights ***/
 
 /* </dtml-with> */
 

@@ -67,6 +67,12 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 </script>
 
+<script type="text/javascript"
+        src="++resource++gfb.theme.js/jquery.dotdotdot.min.js"
+        language="javascript"></script>
+<script type="text/javascript"
+        src="++resource++gfb.theme.js/highlights-carousel.js?v=1"
+        language="javascript"></script>
 </metal:javascriptslot>
 
 <metal:block fill-slot="top_slot"
@@ -101,6 +107,7 @@ document.images[Bildname].src = eval(Tauschbildname);
                 desc_ellipsis site_properties/ellipsis;
                 searchterm request/SearchableText|nothing;
                 results view/search;
+                toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                            ">
 
 
@@ -130,13 +137,13 @@ document.images[Bildname].src = eval(Tauschbildname);
             </li>
             <li>
 				<a href="#homepage-tabs-2"
-    id="homepage-tabs-2-link" i18n:translate="label_gute_praxis">Aktuelles Beispiel guter Praxis</a>
+    id="homepage-tabs-2-link" i18n:translate="label_highlights">Highlights</a>
 			</li>
         </ul>
         <div id="homepage-tabs-1" class="ui-tabs-panel">
           <span tal:define="obj nocall:view/top_thema">
             <span tal:condition="obj">
-                <span tal:content="python:context.toLocalizedTime(obj.effective())" />
+                <span tal:content="python:toLocalizedTime(obj.effective())" />
                 <h3 tal:content="obj/Title" />
                  <div tal:replace="structure obj/Description" />
                  <div><a href="." tal:attributes="href obj/absolute_url"
@@ -148,25 +155,49 @@ document.images[Bildname].src = eval(Tauschbildname);
           </span>
         </div>
         <div id="homepage-tabs-2" class="ui-tabs-panel">
-        <span tal:define="obj nocall:view/gute_praxis">
-            <span tal:condition="obj">
-                <span tal:content="python:context.toLocalizedTime(obj.effective())" />
-                <h3 tal:content="obj/Title" />
-                 <div tal:replace="structure obj/Description" />
-                 <div><a href="." tal:attributes="href obj/absolute_url"
-                     i18n:translate="box_morelink" i18n:domain="plone">More...</a></div>
-            </span>
-            <span tal:condition="not:obj">
-                <div i18n:translate="info_no_goodpractice">Es wurde kein aktuelles "Besipiel guter Praxis" gefunden.</div>
-            </span>
-        </span>
+
+          <div id="highlightsContainer">
+            <div class="carouselContainer" id="highlights"
+                 tal:define="items view/highlights">
+              <div id="highlights-content">
+                <tal:rep repeat="news items">
+                  <div class="highlight" tal:define="no repeat/news/number"
+                       tal:attributes="id string:highlights-$no">
+                    <div class="highlight">
+                      <span tal:content="python:toLocalizedTime(news['date'])"/>
+                      <h3 tal:content="news/title">EU-OSHA targets health risks in cleaning industry for European Week 2009</h3>
+                      <a  class="link-plain" tal:attributes="href news/link">
+                        <img tal:attributes="src news/img_url" tal:on-error="string:no image" />
+                      </a>
+                      <p class="teaser_content" tal:content="structure news/description"></p>
+                    </div>
+                    <span class="teaser_more"><a tal:attributes="href news/link" i18n:translate="box_morelink" i18n:domain="plone">More...</a></span>
+                  </div>
+                </tal:rep>
+              </div>
+              <div id="highlights-archive">
+                <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a>
+              </div>
+              <ul id="highlights-tabs">
+                <tal:rep repeat="news items">
+                  <li class="ui-corner-top" tal:define="no repeat/news/number">
+                    <a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a>
+                  </li>
+                </tal:rep>
+              </ul>
+            </div>
+          </div>
+
+
+
+
         </div>
 
     </div>
 
-<a class="twitter-timeline link-plain" href="https://twitter.com/search?q=%23gef%C3%A4hrdungsbeurteilung" data-widget-id="400255382712377344">Tweets about "#gefährdungsbeurteilung"</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+    <a class="twitter-timeline link-plain" href="https://twitter.com/search?q=%23gef%C3%A4hrdungsbeurteilung" data-widget-id="400255382712377344">Tweets about "#gefährdungsbeurteilung"</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <div class="visualClear">&nbsp;</div>
 
 <h1 class="documentFirstHeading frontpage" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>

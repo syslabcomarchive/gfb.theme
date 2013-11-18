@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import Acquisition
+from DateTime import DateTime
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -258,3 +259,53 @@ class HomepageSearchNewView(AdvancedSearchView):
                 if obj:
                     return obj
         return None
+
+    @property
+    def highlights(self, limit=4):
+        """Fetch the latest X teasers"""
+        pc = getToolByName(self.context, 'portal_catalog')
+        now = DateTime()
+        res = pc(
+            portal_type=['News Item'],
+            Language=[self.context.Language(), ''],
+            sort_order='reverse', sort_on='effective',
+            expires={'query': now, 'range': 'min'},
+            effective={'query': now, 'range': 'max'},
+            review_state='published',
+        )
+        if len(res) and limit > 0:
+            res = res[:limit]
+        if len(res) == 0:
+            now = DateTime()
+            return [
+                dict(
+                    link='',
+                    description='No highlights were found',
+                    title='No Highlights',
+                    img_url='',
+                    date=DateTime(),
+                )
+            ]
+        ret = list()
+        for r in res:
+            obj = r.getObject()
+            link = obj.absolute_url()
+            img_url = obj.getImage() and \
+                obj.getImage().absolute_url() or ''
+            # use 'mini' scale
+            img_url = img_url.replace('/image', '/image_mini')
+            description = obj.Description().strip() != '' and \
+                obj.Description() or obj.getText()
+            if not isinstance(description, unicode):
+                description = description.decode('utf-8')
+            date = obj.effective()
+            ret.append(
+                dict(
+                    link=link,
+                    img_url=img_url,
+                    description=description,
+                    title=obj.Title(),
+                    date=date,
+                )
+            )
+        return ret
