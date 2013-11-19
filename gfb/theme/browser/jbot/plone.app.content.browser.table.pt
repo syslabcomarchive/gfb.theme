@@ -65,18 +65,18 @@
           <th class="nosort"
               id="foldercontents-select-column"
               tal:condition="view/show_select_column">&nbsp;</th>
-          <th class="nosort column"
+          <th class="column"
               id="foldercontents-title-column">&nbsp;<tal:title i18n:translate="listingheader_title"
               >Title</tal:title>&nbsp;</th>
-          <th class="nosort column"
+          <th class="column"
               id="foldercontents-size-column"
               tal:condition="view/show_size_column">&nbsp;<tal:size i18n:translate="listingheader_size"
               >Size</tal:size>&nbsp;</th>
-          <th class="nosort column"
+          <th class="column"
               id="foldercontents-modified-column"
               tal:condition="view/show_modified_column">&nbsp;<tal:modified i18n:translate="listingheader_modified"
               >Modified</tal:modified>&nbsp;</th>
-          <th class="nosort column"
+          <th class="column"
               id="foldercontents-status-column"
               tal:condition="view/show_status_column">&nbsp;<tal:state i18n:translate="listingheader_status"
               >State</tal:state>&nbsp;</th>
