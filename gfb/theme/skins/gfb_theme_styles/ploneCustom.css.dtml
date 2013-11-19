@@ -462,6 +462,7 @@ top: 0;
     width: 200px;
     padding: 0;
     background: transparent url(&dtml-portal_url;/gradient_column_border.jpg) no-repeat top right;
+    display: block;
 }
 
 #portal-column-two {
