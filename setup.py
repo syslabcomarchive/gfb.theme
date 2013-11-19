@@ -57,6 +57,7 @@ setup(name='gfb.theme',
           # -*- Extra requirements: -*-
           'iwwb.eventlist',
           'collective.dynatree',
+          'z3c.jbot',
           'z3c.json',
           'Products.AdvancedQuery',
           'Products.ATVocabularyManager',
