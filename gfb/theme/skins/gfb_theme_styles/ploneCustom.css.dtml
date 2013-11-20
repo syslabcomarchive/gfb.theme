@@ -1848,7 +1848,8 @@ ul.formTabs .link-internal-js,
 .listingBarItems .link-internal-js,
 .actionbtn .link-internal-js,
 div#homepage-tabs ul.search-top .link-internal-js,
-#footer_batch_box .link-internal-js {
+#footer_batch_box .link-internal-js,
+.dropdown-menu .link-internal-js {
   display:none;
 }
 
