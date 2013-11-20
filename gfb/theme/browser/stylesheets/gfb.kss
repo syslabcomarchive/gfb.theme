@@ -51,11 +51,5 @@ a#homepage-tabs-2-link:click {
 
 }
 
-/* #4645 Disable ordering folder contents by drag and drop, to enable
-sorting by the headings */
-#listing-table .column:click {
-    update_table-sort_on: currentFormVar('sort_onblah');
-};
-
 
 
