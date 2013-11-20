@@ -1,5 +1,6 @@
 portal_url = '<dtml-var portal_url>';
 
+(function (jQuery) {
 // works currently only for german-language and
 // is used only by the german FOP
 function adjustTitle(elem) {
@@ -213,3 +214,4 @@ function unRegisterPloneFunction(func){
 jQuery(document).ready(function() {
     jQuery("#search-tabs").tabs("#searchfields > div");
 });
+})(jq);
