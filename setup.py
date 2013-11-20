@@ -57,7 +57,6 @@ setup(name='gfb.theme',
           # -*- Extra requirements: -*-
           'iwwb.eventlist',
           'collective.dynatree',
-          'plone.namedfile',
           'wildcard.foldercontents',
           'z3c.json',
           'Products.AdvancedQuery',
