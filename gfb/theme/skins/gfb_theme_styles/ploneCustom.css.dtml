@@ -3509,5 +3509,10 @@ p.teaser_content {
 }
 /*** /#highlights ***/
 
+/** wildcard.foldercontents tweaks **/
+#upload-files, #sort-folder {
+  float: left;
+}
+
 /* </dtml-with> */
 
