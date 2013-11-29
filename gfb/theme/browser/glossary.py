@@ -26,7 +26,7 @@ class GlossaryView(BrowserView):
     def buildQuery(self):
         """ Build the query based on the request """
         context = Acquisition.aq_inner(self.context)
-        query = In('portal_type', 'HelpCenterDefinition') & Eq('review_state', 'published')
+        query = In('portal_type', 'PloneGlossaryDefinition') & Eq('review_state', 'published')
         return query
         
     def editable(self):
