@@ -195,9 +195,6 @@ document.images[Bildname].src = eval(Tauschbildname);
 
     </div>
 
-
-    <a class="twitter-timeline link-plain" href="https://twitter.com/search?q=%23gef%C3%A4hrdungsbeurteilung" data-widget-id="400255382712377344">Tweets about "#gefährdungsbeurteilung"</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <div class="visualClear">&nbsp;</div>
 
 <h1 class="documentFirstHeading frontpage" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
