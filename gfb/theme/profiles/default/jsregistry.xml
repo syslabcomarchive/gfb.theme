@@ -6,4 +6,6 @@
     enabled="True" expression="" id="fixIE6.js" inline="False"/>
  <javascript authenticated="False" cacheable="True" compression="safe" conditionalcomment="" cookable="True" enabled="on" expression="" id="++resource++gfb.theme.js/dynatree_customizations.js" inline="False"
              insert-after="++resource++jquery.dynatree/dynatree-init.js"/>
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression="" id="++resource++gfb.theme.js/responsive.js" inline="False"/>
 </object>
