@@ -128,10 +128,6 @@
               </dt>
 
               <dd>
-                <span tal:replace="python:gfbview.cropHTMLText(result.Description, desc_length, desc_ellipsis)">
-                  Cropped description
-                </span>
-
                 <span class="documentByLine"
                       tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
                   <span class="documentAuthor"
