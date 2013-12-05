@@ -14,7 +14,7 @@ and (max-width : 1000px) {
   }
 
   div#portal-header #portal-siteactions {
-    padding-top: 5px;
+    padding-top: 10px;
   }
 
   div#portal-header #portal-siteactions li a {
