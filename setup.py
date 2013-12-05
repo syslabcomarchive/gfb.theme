@@ -27,9 +27,9 @@ long_description = (
     '************\n'
     + '\n' +
     read('CONTRIBUTORS.txt')
-    + '\n' 
+    + '\n'
     )
-    
+
 tests_require=['zope.testing']
 setup(name='gfb.theme',
       version=version,
@@ -57,6 +57,7 @@ setup(name='gfb.theme',
           # -*- Extra requirements: -*-
           'iwwb.eventlist',
           'collective.dynatree',
+          'collective.solr',
           'wildcard.foldercontents',
           'z3c.json',
           'Products.AdvancedQuery',
@@ -67,7 +68,7 @@ setup(name='gfb.theme',
       extras_require=dict(tests=tests_require),
       test_suite = 'gfb.theme.tests.test_docs.test_suite',
       entry_points="""
-      # -*- entry_points -*- 
+      # -*- entry_points -*-
       """,
-      )      
-      
+      )
+
