@@ -156,45 +156,44 @@
                       August 16, 2001 at 23:35:59
                     </span>
                   </span>
-
-
-                  <tal:highlighting condition="python:result.UID in hl">
-                    <div class ="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
-                      ...&nbsp;
-                      <tal:snippets repeat="snippet snippets">
-                        <tal:snippet content="structure snippet">highlighted snippet</tal:snippet> ...
-                      </tal:snippets>
-                    </div>
-                  </tal:highlighting>
-
-
-                  <span id="category"
-                        tal:define="categories result/Subject|nothing"
-                        tal:condition="categories">
-                    &mdash;
-                    <tal:filedunder i18n:translate="label_filed_under">filed under:</tal:filedunder>
-                    <span tal:repeat="category categories">
-                      <a href=""
-                         class="link-category"
-                         rel="tag"
-                         tal:content="category"
-                         tal:attributes="href string:${portal_url}/search?Subject%3Alist=${category}">
-                        Category
-                        </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
-                    </span>
-                  </span>
-
-                  <!--span class="relevance"
-                      tal:condition="result/data_record_normalized_score_">
-                      &mdash;
-                      <tal:relevance i18n:translate="label_relevance_percentage">
-                      Relevance:
-                      <span tal:content="result/data_record_normalized_score_"
-                      tal:omit-tag=""
-                      i18n:name="percentage">23</span>%
-                      </tal:relevance>
-                      </span-->
                 </span>
+
+                <tal:highlighting condition="python:result.UID in hl">
+                  <div class ="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
+                    ...&nbsp;
+                    <tal:snippets repeat="snippet snippets">
+                      <tal:snippet content="structure snippet">highlighted snippet</tal:snippet> ...
+                    </tal:snippets>
+                  </div>
+                </tal:highlighting>
+
+                <span id="category"
+                      tal:define="categories result/Subject|nothing"
+                      tal:condition="categories">
+                  &mdash;
+                  <tal:filedunder i18n:translate="label_filed_under">filed under:</tal:filedunder>
+                  <span tal:repeat="category categories">
+                    <a href=""
+                       class="link-category"
+                       rel="tag"
+                       tal:content="category"
+                       tal:attributes="href string:${portal_url}/search?Subject%3Alist=${category}">
+                      Category
+                      </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
+                  </span>
+                </span>
+
+                <!--span class="relevance"
+                    tal:condition="result/data_record_normalized_score_">
+                    &mdash;
+                    <tal:relevance i18n:translate="label_relevance_percentage">
+                    Relevance:
+                    <span tal:content="result/data_record_normalized_score_"
+                    tal:omit-tag=""
+                    i18n:name="percentage">23</span>%
+                    </tal:relevance>
+                    </span-->
+
 
               </dd>
 
