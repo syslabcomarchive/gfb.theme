@@ -1,0 +1,149 @@
+@media only screen
+and (max-width : 1000px) {
+
+  div#visual-portal-wrapper {
+    margin-bottom: 67px;
+  }
+
+  div#portal-header {
+    background-position: left 62px;
+  }
+
+  div#portal-header li {
+    margin: 0;
+  }
+
+  div#portal-header #portal-siteactions {
+    padding-top: 10px;
+  }
+
+  div#portal-header #portal-siteactions li a {
+    line-height: normal;
+  }
+
+  div#gfb_site_title {
+    float: none;
+    top: initial;
+    right: initial;
+    text-align: center;
+    background-color: #4f647c;
+    line-height: 28px;
+  }
+
+  div#portal-top { margin-top: 0; }
+
+ /* hide stuff we don't want */
+  h1.frontpage:first-of-type,
+  div.welcome_image,
+  div#tooltip,
+  div#you-have-chosen { display: none; }
+
+/* navigation */
+  div#globalnav-group {
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    z-index: 9000;
+  }
+
+  div#portal-globalnav-box {
+    margin: auto;
+    width: auto;
+  }
+
+  ul#portal-globalnav {
+    right: auto;
+    width: auto;
+  }
+
+  /* move the secondar nav to the bottom */
+  dl.portletNavigationTree ul.navTreeLevel0 {
+    position: absolute;
+    visibility: visible;
+    bottom: 0;
+    width: 100%;
+  }
+
+  li.navTreeItem {
+    display: inline;
+    list-style-type: none;
+  }
+
+  li.navTreeItem div {
+    border-bottom: 1px solid white;
+  }
+
+  /* don't use the left col height as the min height for the content area */
+  body td#portal-column-one div.visualPadding {
+    min-height: initial;
+  }
+
+  /* Leave enough room at the bottom to display the secondary nav */
+  body div#footeractions-wrapper + ul {
+    padding-bottom: 100%;
+  }
+
+  /* hide the hove submenus */
+  ul.submenu { display: none; }
+
+/* /navigation */
+
+
+  div#portal-searchbox {
+    float: none;
+    width: initial;
+    position: initial;
+  }
+
+  div#visual-portal-wrapper { width: auto; }
+
+  td#portal-column-one {
+    visibility: hidden;
+    width: 0;
+  }
+
+  td#portal-column-two { display: none; }
+
+  div#portal-breadcrumbs {
+    padding-bottom: 2em;
+    border-left: 0;
+  }
+
+  span#breadcrumbs-you-are-here { display: none; }
+
+  span.hide-path-bar {
+    display: inline;
+  }
+
+  span#gfb_text_sizes {
+    display: none;
+  }
+
+  div.documentActions {
+    text-align: left;
+    margin: 2em 0 0 0;
+    padding-left: 0;
+  }
+
+  div#content div.documentActions ul {
+    padding-left: 0;
+  }
+
+  div#content div.documentActions ul li {
+    margin-left: 1em;
+  }
+
+  div#content div.documentActions ul li:first-of-type {
+    margin-left: 0;
+  }
+
+  body div#footeractions-wrapper {
+    padding: 0;
+  }
+
+
+  /* linkcollection: show all items */
+  div#slc-linkcollection-linkbox { display: none; }
+  div.prefetched-docs { display: inline !important; }
+  /* /linkcollection */
+}
