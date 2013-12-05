@@ -91,122 +91,122 @@
           <span i18n:translate="batch_x_items_matching_your_criteria"
                 ><span i18n:name="number"
                        tal:omit-tag=""
-                       tal:content="python:len(results)">234</span> items matching your search terms</span>
-        </h1>
+                       tal:content="python:len(results)">234</span> items matching your search terms</span></span>
+      </h1>
 
-        <p class="discreet"
-           tal:condition="syntool/isSiteSyndicationAllowed">
-          <a href=""
-             class="link-feed"
-             i18n:translate="title_rss_feed"
-             tal:attributes="href string:${context/@@plone_context_state/object_url}/search_rss?${request/QUERY_STRING}">
-          Subscribe to an always-updated feed of these search terms</a>
-        </p>
+      <p class="discreet"
+         tal:condition="syntool/isSiteSyndicationAllowed">
+        <a href=""
+           class="link-feed"
+           i18n:translate="title_rss_feed"
+           tal:attributes="href string:${context/@@plone_context_state/object_url}/search_rss?${request/QUERY_STRING}">
+        Subscribe to an always-updated feed of these search terms</a>
+      </p>
 
 
-        <div tal:condition="not: results">
-          <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
-        </div>
+      <div tal:condition="not: results">
+        <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
+      </div>
 
-        <div tal:condition="results"
-             tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+      <div tal:condition="results"
+           tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
 
-          <dl class="searchResults">
-            <tal:results repeat="result batch">
-              <tal:entry define="result_url result/getURL;
-                                 result_type result/portal_type;
-                                 item_icon python:plone_view.getIcon(result);
-                                 url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
-                <dt tal:define="item_wf_state_class string:state-${result/review_state};"
-                    tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
-                  <img tal:replace="structure item_icon/html_tag" />
-                  <a
-                      href="#"
-                      tal:attributes="href url;
-                                      class string:$item_wf_state_class"
-                      tal:content="result/pretty_title_or_id" />
-                </dt>
+        <dl class="searchResults">
+          <tal:results repeat="result batch">
+            <tal:entry define="result_url result/getURL;
+                               result_type result/portal_type;
+                               item_icon python:plone_view.getIcon(result);
+                               url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
+              <dt tal:define="item_wf_state_class string:state-${result/review_state};"
+                  tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
+                <img tal:replace="structure item_icon/html_tag" />
+                <a
+                    href="#"
+                    tal:attributes="href url;
+                                    class string:$item_wf_state_class"
+                    tal:content="result/pretty_title_or_id" />
+              </dt>
 
-                <dd>
-                  <span tal:replace="python:gfbview.cropHTMLText(result.Description, desc_length, desc_ellipsis)">
-                    Cropped description
+              <dd>
+                <span tal:replace="python:gfbview.cropHTMLText(result.Description, desc_length, desc_ellipsis)">
+                  Cropped description
+                </span>
+
+                <span class="documentByLine"
+                      tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
+                  <span class="documentAuthor"
+                        i18n:translate="label_by_author">
+                    by
+                    <a href="#"
+                       tal:attributes="href string:${portal_url}/author/${result/Creator}"
+                       tal:content="result/Creator"
+                       tal:omit-tag="not:result/Creator"
+                       i18n:name="author">
+                      Bob Dobalina
+                    </a>
+
                   </span>
 
-                  <span class="documentByLine"
-                        tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
-                    <span class="documentAuthor"
-                          i18n:translate="label_by_author">
-                      by
-                      <a href="#"
-                         tal:attributes="href string:${portal_url}/author/${result/Creator}"
-                         tal:content="result/Creator"
-                         tal:omit-tag="not:result/Creator"
-                         i18n:name="author">
-                        Bob Dobalina
-                      </a>
-
+                  <span class="documentModified">
+                    &mdash;
+                    <span i18n:translate="box_last_modified">
+                      last modified
                     </span>
-
-                    <span class="documentModified">
-                      &mdash;
-                      <span i18n:translate="box_last_modified">
-                        last modified
-                      </span>
-                      <span tal:replace="python:toLocalizedTime(result.ModificationDate, long_format=1)">
-                        August 16, 2001 at 23:35:59
-                      </span>
+                    <span tal:replace="python:toLocalizedTime(result.ModificationDate, long_format=1)">
+                      August 16, 2001 at 23:35:59
                     </span>
-
-
-                    <tal:highlighting condition="python:result.UID in hl">
-                      <div class ="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
-                        ...&nbsp;
-                        <tal:snippets repeat="snippet snippets">
-                          <tal:snippet content="structure snippet">highlighted snippet</tal:snippet> ...
-                        </tal:snippets>
-                      </div>
-                    </tal:highlighting>
-
-
-                    <span id="category"
-                          tal:define="categories result/Subject|nothing"
-                          tal:condition="categories">
-                      &mdash;
-                      <tal:filedunder i18n:translate="label_filed_under">filed under:</tal:filedunder>
-                      <span tal:repeat="category categories">
-                        <a href=""
-                           class="link-category"
-                           rel="tag"
-                           tal:content="category"
-                           tal:attributes="href string:${portal_url}/search?Subject%3Alist=${category}">
-                          Category
-                          </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
-                      </span>
-                    </span>
-
-                    <!--span class="relevance"
-                        tal:condition="result/data_record_normalized_score_">
-                        &mdash;
-                        <tal:relevance i18n:translate="label_relevance_percentage">
-                        Relevance:
-                        <span tal:content="result/data_record_normalized_score_"
-                        tal:omit-tag=""
-                        i18n:name="percentage">23</span>%
-                        </tal:relevance>
-                        </span-->
                   </span>
 
-                </dd>
 
-              </tal:entry>
-            </tal:results>
-          </dl>
+                  <tal:highlighting condition="python:result.UID in hl">
+                    <div class ="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
+                      ...&nbsp;
+                      <tal:snippets repeat="snippet snippets">
+                        <tal:snippet content="structure snippet">highlighted snippet</tal:snippet> ...
+                      </tal:snippets>
+                    </div>
+                  </tal:highlighting>
 
-          <div metal:use-macro="here/batch_macros/macros/navigation" />
 
-        </div>
+                  <span id="category"
+                        tal:define="categories result/Subject|nothing"
+                        tal:condition="categories">
+                    &mdash;
+                    <tal:filedunder i18n:translate="label_filed_under">filed under:</tal:filedunder>
+                    <span tal:repeat="category categories">
+                      <a href=""
+                         class="link-category"
+                         rel="tag"
+                         tal:content="category"
+                         tal:attributes="href string:${portal_url}/search?Subject%3Alist=${category}">
+                        Category
+                        </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
+                    </span>
+                  </span>
+
+                  <!--span class="relevance"
+                      tal:condition="result/data_record_normalized_score_">
+                      &mdash;
+                      <tal:relevance i18n:translate="label_relevance_percentage">
+                      Relevance:
+                      <span tal:content="result/data_record_normalized_score_"
+                      tal:omit-tag=""
+                      i18n:name="percentage">23</span>%
+                      </tal:relevance>
+                      </span-->
+                </span>
+
+              </dd>
+
+            </tal:entry>
+          </tal:results>
+        </dl>
+
+        <div metal:use-macro="here/batch_macros/macros/navigation" />
 
       </div>
-    </body>
-  </html>
+
+    </div>
+  </body>
+</html>
 
