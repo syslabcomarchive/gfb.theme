@@ -242,6 +242,15 @@
 		layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- viewport meta tag for responsive layout -->
+    <browser:viewlet
+        name="plone.htmlhead.viewport"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        template="templates/viewport_meta.pt"
+        permission="zope2.View"
+		layer=".interfaces.IThemeSpecific"
+        />
+
     <!-- Render the document actions -->
     <browser:viewlet
         name="gfb.abovecontenttitle.documentactions"
