@@ -99,7 +99,7 @@ and (max-width : 1000px) {
 
   td#portal-column-one {
     visibility: hidden;
-    width: 0;
+    width: 1px;
   }
 
   td#portal-column-two { display: none; }
