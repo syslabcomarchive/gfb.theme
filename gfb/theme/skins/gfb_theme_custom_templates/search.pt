@@ -15,6 +15,8 @@
     <metal:block fill-slot="top_slot"
                  tal:define="dummy python:request.set('disable_border',1)" />
     <metal:block fill-slot="column_two_slot" />
+    <script metal:fill-slot="javascript_head_slot"
+            src="++resource++gfb.theme.js/search-suggestions.js?a"></script>
   </head>
 
   <body>
@@ -40,11 +42,13 @@
       <form name="searchform"
             action="search"
             class="searchPage">
-        <input class="searchPage"
+        <input id="searchInput"
+               class="searchPage"
                name="SearchableText"
                type="text"
                size="25"
                title="Search Site"
+               autocomplete="off"
                i18n:attributes="title title_search_title;"
                tal:attributes="value request/SearchableText|nothing;"
                />
@@ -56,6 +60,7 @@
                i18n:attributes="value label_search;"/>
         <br />
 
+        <div id="suggestion-area" > </div>
 
         <div id="searchfor-created">
           <span for="created" i18n:translate="label_new_items_since">New items since</span>
@@ -78,6 +83,9 @@
             </select>
           </tal:datetime>
           <input type="hidden" name="created_usage" value="range:min" />
+
+
+          
         </div>
       </form>
 

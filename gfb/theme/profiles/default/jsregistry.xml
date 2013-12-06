@@ -8,4 +8,6 @@
              insert-after="++resource++jquery.dynatree/dynatree-init.js"/>
  <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression="" id="++resource++gfb.theme.js/responsive.js" inline="False"/>
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression="" id="++resource++gfb.theme.js/search-suggestions.js" inline="False"/>
 </object>
