@@ -82,34 +82,47 @@
       </form>
 
 
-      <h1 class="documentFirstHeading">
-        <span i18n:translate="heading_search_results">
-          Search results
-        </span>
-        <span class="discreet">
-          &mdash;
-          <span i18n:translate="batch_x_items_matching_your_criteria"
-                ><span i18n:name="number"
-                       tal:omit-tag=""
-                       tal:content="python:len(results)">234</span> items matching your search terms</span></span>
-      </h1>
-
-      <p class="discreet"
-         tal:condition="syntool/isSiteSyndicationAllowed">
-        <a href=""
-           class="link-feed"
-           i18n:translate="title_rss_feed"
-           tal:attributes="href string:${context/@@plone_context_state/object_url}/search_rss?${request/QUERY_STRING}">
-        Subscribe to an always-updated feed of these search terms</a>
-      </p>
-
-
       <div tal:condition="not: results">
         <p><strong i18n:translate="description_no_results_found">No results were found.</strong></p>
       </div>
 
       <div tal:condition="results"
-           tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+           tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);
+                       template_id template/getId">
+
+        <div id="heading_search_results_box"
+             metal:define-macro="search_results_box">
+
+          <span id="heading_search_results">
+            <span i18n:translate="heading_search_results">
+              Search results
+            </span>
+
+            <span  id="search_num_results">
+              (<span
+              i18n:translate="batch_x_items_matching_your_criteria"
+              ><span 
+              i18n:name="number"
+              tal:content="python:len(results)">234</span> items matching your search terms</span>)
+              <img src="spacer.gif" width="1" height="10" alt="previous search results"/>
+            </span>
+
+            <metal:macro use-macro="context/@@advanced_search/macros/batch"></metal:macro>
+          </span>
+          <div class="visualClear"> </div>
+
+        </div>
+
+        <p class="discreet"
+           tal:condition="syntool/isSiteSyndicationAllowed">
+          <a href=""
+             class="link-feed"
+             i18n:translate="title_rss_feed"
+             tal:attributes="href string:${context/@@plone_context_state/object_url}/search_rss?${request/QUERY_STRING}">
+          Subscribe to an always-updated feed of these search terms</a>
+        </p>
+
+
 
         <dl class="searchResults">
           <tal:results repeat="result batch">
@@ -197,7 +210,7 @@
           </tal:results>
         </dl>
 
-        <div metal:use-macro="here/batch_macros/macros/navigation" />
+        <metal:search_results_box use-macro="template/macros/search_results_box" />
 
       </div>
 

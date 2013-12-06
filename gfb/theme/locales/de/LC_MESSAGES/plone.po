@@ -69,3 +69,7 @@ msgstr "Rückmeldungsdetails"
 msgid "help_subject"
 msgstr "Bitte geben Sie den Betreff der zu sendenden Nachricht ein."
 
+#. Default: "${number} items matching your search terms"
+msgid "batch_x_items_matching_your_criteria"
+msgstr "${number} Artikel gefunden"
+
