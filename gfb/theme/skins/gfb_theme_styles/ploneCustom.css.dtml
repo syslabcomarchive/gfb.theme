@@ -1327,6 +1327,10 @@ div.search_medium ul {
   margin-bottom: 1em;
 }
 
+.search_result .documentByLine {
+  font-weight: normal;
+}
+
 .searchResults .highlighted {
   font-weight: bold;
   color: #4B516B;
