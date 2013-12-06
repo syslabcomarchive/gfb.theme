@@ -124,13 +124,14 @@
 
 
 
-        <dl class="searchResults">
+        <div class="searchResults">
           <tal:results repeat="result batch">
-            <tal:entry define="result_url result/getURL;
-                               result_type result/portal_type;
-                               item_icon python:plone_view.getIcon(result);
-                               url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
-              <dt tal:define="item_wf_state_class string:state-${result/review_state};"
+            <div class="search_result"
+                 tal:define="result_url result/getURL;
+                             result_type result/portal_type;
+                             item_icon python:plone_view.getIcon(result);
+                             url python:'%s?searchterm=%s'%(test(result_type in use_view_action, result_url+'/view', result_url+'/'), searchterm);">
+              <div tal:define="item_wf_state_class string:state-${result/review_state};"
                   tal:attributes="class python:'contenttype-' + normalizeString(result.portal_type)">
                 <img tal:replace="structure item_icon/html_tag" />
                 <a
@@ -138,9 +139,9 @@
                     tal:attributes="href url;
                                     class string:$item_wf_state_class"
                     tal:content="result/pretty_title_or_id" />
-              </dt>
+              </div>
 
-              <dd>
+              <div>
                 <span class="documentByLine"
                       tal:condition="python:not isAnon or site_properties.allowAnonymousViewAbout">
                   <span class="documentAuthor"
@@ -168,15 +169,19 @@
                 </span>
 
                 <tal:highlighting condition="python:result.UID in hl">
-                  <div class ="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
+                  <div class="highlighting" tal:repeat="snippets python:hl[result.UID].values()">
                     ...&nbsp;
                     <tal:snippets repeat="snippet snippets">
                       <tal:snippet content="structure snippet">highlighted snippet</tal:snippet> ...
                     </tal:snippets>
                   </div>
                 </tal:highlighting>
+                <div tal:condition="not:hl"
+                     tal:content="python:gfbview.cropHTMLText(result.Description, desc_length, desc_ellipsis)">
+                  Cropped description
+                </div>
 
-                <span id="category"
+                <div class="category"
                       tal:define="categories result/Subject|nothing"
                       tal:condition="categories">
                   &mdash;
@@ -190,7 +195,7 @@
                       Category
                       </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
                   </span>
-                </span>
+                </div>
 
                 <!--span class="relevance"
                     tal:condition="result/data_record_normalized_score_">
@@ -204,11 +209,11 @@
                     </span-->
 
 
-              </dd>
+              </div>
 
-            </tal:entry>
+            </div>
           </tal:results>
-        </dl>
+        </div>
 
         <metal:search_results_box use-macro="template/macros/search_results_box" />
 

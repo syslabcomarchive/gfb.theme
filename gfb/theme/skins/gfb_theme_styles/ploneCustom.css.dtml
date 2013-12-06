@@ -930,11 +930,19 @@ h4 {
   font: 16px/30px bold Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
+.category,
 #category {
-  float: right;
   border-left: 2px solid #E5E6E8;
   padding-left: 12px;
   color: #48628C;
+}
+
+#category {
+  float: right;
+}
+
+.category {
+  margin-top: 1em;
 }
 
 .template-riskassessmentlink_view #region-content label {
@@ -1306,6 +1314,7 @@ div.search_medium li {
 div.search_medium ul {
   margin-left: 1em;
 }
+.search_result,
 .search_results {
   border-bottom: 2px solid #ecedf2;
   clear: both;
@@ -1313,7 +1322,15 @@ div.search_medium ul {
   zoom:1 !important;
 }
 
-.searchResults .highlighted { background: #F6F6F6; }
+.search_result {
+  padding-bottom: 2em;
+  margin-bottom: 1em;
+}
+
+.searchResults .highlighted {
+  font-weight: bold;
+  color: #4B516B;
+}
 
 div.search_medium {
   padding: 13px;
