@@ -135,31 +135,7 @@ document.images[Bildname].src = eval(Tauschbildname);
 
 
     <div id="homepage-tabs" class="homepage-tab-1-selected">
-        <ul class="search-top">
-            <li>
-				<a href="#homepage-tabs-1" class="selected"
-     id="homepage-tabs-1-link" i18n:translate="label_top_thema">Top Thema</a>
-            </li>
-            <li>
-				<a href="#homepage-tabs-2"
-    id="homepage-tabs-2-link" i18n:translate="label_highlights">Highlights</a>
-			</li>
-        </ul>
-        <div id="homepage-tabs-1" class="ui-tabs-panel">
-          <span tal:define="obj nocall:view/top_thema">
-            <span tal:condition="obj">
-                <span tal:content="python:toLocalizedTime(obj.effective())" />
-                <h3 tal:content="obj/Title" />
-                 <div tal:replace="structure obj/Description" />
-                 <div><a href="." tal:attributes="href obj/absolute_url"
-                     i18n:translate="box_morelink" i18n:domain="plone">More...</a></div>
-            </span>
-            <span tal:condition="not:obj">
-                <div i18n:translate="info_no_topthema">Es wurde kein aktuelles Top Thema gefunden</div>
-            </span>
-          </span>
-        </div>
-        <div id="homepage-tabs-2" class="ui-tabs-panel">
+        <div>
 
           <div id="highlightsContainer">
             <div class="carouselContainer" id="highlights"
@@ -180,12 +156,12 @@ document.images[Bildname].src = eval(Tauschbildname);
                   </div>
                 </tal:rep>
               </div>
-              <div id="highlights-archive">
-                <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a>
-              </div>
+              <!-- <div id="highlights-archive"> -->
+              <!--   <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a> -->
+              <!-- </div> -->
               <ul id="highlights-tabs">
                 <tal:rep repeat="news items">
-                  <li class="ui-corner-top" tal:define="no repeat/news/number">
+                  <li tal:define="no repeat/news/number">
                     <a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a>
                   </li>
                 </tal:rep>
