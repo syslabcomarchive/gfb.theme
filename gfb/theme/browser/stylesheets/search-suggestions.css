@@ -5,3 +5,10 @@
 #suggestions {
   padding: 1em !important;
 }
+
+#suggestions li {
+  font-weight: bold;
+  list-style: none;
+  color: #01679A;
+  cursor: pointer;
+}

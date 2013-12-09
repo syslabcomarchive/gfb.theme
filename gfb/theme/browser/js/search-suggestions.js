@@ -11,16 +11,16 @@ $(function() {
             /* Sometimes we get back a list of strings, instead of
                objects with useful values, just ignore them */
             if (data.length > 0 && data[0].constructor == Object) {
-                suggestionArea.append("<div id='suggestions' class='livesearchContainer'/>");
+                suggestionArea.append("<ul id='suggestions' class='livesearchContainer'/>");
                 var suggestions = $('#suggestions');
 
                 $(data).each( function (index, value) {
                     if ( value.constructor == Object ) {
-                        suggestions.append("<p>"+value.value.word+"</p>");
+                        suggestions.append("<li>"+value.value.word+"</li>");
                     };
                 });
 
-                suggestions.find("p").click(function() {
+                suggestions.find("li").click(function() {
                     searchInput.val($(this).text());
                     suggestionArea.empty();
                 });
