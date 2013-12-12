@@ -143,9 +143,6 @@
               <div class="highlight">
                 <span tal:content="python:toLocalizedTime(news['date'])"/>
                 <h3 tal:content="news/title">EU-OSHA targets health risks in cleaning industry for European Week 2009</h3>
-                <a  class="link-plain" tal:attributes="href news/link">
-                  <img tal:attributes="src news/img_url" tal:on-error="string:no image" />
-                </a>
                 <p class="teaser_content" tal:content="structure news/description"></p>
               </div>
               <span class="teaser_more"><a tal:attributes="href news/link" i18n:translate="box_morelink" i18n:domain="plone">More...</a></span>
