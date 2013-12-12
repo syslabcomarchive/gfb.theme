@@ -134,47 +134,40 @@
       <h1 class="documentFirstHeading frontpage" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
 
 
-      <div id="homepage-tabs" class="homepage-tab-1-selected">
-        <div>
-
-          <div id="highlightsContainer">
-            <div class="carouselContainer" id="highlights"
-                 tal:define="items view/highlights">
-              <div id="highlights-content">
-                <tal:rep repeat="news items">
-                  <div class="highlight" tal:define="no repeat/news/number"
-                       tal:attributes="id string:highlights-$no">
-                    <div class="highlight">
-                      <span tal:content="python:toLocalizedTime(news['date'])"/>
-                      <h3 tal:content="news/title">EU-OSHA targets health risks in cleaning industry for European Week 2009</h3>
-                      <a  class="link-plain" tal:attributes="href news/link">
-                        <img tal:attributes="src news/img_url" tal:on-error="string:no image" />
-                      </a>
-                      <p class="teaser_content" tal:content="structure news/description"></p>
-                    </div>
-                    <span class="teaser_more"><a tal:attributes="href news/link" i18n:translate="box_morelink" i18n:domain="plone">More...</a></span>
-                  </div>
-                </tal:rep>
+      <div class="carouselContainer" id="highlights"
+           tal:define="items view/highlights">
+        <div id="highlights-content">
+          <tal:rep repeat="news items">
+            <div class="highlight" tal:define="no repeat/news/number"
+                 tal:attributes="id string:highlights-$no">
+              <div class="highlight">
+                <span tal:content="python:toLocalizedTime(news['date'])"/>
+                <h3 tal:content="news/title">EU-OSHA targets health risks in cleaning industry for European Week 2009</h3>
+                <a  class="link-plain" tal:attributes="href news/link">
+                  <img tal:attributes="src news/img_url" tal:on-error="string:no image" />
+                </a>
+                <p class="teaser_content" tal:content="structure news/description"></p>
               </div>
-              <!-- <div id="highlights-archive"> -->
-              <!--   <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a> -->
-              <!-- </div> -->
-              <ul id="highlights-tabs">
-                <tal:rep repeat="news items">
-                  <li tal:define="no repeat/news/number">
-                    <a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a>
-                  </li>
-                </tal:rep>
-              </ul>
+              <span class="teaser_more"><a tal:attributes="href news/link" i18n:translate="box_morelink" i18n:domain="plone">More...</a></span>
             </div>
-          </div>
-
-
-
-
+          </tal:rep>
         </div>
 
+        <div id="highlights-nav">
+          <ul id="highlights-tabs">
+            <tal:rep repeat="news items">
+              <li tal:define="no repeat/news/number">
+                <a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a>
+              </li>
+            </tal:rep>
+          </ul>
+          <div id="highlights-archive">
+            <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a>
+          </div>
+        </div>
       </div>
+
+      
 
       <div class="visualClear">&nbsp;</div>
 
@@ -189,7 +182,7 @@
 
         <div class="LSResultRALinks" id="LSResultRALinks" style="">
 		  <div class="LSShadow" id="LSShadow"></div>
-		</div>
+	    </div>
 
 
         <div id="simplesearch">
@@ -232,153 +225,153 @@
                      type="radio"
                      value="0"
                      name="getCategoryIndependent"
-                     tal:attributes="checked python:getCategoryIndependent==False">
-                <label i18n:translate="label_special_guideline">Special Action Guideline</label>
-              </div>
+                     tal:attributes="checked python:getCategoryIndependent==False" />
+              <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+            </div>
 
-              <div class="common_radio_search_box">
-                <input class="radio_search"
-                       id="radio_category_common"
-                       type="radio"
-                       value="1"
-                       name="getCategoryIndependent"
-                       tal:attributes="checked python:getCategoryIndependent==True">
+            <div class="common_radio_search_box">
+              <input class="radio_search"
+                     id="radio_category_common"
+                     type="radio"
+                     value="1"
+                     name="getCategoryIndependent"
+                     tal:attributes="checked python:getCategoryIndependent==True" />
 
-                  <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
+              <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
+            </div>
+
+
+            <div class="visualClear"></div>
+
+            <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
+
+            <div class="search_filters indent3">
+              <!-- Remote Provider -->
+              <div class="dynatree-atwidget dynatree-custom">
+
+                <dt id="button_remote_provider" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
+                     class="fakeLink">Anbieter</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                                              i18n:attributes="title" i18n:domain="gfb"
+                                              title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                  </div>
                 </div>
-
-
-                <div class="visualClear"></div>
-
-                <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
-
-                <div class="search_filters indent3">
-                  <!-- Remote Provider -->
-                  <div class="dynatree-atwidget dynatree-custom">
-
-                    <dt id="button_remote_provider" class="toggleButton">
-                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
-                         class="fakeLink">Anbieter</a>
-                    </dt>
-                    <div class="flatlist_container">
-                      <div class="flatlist-template">
-                        <div class="flatlist-item"
-                             key="{{ key }}"><img src="ico_check_red.gif"
-                                                  i18n:attributes="title" i18n:domain="gfb"
-                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                      </div>
-                    </div>
-                    <div id="widget_remote_provider" class="closed_widget">
-                      <div class="dynatree_filter">
-                        <input type="text" class="filter" />
-                      </div>
-                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                      <div class="dynatree_ajax_vocabulary hiddenStructure"
-                           tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
-                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                      <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
-                             tal:attributes="value request/remote_provider2 | nothing" />
-                      <div class="customhiddeninput"></div>
-                      <div class="ui_controls">
-                        <div class="sparse">Sparse</div>
-                      </div>
-                    </div>
+                <div id="widget_remote_provider" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
                   </div>
-
-                  <!-- Sector (NACE) -->
-                  <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                       tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                                       and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                                       or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                    <dt href="#" id="button_nace" class="toggleButton">
-                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
-                         class="fakeLink">Branche</a>
-                    </dt>
-                    <div class="flatlist_container">
-                      <div class="flatlist-template">
-                        <div class="flatlist-item"
-                             key="{{ key }}"><img src="ico_check_red.gif"
-                                                  i18n:attributes="title" i18n:domain="gfb"
-                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                      </div>
-                    </div>
-                    <div id="widget_nace" class="closed_widget">
-                      <div class="dynatree_filter">
-                        <input type="text" class="filter" />
-                      </div>
-                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                      <div class="dynatree_ajax_vocabulary hiddenStructure"
-                           tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
-                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                      <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
-                             tal:attributes="value request/nace2 | nothing" />
-                      <div class="customhiddeninput"></div>
-                      <div class="ui_controls">
-                        <div class="sparse">Sparse</div>
-                      </div>
-                    </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
+                         tal:attributes="value request/remote_provider2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
                   </div>
-
-                  <!-- Risk factors -->
-                  <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                       tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                                       and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                                       or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                    <dt href="#" id="button_riskfactors" class="toggleButton">
-                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
-                         class="fakeLink">Gefährdungsart</a>
-                    </dt>
-                    <div class="flatlist_container">
-                      <div class="flatlist-template">
-                        <div class="flatlist-item"
-                             key="{{ key }}"><img src="ico_check_red.gif"
-                                                  i18n:attributes="title" i18n:domain="gfb"
-                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                      </div>
-                    </div>
-                    <div id="widget_riskfactors" class="closed_widget">
-                      <div class="dynatree_filter">
-                        <input type="text" class="filter" />
-                      </div>
-                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                      <div class="dynatree_ajax_vocabulary hiddenStructure"
-                           tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
-                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                      <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
-                             tal:attributes="value request/RiskFactors2 | nothing" />
-                      <div class="customhiddeninput"></div>
-                      <div class="ui_controls">
-                        <div class="sparse">Sparse</div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-
-                <div class="visualClear"></div>
-
-                <div class="submit_column">
-
-                  <input class="context cancelbutton"
-                         type="submit"
-                         name="submit"
-                         value="Search"
-                         i18n:attributes="value label_search;"/>
-
                 </div>
               </div>
 
-              <div id="#searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                <span tal:replace="structure tipps/getText |nothing" />
+              <!-- Sector (NACE) -->
+              <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                   tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                   and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                   or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                <dt href="#" id="button_nace" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
+                     class="fakeLink">Branche</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                                              i18n:attributes="title" i18n:domain="gfb"
+                                              title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                  </div>
+                </div>
+                <div id="widget_nace" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
+                  </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
+                         tal:attributes="value request/nace2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
+                  </div>
+                </div>
               </div>
-            </form>
+
+              <!-- Risk factors -->
+              <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                   tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                   and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                   or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                <dt href="#" id="button_riskfactors" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
+                     class="fakeLink">Gefährdungsart</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                                              i18n:attributes="title" i18n:domain="gfb"
+                                              title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                  </div>
+                </div>
+                <div id="widget_riskfactors" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
+                  </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
+                         tal:attributes="value request/RiskFactors2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
 
+            <div class="visualClear"></div>
 
+            <div class="submit_column">
+
+              <input class="context cancelbutton"
+                     type="submit"
+                     name="submit"
+                     value="Search"
+                     i18n:attributes="value label_search;"/>
+
+            </div>
           </div>
-        </body>
-      </html>
+
+          <div id="#searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+            <span tal:replace="structure tipps/getText |nothing" />
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
 
 
 
