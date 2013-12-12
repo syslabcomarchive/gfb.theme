@@ -6,135 +6,135 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="gfb">
 
-<metal:cssslot fill-slot="css_slot">
-<style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
-       tal:content="string:@import url($portal_url/riskassessment_styles.css);">
-</style>
+  <metal:cssslot fill-slot="css_slot">
+    <style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
+           tal:content="string:@import url($portal_url/riskassessment_styles.css);">
+    </style>
 
 
-</metal:cssslot>
+  </metal:cssslot>
 
-<metal:javascriptslot fill-slot="javascript_head_slot">
+  <metal:javascriptslot fill-slot="javascript_head_slot">
 
-  <script language="JavaScript">
-  function resetSize(aSelect) {
-    if(aSelect) {
+    <script language="JavaScript">
+      function resetSize(aSelect) {
+      if(aSelect) {
       aSelect.style.width = 'auto';
-    }
-  }
+      }
+      }
 
-  </script>
+    </script>
 
-<script type="text/javascript" src="livesearch_ralinks.js"
-    tal:attributes="src string:$portal_url/livesearch_ralinks.js">
-</script>
-
-
-<script type="text/javascript" src="jquery.tooltip.js"
-    tal:attributes="src string:$portal_url/jquery.tooltip.js">
-</script>
-
-<script type="text/javascript">
-    jq(function() {
-    jq('#four_steps a').tooltip(
-        {
-        track: true,
-        delay: 0,
-        showURL: false,
-        showBody: " - ",
-        fade: 250,
-        attach_to: '#four_steps'
-        }
-    );
-    jQuery('#basiswissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink1')});
-    jQuery('#datenbanksuche a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink2')});
-    jQuery('#expertenwissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink3')});
-    jQuery('#service a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink4')});
-    jQuery('div#four_steps a').mouseout(function() {ChangeImage('arrow_blue','ArrowBlue')});
-    });
+    <script type="text/javascript" src="livesearch_ralinks.js"
+            tal:attributes="src string:$portal_url/livesearch_ralinks.js">
+    </script>
 
 
-var ArrowBlue = "foursteps_background.jpg";
-var ArrowPink1 = "foursteps_pink1.jpg";
-var ArrowPink2 = "foursteps_pink2.jpg";
-var ArrowPink3 = "foursteps_pink3.jpg";
-var ArrowPink4 = "foursteps_pink4.jpg";
+    <script type="text/javascript" src="jquery.tooltip.js"
+            tal:attributes="src string:$portal_url/jquery.tooltip.js">
+    </script>
 
-function ChangeImage(Bildname,Tauschbildname)
-{
-document.images[Bildname].src = eval(Tauschbildname);
-}
-
-</script>
-
-<script type="text/javascript"
-        src="++resource++gfb.theme.js/jquery.dotdotdot.min.js"
-        language="javascript"></script>
-<script type="text/javascript"
-        src="++resource++gfb.theme.js/highlights-carousel.js?v=1"
-        language="javascript"></script>
-
-<script>
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-</script>
-
-</metal:javascriptslot>
-
-<metal:block fill-slot="top_slot"
-                   tal:define="dummy python:request.set('disable_border',1)" />
-<!--metal:block fill-slot="column_two_slot" /-->
+    <script type="text/javascript">
+      jq(function() {
+      jq('#four_steps a').tooltip(
+      {
+      track: true,
+      delay: 0,
+      showURL: false,
+      showBody: " - ",
+      fade: 250,
+      attach_to: '#four_steps'
+      }
+      );
+      jQuery('#basiswissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink1')});
+      jQuery('#datenbanksuche a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink2')});
+      jQuery('#expertenwissen a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink3')});
+      jQuery('#service a').mouseover(function() {ChangeImage('arrow_blue','ArrowPink4')});
+      jQuery('div#four_steps a').mouseout(function() {ChangeImage('arrow_blue','ArrowBlue')});
+      });
 
 
-<body>
-<div metal:fill-slot="main"
-     tal:define="site_properties context/portal_properties/site_properties|nothing;
-                use_types_blacklist request/use_types_blacklist | python:True;
-                use_navigation_root request/use_navigation_root | python:True;
-                dummy python:request.set('portal_type', 'RiskAssessmentLink');
-                Batch python:modules['Products.CMFPlone'].Batch;
-                use_view_action site_properties/typesUseViewActionInListings|python:();
-                SearchableText request/SearchableText|string:;
-                nace request/nace|string:;
-                nace python:nace==[''] and '' or nace;
-                provider request/remote_provider|python:'';
-                provider python:provider==[''] and '' or provider;
-                category request/category|string:;
-                getRemoteLanguage request/getRemoteLanguage|string:;
-                country request/country|string:;
-                getCategoryIndependent request/getCategoryIndependent|string:0;
-                getCategoryIndependent python:bool(int(getCategoryIndependent));
-                riskfactors request/riskfactors|string:;
-                riskfactors python:riskfactors==[''] and '' or riskfactors;
-                DateTime python:modules['DateTime'].DateTime;
-                b_size python:10;b_start python:0;
-                b_start request/b_start | b_start;
-                desc_length site_properties/search_results_description_length;
-                desc_ellipsis site_properties/ellipsis;
-                searchterm request/SearchableText|nothing;
-                results view/search;
-                toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                           ">
+      var ArrowBlue = "foursteps_background.jpg";
+      var ArrowPink1 = "foursteps_pink1.jpg";
+      var ArrowPink2 = "foursteps_pink2.jpg";
+      var ArrowPink3 = "foursteps_pink3.jpg";
+      var ArrowPink4 = "foursteps_pink4.jpg";
+
+      function ChangeImage(Bildname,Tauschbildname)
+      {
+      document.images[Bildname].src = eval(Tauschbildname);
+      }
+
+    </script>
+
+    <script type="text/javascript"
+            src="++resource++gfb.theme.js/jquery.dotdotdot.min.js"
+            language="javascript"></script>
+    <script type="text/javascript"
+            src="++resource++gfb.theme.js/highlights-carousel.js?v=1"
+            language="javascript"></script>
+
+    <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+
+  </metal:javascriptslot>
+
+  <metal:block fill-slot="top_slot"
+               tal:define="dummy python:request.set('disable_border',1)" />
+  <!--metal:block fill-slot="column_two_slot" /-->
+
+
+  <body>
+    <div metal:fill-slot="main"
+         tal:define="site_properties context/portal_properties/site_properties|nothing;
+                     use_types_blacklist request/use_types_blacklist | python:True;
+                     use_navigation_root request/use_navigation_root | python:True;
+                     dummy python:request.set('portal_type', 'RiskAssessmentLink');
+                     Batch python:modules['Products.CMFPlone'].Batch;
+                     use_view_action site_properties/typesUseViewActionInListings|python:();
+                     SearchableText request/SearchableText|string:;
+                     nace request/nace|string:;
+                     nace python:nace==[''] and '' or nace;
+                     provider request/remote_provider|python:'';
+                     provider python:provider==[''] and '' or provider;
+                     category request/category|string:;
+                     getRemoteLanguage request/getRemoteLanguage|string:;
+                     country request/country|string:;
+                     getCategoryIndependent request/getCategoryIndependent|string:0;
+                     getCategoryIndependent python:bool(int(getCategoryIndependent));
+                     riskfactors request/riskfactors|string:;
+                     riskfactors python:riskfactors==[''] and '' or riskfactors;
+                     DateTime python:modules['DateTime'].DateTime;
+                     b_size python:10;b_start python:0;
+                     b_start request/b_start | b_start;
+                     desc_length site_properties/search_results_description_length;
+                     desc_ellipsis site_properties/ellipsis;
+                     searchterm request/SearchableText|nothing;
+                     results view/search;
+                     toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                     ">
 
 
 
-    <tal:block define="index_foursteps nocall:here/index_foursteps | nothing"
-         tal:condition="index_foursteps">
+      <tal:block define="index_foursteps nocall:here/index_foursteps | nothing"
+                 tal:condition="index_foursteps">
 
         <h1 class="documentFirstHeading frontpage" tal:content="index_foursteps/Title"></h1>
 
         <div id="four_steps">
-            <div class="visualClear"></div>
-            <span tal:replace="structure index_foursteps/getText|nothing" />
+          <div class="visualClear"></div>
+          <span tal:replace="structure index_foursteps/getText|nothing" />
         </div>
 
-    </tal:block>
+      </tal:block>
 
 
 
-<h1 class="documentFirstHeading frontpage" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
+      <h1 class="documentFirstHeading frontpage" i18n:translate="label_aktuelle_infos">Aktuelle Infos</h1>
 
 
-    <div id="homepage-tabs" class="homepage-tab-1-selected">
+      <div id="homepage-tabs" class="homepage-tab-1-selected">
         <div>
 
           <div id="highlightsContainer">
@@ -174,77 +174,77 @@ document.images[Bildname].src = eval(Tauschbildname);
 
         </div>
 
-    </div>
+      </div>
 
-<div class="visualClear">&nbsp;</div>
+      <div class="visualClear">&nbsp;</div>
 
-<h1 class="documentFirstHeading frontpage" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
+      <h1 class="documentFirstHeading frontpage" i18n:translate="label_datenbanksuche">Datenbanksuche</h1>
 
-  <form name="searchform" id="searchform"
-        action="advanced_search"
-        tal:attributes="action string:${portal_url}/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/advanced_search"
-        class="searchPage searchform-controls">
+      <form name="searchform" id="searchform"
+            action="advanced_search"
+            tal:attributes="action string:${portal_url}/${here/portal_languages/getPreferredLanguage}/handlungshilfen/datenbank/advanced_search"
+            class="searchPage searchform-controls">
 
 
 
         <div class="LSResultRALinks" id="LSResultRALinks" style="">
-			<div class="LSShadow" id="LSShadow"></div>
+		  <div class="LSShadow" id="LSShadow"></div>
 		</div>
 
 
-          <div id="simplesearch">
-            <ul class="search-top" id="search-tabs">
-              <li><a class="selected" id="searchdatabase"
-                     i18n:translate="label_advanced_search"
-                     href="#searchcontrols">Search the Database</a>
-              </li>
-              <li>
-                  <a href="searchtipps" id="searchtipps"
-                     i18n:translate="label_searchtips">Search Tips</a>
-              </li>
-            </ul>
-          </div>
+        <div id="simplesearch">
+          <ul class="search-top" id="search-tabs">
+            <li><a class="selected" id="searchdatabase"
+                   i18n:translate="label_advanced_search"
+                   href="#searchcontrols">Search the Database</a>
+            </li>
+            <li>
+              <a href="searchtipps" id="searchtipps"
+                 i18n:translate="label_searchtips">Search Tips</a>
+            </li>
+          </ul>
+        </div>
 
 
-          <div id="searchfields">
+        <div id="searchfields">
 
-            <div id="searchcontrols" class="LSBoxRALinks search_fields_narrow">
-                <input id="SearchableText"
-                       type="text"
-                       name="SearchableText"
-                       size="25"
-                       class="inputLabel indent1"
-                       tal:attributes="value request/SearchableText|string:;
-                                       title view/getFillText;"/>
+          <div id="searchcontrols" class="LSBoxRALinks search_fields_narrow">
+            <input id="SearchableText"
+                   type="text"
+                   name="SearchableText"
+                   size="25"
+                   class="inputLabel indent1"
+                   tal:attributes="value request/SearchableText|string:;
+                                   title view/getFillText;"/>
 
 
-                <div id="and_or_box" class="indent2">
-                    <p class="formHelp"
-                       i18n:translate="help_and_or">
-                        und/oder
-                    </p>
-                </div>
-                <div class="visualClear"></div>
+            <div id="and_or_box" class="indent2">
+              <p class="formHelp"
+                 i18n:translate="help_and_or">
+                und/oder
+              </p>
+            </div>
+            <div class="visualClear"></div>
 
-                <div class="common_radio_search_box indent2">
-                    <input class="radio_search"
-                           id="radio_category_special"
-                           type="radio"
-                           value="0"
-                           name="getCategoryIndependent"
-                           tal:attributes="checked python:getCategoryIndependent==False">
-                    <label i18n:translate="label_special_guideline">Special Action Guideline</label>
-                </div>
+            <div class="common_radio_search_box indent2">
+              <input class="radio_search"
+                     id="radio_category_special"
+                     type="radio"
+                     value="0"
+                     name="getCategoryIndependent"
+                     tal:attributes="checked python:getCategoryIndependent==False">
+                <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+              </div>
 
-                <div class="common_radio_search_box">
-                    <input class="radio_search"
-                           id="radio_category_common"
-                           type="radio"
-                           value="1"
-                           name="getCategoryIndependent"
-                           tal:attributes="checked python:getCategoryIndependent==True">
+              <div class="common_radio_search_box">
+                <input class="radio_search"
+                       id="radio_category_common"
+                       type="radio"
+                       value="1"
+                       name="getCategoryIndependent"
+                       tal:attributes="checked python:getCategoryIndependent==True">
 
-                    <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
+                  <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
                 </div>
 
 
@@ -253,132 +253,132 @@ document.images[Bildname].src = eval(Tauschbildname);
                 <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
 
                 <div class="search_filters indent3">
-                     <!-- Remote Provider -->
-                     <div class="dynatree-atwidget dynatree-custom">
+                  <!-- Remote Provider -->
+                  <div class="dynatree-atwidget dynatree-custom">
 
-                      <dt id="button_remote_provider" class="toggleButton">
-                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
-                            class="fakeLink">Anbieter</a>
-                      </dt>
-                        <div class="flatlist_container">
-                          <div class="flatlist-template">
-                            <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                          </div>
-                        </div>
-                      <div id="widget_remote_provider" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
-                               tal:attributes="value request/remote_provider2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
+                    <dt id="button_remote_provider" class="toggleButton">
+                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
+                         class="fakeLink">Anbieter</a>
+                    </dt>
+                    <div class="flatlist_container">
+                      <div class="flatlist-template">
+                        <div class="flatlist-item"
+                             key="{{ key }}"><img src="ico_check_red.gif"
+                                                  i18n:attributes="title" i18n:domain="gfb"
+                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                       </div>
                     </div>
-
-                     <!-- Sector (NACE) -->
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                        <dt href="#" id="button_nace" class="toggleButton">
-                         <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
-                           class="fakeLink">Branche</a>
-                         </dt>
-                          <div class="flatlist_container">
-                            <div class="flatlist-template">
-                                <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                            </div>
-                          </div>
-                      <div id="widget_nace" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
-                               tal:attributes="value request/nace2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
+                    <div id="widget_remote_provider" class="closed_widget">
+                      <div class="dynatree_filter">
+                        <input type="text" class="filter" />
+                      </div>
+                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                      <div class="dynatree_ajax_vocabulary hiddenStructure"
+                           tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
+                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                      <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
+                             tal:attributes="value request/remote_provider2 | nothing" />
+                      <div class="customhiddeninput"></div>
+                      <div class="ui_controls">
+                        <div class="sparse">Sparse</div>
                       </div>
                     </div>
+                  </div>
 
-                     <!-- Risk factors -->
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                       <dt href="#" id="button_riskfactors" class="toggleButton">
-                         <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
-                           class="fakeLink">Gefährdungsart</a>
-                        </dt>
-                        <div class="flatlist_container">
-                          <div class="flatlist-template">
-                            <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                          </div>
-                        </div>
-                       <div id="widget_riskfactors" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
-                               tal:attributes="value request/RiskFactors2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
+                  <!-- Sector (NACE) -->
+                  <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                       tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                       and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                       or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                    <dt href="#" id="button_nace" class="toggleButton">
+                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
+                         class="fakeLink">Branche</a>
+                    </dt>
+                    <div class="flatlist_container">
+                      <div class="flatlist-template">
+                        <div class="flatlist-item"
+                             key="{{ key }}"><img src="ico_check_red.gif"
+                                                  i18n:attributes="title" i18n:domain="gfb"
+                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
                       </div>
-                     </div>
+                    </div>
+                    <div id="widget_nace" class="closed_widget">
+                      <div class="dynatree_filter">
+                        <input type="text" class="filter" />
+                      </div>
+                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                      <div class="dynatree_ajax_vocabulary hiddenStructure"
+                           tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
+                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                      <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
+                             tal:attributes="value request/nace2 | nothing" />
+                      <div class="customhiddeninput"></div>
+                      <div class="ui_controls">
+                        <div class="sparse">Sparse</div>
+                      </div>
+                    </div>
+                  </div>
 
+                  <!-- Risk factors -->
+                  <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                       tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                       and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                       or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                    <dt href="#" id="button_riskfactors" class="toggleButton">
+                      <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
+                         class="fakeLink">Gefährdungsart</a>
+                    </dt>
+                    <div class="flatlist_container">
+                      <div class="flatlist-template">
+                        <div class="flatlist-item"
+                             key="{{ key }}"><img src="ico_check_red.gif"
+                                                  i18n:attributes="title" i18n:domain="gfb"
+                                                  title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                      </div>
+                    </div>
+                    <div id="widget_riskfactors" class="closed_widget">
+                      <div class="dynatree_filter">
+                        <input type="text" class="filter" />
+                      </div>
+                      <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                      <div class="dynatree_ajax_vocabulary hiddenStructure"
+                           tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
+                      <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                      <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
+                             tal:attributes="value request/RiskFactors2 | nothing" />
+                      <div class="customhiddeninput"></div>
+                      <div class="ui_controls">
+                        <div class="sparse">Sparse</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="visualClear"></div>
+
+                <div class="submit_column">
+
+                  <input class="context cancelbutton"
+                         type="submit"
+                         name="submit"
+                         value="Search"
+                         i18n:attributes="value label_search;"/>
+
+                </div>
               </div>
 
-
-                 <div class="visualClear"></div>
-
-                 <div class="submit_column">
-
-                            <input class="context cancelbutton"
-                               type="submit"
-                               name="submit"
-                               value="Search"
-                               i18n:attributes="value label_search;"/>
-
-                    </div>
-        </div>
-
-            <div id="#searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+              <div id="#searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
                 <span tal:replace="structure tipps/getText |nothing" />
-            </div>
-  </form>
+              </div>
+            </form>
 
 
 
-</div>
-</body>
-</html>
+          </div>
+        </body>
+      </html>
 
 
 
