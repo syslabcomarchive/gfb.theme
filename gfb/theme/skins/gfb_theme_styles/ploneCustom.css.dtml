@@ -1335,6 +1335,15 @@ div.search_medium ul {
   background-color: yellow;
 }
 
+form.searchPage {
+  text-align: center;
+}
+
+input.searchPage {
+  font-size: 170%;
+  padding: 5px;
+}
+
 div.search_medium {
   padding: 13px;
   width: 160px;
@@ -2140,7 +2149,8 @@ div.column1b div input {
 }
 
 #searchfor-created {
-    margin-top: 0.5em;
+    margin-top: 1em;
+    text-align: right;
 }
 
 /*Tinas aenderungen Stand Mittwoch 25.03*/

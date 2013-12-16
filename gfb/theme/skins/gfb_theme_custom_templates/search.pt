@@ -54,7 +54,8 @@
                />
 
 
-        <input class="searchPage searchButton"
+        <input class="searchPage"
+               id="gfbSearchButton"
                type="submit"
                value="Search"
                i18n:attributes="value label_search;"/>
