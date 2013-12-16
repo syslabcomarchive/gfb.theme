@@ -303,4 +303,12 @@
    layer=".interfaces.IThemeSpecific"
    />
 
+
+  <!-- Override the getIcon method to set the title attr -->
+  <adapter for="*
+                .interfaces.IThemeSpecific
+                *"
+           factory=".icon.ContentIconWithTitle"
+           provides="plone.app.layout.icons.interfaces.IContentIcon" />
+
 </configure>
