@@ -41,9 +41,9 @@
 
       <form name="searchform"
             action="search"
-            class="searchPage">
+            class="gfbSearchPage">
         <input id="searchInput"
-               class="searchPage"
+               class="gfbSearchPage"
                name="SearchableText"
                type="text"
                size="25"
@@ -54,7 +54,7 @@
                />
 
 
-        <input class="searchPage"
+        <input class="gfbSearchPage"
                id="gfbSearchButton"
                type="submit"
                value="Search"

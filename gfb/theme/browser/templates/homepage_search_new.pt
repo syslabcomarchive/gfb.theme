@@ -152,11 +152,7 @@
 
         <div id="highlights-nav">
           <ul id="highlights-tabs">
-            <tal:rep repeat="news items">
-              <li tal:define="no repeat/news/number">
-                <a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a>
-              </li>
-            </tal:rep>
+            <tal:rep repeat="news items"><li tal:define="no repeat/news/number"><a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a></li></tal:rep>
           </ul>
           <div id="highlights-archive">
             <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a>

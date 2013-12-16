@@ -1335,11 +1335,11 @@ div.search_medium ul {
   background-color: yellow;
 }
 
-form.searchPage {
+form.gfbSearchPage {
   text-align: center;
 }
 
-input.searchPage {
+input.gfbSearchPage {
   font-size: 170%;
   padding: 5px;
 }
@@ -3517,29 +3517,31 @@ line-height: 0.1em;
   position: relative;
   background-color: #D6D9DE;
   border: 1px solid #BAC1C9;
-}
 
 }
 
 div#content ul#highlights-tabs {
+  margin: 5px 0 0 -1px;
   padding: 0;
-  margin: 20px 10px;
+  height: 25px;
+  display: table;
 }
 
 ul#highlights-tabs li {
-  display: inline;
+  display: table-cell;
+  border-collapse: collapse;
   list-style-type: none;
-  padding: 1em 0;
+  margin: 0;
+  padding: 0;
 }
 
-ul#highlights-tabs li,
 ul#highlights-tabs li a {
-  color: white;
   background: transparent url(&dtml-portal_url;/dark-gradient-vertical.png) repeat-x top;
 }
 
 ul#highlights-tabs li a {
-  padding: 1em 1.5em;
+  color: white;
+  padding: 8px 13px;
 }
 
 #highlights-tabs li.ui-corner-top {
@@ -3555,7 +3557,7 @@ ul#highlights-tabs li a {
 #highlights-archive {
   position: absolute;
   right: 29px;
-  top: 22px;
+  top: 7px;
 }
 
 p.teaser_content {
