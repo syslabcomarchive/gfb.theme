@@ -1344,6 +1344,10 @@ input.searchPage {
   padding: 5px;
 }
 
+#link-feed {
+  margin-top: 0.75em;
+}
+
 div.search_medium {
   padding: 13px;
   width: 160px;

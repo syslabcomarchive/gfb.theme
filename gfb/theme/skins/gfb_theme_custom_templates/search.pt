@@ -122,7 +122,7 @@
 
         </div>
 
-        <p class="discreet"
+        <p id="link-feed" class="discreet"
            tal:condition="syntool/isSiteSyndicationAllowed">
           <a href=""
              class="link-feed"
