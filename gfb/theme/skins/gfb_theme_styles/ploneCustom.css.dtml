@@ -1980,6 +1980,7 @@ form.searchPage,
 div.searchPage {
   margin-bottom: 1em;
   max-width: 740px;
+  border-left: 1px solid #CCCCCC;
 }
 
 
@@ -3508,6 +3509,7 @@ line-height: 0.1em;
 
 #highlights {
   background: transparent url(&dtml-portal_url;/col-center-bg.jpg) repeat-x top;
+  border-left: 1px solid #CCCCCC;
 }
 
 #highlights-content {
