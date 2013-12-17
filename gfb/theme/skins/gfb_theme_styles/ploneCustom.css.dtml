@@ -167,13 +167,19 @@ top: 0;
 
 #portal-searchbox {
     display: block;
-    width: 235px;
     float: right;
     background: #424951 url(bg_topnavi_break.gif) repeat-x;
     font-size: 85%;
     height: 32px;
     vertical-align: middle;
     line-height: 30px;
+    width: 23em;
+    position:relative;
+    top: -32px;
+}
+
+#portal-searchbox form {
+  display: table;
 }
 
 #livesearch0 {
@@ -1344,6 +1350,12 @@ input.gfbSearchPage {
   padding: 5px;
 }
 
+.gfb-search-container {
+  position: relative;
+  display: table;
+  margin: auto;
+}
+
 #link-feed {
   margin-top: 0.75em;
 }
@@ -1771,10 +1783,6 @@ div#link_to_tool {
 }
 
 #portal-searchbox {
-  float: right;
-  width: 23em;
-  position:relative;
-  top: -32px;
 }
 
 #portal-globalnav {

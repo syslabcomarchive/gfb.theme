@@ -1,9 +1,11 @@
 #suggestion-area {
   position: relative;
+  z-index: 8000;
 }
 
 #suggestions {
   padding: 1em !important;
+  width: 20em;
 }
 
 #suggestions li {

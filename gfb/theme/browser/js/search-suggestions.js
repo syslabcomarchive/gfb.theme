@@ -1,17 +1,19 @@
 $(function() {
-    var searchInput = $("#searchInput");
-    var suggestionArea = $("#suggestion-area");
+    var searchInput = $(".LSBox input[name='SearchableText']");
+    $(searchInput).attr("autocomplete", "off");
 
-    searchInput.bind( "paste keyup", function () {
-        var term = searchInput.val();
+    searchInput.bind( "paste keyup", function ( event ) {
+        var term = event.target.value;
 
         $.getJSON("suggest-terms?term="+term, function( data ) {
-            suggestionArea.empty();
+            $("#suggestion-area").remove();
+            $(event.target).parent().append("<div id='suggestion-area'/>");
 
             /* Sometimes we get back a list of strings, instead of
                objects with useful values, just ignore them */
             if (data.length > 0 && data[0].constructor == Object) {
-                suggestionArea.append("<ul id='suggestions' class='livesearchContainer'/>");
+                    $("#suggestion-area")
+                    .append("<ul id='suggestions' class='livesearchContainer'/>");
                 var suggestions = $('#suggestions');
 
                 $(data).each( function (index, value) {
@@ -21,8 +23,8 @@ $(function() {
                 });
 
                 suggestions.find("li").click(function() {
-                    searchInput.val($(this).text());
-                    suggestionArea.empty();
+                    $(event.target).val($(this).text());
+                    $("#suggestion-area").remove();
                 });
             };
         });
@@ -30,6 +32,6 @@ $(function() {
 
     searchInput.blur(function() {
         // Allow time for a click event to be fired from the suggestion-area
-        setTimeout("$('#suggestion-area').empty()", 200); 
+        setTimeout("$('#suggestion-area').remove()", 200);
     });
 });

@@ -15,8 +15,6 @@
     <metal:block fill-slot="top_slot"
                  tal:define="dummy python:request.set('disable_border',1)" />
     <metal:block fill-slot="column_two_slot" />
-    <script metal:fill-slot="javascript_head_slot"
-            src="++resource++gfb.theme.js/search-suggestions.js?a"></script>
   </head>
 
   <body>
@@ -39,9 +37,11 @@
                      hl python:getattr(results, 'highlighting', {});
                      use_view_action site_properties/typesUseViewActionInListings|python:();">
 
+
       <form name="searchform"
             action="search"
             class="gfbSearchPage">
+      <span class="gfb-search-container LSBox">
         <input id="searchInput"
                class="gfbSearchPage"
                name="SearchableText"
@@ -61,8 +61,7 @@
                i18n:attributes="value label_search;"/>
         <br />
 
-        <div id="suggestion-area" > </div>
-
+      </span>
         <div id="searchfor-created">
           <span for="created" i18n:translate="label_new_items_since">New items since</span>
 
