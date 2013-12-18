@@ -2162,7 +2162,7 @@ div.column1b div input {
 }
 
 #searchfor-created {
-    margin-top: 1em;
+    margin: 1em 0;
     text-align: right;
 }
 
