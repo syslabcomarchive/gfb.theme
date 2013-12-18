@@ -4,7 +4,13 @@ gfb.theme Changelog
 1.4.23 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #4410 display PloneGlossary Definitions in the glossary view
+  [deroiste]
+- #4645 add wildcard.foldercontents [deroiste]
+- #9044 search results, improve the layout [deroiste]
+- #9045 add carousel to the home page [deroiste]
+- #9057 Add twitter widget to the home page [deroiste]
+- #9058 add responsive theme [deroiste]
 
 
 1.4.22 (2013-02-08)
