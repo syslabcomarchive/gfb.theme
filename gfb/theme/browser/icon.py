@@ -1,6 +1,7 @@
 from zope.interface import implements
 from Acquisition import aq_inner
 from Products.CMFCore.utils  import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from plone.app.layout.icons.interfaces import IContentIcon
 from plone.app.layout.icons.icons import BaseIcon
 from plone.app.layout.icons.icons import CatalogBrainContentIcon
@@ -27,7 +28,7 @@ class ContentIconWithTitle(DefaultContentIcon):
     def description(self):
         if self.obj is None:
             return None
-        return self.obj.Title
+        return safe_unicode(self.obj.Title)
 
     @property
     def url(self):
