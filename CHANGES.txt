@@ -1,10 +1,10 @@
 gfb.theme Changelog
 ===================
 
-1.4.24 (unreleased)
+1.4.24 (2013-12-18)
 -------------------
 
-- Nothing changed yet.
+- Fix encoding issue [thomasw]
 
 
 1.4.23 (2013-12-18)
