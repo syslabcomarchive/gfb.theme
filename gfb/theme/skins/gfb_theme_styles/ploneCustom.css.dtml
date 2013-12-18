@@ -3513,7 +3513,7 @@ line-height: 0.1em;
 }
 
 #highlights-content {
-    height: 215px;
+    height: 250px;
     padding: 10px;
 }
 
@@ -3521,7 +3521,7 @@ line-height: 0.1em;
   margin-top: 10px;
 }
 
-.highlight { height: 200px; }
+.highlight { height: 240px; }
 
 #highlights-nav {
   position: relative;
