@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.23 (unreleased)
+1.4.23 (2013-12-18)
 -------------------
 
 - #4410 display PloneGlossary Definitions in the glossary view
