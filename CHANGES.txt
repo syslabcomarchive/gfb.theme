@@ -4,7 +4,7 @@ gfb.theme Changelog
 1.4.26 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #9045 Carousel archive styling fixes [deroiste]
 
 
 1.4.25 (2013-12-19)
