@@ -3580,6 +3580,13 @@ span.teaser_more {
 
 /*** /#highlights ***/
 
+/*** news archive collection ***/
+body.portaltype-topic span.description img {
+  display: none;
+}
+
+/*** /news archive collection ***/
+
 /** wildcard.foldercontents tweaks **/
 #upload-files, #sort-folder {
   float: left;
