@@ -4,7 +4,8 @@ gfb.theme Changelog
 1.4.25 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #9044 Temporarily comment out the adapter which overrides getIcon to set the
+  title attribute [deroiste]
 
 
 1.4.24 (2013-12-18)
