@@ -178,10 +178,6 @@ top: 0;
     top: -32px;
 }
 
-#portal-searchbox form {
-  display: table;
-}
-
 #livesearch0 {
     line-height: 30px;
 }
