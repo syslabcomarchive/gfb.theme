@@ -3515,6 +3515,7 @@ line-height: 0.1em;
 #highlights-content {
     height: 250px;
     padding: 10px;
+    overflow: hidden;
 }
 
 #highlights-content h3 {
@@ -3531,10 +3532,11 @@ line-height: 0.1em;
 }
 
 div#content ul#highlights-tabs {
-  margin: 5px 0 0 -1px;
+  margin: 7px 0 0 -1px;
   padding: 0;
   height: 25px;
   display: table;
+  line-height: 18px;
 }
 
 ul#highlights-tabs li {
