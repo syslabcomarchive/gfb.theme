@@ -4,7 +4,8 @@ gfb.theme Changelog
 1.4.27 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #9044 Search results: fix the adapter which sets the portal_type
+  icon title [deroiste]
 
 
 1.4.26 (2013-12-19)

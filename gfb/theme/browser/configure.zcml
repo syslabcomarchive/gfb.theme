@@ -303,11 +303,10 @@
    layer=".interfaces.IThemeSpecific"
    />
 
+  <!-- Override the getIcon method to set the title attr in search results -->
+  <adapter for="*
+                .interfaces.IThemeSpecific
+                collective.solr.interfaces.IFlare"
+           factory=".icon.CatalogBrainContentIconWithTitle" />
 
-  <!-- Override the getIcon method to set the title attr -->
-  <!-- <adapter for="* -->
-  <!--               .interfaces.IThemeSpecific -->
-  <!--               Products.ZCatalog.CatalogBrains.AbstractCatalogBrain" -->
-  <!--          factory=".icon.CatalogBrainContentIconWithTitle" -->
-  <!--          provides="plone.app.layout.icons.interfaces.IContentIcon" /> -->
 </configure>
