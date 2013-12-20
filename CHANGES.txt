@@ -7,6 +7,8 @@ gfb.theme Changelog
 - #9044 Search results: fix the adapter which sets the portal_type
   icon title [deroiste]
 - #9045 Carousel: replace KSS breadcrumb script with jQuery [deroiste]
+- #9045 replace KSS to show/hide advanced search options with jQuery
+  [deroiste]
 
 
 1.4.26 (2013-12-19)
