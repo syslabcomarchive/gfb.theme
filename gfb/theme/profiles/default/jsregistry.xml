@@ -14,5 +14,7 @@
     enabled="True" expression="" id="++resource++gfb.theme.js/linkcollection_glossary.js" inline="False"/>
  <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression="" id="++resource++gfb.theme.js/breadcrumbs.js" inline="False"/>
+ <javascript cacheable="True" compression="safe" cookable="True"
+    enabled="True" expression="" id="++resource++gfb.theme.js/advanced-search.js" inline="False"/>
  <javascript  id="++resource++kukit.js" enabled="False"/>
 </object>
