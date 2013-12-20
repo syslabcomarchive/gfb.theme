@@ -203,22 +203,21 @@ top: 0;
 
 #portal-siteactions li a:hover {
     color: #E4DBC0;
-;
 }
 
-div#portal-personaltools-wrapper {
-    float: right;
-    display: block;
-    clear: both;
-    /****styles to fix the distance between breadcrumbs and content***/
-   margin-top:-15px;
+
+#portal-personaltools-wrapper {
+  position: absolute;
+  top: -20px;
+  right: 0;
 }
 
 #portal-personaltools li {
     float: right;
     list-style-image: none;
     list-style-type: none;
-    padding: 5px 10px 0 0;
+    padding: 0 10px 0 0;
+    margin-bottom: 0;
     }
 #portal-personaltools li a {
     color: #666;;
@@ -2221,20 +2220,8 @@ ul.search_index {
   margin-bottom: 0em;
 }
 
-/* soll Luecke im FF schliessen*/
 #portal-breadcrumbs {
-padding-bottom:54px;
-}
-* html #portal-breadcrumbs {
-  padding-bottom: 35px;
-}
-*+html #portal-breadcrumbs {
-  padding-bottom: 35px;
-}
-
-/* fixt den Abstand des Content zum Header f√ºr den FF*/
-#portal-columns {
-  margin-top:-0.5em;
+  padding-bottom:28px;
 }
 
 /* Versuch die Top Navi im IE6 zu fixen*/
@@ -2301,12 +2288,6 @@ padding-bottom:54px;
 /* Versuch die Position der Boxen innerhalb der Suche zu fixen*/
 * html .common_radio_search_box {
   margin-bottom:2em;
-}
-
-/* fixt den Abstand des Content zum Header für den FF*/
-#portal-columns {
-  /*margin-top:-0.5em;*/
-   margin-top:-15px;
 }
 
 /* Versuch die Top Navi im IE6 zu fixen*/
