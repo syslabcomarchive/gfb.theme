@@ -9,6 +9,9 @@ gfb.theme Changelog
 - #9045 Carousel: replace KSS breadcrumb script with jQuery [deroiste]
 - #9045 replace KSS to show/hide advanced search options with jQuery
   [deroiste]
+- Tidy up: move personaltools to the top, fix layout of the
+  breadcrumbs, fix layout of the advanced search box on the home page
+  in En [deroiste]
 
 
 1.4.26 (2013-12-19)
