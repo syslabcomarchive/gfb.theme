@@ -1250,7 +1250,7 @@ div#searchfields {
   /* background-color: #E5E6E8;*/
   background: url("col-center-bg.jpg") repeat-x scroll 0 0 white;
   border: 0 none !important;
-  padding:  13px 0 0 0;
+  padding:  13px 10px 0 10px;
   /*height: 14em;*/
 }
 div.ui-tabs-panel {
@@ -1460,9 +1460,8 @@ div.search_fields_wide{
 .context {text-transform: none;}
 
 .submit_column {
-  margin-top: 0.5em;
+  margin: 0.5em -10px 0 -10px;
   padding-top:0px;
-  margin-bottom: 0;
   background-color: #D6D9DE;
   border: 1px solid #BAC1C9;
   height: 1.3em;
