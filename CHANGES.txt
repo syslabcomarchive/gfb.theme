@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.28 (unreleased)
+1.4.28 (2013-12-20)
 -------------------
 
 - Bugfix: include missing file, advanced-search.js [deroiste]
