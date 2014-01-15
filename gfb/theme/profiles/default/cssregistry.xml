@@ -14,6 +14,6 @@
  <stylesheet title=""
     id="++resource++gfb.theme.stylesheets/search-suggestions.css"
     media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
+    cacheable="False" compression="safe" cookable="False"
     enabled="1" expression=""/>
 </object>
