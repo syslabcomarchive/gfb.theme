@@ -14,6 +14,9 @@
         <viewlet name="plone.logo" />
         <viewlet name="gfb.global_sections" />
     </order>
+    <hidden manager="plone.htmlhead" skinname="GFBTheme">
+        <viewlet name="plone.resourceregistries" />
+    </hidden>
     
     <order manager="plone.portalfooter" skinname="GFBTheme"
            based-on="Plone Classic Theme">
