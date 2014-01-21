@@ -17,11 +17,16 @@
     <hidden manager="plone.htmlhead" skinname="GFBTheme">
         <viewlet name="plone.resourceregistries" />
     </hidden>
+    <hidden manager="plone.htmlhead.links" skinname="GFBTheme">
+        <viewlet name="l10n.datepicker" />
+    </hidden>
     
     <order manager="plone.portalfooter" skinname="GFBTheme"
            based-on="Plone Classic Theme">
         <viewlet name="gfb.footer.actions"
                  insert-before="*" />
+        <viewlet name="plone.resourceregistries" />
+        <viewlet name="l10n.datepicker" />
     </order>
 
     <order manager="plone.abovecontenttitle" skinname="GFBTheme"

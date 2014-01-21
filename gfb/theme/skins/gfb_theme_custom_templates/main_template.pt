@@ -48,23 +48,12 @@
 
     <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
         <div tal:replace="structure provider:plone.htmlhead" />
-
         <link tal:replace="structure provider:plone.htmlhead.links" />
-
         <!-- Disable IE6 image toolbar -->
         <meta http-equiv="imagetoolbar" content="no" />
-
         <tal:comment replace="nothing"> A slot where you can insert elements in the header from a template </tal:comment>
         <metal:headslot define-slot="head_slot" />
 
-        <tal:comment replace="nothing"> A slot where you can insert CSS in the header from a template </tal:comment>
-        <metal:styleslot define-slot="style_slot" />
-
-        <tal:comment replace="nothing"> This is deprecated, please use style_slot instead. </tal:comment>
-        <metal:cssslot define-slot="css_slot" />
-
-        <tal:comment replace="nothing"> A slot where you can insert javascript in the header from a template </tal:comment>
-        <!--metal:javascriptslot define-slot="javascript_head_slot" /-->
     </tal:notajax>
 
   </head>
@@ -214,6 +203,9 @@
 <!--<div tal:replace="structure provider:plone.htmlhead" />
 <link tal:replace="structure provider:plone.htmlhead.links" />-->
 <metal:javascriptslot define-slot="javascript_head_slot" />
+<metal:styleslot define-slot="style_slot" />
+<metal:cssslot define-slot="css_slot" />
+
 </body>
 </html>
 </metal:page>

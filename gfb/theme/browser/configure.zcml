@@ -29,6 +29,14 @@
         permission="zope2.View"
         layer=".interfaces.IThemeSpecific"
      />
+   <browser:viewlet
+       name="l10n.datepicker"
+       for="*"
+       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+       class="collective.js.jqueryui.viewlet.L10nDatepicker"
+       layer=".interfaces.IThemeSpecific"
+       permission="zope2.View"
+       />
     <!-- Viewlets registration -->
     <!-- The personal bar -->
     <browser:viewlet

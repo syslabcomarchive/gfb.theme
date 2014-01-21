@@ -7,6 +7,16 @@
       i18n:domain="iwwb.eventlist">
 <body>
 
+<metal:head fill-slot="head_slot">
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery-integration.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++plone.app.jquerytools.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++plone.app.jquerytools.form.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++plone.app.jquerytools.dateinput.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++jquery-ui.min.js" src=""></script>
+ <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++jquery-ui-i18n.js" src=""></script>
+</metal:head>
+
 <metal:css fill-slot="style_slot">
   <link tal:attributes="href string:$portal_url/++resource++jquery.datatables/media/css/demo_table.css" media="screen" type="text/css" rel="stylesheet" />
   <link tal:attributes="href string:$portal_url/++resource++jquery.datatables/extras/TableTools/media/css/TableTools.css" media="screen" type="text/css" rel="stylesheet" />
