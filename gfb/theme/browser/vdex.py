@@ -24,4 +24,7 @@ class VDEXAsJson(object):
             showKey = False
 
         transformed_dict = dict2dynatree(vocab_dict, [], False, showKey)
+        
+        self.request.RESPONSE.setHeader('Cache-control', 'max-age=84600,s-maxage=84600s')
+        
         return JSONWriter().write(transformed_dict)
