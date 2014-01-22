@@ -200,8 +200,6 @@
       <div class="visualClear"><!-- --></div>
     </div>
 <div id="kss-spinner" tal:condition="not:ajax_load"><img tal:attributes="src string:${portal_url}/spinner.gif" alt="" /></div>
-<!--<div tal:replace="structure provider:plone.htmlhead" />
-<link tal:replace="structure provider:plone.htmlhead.links" />-->
 <metal:javascriptslot define-slot="javascript_head_slot" />
 <metal:styleslot define-slot="style_slot" />
 <metal:cssslot define-slot="css_slot" />

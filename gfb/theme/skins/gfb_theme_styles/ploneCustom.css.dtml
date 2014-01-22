@@ -3429,6 +3429,11 @@ line-height: 0.1em;
     display: none;
 }
 
+#content #eventlist-form select.day { min-width:50px; width:50px; }
+#content #eventlist-form select.month { min-width: 120px; width: 120px; }
+#content #eventlist-form select.year { min-width: 80px;width: 80px; }
+
+
 #content .searchPage .poweredBy {
     float: right;
     right: 8px;
@@ -3568,6 +3573,16 @@ body.portaltype-topic span.description img {
 /** wildcard.foldercontents tweaks **/
 #upload-files, #sort-folder {
   float: left;
+}
+
+.caltrigger {
+  width: 16px; 
+  vertical-align: middle; 
+  display: inline-block; 
+  background-image: url(/de/service/fort-und-weiterbildungsangebote/popup_calendar.gif); 
+  height: 16px; 
+  background-position: initial initial; 
+  background-repeat: initial initial;
 }
 
 /* </dtml-with> */
