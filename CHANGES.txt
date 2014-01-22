@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.29 (unreleased)
+1.4.29 (2014-01-22)
 -------------------
 
 - Nothing changed yet.
