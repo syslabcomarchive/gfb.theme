@@ -47,6 +47,8 @@
     </metal:baseslot>
 
     <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
+    <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery.js"></script>
+    <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery-integration.js"></script>
         <div tal:replace="structure provider:plone.htmlhead" />
         <link tal:replace="structure provider:plone.htmlhead.links" />
         <!-- Disable IE6 image toolbar -->
