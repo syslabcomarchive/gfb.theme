@@ -6,6 +6,12 @@
 	<include package="Products.CMFCore" file="permissions.zcml" />
 
 
+    <include package="z3c.jbot" file="meta.zcml" />
+
+    <browser:jbot
+        directory="jbot"
+        layer=".interfaces.IThemeSpecific" />
+
 	<!-- 'GFBTheme' Zope 3 browser layer -->
     <interface
         interface=".interfaces.IThemeSpecific"
