@@ -1,0 +1,471 @@
+<metal:block use-macro="context/global_defines/macros/defines" />
+<tal:headers define="request context/REQUEST">
+  <tal:block define="charset site_properties/default_charset|string:utf-8;
+                     dummy python:request.RESPONSE.setHeader('Content-Type', 'text/html;;charset=%s' % charset)" />
+  <tal:block define="dummy python:request.RESPONSE.setHeader('Expires', 'Sat, 1 Jan 2000 00:00:00 GMT')" />
+  <tal:block define="dummy python:request.RESPONSE.setHeader('Last-Modified', 'Sat, 1 Jan 2000 00:00:00 GMT')" />
+  <tal:block define="dummy python:request.RESPONSE.setHeader('Cache-control', 'max-age=0,s-maxage=0,must-revalidate')" />
+</tal:headers>
+<metal:block tal:define="typeview view/typeview;
+                         fieldName view/fieldname; 
+                         sort_on view/sort_on;
+                         sort_order view/sort_order;
+                         sort_inverse view/sort_inverse;
+                         nextQuery view/cleanQuery;                
+                         SearchableText request/SearchableText | string:;
+                         onlybody request/form/onlybody       | python:False;
+                         b_size python:20;
+                         b_size request/b_size | b_size;
+                         b_start python:0;
+                         b_start request/b_start | b_start;                      
+                         typecss view/typecss;
+                         browsed_url view/browsed_url;
+                         forcecloseoninsert view/forcecloseoninsert;
+                         ispopup view/ispopup;
+                         portal_url view/portal_url;
+                         browsedpath view/browsedpath;
+                         portalpath view/rootpath;
+                         parentpath view/parentpath;
+                         findername view/findername;
+                         folders view/folders;
+                         rootfolders view/rootfolders;
+                         results view/results;        
+                         allowimagesizeselection view/allowimagesizeselection;                 
+                         Batch python:modules['Products.CMFPlone'].Batch;
+                         batch python:Batch(results, b_size, int(b_start), orphan=1);
+                         toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                         "
+             i18n:domain="collective.plonefinder">
+             
+
+  <tal:block condition="onlybody">             
+    <metal:block define-macro="plone_browser_body">    
+          <input id="browsed_url"
+                 name="browsed_url"
+                 type="hidden"
+                 tal:attributes="value browsed_url" /> 
+          <input id="forcecloseoninsert"
+                 name="forcecloseoninsert"
+                 type="hidden"
+                 tal:attributes="value forcecloseoninsert" />  
+          <input id="finderName"
+                 name="finderName"
+                 type="hidden"
+                 tal:attributes="value findername" />   
+          <input id="start_after_upload"
+                 name="start_after_upload"
+                 type="hidden"
+                 tal:attributes="value b_start" />  
+          <input id="nextQuery"
+                 name="nextQuery"
+                 type="hidden"
+                 tal:attributes="value nextQuery" />   
+          <input id="previousSearch"
+                 name="previousSearch"
+                 type="hidden"
+                 tal:condition="SearchableText"
+                 tal:attributes="value SearchableText" />    
+          <div id="plone-browser-menu">
+            <a class="closeWindow"
+               i18n:attributes="title label_close_window"
+               title="Close window"
+               href="javascript: void(0);"
+               onclick="Browser.close(); return false;">
+            </a>
+            <a class="maximize"
+               i18n:attributes="title label_maximize_window"
+               title="Maximize window"
+               href="javascript: void(0);"
+               onclick="Browser.maximize(); return false;">
+            </a>          
+            <div id="searchBrowserBox">
+              <form id="finderSearchForm">
+                <input type="hidden"
+                       name="searchsubmit:int"
+                       value="1" />                     
+                <input name="SearchableText" 
+                       id="SearchableText" 
+                       type="text" 
+                       value="" 
+                       size="25" 
+                       title="Search Site"
+                       tabindex="0"
+                       tal:attributes="value SearchableText" /> 
+                <select name="browsedpath" id="browsedpath"
+                        tal:condition="view/browse">
+                  <option tal:attributes="value portalpath"
+                          i18n:translate="label_all_site">
+                    All site
+                  </option>          
+                  <option tal:attributes="value browsedpath"
+                          tal:condition="python:browsedpath!=portalpath"
+                          i18n:translate="label_this_folder_only">
+                    This folder only
+                  </option>
+                </select>
+                
+                <input type="hidden"
+                       tal:attributes="value browsedpath"
+                       name="browsedpath"
+                       tal:condition="not:view/browse" />
+                       
+                <input class="searchBrowserButton" 
+                       type="submit" 
+                       value="Search"
+                       name="searchsubmit"
+                       i18n:domain="plone"
+                       i18n:attributes="value label_search;"
+                       href="javascript: void(0);"
+                       tal:attributes="onclick string:Browser.search();; return false;" />
+              </form>       
+            </div>          
+            <div id="menuViews">
+              <input type="hidden"
+                     id="typeview"
+                     name="typeview"
+                     tal:attributes="value typeview" />
+              <a href="javascript: void(0);"
+                 onclick="Browser.setView('image'); return false;"
+                 title="Photo album view"
+                 tal:attributes="class python:typeview=='image' and 'imageView selected' or 'imageView'"
+                 i18n:attributes="title label_photo_album_view;">
+              </a>                  
+              <a href="javascript: void(0);"
+                 onclick="Browser.setView('file'); return false;"
+                 title="File listing view"
+                 tal:attributes="class python:typeview=='file' and 'fileView selected' or 'fileView'"
+                 i18n:attributes="title label_file_listing_view;">
+              </a>
+            </div>
+            <div id="menuActions">   
+              <a class="uploadView"
+                 tal:condition="view/allowupload"
+                 title="upload"
+                 href="javascript: void(0);"
+                 onclick="Browser.openUploader();return false">
+                 <span i18n:translate="label_files_quick__upload">Files quick upload</span>
+              </a>             
+              <a class="addFolderView"
+                 tal:condition="view/allowaddfolder"
+                 title="add new folder"
+                 onclick="Browser.openAddFolderForm();return false"
+                 href="javascript: void(0);">
+                 <span i18n:translate="label_create_new_folder">Create new folder</span>
+              </a>            
+            </div>
+          </div>               
+          
+          <div metal:use-macro="context/@@finderbatchmacros/macros/navigation" />     
+                 
+          <div id="browser-crumbs"
+               tal:condition="view/showbreadcrumbs">
+              <tal:block define="breadcrumbs view/breadcrumbs;">      
+                  <span i18n:translate="you_are_here" i18n:domain="plone">You are here:</span>
+                  <span>
+                      <a i18n:translate="tabs_home" i18n:domain="plone"
+                         href="javascript: void(0);"
+                         tal:attributes="onclick string:javascript:Browser.update('${portalpath}', '');; return false;">
+                           Home
+                      </a>
+                      <span tal:condition="breadcrumbs" class="breadcrumbSeparator">
+                          &rarr;
+                      </span>
+                      <span tal:repeat="crumb breadcrumbs"
+                            dir="ltr">
+                          <tal:last tal:define="is_last repeat/crumb/end">
+                              <a href="javascript: void(0);"
+                                 tal:omit-tag="not:crumb/show_link"
+                                 tal:attributes="onclick string:Browser.update('${crumb/path}', '');; return false;"
+                                 tal:content="crumb/title"
+                                 tal:on-error="crumb">
+                                  crumb
+                              </a>
+                              <span class="breadcrumbSeparator" tal:condition="not: is_last">
+                                  &rarr;
+                              </span>
+                           </tal:last>
+                      </span>
+                  </span>
+              </tal:block>
+          </div>         
+
+          <table border="0" cellpading="0" cellspacing="0" class="columns icons-on" id="browser-columns">
+            <tr>
+              <td class="column" id="column-1"
+                     tal:condition="view/browse">
+                <div id="plone-browser-navigation"
+                     class="finder_panel">
+                  <metal:block define-macro="finder-navigation-recurse">
+                      <div class="retrait">
+                        <tal:folders repeat="f rootfolders">
+                            <div class="listContainer folder">
+                                 <a href="javascript: void(0);"
+                                    tal:attributes="title string: browse ${f/type};
+                                                    onclick string:Browser.update('${f/path}', '');; return false;">
+                                    <div class="title"
+                                         tal:content="f/title"
+                                         tal:attributes="class string:title navitem ${f/state_class}${f/path_class}">sample Folder 1</div>
+                                    <tal:recurse define="rootfolders f/sub_folders">
+                                      <metal:main tal:condition="rootfolders"
+                                                  metal:use-macro="context/@@findermacros/macros/finder-navigation-recurse" />
+                                    </tal:recurse>
+                                 </a>                     
+                            </div> 
+                        </tal:folders>   
+                      </div>       
+                  </metal:block>
+                </div>
+              </td>
+              <td class="column" id="column-2">
+                <div id="plone-browser-body"
+                     class="finder_panel">     
+                  
+                  <tal:block condition="python: view.browse and not view.searchsubmit">
+                      <tal:folders repeat="f folders">
+                          <div tal:attributes="class string: ${typecss}Container folder;">
+                               <a href="javascript: void(0);"
+                                  title="Browse"
+                                  tal:attributes="title string: browse ${f/type};
+                                                  onclick string:Browser.update('${f/path}', '');; return false;">
+                                  <div tal:attributes="class string:${typeview}Folder">
+                                    <div class="browsableicon divicon">&nbsp;</div>
+                                  </div>
+                                  <div class="title"
+                                       tal:content="f/title"
+                                       tal:attributes="class string:title ${f/state_class}">sample Folder 1</div>
+                                  <div class="legend"></div>
+                               </a>
+                          </div> 
+                      </tal:folders>
+                  </tal:block>       
+                  
+                  <div tal:condition="python: batch"
+                       class="listContainer" id="sortheaders"
+                       tal:attributes="style python: typeview=='image' and 'display:none' or nothing;
+                                       class python: sort_order=='reverse' and 'listContainer reverseheaders' or 'listContainer'">
+                    <div class="sorton sortontype">
+                       <a href="javascript: void(0);"
+                          tal:attributes="onclick string:Browser.sorton('portal_type', '$sort_inverse');; return false;
+                                          class python: sort_on=='portal_type' and 'selected' or nothing"></a>            
+                    </div>
+                    <div class="sorton sortontitle">
+                       <a href="javascript: void(0);"
+                          tal:attributes="onclick string:Browser.sorton('sortable_title', '$sort_inverse');; return false;
+                                          class python: sort_on=='sortable_title' and 'selected' or nothing"></a>                        
+                    </div>
+                    <div class="sorton sortonsize">
+                       <a href="javascript: void(0);"
+                          tal:attributes="onclick string:Browser.sorton('real_size', '$sort_inverse');; return false;
+                                          class python: sort_on=='real_size' and 'selected' or nothing"></a>                     
+                    </div>
+                    <div class="sorton sortoncreated">
+                       <a href="javascript: void(0);"
+                          tal:attributes="onclick string:Browser.sorton('created', '$sort_inverse');; return false;
+                                          class python: sort_on=='created' and 'selected' or nothing"></a>                 
+                    </div>
+                  </div>        
+          
+                  <tal:results repeat="r batch">
+                    <div tal:attributes="class string:${typecss}Container ${r/orientation_class};">
+                      <a href="javascript: void(0);"
+                         tal:define="blacklisted r/blacklisted;
+                                     blclass python:blacklisted and ' blacklisted' or '';
+                                     is_image r/is_image;
+                                     selectPreviewImageString python:(is_image and allowimagesizeselection) and 'true' or 'false';"
+                         tal:attributes="class   string: ${r/container_class}${blclass};
+                                         title   string:select ${r/type};
+                                         onclick string:Browser.selectItem('${r/uid}', '${r/jstitle}', $selectPreviewImageString);; return false;" >
+                        <img tal:condition="is_image"
+                             tal:attributes="src r/thumb; style r/style" />
+                        <div tal:condition="not: is_image"
+                             tal:attributes="class r/iconclass; style r/style">&nbsp;</div>
+                        <div tal:content="r/title"
+                             tal:attributes="class string:title ${r/state_class}">sample Portrait 1</div>
+                        <div class="legend lsize" tal:content="r/size">54 kB</div>
+                        <div class="legend lcreated" 
+                             tal:define="created r/created"
+                             tal:content="python:toLocalizedTime(created,long_format=1)">2010/01/01</div>
+                        <div class="visualClear"><!-- --></div>
+                      </a>
+        
+                      <div class="relContainer" tal:condition="r/is_image">
+                        <a class="loupe thickbox"
+                           tal:attributes="href r/preview_url;
+                                           title string:${r/title} (preview);"
+                           i18n:attributes="title">&nbsp;</a>                      
+                      </div>
+                      <div tal:define="actions_menu r/actions_menu"
+                           class="actionsMenusRelContainer" tal:condition="actions_menu/items">
+                        <a class="actionMenusButton"
+                           href="#">&nbsp;</a>
+                        <div class="finderActionMenuContainer"
+                             tal:condition="actions_menu/choose_image_size|nothing">
+                          <ul class="finderActionMenu imageSizeActionMenu">
+                            <li class="finderActionMenuHeader"
+                                tal:content="actions_menu/choose_image_size/label">
+                                Choose image size
+                            </li>
+                            <li class="finderActionMenuItem imageSizeActionMenuItem"
+                                tal:repeat="action actions_menu/choose_image_size/actions">
+                                <a tal:content="python:action[3]"
+                                   href="#"
+                                   tal:define="thumb_size python:action[0];
+                                               thumb_size_url_extension python:action[4]"
+                                   tal:attributes="onclick string:Browser.selectItem('${r/uid}${thumb_size_url_extension}', '${r/jstitle}');; return false;">
+                                   Thumb : 128px*128px
+                                </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </tal:results>                               
+      
+                  <tal:noresults condition="python: SearchableText and not results"
+                                 i18n:domain="plone">
+                      <div i18n:translate="description_no_results_found">No results were found.</div>
+                  </tal:noresults>
+          
+                  <div style="clear: both;"></div>
+                </div>  
+              </td>
+              <td class="column" id="column-3">
+                <div id="right-panel" class="finder_panel">                
+                </div> 
+              </td>
+            </tr>
+          </table>
+
+    </metal:block>
+  
+  </tal:block>
+
+
+  <tal:comments replace="nothing">
+     The following macro is used when plonefinder is used in an ajax window
+     TODO : it's not complete, it's complex because we must fix all window methods
+     as move resize etc ... try to find a jquery ui tool to do this developement
+  </tal:comments>    
+
+  <metal:block define-macro="plone_browser"
+               tal:condition="python: not (onlybody or ispopup)">
+    <div id="plone-browser">
+      <div class="overlay"></div>
+      <div class="window">
+        <div class="browserRelativize">
+          <metal:block define-macro="plone_browser_main">
+            <div id="start-refresh"><!-- --></div>
+                
+            <metal:block use-macro="context/@@findermacros/macros/plone_browser_body" />      
+            <div class="statusBar">
+              <div id="msg-loading"
+                   i18n:translate="label_msg_loading">
+                Loading please wait...
+              </div>
+              <div id="msg-done"
+                   i18n:translate="label_msg_done">
+                Done.
+              </div>
+            </div>                  
+            <div id="plone-browser-border-bottom"></div>
+            <div id="plone-browser-border-top"></div>              
+            <div id="plone-browser-corner-left"></div>      
+            <div id="plone-browser-corner-resize"></div>      
+            <div id="plone-browser-tab">
+              <div id="plone-browser-tab-menu">         
+                <span tal:content="python:here.utranslate('label_browse_server_%s' % fieldName, default='Browse server %s' % fieldName, domain='collective.plonefinder')"
+                      i18n:translate="">
+                  Browse server images
+                </span>                            
+              </div>
+           
+            </div>    
+          </metal:block>  
+        </div>
+      </div>
+    </div>
+
+  </metal:block>  
+  
+  <tal:comments replace="nothing">
+     The following macro is used when plonefinder is called in classic window popup
+  </tal:comments>
+
+  <metal:block define-macro="plone_browser_popup"
+               tal:condition="python: ispopup and not onlybody">
+  <tal:doctype tal:replace="structure string:&lt;!DOCTYPE html PUBLIC
+    &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" />
+  
+  <html xmlns="http://www.w3.org/1999/xhtml"
+        xml:lang="en"
+        lang="en">
+    <head>
+    
+      <!-- Internet Explorer fix, forces IE8 into newest possible rendering
+               engine even if it's on an intranet. This has to be defined before any
+               script/style tags. -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery.js" src=""></script>
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery-integration.js" src=""></script>
+
+      <tal:block replace="structure provider:plone.htmlhead" />  
+      
+      <script type="text/javascript"
+              tal:attributes="src string:$portal_url/++resource++plonefinder_static/finder.js">
+      </script>
+      
+      <script type="text/javascript"
+              tal:attributes="src string:$portal_url/++resource++plonefinder_static/thickbox_plus.js">
+      </script>
+      
+      <script type="text/javascript"
+              tal:condition="view/jsaddons"
+              tal:content="structure string:${view/jsaddons}">
+      </script>     
+      
+      <style type="text/css" media="all" 
+             tal:condition="view/is_plone3"
+             tal:content="string:@import url($portal_url/finder-content-types-3.x.css);">
+      </style>   
+      
+      <style type="text/css" media="all" 
+             tal:content="string:@import url($portal_url/++resource++plonefinder_static/finder.css);">
+      </style>
+      
+      <style type="text/css" media="all" 
+             tal:content="string:@import url($portal_url/++resource++plonefinder_static/thickbox.css);">
+      </style>
+
+      <tal:iefixstart replace="structure string:&lt;!--[if lte IE 7]&gt;" />    
+         <link rel="stylesheet" 
+               type="text/css"
+               media="screen" 
+               tal:attributes="href string:$portal_url/++resource++plonefinder_static/finder-iefixes.css" />
+      <tal:iefixend replace="structure string:&lt;![endif]--&gt;" />
+
+      
+      <style type="text/css" media="all" 
+             tal:condition="view/cssaddons"
+             tal:content="structure string:${view/cssaddons}">
+      </style> 
+    
+    </head>
+    
+    <body>      
+      
+      <div id="plone-browser" class="popup">
+        <div class="window">
+          <div class="browserStatic">
+             <metal:block use-macro="context/@@findermacros/macros/plone_browser_main" />    
+          </div>
+        </div>
+      </div>
+      
+    </body>
+  </html>
+  </metal:block>    
+  
+  
+</metal:block>  
