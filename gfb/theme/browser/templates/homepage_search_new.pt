@@ -90,6 +90,7 @@
          tal:define="site_properties context/portal_properties/site_properties|nothing;
                      use_types_blacklist request/use_types_blacklist | python:True;
                      use_navigation_root request/use_navigation_root | python:True;
+                     navigation_root_url context/@@plone_portal_state/navigation_root_url
                      dummy python:request.set('portal_type', 'RiskAssessmentLink');
                      Batch python:modules['Products.CMFPlone'].Batch;
                      use_view_action site_properties/typesUseViewActionInListings|python:();
@@ -155,12 +156,12 @@
             <tal:rep repeat="news items"><li tal:define="no repeat/news/number"><a href="#highlights-1"  class="link-plain" tal:attributes="href string:#highlights-$no; title news/title" tal:content="no">1</a></li></tal:rep>
           </ul>
           <div id="highlights-archive">
-            <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${here/absolute_url}/archive">Previous highlights</a>
+            <a href="" i18n:translate="label_previous_highlights" i18n:domain="gfb" tal:attributes="href string:${navigation_root_url}/top-thema">Previous highlights</a>
           </div>
         </div>
       </div>
 
-      
+
 
       <div class="visualClear">&nbsp;</div>
 

@@ -270,3 +270,6 @@ msgstr "Risk factors"
 
 msgid "title_open_riskfactors"
 msgstr "Click here to pick a search term from a list of risk factors."
+
+msgid "heading_newsboard_latest_news"
+msgstr "Archive of previous highlights"
