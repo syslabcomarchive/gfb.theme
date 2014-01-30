@@ -90,7 +90,7 @@
          tal:define="site_properties context/portal_properties/site_properties|nothing;
                      use_types_blacklist request/use_types_blacklist | python:True;
                      use_navigation_root request/use_navigation_root | python:True;
-                     navigation_root_url context/@@plone_portal_state/navigation_root_url
+                     navigation_root_url context/@@plone_portal_state/navigation_root_url;
                      dummy python:request.set('portal_type', 'RiskAssessmentLink');
                      Batch python:modules['Products.CMFPlone'].Batch;
                      use_view_action site_properties/typesUseViewActionInListings|python:();
