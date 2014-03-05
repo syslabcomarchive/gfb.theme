@@ -116,11 +116,12 @@ function highlight_related_glossary_term_in_text(node, word, definition_index) {
     var content_value = node.nodeValue;
     var lcontent_value = content_value.toLowerCase();
     var word_bounds = new Array();
+    var german_word_boundary = "[^a-zäëïöüß0-9\s]+"
     // Write 3 regexps to replace one because it doesn't work on IE: '\\b' + lword + '\\b'
     word_bounds.push('^' + lword + '$'); // word is the sentence
-    word_bounds.push('\\W' + lword + '\\W'); // word is included in a sentence
-    word_bounds.push('^' + lword + '\\W'); // word is begining a sentence
-    word_bounds.push('\\W' + lword + '$'); // word is finishing a sentence
+    word_bounds.push(german_word_boundary + lword + german_word_boundary); // word is included in a sentence
+    word_bounds.push('^' + lword + german_word_boundary); // word is begining a sentence
+    word_bounds.push(german_word_boundary + lword + '$'); // word is finishing a sentence
     var index = -1;
 
     // Check each regexps
