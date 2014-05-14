@@ -1,5 +1,5 @@
 <metal:block use-macro="context/global_defines/macros/defines" />
-<tal:headers define="request context/REQUEST">
+<tay:headers define="request context/REQUEST">
   <tal:block define="charset site_properties/default_charset|string:utf-8;
                      dummy python:request.RESPONSE.setHeader('Content-Type', 'text/html;;charset=%s' % charset)" />
   <tal:block define="dummy python:request.RESPONSE.setHeader('Expires', 'Sat, 1 Jan 2000 00:00:00 GMT')" />
@@ -409,6 +409,10 @@
 
       <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery.js" src=""></script>
       <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/jquery-integration.js" src=""></script>
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++quickupload_static/swfobject.js"></script>
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++quickupload_static/jquery.uploadify.js"></script>
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++quickupload_static/fileuploader.js"></script>
+      <script type="text/javascript" tal:attributes="src string:$portal_url/portal_javascripts/++resource++quickupload_static/helpers.js"></script>
 
       <tal:block replace="structure provider:plone.htmlhead" />  
       
