@@ -177,6 +177,9 @@ function modifyLinkTag(node) {
 
         if(filename.indexOf('?')<0 && fileelems.length>1 && node.getElementsByTagName('img').length == 0) {
             ending = fileelems[fileelems.length-1].toLowerCase();
+                if (ending == 'xlsx') ending = 'xls';
+                if (ending == 'docx') ending = 'doc';
+                if (ending == 'pptx') ending = 'ppt';
             endings = ['pdf', 'doc', 'xls', 'ppt', 'zip'];
             for (e=0; e < endings.length; e++){
                 if (ending == endings[e]) {
