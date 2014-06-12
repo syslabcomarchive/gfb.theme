@@ -259,7 +259,7 @@
                   <div class="dynatree_filter">
                     <input type="text" class="filter" />
                   </div>
-                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="collective-dynatree-tree" i18n:translate="javascript_required_search">You need to activate JavaScript for the search to work.</div>
                   <div class="dynatree_ajax_vocabulary hiddenStructure"
                        tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
                   <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
@@ -293,7 +293,7 @@
                   <div class="dynatree_filter">
                     <input type="text" class="filter" />
                   </div>
-                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="collective-dynatree-tree" i18n:translate="javascript_required_search">You need to activate JavaScript for the search to work.</div>
                   <div class="dynatree_ajax_vocabulary hiddenStructure"
                        tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
                   <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
@@ -327,7 +327,7 @@
                   <div class="dynatree_filter">
                     <input type="text" class="filter" />
                   </div>
-                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="collective-dynatree-tree" i18n:translate="javascript_required_search">You need to activate JavaScript for the search to work.</div>
                   <div class="dynatree_ajax_vocabulary hiddenStructure"
                        tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
                   <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
