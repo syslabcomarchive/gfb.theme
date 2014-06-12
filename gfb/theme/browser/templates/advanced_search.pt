@@ -6,547 +6,547 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="gfb">
 
-<metal:cssslot fill-slot="css_slot">
-<style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
-       tal:content="string:@import url($portal_url/riskassessment_styles.css);">
-</style>
+  <metal:cssslot fill-slot="css_slot">
+    <style type="text/css" media="all" tal:condition="exists: portal/riskassessment_styles.css"
+           tal:content="string:@import url($portal_url/riskassessment_styles.css);">
+    </style>
 
-</metal:cssslot>
+  </metal:cssslot>
 
-<metal:javascriptslot fill-slot="javascript_head_slot">
+  <metal:javascriptslot fill-slot="javascript_head_slot">
 
-  <script language="JavaScript">
-  function resetSize(aSelect) {
-    if(aSelect) {
+    <script language="JavaScript">
+      function resetSize(aSelect) {
+      if(aSelect) {
       aSelect.style.width = 'auto';
-    }
-  }
-  </script>
+      }
+      }
+    </script>
 
-<script type="text/javascript" src="livesearch_ralinks.js"
-    tal:attributes="src string:$portal_url/livesearch_ralinks.js">
-</script>
-</metal:javascriptslot>
+    <script type="text/javascript" src="livesearch_ralinks.js"
+            tal:attributes="src string:$portal_url/livesearch_ralinks.js">
+    </script>
+  </metal:javascriptslot>
 
-<metal:block fill-slot="top_slot"
-                   tal:define="dummy python:request.set('disable_border',1)" />
-<metal:block fill-slot="column_two_slot" />
+  <metal:block fill-slot="top_slot"
+               tal:define="dummy python:request.set('disable_border',1)" />
+  <metal:block fill-slot="column_two_slot" />
 
 
-<body>
-<div metal:fill-slot="main"
-     tal:define="site_properties context/portal_properties/site_properties|nothing;
-                use_types_blacklist request/use_types_blacklist | python:True;
-                use_navigation_root request/use_navigation_root | python:True;
-                toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                dummy python:request.set('portal_type', 'RiskAssessmentLink');
-                Batch python:modules['Products.CMFPlone'].Batch;
-                use_view_action site_properties/typesUseViewActionInListings|python:();
-                SearchableText request/SearchableText|string:;
-                nace request/nace|string:;
-                nace python:nace==[''] and '' or nace;
-                provider request/remote_provider|python:'';
-                provider python:provider==[''] and '' or provider;
-                category request/category|string:;
-                getRemoteLanguage request/getRemoteLanguage|string:;
-                country request/country|string:;
-                getCategoryIndependent request/getCategoryIndependent|string:0;
-                getCategoryIndependent python:bool(int(getCategoryIndependent));
-                riskfactors request/riskfactors|string:;
-                riskfactors python:riskfactors==[''] and '' or riskfactors;
-                DateTime python:modules['DateTime'].DateTime;
-                b_size request/b_size | python:10;
-                b_size python:int(b_size);
-                b_start python:0;
-                b_start request/b_start | b_start;
-                desc_length site_properties/search_results_description_length;
-                desc_ellipsis site_properties/ellipsis;
-                searchterm request/SearchableText|nothing;
-                results view/search;
-                           ">
-    <form name="searchform" id="searchform"
-        action="advanced_search"
-        class="searchPage searchform-controls">
+  <body>
+    <div metal:fill-slot="main"
+         tal:define="site_properties context/portal_properties/site_properties|nothing;
+                     use_types_blacklist request/use_types_blacklist | python:True;
+                     use_navigation_root request/use_navigation_root | python:True;
+                     toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                     dummy python:request.set('portal_type', 'RiskAssessmentLink');
+                     Batch python:modules['Products.CMFPlone'].Batch;
+                     use_view_action site_properties/typesUseViewActionInListings|python:();
+                     SearchableText request/SearchableText|string:;
+                     nace request/nace|string:;
+                     nace python:nace==[''] and '' or nace;
+                     provider request/remote_provider|python:'';
+                     provider python:provider==[''] and '' or provider;
+                     category request/category|string:;
+                     getRemoteLanguage request/getRemoteLanguage|string:;
+                     country request/country|string:;
+                     getCategoryIndependent request/getCategoryIndependent|string:0;
+                     getCategoryIndependent python:bool(int(getCategoryIndependent));
+                     riskfactors request/riskfactors|string:;
+                     riskfactors python:riskfactors==[''] and '' or riskfactors;
+                     DateTime python:modules['DateTime'].DateTime;
+                     b_size request/b_size | python:10;
+                     b_size python:int(b_size);
+                     b_start python:0;
+                     b_start request/b_start | b_start;
+                     desc_length site_properties/search_results_description_length;
+                     desc_ellipsis site_properties/ellipsis;
+                     searchterm request/SearchableText|nothing;
+                     results view/search;
+                     ">
+      <form name="searchform" id="searchform"
+            action="advanced_search"
+            class="searchPage searchform-controls">
 
         <!-- <div metal:define-macro="main"> -->
 
-            <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
+        <div class="LSResultRALinks" id="LSResultRALinks" style=""><div class="LSShadow" id="LSShadow"></div></div>
 
 
-            <div id="simplesearch">
-                <ul class="search-top" id="search-tabs">
-                    <li>
-                        <a class="current" id="searchdatabase"
-                     i18n:translate="label_advanced_search"
-                     href="#searchcontrols">Search the Database</a>
-                    </li>
-                    <li>
-                        <a href="#searchtipps" id="searchtipps"
-                        i18n:translate="label_searchtips">Search Tips</a>
-                    </li>
-                </ul>
+        <div id="simplesearch">
+          <ul class="search-top" id="search-tabs">
+            <li>
+              <a class="current" id="searchdatabase"
+                 i18n:translate="label_advanced_search"
+                 href="#searchcontrols">Search the Database</a>
+            </li>
+            <li>
+              <a href="#searchtipps" id="searchtipps"
+                 i18n:translate="label_searchtips">Search Tips</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <div id="searchfields">
+
+          <div id="searchcontrols" class="LSBoxRALinks search_fields_wide">
+            <input id="SearchableText"
+                   type="text"
+                   name="SearchableText"
+                   size="25"
+                   class="inputLabel indent1"
+                   tal:attributes="value request/SearchableText|string:;
+                                   title view/getFillText;"/>
+
+            <div id="and_or_box" class="indent2">
+              <p class="formHelp" i18n:domain="gfb"
+                 i18n:translate="help_and_or">
+                und/oder
+              </p>
+            </div>
+            <div class="visualClear"></div>
+
+            <div class="common_radio_search_box indent2">
+              <input class="radio_search"
+                     id="radio_category_special"
+                     type="radio"
+                     value="0"
+                     name="getCategoryIndependent"
+                     tal:attributes="checked python:getCategoryIndependent==False"/>
+              <label i18n:translate="label_special_guideline">Special Action Guideline</label>
+            </div>
+
+            <div class="common_radio_search_box">
+              <input class="radio_search"
+                     id="radio_category_common"
+                     type="radio"
+                     value="1"
+                     name="getCategoryIndependent"
+                     tal:attributes="checked python:getCategoryIndependent==True" />
+              <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
             </div>
 
 
+            <div class="visualClear"><!-- --></div>
 
-            <div id="searchfields">
+            <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
 
-                <div id="searchcontrols" class="LSBoxRALinks search_fields_wide">
-                    <input id="SearchableText"
-                       type="text"
-                       name="SearchableText"
-                       size="25"
-                       class="inputLabel indent1"
-                       tal:attributes="value request/SearchableText|string:;
-                                       title view/getFillText;"/>
+            <div class="search_filters indent3">
 
-                    <div id="and_or_box" class="indent2">
-                        <p class="formHelp" i18n:domain="gfb"
-                            i18n:translate="help_and_or">
-                            und/oder
-                        </p>
-                    </div>
-                    <div class="visualClear"></div>
+              <!-- Remote Provider -->
+              <div class="dynatree-atwidget dynatree-custom">
 
-                    <div class="common_radio_search_box indent2">
-                        <input class="radio_search"
-                           id="radio_category_special"
-                           type="radio"
-                           value="0"
-                           name="getCategoryIndependent"
-                           tal:attributes="checked python:getCategoryIndependent==False">
-                        <label i18n:translate="label_special_guideline">Special Action Guideline</label>
-                    </div>
-
-                    <div class="common_radio_search_box">
-                        <input class="radio_search"
-                           id="radio_category_common"
-                           type="radio"
-                           value="1"
-                           name="getCategoryIndependent"
-                           tal:attributes="checked python:getCategoryIndependent==True">
-                        <label i18n:translate="label_common_introduction">Common and Introductory Action Guideline</label>
-                    </div>
-
-
-                    <div class="visualClear"><!-- --></div>
-
-                    <p i18n:translate="label_restrict_by" class="indent2 bottom1">restrict by...</p>
-
-                    <div class="search_filters indent3">
-
-                     <!-- Remote Provider -->
-                     <div class="dynatree-atwidget dynatree-custom">
-
-                      <dt id="button_remote_provider" class="toggleButton">
-                          <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
-                            class="fakeLink">Anbieter</a>
-                      </dt>
-                        <div class="flatlist_container">
-                          <div class="flatlist-template">
-                            <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                          </div>
-                        </div>
-                      <div id="widget_remote_provider" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
-                               tal:attributes="value request/remote_provider2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
-                      </div>
-                    </div>
-
-                     <!-- Sector (NACE) -->
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                        <dt href="#" id="button_nace" class="toggleButton">
-                         <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
-                           class="fakeLink">Branche</a>
-                         </dt>
-                          <div class="flatlist_container">
-                            <div class="flatlist-template">
-                            <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                          </div>
-                          </div>
-                      <div id="widget_nace" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
-                               tal:attributes="value request/nace2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
-                      </div>
-                    </div>
-
-                     <!-- Risk factors -->
-                      <div class="dynatree-atwidget dynatree-custom search_deactivatable"
-                          tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
-                           and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
-                           or 'dynatree-atwidget dynatree-custom search_deactivatable'">
-                       <dt href="#" id="button_riskfactors" class="toggleButton">
-                         <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
-                           class="fakeLink">Gefährdungsart</a>
-                        </dt>
-                        <div class="flatlist_container">
-                          <div class="flatlist-template">
-                            <div class="flatlist-item"
-                                key="{{ key }}"><img src="ico_check_red.gif"
-                                 i18n:attributes="title" i18n:domain="gfb"
-                                title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
-                          </div>
-                        </div>
-                       <div id="widget_riskfactors" class="closed_widget">
-                        <div class="dynatree_filter">
-                          <input type="text" class="filter" />
-                        </div>
-                        <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
-                        <div class="dynatree_ajax_vocabulary hiddenStructure"
-                             tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
-                        <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
-                        <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
-                               tal:attributes="value request/RiskFactors2 | nothing" />
-                        <div class="customhiddeninput"></div>
-                        <div class="ui_controls">
-                          <div class="sparse">Sparse</div>
-                        </div>
-                      </div>
-                     </div>
-
-
-                    </div>
-
-                    <div class="visualClear"><!-- --></div>
-
-                    <div class="submit_column">
-
-                        <input class="context cancelbutton"
-                               type="submit"
-                               name="submit"
-                               value="Search"
-                               i18n:attributes="value label_search;"/>
-
-                    </div>
+                <dt id="button_remote_provider" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_remoteProvider_label"
+                     class="fakeLink">Anbieter</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                         i18n:attributes="title" i18n:domain="gfb"
+                         title="label_delete_selection" alt="delete" class="delete"/>&nbsp;{{ title }}</div>
+                  </div>
                 </div>
-
-                <div id="searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
-                    <span tal:replace="structure tipps/getText |nothing" />
+                <div id="widget_remote_provider" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
+                  </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=provider">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="remote_provider" name="remote_provider2" class="hiddeninput selected"
+                         tal:attributes="value request/remote_provider2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
+                  </div>
                 </div>
+              </div>
+
+              <!-- Sector (NACE) -->
+              <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                   tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                   and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                   or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                <dt href="#" id="button_nace" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_nace_label"
+                     class="fakeLink">Branche</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                                              i18n:attributes="title" i18n:domain="gfb"
+                                              title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                  </div>
+                </div>
+                <div id="widget_nace" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
+                  </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=NACE">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="nace" name="nace2" class="hiddeninput selected"
+                         tal:attributes="value request/nace2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Risk factors -->
+              <div class="dynatree-atwidget dynatree-custom search_deactivatable"
+                   tal:attributes="class python:request.get('getCategoryIndependent', '0')=='1'
+                                   and 'dynatree-atwidget dynatree-custom search_deactivatable disabled'
+                                   or 'dynatree-atwidget dynatree-custom search_deactivatable'">
+                <dt href="#" id="button_riskfactors" class="toggleButton">
+                  <a i18n:domain="RiskAssessmentLink" i18n:translate="ra_riskfactors_label"
+                     class="fakeLink">Gefährdungsart</a>
+                </dt>
+                <div class="flatlist_container">
+                  <div class="flatlist-template">
+                    <div class="flatlist-item"
+                         key="{{ key }}"><img src="ico_check_red.gif"
+                                              i18n:attributes="title" i18n:domain="gfb"
+                                              title="label_delete_selection" alt="delete" class="delete">&nbsp;{{ title }}</div>
+                  </div>
+                </div>
+                <div id="widget_riskfactors" class="closed_widget">
+                  <div class="dynatree_filter">
+                    <input type="text" class="filter" />
+                  </div>
+                  <div class="collective-dynatree-tree">You need to activate JavaScript for the search to work.</div>
+                  <div class="dynatree_ajax_vocabulary hiddenStructure"
+                       tal:content="string:${portal_url}/vdex_as_json?vdex=RiskFactors">Some URL</div>
+                  <div class="dynatree_parameters hiddenStructure">selectMode,2/minExpandLevel,1/leafsOnly,True/rootVisible,False/autoCollapse,False/sparse,True/flatlist,True/title,Multiple_all/checkbox,True</div>
+                  <input type="hidden" size="120" value="" id="RiskFactors" name="RiskFactors2" class="hiddeninput selected"
+                         tal:attributes="value request/RiskFactors2 | nothing" />
+                  <div class="customhiddeninput"></div>
+                  <div class="ui_controls">
+                    <div class="sparse">Sparse</div>
+                  </div>
+                </div>
+              </div>
+
 
             </div>
+
+            <div class="visualClear"><!-- --></div>
+
+            <div class="submit_column">
+
+              <input class="context cancelbutton"
+                     type="submit"
+                     name="submit"
+                     value="Search"
+                     i18n:attributes="value label_search;"/>
+
+            </div>
+          </div>
+
+          <div id="searchtipps" tal:define="tipps python:getattr(here, 'searchtipps', None)">
+            <span tal:replace="structure tipps/getText |nothing" />
+          </div>
+
+        </div>
 
         <!-- </div> -->
         <p>&nbsp;</p>
-  </form>
+      </form>
 
 
 
-  <div class="searchPage" tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
+      <div class="searchPage" tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
 
 
-      <div id="heading_search_results_box">
+        <div id="heading_search_results_box">
 
 
-        <span id="heading_search_results" >
+          <span id="heading_search_results" >
             <span tal:omit-tag=""
                   i18n:translate="heading_search_results" i18n:domain="gfb">
-                Search results
+              Search results
             </span>
 
             <span id="search_num_results">
-                (<span i18n:translate="batch_x_items" i18n:domain="gfb"
-                ><span i18n:name="number"
-                tal:omit-tag=""
-                tal:content="python:len(results)">234</span>
-                documents</span>)
-                <!-- See comment below why we need this hack -->
-                <img src="spacer.gif" width="1" height="10" alt="previous search results">
+              (<span i18n:translate="batch_x_items" i18n:domain="gfb"
+              ><span i18n:name="number"
+              tal:omit-tag=""
+              tal:content="python:len(results)">234</span>
+              documents</span>)
+              <!-- See comment below why we need this hack -->
+              <img src="spacer.gif" width="1" height="10" alt="previous search results" />
             </span>
 
             <metal:macro define-macro="batch">
 
-            <div class="separationBar">&nbsp;</div>
+              <div class="separationBar">&nbsp;</div>
 
-            <!-- Navigation -->
-            <span class="listingBarItems"
-                 metal:define-macro="navigation"
-                 tal:define="request request|here/request|container/request|nothing;
-                             batch batch|nothing;
-                             template_id template_id|view/getName;
-                             mq python:modules['ZTUtils'].make_query;
-                             url batch_base_url | string:${here/absolute_url}/${template_id};
-                             currentpage batch/pagenumber;"
-                 tal:condition="python: batch.next or  batch.previous">
+              <!-- Navigation -->
+              <span class="listingBarItems"
+                    metal:define-macro="navigation"
+                    tal:define="request request|here/request|container/request|nothing;
+                                batch batch|nothing;
+                                template_id template_id|view/getName;
+                                mq python:modules['ZTUtils'].make_query;
+                                url batch_base_url | string:${here/absolute_url}/${template_id};
+                                currentpage batch/pagenumber;"
+                    tal:condition="python: batch.next or  batch.previous">
 
                 <span class="previous"
-                  tal:define="p batch/previous | nothing"
-                  tal:condition="p">
-                    <a href=""
-                       tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:p.first} ))">
+                      tal:define="p batch/previous | nothing"
+                      tal:condition="p">
+                  <a href=""
+                     tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:p.first} ))">
 
-                   <!-- This is the damnedest fucking hack for IE6. We use CSS to set an arrow as background image
-                       on the <a> tag for classes 'previous' and 'next'. But since removing the arrow-image here
-                       leads to a collapse of the search results bar, we substitute it with a spacer 10px high.
-                       Go figure... thomasw -->
-                       <img src="spacer.gif" width="1" height="10" alt="previous search results">
-                    </a>
+                    <!-- This is the damnedest fucking hack for IE6. We use CSS to set an arrow as background image
+                         on the <a> tag for classes 'previous' and 'next'. But since removing the arrow-image here
+                         leads to a collapse of the search results bar, we substitute it with a spacer 10px high.
+                         Go figure... thomasw -->
+                    <img src="spacer.gif" width="1" height="10" alt="previous search results"/>
+                  </a>
                 </span>
 
                 <span i18n:translate="label_page" i18n:domain="gfb">Page</span>
 
                 <!-- Link to first -->
                 <span tal:condition="python: 1 not in batch.navlist">
-                    <a href=""
-                       tal:attributes="href python: '%s?%s' % (url, batch.pageurl(request.form,1));">1</a>
-                    <span tal:condition="python: 2 not in (batch.prevlist or batch.leapback)"
-                          tal:omit-tag="">
-                       ...
-                    </span>
+                  <a href=""
+                     tal:attributes="href python: '%s?%s' % (url, batch.pageurl(request.form,1));">1</a>
+                  <span tal:condition="python: 2 not in (batch.prevlist or batch.leapback)"
+                        tal:omit-tag="">
+                    ...
+                  </span>
                 </span>
 
                 <!-- Pagelist with quantum leap links to previous pages for quick navigation -->
                 <span tal:repeat="linklist python:batch.navurls(request.form, batch.leapback)"
                       tal:condition="batch/leapback"
                       tal:omit-tag="" >
-                    <a href=""
-                       tal:define="page python:linklist[0];
-                                   query python:linklist[1];"
-                       tal:content="page"
-                       tal:attributes="href python: '%s?%s' % (url,query)" >
-                    </a>
-                    ...
+                  <a href=""
+                     tal:define="page python:linklist[0];
+                                 query python:linklist[1];"
+                     tal:content="page"
+                     tal:attributes="href python: '%s?%s' % (url,query)" >
+                  </a>
+                  ...
                 </span>
 
                 <!-- Pagelist with links to previous pages for quick navigation -->
                 <span tal:repeat="linklist python:batch.prevurls(request.form)"
                       tal:condition="batch/prevlist"
                       tal:omit-tag="" >
-                    <a href=""
-                       tal:define="page python:linklist[0];
-                                   query python:linklist[1];"
-                       tal:content="page"
-                       tal:attributes="href python: '%s?%s' % (url,query)" >
-                    </a>
+                  <a href=""
+                     tal:define="page python:linklist[0];
+                                 query python:linklist[1];"
+                     tal:content="page"
+                     tal:attributes="href python: '%s?%s' % (url,query)" >
+                  </a>
                 </span>
 
                 <!-- Current page -->
                 <span tal:condition="batch/navlist"
                       tal:omit-tag="">
-                    [<span tal:content="batch/pagenumber">Current page number</span>]
+                  [<span tal:content="batch/pagenumber">Current page number</span>]
                 </span>
 
                 <!-- Pagelist with links to next pages for quick navigation -->
                 <span tal:repeat="linklist python:batch.nexturls(request.form)"
                       tal:condition="batch/nextlist"
                       tal:omit-tag="" >
-                    <a href=""
-                       tal:define="page python:linklist[0];
-                                   query python:linklist[1];"
-                       tal:content="page"
-                       tal:attributes="href python: '%s?%s' % (url,query)" >
-                    </a>
+                  <a href=""
+                     tal:define="page python:linklist[0];
+                                 query python:linklist[1];"
+                     tal:content="page"
+                     tal:attributes="href python: '%s?%s' % (url,query)" >
+                  </a>
                 </span>
 
                 <!-- Pagelist with quantum leap links to next pages for quick navigation -->
                 <span tal:repeat="linklist python:batch.navurls(request.form, batch.leapforward)"
                       tal:condition="batch/leapforward"
                       tal:omit-tag="" >
-                    ...
-                    <a href=""
-                       tal:define="page python:linklist[0];
-                                   query python:linklist[1];"
-                       tal:content="page"
-                       tal:attributes="href python: '%s?%s' % (url,query)" >
-                    </a>
+                  ...
+                  <a href=""
+                     tal:define="page python:linklist[0];
+                                 query python:linklist[1];"
+                     tal:content="page"
+                     tal:attributes="href python: '%s?%s' % (url,query)" >
+                  </a>
                 </span>
 
                 <!-- Link to last -->
                 <span tal:condition="python:batch.numpages not in batch.navlist">
-                    <span tal:condition="python: batch.numpages - 1 not in (batch.nextlist or batch.leapforward)"
-                          tal:omit-tag="">
+                  <span tal:condition="python: batch.numpages - 1 not in (batch.nextlist or batch.leapforward)"
+                        tal:omit-tag="">
                     ...
-                    </span>
-                    <a href=""
-                       tal:attributes="href python: '%s?%s' % (url,batch.pageurl(request.form,batch.numpages));"
-                       tal:content="batch/numpages">3457</a>
+                  </span>
+                  <a href=""
+                     tal:attributes="href python: '%s?%s' % (url,batch.pageurl(request.form,batch.numpages));"
+                     tal:content="batch/numpages">3457</a>
                 </span>
 
                 <span class="next"
-                  tal:define="n batch/next | nothing"
-                  tal:condition="n">
-                    <a href=""
-                       tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:n.first} ))">
-                       <img src="spacer.gif" width="1" height="10" alt="next search results">
-                    </a>
+                      tal:define="n batch/next | nothing"
+                      tal:condition="n">
+                  <a href=""
+                     tal:attributes="href python: '%s?%s' % (url , mq( request.form, {batch.b_start_str:n.first} ))">
+                    <img src="spacer.gif" width="1" height="10" alt="next search results"/>
+                  </a>
                 </span>
 
 
-            </span>
+              </span>
 
             </metal:macro>
 
-        </span>
+          </span>
 
-        <div id="heading_search_medium">Medium</div>
+          <div id="heading_search_medium">Medium</div>
 
-        <div class="visualClear"> </div>
-      </div>
-
-
+          <div class="visualClear"> </div>
+        </div>
 
 
-      <div tal:condition="not: results">
+
+
+        <div tal:condition="not: results">
           <p><strong i18n:translate="description_no_results_found" i18n:domain="plone">No results were found.</strong></p>
-      </div>
+        </div>
 
-      <div tal:condition="results">
-
-
+        <div tal:condition="results">
 
 
 
-        <div class="searchResults">
-          <tal:results repeat="result batch">
-          <tal:entry define="result_uid result/UID;
-                             result_url string:ra_inline?uid=${result_uid};
-                             result_type result/portal_type;
-                             result_ob result/getObject;
-                             result_medium result_ob/getMedium | python:[];
-                             result_price result_ob/getPrice;
-                             result_free_for_members result_ob/getFree_for_members;
-                             result_method result_ob/getType_methodology;
-                             result_provider result_ob/getRemoteProvider | nothing;
-                             result_editdate result_ob/getDateOfEditing | nothing;
-                             result_editdate python:toLocalizedTime(result_editdate);
-                             item_icon python:plone_view.getIcon(result);
-                             url result_url">
 
-         <div class="search_results">
-            <div class="info_of_search">
-                <p class="formHelp"
-                   tal:define="title python:result_provider[0].Title()"
-                   tal:condition="title"
-                   tal:on-error="nothing">
-                  <span i18n:translate="label_provider" i18n:domain="gfb">Anbieter</span>:
-                  <span tal:replace="title" />
-                </p>
 
-                <h5 tal:content="result/pretty_title_or_id" />
+          <div class="searchResults">
+            <tal:results repeat="result batch">
+              <tal:entry define="result_uid result/UID;
+                                 result_url string:ra_inline?uid=${result_uid};
+                                 result_type result/portal_type;
+                                 result_ob result/getObject;
+                                 result_medium result_ob/getMedium | python:[];
+                                 result_price result_ob/getPrice;
+                                 result_free_for_members result_ob/getFree_for_members;
+                                 result_method result_ob/getType_methodology;
+                                 result_provider result_ob/getRemoteProvider | nothing;
+                                 result_editdate result_ob/getDateOfEditing | nothing;
+                                 result_editdate python:toLocalizedTime(result_editdate);
+                                 item_icon python:plone_view.getIcon(result);
+                                 url result_url">
 
-                <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
-                    Cropped description
-                </p>
-                <div>
-                    <p class="formHelp" tal:condition="result_editdate">
+                <div class="search_results">
+                  <div class="info_of_search">
+                    <p class="formHelp"
+                       tal:define="title python:result_provider[0].Title()"
+                       tal:condition="title"
+                       tal:on-error="nothing">
+                      <span i18n:translate="label_provider" i18n:domain="gfb">Anbieter</span>:
+                      <span tal:replace="title" />
+                    </p>
+
+                    <h5 tal:content="result/pretty_title_or_id" />
+
+                    <p tal:content="python:plone_view.cropText(result.Description, desc_length, desc_ellipsis)">
+                      Cropped description
+                    </p>
+                    <div>
+                      <p class="formHelp" tal:condition="result_editdate">
                         <span tal:replace="python:result_ob.getField('dateOfEditing').widget.label">Date of Editing</span>:
                         <span tal:replace="result_editdate" />
-                    </p>
-                    <a href="#"
-                       tal:attributes="href url" i18n:translate="label_more_info">mehr info</a>
-                </div>
+                      </p>
+                      <a href="#"
+                         tal:attributes="href url" i18n:translate="label_more_info">mehr info</a>
+                    </div>
 
-            </div>
+                  </div>
 
-            <div class="search_medium">
-                <h5 tal:content="python:view.get_printable_method(result_method)">Richtlinie</h5>
-                <p class="formHelp" i18n:translate="label_available_as">available as</p>
+                  <div class="search_medium">
+                    <h5 tal:content="python:view.get_printable_method(result_method)">Richtlinie</h5>
+                    <p class="formHelp" i18n:translate="label_available_as">available as</p>
 
-                <ul class="visualMarker"
-                    tal:define="media python:view.get_printable_medium(result_medium)">
+                    <ul class="visualMarker"
+                        tal:define="media python:view.get_printable_medium(result_medium)">
 
-                    <li tal:repeat="medium media" tal:content="medium"></li>
+                      <li tal:repeat="medium media" tal:content="medium"></li>
 
-                    <li id="ral_price">
+                      <li id="ral_price">
                         <span i18n:domain="RiskAssessmentLink" i18n:translate="ra_price_label">Price</span>:
 
                         <tal:block condition="result_price">
-                            <span tal:replace="result_price" />&nbsp;&euro;&nbsp;
-                                <span tal:condition="result_free_for_members" tal:omit-tag="">*
-                            </span>
-                       </tal:block>
+                          <span tal:replace="result_price" />&nbsp;&euro;&nbsp;
+                          <span tal:condition="result_free_for_members" tal:omit-tag="">*
+                          </span>
+                        </tal:block>
 
-                       <tal:block condition="not:result_price">
-                            <span i18n:translate="label_free" i18n:domain="gfb" />
-                       </tal:block>
+                        <tal:block condition="not:result_price">
+                          <span i18n:translate="label_free" i18n:domain="gfb" />
+                        </tal:block>
 
-                     </li>
+                      </li>
 
-                </ul>
-                <ul id="ral_free" tal:condition="result_free_for_members">
-                    <li>
+                    </ul>
+                    <ul id="ral_free" tal:condition="result_free_for_members">
+                      <li>
                         <span tal:omit-tag=""
-                            i18n:domain="gfb"
-                            i18n:translate="label_free_for_members">
-                            Free for members
+                              i18n:domain="gfb"
+                              i18n:translate="label_free_for_members">
+                          Free for members
                         </span>
-                    </li>
-                </ul>
+                      </li>
+                    </ul>
 
-            </div>
+                  </div>
 
-            <div class="visualClear"><!-- --></div>
+                  <div class="visualClear"><!-- --></div>
+                </div>
+
+              </tal:entry>
+            </tal:results>
+
           </div>
-
-          </tal:entry>
-          </tal:results>
-
         </div>
-   </div>
 
-   <div id="footer_batch_box">
-       <span id="footer_batch" >
-           <span tal:omit-tag=""
-                 i18n:translate="heading_search_results" i18n:domain="gfb">
-               Search results
-           </span>
+        <div id="footer_batch_box">
+          <span id="footer_batch" >
+            <span tal:omit-tag=""
+                  i18n:translate="heading_search_results" i18n:domain="gfb">
+              Search results
+            </span>
 
-           <span id="search_num_results">
-               (<span i18n:translate="batch_x_items" i18n:domain="gfb"
-               ><span i18n:name="number"
-               tal:omit-tag=""
-               tal:content="python:len(results)">234</span>
-               documents</span>)
-           </span>
+            <span id="search_num_results">
+              (<span i18n:translate="batch_x_items" i18n:domain="gfb"
+              ><span i18n:name="number"
+              tal:omit-tag=""
+              tal:content="python:len(results)">234</span>
+              documents</span>)
+            </span>
 
-           <a tal:condition="not:request/b_size | nothing"
-              tal:attributes="href python:'%s?b_size=%s&%s' % (view.getName(), len(results), batch.pageurl(request.form)) "
-              class="show-all-results" i18n:translate="label_show_all" i18n:domain="gfb">Alle Anzeigen</a>
+            <a tal:condition="not:request/b_size | nothing"
+               tal:attributes="href python:'%s?b_size=%s&%s' % (view.getName(), len(results), batch.pageurl(request.form)) "
+               class="show-all-results" i18n:translate="label_show_all" i18n:domain="gfb">Alle Anzeigen</a>
 
-           <metal:macro use-macro="template/macros/batch"></metal:macro>
-       </span>
-   </div>
+            <metal:macro use-macro="template/macros/batch"></metal:macro>
+          </span>
+        </div>
 
-  </div>
+      </div>
 
 
-<p><br/></p>
+      <p><br/></p>
 
-  <!--div style="color:#ddd" tal:content="view/buildQuery" /-->
+      <!--div style="color:#ddd" tal:content="view/buildQuery" /-->
 
-</div>
-</body>
+    </div>
+  </body>
 </html>
 
 
