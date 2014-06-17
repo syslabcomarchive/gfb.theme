@@ -395,7 +395,7 @@ msgstr "Aktuelle Nachrichten zum Thema"
 
 #. Default: "You need to activate JavaScript for the search to work."
 msgid "javascript_required_search"
-msgstr ""
+msgstr "Sie müssen JavaScript in Ihrem Browser aktivieren, damit die Suche funktioniert."
 
 msgid "Powered by"
-msgstr ""
+msgstr "Bereitgestellt von"

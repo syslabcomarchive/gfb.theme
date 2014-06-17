@@ -74,10 +74,10 @@ msgid "batch_x_items_matching_your_criteria"
 msgstr "${number} Artikel gefunden"
 
 msgid "Risk Assessment Link"
-msgstr ""
+msgstr "Gefährdungsbeurteilungslink"
 
 msgid "Provider"
 msgstr "Informationsanbieter"
 
 msgid "Attached file"
-msgstr ""
+msgstr "Angehängte Datei"
