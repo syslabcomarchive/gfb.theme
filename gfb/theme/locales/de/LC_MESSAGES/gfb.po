@@ -399,3 +399,6 @@ msgstr "Sie müssen JavaScript in Ihrem Browser aktivieren, damit die Suche funk
 
 msgid "Powered by"
 msgstr "Bereitgestellt von"
+
+msgid "Rich document"
+msgstr "Erweitertes Dokument"
