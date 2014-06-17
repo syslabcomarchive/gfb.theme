@@ -73,3 +73,11 @@ msgstr "Bitte geben Sie den Betreff der zu sendenden Nachricht ein."
 msgid "batch_x_items_matching_your_criteria"
 msgstr "${number} Artikel gefunden"
 
+msgid "Risk Assessment Link"
+msgstr ""
+
+msgid "Provider"
+msgstr "Informationsanbieter"
+
+msgid "Attached file"
+msgstr ""

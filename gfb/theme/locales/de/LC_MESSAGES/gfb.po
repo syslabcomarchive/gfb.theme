@@ -392,3 +392,10 @@ msgstr "Klicken Sie hier um einen Suchbegriff aus einer Liste von Gefähdrungen 
 
 msgid "heading_newsboard_latest_news"
 msgstr "Aktuelle Nachrichten zum Thema"
+
+#. Default: "You need to activate JavaScript for the search to work."
+msgid "javascript_required_search"
+msgstr ""
+
+msgid "Powered by"
+msgstr ""
