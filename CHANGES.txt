@@ -4,7 +4,10 @@ gfb.theme Changelog
 1.4.33 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #10142 Only show the translation link if the context is: the site
+   root, the Members folder or translated [deroiste]
+- #10140 mark docx, pptx and xlsx files with icons too [deroiste]
+- #10139 Add missing translations [deroiste]
 
 
 1.4.32 (2014-01-30)

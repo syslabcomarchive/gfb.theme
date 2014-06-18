@@ -38,48 +38,22 @@ class GFBLanguageSelector(TranslatableLanguageSelector):
         return False
 
     def _translations(self, missing):
-        # Figure out the "closest" translation in the parent chain of the
-        # context. We stop at both an INavigationRoot or an ISiteRoot to look
-        # for translations.
-        # Exceptions: 1) If the object does not implement ITranslatable (= not
-        # LP-aware) or
-        # 2) if the object is set to be neutral
-        # then return this object and don't look for a translation.
+        """#10142 Only show the translation link if the context is:
+        1. the site root
+        2. the Members folder (isSpecialFish)
+        3. translated
+        """
         context = aq_inner(self.context)
         translations = {}
-        chain = aq_chain(context)
-        for item in chain:
-            if ISiteRoot.providedBy(item) or \
-                not ITranslatable.providedBy(item) or \
-                self.isSpecialFish() or \
-                not item.Language():
-                # We have a site root, which works as a fallback
-                for c in missing:
-                    translations[c] = item
-                break
+        if ISiteRoot.providedBy(context) or self.isSpecialFish():
+            for c in missing:
+                translations[c] = context
 
-            translatable = ITranslatable(item, None)
-            if translatable is None:
-                continue
-
-            item_trans = item.getTranslations(review_state=False)
+        elif ITranslatable(context, False):
+            item_trans = context.getTranslations(review_state=False)
             for code, trans in item_trans.items():
-                code = str(code)
-                if code not in translations:
-                    # If we don't yet have a translation for this language
-                    # add it and mark it as found
-                    translations[code] = trans
-                    missing = missing - set((code, ))
+                translations[code] = trans
 
-            if len(missing) <= 0:
-                # We have translations for all
-                break
-            if INavigationRoot.providedBy(item):
-                # Don't break out of the navigation root jail, we assume
-                # the INavigationRoot is usually translated into all languages
-                for c in missing:
-                    translations[c] = item
-                break
         return translations
 
 
