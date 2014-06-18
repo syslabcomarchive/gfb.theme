@@ -82,5 +82,8 @@ msgstr "Informationsanbieter"
 msgid "Attached file"
 msgstr "Angehängte Datei"
 
-msgid "Rich document"
+msgid "Rich documen"t
 msgstr "Erweitertes Dokument"
+
+msgid "Glossary definition"
+msgstr "Glossardefinition"
