@@ -273,3 +273,15 @@ msgstr "Click here to pick a search term from a list of risk factors."
 
 msgid "heading_newsboard_latest_news"
 msgstr "Archive of previous highlights"
+
+msgid "Site Map"
+msgstr "Site Map"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Sign Language"
+msgstr "Sign Language"
+
+msgid "Simple Language"
+msgstr "Simple Language"

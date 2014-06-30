@@ -399,3 +399,15 @@ msgstr "Sie müssen JavaScript in Ihrem Browser aktivieren, damit die Suche funk
 
 msgid "Powered by"
 msgstr "Bereitgestellt von"
+
+msgid "Site Map"
+msgstr "Inhalt"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Sign Language"
+msgstr "Gebärdensprache"
+
+msgid "Simple Language"
+msgstr "Einfache Sprache"
