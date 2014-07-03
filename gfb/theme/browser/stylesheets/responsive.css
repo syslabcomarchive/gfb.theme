@@ -1,9 +1,14 @@
 @media only screen
 and (max-width : 1000px) {
 
-  div#visual-portal-wrapper {
-    margin-bottom: 67px;
-  }
+  /* Attempt to fit the secondary nav to the foot */
+  /* html, body  { */
+  /*   height: 100%; */
+  /* } */
+
+  /* #visual-portal-wrapper { */
+  /*   min-height: 100%; */
+  /* } */
 
   div#portal-header {
     background-position: left 62px;
@@ -13,21 +18,22 @@ and (max-width : 1000px) {
     margin: 0;
   }
 
-  div#portal-header #portal-siteactions {
-    padding-top: 10px;
-  }
-
   div#portal-header #portal-siteactions li a {
     line-height: normal;
   }
 
   div#gfb_site_title {
     float: none;
-    top: initial;
+    right: -moz-initial;
     right: initial;
+    top: -moz-initial;
+    top: initial;
     text-align: center;
     background-color: #4f647c;
     line-height: 28px;
+    right: 0;
+    left: 0;
+    top: 0;
   }
 
   div#portal-top { margin-top: 0; }
@@ -59,8 +65,7 @@ and (max-width : 1000px) {
   /* move the secondar nav to the bottom */
   dl.portletNavigationTree ul.navTreeLevel0 {
     position: absolute;
-    visibility: visible;
-    bottom: 0;
+    visibility: hidden;
     width: 100%;
   }
 
@@ -75,6 +80,7 @@ and (max-width : 1000px) {
 
   /* don't use the left col height as the min height for the content area */
   body td#portal-column-one div.visualPadding {
+    min-height: -moz-initial;
     min-height: initial;
   }
 
@@ -91,7 +97,9 @@ and (max-width : 1000px) {
 
   div#portal-searchbox {
     float: none;
+    width: -moz-initial;
     width: initial;
+    position: -moz-initial;
     position: initial;
   }
 
