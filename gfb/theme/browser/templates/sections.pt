@@ -64,8 +64,7 @@
                    accesskey="4"
                    i18n:domain="gfb"
                    i18n:attributes="title title_search_site;"
-                   tal:attributes="value request/SearchableText|nothing;
-                                   id view/search_input_id"
+                   tal:attributes="id view/search_input_id"
                    class="inputLabel" />
 
             <input class="searchButton"
