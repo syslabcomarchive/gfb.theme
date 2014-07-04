@@ -1,14 +1,11 @@
 @media only screen
+and (max-width : 400px) {
+  #portal-logo img { width: 100px; height: 62px; }
+  #portal-top div#portal-header { background-position: -165px 65px; }
+}
+
+@media only screen
 and (max-width : 1000px) {
-
-  /* Attempt to fit the secondary nav to the foot */
-  /* html, body  { */
-  /*   height: 100%; */
-  /* } */
-
-  /* #visual-portal-wrapper { */
-  /*   min-height: 100%; */
-  /* } */
 
   div#portal-header {
     background-position: left 62px;
@@ -16,6 +13,10 @@ and (max-width : 1000px) {
 
   div#portal-header li {
     margin: 0;
+  }
+
+  div#portal-header #portal-siteactions {
+    background-color: #4f647c;
   }
 
   div#portal-header #portal-siteactions li a {
