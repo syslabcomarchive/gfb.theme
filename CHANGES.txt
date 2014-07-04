@@ -8,9 +8,12 @@ gfb.theme Changelog
    root, the Members folder or translated [deroiste]
 - #10140 mark docx, pptx and xlsx files with icons too [deroiste]
 - #10139 Add missing translations [deroiste]
-- #9044 fix JavaScript to work with umlauts in search suggestions [deroiste]
+- #9044 fix JavaScript to work with umlauts in search suggestions,
+  make the quicksearch button look like the main search button
+  [deroiste]
 - #6279 Fix responsive theme compatibility with FF ESR 17 [deroiste]
 - #10376 Don't prefill quicksearch [deroiste]
+
 
 
 1.4.32 (2014-01-30)
