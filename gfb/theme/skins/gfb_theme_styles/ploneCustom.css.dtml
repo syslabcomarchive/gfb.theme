@@ -2160,7 +2160,7 @@ div.column1b div input {
     z-index: 3;
 }
 
-#searchfor-created {
+.gfbSearchPage #sortby {
     margin: 1em 0;
     text-align: right;
 }

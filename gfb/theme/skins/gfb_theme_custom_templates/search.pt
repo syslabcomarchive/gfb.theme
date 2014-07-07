@@ -62,29 +62,22 @@
         <br />
 
       </span>
-        <div id="searchfor-created">
-          <span for="created" i18n:translate="label_new_items_since">New items since</span>
-
-          <tal:datetime define="today python:DateTime().earliestTime()">
-            <select name="created:list:date"
-                    id="created"
-                    tal:define="yesterday python:(today-1).Date();
-                                lastweek python:(today-7).Date();
-                                lastmonth python:(today-31).Date();
-                                ever string:1970/02/01;">
-              <option value="#"
-                      tal:condition="not: isAnon"
-                      tal:attributes="value python:member is not None and member.getProperty('last_login_time') or today"
-                      i18n:translate="last_login">Last log-in</option>
-              <option value="#" tal:attributes="value yesterday" i18n:translate="time_yesterday"> Yesterday </option>
-              <option value="#" tal:attributes="value lastweek" i18n:translate="time_last_week"> Last week </option>
-              <option value="#" tal:attributes="value lastmonth" i18n:translate="time_last_month"> Last month </option>
-              <option value="#" tal:attributes="value ever" selected="selected" i18n:translate="time_ever"> Ever </option>
-            </select>
-          </tal:datetime>
-          <input type="hidden" name="created_usage" value="range:min" />
-
-
+        <div id="sortby"
+             i18n:domain="wildcard.foldercontents"
+             tal:define="searchurl string:${context/absolute_url}/search?SearchableText=${searchterm};
+                         sorted_by_date python:request.form.get('sort_on', '') == 'created';
+                         sorted_by_relevance not:sorted_by_date">
+          <span i18n:translate="foldercontents_sorton">Sort on:</span> 
+          <tal:relevance condition="sorted_by_relevance">
+            <a class="link-plain" tal:attributes="href string:${searchurl}&sort_on=created&sort_order=descending"
+               i18n:translate="foldercontents_creation_order">Creation Date</a>
+            <span i18n:domain="plone" i18n:translate="">Relevance</span>
+          </tal:relevance>
+          <tal:date condition="sorted_by_date">
+            <span i18n:translate="foldercontents_creation_order">Creation Date</span>
+            <a class="link-plain" tal:attributes="href searchurl"
+               i18n:domain="plone" i18n:translate="">Relevance</a>
+          </tal:date>
           
         </div>
       </form>
