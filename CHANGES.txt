@@ -14,8 +14,8 @@ gfb.theme Changelog
   [deroiste]
 - #6279 Fix responsive theme compatibility with FF ESR 17 [deroiste]
 - #10376 Don't prefill quicksearch [deroiste]
-
-
+- #10372 Add password tab for Managers to set the password for any
+  user [deroiste]
 
 
 1.4.32 (2014-01-30)

@@ -28,6 +28,15 @@
         allowed_interface=".interfaces.IGFB"
     />
 
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="set-user-password"
+        class=".set_user_password.SetUserPasswordView"
+        template="templates/set_user_password.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="cmf.ManagePortal"
+        />
+
     <browser:viewlet
         name="plone.resourceregistries"
         manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
