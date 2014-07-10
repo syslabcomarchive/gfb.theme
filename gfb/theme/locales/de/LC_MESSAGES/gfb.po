@@ -286,7 +286,7 @@ msgid "label_top_thema"
 msgstr "Top Thema"
 
 msgid "label_aktuelle_infos"
-msgstr "Aktuelle Infos"
+msgstr "Im Fokus"
 
 msgid "label_gute_praxis"
 msgstr "Aktuelles Beispiel guter Praxis"

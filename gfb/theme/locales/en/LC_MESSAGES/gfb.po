@@ -212,7 +212,7 @@ msgid "View de version"
 msgstr "View German version"
 
 msgid "label_aktuelle_infos"
-msgstr "Current information"
+msgstr "In Focus"
 
 msgid "label_top_thema"
 msgstr "Hot topic"
