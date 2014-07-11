@@ -8,9 +8,9 @@
    - questions/comments feedback mail
 
 
-- Code repository: https://svn.syslab.com/svn/syslabcom/gfb/
+- Code repository: https://github.com/syslabcom/gfb.theme
 - Questions and comments to info (at) syslab (dot) com
-- Report bugs at http://products.syslab.com/products/gfb.theme/issues
+- Report bugs at https://github.com/syslabcom/gfb.theme
 
 
 
