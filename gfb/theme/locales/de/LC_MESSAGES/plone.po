@@ -82,7 +82,7 @@ msgstr "Informationsanbieter"
 msgid "Attached file"
 msgstr "Angehängte Datei"
 
-msgid "Rich documen"t
+msgid "Rich document"
 msgstr "Erweitertes Dokument"
 
 msgid "Glossary definition"
