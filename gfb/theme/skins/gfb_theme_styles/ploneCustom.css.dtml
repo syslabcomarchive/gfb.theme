@@ -249,20 +249,15 @@ div#searchfields .formHelp{
 }
 
 .LSBox input.searchButton {
-    border-color: #666666 #DDDDDD #DDDDDD #666666;
+    background: transparent url(ico_search.gif) no-repeat 4px 4px;
+    border: 0 none;
     font-weight: normal;
-    font-size: 10px;
+    color: white;
+    font-size: 110%;
     margin-right: 1em;
-    background: url("input_background.png") repeat-x scroll 0 0 #FFF;
-    padding-left: 1px;
-    text-transform: none;
+    text-align: right;
 }
 
-.LSBox .inputLabel {
-  height: 16px;
-  margin-bottom: 1px;
-  padding-left: 0.5em;
-}
 /* @end */
 
 /* @group actions */
