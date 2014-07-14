@@ -4,7 +4,10 @@ gfb.theme Changelog
 1.4.34 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #9044 Revert 9c93a89d "Refs #9044 make the quick search button look like
+  the main search button" [deroiste]
+- #9044 make the main search page match the style of the other search
+  pages [deroiste]
 
 
 1.4.33 (2014-07-14)
