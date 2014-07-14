@@ -2,6 +2,7 @@
 and (max-width : 400px) {
   #portal-logo img { width: 100px; height: 62px; }
   #portal-top div#portal-header { background-position: -165px 65px; }
+  div#gfb_site_title { font-size: 110%; }
 }
 
 @media only screen

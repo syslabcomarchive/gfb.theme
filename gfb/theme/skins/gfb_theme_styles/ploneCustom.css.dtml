@@ -137,7 +137,7 @@ body {
 }
 #gfb_site_title {
     font-weight: bold;
-    font-size: 110%;
+    font-size: 180%;
     font-family: FranklinICTDemi, Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
     letter-spacing: 1px;
     color: white;
