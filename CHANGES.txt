@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.33 (unreleased)
+1.4.33 (2014-07-14)
 -------------------
 
 - #10142 Only show the translation link if the context is: the site
