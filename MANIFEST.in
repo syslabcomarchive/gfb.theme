@@ -2,3 +2,25 @@ recursive-include main_directory *
 recursive-include docs *
 include *
 global-exclude *.pyc
+
+# added by check_manifest.py
+recursive-include gfb *.BAK
+recursive-include gfb *.cpt
+recursive-include gfb *.cpy
+recursive-include gfb *.css
+recursive-include gfb *.dtml
+recursive-include gfb *.gif
+recursive-include gfb *.jpg
+recursive-include gfb *.js
+recursive-include gfb *.metadata
+recursive-include gfb *.placeholder
+recursive-include gfb *.png
+recursive-include gfb *.po
+recursive-include gfb *.pot
+recursive-include gfb *.props
+recursive-include gfb *.pt
+recursive-include gfb *.py
+recursive-include gfb *.txt
+recursive-include gfb *.vpy
+recursive-include gfb *.xml
+recursive-include gfb *.zcml
