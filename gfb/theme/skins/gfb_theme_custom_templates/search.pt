@@ -62,6 +62,7 @@
                    size="25"
                    class="inputLabel indent1"
                    autocomplete="off"
+                   i18n:domain="plone"
                    i18n:attributes="title title_search_title;"
                    tal:attributes="value request/SearchableText|string:"/>
 

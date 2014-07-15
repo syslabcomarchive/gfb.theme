@@ -8,7 +8,8 @@ gfb.theme Changelog
   the main search button" [deroiste]
 - #9044 make the main search page match the style of the other search
   pages [deroiste]
-
+- #10425 Search page, auto-submit when a sort option is selected
+  [deroiste]
 
 1.4.33 (2014-07-14)
 -------------------
