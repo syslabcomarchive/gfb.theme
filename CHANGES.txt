@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.34 (unreleased)
+1.4.34 (2014-07-16)
 -------------------
 
 - #9044 Revert 9c93a89d "Refs #9044 make the quick search button look like
