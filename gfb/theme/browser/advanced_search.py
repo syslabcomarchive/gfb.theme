@@ -29,7 +29,7 @@ class AdvancedSearchView(BrowserView):
 
     def getFillText(self):
         """ return the translated fill text """
-        label = "label_your_searchtext" 
+        label = "label_your_searchtext"
         return _(label)
 
     def search_types(self):
@@ -41,7 +41,7 @@ class AdvancedSearchView(BrowserView):
         # if all are turned off, turn them all on. Searching for nothing makes no sense.
         if not search_portal_types:
             search_portal_types = ['RiskAssessmentLink']
-        TYPES = [ 
+        TYPES = [
             ('Risk Assessment Link', 'RiskAssessmentLink', 'RiskAssessmentLink' in search_portal_types) ,
                 ]
 
@@ -60,7 +60,7 @@ class AdvancedSearchView(BrowserView):
             if val:
                 strs.append(val)
         return strs
-    
+
 
     def get_printable_method(self, methodlist):
         """ returns a translated and comma spearated string of methods """
@@ -80,7 +80,7 @@ class AdvancedSearchView(BrowserView):
         """ compute the list of query params to search for portal_types"""
         context = Acquisition.aq_inner(self.context)
         #local_portal_types = context.getProperty('search_portal_types', []);
-        # we need to use the output of search_types() as default, not the 
+        # we need to use the output of search_types() as default, not the
         # local Property search_portal_types
         search_types = [x[1] for x in self.search_types()]
         search_portal_types = list(self.request.get('search_portal_types', search_types))
@@ -101,12 +101,12 @@ class AdvancedSearchView(BrowserView):
         getCategoryIndependent = self.request.get('getCategoryIndependent', '0')
         getCategoryIndependent = bool(int(getCategoryIndependent))
         query = query & Eq('getCategoryIndependent', getCategoryIndependent)
-        
+
         nace = list(self.request.get('nace', ''))
         if '' in nace:
             nace.remove('')
         if nace and not getCategoryIndependent:
-            query = query & In('nace', nace)    
+            query = query & In('nace', nace)
 
 
         getRemoteLanguage = self.request.get('getRemoteLanguage', '')
@@ -115,7 +115,7 @@ class AdvancedSearchView(BrowserView):
 
         category = self.request.get('category', '')
         if category:
-            query = query & In('category', category)    
+            query = query & In('category', category)
 
         country = self.request.get('country', '')
         if country:
@@ -151,7 +151,7 @@ class AdvancedSearchView(BrowserView):
             query = query & Generic('SearchableText', {'query': SearchableText, 'ranking_maxhits': 10000 })
 
         return query
-        
+
     def search(self):
         context = Acquisition.aq_inner(self.context)
         query = self.buildQuery()
@@ -159,10 +159,10 @@ class AdvancedSearchView(BrowserView):
         portal_catalog = getToolByName(context, 'portal_catalog')
         if hasattr(portal_catalog, 'getZCatalog'):
             portal_catalog = portal_catalog.getZCatalog()
-        
+
         #return portal_catalog.evalAdvancedQuery(query, (('effective','desc'),))
         return portal_catalog.evalAdvancedQuery(query, (('modified','desc'),))
-        
+
     def getVocabulary(self, name):
         if name != 'provider':
             portal_vocabularies = getToolByName(self.context, 'portal_vocabularies')
@@ -174,7 +174,7 @@ class AdvancedSearchView(BrowserView):
     def getDynatreeScript(self, vocdict, fieldName=None, selected=None):
         def indent(num, str):
             return u"\n".join([u" "*num + part for part in str.split(u"\n")])
-            
+
         def try_unicode(str):
             if isinstance(str, unicode):
                 return str
@@ -220,7 +220,7 @@ class AdvancedSearchView(BrowserView):
 
         return script % {'fieldName': fieldName, 'voctitle': voctitle, 'root_expanded': root_expanded, 'subtree': subtree, 'selected_str': selected_str}
 
-# 
+#
 # class HomepageSearchView(AdvancedSearchView):
 #     template = ViewPageTemplateFile('templates/homepage_search.pt')
 
@@ -243,7 +243,7 @@ class HomepageSearchNewView(AdvancedSearchView):
                 if obj:
                     return obj
         return None
-            
+
 
     @property
     def gute_praxis(self):
