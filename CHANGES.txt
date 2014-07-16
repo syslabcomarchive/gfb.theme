@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.35 (unreleased)
+1.4.35 (2014-07-16)
 -------------------
 
 - Limit news items for 'highlights', used for 'In Focus' to folder
