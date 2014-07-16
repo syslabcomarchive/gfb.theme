@@ -262,9 +262,16 @@ class HomepageSearchNewView(AdvancedSearchView):
 
     @property
     def highlights(self, limit=4):
-        """Fetch the latest X teasers"""
+        """Fetch the latest X teasers
+        Note: but only from the top-them folder #10447
+        """
         pc = getToolByName(self.context, 'portal_catalog')
         now = DateTime()
+        folder = getattr(self.context, "top-thema", None)
+        if folder:
+            path = '/'.join(folder.getPhysicalPath())
+        else:
+            path = '/'.join(self.context.getPhysicalPath())
         res = pc(
             portal_type=['News Item'],
             Language=[self.context.Language(), ''],
@@ -272,6 +279,7 @@ class HomepageSearchNewView(AdvancedSearchView):
             expires={'query': now, 'range': 'min'},
             effective={'query': now, 'range': 'max'},
             review_state='published',
+            path=path,
         )
         if len(res) and limit > 0:
             res = res[:limit]
