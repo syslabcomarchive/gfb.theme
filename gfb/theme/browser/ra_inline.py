@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import Acquisition
+from Acquisition import aq_base, aq_inner
 from Products.Five.browser import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
-from Products.AdvancedQuery import In, Eq, Ge, Le, And, Or, Generic
-from gfb.theme import GFBMessageFactory as _
 
 
 class RAInlineView(BrowserView):
@@ -22,15 +19,12 @@ class RAInlineView(BrowserView):
         uid = uid.split('/')[0]
         pc = getToolByName(self.context, 'portal_catalog')
         results = pc(UID=uid)
-        if len(results)!=1:
+        if len(results) != 1:
             self.request.RESPONSE.badRequestError('uid')
         result = results[0]
         ob = result.getObject()
 
-        #put the object in current context
-        N = Acquisition.aq_inner(Acquisition.aq_base(ob)).__of__(self.context)
-        # save the original object's path - needed for correct linking of actions
-        setattr(N, 'original_url_path', ob.absolute_url_path())
+        # put the object in current context
+        wrapped_ob = aq_inner(aq_base(ob)).__of__(self.context)
 
-        return N()
-
+        return wrapped_ob()

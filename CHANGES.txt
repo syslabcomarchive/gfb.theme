@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.4.36 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Fixed performance bug: Don't cause write operation for every view
+  using ra_inline #10434 [pysailor]
 
 1.4.35 (2014-07-16)
 -------------------
