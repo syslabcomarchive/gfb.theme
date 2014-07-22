@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.36 (unreleased)
+1.4.36 (2014-07-22)
 -------------------
 
 - Fixed performance bug: Don't cause write operation for every view
