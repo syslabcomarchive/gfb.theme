@@ -14,3 +14,7 @@
   color: #01679A;
   cursor: pointer;
 }
+
+.searchPage #searchfields {
+    overflow: visible;
+}
