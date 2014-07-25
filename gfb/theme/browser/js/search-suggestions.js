@@ -1,6 +1,4 @@
 $(function() {
-
-
     var search_suggestion = {
         _fillSuggestionArea: function(event, data) {
             /* Sometimes we get back a list of strings, instead of
