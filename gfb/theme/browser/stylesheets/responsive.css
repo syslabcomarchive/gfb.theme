@@ -3,6 +3,10 @@ and (max-width : 400px) {
   #portal-logo img { width: 100px; height: 62px; }
   #portal-top div#portal-header { background-position: -165px 65px; }
   div#gfb_site_title { font-size: 110%; }
+  div#highlights-archive a { font-size: 50%;}
+  .teaser_more {padding: 0.5em 0;}
+  ul#search-tabs li a { font-size: 80%; }
+  #searchfields input.context {margin-right: 1em!important;}
 }
 
 @media only screen
