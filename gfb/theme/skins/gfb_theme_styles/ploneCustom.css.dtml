@@ -1368,7 +1368,8 @@ zoom:1 !important;
 }
 
 #searchfields  #SearchableText {
-  width: 380px;
+  max-width: 380px;
+  min-width: 300px;
   margin-bottom: 10px;
   padding: 2px 6px;
   color:#5A5A5A;
@@ -3576,12 +3577,12 @@ body.portaltype-topic span.description img {
 }
 
 .caltrigger {
-  width: 16px; 
-  vertical-align: middle; 
-  display: inline-block; 
-  background-image: url(/de/service/fort-und-weiterbildungsangebote/popup_calendar.gif); 
-  height: 16px; 
-  background-position: initial initial; 
+  width: 16px;
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url(/de/service/fort-und-weiterbildungsangebote/popup_calendar.gif);
+  height: 16px;
+  background-position: initial initial;
   background-repeat: initial initial;
 }
 
