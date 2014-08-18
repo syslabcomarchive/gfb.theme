@@ -4,8 +4,10 @@ gfb.theme Changelog
 1.4.37 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- also show search suggestions on main search form #10451
+  [pysailor]
+- mobile fixing
+  [apilz]
 
 1.4.36 (2014-07-22)
 -------------------
