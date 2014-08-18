@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.37 (unreleased)
+1.4.37 (2014-08-18)
 -------------------
 
 - also show search suggestions on main search form #10451
