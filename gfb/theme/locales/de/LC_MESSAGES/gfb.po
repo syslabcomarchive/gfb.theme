@@ -410,4 +410,4 @@ msgid "Sign Language"
 msgstr "Gebärdensprache"
 
 msgid "Simple Language"
-msgstr "Einfache Sprache"
+msgstr "Leichte Sprache"
