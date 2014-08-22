@@ -3592,13 +3592,13 @@ ul#portal-siteactions li#siteaction-simple_language a {
 }
 
 ul#portal-siteactions li#siteaction-sign_language {
-  background: url(&dtml-portal_url;/icon_signlanguage_bg.png) no-repeat;
+  background: url(&dtml-portal_url;/icon_signlanguage_bg.png) no-repeat scroll 0 0.55em;
   padding-left: 2em;
   margin-right: 0.5em;
 }
 
 ul#portal-siteactions li#siteaction-simple_language {
-  background: url(&dtml-portal_url;/icon_simplelanguage_bg.png) no-repeat;
+  background: url(&dtml-portal_url;/icon_simplelanguage_bg.png) no-repeat scroll 0 0.55em;
   padding-left: 2.3em;
   margin-right: 0.5em;
 }
