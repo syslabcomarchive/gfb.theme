@@ -204,6 +204,12 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Resources for jwplayer -->
+      <browser:resourceDirectory
+         name="gfb.theme.jwplayer"
+         directory="jwplayer"
+         />
+
     <!-- copied from osha.theme! remove when unifying gfb and osha... -->
     <browser:page
        name="getVocabularyPath"
