@@ -2961,7 +2961,7 @@ z-index:10;
 
 div.welcome_image {
     position: relative;
-    width: 100%;
+    width: 504px;
     margin-bottom: 0px;
 }
 div.welcome_image .link-internal-js {
@@ -3593,14 +3593,20 @@ ul#portal-siteactions li#siteaction-simple_language a {
 
 ul#portal-siteactions li#siteaction-sign_language {
   background: url(&dtml-portal_url;/icon_signlanguage_bg.png) no-repeat scroll 0 0.55em;
-  padding-left: 2em;
-  margin-right: 0.1em;
+  padding-right: 0;
+  margin-right: 18px;
 }
 
 ul#portal-siteactions li#siteaction-simple_language {
   background: url(&dtml-portal_url;/icon_simplelanguage_bg.png) no-repeat scroll 0 0.55em;
-  padding-left: 2.3em;
-  margin-right: 0.5em;
+  padding-right: 0;
+  margin-right: 18px;
+}
+
+ul#portal-siteactions li#siteaction-sign_language a,
+ul#portal-siteactions li#siteaction-simple_language a {
+  padding-right: 1em;
+  padding-left: 24px;
 }
 
 /* </dtml-with> */
