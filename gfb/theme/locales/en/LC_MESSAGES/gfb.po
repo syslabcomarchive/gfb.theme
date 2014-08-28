@@ -285,3 +285,20 @@ msgstr "Sign Language"
 
 msgid "Simple Language"
 msgstr "Simple Language"
+
+msgid "title_video_download"
+msgstr "Download video"
+
+msgid "label_donwload_signlanguage_film"
+msgstr ""
+"Here you can download the sign language movie in different format, as well as "
+"the subtitles."
+
+msgid "sign_language_mp4"
+msgstr "Sign language movie (mp4 file)"
+
+msgid "sign_language_webm"
+msgstr "Sign language movie (HTML5 video WebM file)"
+
+msgid "label_subtitles"
+msgstr "Subtitles (SRT file)"

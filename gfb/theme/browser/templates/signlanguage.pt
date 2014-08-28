@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gfb">
+<body>
+
+
+<metal:main fill-slot="main"
+     tal:define="filmid string:gebaerdensprache;
+                 base_url string:${portal_url}/de/;
+                 language here/portal_languages/getPreferredLanguage;
+                 src_mp4 string:${base_url}${filmid}.mp4;
+                 src_webm string:${base_url}${filmid}.webm;
+                 src_subtitles string:${portal_url}/${language}/${filmid}.srt"
+    >
+  <script type="text/javascript" src="/jwplayer.js" tal:attributes="src string:$portal_url/++resource++gfb.theme.jwplayer/jwplayer.js"></script>
+
+
+  <h1 id="parent-fieldname-title" class="documentFirstHeading" tal:content="here/Title">title</h1>
+
+  <p tal:content="here/Description">description</p>
+
+        <div id="videobox">
+
+            <span id="portal_url" tal:attributes="portal_url here/portal_url"></span>
+
+                <source src=".mp4" id="src_mp4"
+                    tal:attributes="src src_mp4"
+                    type='video/mp4;codecs="avc1.42E01E,mp4a.40.2"' ></source>
+                <source src=".webm" id="src_webm"
+                    tal:attributes="src src_webm"
+                    type='video/webm;codecs="vp8,vorbis"'></source>
+                <source src="poster" id="src_poster"
+                    tal:attributes="src string:${base_url}${filmid}.png"></source>
+                <source src="subtitles" id="src_subtitles"
+                    tal:attributes="src src_subtitles"></source>
+            <figure class="illustration-1">
+                <div width="470" height="265" tabindex="0" controls="controls" preload="preload" id="videocontainer"></div>
+                <figcaption>&copy; Geb&auml;rdenwerk</figcaption>
+            </figure>
+
+            <script type="text/javascript">
+                    $playerurl = jQuery('#portal_url').attr('portal_url') + "/++resource++gfb.theme.jwplayer/player.swf";
+                    $src_poster = jQuery('#src_poster').attr('src');
+                    $src_mp4 = jQuery('#src_mp4').attr('src');
+                    $src_webm = jQuery('#src_webm').attr('src');
+                    $src_subtitles = jQuery('#src_subtitles').attr('src');
+                    jwplayer("videocontainer").setup({
+                    players: [{ type: "flash", src: $playerurl }, { type: "html5" }],
+                    height: 265, width: 470,
+                    image: $src_poster,
+                    plugins: {
+            'captions-2': {
+                file: $src_subtitles
+            },
+            'hd-2': {}
+        },
+                    levels: [
+                        {file: $src_mp4},
+                        {file: $src_webm},
+                    ] });
+
+            </script>
+        </div>
+
+
+
+
+
+  <metal:field use-macro="python:context.widget('text', mode='view')">
+      Body text
+  </metal:field>
+
+
+
+
+  <h2 class="boxheader" i18n:translate="title_video_download">Video-Download</h2>
+
+    <p i18n:translate="label_donwload_signlanguage_film">Hier finden Sie den Gebärdensprachen-Film zum Herunterladen in verschiedenen Formaten, sowie die Untertitel:</p>
+
+    <ul>
+      <li><a target="_blank" href="video.mp4" tal:attributes="href src_mp4" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_mp4">Gebärdensprachen-Film (mp4-Datei)</a></li>
+      <li><a target="_blank" href="video.webm" tal:attributes="href src_webm" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_webm">Gebärdensprachen-Film (HTML5 Video WebM-Datei)</a></li>
+      <li><a target="_blank" href="video.srt" tal:attributes="href src_subtitles" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="label_subtitles">Untertitel (SRT-Datei)</a></li>
+    </ul>
+
+
+</metal:main>
+
+</body>
+</html>

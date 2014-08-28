@@ -339,6 +339,15 @@
    layer=".interfaces.IThemeSpecific"
    />
 
+ <browser:page
+   name="signlanguage"
+   for="Products.ATContentTypes.interfaces.document.IATDocument"
+   class=".signlanguage.SignLanguage"
+   template="templates/signlanguage.pt"
+   permission="zope2.View"
+   layer=".interfaces.IThemeSpecific"
+   />
+
   <!-- Override the getIcon method to set the title attr in search results -->
   <adapter for="*
                 .interfaces.IThemeSpecific

@@ -3609,5 +3609,13 @@ ul#portal-siteactions li#siteaction-simple_language a {
   padding-left: 24px;
 }
 
+div#videobox {
+  margin-bottom: 1em;
+}
+
+div#videobox figcaption {
+  font-style: italic;
+}
+
 /* </dtml-with> */
 
