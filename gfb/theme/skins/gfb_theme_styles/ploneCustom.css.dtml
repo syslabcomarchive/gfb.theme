@@ -3586,11 +3586,6 @@ body.portaltype-topic span.description img {
   background-repeat: initial initial;
 }
 
-ul#portal-siteactions li#siteaction-sign_language a,
-ul#portal-siteactions li#siteaction-simple_language a {
-  color: white;
-}
-
 ul#portal-siteactions li#siteaction-sign_language {
   background: url(&dtml-portal_url;/icon_signlanguage_bg.png) no-repeat scroll 0 0.55em;
   padding-right: 0;
