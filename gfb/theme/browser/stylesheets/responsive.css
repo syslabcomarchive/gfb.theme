@@ -323,6 +323,7 @@ and (max-width : 1000px) {
   #videocontainer_wrapper {
     width: 100% !important;
   }
+  #content img { height: auto !important; }
 }
 
 /* There are images in the content which have fixed widths. Some of
