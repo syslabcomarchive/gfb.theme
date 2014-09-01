@@ -112,10 +112,6 @@ and (max-width : 745px) {
   ul#portal-siteactions li#siteaction-simple_language {
     top: 25px;
   }
-}
-
-@media only screen
-and (max-width : 745px) {
 
   div#portal-header {
     background-position: left 62px;
@@ -328,3 +324,24 @@ and (max-width : 1000px) {
     width: 100% !important;
   }
 }
+
+/* There are images in the content which have fixed widths. Some of
+these trigger horizontal scrolling on small screens. Setting
+max-width: 100% doesn't work. Setting width: 100% does work, but there
+are also inline images which are intented to be small.
+
+Here we set a number of max-width
+ */
+@media only screen and (max-width: 1000px) and (min-width: 900px) {
+  #content img {max-width: 660px !important;} }
+@media only screen and (max-width: 900px) and (min-width: 800px) {
+ #content img {max-width: 560px !important;} }
+@media only screen and (max-width: 800px) and (min-width: 745px) {
+  #content img {max-width: 500px !important;} }
+@media only screen and (max-width: 745px) and (min-width: 600px) {
+  #content img {max-width: 560px !important;} }
+@media only screen and (max-width: 600px) and (min-width: 500px) {
+  #content img {max-width: 460px !important;} }
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+  #content img {max-width: 360px !important;} }
+@media only screen and (max-width: 400px) { #content img {max-width: 275px !important;} }
