@@ -1,10 +1,60 @@
 @media only screen
+and (max-width: 455px) {
+  body div#gfb_site_title { font-size: 80%; }
+  body #portal-globalnav {
+    height: 20px;
+  }
+  body #portal-globalnav li {
+    padding: 0 1em;
+  }
+  body #portal-globalnav li a {
+    line-height: 20px;
+  }
+  body #portal-searchbox,
+  body #portal-globalnav li a {
+    font-size: 90%;
+  }
+  body #portal-searchbox {
+    line-height: 20px;
+    height: 21px;
+  }
+  body div #portal-siteactions li {
+    padding-right: 5px;
+  }
+  body #searchfields #SearchableText {
+    min-width: inherit;
+  }
+  body ul#portal-languageselector {
+    font-size: 0;
+    position: absolute;
+    z-index: 10;
+    left: 87px;
+    top: 26px;
+  }
+  body #portal-logo img {
+    left: -12px;
+    width: 80px;
+    height: 50px;
+  }
+  body div ul#portal-siteactions li#siteaction-sign_language,
+  body div ul#portal-siteactions li#siteaction-simple_language {
+    left: 56px;
+  }
+}
+
+@media only screen
 and (max-width: 590px) {
   body div ul#portal-siteactions li#siteaction-sign_language,
   body div ul#portal-siteactions li#siteaction-simple_language {
     width: 24px;
+  }
+  body div ul#portal-siteactions li#siteaction-sign_language a,
+  body div ul#portal-siteactions li#siteaction-simple_language a {
+    display: block;
+    height: 24px;
     font-size: 0;
   }
+
   body #portal-siteactions li {
     padding-right: 9px;
   }
@@ -26,12 +76,16 @@ and (max-width : 745px) {
     position: absolute;
     left: 100px;
     z-index: 30;
-    height: 24px;
     width: 114px;
     background-position: 0 0;
     background-color: #01010D;
   }
-
+  body ul#portal-siteactions li#siteaction-sign_language {
+    height: 25px;
+  }
+  body ul#portal-siteactions li#siteaction-simple_language {
+    height: 24px;
+  }
   ul#portal-siteactions li#siteaction-sign_language {
     top: 0;
   }
