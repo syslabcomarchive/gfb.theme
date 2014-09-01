@@ -324,10 +324,6 @@ and (max-width : 1000px) {
     position: -moz-initial;
     position: initial;
   }
-  #content img {
-    width: 100% !important;
-    height: auto !important;
-  }
   #videocontainer_wrapper {
     width: 100% !important;
   }
