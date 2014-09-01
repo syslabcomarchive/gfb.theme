@@ -324,7 +324,7 @@ and (max-width : 1000px) {
     position: -moz-initial;
     position: initial;
   }
-  #content-core img {
+  #content img {
     width: 100% !important;
     height: auto !important;
   }
