@@ -56,7 +56,9 @@ and (max-width: 455px) {
     overflow: visible;
     width: 0;
   }
-
+  div#portal-header {
+    height: 49px;
+  }
 }
 
 @media only screen
