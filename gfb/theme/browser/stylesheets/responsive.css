@@ -40,6 +40,23 @@ and (max-width: 455px) {
   body div ul#portal-siteactions li#siteaction-simple_language {
     left: 56px;
   }
+  div#highlights-archive {
+    right: 10px;
+    top: 10px;
+    font-size: 80%;
+  }
+  body .info_of_search {
+    width: inherit;
+  }
+  body div.search_medium {
+    height: inherit;
+  }
+  body #content table {
+    display: block;
+    overflow: visible;
+    width: 0;
+  }
+
 }
 
 @media only screen
