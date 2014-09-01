@@ -326,4 +326,7 @@ and (max-width : 1000px) {
     width: 100% !important;
     height: auto !important;
   }
+  #videocontainer_wrapper {
+    width: 100% !important;
+  }
 }
