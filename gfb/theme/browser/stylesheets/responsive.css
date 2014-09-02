@@ -62,6 +62,16 @@ and (max-width: 455px) {
 }
 
 @media only screen
+and (min-width: 455px)
+and (max-width: 745px) {
+  body #portal-logo img {
+    width: 100px;
+    height: auto;
+  }
+
+}
+
+@media only screen
 and (max-width: 590px) {
   body div ul#portal-siteactions li#siteaction-sign_language,
   body div ul#portal-siteactions li#siteaction-simple_language {
@@ -141,11 +151,6 @@ and (max-width : 745px) {
     text-align: right;
     right: 14px;
     top: 0;
-  }
-
-  #portal-logo img {
-    top: 0;
-    left: 0;
   }
 
  /* hide stuff we don't want */
@@ -290,23 +295,18 @@ and (min-width : 745px) {
   div#gfb_site_title {
     top: 17px;
   }
-  #portal-logo img {
-    top: 50px;
-    left: 50px;
-  }
 }
 
 @media only screen
 and (max-width : 1000px) {
+  #portal-logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   td#portal-column-two,
   #portal-personaltools { display: none; }
   div#visual-portal-wrapper { width: auto; }
-
-  #portal-logo img {
-    position: absolute;
-    width: 100px;
-    height: 62px;
-  }
   #gfb_text_sizes { z-index: 10; }
   div#portal-top { margin-top: 0; }
   body div.search_fields_narrow,
