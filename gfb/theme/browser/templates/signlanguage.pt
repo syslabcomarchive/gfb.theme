@@ -79,7 +79,7 @@
 
   <h2 class="boxheader" i18n:translate="title_video_download">Video-Download</h2>
 
-    <p i18n:translate="label_donwload_signlanguage_film">Hier finden Sie den Gebärdensprachen-Film zum Herunterladen in verschiedenen Formaten, sowie die Untertitel:</p>
+    <p i18n:translate="label_donwload_signlanguage_film">Hier finden Sie den Gebärdensprachen-Film zum Herunterladen in verschiedenen Formaten:</p>
 
     <ul>
       <li><a target="_blank" href="video.mp4" tal:attributes="href src_mp4" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_mp4">Gebärdensprachen-Film (mp4-Datei)</a></li>

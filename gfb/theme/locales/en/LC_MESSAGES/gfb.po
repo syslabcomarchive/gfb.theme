@@ -291,8 +291,7 @@ msgstr "Download video"
 
 msgid "label_donwload_signlanguage_film"
 msgstr ""
-"Here you can download the sign language movie in different format, as well as "
-"the subtitles."
+"Here you can download the sign language movie in different formats:"
 
 msgid "sign_language_mp4"
 msgstr "Sign language movie (mp4 file)"
