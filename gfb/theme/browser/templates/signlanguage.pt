@@ -84,7 +84,7 @@
     <ul>
       <li><a target="_blank" href="video.mp4" tal:attributes="href src_mp4" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_mp4">Gebärdensprachen-Film (mp4-Datei)</a></li>
       <li><a target="_blank" href="video.webm" tal:attributes="href src_webm" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_webm">Gebärdensprachen-Film (HTML5 Video WebM-Datei)</a></li>
-      <li><a target="_blank" href="video.srt" tal:attributes="href src_subtitles" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="label_subtitles">Untertitel (SRT-Datei)</a></li>
+<!--       <li><a target="_blank" href="video.srt" tal:attributes="href src_subtitles" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="label_subtitles">Untertitel (SRT-Datei)</a></li> -->
     </ul>
 
 
