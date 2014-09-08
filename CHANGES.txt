@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.38 (unreleased)
+1.4.38 (2014-09-08)
 -------------------
 
 - #10604 responsive theme, cater for new action links and extra width [deroiste]
