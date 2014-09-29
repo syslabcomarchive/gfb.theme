@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.4.39 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Refs #10697 IE layout fix: don't float content images left
+  [deroiste]
 
 1.4.38 (2014-09-08)
 -------------------
