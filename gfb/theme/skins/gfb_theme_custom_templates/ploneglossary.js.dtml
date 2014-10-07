@@ -149,19 +149,19 @@ function highlight_related_glossary_term_in_text(node, word, definition_index) {
         hiword.className = class_name;
         hiword.appendChild(document.createTextNode(content_value.substr(index, word.length)));
 
-        // Add popup events 
-        if (browser_info.isIE && browser_info.version<8) { 
+        // Add popup events
+        if (browser_info.isIE && browser_info.version<8) {
             // For IE6 and IE7
-            hiword.setAttribute("onmouseover", function(){show_glossary_definition_popup(this, definition_index);}); 
-            hiword.setAttribute("onmouseout", function(){hide_glossary_definition_popup(this, definition_index);}); 
-            hiword.setAttribute("onclick", function(){goto_glossary_definition(definition_index);}); 
-        } 
-        else { 
-            // Others 
-            hiword.setAttribute("onmouseover", "javascript:show_glossary_definition_popup(this, " + definition_index + ")"); 
-            hiword.setAttribute("onmouseout", "javascript:hide_glossary_definition_popup(this, " + definition_index + ")"); 
-            hiword.setAttribute("onclick", "javascript:goto_glossary_definition(" + definition_index + ")"); 
-        } 
+            hiword.setAttribute("onmouseover", function(){show_glossary_definition_popup(this, definition_index);});
+            hiword.setAttribute("onmouseout", function(){hide_glossary_definition_popup(this, definition_index);});
+            hiword.setAttribute("onclick", function(){goto_glossary_definition(definition_index);});
+        }
+        else {
+            // Others
+            hiword.setAttribute("onmouseover", "javascript:show_glossary_definition_popup(this, " + definition_index + ")");
+            hiword.setAttribute("onmouseout", "javascript:hide_glossary_definition_popup(this, " + definition_index + ")");
+            hiword.setAttribute("onclick", "javascript:goto_glossary_definition(" + definition_index + ")");
+        }
 
         parent_node.insertBefore(document.createTextNode(content_value.substr(0, index)),node);
         parent_node.insertBefore(hiword, node);
