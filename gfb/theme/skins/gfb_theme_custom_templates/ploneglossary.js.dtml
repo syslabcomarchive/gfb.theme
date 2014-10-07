@@ -196,8 +196,9 @@ function highlight_related_glossary_term_in_node(node, word, definition_index, u
 
     if (node.hasChildNodes) {
         var i;
+        var lword = word.toLowerCase();
         for (i=0;i<node.childNodes.length;i++) {
-            if ( window.glossary_matched.indexOf(word) == -1 ) {
+            if ( window.glossary_matched.indexOf(lword) == -1 ) {
                 highlight_related_glossary_term_in_node(node.childNodes[i], word, definition_index, unauthorized_tags);
             };
         }
@@ -205,7 +206,7 @@ function highlight_related_glossary_term_in_node(node, word, definition_index, u
             // Check all textnodes.
             var match = highlight_related_glossary_term_in_text(node, word, definition_index);
             if (match) {
-                window.glossary_matched.push(word);
+                window.glossary_matched.push(lword);
             }
         }
     }
