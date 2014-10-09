@@ -4,7 +4,7 @@ gfb.theme Changelog
 1.4.40 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Small bugfix for glossary highlighting #10744
 
 
 1.4.39 (2014-09-29)
