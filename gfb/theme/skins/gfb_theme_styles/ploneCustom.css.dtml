@@ -30,15 +30,22 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 12px;
 }
 
+.collectionportlet-more-link,
 .feedmixer-more-link {
     text-align:right;
 }
+.collectionportlet-more-link a,
 .feedmixer-more-link a {
     padding-left: 20px;
     font-size:12px;
 }
+.collectionportlet-title,
 .feedmixer-title {
     font-weight: normal;
+}
+.portletFooter .more_link a {
+  background: none;
+  padding-left: 0;
 }
 /* kupu bug */
 
@@ -2574,12 +2581,15 @@ div#region-content #slc-linkcollection-linkbox ul li,
 
 /*Bugfix für externe Links im Newsportlet*/
 
+.collectionportlet-more-link a,
 .feedmixer-more-link a {
   /*font-size:12px;*/
     font-size:88%;
   padding-left:0px;
 }
 
+
+* html .collectionportlet-more-link a,
 * html .feedmixer-more-link a {
   /*font-size:12px;*/
   font-size:88%;
