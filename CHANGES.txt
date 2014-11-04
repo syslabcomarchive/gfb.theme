@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.4.41 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- #10760 customize the collection portlet to be like the feedmixer portlet
+  [deroiste, pysailor]
 
 1.4.40 (2014-10-09)
 -------------------
