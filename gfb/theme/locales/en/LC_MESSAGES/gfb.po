@@ -301,3 +301,7 @@ msgstr "Sign language movie (HTML5 video WebM file)"
 
 msgid "label_subtitles"
 msgstr "Subtitles (SRT file)"
+
+msgid "more_news"
+msgstr "More news&hellip;"
+
