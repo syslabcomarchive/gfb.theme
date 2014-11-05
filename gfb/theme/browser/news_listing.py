@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from plone.memoize import instance
 import Acquisition
-from Products.AdvancedQuery import Or, Eq, And, In, Le
+from Products.AdvancedQuery import Eq, And, In, Le
 from Products.CMFPlone.PloneBatch import Batch
 from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
@@ -40,7 +39,7 @@ class LocalNewsListing(BrowserView):
                 & Le('effective', now)
 
             query = And(queryA, queryBoth)
-            results = catalog.evalAdvancedQuery(query, (('Date', 'desc'),) )
+            results = catalog.evalAdvancedQuery(query, (('Date', 'desc'),))
 
         return results
 
@@ -58,4 +57,3 @@ class LocalNewsListing(BrowserView):
 
     def showLinkToNewsItem(self):
         return self.context.getProperty('show_link_to_news_item', True)
-
