@@ -44,8 +44,8 @@
           </p>
         </div>
 
-        <p class="documentDescription" tal:content="structure here/Description">
-        </p>
+        <div class="documentDescription" tal:content="structure here/Description">
+        </div>
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from plone.memoize import instance
 import Acquisition
-from Products.AdvancedQuery import Or, Eq, And, In, Le
+from Products.AdvancedQuery import Eq, And, In, Le
 from Products.CMFPlone.PloneBatch import Batch
 from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 from Products.Five.browser import BrowserView
 from Products.ATContentTypes.interface import IATTopic
 from gfb.theme import GFBMessageFactory as _
+from gfb.policy.interfaces import INewsListing
 
 
 class LocalNewsListing(BrowserView):
@@ -20,7 +20,7 @@ class LocalNewsListing(BrowserView):
 
     def Title(self):
         context = Acquisition.aq_inner(self.context)
-        if IATTopic.providedBy(context):
+        if IATTopic.providedBy(context) or INewsListing.providedBy(context):
             return context.Title()
         return _(u"heading_newsboard_latest_news")
 
@@ -40,7 +40,7 @@ class LocalNewsListing(BrowserView):
                 & Le('effective', now)
 
             query = And(queryA, queryBoth)
-            results = catalog.evalAdvancedQuery(query, (('Date', 'desc'),) )
+            results = catalog.evalAdvancedQuery(query, (('Date', 'desc'),))
 
         return results
 
@@ -58,4 +58,3 @@ class LocalNewsListing(BrowserView):
 
     def showLinkToNewsItem(self):
         return self.context.getProperty('show_link_to_news_item', True)
-

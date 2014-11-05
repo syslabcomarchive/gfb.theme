@@ -13,9 +13,9 @@
                 normalizeString nocall: context/@@plone/normalizeString">
 
 
-        <h1 class="documentFirstHeading" tal:content="view/Title"> 
+        <h1 class="documentFirstHeading" tal:content="view/Title">
         </h1>
-        
+
         <div tal:content="structure here/Description" />
 
         <metal:listingmacro define-macro="listing">
@@ -54,8 +54,8 @@
                                                 ">
                             <tal:block define="value python: getattr(obj, 'Title', None)">
 
-                                    <h2>
-                                    
+                                    <h3>
+
                                     <a href="#" tal:attributes="href url;
                                                                 class obj_wf_state_class"
                                                 tal:condition="showLinkToNewsItem"
@@ -63,9 +63,9 @@
                                     <span tal:condition="not:showLinkToNewsItem"
                                         tal:attributes="class obj_wf_state_class"
                                         tal:content="title_or_id" />
-                                    (<span class="teaserdate" tal:content="python:toLocalizedTime(obj['EffectiveDate'])"/>)                                                  
-                                    </h2>
-                                    <tal:block define="newsItem obj/getObject; 
+                                    (<span class="teaserdate" tal:content="python:toLocalizedTime(obj['EffectiveDate'])"/>)
+                                    </h3>
+                                    <tal:block define="newsItem obj/getObject;
                                                        news_type newsItem/portal_type;
                                                        hasImage python:news_type=='News Item' and newsItem.getField('image').getAccessor(newsItem)()" tal:condition="hasImage">
                                     <div class="newsImageContainer" style="width: 100px;"
@@ -80,14 +80,14 @@
                                         class="parent-fieldname-image">
                                         <img tal:attributes="src string:${url}/image_thumb; alt title_or_id;" width="80"/>
                                         </span>
-                                    </div>                                     
+                                    </div>
                                     </tal:block>
-                                    
-                                    <span tal:omit-tag="" tal:condition="not:obj_description"> 
-                                        &nbsp; 
-                                    </span> 
+
+                                    <span tal:omit-tag="" tal:condition="not:obj_description">
+                                        &nbsp;
+                                    </span>
                                     <span class="description" tal:content="structure obj_description">
-                                        description 
+                                        description
                                     </span>
                             </tal:block>
                             </tal:fields>
