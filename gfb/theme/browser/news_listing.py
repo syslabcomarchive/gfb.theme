@@ -7,6 +7,7 @@ from DateTime import DateTime
 from Products.Five.browser import BrowserView
 from Products.ATContentTypes.interface import IATTopic
 from gfb.theme import GFBMessageFactory as _
+from gfb.policy.interfaces import INewsListing
 
 
 class LocalNewsListing(BrowserView):
@@ -19,7 +20,7 @@ class LocalNewsListing(BrowserView):
 
     def Title(self):
         context = Acquisition.aq_inner(self.context)
-        if IATTopic.providedBy(context):
+        if IATTopic.providedBy(context) or INewsListing.providedBy(context):
             return context.Title()
         return _(u"heading_newsboard_latest_news")
 
