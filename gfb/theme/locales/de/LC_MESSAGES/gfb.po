@@ -411,3 +411,6 @@ msgstr "Gebärdensprache"
 
 msgid "Simple Language"
 msgstr "Leichte Sprache"
+
+msgid "more_news"
+msgstr "Weitere Nachrichten&hellip;"
