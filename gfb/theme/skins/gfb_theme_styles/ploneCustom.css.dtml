@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family:Arial,Verdana,Lucida,Helvetica,sans-serif;
 }
 
+h1.documentFirstHeading {
+  font-size:140%
+}
+
 #you-have-chosen {
     float:left;
     margin:0;
@@ -1137,10 +1141,11 @@ div#risktable div.riskvalue ul {
 }
 
 em {
-  font-style: normal;
-  font-weight: bold;
+  font-style: italic;
 }
-
+.documentDescription em {
+  font-weight: normal;
+}
 strong {
   font-weight: bold;
 }
