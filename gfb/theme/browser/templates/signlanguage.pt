@@ -9,12 +9,17 @@
 
 
 <metal:main fill-slot="main"
-     tal:define="filmid string:gebaerdensprache;
+     tal:define="filmid_inhalt string:gebaerdensprache_inhalt;
+                 filmid_navigation string:gebaerdensprache_navigation;
                  base_url string:${portal_url}/de/;
                  language here/portal_languages/getPreferredLanguage;
-                 src_mp4 string:${base_url}${filmid}.mp4;
-                 src_webm string:${base_url}${filmid}.webm;
-                 src_subtitles string:${portal_url}/${language}/${filmid}.srt"
+                 src_mp4_inhalt string:${base_url}${filmid_inhalt}.mp4;
+                 src_webm_inhalt string:${base_url}${filmid_inhalt}.webm;
+                 src_subtitles_inhalt string:${portal_url}/${language}/${filmid_inhalt}.srt;
+                 src_mp4_navigation string:${base_url}${filmid_navigation}.mp4;
+                 src_webm_navigation string:${base_url}${filmid_navigation}.webm;
+                 src_subtitles_navigation string:${portal_url}/${language}/${filmid_navigation}.srt
+                "
     >
   <script type="text/javascript" src="/jwplayer.js" tal:attributes="src string:$portal_url/++resource++gfb.theme.jwplayer/jwplayer.js"></script>
 
@@ -23,32 +28,35 @@
 
   <p tal:content="here/Description">description</p>
 
-        <div id="videobox">
+  <h2 i18n:translate="title_gebaerdensprache_inhalt">Das Portal Gefährdungsbeurteilung der Bundesanstalt für Arbeitsschutz und Arbeitsmedizin</h2>
+  <p i18n:translate="intro_gebaerdensprache_inhalt">Im ersten Gebärdensprachfilm erhalten Sie Informationen zum Inhalt des Portals Gefährdungsbeurteilung in Deutscher Gebärdensprache (DGS).</p>
+
+        <div id="videobox_inhalt">
 
             <span id="portal_url" tal:attributes="portal_url here/portal_url"></span>
 
-                <source src=".mp4" id="src_mp4"
-                    tal:attributes="src src_mp4"
+                <source src=".mp4" id="src_mp4_inhalt"
+                    tal:attributes="src src_mp4_inhalt"
                     type='video/mp4;codecs="avc1.42E01E,mp4a.40.2"' ></source>
-                <source src=".webm" id="src_webm"
-                    tal:attributes="src src_webm"
+                <source src=".webm" id="src_webm_inhalt"
+                    tal:attributes="src src_webm_inhalt"
                     type='video/webm;codecs="vp8,vorbis"'></source>
-                <source src="poster" id="src_poster"
-                    tal:attributes="src string:${base_url}${filmid}.png"></source>
-                <source src="subtitles" id="src_subtitles"
-                    tal:attributes="src src_subtitles"></source>
+                <source src="poster" id="src_poster_inhalt"
+                    tal:attributes="src string:${base_url}${filmid_inhalt}.jpg"></source>
+                <source src="subtitles" id="src_subtitles_inhalt"
+                    tal:attributes="src src_subtitles_inhalt"></source>
             <figure class="illustration-1">
-                <div width="470" height="265" tabindex="0" controls="controls" preload="preload" id="videocontainer"></div>
+                <div width="470" height="265" tabindex="0" controls="controls" preload="preload" id="videocontainer_inhalt"></div>
                 <figcaption>&copy; Geb&auml;rdenwerk</figcaption>
             </figure>
 
             <script type="text/javascript">
                     $playerurl = jQuery('#portal_url').attr('portal_url') + "/++resource++gfb.theme.jwplayer/player.swf";
-                    $src_poster = jQuery('#src_poster').attr('src');
-                    $src_mp4 = jQuery('#src_mp4').attr('src');
-                    $src_webm = jQuery('#src_webm').attr('src');
-                    $src_subtitles = jQuery('#src_subtitles').attr('src');
-                    jwplayer("videocontainer").setup({
+                    $src_poster = jQuery('#src_poster_inhalt').attr('src');
+                    $src_mp4 = jQuery('#src_mp4_inhalt').attr('src');
+                    $src_webm = jQuery('#src_webm_inhalt').attr('src');
+                    $src_subtitles = jQuery('#src_subtitles_inhalt').attr('src');
+                    jwplayer("videocontainer_inhalt").setup({
                     players: [{ type: "flash", src: $playerurl }, { type: "html5" }],
                     height: 270, width: 475,
                     image: $src_poster,
@@ -68,6 +76,52 @@
 
 
 
+  <h2 i18n:translate="title_gebaerdensprache_navigation">Navigation auf www.gefaehrdungsbeurteilung.de</h2>
+  <p i18n:translate="intro_gebaerdensprache_inhalt">Der zweite Gebärdensprachenfilm erklärt Ihnen in deutscher Gebärdensprache, wie Sie sich auf unserem Portal zurechtfinden.</p>
+
+        <div id="videobox_navigation">
+
+            <span id="portal_url" tal:attributes="portal_url here/portal_url"></span>
+
+                <source src=".mp4" id="src_mp4_navigation"
+                    tal:attributes="src src_mp4_navigation"
+                    type='video/mp4;codecs="avc1.42E01E,mp4a.40.2"' ></source>
+                <source src=".webm" id="src_webm_navigation"
+                    tal:attributes="src src_webm_navigation"
+                    type='video/webm;codecs="vp8,vorbis"'></source>
+                <source src="poster" id="src_poster_navigation"
+                    tal:attributes="src string:${base_url}${filmid_navigation}.jpg"></source>
+                <source src="subtitles" id="src_subtitles_navigation"
+                    tal:attributes="src src_subtitles_navigation"></source>
+            <figure class="illustration-1">
+                <div width="470" height="265" tabindex="0" controls="controls" preload="preload" id="videocontainer_navigation"></div>
+                <figcaption>&copy; Geb&auml;rdenwerk</figcaption>
+            </figure>
+
+            <script type="text/javascript">
+                    $playerurl = jQuery('#portal_url').attr('portal_url') + "/++resource++gfb.theme.jwplayer/player.swf";
+                    $src_poster = jQuery('#src_poster_navigation').attr('src');
+                    $src_mp4 = jQuery('#src_mp4_navigation').attr('src');
+                    $src_webm = jQuery('#src_webm_navigation').attr('src');
+                    $src_subtitles = jQuery('#src_subtitles_navigation').attr('src');
+                    jwplayer("videocontainer_navigation").setup({
+                    players: [{ type: "flash", src: $playerurl }, { type: "html5" }],
+                    height: 270, width: 475,
+                    image: $src_poster,
+                    plugins: {
+            'captions-2': {
+                file: $src_subtitles
+            },
+            'hd-2': {}
+        },
+                    levels: [
+                        {file: $src_mp4},
+                        {file: $src_webm},
+                    ] });
+
+            </script>
+        </div>
+
 
 
   <metal:field use-macro="python:context.widget('text', mode='view')">
@@ -82,8 +136,8 @@
     <p i18n:translate="label_donwload_signlanguage_film">Hier finden Sie den Gebärdensprachen-Film zum Herunterladen in verschiedenen Formaten:</p>
 
     <ul>
-      <li><a target="_blank" href="video.mp4" tal:attributes="href src_mp4" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_mp4">Gebärdensprachen-Film (mp4-Datei)</a></li>
-      <li><a target="_blank" href="video.webm" tal:attributes="href src_webm" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="sign_language_webm">Gebärdensprachen-Film (HTML5 Video WebM-Datei)</a></li>
+      <li>Gebärdensprachen-Film zum Inhalt des Portals Gefährdungsbeurteilung der Bundesanstalt für Arbeitsschutz und Arbeitsmedizin als <a target="_blank" href="video.mp4" tal:attributes="href src_mp4_inhalt" title="Öffnet&nbsp;neues&nbsp;Fenster">mp4-Datei (72 MB)</a> oder als <a target="_blank" href="video.webm" tal:attributes="href src_webm_inhalt" title="Öffnet&nbsp;neues&nbsp;Fenster">HTML5 Video WebM-Datei</a></li>
+      <li>Gebärdensprachen-Film zur Navigation auf www.gefaehrdungsbeurteilung.de als <a target="_blank" href="video.mp4" tal:attributes="href src_mp4_navigation" title="Öffnet&nbsp;neues&nbsp;Fenster">mp4-Datei (128 MB)</a> oder als <a target="_blank" href="video.webm" tal:attributes="href src_webm_navigation" title="Öffnet&nbsp;neues&nbsp;Fenster">HTML5 Video WebM-Datei</a></li>
 <!--       <li><a target="_blank" href="video.srt" tal:attributes="href src_subtitles" title="Öffnet&nbsp;neues&nbsp;Fenster" i18n:translate="label_subtitles">Untertitel (SRT-Datei)</a></li> -->
     </ul>
 
