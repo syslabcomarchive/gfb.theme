@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.46 (unreleased)
+1.4.46 (2015-01-30)
 -------------------
 
 - Adjust positioning of icons for external link in content area #11302
