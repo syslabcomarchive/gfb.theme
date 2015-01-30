@@ -1,6 +1,19 @@
 gfb.theme Changelog
 ===================
 
+1.4.46 (2015-01-30)
+-------------------
+
+- Adjust positioning of icons for external link in content area #11302
+- Adapt redirection after login process, so that members of a certain
+  Editors group don't get redirected to the Work Area #11310
+
+1.4.45 (2015-01-06)
+-------------------
+
+- Nothing changed yet.
+
+
 1.4.44 (2014-11-05)
 -------------------
 

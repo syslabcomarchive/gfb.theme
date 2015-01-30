@@ -49,12 +49,6 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        <p tal:condition="python: not len_text and is_editable"
-           i18n:translate="no_body_text"
-           class="discreet">
-          This item does not have any body text, click the edit tab to change it.
-        </p>
-
         <div metal:define-macro="text-field-view"
              id="parent-fieldname-text" class="stx"
              tal:define="kss_class python:getKssClasses('text',
