@@ -4,7 +4,7 @@ gfb.theme Changelog
 1.4.47 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- #10761 fix errors thrown by search and search_rss [deroiste]
 
 
 1.4.46 (2015-01-30)
