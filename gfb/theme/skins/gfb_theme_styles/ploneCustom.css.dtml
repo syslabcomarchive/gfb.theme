@@ -1820,9 +1820,17 @@ div#link_to_tool {
   background: transparent url(&dtml-portal_url;/link_internal.gif) 0px 3px no-repeat;
   padding: 1px 0px 1px 10px;
 }
+#content .link-internal-js {
+  background-position: 0 4px;
+  padding-top: 0;
+}
 .link-external-js {
   background: transparent url(&dtml-portal_url;/link_external.gif) 0px 3px no-repeat;
   padding: 1px 0px 1px 10px;
+}
+#content .link-external-js {
+  background-position: 0 4px;
+  padding-top: 0;
 }
 .link-https-js {
   background: transparent url(&dtml-portal_url;/lock_icon.gif) 0px 1px no-repeat;
