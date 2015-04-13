@@ -25,11 +25,6 @@
 
     </script>
 
-    <script type="text/javascript" src="livesearch_ralinks.js"
-            tal:attributes="src string:$portal_url/livesearch_ralinks.js">
-    </script>
-
-
     <script type="text/javascript" src="jquery.tooltip.js"
             tal:attributes="src string:$portal_url/jquery.tooltip.js">
     </script>

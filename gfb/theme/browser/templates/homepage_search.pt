@@ -35,9 +35,6 @@
     </script>
   </tal:js>
 
-<script type="text/javascript" src="livesearch_ralinks.js"
-    tal:attributes="src string:$portal_url/livesearch_ralinks.js">
-</script>
 </metal:javascriptslot>
 
 <metal:block fill-slot="top_slot"
