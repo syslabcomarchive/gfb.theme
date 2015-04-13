@@ -1,11 +1,11 @@
 gfb.theme Changelog
 ===================
 
-1.4.48 (unreleased)
+1.4.48 (2015-04-13)
 -------------------
 
-- Nothing changed yet.
-
+- #11550 Disable the RALink livesearch in favor of solr suggestions
+  [deroiste]
 
 1.4.47 (2015-03-19)
 -------------------
