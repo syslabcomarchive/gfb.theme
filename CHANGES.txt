@@ -1,11 +1,15 @@
 gfb.theme Changelog
 ===================
 
-1.4.49 (unreleased)
+1.4.49 (2015-04-14)
 -------------------
 
-- Nothing changed yet.
-
+- #11550 revert 8371838a (#10451) which used the new solr
+  suggestions for the database search instead of the custom RA search
+  [deroiste]
+- #10761 prevent @@ra_inline from linking to translations because it
+  uses the UID of an item to display it out of context, which breaks
+  translations, causing problems for google indexing [deroiste]
 
 1.4.48 (2015-04-13)
 -------------------
