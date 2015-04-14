@@ -9,7 +9,7 @@
         <li tal:define="code lang/code;
                         selected lang/selected;
 						translated lang/translated"
-            tal:condition="python: not selected and (translated or specialFish)"
+            tal:condition="python: not selected and (translated or specialFish) and context.id in context.aq_parent.objectIds()"
             tal:attributes="class python: selected and 'currentLanguage' or '';">
                 <a href="" accesskey="8"
                    tal:define="flag lang/flag|nothing;
