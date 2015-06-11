@@ -41,23 +41,4 @@ $(function() {
         setTimeout("$('#suggestion-area').remove()", 200);
     });
 
-    /* Binding for the main search field */
-    var searchInputMain = $(".LSBoxRALinks input[name='SearchableText']");
-    $(searchInputMain).attr("autocomplete", "off");
-
-    searchInputMain.bind( "paste keyup", function ( event ) {
-        var term = event.target.value;
-
-        $.getJSON("suggest-terms?term="+term, function( data ) {
-            $("#suggestion-area").remove();
-            $(event.target).after("<div id='suggestion-area'/>");
-
-            search_suggestion._fillSuggestionArea(event, data);
-        });
-    });
-    searchInputMain.blur(function() {
-        // Allow time for a click event to be fired from the suggestion-area
-        setTimeout("$('#suggestion-area').remove()", 200);
-    });
-
 });
