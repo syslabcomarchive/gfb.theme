@@ -22,7 +22,7 @@
 
     <h1 class="documentFirstHeading">
         <tal:changes i18n:translate="changes_to">Changes to</tal:changes>
-        <span tal:replace="context/title_or_id" />
+        &quot;<span tal:replace="context/title_or_id" />&quot;
     </h1>
 
     <div id="content-core">

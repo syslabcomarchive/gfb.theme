@@ -3634,5 +3634,9 @@ div#videobox figcaption {
   font-style: italic;
 }
 
+div#diff-legend{
+  display: none;
+}
+
 /* </dtml-with> */
 
