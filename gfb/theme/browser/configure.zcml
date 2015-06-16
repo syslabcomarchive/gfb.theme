@@ -3,8 +3,6 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="gfb.theme">
 
-	<include package="Products.CMFCore" file="permissions.zcml" />
-
 
     <include package="z3c.jbot" file="meta.zcml" />
 
@@ -357,6 +355,16 @@
        permission="zope2.View"
        layer=".interfaces.IThemeSpecific"
        />
+
+    <!-- override add user form -->
+    <browser:page
+      name="new-user"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      class=".add_user.AddUserForm"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer=".interfaces.IThemeSpecific"
+      />
+
 
   <!-- Override the getIcon method to set the title attr in search results -->
   <adapter for="*
