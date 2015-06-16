@@ -84,7 +84,7 @@
             </form>
         </div>
 
-        <tal:block tal:condition="diffs/recursive">
+<!--         <tal:block tal:condition="diffs/recursive">
         <h2 i18n:translate="changed_files">Changed files</h2>
         <i tal:condition="not:diffs/getSubDiffs" i18n:translate="None">None</i>
         <ul tal:condition="diffs/getSubDiffs">
@@ -106,7 +106,7 @@
         <ul tal:condition="diffs/getAddedItems">
         <li tal:repeat="id diffs/getAddedItems"><a tal:content="id" tal:attributes="href id">[filename]</a></li>
         </ul>
-        </tal:block>
+        </tal:block> -->
     </div>
   </metal:main>
 </body>
