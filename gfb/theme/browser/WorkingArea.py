@@ -155,6 +155,8 @@ class ProviderOverview(BrowserView):
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         mf = portal.restrictedTraverse('Members')
         for id, ob in mf.objectItems('ATFolder'):
+            if 'workingarea' not in ob.getProperty('layout', ''):
+                continue
             providers = ob.objectValues('Provider')
             providers = [x for x in providers if x.isCanonical()]
             provider = len(providers) and providers[0].Title() or 'n/a'

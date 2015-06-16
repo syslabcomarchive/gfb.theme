@@ -29,21 +29,21 @@ class Renderer(base.Renderer):
         base.Renderer.__init__(self, *args)
 
         portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
-
         self.portal = portal_state.portal()
 
+        pm = getToolByName(self.context, 'portal_membership')
+        pt = getToolByName(self.context, 'portal_url')
+        self.purl = pt()
+        hf = pm.getHomeFolder()
+        self.home_folder = hf
 
     @property
     def available(self):
-        return True
-
+        return "workingarea" in self.home_folder.getProperty('layout', '')
 
     def home_url(self):
-        pm = getToolByName(self.context, 'portal_membership')
-        pt = getToolByName(self.context, 'portal_url')
-        hf = pm.getHomeFolder()
-        self.home_folder = hf
-        home_folder_url = hf and hf.absolute_url() or pt()
+        home_folder_url = (
+            self.home_folder and self.home_folder.absolute_url() or self.purl)
         return home_folder_url
 
     def getLanguage(self):
@@ -53,6 +53,7 @@ class Renderer(base.Renderer):
         pm = getToolByName(self, 'portal_membership')
         member = pm.getAuthenticatedMember()
         return "Manager" in member.getRoles()
+
 
 class AddForm(base.NullAddForm):
     form_fields = form.Fields(IWorkNavPortlet)
