@@ -414,3 +414,36 @@ msgstr "Leichte Sprache"
 
 msgid "more_news"
 msgstr "Weitere Nachrichten&hellip;"
+
+
+# DIFF
+
+msgid "changes_to"
+msgstr "Änderungen an"
+
+msgid "no_changes"
+msgstr "Keine signifikanten Änderungen gefunden"
+
+msgid "show_code_differences"
+msgstr "Zeige Änderungen im Quelltext"
+
+msgid "show_visual_differences"
+msgstr "Zeige sichtbare Änderungen"
+
+msgid "show_side_by_side"
+msgstr "Zeige Änderungen nebeneinander"
+
+msgid "field_changed"
+msgstr "Feld geändert"
+
+msgid "changed_files"
+msgstr "Geänderte Dateien"
+
+msgid "removed_files"
+msgstr "Entfernte Dateien"
+
+msgid "added_files"
+msgstr "Hinzugefügte Dateien"
+
+msgid "None"
+msgstr "keine"

@@ -348,6 +348,16 @@
    layer=".interfaces.IThemeSpecific"
    />
 
+   <!-- override diff view, so that we can add i18n statements -->
+    <browser:page
+       for="plone.app.iterate.interfaces.IIterateManagedContent"
+       class=".diff.DiffView"
+       name="iterate_diff"
+       template="templates/diff.pt"
+       permission="zope2.View"
+       layer=".interfaces.IThemeSpecific"
+       />
+
   <!-- Override the getIcon method to set the title attr in search results -->
   <adapter for="*
                 .interfaces.IThemeSpecific
