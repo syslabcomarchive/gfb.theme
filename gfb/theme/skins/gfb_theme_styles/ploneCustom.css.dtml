@@ -3638,5 +3638,86 @@ div#diff-legend{
   display: none;
 }
 
+
+/* @group Content History */
+
+.template-historyview #history dd {
+}
+
+.template-historyview div.historyRecord {
+    margin-bottom: 1em;
+}
+
+
+.template-historyview div.historyTools ul {
+    float: right;
+    margin: 0.5em 1em;
+}
+
+.template-historyview div.historyTools ul li {
+    display: inline;
+    padding: 0 0.015em;
+}
+
+.template-historyview div.historyTools ul li a{
+    border-bottom: none;
+}
+
+.template-historyview div.historyTools form {
+    display: inline;
+}
+
+.template-historyview .historyAction {
+
+}
+
+.template-historyview .historyByLine {
+    background: #ddd;
+    padding: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-top-left-radius: 0.5em;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+
+.template-historyview div.historyLinks {
+    float: right;
+    clear: right;
+    margin: 0.5em 1em 0 0;
+}
+
+
+.template-historyview div.historyComment {
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+}
+
+.template-historyview div.historyComment p {
+    margin: 0;
+    padding-top: 1px;
+}
+
+.template-historyview a.historyComparePrevious {
+    border-top: 1px dotted #ccc;
+    display: block;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.template-historyview a.historyComparePrevious span {
+    background-color: white;
+    position: relative;
+    top: -0.75em;
+    padding: 0 0.5em;
+}
+
+.template-historyview #content .link-internal-js {
+  display: none;
+}
+
+/* END @group Content History */
+
 /* </dtml-with> */
 
