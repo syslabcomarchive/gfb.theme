@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<metal:head fill-slot="top_slot"
+tal:define="dummy python:request.set('disable_border',1)" />
+
+
+  <body>
+    <div metal:fill-slot="main"
+        i18n:domain="gfb"
+        tal:define="lang python:here.portal_languages.getPreferredLanguage();
+            base_url string:${here/portal_url}/$lang">
+
+        <h1 class="documentFirstHeading" i18n:translate="label_author_overview">Author Overview</h1>
+
+        <ul>
+            <li tal:repeat="member view/authors">
+                <a href="" i18n:translate="label_homefolder_of"
+                tal:attributes="href string:${member/url}/workingarea">Working Area of
+                <span i18n:name="name" tal:content="member/name">User</span>
+                (<span i18n:name="email" tal:content="member/email">email</span>)
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
