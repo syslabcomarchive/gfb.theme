@@ -153,7 +153,9 @@ class ProviderOverview(BrowserView):
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         pm = getToolByName(self.context, 'portal_membership')
         mf = portal.restrictedTraverse('Members')
-        for id, ob in mf.objectItems('ATFolder'):
+        for id, ob in mf.objectItems():
+            if ob.portal_type != 'Folder':
+                continue
             if 'workingarea' not in ob.getProperty('layout', ''):
                 user = pm.getMemberById(id)
                 email = user and user.getProperty('email') or ""
