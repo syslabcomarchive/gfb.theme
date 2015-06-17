@@ -154,7 +154,7 @@ class ProviderOverview(BrowserView):
         pm = getToolByName(self.context, 'portal_membership')
         mf = portal.restrictedTraverse('Members')
         for id, ob in mf.objectItems():
-            if ob.portal_type != 'Folder':
+            if ob.meta_type != 'ATFolder':
                 continue
             if 'workingarea' not in ob.getProperty('layout', ''):
                 user = pm.getMemberById(id)
