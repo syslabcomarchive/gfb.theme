@@ -145,6 +145,9 @@ msgstr "Arbeitsbereich"
 msgid "label_workingarea_of"
 msgstr "Arbeitsbereich von ${name} (${provider})"
 
+msgid "label_homefolder_of"
+msgstr "Persönlicher Ordner von ${name} (${email})"
+
 #. Default "Here you edit your Provider information and manage Risk Assessment Links."
 #: working_area.pt
 msgid "workingarea_intro"
@@ -323,6 +326,9 @@ msgstr "Zur OSHA übertragen"
 
 msgid "label_provider_overview"
 msgstr "Übersicht aller Anbieter"
+
+msgid "label_author_overview"
+msgstr "Übersicht aller Autoren"
 
 msgid "label_manager_view"
 msgstr "Manager-Ansicht"

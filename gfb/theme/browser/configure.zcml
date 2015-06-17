@@ -180,6 +180,13 @@
       permission="cmf.ManagePortal"
       />
 
+    <browser:page
+      for="*"
+      name="author-overview"
+      class=".WorkingArea.AuthorOverview"
+      permission="cmf.ManagePortal"
+      />
+
     <!-- Zope 3 browser resources -->
 
     <!-- Resource directory for images -->

@@ -148,20 +148,26 @@ class ProviderOverview(BrowserView):
     template = ViewPageTemplateFile('templates/provider_overview.pt')
 
     def __call__(self):
-        return self.template()
-
-    def getMembers(self):
-        members = list()
+        self.members = list()
+        self.authors = list()
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        pm = getToolByName(self.context, 'portal_membership')
         mf = portal.restrictedTraverse('Members')
         for id, ob in mf.objectItems('ATFolder'):
             if 'workingarea' not in ob.getProperty('layout', ''):
-                continue
-            providers = ob.objectValues('Provider')
-            providers = [x for x in providers if x.isCanonical()]
-            provider = len(providers) and providers[0].Title() or 'n/a'
-            members.append(dict(id=id, name=ob.Title(), provider=provider,
-                url=ob.absolute_url()))
+                user = pm.getMemberById(id)
+                email = user and user.getProperty('email') or ""
+                self.authors.append(dict(
+                    id=id, name=ob.Title(), url=ob.absolute_url(), email=email))
+            else:
+                providers = ob.objectValues('Provider')
+                providers = [x for x in providers if x.isCanonical()]
+                provider = len(providers) and providers[0].Title() or 'n/a'
+                self.members.append(dict(id=id, name=ob.Title(), provider=provider,
+                    url=ob.absolute_url()))
+        return self.template()
 
-        return members
 
+class AuthorOverview(ProviderOverview):
+
+    template = ViewPageTemplateFile('templates/author_overview.pt')

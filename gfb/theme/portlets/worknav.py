@@ -39,7 +39,9 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        return "workingarea" in self.home_folder.getProperty('layout', '')
+        return (
+            self.isManager() or
+            "workingarea" in self.home_folder.getProperty('layout', ''))
 
     def home_url(self):
         home_folder_url = (
