@@ -18,7 +18,7 @@ tal:define="dummy python:request.set('disable_border',1)" />
         <ul>
             <li tal:repeat="member view/authors">
                 <a href="" i18n:translate="label_homefolder_of"
-                tal:attributes="href string:${member/url}/workingarea">Working Area of
+                tal:attributes="href string:${member/url}">Personal folder of
                 <span i18n:name="name" tal:content="member/name">User</span>
                 (<span i18n:name="email" tal:content="member/email">email</span>)
                 </a>
