@@ -145,6 +145,9 @@ msgstr "Arbeitsbereich"
 msgid "label_workingarea_of"
 msgstr "Arbeitsbereich von ${name} (${provider})"
 
+msgid "label_homefolder_of"
+msgstr "Persönlicher Ordner von ${name} (${email})"
+
 #. Default "Here you edit your Provider information and manage Risk Assessment Links."
 #: working_area.pt
 msgid "workingarea_intro"
@@ -324,6 +327,9 @@ msgstr "Zur OSHA übertragen"
 msgid "label_provider_overview"
 msgstr "Übersicht aller Anbieter"
 
+msgid "label_author_overview"
+msgstr "Übersicht aller Autoren"
+
 msgid "label_manager_view"
 msgstr "Manager-Ansicht"
 
@@ -414,3 +420,36 @@ msgstr "Leichte Sprache"
 
 msgid "more_news"
 msgstr "Weitere Nachrichten&hellip;"
+
+
+# DIFF
+
+msgid "changes_to"
+msgstr "Änderungen an"
+
+msgid "no_changes"
+msgstr "Keine signifikanten Änderungen gefunden"
+
+msgid "show_code_differences"
+msgstr "Zeige Änderungen im Quelltext"
+
+msgid "show_visual_differences"
+msgstr "Zeige sichtbare Änderungen"
+
+msgid "show_side_by_side"
+msgstr "Zeige Änderungen nebeneinander"
+
+msgid "field_changed"
+msgstr "Feld geändert"
+
+msgid "changed_files"
+msgstr "Geänderte Dateien"
+
+msgid "removed_files"
+msgstr "Entfernte Dateien"
+
+msgid "added_files"
+msgstr "Hinzugefügte Dateien"
+
+msgid "None"
+msgstr "keine"
