@@ -1,0 +1,11 @@
+<div id="homefolder_viewlet" tal:condition="view/available">
+
+<tal:content define="homefolder_intro view/get_hf_intro" condition="homefolder_intro">
+    <h2 tal:content="homefolder_intro/Title">Persönlicher Ordner</h2>
+    <span tal:replace="structure homefolder_intro/getText|nothing" />
+</tal:content>
+<ul>
+    <li tal:repeat="folder view/get_editable_folders">
+        <a href="" tal:attributes="href folder/getURL" tal:content="folder/Title">folder</a>
+    </li>
+</div>
