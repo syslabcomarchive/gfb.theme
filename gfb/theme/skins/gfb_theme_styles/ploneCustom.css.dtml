@@ -3719,5 +3719,14 @@ div#diff-legend{
 
 /* END @group Content History */
 
+/*  home folder */
+
+div#homefolder_viewlet {
+  border: 1px solid red;
+  padding: 1em;
+}
+
+/* END home folder */
+
 /* </dtml-with> */
 

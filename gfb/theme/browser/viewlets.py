@@ -8,6 +8,7 @@ from Products.CMFCore.interfaces import ISiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
 from Products.LinguaPlone.interfaces import ITranslatable
+from gfb.theme.browser.interfaces import IHomeFolder
 
 from cgi import escape
 
@@ -64,11 +65,11 @@ class PersonalBarViewletGFB(common.PersonalBarViewlet):
 
 class EditHelp(common.ViewletBase):
     render = ViewPageTemplateFile('templates/editing_help.pt')
-    
+
 class SiteTitleViewlet(common.ViewletBase):
     render = ViewPageTemplateFile('templates/site_title.pt')
-    
-    
+
+
 class PathBarViewletGFB(common.PathBarViewlet):
     render = ViewPageTemplateFile('templates/path_bar.pt')
 
@@ -76,7 +77,7 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, common.GlobalSectionsViewlet
     render = ViewPageTemplateFile('templates/sections.pt')
 
     def update(self):
-        # from viewletbase                
+        # from viewletbase
         self.portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')
         self.site_url = self.portal_state.portal_url()
@@ -112,41 +113,41 @@ class GlobalSectionsViewletGFB(DropdownMenuViewlet, common.GlobalSectionsViewlet
 
         folder = context_state.folder()
         self.folder_path = '/'.join(folder.getPhysicalPath())
-        
-        
+
+
     def search_site_url(self):
         langtool = getToolByName(self.context, 'portal_languages')
         preflang = langtool.getPreferredLanguage()
         return "%s/%s" %(self.site_url, preflang)
-        
+
 class FooterActions(common.ViewletBase):
-    
+
     _template = ViewPageTemplateFile('templates/footer_actions.pt')
-    
-    
-    
+
+
+
     def _footer_render_details_cachekey(fun, self):
         """
         Generates a key based on:
-    
+
         * Current URL
         * Negotiated language
         * Anonymous user flag
-        
+
         """
         context = aq_inner(self.context)
-    
+
         anonymous = getToolByName(context, 'portal_membership').isAnonymousUser()
-    
+
         key= "".join((
             '/'.join(aq_inner(self.context).getPhysicalPath()),
             get_language(aq_inner(self.context), self.request),
             str(anonymous),
             ))
-        return key    
-    
-    
-    @ram.cache(_footer_render_details_cachekey) 
+        return key
+
+
+    @ram.cache(_footer_render_details_cachekey)
     def render(self):
         return xhtml_compress(self._template())
 
@@ -154,14 +155,14 @@ class FooterActions(common.ViewletBase):
         context_state = getMultiAdapter((self.context, self.request),
                                         name=u'plone_context_state')
         portal_state = getMultiAdapter((self.context, self.request),
-                                            name=u'plone_portal_state')    
-                                            
-        self.portal = portal_state.portal() 
-        self.site_url = portal_state.portal_url()                                   
-                                        
+                                            name=u'plone_portal_state')
+
+        self.portal = portal_state.portal()
+        self.site_url = portal_state.portal_url()
+
         self.portal_actionicons = aq_base(getToolByName(self.context, 'portal_actionicons'))
-                                                
-        self.footer_actions = context_state.actions().get('footer_actions', None)        
+
+        self.footer_actions = context_state.actions().get('footer_actions', None)
         plone_utils = getToolByName(self.context, 'plone_utils')
         self.getIconFor = plone_utils.getIconFor
 
@@ -232,3 +233,53 @@ class GFBSiteActionsViewlet(common.SiteActionsViewlet):
 
 class DocumentContentViewlet(common.ViewletBase):
     render = ViewPageTemplateFile('templates/document_content.pt')
+
+
+class HomeFolderViewlet(common.ViewletBase):
+
+    _template = ViewPageTemplateFile('templates/home_folder_viewlet.pt')
+
+
+    def _footer_render_details_cachekey(fun, self):
+        """
+        Generates a key based on:
+
+        * Current URL
+        * Negotiated language
+        * Anonymous user flag
+
+        """
+        context = aq_inner(self.context)
+
+        anonymous = getToolByName(context, 'portal_membership').isAnonymousUser()
+
+        key= "".join((
+            '/'.join(aq_inner(self.context).getPhysicalPath()),
+            get_language(aq_inner(self.context), self.request),
+            str(anonymous),
+            ))
+        return key
+
+
+    #@ram.cache(_footer_render_details_cachekey)
+    def render(self):
+        return xhtml_compress(self._template())
+
+    def update(self):
+        pass
+
+    def available(self):
+        obj = self.context
+        while not INavigationRoot.providedBy(obj):
+            if IHomeFolder.providedBy(obj):
+                if 'workingarea' not in obj.getProperty('layout', ''):
+                    return True
+            obj = aq_parent(obj)
+        return False
+
+    def get_hf_intro(self):
+        pm = getToolByName(self.context, 'portal_membership')
+        mf = pm.getMembersFolder()
+        if mf:
+            return getattr(mf, 'homefolder_intro', None)
+        return None
