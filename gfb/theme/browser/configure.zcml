@@ -165,6 +165,14 @@
         permission="zope2.View"
         />
 
+    <!-- home folder viewlet for authors -->
+    <browser:viewlet
+        name="gfb.homefolder"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".viewlets.HomeFolderViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
 
     <browser:page
       for="*"
@@ -378,5 +386,8 @@
                 .interfaces.IThemeSpecific
                 collective.solr.interfaces.IFlare"
            factory=".icon.CatalogBrainContentIconWithTitle" />
+
+  <interface interface=".interfaces.IHomeFolder" />
+
 
 </configure>
