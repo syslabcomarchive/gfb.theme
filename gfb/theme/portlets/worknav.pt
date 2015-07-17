@@ -1,6 +1,7 @@
 <dl class="portlet portletMyProvider"
     i18n:domain="gfb"
     tal:define="home_url view/home_url;
+                membersfolder_url view/membersfolder_url;
                 lang view/getLanguage;
                 isManager view/isManager">
 
@@ -15,13 +16,13 @@
 
     <dd class="portletItem">
       <ul>
-        <li><a href="" tal:attributes="href string:${home_url}/@@workingarea?set_language=$lang"
+        <li><a href="" tal:attributes="href string:${home_url}?set_language=$lang"
             i18n:translate="label_workingarea">Working area</a></li>
         <li tal:condition="isManager"><a href=""
-        tal:attributes="href string:${here/portal_url}/$lang/provider-overview"
+        tal:attributes="href string:${membersfolder_url}/provider-overview"
         i18n:translate="label_provider_overview">Provider Overview</a></li>
         <li tal:condition="isManager"><a href=""
-        tal:attributes="href string:${here/portal_url}/$lang/author-overview"
+        tal:attributes="href string:${membersfolder_url}/author-overview"
         i18n:translate="label_author_overview">Author Overview</a></li>
     </dd>
 

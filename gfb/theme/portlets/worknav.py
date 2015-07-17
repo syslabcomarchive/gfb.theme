@@ -35,18 +35,21 @@ class Renderer(base.Renderer):
         pt = getToolByName(self.context, 'portal_url')
         self.purl = pt()
         hf = pm.getHomeFolder()
+        mf = pm.getMembersFolder()
         self.home_folder = hf
+        self.members_folder = mf
 
-    @property
+    # @property
     def available(self):
-        return (
-            self.isManager() or
-            "workingarea" in self.home_folder.getProperty('layout', ''))
+        return (self.isManager() or self.home_folder)
 
     def home_url(self):
         home_folder_url = (
             self.home_folder and self.home_folder.absolute_url() or self.purl)
         return home_folder_url
+
+    def membersfolder_url(self):
+        return self.members_folder and self.members_folder.absolute_url() or self.purl
 
     def getLanguage(self):
         return getToolByName(self, 'portal_languages').getPreferredLanguage()
