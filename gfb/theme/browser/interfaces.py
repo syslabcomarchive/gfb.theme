@@ -18,6 +18,9 @@ class IGFB(Interface):
     def cropHTMLText(text, length, ellipsis):
         """ First strip HTML, then crop on a word boundary """
 
+    def mail_wf_change(state_change, **kwargs):
+        """ send email """
+
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """

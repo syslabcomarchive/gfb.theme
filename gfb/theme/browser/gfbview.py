@@ -1,4 +1,4 @@
-from BeautifulSoup import BeautifulSoup
+# -*- coding: utf-8 -*-
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
@@ -18,10 +18,36 @@ class GFB(BrowserView):
         try:
             text = portal_transforms.convert('html_to_text', text).getData()
             text = text.decode('utf-8')
-        except Exception, err:
-            logger.error('An error occurred in cropHTMLText, original text: %s, message: %s ' \
-                'URL: %s' % (str([text]), str(err), context.absolute_url()))
+        except:
             return text
-        return context.restrictedTraverse('@@plone').cropText(text, length,
-            ellipsis)
+        return context.restrictedTraverse('@@plone').cropText(
+            text, length, ellipsis)
 
+    def mail_wf_change(self, state_change, **kwargs):
+        """Sends an email about a workflow change to someone."""
+        context = self.context
+        host = getToolByName(context, 'MailHost')
+
+        portal = getToolByName(context, 'portal_url').getPortalObject()
+
+        send_to_address = send_from_address = portal.getProperty('email_from_address')
+
+        obj = state_change.object
+        user = obj.portal_membership.getAuthenticatedMember()
+
+        subject = "GFB: Artikel zur Veröffentlichung eingereicht"
+        message = u'''Der Artikel "%(title)s" wurde von Nutzer "%(name)s" zur Veröffentlichung eingereicht.
+        Die Adresse lautet: %(url)s''' % dict(
+            title=obj.Title(), name=user.getProperty('fullname'), url=obj.absolute_url())
+
+        encoding = portal.getProperty('email_charset')
+        msg_type = kwargs.get('msg_type', 'text/plain')
+        if 'envelope_from' in kwargs:
+            envelope_from = kwargs['envelope_from']
+        else:
+            envelope_from = send_from_address
+
+        host.send(
+            message, mto=send_to_address, mfrom=envelope_from,
+            subject=subject, msg_type=msg_type, charset=encoding
+        )
