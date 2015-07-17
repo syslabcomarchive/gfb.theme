@@ -270,11 +270,13 @@ class HomeFolderViewlet(common.ViewletBase):
 
     def available(self):
         obj = self.context
-        while not INavigationRoot.providedBy(obj):
-            if IHomeFolder.providedBy(obj):
-                if 'workingarea' not in obj.getProperty('layout', ''):
-                    return True
-            obj = aq_parent(obj)
+        # while not INavigationRoot.providedBy(obj):
+        #     if IHomeFolder.providedBy(obj):
+        #         if 'workingarea' not in obj.getProperty('layout', ''):
+        #             return True
+        #     obj = aq_parent(obj)
+        if IHomeFolder.providedBy(obj):
+            return True
         return False
 
     def get_hf_intro(self):
@@ -283,3 +285,21 @@ class HomeFolderViewlet(common.ViewletBase):
         if mf:
             return getattr(mf, 'homefolder_intro', None)
         return None
+
+    def get_editable_folders(self):
+        user = getToolByName(self.context, 'portal_membership').getAuthenticatedMember()
+        cat = getToolByName(self.context, 'portal_catalog')
+        brains = cat(editors="user:{0}".format(user.id), path="/gfb/de/gefaehrdungsfaktoren")
+        results = [x for x in brains]
+        results = sorted(results, key=lambda x: x.getPath())
+        paths = {}
+        for res in results:
+            path = res.getPath()
+            skip = 0
+            for k in paths.keys():
+                if path.startswith(k):
+                    skip = 1
+                    break
+            if not skip:
+                paths[path] = res
+        return paths.values()
