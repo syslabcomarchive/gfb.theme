@@ -268,6 +268,12 @@ class HomeFolderViewlet(common.ViewletBase):
     def update(self):
         pass
 
+    def isManager(self):
+        pm = getToolByName(self, 'portal_membership')
+        member = pm.getAuthenticatedMember()
+        return "Manager" in member.getRoles()
+
+
     def available(self):
         obj = self.context
         # while not INavigationRoot.providedBy(obj):
@@ -288,8 +294,13 @@ class HomeFolderViewlet(common.ViewletBase):
 
     def get_editable_folders(self):
         user = getToolByName(self.context, 'portal_membership').getAuthenticatedMember()
+        if self.isManager():
+            pm = getToolByName(self.context, 'portal_membership')
+            userid = self.context.getId()
+        else:
+            userid = user.id
         cat = getToolByName(self.context, 'portal_catalog')
-        brains = cat(editors="user:{0}".format(user.id), path="/gfb/de/gefaehrdungsfaktoren")
+        brains = cat(editors="user:{0}".format(userid), path="/gfb/de/gefaehrdungsfaktoren")
         results = [x for x in brains]
         results = sorted(results, key=lambda x: x.getPath())
         paths = {}
