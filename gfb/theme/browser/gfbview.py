@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from gfb.theme.browser.interfaces import IGFB
 import Acquisition
@@ -38,7 +39,9 @@ class GFB(BrowserView):
         subject = "GFB: Artikel zur Veröffentlichung eingereicht"
         message = u'''Der Artikel "%(title)s" wurde von Nutzer "%(name)s" zur Veröffentlichung eingereicht.
         Die Adresse lautet: %(url)s''' % dict(
-            title=obj.Title(), name=user.getProperty('fullname'), url=obj.absolute_url())
+            title=safe_unicode(obj.Title()),
+            name=safe_unicode(user.getProperty('fullname')),
+            url=safe_unicode(obj.absolute_url()))
 
         encoding = portal.getProperty('email_charset')
         msg_type = kwargs.get('msg_type', 'text/plain')
