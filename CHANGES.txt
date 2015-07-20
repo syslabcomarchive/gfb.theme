@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.50 (unreleased)
+1.4.50 (2015-07-20)
 -------------------
 
 - Enable versioning support and checkin/checkout #11851
