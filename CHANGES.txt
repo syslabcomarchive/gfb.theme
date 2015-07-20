@@ -4,8 +4,9 @@ gfb.theme Changelog
 1.4.50 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Enable versioning support and checkin/checkout #11851
+- Add new type of home folder view, for editors instead of DB providers #11852
+- Workflow changes for expert editors #11858
 
 1.4.49 (2015-04-14)
 -------------------
