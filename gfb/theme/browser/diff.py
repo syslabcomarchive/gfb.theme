@@ -1,5 +1,7 @@
 from Products.CMFCore.utils import getToolByName
 from plone.app.iterate.browser.diff import DiffView as BaseDiffView
+from .interfaces import IDiffView
+from zope.interface import implements
 
 
 SKIP_FIELDS = [
@@ -10,6 +12,7 @@ SKIP_FIELDS = [
 
 
 class DiffView(BaseDiffView):
+    implements(IDiffView)
 
     def diffs(self):
         diff = getToolByName(self.context, 'portal_diff')
@@ -18,7 +21,6 @@ class DiffView(BaseDiffView):
             self.working_copy,
             id1="Baseline",
             id2="Working Copy")
-        # import pdb; pdb.set_trace( )
         alldiffs._diffs = [
             di for di in alldiffs._diffs if di.field not in SKIP_FIELDS]
         return alldiffs

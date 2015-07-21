@@ -371,6 +371,15 @@
        layer=".interfaces.IThemeSpecific"
        />
 
+    <browser:viewlet
+        name="plone.contentactions"
+        for="*"
+        view="gfb.theme.browser.interfaces.IDiffView"
+        manager="plone.app.layout.viewlets.interfaces.IContentViews"
+        class="plone.app.layout.viewlets.common.ContentActionsViewlet"
+        permission="zope2.View"
+        />
+
     <!-- override add user form -->
     <browser:page
       name="new-user"

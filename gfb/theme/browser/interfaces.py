@@ -24,3 +24,7 @@ class IGFB(Interface):
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """
+
+
+class IDiffView(Interface):
+    """ Marker interface for our custom diff view """
