@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.51 (unreleased)
+1.4.51 (2015-07-21)
 -------------------
 
 - Make content actions also available on the diff view #11858
