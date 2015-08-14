@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.52 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Make checkin/chckout actions available as tabs #11858 [pysailor]
 
 1.4.51 (2015-07-21)
 -------------------
