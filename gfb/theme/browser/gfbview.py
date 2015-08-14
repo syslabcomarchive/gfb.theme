@@ -37,11 +37,12 @@ class GFB(BrowserView):
         user = obj.portal_membership.getAuthenticatedMember()
 
         subject = "GFB: Artikel zur Veröffentlichung eingereicht"
-        message = u'''Der Artikel "%(title)s" wurde von Nutzer "%(name)s" zur Veröffentlichung eingereicht.
-        Die Adresse lautet: %(url)s''' % dict(
-            title=safe_unicode(obj.Title()),
-            name=safe_unicode(user.getProperty('fullname')),
-            url=safe_unicode(obj.absolute_url()))
+        message = (
+            u'''Der Artikel "%(title)s" wurde von Nutzer "%(name)s" zur Veröffentlichung eingereicht.'''
+            u'''\n\nDie Adresse lautet: %(url)s''' % dict(
+                title=safe_unicode(obj.Title()),
+                name=safe_unicode(user.getProperty('fullname')),
+                url=safe_unicode(obj.absolute_url())))
 
         encoding = portal.getProperty('email_charset')
         msg_type = kwargs.get('msg_type', 'text/plain')
