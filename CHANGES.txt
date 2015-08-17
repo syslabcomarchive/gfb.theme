@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.53 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- More cosmetic changes #11858 [pysailor]
 
 1.4.52 (2015-08-14)
 -------------------
