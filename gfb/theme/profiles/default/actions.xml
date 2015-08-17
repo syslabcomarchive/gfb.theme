@@ -39,5 +39,29 @@
    <property name="visible">True</property>
   </object>
 
+  <object name="history" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Historie</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:${object_url}/versions_history_form</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python:portal.portal_repository.isVersionable(object)</property>
+   <property name="permissions">
+    <element value="GFB: View History"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+
+  <object name="submit" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Submit for publication</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:${object_url}/content_status_modify?workflow_action=submit</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python:object.restrictedTraverse('gfbview').show_submit_action(object)</property>
+   <property name="permissions">
+    <element value="Modify portal content"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+
  </object>
 </object>

@@ -4,6 +4,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from gfb.theme.browser.interfaces import IGFB
+from zope.component import getMultiAdapter
 import Acquisition
 
 
@@ -55,3 +56,14 @@ class GFB(BrowserView):
             message, mto=send_to_address, mfrom=envelope_from,
             subject=subject, msg_type=msg_type, charset=encoding
         )
+
+    def show_submit_action(self, obj):
+        """ whether to show the WF tab 'Submit' """
+        pwt = getToolByName(obj, 'portal_workflow')
+        if pwt.getInfoFor(obj, 'review_state') != 'private':
+            return False
+        iterate_control = getMultiAdapter(
+            (obj, self.request), name='iterate_control')
+        if not iterate_control.cancel_allowed():
+            return False
+        return True

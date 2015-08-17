@@ -21,6 +21,9 @@ class IGFB(Interface):
     def mail_wf_change(state_change, **kwargs):
         """ send email """
 
+    def show_submit_action(obj):
+        """ whether to show the WF tab 'Submit' """
+
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """
