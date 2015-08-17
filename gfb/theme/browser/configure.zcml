@@ -398,5 +398,15 @@
 
   <interface interface=".interfaces.IHomeFolder" />
 
+  <!-- add our own classes to the body tag -->
+  <browser:page
+    name="plone_layout"
+    for="*"
+    permission="zope.Public"
+    class=".theming.LayoutPolicy"
+    allowed_interface="plone.app.layout.globals.interfaces.ILayoutPolicy"
+    layer=".interfaces.IThemeSpecific"
+    />
+
 
 </configure>
