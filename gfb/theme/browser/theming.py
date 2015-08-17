@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.globals import layout
+from zope.component import getMultiAdapter
 
 
 class LayoutPolicy(layout.LayoutPolicy):
@@ -12,9 +13,12 @@ class LayoutPolicy(layout.LayoutPolicy):
 
         mtool = getToolByName(self.context, 'portal_membership')
         if not mtool.isAnonymousUser():
-            if mtool.checkPermission('Manage portal', self.context):
-                body_class += " is-manager"
-            else:
-                body_class += " is-not-manager"
+            if not mtool.checkPermission('Manage portal', self.context):
+                pwt = getToolByName(self.context, 'portal_workflow')
+                if pwt.getInfoFor(self.context, 'review_state', '') == 'private':
+                    iterate_control = getMultiAdapter(
+                        (self.context, self.request), name='iterate_control')
+                    if iterate_control.cancel_allowed():
+                        body_class += " hide-content-actions"
 
         return body_class

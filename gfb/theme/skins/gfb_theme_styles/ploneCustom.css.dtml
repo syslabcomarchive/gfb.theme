@@ -3726,6 +3726,11 @@ div#homefolder_viewlet {
   padding: 1em;
 }
 
+body.section-Members.hide-content-actions dl.actionMenu {
+  display: none;
+}
+
+
 /* END home folder */
 
 /* </dtml-with> */

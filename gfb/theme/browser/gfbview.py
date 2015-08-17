@@ -60,7 +60,7 @@ class GFB(BrowserView):
     def show_submit_action(self, obj):
         """ whether to show the WF tab 'Submit' """
         pwt = getToolByName(obj, 'portal_workflow')
-        if pwt.getInfoFor(obj, 'review_state') != 'private':
+        if pwt.getInfoFor(obj, 'review_state', '') != 'private':
             return False
         iterate_control = getMultiAdapter(
             (obj, self.request), name='iterate_control')
