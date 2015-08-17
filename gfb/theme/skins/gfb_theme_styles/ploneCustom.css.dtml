@@ -3730,8 +3730,12 @@ body.section-Members.hide-content-actions dl.actionMenu {
   display: none;
 }
 
-
 /* END home folder */
+
+body.cannot-modify div.fc div.btn-group {
+  display: none;
+}
+
 
 /* </dtml-with> */
 

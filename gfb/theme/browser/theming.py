@@ -20,5 +20,8 @@ class LayoutPolicy(layout.LayoutPolicy):
                         (self.context, self.request), name='iterate_control')
                     if iterate_control.cancel_allowed():
                         body_class += " hide-content-actions"
-
+            if mtool.checkPermission('Modify portal content', self.context):
+                body_class += " can-modify"
+            else:
+                body_class += " cannot-modify"
         return body_class
