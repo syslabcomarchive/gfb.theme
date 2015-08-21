@@ -484,6 +484,10 @@ top: 0;
     border-left: 1px solid #ccc;
 }
 
+#portal-column-two > div.visualPadding {
+  width: 235px;
+}
+
 #portal-column-content {
     padding: 0px 20px;
 }

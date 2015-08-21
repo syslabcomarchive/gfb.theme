@@ -4,8 +4,8 @@ gfb.theme Changelog
 1.4.54 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Fix also the visualPadding in width, to make sure the twitter
+  portlet does not get too wide #12235 [pysailor]
 
 1.4.53 (2015-08-17)
 -------------------
