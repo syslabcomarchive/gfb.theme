@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.54 (unreleased)
+1.4.54 (2015-08-21)
 -------------------
 
 - Fix also the visualPadding in width, to make sure the twitter
