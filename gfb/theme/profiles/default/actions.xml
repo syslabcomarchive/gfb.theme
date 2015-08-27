@@ -20,7 +20,7 @@
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object_url}/@@content-checkout</property>
    <property name="icon_expr">string:${portal_url}/++resource++checkout.png</property>
-   <property name="available_expr">python:path('object/@@iterate_control').checkout_allowed()</property>
+   <property name="available_expr">python:object.restrictedTraverse('gfbview').show_checkout_action(object)</property>
    <property name="permissions">
     <element value="CMFEditions: Checkout to location"/>
    </property>

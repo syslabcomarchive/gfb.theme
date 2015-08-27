@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
+from Products.CMFPlone.utils import safe_unicode, isDefaultPage
 from Products.Five import BrowserView
 from gfb.theme.browser.interfaces import IGFB
 from zope.component import getMultiAdapter
@@ -67,3 +67,12 @@ class GFB(BrowserView):
         if not iterate_control.cancel_allowed():
             return False
         return True
+
+    def show_checkout_action(self, obj):
+        """ whether to show the action Tab 'Create Working Copy'"""
+        iterate_control = getMultiAdapter(
+            (obj, self.request), name='iterate_control')
+        if iterate_control.checkout_allowed():
+            if not isDefaultPage(obj, self.request):
+                return True
+        return False

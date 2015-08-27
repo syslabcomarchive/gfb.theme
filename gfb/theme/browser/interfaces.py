@@ -24,6 +24,9 @@ class IGFB(Interface):
     def show_submit_action(obj):
         """ whether to show the WF tab 'Submit' """
 
+    def show_checkout_action(obj):
+        """ whether to show the action Tab 'Create Working Copy'"""
+
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """
