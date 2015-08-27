@@ -3730,7 +3730,10 @@ div#homefolder_viewlet {
   padding: 1em;
 }
 
-body.section-Members.hide-content-actions dl.actionMenu {
+body.section-Members.hide-content-actions dl#plone-contentmenu-translate,
+body.section-Members.hide-content-actions dl#plone-contentmenu-display,
+body.section-Members.hide-content-actions dl#plone-contentmenu-actions
+ {
   display: none;
 }
 
