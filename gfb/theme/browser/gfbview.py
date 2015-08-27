@@ -66,6 +66,8 @@ class GFB(BrowserView):
             (obj, self.request), name='iterate_control')
         if not iterate_control.cancel_allowed():
             return False
+        if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
+            return False
         return True
 
     def show_checkout_action(self, obj):
@@ -74,5 +76,14 @@ class GFB(BrowserView):
             (obj, self.request), name='iterate_control')
         if iterate_control.checkout_allowed():
             if not isDefaultPage(obj, self.request):
+                return True
+        return False
+
+    def show_cancel_checkout_action(self, obj):
+        """ whether to show the action Tab 'Cancel Checkout'"""
+        iterate_control = getMultiAdapter(
+            (obj, self.request), name='iterate_control')
+        if iterate_control.cancel_allowed():
+            if 'edit' not in self.request.get('PATH_INFO', '').split('/')[-1]:
                 return True
         return False

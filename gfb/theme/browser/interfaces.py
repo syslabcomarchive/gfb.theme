@@ -27,6 +27,9 @@ class IGFB(Interface):
     def show_checkout_action(obj):
         """ whether to show the action Tab 'Create Working Copy'"""
 
+    def show_cancel_checkout_action(obj):
+        """ whether to show the action Tab 'Cancel Checkout'"""
+
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """
