@@ -8,3 +8,13 @@ $(function() {
       navTree.css({"bottom": globalNavHeight + "px", "visibility": "visible" });
     }
 });
+
+
+(function () {
+    jQuery(document).ready( function () {
+        jQuery('ul.contentViews li#contentview-submit a').click( function() {
+            alert('Wenn Sie diesen Artikel zur Veröffentlichung einreichen, können Sie ihn nicht mehr bearbeiten. Wollen Sie dies trotzdem tun, wählen Sie "eingereichte Veröffentlichung zurückziehen"');
+        });
+    });
+
+}());
