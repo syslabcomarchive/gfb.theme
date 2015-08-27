@@ -106,12 +106,12 @@ class GFB(BrowserView):
         """ whether to show the action Tab 'Cancel Checkout'"""
         iterate_control = getMultiAdapter(
             (obj, self.request), name='iterate_control')
-        if iterate_control.cancel_allowed():
-            if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
-                return False
-            diff_view = getMultiAdapter(
-                (obj, self.request), name='iterate_diff')
-            diffs = diff_view.diffs()
-            if diffs.same:
-                return False
+        if not iterate_control.cancel_allowed():
+            return False
+        if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
+            return False
+        diff_view = getMultiAdapter((obj, self.request), name='iterate_diff')
+        diffs = diff_view.diffs()
+        if diffs.same:
+            return False
         return True
