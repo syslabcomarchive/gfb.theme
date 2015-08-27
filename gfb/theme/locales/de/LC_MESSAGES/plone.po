@@ -87,3 +87,6 @@ msgstr "Erweitertes Dokument"
 
 msgid "Glossary definition"
 msgstr "Glossardefinition"
+
+msgid "Retract"
+msgstr "Eingereichte Veröffentlichung zurückziehen"

@@ -32,7 +32,7 @@
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${object_url}/@@content-cancel-checkout</property>
    <property name="icon_expr">string:${portal_url}/++resource++cancel-checkout.png</property>
-   <property name="available_expr">python:object.restrictedTraverse('gfbview').show_checkout_action(object)</property>
+   <property name="available_expr">python:object.restrictedTraverse('gfbview').show_cancel_checkout_action(object)</property>
    <property name="permissions">
     <element value="Modify portal content"/>
    </property>
@@ -59,6 +59,18 @@
    <property name="available_expr">python:object.restrictedTraverse('gfbview').show_submit_action(object)</property>
    <property name="permissions">
     <element value="Modify portal content"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+
+  <object name="retract" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Retract</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:${object_url}/content_status_modify?workflow_action=retract</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python:object.restrictedTraverse('gfbview').show_retract_action(object)</property>
+   <property name="permissions">
+    <element value="Request review"/>
    </property>
    <property name="visible">True</property>
   </object>

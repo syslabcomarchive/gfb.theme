@@ -75,6 +75,24 @@ class GFB(BrowserView):
             return False
         return True
 
+    def show_retract_action(self, obj):
+        """ whether to show the WF tab 'Retract' """
+        pwt = getToolByName(obj, 'portal_workflow')
+        if pwt.getInfoFor(obj, 'review_state', '') != 'pending':
+            return False
+        iterate_control = getMultiAdapter(
+            (obj, self.request), name='iterate_control')
+        if not iterate_control.cancel_allowed():
+            return False
+        if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
+            return False
+        diff_view = getMultiAdapter(
+            (obj, self.request), name='iterate_diff')
+        diffs = diff_view.diffs()
+        if diffs.same:
+            return False
+        return True
+
     def show_checkout_action(self, obj):
         """ whether to show the action Tab 'Create Working Copy'"""
         iterate_control = getMultiAdapter(
@@ -89,11 +107,11 @@ class GFB(BrowserView):
         iterate_control = getMultiAdapter(
             (obj, self.request), name='iterate_control')
         if iterate_control.cancel_allowed():
-            if 'edit' not in self.request.get('PATH_INFO', '').split('/')[-1]:
-                return True
+            if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
+                return False
             diff_view = getMultiAdapter(
                 (obj, self.request), name='iterate_diff')
             diffs = diff_view.diffs()
-            if not diffs.same:
-                return True
-        return False
+            if diffs.same:
+                return False
+        return True
