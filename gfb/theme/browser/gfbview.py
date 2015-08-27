@@ -68,6 +68,11 @@ class GFB(BrowserView):
             return False
         if 'edit' in self.request.get('PATH_INFO', '').split('/')[-1]:
             return False
+        diff_view = getMultiAdapter(
+            (obj, self.request), name='iterate_diff')
+        diffs = diff_view.diffs()
+        if diffs.same:
+            return False
         return True
 
     def show_checkout_action(self, obj):
@@ -85,5 +90,10 @@ class GFB(BrowserView):
             (obj, self.request), name='iterate_control')
         if iterate_control.cancel_allowed():
             if 'edit' not in self.request.get('PATH_INFO', '').split('/')[-1]:
+                return True
+            diff_view = getMultiAdapter(
+                (obj, self.request), name='iterate_diff')
+            diffs = diff_view.diffs()
+            if not diffs.same:
                 return True
         return False
