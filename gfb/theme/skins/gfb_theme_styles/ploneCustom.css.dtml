@@ -3737,9 +3737,9 @@ body.section-Members.hide-content-actions dl#plone-contentmenu-actions
   display: none;
 }
 
-body.portaltype-folder.section-Members.cannot-modify div#edit-bar,
-body.portaltype-folder.section-Members.cannot-modify div#plone-document-byline,
-body.portaltype-folder.section-Members.cannot-modify div.documentActions {
+body.portaltype-folder.section-Members.not-manager div#edit-bar,
+body.portaltype-folder.section-Members.not-manager div#plone-document-byline,
+body.portaltype-folder.section-Members.not-manager div.documentActions {
   display:none;
 }
 
@@ -3751,14 +3751,14 @@ body.section-Members div#plone-document-byline span.contentHistory {
   display: none;
 }
 
-body.portaltype-folder.section-Members.cannot-modify .documentEditable #content {
+body.portaltype-folder.section-Members.not-manager .documentEditable #content {
   border: none;
 }
 body.section-Members .contentActions a:hover {
   text-decoration: none;
   cursor: default;
 }
-body.portaltype-folder.section-Members dt {
+body.portaltype-folder.section-Members div#content-core dt {
   line-height: 3em;
 }
 /* END home folder */

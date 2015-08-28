@@ -12,8 +12,12 @@ class LayoutPolicy(layout.LayoutPolicy):
         body_class = super(LayoutPolicy, self).bodyClass(template, view)
 
         mtool = getToolByName(self.context, 'portal_membership')
+        if mtool.checkPermission('Manage portal', self.context):
+            is_manager = True
+        else:
+            is_manager = False
         if not mtool.isAnonymousUser():
-            if not mtool.checkPermission('Manage portal', self.context):
+            if not is_manager:
                 pwt = getToolByName(self.context, 'portal_workflow')
                 if pwt.getInfoFor(self.context, 'review_state', '') == 'private':
                     iterate_control = getMultiAdapter(
@@ -24,4 +28,8 @@ class LayoutPolicy(layout.LayoutPolicy):
                 body_class += " can-modify"
             else:
                 body_class += " cannot-modify"
+            if is_manager:
+                body_class += " is-manager"
+            else:
+                body_class += " not-manager"
         return body_class
