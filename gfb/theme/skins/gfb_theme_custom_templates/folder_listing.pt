@@ -124,7 +124,7 @@
                                    i18n:name="location">Oslo</span>,
                         </span>
                         <tal:byline condition="show_about">
-                            &mdash;
+<!--                             &mdash;
 
                             <tal:name tal:condition="item_creator"
                                 tal:define="author python:pas_member.info(item_creator);
@@ -143,7 +143,7 @@
                               </a>
                               </span>
 
-                            </tal:name>
+                            </tal:name> -->
 
                             <tal:modified condition="python: item_type != 'Event'">
                                 &mdash;
