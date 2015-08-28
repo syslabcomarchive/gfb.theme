@@ -3758,6 +3758,9 @@ body.section-Members .contentActions a:hover {
   text-decoration: none;
   cursor: default;
 }
+body.portaltype-folder.section-Members.not-manager div#content-core p.discreet {
+  display: none;
+}
 body.portaltype-folder.section-Members div#content-core dt {
   line-height: 3em;
 }

@@ -273,17 +273,14 @@ class HomeFolderViewlet(common.ViewletBase):
         member = pm.getAuthenticatedMember()
         return "Manager" in member.getRoles()
 
-
     def available(self):
         obj = self.context
-        # while not INavigationRoot.providedBy(obj):
-        #     if IHomeFolder.providedBy(obj):
-        #         if 'workingarea' not in obj.getProperty('layout', ''):
-        #             return True
-        #     obj = aq_parent(obj)
         if IHomeFolder.providedBy(obj):
             return True
         return False
+
+    def has_contents(self):
+        return len(self.context.objectIds())
 
     def get_hf_intro(self):
         pm = getToolByName(self.context, 'portal_membership')
@@ -295,7 +292,6 @@ class HomeFolderViewlet(common.ViewletBase):
     def get_editable_folders(self):
         user = getToolByName(self.context, 'portal_membership').getAuthenticatedMember()
         if self.isManager():
-            pm = getToolByName(self.context, 'portal_membership')
             userid = self.context.getId()
         else:
             userid = user.id
