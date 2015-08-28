@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.58 (unreleased)
+1.4.58 (2015-08-28)
 -------------------
 
 - Add heading to home folder viewlet #12255 [pysailor]
