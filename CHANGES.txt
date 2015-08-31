@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.59 (unreleased)
+1.4.59 (2015-08-31)
 -------------------
 
 - Remove controls for syncing RA Links to OSHA #11960 [pysailor]
