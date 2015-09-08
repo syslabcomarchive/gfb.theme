@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.60 (unreleased)
+1.4.60 (2015-09-08)
 -------------------
 
 - Allow checkout on index of there's no link-collection #12323
