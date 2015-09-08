@@ -4,6 +4,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode, isDefaultPage
 from Products.Five import BrowserView
 from gfb.theme.browser.interfaces import IGFB
+from slc.linkcollection.interfaces import ILinkList
 from zope.component import getMultiAdapter
 import Acquisition
 
@@ -98,7 +99,11 @@ class GFB(BrowserView):
         iterate_control = getMultiAdapter(
             (obj, self.request), name='iterate_control')
         if iterate_control.checkout_allowed():
-            if not isDefaultPage(obj, self.request):
+            if isDefaultPage(obj, self.request):
+                urls = ILinkList(self.context).urls
+                if not urls:
+                    return True
+            else:
                 return True
         return False
 
