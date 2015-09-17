@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.61 (unreleased)
+1.4.61 (2015-09-17)
 -------------------
 
 - Show from which folder a working copy comes from in the HomeFolder listing #12323
