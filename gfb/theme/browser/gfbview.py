@@ -2,8 +2,9 @@
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode, isDefaultPage
+from Products.ZCatalog.interfaces import ICatalogBrain
 from Products.Five import BrowserView
-from gfb.theme.browser.interfaces import IGFB
+from gfb.theme.browser.interfaces import IGFB, IHomeFolder
 from slc.linkcollection.interfaces import ILinkList
 from zope.component import getMultiAdapter
 import Acquisition
@@ -120,3 +121,16 @@ class GFB(BrowserView):
         if diffs.same:
             return False
         return True
+
+    def get_container_of_original(self, obj):
+        """ If the obj is a working copy, return the container of the
+        original"""
+        if IHomeFolder.providedBy(self.context):
+            if ICatalogBrain.providedBy(obj):
+                obj = obj.getObject()
+            iterate_control = getMultiAdapter(
+                (obj, self.request), name='iterate_control')
+            original = iterate_control.get_original(obj)
+            if original:
+                return Acquisition.aq_parent(original).Title()
+        return ""

@@ -33,6 +33,9 @@ class IGFB(Interface):
     def show_cancel_checkout_action(obj):
         """ whether to show the action Tab 'Cancel Checkout'"""
 
+    def get_container_of_original(obj):
+        """ If the obj is a working copy, return the container of the
+        original"""
 
 class IHomeFolder(Interface):
     """ Marker Interface for a home folder """

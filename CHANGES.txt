@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.61 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Show from which folder a working copy comes from in the HomeFolder listing #12323
 
 1.4.60 (2015-09-08)
 -------------------
