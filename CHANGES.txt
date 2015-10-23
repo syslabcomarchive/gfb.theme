@@ -4,7 +4,7 @@ gfb.theme Changelog
 1.4.62 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Use separate email for notifying reviewers that a Working Copy was submitted
 
 
 1.4.61 (2015-09-17)
