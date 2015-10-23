@@ -34,7 +34,9 @@ class GFB(BrowserView):
 
         portal = getToolByName(context, 'portal_url').getPortalObject()
 
-        send_to_address = send_from_address = portal.getProperty('email_from_address')
+        send_from_address = portal.getProperty('email_from_address')
+        send_to_address = portal.portal_properties.site_properties.getProperty(
+            'document_reviewer_address', send_from_address)
 
         obj = state_change.object
         user = obj.portal_membership.getAuthenticatedMember()
