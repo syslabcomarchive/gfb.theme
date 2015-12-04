@@ -42,16 +42,16 @@ class GFB(BrowserView):
         user = obj.portal_membership.getAuthenticatedMember()
         title = safe_unicode(obj.Title())
         username = safe_unicode(user.getProperty('fullname'))
-        foldername = self.get_container_of_original(obj, manual=True)
+        folder_title = self.get_container_of_original(obj, manual=True)
 
-        subject = u'GFB: Artikel "{0}" aus Rubrik "{1}" von Nutzer "{2}" zur' \
-            u'Veröffentlichung eingereicht'.format(title, foldername, username)
+        subject = u'GFB: Artikel "{0}" aus Rubrik "{1}" von Nutzer "{2}" zur ' \
+            u'Veröffentlichung eingereicht'.format(title, folder_title, username)
         message = (
             u'''Der Artikel "%(title)s" aus Rubrik "%(rubrik)s" wurde von '''
             u'''Nutzer "%(name)s" zur Veröffentlichung eingereicht.'''
             u'''\n\nDie Adresse lautet: %(url)s''' % dict(
                 title=title,
-                rubrik=foldername,
+                rubrik=folder_title,
                 name=username,
                 url=safe_unicode(obj.absolute_url())))
 
