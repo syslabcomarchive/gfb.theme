@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.63 (unreleased)
+1.4.63 (2015-12-04)
 -------------------
 
 - Improved email messages for workflow changes #12846
