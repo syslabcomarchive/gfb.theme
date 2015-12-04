@@ -40,13 +40,19 @@ class GFB(BrowserView):
 
         obj = state_change.object
         user = obj.portal_membership.getAuthenticatedMember()
+        title = safe_unicode(obj.Title())
+        username = safe_unicode(user.getProperty('fullname'))
+        foldername = self.get_container_of_original(obj, manual=True)
 
-        subject = "GFB: Artikel zur Veröffentlichung eingereicht"
+        subject = u'GFB: Artikel "{0}" aus Rubrik "{1}" von Nutzer "{2}" zur' \
+            u'Veröffentlichung eingereicht'.format(title, foldername, username)
         message = (
-            u'''Der Artikel "%(title)s" wurde von Nutzer "%(name)s" zur Veröffentlichung eingereicht.'''
+            u'''Der Artikel "%(title)s" aus Rubrik "%(rubrik)s" wurde von '''
+            u'''Nutzer "%(name)s" zur Veröffentlichung eingereicht.'''
             u'''\n\nDie Adresse lautet: %(url)s''' % dict(
-                title=safe_unicode(obj.Title()),
-                name=safe_unicode(user.getProperty('fullname')),
+                title=title,
+                rubrik=foldername,
+                name=username,
                 url=safe_unicode(obj.absolute_url())))
 
         encoding = portal.getProperty('email_charset')
@@ -124,15 +130,15 @@ class GFB(BrowserView):
             return False
         return True
 
-    def get_container_of_original(self, obj):
+    def get_container_of_original(self, obj, manual=False):
         """ If the obj is a working copy, return the container of the
         original"""
-        if IHomeFolder.providedBy(self.context):
+        if IHomeFolder.providedBy(self.context) or manual:
             if ICatalogBrain.providedBy(obj):
                 obj = obj.getObject()
             iterate_control = getMultiAdapter(
                 (obj, self.request), name='iterate_control')
             original = iterate_control.get_original(obj)
             if original:
-                return Acquisition.aq_parent(original).Title()
+                return safe_unicode(Acquisition.aq_parent(original).Title())
         return ""
