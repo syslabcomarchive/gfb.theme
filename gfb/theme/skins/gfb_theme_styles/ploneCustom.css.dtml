@@ -3771,5 +3771,22 @@ body.cannot-modify div.fc div.btn-group {
 }
 
 
+fieldset .cke_skin_kama textarea.cke_source {
+    white-space: pre-line;
+}
+
+p.disclaimer {
+  padding: 1em 2em;
+  border: 1px solid #CCC;
+  background: #F5F5F5 none repeat scroll 0% 0%;
+}
+
+p.disclaimer .disclaimer-heading{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
 /* </dtml-with> */
 
