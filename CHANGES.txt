@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.64 (unreleased)
+1.4.64 (2016-02-10)
 -------------------
 
 - style improvements to 1) make source in CK editor more readable
