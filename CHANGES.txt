@@ -4,13 +4,12 @@ gfb.theme Changelog
 1.4.66 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Remove Umlaut from this changelog, apparently caused upload to eggserver to fail
 
 1.4.65 (2016-03-16)
 -------------------
 
-- Der "Mehr" link bei den Teasern auf der Startseite soll rechtsbündig. Fixes #13382
+- Right-align "more" link foe teasers on homepage. Fixes #13382
 
 1.4.64 (2016-02-10)
 -------------------
