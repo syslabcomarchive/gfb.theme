@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.65 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Der "Mehr" link bei den Teasern auf der Startseite soll rechtsbündig. Fixes #13382
 
 1.4.64 (2016-02-10)
 -------------------
