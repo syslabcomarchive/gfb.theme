@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.66 (unreleased)
+1.4.66 (2016-03-16)
 -------------------
 
 - Remove Umlaut from this changelog, apparently caused upload to eggserver to fail
