@@ -26,6 +26,16 @@
     <div class="visualClear" id="clear-space-before-navigation"><!-- --></div>
 
     <div tal:replace="structure view/batching" tal:condition="not:view/show_all"/>
+    <div class="btn-group top">
+      <tal:buttons tal:repeat="button view/buttons">
+        <input class="context"
+               type="submit"
+               name=""
+               value=""
+               i18n:attributes="value"
+               tal:attributes="value button/title; name button/url; class string:${button/cssclass|nothing} btn" />
+      </tal:buttons>
+    </div>
     <table class="table table-striped table-bordered table-condensed"
            id="listing-table"
            summary="Content listing"

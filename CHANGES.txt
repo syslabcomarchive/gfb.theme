@@ -4,8 +4,7 @@ gfb.theme Changelog
 1.4.67 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Add functional buttons (cut, paste, etc) also to the top of folder listings. #13618
 
 1.4.66 (2016-03-16)
 -------------------
