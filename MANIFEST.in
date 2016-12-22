@@ -25,3 +25,6 @@ recursive-include gfb *.vpy
 recursive-include gfb *.xml
 recursive-include gfb *.zcml
 recursive-include gfb *.swf
+
+# added by check_manifest.py
+recursive-include gfb *.ico
