@@ -1,7 +1,7 @@
 gfb.theme Changelog
 ===================
 
-1.4.68 (unreleased)
+1.4.68 (2016-12-22)
 -------------------
 
 - Added HWI Mannschgerl as favicon #14593
